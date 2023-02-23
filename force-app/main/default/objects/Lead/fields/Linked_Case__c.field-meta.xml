@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Case__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is for creating the relationship between case and lead. We need this for the Customer Community requirement. In which we wanted to keep the case reference when we&apos;ll ask the user to fill and submit the PIF through website.</description>
+    <externalId>false</externalId>
+    <label>Linked Case</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Leads Linked with Portal Cases</relationshipLabel>
+    <relationshipName>LeadsLinkedCases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

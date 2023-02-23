@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_number_check_home</fullName>
+    <active>false</active>
+    <description>Checks that home phone number is written in internatinoal format</description>
+    <errorConditionFormula>NOT( BEGINS(   HomePhone , &quot;+&quot;))</errorConditionFormula>
+    <errorDisplayField>HomePhone</errorDisplayField>
+    <errorMessage>Phone number must start with &quot;+&quot; followed by country code.
+Example: +1 703 555 1212</errorMessage>
+</ValidationRule>

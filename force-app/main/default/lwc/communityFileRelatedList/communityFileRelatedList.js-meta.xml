@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>CommunityFileRelatedList</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <!-- Configuring the design attributes -->
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage, lightningCommunity__Default">
+            <property name="title" type="String" label="Title" default="Files" required="true"/>
+            <property name="searchURLParam" type="String" label="Search URL Parameter" default="cfs"/>
+            <property name="containerMinHeight" type="String" default="350px" label="RelatedList MinHeight" required="false"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

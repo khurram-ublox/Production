@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shop_Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Inported from Abacus (inverted &quot;Inaktiv&quot; in Produktstamm)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus) Activated for Online Shop. The product may not be visible (e.g. only visible in Americas or not placed in any locations).</inlineHelpText>
+    <label>Shop Active</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

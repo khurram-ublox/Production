@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_replaced__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Number of pieces that have been sold as replacement for the parts tha have been taken back</inlineHelpText>
+    <label>Quantity replaced</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

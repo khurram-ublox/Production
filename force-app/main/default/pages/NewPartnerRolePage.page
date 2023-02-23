@@ -1,0 +1,18 @@
+<apex:page standardController="Opportunity" extensions="NewPartnerRoleCtrl" >
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageMessages ></apex:pageMessages>
+                <apex:pageBlockSection columns="1" collapsible="false" title="New Partner Role">
+                     <apex:inputField value="{!partnerRole.Partner_Role__c}"/>
+                     <apex:inputField value="{!partnerRole.Partner_Account__c}"/>
+                    <apex:outputField value="{!partnerRole.Opportunity__c}"/>
+                    <apex:inputField value="{!partnerRole.Opportunity_Account__c}"/>
+                    <apex:inputField value="{!partnerRole.CurrencyIsoCode}"/>
+                </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!doCancel}" value="Cancel" id="doCancel"/>
+                <apex:commandButton action="{!doSave}" value="Save" id="doSave"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

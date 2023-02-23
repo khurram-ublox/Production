@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_APAC_chip_project_Design_Review_closed</fullName>
+        <description>Case: APAC chip project Design Review closed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_Design_Review_for_the_chip_project_closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Auto_response_for_e_EUS</fullName>
+        <description>Case: Auto response for e-EUS</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>support@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Case_Web_to_Case_email_response_e_EUS_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Auto_response_for_e_LULA_M_JODY_W2</fullName>
+        <description>Case: Auto response for e-LULA-M (JODY-W2)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Case_Web_to_Case_email_response_e_LULA_M_with_Letterhead_JODY_W2</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Auto_response_for_e_LULA_M_LILY_W1</fullName>
+        <description>Case: Auto response for e-LULA-M (LILY-W1)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Case_Web_to_Case_email_response_e_LULA_M_with_Letterhead_LILY_W1</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Auto_response_for_e_LULA_N</fullName>
+        <description>Case: Auto response for e-LULA-N</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Case_Web_to_Case_email_response_e_LULA_N_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Auto_response_for_e_NDA</fullName>
+        <description>Case: Auto response for e-NDA</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Case_Web_to_Case_email_response_e_NDA_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Auto_response_for_e_NDA_Americas</fullName>
+        <description>Case: Auto response for e-NDA Americas</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info_us@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Case_Web_to_Case_email_response_e_NDA_Americas_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Close_community_case_due_to_Inactivity</fullName>
+        <description>Case:Close community case due to Inactivity</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Community_Case_Closed</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Email_to_FAE_when_new_comment_from_portal</fullName>
+        <description>Case: Email to FAE when new comment from portal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>petri.henttinen@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_FAE_email_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Inform_Account_Owner_on_e_NDA_Americas_closure</fullName>
+        <description>Case: Inform Account Owner on e-NDA Americas closure</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_inform_the_Account_Owner_on_e_NDA_Americas</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Inform_Case_Owner_on_e_EUS</fullName>
+        <description>Case: Inform Case Owner on e-EUS</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Case_Emails/Case_inform_the_owner_on_e_EUS</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Inform_Case_Owner_on_e_LULA_M</fullName>
+        <description>Case: Inform Case Owner on e-LULA-M</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>simon.affentranger@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Case_Emails/Case_inform_the_owner_on_e_LULA_M</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Inform_Case_Owner_on_e_LULA_N</fullName>
+        <description>Case: Inform Case Owner on e-LULA-N</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>simon.affentranger@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Case_Emails/Case_inform_the_owner_on_e_LULA_N</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Inform_Case_Owner_on_e_NDA</fullName>
+        <description>Case: Inform Case Owner on e-NDA</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>simon.affentranger@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Case_Emails/Case_inform_the_owner_on_e_NDA</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Inform_Case_Owner_on_e_NDA_Americas</fullName>
+        <description>Case: Inform Case Owner on e-NDA Americas</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>simon.affentranger@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>Case_Emails/Case_inform_the_owner_on_e_NDA_Americas</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reminder_Email_for_community_case_closure_after_72_hrs</fullName>
+        <description>Case: Reminder Email for community case closure after 72 hrs</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Portal_case_closed_after_72_hours</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reminder_Email_update_for_150_days</fullName>
+        <description>Case: Reminder Email update for 150 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_Reminder_Email_update_for_150_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reminder_Email_update_for_151_to_359_days</fullName>
+        <description>Case: Reminder Email update for 151 to 359 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_Reminder_Email_update_for_151_to_359_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reminder_Email_update_for_360_to_720_days</fullName>
+        <description>Case: Reminder Email update for 360 to 720 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_Reminder_Email_update_for_360_to_720_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reminder_Email_update_for_60_90_and_120_days</fullName>
+        <description>Case: Reminder Email update for 60,90 and 120 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_Reminder_Email_update_for_60_90_and_120_days</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reminder_for_community_case</fullName>
+        <description>Case: Reminder for community case</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Case_Emails/Reminder_Portal_Case</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_email_to_a_Owner_Queue</fullName>
+        <description>Case: Send email to a Owner Queue</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Send_email_to_a_Owner_Queue</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Send_email_to_a_Owner_User</fullName>
+        <description>Case: Send email to a Owner User</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Send_email_to_a_Owner_User</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_inform_new_owner</fullName>
+        <description>Notification to new case owner when a lead has been escalated or returned.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_inform_new_owner_of_case</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_new_Case_Comment</fullName>
+        <description>Case: new Case Comment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Case_Initiator_Source__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Case_Emails/Case_new_Case_Comment</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Case_Check_Created_By_Partner</fullName>
+        <field>Created_By_Partner__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Check Created By Partner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Close</fullName>
+        <description>Set Status to Closed</description>
+        <field>Status</field>
+        <literalValue>Closed</literalValue>
+        <name>Case: Close</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Fill_Date_Escalated_To_AE_Cel</fullName>
+        <field>Date_Escalated_To_AE_Cel__c</field>
+        <formula>NOW()</formula>
+        <name>Case: Fill Date Escalated To AE Cel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Fill_Date_Escalated_To_AE_Pos</fullName>
+        <field>Date_Escalated_To_AE_Pos__c</field>
+        <formula>NOW()</formula>
+        <name>Case: Fill Date Escalated To AE Pos</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Fill_Date_Escalated_To_AE_Sho</fullName>
+        <field>Date_Escalated_To_AE_Sho__c</field>
+        <formula>Now()</formula>
+        <name>Case: Fill Date Escalated To AE Sho</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Fill_Date_Escalated_To_Q</fullName>
+        <field>Date_Escalated_To_Q__c</field>
+        <formula>Now()</formula>
+        <name>Case: Fill Date Escalated To Q</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Fill_Date_Escalated_To_TM</fullName>
+        <field>Date_Escalated_To_TM__c</field>
+        <formula>NOW()</formula>
+        <name>Case: Fill Date Escalated To TM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Case_Returned_Date_Time</fullName>
+        <field>Case_Returned__c</field>
+        <formula>NOW()</formula>
+        <name>Case Set Case Returned Date/Time</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Escalated_To_AE_Cel</fullName>
+        <description>Checks &quot;Escalated To AE Cel&quot; to indicate that the Case has once been escalated to AE CEL.</description>
+        <field>Escalated_To_AE_Cel__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set Escalated To AE Cel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Escalated_To_AE_Pos</fullName>
+        <description>Checks &quot;Escalated To AE Pos&quot; to indicate that the Case has once been escalated to AE POS.</description>
+        <field>Escalated_To_AE_Pos__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set Escalated To AE Pos</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Escalated_To_AE_Sho</fullName>
+        <description>Checks &quot;Escalated To AE Sho&quot; to indicate that the Case has once been escalated to AE SHO.</description>
+        <field>Escalated_To_AE_Sho__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set Escalated To AE Sho</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Escalated_To_Q</fullName>
+        <description>Checks &quot;Escalated To Q&quot; to indicate that the Case has once been escalated to Quality.</description>
+        <field>Escalated_To_Q__c</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set Escalated To Q</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Visible_in_Self_Service_Portal</fullName>
+        <description>Set checkbox Visible in Self-Service Portal to TRUE</description>
+        <field>IsVisibleInSelfService</field>
+        <literalValue>1</literalValue>
+        <name>Case: Set Visible in Self-Service Portal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Timestamp_Escalated_by_AE_APAC</fullName>
+        <field>Date_Escalated_by_AE_APAC__c</field>
+        <formula>NOW()</formula>
+        <name>Case: Timestamp Escalated by AE APAC</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Timestamp_Escalated_by_FAE</fullName>
+        <description>Copy the actual date and time to timestamp field</description>
+        <field>Date_Escalated_by_FAE__c</field>
+        <formula>NOW()</formula>
+        <name>Case Timestamp Escalated by FAE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Timestamp_Escalated_by_FAE_Leader</fullName>
+        <field>Date_Escalated_by_FAE_Leader__c</field>
+        <formula>NOW()</formula>
+        <name>Case: Timestamp Escalated by FAE Leader</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Timestamp_Escalated_by_TM</fullName>
+        <description>Copy current date and time</description>
+        <field>Date_Escalated_by_TM__c</field>
+        <formula>NOW()</formula>
+        <name>Case Timestamp Escalated by TM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Update_Last_Owner_ID</fullName>
+        <field>Last_Owner_ID__c</field>
+        <formula>PRIORVALUE(OwnerId)</formula>
+        <name>Case: Update Last Owner ID</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_clear_flag_Send_Notification_Mail</fullName>
+        <description>Clear the flag after sending the notification mail</description>
+        <field>Send_Notification_Mail__c</field>
+        <literalValue>0</literalValue>
+        <name>Case: clear flag Send Notification Mail</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_publish_on_self_service_portal</fullName>
+        <description>set flag &quot;Visible in self-service portal&quot;</description>
+        <field>IsVisibleInSelfService</field>
+        <literalValue>1</literalValue>
+        <name>Case: publish on self-service portal</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Flag_Return_Case_Timestamp</fullName>
+        <field>Set_Case_Returned_Timestamp__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Flag Return Case Timestamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Case_Origin</fullName>
+        <description>This field update will set case origin to Customer Community for Community Registered Users.</description>
+        <field>Origin</field>
+        <literalValue>u-blox Portal</literalValue>
+        <name>Set Case Origin</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Case Set Case Escalated by FAE Date%2FTime</fullName>
+        <actions>
+            <name>Case_Timestamp_Escalated_by_FAE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Set_Case_Escalated_Timestamp_by_FAE__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When flag &quot;Set Case Escalated Timestamp by FAE&quot; has been set, copy time stamp.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Set Case Escalated by FAE Date%2FTime 2</fullName>
+        <actions>
+            <name>Case_Timestamp_Escalated_by_FAE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Set_Case_Escalated_Timestamp_by_TM__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Date_Escalated_by_FAE__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>When flag &quot;Set Case Escalated Timestamp by TM&quot; has been set and FAE escalated time is empty, copy time stamp.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Set Case Escalated by TM Date%2FTime</fullName>
+        <actions>
+            <name>Case_Timestamp_Escalated_by_TM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Set_Case_Escalated_Timestamp_by_TM__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When flag &quot;Set Case Escalated Timestamp by TM&quot; has been set, copy time stamp.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case Set Case Returned Date%2FTime</fullName>
+        <actions>
+            <name>Case_Set_Case_Returned_Date_Time</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reset_Flag_Return_Case_Timestamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Set_Case_Returned_Timestamp__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When flag &quot;Set Case Returned Timestamp&quot; has been set, copy time stamp.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A APAC chip project Design Review closed</fullName>
+        <actions>
+            <name>Case_APAC_chip_project_Design_Review_closed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.For_Chip_Project__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.Alias</field>
+            <operation>notEqual</operation>
+            <value>apiu</value>
+        </criteriaItems>
+        <description>Notify Account Owner</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Auto-response for e-LULA-M %28JODY-W2%29</fullName>
+        <actions>
+            <name>Case_Auto_response_for_e_LULA_M_JODY_W2</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Case_Inform_Case_Owner_on_e_LULA_M</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_LULA_M_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Legal (e-LULA-M)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product_Info__c</field>
+            <operation>equals</operation>
+            <value>JODY-W2</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-case.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Auto-response for e-LULA-M %28LILY-W1%29</fullName>
+        <actions>
+            <name>Case_Auto_response_for_e_LULA_M_LILY_W1</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Case_Inform_Case_Owner_on_e_LULA_M</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_LULA_M_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Legal (e-LULA-M)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Product_Info__c</field>
+            <operation>notEqual</operation>
+            <value>JODY-W2</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-case.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Auto-response for e-LULA-N</fullName>
+        <actions>
+            <name>Case_Auto_response_for_e_LULA_N</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Case_Inform_Case_Owner_on_e_LULA_N</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_LULA_N_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Legal (e-LULA-N)</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-case.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Auto-response for e-NDA</fullName>
+        <actions>
+            <name>Case_Auto_response_for_e_NDA</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Case_Inform_Case_Owner_on_e_NDA</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_NDA_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Legal (e-NDA)</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-case.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Auto-response for e-NDA Americas</fullName>
+        <actions>
+            <name>Case_Auto_response_for_e_NDA_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Case_Inform_Case_Owner_on_e_NDA_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_NDA_Americas_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Legal Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Legal (e-NDA Americas)</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-case.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Check Created By Partner</fullName>
+        <actions>
+            <name>Case_Check_Created_By_Partner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Check Case field when a Case is created by a partner user.</description>
+        <formula>OR(
+  ISPICKVAL($User.UserType,&quot;PowerPartner&quot;),
+  $User.ProfileId=&quot;00e2p000001opLR&quot;
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Email new Case Comment</fullName>
+        <actions>
+            <name>Case_new_Case_Comment</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>Send_Case_Comment__c &amp;&amp; ISCHANGED(Case_Comment__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Legal Case Americas has been closed</fullName>
+        <actions>
+            <name>Case_Inform_Account_Owner_on_e_NDA_Americas_closure</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Alerts Account Owner about the Case closure.</description>
+        <formula>RecordType.Id=&quot;012D0000000BarT&quot; &amp;&amp;
+ISPICKVAL(Account.uB_Office__c, &quot;Americas&quot;) &amp;&amp;
+ISCHANGED(Status) &amp;&amp;
+IsClosed</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Make accessible for external users</fullName>
+        <actions>
+            <name>Case_Set_Visible_in_Self_Service_Portal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Once the Case is assigned to the external users (Partner, Customer Community users), it becomes accessible for them.</description>
+        <formula>AND(
+  ISCHANGED(OwnerId),
+  NOT(ISPICKVAL(Owner:User.UserType,&quot;Standard&quot;))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Case Escalated by AE APAC Date%2FTime</fullName>
+        <actions>
+            <name>Case_Timestamp_Escalated_by_AE_APAC</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Set_Case_Escalated_Timestamp_by_AE_APAC__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Timestamp when AE APAC escalated</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Case Escalated by FAE Date%2FTime %28external%29</fullName>
+        <actions>
+            <name>Case_Timestamp_Escalated_by_FAE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Timestamp when a Case is created by a partner user.
+ORIG: NOT(ISPICKVAL($User.UserType,&quot;Standard&quot;))</description>
+        <formula>ISPICKVAL($User.UserType,&quot;Partner&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Case Escalated by FAE Leader Date%2FTime</fullName>
+        <actions>
+            <name>Case_Timestamp_Escalated_by_FAE_Leader</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Set_Case_Escalated_Timestamp_by_FAE_Lead__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Case Origin</fullName>
+        <actions>
+            <name>Set_Case_Origin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow rule will trigger when the new case will be created and it will set the value of Case Origin to Customer Community. It is created specifically for the Customer Community.</description>
+        <formula>$Profile.Name = &quot;Community Registered User&quot;</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Escalated To AE Cel</fullName>
+        <actions>
+            <name>Case_Fill_Date_Escalated_To_AE_Cel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Set_Escalated_To_AE_Cel</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Checks &quot;Escalated To AE Cel&quot; to indicate that the Case has once been escalated to AE CEL.</description>
+        <formula>or( 
+Owner:Queue.Id = &quot;00G20000001Lsac&quot;,
+ISPICKVAL(Owner:User.Team__c, &quot;AE CEL&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Escalated To AE Pos</fullName>
+        <actions>
+            <name>Case_Fill_Date_Escalated_To_AE_Pos</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Set_Escalated_To_AE_Pos</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Checks &quot;Escalated To AE Pos&quot; to indicate that the Case has once been escalated to AE POS.</description>
+        <formula>or(
+Owner:Queue.Id = &quot;00G20000001LsZy&quot;, 
+ISPICKVAL(Owner:User.Team__c, &quot;AE POS&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Escalated To AE Sho</fullName>
+        <actions>
+            <name>Case_Fill_Date_Escalated_To_AE_Sho</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Set_Escalated_To_AE_Sho</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Checks &quot;Escalated To AE Sho&quot; to indicate that the Case has once been escalated to AE SHO.</description>
+        <formula>or( 
+Owner:Queue.Id = &quot;00GD0000003uWXg&quot;,
+ISPICKVAL(Owner:User.Team__c, &quot;AE SHO&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Escalated To Q</fullName>
+        <actions>
+            <name>Case_Fill_Date_Escalated_To_Q</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Set_Escalated_To_Q</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Checks &quot;Escalated To AE Quality&quot; to indicate that the Case has once been escalated to Quality.</description>
+        <formula>or( 
+Owner:Queue.Id = &quot;00G20000001Lsn7&quot;, 
+ISPICKVAL(Owner:User.Team__c, &quot;Quality&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Set Escalated To TM</fullName>
+        <actions>
+            <name>Case_Fill_Date_Escalated_To_TM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Checks &quot;Escalated To TM&quot; to indicate that the Case has once been escalated to TM.</description>
+        <formula>Owner:User.ProfileId = &quot;00e200000015FVB&quot; &amp;&amp;
+ISBLANK( Date_Escalated_To_TM__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A Update Last Owner ID</fullName>
+        <actions>
+            <name>Case_Update_Last_Owner_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Runs when Owner has changed</description>
+        <formula>ISCHANGED(OwnerId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A auto-close Email Case %28Americas%29</fullName>
+        <actions>
+            <name>Case_Close</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>E-Mail (Americas)</value>
+        </criteriaItems>
+        <description>Close if Case Origin = &quot;E-mail (Americas)&quot;</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A auto-close Email Case for sample email alert</fullName>
+        <actions>
+            <name>Case_Close</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Close if Subject starts with &quot;Sample request S-&quot;</description>
+        <formula>AND(
+  RecordType.Id=&quot;01257000000Nczf&quot;,
+  LEFT(Subject, 17)=&quot;Sample request S-&quot;
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A new Task for e-NDA Americas</fullName>
+        <actions>
+            <name>e_NDA_signed_accepted_by_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create a new Task to Account Owner</description>
+        <formula>ISPICKVAL(Type, &quot;Legal (e-NDA Americas)&quot;)  &amp;&amp;
+ISCHANGED(AccountId)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A publish on self-service portal</fullName>
+        <actions>
+            <name>Case_publish_on_self_service_portal</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Current_User_Internal__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>If the Case has been created by the partner user, make it available on the self-service portal (so that the Cases appear also in the related list of the Account in Partner Portal).</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Case%3A send notification mail after change of ownership</fullName>
+        <actions>
+            <name>Case_inform_new_owner</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Case_clear_flag_Send_Notification_Mail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When a button for escalation or return of a case has been pressed, inform the new owner
+Orig: Used criteria Send_Notification_Mail__c=TRUE</description>
+        <formula>((Send_Notification_Mail__c=TRUE)||(ISCHANGED(OwnerId)&amp;&amp;(OwnerId&lt;&gt;$User.Id)))&amp;&amp;
+(ISPICKVAL(Owner:User.UserType,&quot;Standard&quot;)||ISPICKVAL(Owner:User.UserType,&quot;PowerPartner&quot;)||LEFT(OwnerId,3)=&quot;00G&quot;)&amp;&amp;
+($User.Alias&lt;&gt;&quot;apiu&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Email_EUS_sent_to_the_customer</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The EUS has been sent to the email address in field &quot;Web Email&quot; of this Case.</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>In Progress</status>
+        <subject>Email: EUS sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_LULA_M_sent_to_the_customer</fullName>
+        <assignedTo>automatic_process@u-blox.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>The LULA-M has been sent to the email address in field &quot;Web Email&quot; of this Case.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: LULA-M sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_LULA_N_sent_to_the_customer</fullName>
+        <assignedTo>automatic_process@u-blox.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>The LULA-N has been sent to the email address in field &quot;Web Email&quot; of this Case.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: LULA-N sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_NDA_Americas_sent_to_the_customer</fullName>
+        <assignedTo>automatic_process@u-blox.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>The NDA Americas has been sent to the email address in field &quot;Web Email&quot; of this Case.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: NDA Americas sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_NDA_sent_to_the_customer</fullName>
+        <assignedTo>automatic_process@u-blox.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>The NDA has been sent to the email address in field &quot;Web Email&quot; of this Case.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: NDA sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>e_NDA_signed_accepted_by_customer</fullName>
+        <assignedToType>accountOwner</assignedToType>
+        <description>Set to Completed once the Case has been Closed.</description>
+        <dueDateOffset>14</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>In Progress</status>
+        <subject>e-NDA signed/accepted by customer</subject>
+    </tasks>
+</Workflow>

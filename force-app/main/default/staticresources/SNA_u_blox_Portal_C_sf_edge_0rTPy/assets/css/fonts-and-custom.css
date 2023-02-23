@@ -1,0 +1,1542 @@
+/* u-blox regular font added for all web */
+@font-face{
+    font-family:'u-blox';
+    src:url(../resource/ubloxWRgEot);
+    src:url(../resource/ubloxWRgEot?#iefix) format("embedded-opentype"),
+        url(../resource/ubloxWRgWoff2) format("woff2"),
+        url(../resource/ubloxWRgWoff) format("woff"),
+        url(../resource/ubloxARgTtf) format("truetype");
+}
+/* u-blox bold font added */
+@font-face{
+    font-family:'u-blox';
+    src:url(../resource/ubloxWBdEot);
+    src:url(../resource/ubloxWBdEot?#iefix) format("embedded-opentype"),
+        url(../resource/ubloxWBdWoff2) format("woff2"),
+        url(../resource/ubloxWBdWoff) format("woff"),
+    	url(../resource/ubloxABdTtf) format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+.comm-page-custom-reglandingpage footer {
+	display: none !important;
+}
+.grecaptcha-badge {
+    z-index: 1;
+}
+/* common hearding style - making it bold */
+  h1, h2, h3, h4, h5, h6 {
+      font-weight:bold
+  }
+/* common style for body */
+  body {
+      font-size: 14px;
+      overflow: initial !important;
+  }
+/* common style for button */
+  button {
+      font-weight:bold;
+         border-radius: 0;
+  }
+/* common style for focus */
+  :focus {
+      outline:none;
+  }
+/* For rounding all the input boxes  */
+  input#continue {
+      border-radius: 0;
+  }
+/* style for search button for home page */
+  .forceCommunitySearchBox .search-button {
+      background-image: url("/resource/1648719164000/searchWhiteSpace");
+      background-repeat: no-repeat;
+      background-position: center center;
+      color: rgba(255,255,255,0);
+      font-size: 0;
+      width: 46px !important;
+      cursor: pointer !important;
+  }
+/* style for search button for search,ask button for home page,
+common style for tab button & slds-button  */
+  button.slds-button.slds-button_brand.askCommunityBtn,
+  button.slds-button.slds-button_brand.communityBtn,
+  .slds-button-group .slds-button:only-child,
+  .uiTabset--task .tabs__nav
+  {
+      border-radius: 0;
+      font-size: 14px;
+  }
+  .slds-button_icon-border-filled,
+  .slds-button--icon-border-filled,
+  .slds-button_icon-border,
+  .slds-button--icon-border
+  {
+      border: 0;
+  }
+/* common style for uiInput--select */
+  .uiInput--select.select:not([multiple]),
+  .uiInput--select .select:not([multiple]),
+  .uiInput--select .uiPopupTrigger a {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/select-arrows-grey.svg) no-repeat;
+      background-position: center right 4px;
+      -webkit-background-size: 2rem 2rem;
+      background-size: 1.3rem 1.3rem;
+      border-radius: 0px;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+      border: 2px solid #9a9a9a;
+      background-color: inherit;
+      border: 2px solid #9a9a9a;
+      font-family: inherit;
+      width: 100%;
+      padding: 1rem 3rem 1rem 1.2rem;
+      -webkit-transition: all .25s ease;
+      -o-transition: all .25s ease;
+      transition: all .25s ease;
+      display: block;
+      line-height: 1.42857143;
+      height: 44px;
+  }
+
+/* common style for settings page */
+  .forceCommunityUserSettings *
+  {
+      font-size: 14px;
+  }
+/* style for settings page email input */
+  .forceCommunityUserSettings .settingsEmail {
+      border-radius: 0px !important;
+      -moz-border-radius: 0px !important;
+      -webkit-border-radius: 0px !important;
+      border: 2px solid #9a9a9a !important;
+      display: block !important;
+      padding: 6px 12px !important;
+      line-height: 1.42857143 !important;
+  }
+
+/* style for profile menu button in header*/
+  .forceNoRowActions .menuTrigger
+  {
+      border: 0 !important;
+  }
+/*style for questions metadata text */
+  .slds-text-body_small, .slds-text-body--small {
+      font-size: 14px;
+      color: #ff6e59;
+      text-decoration: none;
+  }
+/* style for login button in header*/
+  .forceCommunityThemeProfileMenu.profile-loginButton{
+           background: url("/resource/1648644298000/loginIcon") center center no-repeat;
+          height:24px !important;
+  }
+/* headline title style for topic listing page*/
+  .headlineTitleText
+  {
+      float: left;
+      font-size: 42px;
+      font-weight: bold;
+  }
+/* page header style for search results, case page etc */
+  h1.slds-page-header__title {
+      color: #000000;
+      font-size: 30px;
+  }
+/* gerneral stle for slds middle column(slds-align-middle) */
+  .slds-align-middle{
+      font-size: 14px;
+  }
+/* gerneric form style for input form label */
+  .uiInput--default .form-element__label,
+  .slds-form-element__label{
+      color: black;
+  }
+/* gerneric form style for input form label */
+  .slds-form-element__label
+  {
+      font-size: 14px
+  }
+/* style for label of featured topics on home page */
+  .comm-page-home .forceTopicFeaturedTopics .topicLabel{
+      font-size: 1.5125rem !important;
+      opacity: 0.7;
+      width:100% !important;
+  }
+/* style for question detail-page */
+  .forceChatterFeedback--default .cuf-commentLi {
+      border-bottom: 1px solid #b5b6b7;
+  }
+/* style for question detail-page */
+  .forceChatterFeedItem .comment--threadedCommunity {
+      background: #f5f5f1 !important;
+  }
+/*style for search input on home page*/
+  .forceCommunitySearchBox .search-field {
+      font-size: 18px !important;
+      background-color: #f7f7f7 !important;
+      -webkit-transition: all .25s ease;
+      -o-transition: all .25s ease;
+      transition: all .25s ease;
+      
+  }
+/*style for search results*/
+  .comm-page-global-search .forceChatterCompactFeedItem .drillInTarget {padding-left:1rem;}
+/*style for search results - 1st line added to accomodate migration */
+  .comm-page-global-search .force-record-layout2  th.initialSortAsc[title="Display URL"],
+  .comm-page-global-search .forceRecordLayout  th.initialSortAsc[title="Display URL"]
+	{display:none;}
+
+  .comm-leaderboard ul .slds-size_1-of-8 {width:0 !important;}
+  .comm-leaderboard ul .slds-size_5-of-8 {width:80% !important;}
+  .comm-leaderboard ul .comm-leaderboard__points-column {width:20% !important;}
+
+/* style for question detail-page */
+  .forceChatterCompactFeedItem .drillInTarget a {
+      font-size:24px !important;
+      font-weight:bold;
+      color : #000;
+      margin: 10px 0;
+  }
+/* style for question detail-page */
+  .forceChatterCompactFeedItem .drillInTarget :hover,
+  .forceChatterCompactFeedItem .drillInTarget :focus
+   {
+    color : #ff6e59;
+    text-decoration:none;
+  }
+
+  .forceChatterCompactFeedItemBody .title {
+    font-size:24px !important;
+}
+
+  .forceChatterCompactFeed .metadata .postedBy,
+  .forceChatterCompactFeed .metadata .topicName,
+  .forceChatterCompactFeed .metadata .dotSymobol,
+  .forceChatterCompactFeed .metadata .postedBy,
+  .forceChatterCompactFeed .metadata .timestamp
+  {
+      
+      font-size: 16px !important;
+  }
+  .forceChatterCompactFeed .metrics {
+      margin-top: 20px;
+      
+  }
+  .forceChatterCompactFeed .metrics .metric {
+  
+      border-right: solid 1px #151315;
+      padding-right: 10px;
+      padding-left: 0;
+      font-size: 16px;
+      color: black;
+  }
+  .forceChatterCompactFeed .metadata .topicName{
+      color: #87827C !important;
+      padding: 0 10px 0 0px;
+  }
+  lightning-icon.metricIcon.slds-button__icon.slds-icon-utility-comments.slds-icon_container.forceIcon,
+  .comments.metric.forceChatterCompactFeedMetric
+  {
+      color: #ff6e59;
+  }
+  .forceChatterCompactFeedMetric .forceIcon {
+      color: rgb(0, 0, 0);
+  }
+  .forceChatterCompactFeedMetric.metric:last-child {
+      margin-right: 0;
+      border: none;
+  }
+  .forceCommunityThemeProfileMenu.jepsonInnerHeader.profile-loginButton {
+  
+      background-color: transparent !important;
+      border: 1px solid #ffffff !important;
+      box-shadow: none !important;
+      width: 34px;
+  }
+  .forceChatterCompactFeedItem {
+      position: relative;
+      padding: 30px 0px;
+      border-top: 1px solid;
+      border-bottom: 0 !important;
+      border-color: #87827C;
+  }
+.forceChatterCompactFeedItem:first-child {}
+
+  .forceCommunityFeedItemDetail .cuf-feedElement .cuf-questionTitle {
+  
+      color: #000000;
+      font-size: 30px !important;
+      font-weight: 700;
+  }
+  .forceChatterFeedBodyText.cuf-feedBodyText {
+      font-size: 16px;
+  }
+  .forceChatterSimpleFeedItemTopics .topic-commaSeparatedList .topicName {
+      padding: 0 10px 0 12px;
+      color: #87827C;
+      display: block;
+  }
+  .forceChatterSimpleFeedItemTopics--pill ul.topic-commaSeparatedList li a{
+      border: none !important;
+      border-radius: 0 !important;
+      font-size:14px
+  }
+  .slds-post__footer{
+      font-size: 14px
+  }
+  .slds-text-title {
+      font-size: 14px;
+  }
+  .slds-feed__item-comments {
+      border: 0px;
+      border-left: solid 10px #F5F5F1;
+      box-shadow: 0px -2px 0px 0px #87827C;
+      -moz-box-shadow: 0px -2px 0px 0px #87827C;
+      -webkit-box-shadow: 0px -2px 0px 0px #87827C;
+      margin-top: -2px;
+      background-color: #F5F5F1 !important;
+  }
+  slds-text-body_small, .slds-text-body--small,
+  .forceCommunityTrendingTopics .forceTopicTopicList .topicItemLink,
+  .forceCommunityUserSettings .settingsLabel,
+  .forceChatterStyle .cuf-preamble,
+  .selfServiceBaseSimpleItem .item-title
+  {
+      font-size: 14px !important;
+  }
+  .selfServiceBaseSimpleItem .item-title {
+      color: #ff6e59;
+  }
+  .slds-col--padded.slds-size--12-of-12.slds-medium-size--4-of-12.slds-large-size--4-of-12.comm-layout-column {
+      border: none;
+      border-color: #EDEDED;
+      overflow: hidden;
+      padding: 10px 0 15px 2rem;
+      /*border-top: 4px solid black;*/
+  }
+  .slds-grid--vertical {
+      border: none;
+      border-color: #EDEDED;
+     /*  overflow: hidden;
+     border-top: 4px solid black;*/
+      background-color: #ffffff;
+      padding: 10px 0 15px 2rem;
+      margin-bottom: 5.4rem;
+  }
+  .slds-grid--vertical.slds-wrap.slds-has-block-links {
+      border: none;
+  }
+  .siteforceThemeLayoutStarter *,
+  .forceCommunityUserProfileStats,
+  .forceCommunityUserRecordHome .userHeaderDetail
+  {
+      border-radius: 0 !important;
+  
+  }
+  .forceChatterCompactFeed .metrics {
+      display: inline-flex;
+      width: 100%;
+  }
+  .slds-feed__item-comments .slds-comment {
+      padding: 20px 10px;
+  }
+/*  style for input boxes. used in profile & contact page*/
+  .slds-input-has-icon_left-right .slds-input,
+  .slds-input-has-icon_left-right .slds-input_bare,
+  .slds-input-has-icon_left-right .slds-input--bare,
+  .slds-input-has-icon--left-right .slds-input,
+  .slds-input-has-icon--left-right .slds-input_bare,
+  .slds-input-has-icon--left-right .slds-input--ba
+  {
+      border: 2px solid #9a9a9a;
+      display: block;
+      line-height: 1.42857143;
+  }
+  /* Adjusting rich text-editor borders */
+  .slds-rich-text-editor__toolbar.slds-shrink-none {
+      border: 1px solid #9a9a9a;
+      border-top: 0;
+	  border-left: 0;
+      border-right: 0;
+  }
+/* rich text editor style & input boxes. used in profile & contact page*/
+  [role=combobox] input[readonly],
+  .slds-button_icon-more,
+  .slds-button--icon-more,
+  .uiInput--input .input,
+  .uiInput--input.input,
+  .uiInput--textarea .textarea,
+  .uiInput--textarea.textarea,
+  .forcePublisherQuickActionCollapser .dummyButtonCallToAction,
+  .slds-rich-text-editor__toolbar,
+  .slds-rich-text-editor__textarea:last-child .slds-rich-text-area__content,
+  .forceCommunityUserSettings .settingsEmail
+  {
+      border-radius: 0px;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+     /* display: block;*/
+       border: 2px solid #9a9a9a;
+      padding: 6px 12px;
+      line-height: 1.42857143;
+  }
+  .inputWrapper.slds-grid.slds-grid_vertical-align-center.slds-p-right_x-small{
+  
+      border: 2px solid #9a9a9a !important;
+      padding: 6px 12px  !important;
+      line-height: 1.42857143  !important;
+  }
+  .uiPanel.open {
+      border-radius: 0;
+  }
+/* For hiding tab bar
+on Profile page, case page */
+  .forceCommunityResultsList.uiTabset .uiTabBar .uiTabItem,
+  .tabs__item {
+      width: 50%;
+    /*  display:none */
+  }
+  .tabs__item.uiTabItem>a {
+      border: 1px solid rgba(190,190,190,.6);
+      color: rgb(0, 0, 0);
+  }
+  .uiTabset--default .tabs__item.active>a {
+      border-left: 1px solid;
+  }
+  .uiTabset--default .tabs__item + .tabs__item 
+  {
+      margin-left: 0;
+  
+  }
+  .forceAsyncCarouselIndicator .nav-container {
+      background-color: #fff;
+  }
+  .slds-card-wrapper{
+      padding:0
+  }
+  .forceCommunityContactSupportForm h1.slds-page-header__title,
+  .forceCommunityUserSettings h1.texttitle
+  {
+      text-align: left;
+      margin-bottom: 18px;
+      text-align: left;
+      margin-left: 0%;
+      margin-top: 24px;
+     
+      font-size: 42px !important;
+      font-weight: bold !important;
+  }
+  .slds-truncate.slds-align-middle.slds-text-align_center.slds-p-top--small {
+  
+      text-align: left;
+  }
+  
+  .ubx-black-footer {
+      margin: 0;
+      padding: 30px 0;
+      background-color: #2a2a2a;
+      font-size: 12px;
+      line-height: 1rem;
+      color: #fff;
+  }
+  .grid {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      }
+  .block--uos-language-switcher {
+      text-align: right;
+  }
+  .ubx-black-footer ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  .block--menu-menu-footer-beaker .expanded>a {
+      cursor: pointer;
+      display: block;
+      color: #bebebe;
+      border-top: 1px solid rgba(255,255,255,.2);
+      padding: 15px 0;
+  }
+  .block--menu-menu-footer-beaker .expanded>a {
+      cursor: pointer;
+      display: block;
+      color: #bebebe;
+      border-top: 1px solid rgba(255,255,255,.2);
+      padding: 15px 0;
+  }
+  .ubx-black-footer a {
+      border-bottom: none;
+      color: #fff;
+      padding-bottom: 0;
+      -webkit-transition: color .25s ease;
+      -o-transition: color .25s ease;
+      transition: color .25s ease;
+  }
+  .block--menu-menu-footer-beaker .menu .expanded ul.menu li {
+      border-top: 1px solid rgba(255,255,255,.2);
+      font-size: 12px;
+  }
+  
+  .block--menu-menu-footer-beaker .menu .expanded ul.menu li a {
+      display: block;
+      padding: 15px 0 15px 20px;
+  }
+  .block--menu-menu-footer-beaker .menu .expanded ul.menu {
+      display: none;
+  }
+  .block--menu-menu-footer-beaker .menu .expanded ul.menu.expanded {
+      display: block;
+  }
+  .ubx-black-footer a {
+      border-bottom: none;
+      color: #fff;
+      padding-bottom: 0;
+      -webkit-transition: color .25s ease;
+      -o-transition: color .25s ease;
+      transition: color .25s ease;
+  }
+  
+  .block--uos-language-switcher a {
+      background: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/globe-grey.svg) top right no-repeat;
+      -webkit-background-size: 1.1rem 1.1rem;
+      background-size: 1.1rem;
+      line-height: 1.1rem;
+      display: block;
+      padding-right: 22px;
+  }
+  .ubx-white-footer:after,
+  .ubx-black-footer:after,
+  .block--menu-menu-social-media-menu-footer:after
+  {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  .ubx-white-footer {
+      padding: 15px 0 25px;
+      font-size: 12px;
+      line-height: 1rem;
+      color: #bebebe;
+  }
+  #block-menu-menu-footer-meta {
+      margin: 0 0 30px;
+      color: #5a5a5a;
+  }
+  #block-menu-menu-footer-meta:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  #block-menu-menu-footer-meta .footer-date, #block-menu-menu-footer-meta .leaf {
+      display: block;
+      padding: 15px 0;
+      border-bottom: 1px solid #bebebe;
+  }
+  .ubx-white-footer a {
+      color: #5a5a5a;
+      border-bottom: 1px solid rgba(255,255,255,0);
+      padding-bottom: .05em;
+      -webkit-transition: border .25s ease;
+      -o-transition: border .25s ease;
+      transition: border .25s ease;
+  }
+  .block--menu-menu-social-media-menu-footer .menu {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0;
+      list-style-type: none;
+  }
+  .block--menu-menu-social-media-menu-footer .leaf {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      min-width: 50px;
+      text-align: center;
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a {
+      border: none;
+      color: currentColor;
+      padding-bottom: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      opacity: .65;
+      vertical-align: top;
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-background-size: 100% auto;
+      background-size: 100% auto;
+      font-size: 0;
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a.twitter {
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/fontawesome-twitter.svg);
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a.linkedin {
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/fontawesome-linkedin.svg);
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a.youtube {
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/fontawesome-youtube.svg);
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a.facebook {
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/fontawesome-facebook.svg);
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a.github {
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/fontawesome-github.svg);
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a.google-plus {
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/fontawesome-google_plus_sign.svg);
+  }
+  
+  .block--menu-menu-footer-beaker .expanded>a:after {
+      content: '';
+      float: right;
+      display: block;
+      margin: -7px 0 0;
+      height: 30px;
+      width: 20px;
+      background: url(https://www.u-blox.com/sites/all/themes/beaker/images/icons/chevron-right-white.svg) center center no-repeat;
+      -webkit-background-size: 100% auto;
+      background-size: 100% auto;
+      opacity: .5;
+  }
+  .uiTabset--default .tabs__item>a, .uiTabset--default .uiTabOverflowMenuItem a{
+          padding: 11px 1rem 9px;
+  }
+  .uiTabset--default .tabs__item > a span, .uiTabset--default .uiTabOverflowMenuItem a span {
+      vertical-align: text-top;
+          text-transform: none;
+  }
+  li.tabs__item.active.uiTabItem {
+      border-color: currentColor;
+      border-left-width: 1px;
+      color: #ff6e59;
+      border: 1px solid currentColor;
+      margin-top:0;
+  }
+  li.tabs__item.uiTabItem{
+      margin-top:1px;
+  }
+  .uiTabset--default .tabs__nav{
+      border-bottom:none
+  }
+  .uiTabset--default .tabs__item>a:focus{
+      box-shadow:none;
+  }
+  .uiTabset--default .tabs__item>a:hover{
+      box-shadow:none;
+      border-color:rgba(190,190,190);
+  }
+  li.tabs__item.active.uiTabItem > a:hover {
+      border-color: #ff6e59;
+  }
+  
+      .forceCommunitySearchBox input::placeholder {
+          font-size: 18px;
+      }
+      .slds-table th, .slds-table td {
+          white-space:normal;
+      }
+      .slds-button_brand,
+      .slds-button_neutral, .slds-button--neutral
+      {
+           padding: 0.4rem 1.8rem 0.4rem;
+          border-radius:0;
+      }
+      
+      .forceCommunityAskCommunity.askCommunityBtn,
+      .selfServiceContactSupport.communityBtn,
+      .forceChatterChatterFollow .button
+      {
+          padding: 0.4rem 1.8rem 0.4rem !important;
+          margin: auto;
+          width: 100 !important;
+          display: block;
+          text-align: center;
+      }
+      .salesforceIdentityLoginForm2 .uiButton{
+          border-radius: 0px !important;
+      }
+  .slds-input__icon-group.slds-input__icon-group_right {
+      display: none;
+      }
+/* style for filter dropdown used on listing pages*/
+  .slds-combobox__form-element input,
+  .slds-button_icon-more
+  {
+          background: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/chevron-down.svg) no-repeat scroll;
+          background-position: right bottom 2px;
+          text-align: left;
+          padding: auto;
+          background-size: 1.35rem; 
+          font-size: 14px;
+          
+      }
+      [role=combobox] input[readonly]:focus, [role=combobox] input[readonly].slds-has-focus {
+          border-color: rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 3px #ffffff;
+      }
+      .forceSearchResultsRegion.slds-grid.slds-grid--vertical {
+          padding: 0;
+          border: 0;
+      }
+      
+      .slds-button_icon-more{
+          width: 50px;
+      }
+      .slds-button_icon-more .slds-m-left_xx-small {
+          display: none;
+      }
+      .slds-avatar--small img {
+  
+      -webkit-filter: hue-rotate(594deg);
+      filter: hue-rotate(594deg);
+      
+      }
+  
+      .slds-grid--vertical
+      .comm-layout-column .ui-widget .selfServiceContactSupport.communityBtn,
+      .slds-grid--vertical
+      .comm-layout-column .ui-widget .forceChatterChatterFollow .button {
+              margin: auto !important;
+  
+      }
+  .slds-grid--vertical
+  .comm-layout-column .ui-widget .forceCommunityAskCommunity.askCommunityBtn{
+      margin-top:3px !important
+  }
+    .slds-table_cell-buffer {
+      border-bottom: none;
+  }
+  .forceCommunityThemeProfileMenu.jepsonInnerHeader.commThemeCmp .profile-menuItem.uiMenuItem a {
+      border-color: #bebebe !important;
+  }
+  .slds-p-right_x-small, .slds-p-right--x-small {
+      padding-right: 0;
+  }
+  .selfServiceTopicTrendingArticles42 ul {
+      border: 1px solid #e6e6e6;
+  }
+  .forceCommunityUserProfileStats .slds-p-left--x-small.slds-p-bottom--x-small {
+      background: none;
+      color: black;
+      width: 100%;
+  }
+  span.statNumber {
+      color: #ff6e59;
+  }
+  .uiMenuList--default.uiMenuList {
+      border-radius: 0;
+  }
+  .updatePhotoPanel .fileTextSizeDesc.slds-p-bottom--x-small, .updatePhotoPanel .slds-form-element.slds-p-bottom--x-small {
+      background-color: white;
+      color: black;
+  }
+  #forgotPassForm .button {
+      border-radius: 0;
+      color: white;
+  }
+  .oneActionsRibbon li.slds-button--neutral>a:hover,
+   .oneActionsRibbon li.slds-button--neutral>button:hover,
+   .oneActionsRibbon li.slds-button--neutral>a:focus,
+   .oneActionsRibbon li.slds-button--neutral>button:focus {
+      background-color: #ff6e59;
+      color: white;
+        border: none;
+  }
+  .slds-button_neutral:hover, .slds-button_neutral:focus, .slds-button--neutral:hover, .slds-button--neutral:focus {
+     /* background-color: #ff6e59;
+      border: none;
+      color: white;*/
+  }
+  .oneActionsRibbon.forceActionsContainer .slds-truncate {
+      background-color: #ff6e59;
+      color: white;
+      border: none;
+  }
+  .oneActionsRibbon li.slds-button--neutral:active {
+      background-color: #ff6e59;
+  }
+     .forceCommunityThemeNav.jepsonInnerHeader .mainNavItem .subMenu .uiMenuItem a {
+      border-bottom-color:rgb(190, 190, 190) !important;
+      }
+  
+      .forceCommunityThemeNav .mainNavItem .nestedSubMenu a:hover, .forceCommunityThemeNav .mainNavItem .uiMenuItem:last-child a:hover {
+      border-bottom: 1px solid;
+      }
+      .forceCommunityThemeNav.jepsonInnerHeader.commThemeCmp .mainNavItem .subMenu .uiMenuItem a:hover,
+      .forceCommunityThemeNav.jepsonInnerHeader.commThemeCmp .mainNavItem .subMenu .uiMenuItem a:focus
+      {
+             background-color : #F3F2F2 !important;
+          /*border-bottom-color: rgba(0, 0, 0, 0.7) !important;*/
+      }
+      .forceCommunityThemeProfileMenu.jepsonInnerHeader.commThemeCmp .profile-menuItem.uiMenuItem a:hover,
+      .forceCommunityThemeProfileMenu.jepsonInnerHeader.commThemeCmp .profile-menuItem.uiMenuItem a:focus
+      {
+         /* border-bottom-color: rgba(0, 0, 0, 0.7) !important;*/
+      }
+       
+   .forceCommunityThemeProfileMenu .profile-menuItem.uiMenuItem:not(:last-child) a {
+      border-bottom: 1px solid #7e4d4d;
+      }
+   .forceCommunityThemeProfileMenu.jepsonHomeHeader .profile-menuItem.uiMenuItem a{
+          border-color: #ececec !important;
+      }
+  
+  .slds-no-space.dummyButtonCallToAction.uiButton:hover {
+      border: 1px solid #9a9a9a;
+      color: #9a9a9a;
+  }
+  .forceCommunityFeedPublisher .oneActionsComposer .uiTabBar .tabs__nav {
+      border-bottom:none !important;
+  }
+   .selfServiceTopicTrendingArticles42 .slds-grid--vertical a:focus{
+          box-shadow:none;
+      }
+  .slds-button_brand[disabled], .slds-button_brand:disabled:hover {
+      background-color: rgb(201, 199, 197);
+  }
+  .forceCommunityRelatedTopics .forceTopicTopicList .topicItemLink:focus {
+    box-shadow:none;
+    
+}
+.forceCommunityRelatedTopics .forceTopicTopicList .topicItemLink {
+    font-size:14px !important;  
+}
+  .ubx-black-footer a:hover, .ubx-black-footer a:focus {
+      color: #ff6e59;
+      text-decoration: none;
+  }
+  .block--menu-menu-social-media-menu-footer .leaf a:hover, .block--menu-menu-social-media-menu-footer .leaf a:focus {
+      opacity: 1.0;
+  }
+  .slds-rich-text-editor__toolbar{
+      border:none
+  }
+  
+  .slds-rich-text-editor.slds-has-focus {
+      border-color: rgb(154, 154, 154);
+      box-shadow: 0 0 3px #9a9a9a;
+  }
+  .forceTopicPublisherTopicsWidget .forceChatterPillContainer .uiInputTextForAutocomplete {
+      border: none;
+  }
+  .forceChatterTopicSuggestionAutoComplete .uiInput input:focus {
+      box-shadow: none;
+  }
+  .salesforceIdentityLoginBody2 a:hover {
+      color: #ff6e59 !important;
+  }
+  .salesforceIdentityLoginForm2 .inputBox {
+      width: 90% !important;
+  }
+  .salesforceIdentityLoginForm2 .inverseTextColor {
+      font-size: 13px;
+  }
+  span.unsNotificationsPanel.noNotifications:focus {
+      outline-color: rgba(0, 0, 0, 0.16) !important;
+  }
+  .slds-scope .slds-input:active, .slds-scope .slds-input:focus {
+      outline: 0;
+      border-color: rgba(0, 0, 0, 0.7);
+      background-color: #fff;
+      box-shadow: none;
+  }
+  .primary, .primary:hover, .primary:focus {
+      background-color: #ff6e59;
+  }
+  .comm-page-home .forceTopicFeaturedTopics .topicLabel{
+          padding: 157px 0 14px 0;
+          color: black !important;
+      /*display:none;*/
+  }
+  .comm-page-home .forceTopicFeaturedTopics .topicContent {
+      background: none;
+      background-color: rgba(255, 110, 89, 0.01) !important;
+  }
+  
+  .comm-page-home .forceTopicFeaturedTopics .topicContent:hover,
+  .comm-page-home .forceTopicFeaturedTopics .topicLink:focus .topicContent {
+          background: none;
+      background-color: rgba(255, 110, 89, 0.1) !important;
+      outline: 0;
+  }
+  .oneActionsRibbon li.slds-button--neutral>a{
+      color: rgb(249 100 79);
+  }
+  .block--uos-language-switcher{
+      display:none;
+  }
+  
+  #block-menu-menu-footer-beaker > ul:first-of-type >li > a:hover,
+  #block-menu-menu-footer-beaker > ul:first-of-type >li > a:focus{
+      color:#bebebe;
+  }
+  .salesforceIdentityLoginBody2 .cCenterPanel{
+      background: rgba(29, 29, 29, 0.45);
+      padding: 25px;
+      width: 100%;
+      color: white;
+  }
+  .salesforceIdentityLoginBody2 .cCenterPanel .uiOutputRichText {
+      color: white;
+  }
+  .forceCommunityChangePassword .userInput{
+      border-radius:0;
+  }
+  .uiTooltipAdvanced .tooltip-body {
+      background-color: #ff6e59 !important;
+  }
+  .uiTooltipAdvanced .south .pointer {
+      border-bottom: 13px solid #ff6e59 !important;
+  }
+/* general slds-button styles*/
+  .slds-button:focus,.slds-button_neutral:active, .slds-button--neutral:active {
+      outline: 0;
+      box-shadow: none;
+      color: white;
+  }
+  .forceChatterRecommendationBig .cuf-bodyActionGroup .forceChatterActionLinkGroup button.cuf-platformAction .label{padding:0.4px}
+  .slds-modal__footer .slds-button+.slds-button {
+      margin-left: .5rem;
+      padding: 0.4rem 1.8rem 0.4rem;
+      border-radius: 0;
+  }
+  .siteforcePanelsContainer .modal-header .title {
+      color: white;
+  }
+  a.slds-button:focus,
+  .forceNoRowActions .menuTrigger:focus {
+      outline: 0;
+      box-shadow: 0 0 3px #ff6e59;
+  }
+  .slds-no-space.dummyButtonCallToAction.uiButton:hover{
+          border: 2px solid #9a9a9a;
+  }
+  .uiInput--input.input:focus, .uiInput--input .input:focus, .uiInput--input.input:active, .uiInput--input .input:active,
+  .uiInput--textarea .textarea:focus, .uiInput--textarea.textarea:focus, .uiInput--textarea .textarea:active, .uiInput--textarea.textarea:active
+  {
+      border-color: rgba(0, 0, 0, 0.7);
+      box-shadow: none;
+  }
+  .indicator.dot-mode.forceAsyncCarouselIndicator ul li.item .selected .dot-indicator {
+      background-color: rgb(255, 110, 89)!important;
+      box-shadow: none;
+  }
+  .forceCommunityRelatedTopics .forceTopicTopicList .topicItemLink:focus{
+      box-shadow: none !important
+  }
+  .slds-button-group .slds-button+.slds-button, .slds-button-group .slds-button+.slds-button_last .slds-button, .slds-button-group .slds-button+.slds-button--last .slds-button, .slds-button-group-list li+li .slds-button {
+      margin-left: 0px;
+  }
+  .comm-page-global-search .forceOutputURL a.uiOutputURL {
+      -webkit-filter: brightness(0.7);
+      filter: brightness(0.7);
+      filter: saturate;
+      width: 30px;
+      line-height: 5;
+      font-size: 6px;
+      color: transparent;
+      display: block;
+      background-image: url(https://www.u-blox.com/sites/all/themes/custom/beaker/images/icons/globe-grey.svg);
+      background-repeat: no-repeat;
+      background-size: 65%;
+  }
+  a.compactFeedElement.drillInTarget:hover {
+      color: #ff6e59;
+  }
+  
+  a.compactFeedElement.drillInTarget:focus {
+      text-decoration: none;
+  }
+  .forceChatterCompactFeed .metadata .topicName {
+      color: #87827C !important;
+      padding: 0 10px 0 0px;
+  }
+  .savecancelbuttoncontainer.hidecancelsavebutton.paddingcancelsave {
+      display: none;
+  }
+  .userSettingTabs .uiTabBar .tabs__nav .tabs__item.active {
+      display: none !important;
+  }
+  .siteforceSldsTwoCol84SidebarFeaturedLayout .comm-layout-column .ui-widget .slds-card {
+      border: none;
+  }
+  /* to be reworked */
+  .comm-layout-column .ui-widget .slds-card__header {
+      
+  }
+  .slds-medium-size--4-of-12.slds-large-size--4-of-12.comm-layout-column .slds-table_cell-buffer tr>td:first-child{
+      padding-left:0
+      }
+  .forceChatterRecommendationSmall .cuf-recommendationSummary{
+      color:#333
+      }
+  .forceCommunityUserSettings .tabs__content.active .row.slds-m-top--medium {
+      border-bottom: none !important;
+      margin: 0 4px;
+  }
+  
+  .osetting {padding: 0 .75rem;}
+  .osettings h2 {font-size:2em !important;}
+  .osettings .title {font-size: 1rem;padding:20px 0 5px 0; border-top: 1px double #d4d4d4 !important;}
+  .osettings p {margin-bottom:20px;font-size:14px;}
+  
+  .reg_text {color:#2a2a2a;font-size:1.2em}
+  
+  .forceCommunityThemeHeaderCompact .themeUtil .slds-button:focus, 
+  .forceCommunityThemeProfileMenu .profile-menuTrigger:focus,
+  .forceNoRowActions .menuTrigger:focus {
+      box-shadow: none !important;
+  }
+  .slds-table_cell-buffer tr:first-child td,
+   .slds-table_bordered,
+   .slds-table--bordered
+   {
+      border-top: none;
+  }
+  .slds-breadcrumb{
+      display:none
+  }
+  .optanon-alert-box-wrapper *, #optanon,
+  #optanon *,
+  #optanon div,
+  #optanon span,
+  #optanon ul, #optanon li,
+  #optanon a,
+  #optanon p,
+  .optanon-alert-box-wrapper * {
+      font-family: 'u-blox'!important;
+  }
+  .emptyResult.slds-illustration.slds-illustration_large.forceChatterEmptyFeed span img {
+      display: none;
+  }
+  .forceCommunityChangePassword .settingsData{
+      width: 80% !important;
+  }
+  .forceCommunityChangePassword .settingslabel{
+      text-align:left !important;
+      margin-left: 8.33333333%;
+  }
+  .forceCommunityChangePassword .errorMessage {
+      margin-left: 8.3333% !important;
+      }
+  .userStats .slds-p-bottom--x-small {cursor:default;} 
+  .forceCommunityUserRecordHome .userHomeTabSet.fourTabs.uiTabset .user-home-tab.tabs__item.uiTabItem{
+               padding-left: 0 !important;
+               padding-right: 0 !important;
+          }
+  li.slds-button.slds-button--neutral.slds-truncate {
+      margin-left: 8px;
+      border: 1px solid rgb(255, 110, 89);
+  }
+/*  text input style.. used in profile, contact page & settings*/
+  .uiInput--input.input:focus,
+  .uiInput--input .input:active,
+  .uiInput--textarea .textarea:focus,
+  .uiInput--textarea.textarea:active,
+  .uiInput--select.select:focus,
+  .uiInput--select .select:active,
+  .uiInput--select .uiPopupTrigger a:focus,
+  .uiInput--select .uiPopupTrigger a:active,
+  .forceChatterParticipantsInput.outer.focussed
+  {
+      border-color: #9a9a9a;
+      box-shadow: none;
+  }
+  .slds-has-error .slds-select
+  .slds-has-error .slds-select:focus,
+  .slds-has-error .slds-select:active,
+  .slds-rich-text-editor.slds-has-focus,
+  .slds-rich-text-editor
+  {
+      border: 2px solid #9a9a9a;
+      box-shadow: none;
+      border-radius: 0;
+  }
+  .slds-listbox_vertical .slds-listbox__option:focus, .slds-listbox_vertical .slds-listbox__option:hover, .slds-listbox_vertical .slds-listbox__option.slds-has-focus, .slds-listbox--vertical .slds-listbox__option:focus, .slds-listbox--vertical .slds-listbox__option:hover,
+  .slds-listbox--vertical .slds-listbox__option.slds-has-focus,
+  .slds-dropdown__item > a:hover, .slds-dropdown__item > a:focus {
+      background-color: #f3f2f2;
+  }
+  .forceCommunitySearch .forceSearchResultsGridView.gridInScroller{
+      width: 100%;
+      padding: 0px;
+  }
+  .forceCommunitySearch .forceSearchSearchResultsGridHeader {
+      padding-top: 10px !important;
+      border-bottom: none;
+  
+  }
+  .forceCommunityUserPreviewStencilNapili .topSection {
+       background-color: #fff !important; 
+  }
+  .forceCommunityUserPreviewStencilNapili .slds-grid--vertical {
+      border: none !important;
+       margin-bottom:0
+  }
+  .slds-avatar_circle,.forceSocialPhoto .circular, .slds-avatar, .slds-avatar--circle, .unsNotificationsListRow .notification-icon {
+      border-radius: 0 !important;
+  }
+  .item-title-link:focus{
+      box-shadow:none !important;
+  }
+  .forceChatterRecommendationSmall .cuf-entityRecommendationActionLink{
+          padding-right: .75rem;
+  }
+  .forceChatterRecommendationSmall .cuf-entityRecommendationActionGroupDiv .cuf-rejectButton {
+      margin-left: .01rem !important; 
+  }
+  .item-title.uiOutputText:hover {
+      text-decoration: underline;
+  }
+  .slds-table:not(.slds-no-row-hover) tbody tr:hover>td, .slds-table:not(.slds-no-row-hover) tbody tr:hover>th, .slds-table:not(.slds-no-row-hover) tbody tr:focus>td, .slds-table:not(.slds-no-row-hover) tbody tr:focus>th {
+      background-color: transparent !important;
+      box-shadow: none !important;
+  }
+  .slds-m-vertical_small, .slds-m-vertical--small{
+      margin-bottom:1.2rem
+  }
+  .slds-card{
+      border:none
+  }
+  .unsNotificationsListRow.notification-unread:hover,
+  .unsNotificationsListRow.notification-read:hover {
+      background-color: #F3F2F2 !important;
+  }
+  .recentlyViewedItems td {
+      padding-left: 0px !important;
+  }
+  .listRecordInfo {
+      margin-left: .75rem;
+  }
+  .slds-card_boundary {
+      border: 1px solid #d4d4d4;
+  }
+  .forceRelatedListCardDesktop .baseCard__header-title-container{
+      padding-left:20px
+  }
+  .forceSearchResultsGridView.grid thead th, .forceSearchResultsGridView.grid tbody td{
+      width: 100%
+  }
+  .forcePageError.desktop .genericNotification{
+      font-weight:bold
+  }
+  .forcePageError .genericNotification {
+      background: #ffbbba !important;;
+      color: #1a1a1a !important;
+     border-radius: 0 !important;
+  
+  }
+/* style for search results - 1st line added to accomodate migration*/
+.slds-grid--vertical.forceCommunityUserPreviewStencilNapili.force-record-layout2,  
+.slds-grid--vertical.forceCommunityUserPreviewStencilNapili.forceRecordLayout {
+      margin-bottom: 0;
+  }
+  .forceCommunityUserProfileHeader img.circularPhotoDisable {
+      filter: saturate(0%) brightness(120%) contrast(100%) grayscale(100%);
+      -webkit-filter: saturate(0%) brightness(120%) contrast(100%) grayscale(100%);
+  }
+  .forceHoverPanel .uiButton.closeBtn:focus {
+      box-shadow: none;
+  }
+  .forceDetailPanelMobile .forcePageBlockSectionView .forcePageBlockItem:only-child .forceOutputURL a.uiOutputURL {
+      width: 100%;
+      font-size: 100%;
+      background: none;
+      color: #ff6f59;
+      line-height: normal;
+  }
+  .noResults img {filter:grayscale(1);}
+
+
+/* hide the attachment tab in case page to hide files-tab use :first-child - un-hide now */
+.forceRelatedListContainer .forceRelatedListSingleContainer:nth-child(2) {
+	display:block
+}
+.forceRelatedListContainer .forceRelatedListSingleContainer:first-child {
+	display:block
+}
+.forceRelatedListContainer .forceRelatedListSingleContainer:last-child {
+	margin-top:0 !important;
+}
+
+  .forceCommunityUserProfileStats .slds-p-left--x-small {padding-left:6px !important;}
+  .forceChatterSelectMentionOption .cuf-actorDescription {
+    display: none !important;
+}
+
+.forceChatterCompactFeed .metrics .metric:not(:last-child) {padding-right:1.5rem;margin-right:1rem;}
+.forceChatterCompactFeed .metrics .metric:last-child {border-right:0 !important;}
+
+.compactFeed .feeds-sorter .slds-form-element__label {display:none;}
+.forceCommunityUserRecordHome .forceRelatedListContainer {/*display:none;*/}
+
+.forceCommunityFeedItemDetail .forceChatterStyle--default .cuf-feedElement.cuf-feedElement {padding:0;padding-bottom:1rem;}
+
+lightning-icon.slds-button__icon.slds-global-header__icon.slds-icon-utility-notification.slds-icon_container.forceIcon {
+    visibility: hidden;
+}
+.unsNotificationsCounter .headerButtonBody {
+    background: url(../resource/notification_new) no-repeat;
+    background-size: contain;
+}
+/* for hiding Are you employee text */
+.employeeLoginLink.salesforceIdentityEmployeeLoginLink2 {
+    display: none;
+}
+/* for expanding case page layout*/
+.forceCommunityRecordHomeTabs .recordHomePrimaryContent {
+    width: 100% !important;
+}
+/* for hidding case info box in the first comment on case page */
+.forceChatterFeedAuxBody .cuf-auxBodyEmailMessage{
+	display: none !important;
+}
+/* style for color-picker on contact page */
+.slds-color-picker__summary-button {
+    vertical-align: top;
+    line-height: 1;
+    margin-right: 0.25rem;
+    padding: 0.3rem 0.5rem;
+    background: rgb(255, 255, 255);
+    display: inline-flex;
+    border: none;
+}
+/* rich text editor style.. used in profile & contact page*/
+.slds-rich-text-editor__textarea:last-child .slds-rich-text-area__content {
+    border: none;
+}
+
+
+/* Case support form */
+.forceCommunityContactSupportForm .slds-gutters_small .slds-col {padding: 0;}
+.forceCommunityContactSupportForm .slds-form_stacked .slds-form-element {padding: 0;}
+.forceCommunityContactSupportForm .slds-p-horizontal_medium {padding: 0;}
+.forceCommunityContactSupportForm .case-description {height: 150px;}
+.forceCommunityContactSupportForm #submitButton {
+    padding: 0;
+}
+/* Case support form - html text component */
+.customer_support_form h1 {font-size: 42px !important; margin-bottom: 10px;}
+.customer_support_form p {font-size:1.1em;}
+.forceCommunityContactSupportForm .slds-truncate {display:none;}
+
+
+/* 404 error page */
+.error_page {font-size: 1.35em;margin-bottom:30px;}
+.error_page h1 {margin-bottom: 20px;font-size: 40px !important;}
+
+/* remove hscroll from ask question popup -home pg */
+.forceChatterQuestionPost .forceCommunityCaseDeflection {
+    overflow: auto !important;
+}
+/* adjust editor border in chatter-box for create post border */
+.forceChatterMessageBodyInputRichTextEditor .slds-rich-text-editor__toolbar {
+    border-top: 1px solid #9a9a9a;
+}
+/* remove vertical scroll at start for editor in create case */
+.slds-rich-text-editor__textarea.slds-grid.ql-container {
+    height: auto;
+}
+.slds-rich-text-editor__textarea:last-child .slds-rich-text-area__content{
+	    max-height: 320px;
+}
+
+/* for adjusting popup scroll - ask question */
+.cuf-autocompleteClass.lookup__menu.uiAbstractList.uiAutocompleteList {
+    bottom: 125px;
+    max-height: 100px;
+    width: 100%;
+}
+.forceChatterAutocomplete .cuf-autocompleteClass .listContent ul {
+    height: 92px;
+}
+.forceChatterMessageBodyInput .cuf-ac {
+    top: 0;
+    display: inline;
+    background-color: transparent !important;
+    bottom: 0px;
+    margin-top: -34px;
+}
+/* for displaying the attachment on comment body */
+.forceChatterFeedAuxBody .cuf-auxBody {
+    display: block;
+}
+@media only screen and (min-width: 1024px) {
+    .error_page {padding: 0 120px;}
+}
+@media screen and (max-width: 767px) {
+    .error_page iframe {width: 100%;}
+}
+
+
+
+  @media only screen and (min-width: 48em)
+  {
+      .osetting {padding: 0 ;}
+      
+      .forceCommunityThemeNav.jepsonHomeHeader.commThemeCmp .mainNavItem .subMenu .uiMenuItem a:hover, .forceCommunityThemeNav.jepsonHomeHeader.commThemeCmp .mainNavItem .subMenu .uiMenuItem a:focus {
+          /*border-bottom-color: rgba(0, 0, 0, 0) !important;*/
+      }
+      .forceCommunityThemeProfileMenu.jepsonHomeHeader.commThemeCmp .profile-menuItem.uiMenuItem a:hover, .forceCommunityThemeProfileMenu.jepsonHomeHeader.commThemeCmp .profile-menuItem.uiMenuItem a:focus {
+     /* border-bottom-color: rgba(0, 0, 0, 0) !important;*/
+      }
+     .forceCommunityThemeNav.jepsonInnerHeader .mainNavItem .linkBtn.comm-navigation__top-level-item-link--active {
+          border-bottom: 2px solid rgb(255, 110, 89) !important;
+    
+          }
+     .forceCommunityThemeProfileMenu.jepsonHomeHeader .profile-menuItem.uiMenuItem a {
+          border-color: rgb(190, 190, 190) !important;
+      }
+      
+     
+  }
+  
+  @media only screen and (max-width: 47.9375em)
+          {
+          .slds-col--padded.slds-size--12-of-12.slds-medium-size--4-of-12.slds-large-size--4-of-12.comm-layout-column {padding: 0 0.75rem !important;}
+              
+          .forceCommunityHomeTabs.uiTabset--default .tabs__item+.tabs__item {
+              padding-left: 0px !important;
+          }
+              .forceCommunityHomeTabs.homeTab.twoTabs .uiTabItem:last-child{
+                  left:0 !important;
+              }
+                 .siteforceThemeLayoutStarter>.body.isPageWidthFixed-true{
+                padding-left: 15px; 
+               padding-right: 15px; 
+              }
+          .forceCommunityChangePassword .settingslabel{
+                  margin-left: 0;
+              }
+              .forceCommunityChangePassword .errorMessage {
+                  margin-left: 0;
+                  }
+         .oneActionsRibbon.forceActionsContainer .slds-truncate {
+              background-color: initial;
+              color: inherit;
+          }
+  
+               td span.uiOutputTextArea,
+              th.initialSortAsc.sortable {
+                  display: none;
+              }
+         .forceSearchResultsGridView.grid thead th, .forceSearchResultsGridView.grid tbody td {
+              width: auto;
+          }
+                .siteforceThemeLayoutStarter>.body.isPageWidthFixed-true{
+                    padding-left: 15px; 
+                    padding-right: 15px; 	
+                  }
+      }
+  @media only screen and (min-aspect-ratio: 4/3) and (min-width: 48em), only screen and (min-width: 64.0625em)
+  {
+  .siteforceNapiliFooter .cta-btn {
+      width: 200px !important;
+      margin: 10px !important;
+      }
+   
+  }
+  @media screen and (min-width: 551px) and (max-width: 767px) {
+   /*styles for small screens in here*/
+      .forceTopicFeaturedTopicItem.topicItem{
+              width: 33.33333333333333% !important;
+              height: 250px !important;
+      }
+  }
+  @media (max-width: 1024px) {
+         .siteforceThemeLayoutStarter>.body.isPageWidthFixed-true{
+        padding-left: 15px; 
+        padding-right: 15px; 	
+      }
+  }
+  @media (min-width: 1024px) {
+      .siteforceThemeLayoutStarter>.body.isPageWidthFixed-true{
+        padding: 0; 	
+      }
+  }
+  @media (min-width: 768px){
+      .forceTopicFeaturedTopicItem.topicItem{
+      width: 25% !important;
+      height: 250px !important;
+          
+  }
+    
+      .block--menu-menu-footer-beaker>.menu {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+      }
+      .ubx-black-footer {
+      font-size: 12px; 
+      line-height: 1rem; 
+      }
+      .grid {
+      padding-left: 30px;
+      padding-right: 30px;
+      }
+      .l-region--footer-first {
+      margin-left: -10px;
+      margin-right: -10px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      }
+      .block--menu-menu-footer-beaker {
+      float: left;
+      width: 83.33333%;
+      min-width: 83%;
+      }
+      .block--menu-menu-footer-beaker>.menu>.expanded {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 0 10px;
+      }
+      .block--menu-menu-footer-beaker .expanded>a {
+      cursor: default;
+      border: none;
+      padding: 0 0 15px;
+      }
+      .block--menu-menu-footer-beaker .menu .expanded ul.menu li {
+      border-top: none;
+  }
+      .block--menu-menu-footer-beaker .menu .expanded ul.menu li a {
+      padding: 0 0 5px;
+      }
+      .ubx-white-footer {
+      font-size: 12px;
+      line-height: 1rem;
+      padding: 15px 0;
+      }
+      .l-region--footer-second {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      }
+      #block-menu-menu-footer-meta {
+      margin: 0;
+      }
+      #block-menu-menu-footer-meta .menu {
+      display: inline;
+      }
+      #block-menu-menu-footer-meta .menu {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      }
+      #block-menu-menu-footer-meta .footer-date, #block-menu-menu-footer-meta .leaf {
+      display: inline-block;
+      padding: 0;
+      border: 0;
+  }
+      #block-menu-menu-footer-meta .footer-date:after, #block-menu-menu-footer-meta .leaf:after {
+      content: "|";
+      width: 30px;
+      text-align: center;
+      display: inline-block;
+      }
+      .block--menu-menu-social-media-menu-footer .menu {
+      display: block;
+      margin: 0;
+      text-align: right;
+      }
+      .block--menu-menu-social-media-menu-footer .leaf {
+      display: inline-block;
+      min-width: 0;
+      width: 50px;
+      text-align: right;
+      }
+      .block--menu-menu-social-media-menu-footer .leaf:first-child {
+      width: 20px;
+  }
+      .ubx-white-footer .grid {
+  
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+  
+  }
+      .block--menu-menu-footer-beaker .expanded>a:after {
+          background: none;
+      }
+      .slds-button_brand.cuf-showMore,
+      .slds-p-bottom--x-small {
+      /* background-color: #ff6e59;*/
+      border: 0 none;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 700;
+      /* font-size: 1.4rem; */
+      line-height: 1;
+      padding: 16px 6px;
+      -webkit-transition: background-color .25s ease;
+      -o-transition: background-color .25s ease;
+      transition: background-color .25s ease;
+      text-decoration: none;
+      word-break: normal;
+      }
+  
+      .comm-leaderboard ul li .slds-icon_small{
+          -webkit-filter: hue-rotate(527deg);
+          filter: hue-rotate(527deg);
+      }
+      .comm-leaderboard ul li:last-child .slds-icon_small{
+          -webkit-filter: grayscale(100%) hue-rotate(587deg);
+          filter: grayscale(100%) hue-rotate(587deg);
+      }
+      .forceCommunityContactSupportForm button.slds-button.slds-button_brand {
+          padding: 0.4rem 1.8rem 0.4rem;
+          /*line-height: 0;
+           text-align: right; 
+          float: right;*/
+      }
+      .block--menu-menu-footer-beaker .menu .expanded ul.menu {
+      display: block;
+      }
+      #block-menu-menu-footer-meta .footer-date:last-child:after, #block-menu-menu-footer-meta .leaf:last-child:after {
+      content: none;
+      }
+      .slds-col_padded, .slds-col--padded {
+          padding-right: 0;
+          padding-left: 0;
+      }
+     
+       .forceChatterChatterNotification .triggerLink{
+          padding: 0.5rem 0 0 0 !important;
+      }
+  }
+:root { --dxp-c-section-columns-max-width: 1170px; }

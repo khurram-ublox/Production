@@ -1,0 +1,53 @@
+<template>
+    <lightning-card  variant="Narrow"  title={title} icon-name="standard:document" if:false={usedInCommunity}>
+        <lightning-button if:true={showsync} variant="brand" title="Refresh List" icon-name="utility:sync"
+            onclick={handleSync} slot="actions" >
+        </lightning-button>
+    </lightning-card>   
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="small" variant="brand"></lightning-spinner>
+        </template>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="6" >
+                <div if:true={showFilters}>
+                    <lightning-input if:true={showFilters} type="search" variant="standard" placeholder="Search..." name="Search" value={searchStr} onchange={handleSearch} >
+                    </lightning-input>
+                </div>                
+            </lightning-layout-item>       
+            <lightning-layout-item class="downloadBtnLayout" alignment-bump="left" >
+                <lightning-button id="DownloadAllBtn" label="Download All" variant="brand" title="Download Selected" icon-name="utility:download"
+                onclick={handleDownload} disabled={disableDownloadButton}>
+                </lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-file-upload
+                        if:true={showFileUpload}  
+                        name="fileUploader"
+                        accept={accept}
+                        record-id={recordId}
+                        onuploadfinished={handleUploadFinished}
+                        multiple>
+                </lightning-file-upload>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div>
+            <lightning-datatable
+                key-field="id"
+                data={dataList}
+                columns={columnsList}
+                onrowaction={handleRowAction}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                onsort={handleSortdata}                               
+            >
+            </lightning-datatable>
+        </div>
+        <template if:true={noDataPresent} >
+            <div class="slds-align_absolute-center slds-var-p-around_large" >
+                {label.CommunityFileRecordNotPresent}
+            </div>    
+        </template>
+        <div id="cmpErr" style='visibility:hidden'>
+            {errorMsg}
+        </div>
+</template>

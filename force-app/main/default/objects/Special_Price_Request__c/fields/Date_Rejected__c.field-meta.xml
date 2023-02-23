@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Rejected__c</fullName>
+    <description>Date when the request has been rejected last time</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date when the request has been rejected last time</inlineHelpText>
+    <label>Date Rejected</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

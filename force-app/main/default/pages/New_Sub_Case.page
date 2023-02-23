@@ -1,0 +1,44 @@
+<apex:page standardController="Case" extensions="NewSubCaseCtrl">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/11.1/connection.js"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+       var ContactId;
+       if('{!Case.ContactId}'!=''){
+           ContactId='{!Case.ContactId}';
+       } 
+       var subject='{!Case.Subject}'; 
+       var Type= '{!Case.Type}'; 
+       var Status='{!Case.Status}';
+       var Priority='{!Case.Priority}';
+       var AccountId;
+       if('{!Case.AccountId}'!=''){
+           AccountId='{!Case.AccountId}';
+       }
+       var ParentId='{!Case.Id}'; 
+       var Technology='{!Case.Technology__c}';
+       
+       var Product;
+       if('{!Case.Product__c}'!=''){
+           Product ='{!Case.Product__c}';
+       }
+       var Opportunity;
+       if('{!Case.Opportunity__c}'!=''){
+           Opportunity='{!Case.Opportunity__c}';
+       }
+       var BugRef; 
+       if('{!Case.Bug_Reference__c}'!=''){
+           BugRef='{!Case.Bug_Reference__c}';
+       }
+       
+      if((typeof sforce != 'undefined') && sforce && (!!sforce.one) ){             
+              sforce.one.createRecord('Case','012D0000000BarO',{'ContactId':ContactId, 'Subject':subject, 'Type':Type, 
+                                                               'Status':Status, 'Priority':Priority, 'AccountId':AccountId,
+                                                               'ParentId':ParentId, 'Technology__c':Technology, 'Product__c':Product,
+                                                               'Opportunity__c':Opportunity, 'Bug_Reference__c': BugRef } );                 
+        } 
+     });
+    </script>
+
+</apex:page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Key_Body_Index_Manual_Forecast__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;/UnitType:Quantity/Unit:PCS&quot;
+&amp;
+&quot;/Region:&quot; 
+&amp;
+TEXT(Opportunity__r.Opportunity_Account__r.uB_Office__c)
+&amp;
+&quot;/ProductCategory:&quot;
+&amp;
+TEXT(Product__r.Reporting_Category__c)
+&amp;
+&quot;/Country:&quot;
+&amp;
+UPPER(Opportunity__r.Opportunity_Account__r.BillingCountry)
+&amp;
+&quot;/Product:&quot;
+&amp;
+Product__r.ProductCode
+&amp;
+&quot;/ProjectOwner:&quot;
+&amp;
+Opportunity__r.Opportunity_Account__r.SF_Account_Number__c
+&amp;
+&quot;/&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Key Body Index Manual Forecast</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

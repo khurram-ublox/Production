@@ -1,0 +1,60 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" controller="QuotationSPRCtrl" >
+
+    <!--<aura:attribute name="recordId" type="String" />-->
+    <ltng:require scripts="{!$Resource.uJS}"></ltng:require>
+	<aura:attribute name="recordId" type="string" />
+    <aura:attribute name="location" type="string" />
+    <aura:attribute name="errorMessage" type="string" />
+    <aura:attribute name="successMessage" type="string" />
+	<aura:attribute name="cloneSprId" type="String" />
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+    <aura:attribute name="showError" type="Boolean" default="false" />
+    <aura:attribute name="showSuccess" type="Boolean" default="false" />
+    
+    	<p>This will create a new Quotation out of this SPR. Are you sure if you want to do this?</p>
+     	<br></br>
+    	<br></br>
+    	<!--<aura:handler name="init" label="Create" action="{!c.doInit}" value="{!this}"/> -->
+    	
+    	<lightning:button name="init" variant="brand" label="Create" onclick="{!c.createQuote}" value="{!this}" />
+		
+    	<!--<lightning:button name="cancel" variant="brand" label="Cancel" onclick="{!c.cancel}" value="{!this}"/>-->
+		<lightning:button variant="brand" label="Cancel" onclick="{!c.cancel}" />
+    	<div class="loader">
+            <aura:if isTrue="{!v.loaded}">
+                <aura:set attribute="else">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999999;">
+                        <lightning:spinner alternativeText="Loading ..." variant="brand" />
+                    </div>
+                </aura:set>
+            </aura:if>
+    	</div>
+    	
+    	<aura:if isTrue="{!v.showError}">
+            <br/><br/>
+            <div style="height:4rem">
+              <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="status">
+                  <span class="slds-assistive-text">error</span>                  
+                  <div class="slds-notify__content">                     
+                    <h2 class="slds-text-heading_small ">{!v.errorMessage}</h2>
+                  </div>                  
+                </div>
+              </div>
+            </div>            
+		</aura:if>
+    	
+    	<aura:if isTrue="{!v.showSuccess}">
+            <br/><br/>
+            <div style="height:4rem">
+              <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_success" role="status">
+                  <span class="slds-assistive-text">success</span>                  
+                  <div class="slds-notify__content">                     
+                    <h2 class="slds-text-heading_small ">{!v.successMessage}</h2>
+                  </div>                  
+                </div>
+              </div>
+            </div>            
+		</aura:if>
+</aura:component>

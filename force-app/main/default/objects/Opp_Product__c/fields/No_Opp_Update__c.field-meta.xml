@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Opp_Update__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to stop triggering updating parent opportunity to reorder opp products if opportunity is set to Lost. 
+It is used in &apos;updateStatusOnOppProduct&apos; and &apos;oppProductTrigger&apos; trigger. If value is changed, then trigger from opp product won&apos;t update its parent Opportunity. If value is not change, then the trigger updates Opportunity record.</description>
+    <externalId>false</externalId>
+    <label>No Opp Update</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,24 @@
+**** SAMPLE REQUEST NOTIFICATION ***
+
+The following sample request has been created or updated:
+
+Company:        {!Samples__c.Account__c}
+SF Account Number: {!Samples__c.SF_Account_Number__c}
+Ship To:        {!Samples__c.Ship_To__c}
+Product:        {!Samples__c.Type_No__c}
+Sample Usage:        {!Samples__c.Sample_Usage__c}
+Requested quantity: {!Samples__c.Requested_Quantity__c}
+Created by: {!Samples__c.CreatedBy}
+Request Initiator (if different from the creator): {!Samples__c.Request_Initiator__c}
+
+Request Status:    {!Samples__c.Request_Status__c}
+
+Confirmed quantity (only when confirmed): {!Samples__c.Confirmed__c}
+Planned Delivery Date (only when confirmed): {!Samples__c.Planned_Delivery_Date__c}
+Delivered quantity (only when delivered): {!Samples__c.Delivered_Quantity__c}
+
+Remark:    {!Samples__c.Remark__c}
+
+Feedback: {!Samples__c.Feedback__c}
+
+Click on the link to access the Sample:  {!Samples__c.Link}

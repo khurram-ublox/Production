@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_Case_DO_NOT_USE</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Return Case DO NOT USE</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+
+var CaseId = &quot;{!Case.Id}&quot;;
+var OwnerId = &quot;{!Case.OwnerId}&quot;;
+var CaseInitiator = &quot;{!Case.Case_Initiator_SourceId__c}&quot;;
+
+if (CaseInitiator == &quot;&quot;){ 
+var CaseInitiator = &quot;{!Case.CreatedById}&quot;;
+}
+
+var UserId = &quot;{!$User.Id}&quot;;
+
+
+// creates a CaseTeamMember record for the actual owner of the case
+
+var ct = new sforce.SObject(&quot;CaseTeamMember&quot;);
+
+ct.ParentId = CaseId;
+ct.MemberId = UserId;
+
+ct.TeamRoleId = &quot;0B7D0000000CanX&quot;;
+
+var result = sforce.connection.create([ct]);
+
+//alert (result)
+
+// returns case to the case initiator
+// adds timestamp when returned to case initiator
+
+var c = new sforce.SObject(&quot;Case&quot;);
+
+c.Id = CaseId;
+c.OwnerId = CaseInitiator;
+c.Set_Case_Returned_Timestamp__c = &apos;True&apos;;
+
+// set flag to trigger notification mail to new owner
+c.Send_Notification_Mail__c = &apos;True&apos;;
+
+var result = sforce.connection.update([c]);
+
+//alert (result)
+
+window.parent.location.href=&quot;/&quot;+CaseId;</url>
+</WebLink>

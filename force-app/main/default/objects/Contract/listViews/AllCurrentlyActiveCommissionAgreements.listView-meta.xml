@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllCurrentlyActiveCommissionAgreements</fullName>
+    <columns>CONTRACT.CONTRACT_NUMBER</columns>
+    <columns>Contract_Category__c</columns>
+    <columns>SALES.ACCOUNT.NAME</columns>
+    <columns>CONTRACT.BILLING_CITY</columns>
+    <columns>CONTRACT.BILLING_COUNTRY</columns>
+    <columns>CONTRACT.START_DATE</columns>
+    <columns>CONTRACT.END_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CONTRACT.STATUS_CODE</field>
+        <operation>equals</operation>
+        <value>A</value>
+    </filters>
+    <filters>
+        <field>Contract_Category__c</field>
+        <operation>equals</operation>
+        <value>Commission Agreement</value>
+    </filters>
+    <filters>
+        <field>CONTRACT.END_DATE</field>
+        <operation>greaterThan</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>All currently active Commission Agreemen</label>
+</ListView>

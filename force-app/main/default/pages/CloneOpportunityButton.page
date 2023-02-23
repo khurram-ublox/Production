@@ -1,0 +1,9 @@
+<apex:page showHeader="false"  standardController="Opportunity" extensions="CloneOpp">
+<!-- Begin Default Content REMOVE THIS -->
+<apex:form >
+    <p>Click Save if you want to Clone this Opportunity</p>
+        <apex:pageBlock >
+            <apex:commandButton value="Save" action="{!classicCloneOpp}"/>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+The following user opted out during a mass mailing: 
+{!Contact.Function__c}
+{!Contact.Email}
+
+{!Contact.Link}
+
+To opt in again make the following two corrections:
+
+1) change profile in ExactTarget
+Open the mass mail, click on "Update Profile" and correct the settings: 
+- select newsletter, press release and product notification
+- remove flag from Opt out option
+
+2) change settings in Salesforce
+Open Contact with link above and adapt settings:
+- Add flag to press release, production notification, newsletter
+- Remove flag for "Email Opt Out"

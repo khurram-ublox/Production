@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regular</fullName>
+    <fields>Name</fields>
+    <fields>Type</fields>
+    <fields>New_Market__c</fields>
+    <fields>New_Application_Type__c</fields>
+    <label>Regular</label>
+</CompactLayout>

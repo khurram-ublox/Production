@@ -1,0 +1,19 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<a href="https://www.u-blox.com/"><img src="https://c.eu4.content.force.com/servlet/servlet.ImageServer?id=015570000054V9a&amp;oid=00D200000001ogf" alt="" align="left" border="0"></a><br>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[Dear {!Lead.Salutation} {!Lead.Name},  
+<br>
+<br>Thank you for providing your details. The submitted information has been forwarded to a u-blox sales representative for processing and confirmation.<br><br>The data submitted will be held in strict confidence.<br>
+<br>
+<br>Kind regards
+<br>u-blox]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

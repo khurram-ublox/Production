@@ -1,0 +1,9 @@
+Last Time Buy Date of {!Product2.Type_No__c} is in a month.
+
+Last Time Buy Date: {!Product2.Last_Time_Buy_Date__c}
+Last Shipment Date: {!Product2.Last_Shipment_Date__c}
+
+Please ensure the follow-up:
+- Warn Sales about the approaching LTB date so that they can go back to customers if the expected last time buy orders have not arrived.
+
+Link to record: {!Product2.Link}

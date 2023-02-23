@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_A4F</fullName>
+    <availability>online</availability>
+    <description>Shows Forecast of this Account using App4Forecast
+Orig: URL, /00O57000007N3Y7?pv2=&quot;{!Account.SF_Account_Number__c}&quot;</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>1000</height>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Forecast A4F</masterLabel>
+    <openType>newWindow</openType>
+    <page>AccountUrlForecastA4F</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <width>1350</width>
+</WebLink>

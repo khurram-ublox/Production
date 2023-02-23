@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>The flow calls the apex  SkyvvaMessageObjectHelper class to asynchronously update the &apos;Error Message&apos; field in Skyvva Message object.</description>
+        <name>call_SkyvvaMessageObjectHelper_apex_class</name>
+        <label>call SkyvvaMessageObjectHelper apex class</label>
+        <locationX>372</locationX>
+        <locationY>353</locationY>
+        <actionName>SkyvvaMessageObjectHelper</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>skyvvaMsgId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>Check_Comment_Error</name>
+        <label>Check Comment Error</label>
+        <locationX>168</locationX>
+        <locationY>351</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Comment</name>
+            <conditionLogic>(1 AND 2 ) OR (2 AND 3 AND 4 )</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.skyvvasolutions__Comment__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>DUPLICATE_VALUE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Error_Message__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.skyvvasolutions__Comment__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>duplicate value</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.skyvvasolutions__Comment__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Billings__c</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>call_SkyvvaMessageObjectHelper_apex_class</targetReference>
+            </connector>
+            <label>Check Comment</label>
+        </rules>
+    </decisions>
+    <interviewLabel>skyvva Message After Insert/Update Processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>skyvva Message After Insert/Update Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Check_Comment_Error</targetReference>
+        </connector>
+        <object>skyvvasolutions__IMessage__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

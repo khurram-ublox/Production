@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_ID__c</fullName>
+    <description>Product identification</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus) Product identification. Used to match with field &quot;Type No&quot; in Salesforce products.</inlineHelpText>
+    <label>Type Number</label>
+    <length>30</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

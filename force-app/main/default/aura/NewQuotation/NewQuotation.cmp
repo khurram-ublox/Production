@@ -1,0 +1,138 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName" access="global" controller="NewQuotationCtrl">
+    <ltng:require styles="{!$Resource.ActionBoxCSS}"/>
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="loading" type="Boolean" default="false"/>
+    <aura:attribute name="account" type="Account" />
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    <aura:attribute name="errorMessage" type="String" />
+    <!-- 28th -->
+    <aura:attribute name="ubloxOpp" type="Opportunity"  default="{ 'sobjectType': 'Opportunity','Name': '','Type_of_quotation__c':'Quotation','StageName':'3 Calling on','RecordTypeId' : '01220000000CqRdAAK'}"/>
+    <aura:attribute name="showTashang" type="Boolean" default="false"/>
+    <aura:attribute name="showUblox" type="Boolean" default="false"/>
+    <!-- 28th -->
+    <aura:attribute name="recordId" type="string" />
+    <aura:attribute name="record" type="Object" description="The record object to be displayed"/>
+    <aura:attribute name="recordFields" type="Object" description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData"/>
+    
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.recordFields}"
+                      mode="EDIT"/>
+    
+    
+    <div>
+        <div class="slds-is-relative">
+            <aura:if isTrue="{! v.loading }">
+                <lightning:spinner size="medium" variant="brand" />
+            </aura:if>
+            <aura:if isTrue="{! not(empty(v.recordFields))}">
+                <!-- OTHER MODAL MARK-UP HERE --> 
+                <div>
+                    <div class="modal-header slds-modal__header">
+                        <h2 class="title slds-text-heading--medium" >New Quotation</h2>
+                    </div>
+                    
+                    <div class="custom-modal-body">
+                        
+                        <div aura:id="errorDiv" class="errorDiv slds-hide">{!v.errorMessage}</div>
+                        <lightning:recordEditForm objectApiName="Opportunity">
+                                <aura:if isTrue="{!v.sObjectName == 'Opportunity' }" >
+                                    
+                                    <div class="slds-grid slds-grid_align-space slds-box">
+                                        <div class="slds-col slds-size_1-of-1">
+                                            <lightning:inputField fieldName="Quotation_Account__c" value="{!v.recordFields.AccountId}" disabled ="true" />
+                                            <lightning:inputField fieldName="Referred_Opportunity__c" value="{!v.recordId}" disabled ="true" />
+                                            <lightning:inputField fieldName="Referred_Opportunity_Account__c" value="{!v.recordFields.AccountId}" disabled ="true" />
+                                            <lightning:inputField fieldName="CurrencyIsoCode" value="{!v.recordFields.CurrencyIsoCode}" disabled ="true" />
+                                            <lightning:inputField fieldName="CloseDate" value="{!v.account.OppCloseDate__c}" disabled ="true" />
+                                        </div>
+                                    </div>     
+                                    
+                                    <aura:set attribute="else">
+                                        <lightning:inputField fieldName="Quotation_Account__c" value="{!v.recordId}" disabled="true" />
+                                        <lightning:inputField fieldName="CloseDate" value="{!v.account.OppCloseDate__c}" class="slds-hide" disabled ="true" />
+                                    </aura:set>
+                                </aura:if>
+                        </lightning:recordEditForm>
+                        
+                        <aura:if isTrue="{!v.showUblox}" > 
+                            
+                            <lightning:recordEditForm objectApiName="Opportunity" 
+                                                      onsubmit="{!c.handleSubmit}" 
+                                                      onerror="{!c.handleError}" 
+                                                      onload="{!c.handleCreateLoad}"
+                                                      onsuccess="{!c.handleSuccess}"
+                                                      aura:id="myForm"
+                                                      >
+                               
+                                
+                                <div class="slds-section slds-is-open">
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        <span class="slds-truncate slds-p-horizontal_small" title="Section Title">U-Blox Quotation </span>
+                                    </h3>
+                                </div>
+                                
+                                <lightning:inputField fieldName="Type_of_quotation__c" value="{!v.ubloxOpp.Type_of_quotation__c}"/>
+                                <lightning:inputField fieldName="Special_Price_Request__c" value="{!v.ubloxOpp.Special_Price_Request__c}" class="slds-m-top_large" />
+                                <lightning:inputField fieldName="Automotive_RFQ_RFI__c" value="{!v.ubloxOpp.Automotive_RFQ_RFI__c}" />
+                                <lightning:inputField fieldName="Delivery_del__c" value="{!v.ubloxOpp.Delivery_del__c}" class="slds-m-top_large" />
+                                <lightning:inputField fieldName="Payment__c" value="{!v.ubloxOpp.Payment__c}" class="slds-m-top_large" />
+                                <lightning:inputField fieldName="Remarks__c" value = "{!v.ubloxOpp.Remarks__c}"/>
+                                <lightning:inputField fieldName="RecordTypeId" value="{!v.ubloxOpp.RecordTypeId}" disabled="true" class="slds-hide" />
+                                <lightning:inputField fieldName="StageName" value="{!v.ubloxOpp.StageName}" class="slds-hide" />
+                                
+                                <aura:if isTrue="{!!v.showTashang }" >
+                                <div class="modal-footer slds-modal__footer">
+                                    <div class="forceChangeRecordTypeFooter">
+                                        <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.handleCancel}">Cancel</button>
+                                        <lightning:button variant="brand" label="Submit" type="submit" class="slds-button slds-button--brand" />
+                                    </div>
+                                </div>
+                               </aura:if>
+                            </lightning:recordEditForm>
+                        </aura:if>
+                        
+                        <aura:if isTrue="{!v.showTashang}" >
+                            <lightning:recordEditForm objectApiName="Opportunity" 
+                                                      onsubmit="{!c.handleSubmit}" 
+                                                      onerror="{!c.handleError}"
+                                                      onsuccess="{!c.handleSuccess}"
+                                                      >     
+                                
+                                
+                                <div class="slds-section slds-is-open">
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        <span class="slds-truncate slds-p-horizontal_small" title="Section Title">Tashang Quotation</span>
+                                    </h3>
+                                </div>
+                                
+                                <lightning:inputField fieldName="Type_of_quotation__c" value="Quotation"/>
+                                <lightning:inputField fieldName="Special_Price_Request__c" value="" class="slds-m-top_large" />
+                                <lightning:inputField fieldName="Automotive_RFQ_RFI__c" value="" class="slds-m-top_large"/>
+                                <lightning:inputField fieldName="Delivery_del__c" class="slds-m-top_large" />
+                                <lightning:inputField fieldName="Payment__c" class="slds-m-top_large"/>
+                                <lightning:inputField fieldName="Remarks__c" />
+                                <lightning:inputField fieldName="RecordTypeId" value="01220000000CqRdAAK" disabled="true" class="slds-hide" />
+                                <lightning:inputField fieldName="StageName" value="3 Calling on" class="slds-hide" />
+                                
+                                <div class="modal-footer slds-modal__footer">
+                                    <div class="forceChangeRecordTypeFooter">
+                                        <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.handleCancel}">Cancel</button>
+                                        <lightning:button variant="brand" label="Submit" type="submit" class="slds-button slds-button--brand" />
+                                    </div>
+                                </div>
+                            </lightning:recordEditForm>
+                        </aura:if>
+                    </div>
+                </div>
+            </aura:if>
+        </div>
+    </div>
+    
+</aura:component>

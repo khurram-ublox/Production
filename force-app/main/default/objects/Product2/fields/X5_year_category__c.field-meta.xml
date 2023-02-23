@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X5_year_category__c</fullName>
+    <defaultValue>&quot;Other&quot;</defaultValue>
+    <description>5 year category for business plans only, please don&apos;t change values</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Values will be set automatically, don&apos;t change the entries</inlineHelpText>
+    <label>5 year category</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

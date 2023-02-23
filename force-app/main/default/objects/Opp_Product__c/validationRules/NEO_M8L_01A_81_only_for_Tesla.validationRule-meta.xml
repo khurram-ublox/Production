@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NEO_M8L_01A_81_only_for_Tesla</fullName>
+    <active>true</active>
+    <errorConditionFormula>Product__r.Type_No__c=&quot;NEO-M8L-01A-81&quot; &amp;&amp;
+NOT(CONTAINS(Opportunity__r.Account.Name,&quot;Tesla&quot;)) &amp;&amp;
+NOT($User.ProfileId=&quot;00e20000000ki5l&quot;) &amp;&amp;
+NOT($User.ProfileId=&quot;00eD00000016L3v&quot;)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>Select NEO-M8L-01A-10, not NEO-M8L-01A-81 that is only for limited Accounts.</errorMessage>
+</ValidationRule>

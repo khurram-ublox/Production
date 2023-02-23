@@ -1,0 +1,19 @@
+<apex:page standardController="Special_Price_Request_Product__c" recordSetVar="speproducts" extensions="NewSPRProductCtrl">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/11.1/connection.js"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() { 
+       var CurrencyIsoCode='{!sprObj.CurrencyIsoCode}';    
+       var Name= '{!sprObj.Name}';
+       var id='{!sprObj.Id}';
+ 
+      if((typeof sforce != 'undefined') && sforce && (!!sforce.one) ){             
+              sforce.one.createRecord('Special_Price_Request_Product__c',null,{'Special_Price_Request__c' : id,'CurrencyIsoCode':CurrencyIsoCode} );                 
+        } else {
+            window.top.location='/a0I/e?CF00N57000006PmXd='+Name+'&CF00N57000006PmXd_lkid='+id+'&CurrencyIsoCode='+CurrencyIsoCode+'&retURL='+id;       
+        }
+     });
+    </script>
+
+</apex:page>

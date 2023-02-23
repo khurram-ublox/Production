@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Make_closed_cases_non_editable</fullName>
+    <active>true</active>
+    <description>Make closed cases as non-editable for community user</description>
+    <errorConditionFormula>AND(
+PRIORVALUE(IsClosed) = True, 
+$Profile.Name = &apos;Community Registered User&apos;
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t edit this case, You are advised to create new case as current is closed.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Area__c</fullName>
+    <description>Used this for RFPD distributor, these are the area&apos;s where RFPD is working</description>
+    <externalId>false</externalId>
+    <inlineHelpText>RFPD contact person area of operations</inlineHelpText>
+    <label>Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>RFPD_Contact__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>RFPD_Area</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Mike Normandeau</controllingFieldValue>
+            <valueName>Quebec / Ottawa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mike O&apos;Neill</controllingFieldValue>
+            <controllingFieldValue>Eileen Showalter</controllingFieldValue>
+            <valueName>MI, IN, OH, W. PA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nadine O&apos;Hara</controllingFieldValue>
+            <controllingFieldValue>Ruben Zarrabi</controllingFieldValue>
+            <valueName>Western US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Paul Douville</controllingFieldValue>
+            <valueName>Los Angeles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ray Zhang</controllingFieldValue>
+            <valueName>South / East Americas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Razvan Rusu</controllingFieldValue>
+            <valueName>Global Engineering</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sal Robles</controllingFieldValue>
+            <valueName>CO, UT, CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scott Dickson</controllingFieldValue>
+            <valueName>Upstate NY &amp; New England, BAE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sean Seely</controllingFieldValue>
+            <controllingFieldValue>Andrea Falcone-Gritman</controllingFieldValue>
+            <valueName>MA, NH, ME, RI, VT, Raytheon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chris McCormick</controllingFieldValue>
+            <valueName>MD, VA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Shelly De La Cruz</controllingFieldValue>
+            <controllingFieldValue>Ila Bryne</controllingFieldValue>
+            <valueName>AZ, NM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Christine Chinchilla</controllingFieldValue>
+            <controllingFieldValue>Derrick Evans</controllingFieldValue>
+            <valueName>TX, OK, MS, LA, AR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Steve Markoe</controllingFieldValue>
+            <valueName>Sacremento, Reno</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Christine Kisor</controllingFieldValue>
+            <controllingFieldValue>Dave Moshiri</controllingFieldValue>
+            <controllingFieldValue>Gray Wong</controllingFieldValue>
+            <valueName>Bay Area</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Steven Jaske</controllingFieldValue>
+            <controllingFieldValue>Michael Canonico</controllingFieldValue>
+            <valueName>All Americas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Christine Saik</controllingFieldValue>
+            <valueName>Eastern Canada</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Theresa Cleveland</controllingFieldValue>
+            <valueName>MD, GA, AL, NC, SC, TN, VA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claude Monast</controllingFieldValue>
+            <controllingFieldValue>Chris Lewis</controllingFieldValue>
+            <valueName>Toronto</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Thiago Fiorini</controllingFieldValue>
+            <valueName>Brazil, Argentina, Chile, Uruguay, Paraguay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Claudia Freda</controllingFieldValue>
+            <valueName>Upstate NY, CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tim LeBar</controllingFieldValue>
+            <controllingFieldValue>Dave Ounsted</controllingFieldValue>
+            <valueName>Western Canada</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Danny Molezion</controllingFieldValue>
+            <valueName>Eastern US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Da Shen</controllingFieldValue>
+            <controllingFieldValue>Kirk Barton</controllingFieldValue>
+            <valueName>North / West Americas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Adrian Kurup</controllingFieldValue>
+            <valueName>North  &amp; West  US &amp; Canada</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Alisha Low</controllingFieldValue>
+            <valueName>PA, NY, NJ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Amanda Mrizek</controllingFieldValue>
+            <valueName>IA, KS, MO, NE, Southern IL.</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Bob Molenda</controllingFieldValue>
+            <valueName>Flextronics, Benchmark, Celestica</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Byron Szulczewski</controllingFieldValue>
+            <controllingFieldValue>Judy Hanley</controllingFieldValue>
+            <valueName>IL,WI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Celeste Arnaz</controllingFieldValue>
+            <valueName>Columbia, Peru, Venezuela, Equador, Bolivia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Chris Iannello</controllingFieldValue>
+            <valueName>Long Island, North NJ, CT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tim Stepp</controllingFieldValue>
+            <valueName>San Diego</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dawn Ferguson-Vitellaro</controllingFieldValue>
+            <controllingFieldValue>Elias Ghafari</controllingFieldValue>
+            <valueName>Central US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DeAnne Carrington</controllingFieldValue>
+            <valueName>Plexus, Jabil, Sanmina</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dominik Norquist</controllingFieldValue>
+            <valueName>CO, UT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Garry Dwyer</controllingFieldValue>
+            <valueName>IA, KS, MO, NE, MN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Iris Mariscal</controllingFieldValue>
+            <valueName>Mexico, Foxconn</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ivan Alessandri</controllingFieldValue>
+            <valueName>Latin America</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Janice Gilroy</controllingFieldValue>
+            <valueName>IA, KS, MO, NE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Machala</controllingFieldValue>
+            <valueName>Eastern &amp; South US</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>John Shoemake</controllingFieldValue>
+            <valueName>GA, AL, NC, SC, E.TN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Karen Dallo-Shea</controllingFieldValue>
+            <valueName>Resellers, Distributors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kent Edel</controllingFieldValue>
+            <valueName>Southern NJ, Southeast PA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kris Wilson</controllingFieldValue>
+            <valueName>FL, VA, MD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lisa Owens</controllingFieldValue>
+            <valueName>FL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Maria Ghanbari</controllingFieldValue>
+            <valueName>CA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Matt Meister</controllingFieldValue>
+            <valueName>Pacific Northwest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mike Dimaria</controllingFieldValue>
+            <valueName>North America</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

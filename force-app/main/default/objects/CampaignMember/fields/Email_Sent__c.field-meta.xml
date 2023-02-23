@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Sent__c</fullName>
+    <description>Checked if Date_Sent__c is not null.</description>
+    <externalId>false</externalId>
+    <formula>NOT(ISNULL(Date_Sent__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Email Sent</label>
+    <type>Checkbox</type>
+</CustomField>

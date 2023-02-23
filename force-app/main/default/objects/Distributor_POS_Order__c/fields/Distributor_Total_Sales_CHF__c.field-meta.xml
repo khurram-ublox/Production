@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_Total_Sales_CHF__c</fullName>
+    <description>https://wiki.u-blox.com/bin/view/Generic/IT.OpenIssues29177</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(CurrencyIsoCode, &quot;USD&quot;),  USDtoCHF__c * Distributor_Total_Sales__c , 
+
+  IF(ISPICKVAL(CurrencyIsoCode, &quot;EUR&quot;),  EURtoCHF__c * Distributor_Total_Sales__c , 
+
+   IF(ISPICKVAL(CurrencyIsoCode, &quot;JPY&quot;), JPYtoCHF__c *  Distributor_Total_Sales__c , NULL) ) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Distributor Total Sales CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

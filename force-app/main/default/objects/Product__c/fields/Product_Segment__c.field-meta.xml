@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Segment__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( Product_Category__c ,
+&quot;POS chips&quot;,&quot;POS chips&quot;,
+&quot;POS modules&quot;, &quot;POS modules&quot;,
+&quot;SHO modules&quot;, &quot;SHO modules&quot;,
+&quot;SHO services&quot;, &quot;SHO services&quot;,
+&quot;CEL modules&quot;, Case ( Cellular_Technology__c,
+   &quot;GPRS&quot;,&quot;GPRS modules&quot;,
+   &quot;EDGE&quot;, &quot;GPRS modules&quot;,
+   &quot;HSDPA&quot;, &quot;HSPA modules&quot;,
+   &quot;HSUPA&quot;, &quot;HSPA modules&quot;,
+   &quot;HSPA&quot;, &quot;HSPA modules&quot;,
+   &quot;HSPA+&quot;, &quot;HSPA modules&quot;,
+   &quot;CDMA 1xRTT&quot;, &quot;CDMA modules&quot;,
+   &quot;CDMA EV-DO&quot;, &quot;CDMA modules&quot;,
+   &quot;LTE-only&quot;,&quot;LTE modules&quot;,
+   &quot;LTE-multi&quot;,&quot;LTE modules&quot;,
+   &quot;CIoT&quot;,&quot;CIoT modules&quot;,
+   &quot;Other&quot;),
+&quot;CEL chips&quot;, Case ( Cellular_Technology__c,
+   &quot;GPRS&quot;,&quot;GPRS chips&quot;,
+   &quot;EDGE&quot;, &quot;GPRS chips&quot;,
+   &quot;HSDPA&quot;, &quot;HSPA chips&quot;,
+   &quot;HSUPA&quot;, &quot;HSPA chips&quot;,
+   &quot;HSPA&quot;, &quot;HSPA chips&quot;,
+   &quot;HSPA+&quot;, &quot;HSPA chips&quot;,
+   &quot;CDMA 1xRTT&quot;, &quot;CDMA chips&quot;,
+   &quot;CDMA EV-DO&quot;, &quot;CDMA chips&quot;,
+   &quot;LTE-only&quot;,&quot;LTE chips&quot;,
+   &quot;LTE-multi&quot;,&quot;LTE chips&quot;,
+   &quot;Other&quot;),
+&quot;Other&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Grouping into limited segments. User for reporting.</inlineHelpText>
+    <label>Product Segment</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

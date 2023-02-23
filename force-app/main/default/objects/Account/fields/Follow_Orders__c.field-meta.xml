@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Follow_Orders__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, new post is added in Chatter Feed on every new Order. Follow this account if you want to be notified.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If checked, new post is added in Chatter Feed on every new Order. Follow this account if you want to be notified.</inlineHelpText>
+    <label>Follow Orders</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

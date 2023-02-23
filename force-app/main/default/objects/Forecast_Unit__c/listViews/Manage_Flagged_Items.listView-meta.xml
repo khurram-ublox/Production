@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manage_Flagged_Items</fullName>
+    <booleanFilter>1 or  2 or 3 or 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Sales_Last_6_Months__c</columns>
+    <columns>Sales_Last_3_Months__c</columns>
+    <columns>Total_Order_Book__c</columns>
+    <columns>Total_Manual_Forecast__c</columns>
+    <columns>Number_of_Manual_Forecast__c</columns>
+    <columns>Flagged_item__c</columns>
+    <columns>Flag_Reason__c</columns>
+    <columns>Propose_Flag_Removal__c</columns>
+    <columns>Flag_Removal_Reason__c</columns>
+    <columns>Channel_Manager__c</columns>
+    <columns>Last_Manual_Update__c</columns>
+    <columns>Flag_change_request__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Flagged_item__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Flag_change_request__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Propose_Flag_Removal__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>QA,KA,SA</value>
+    </filters>
+    <label>Manage Flagged Items</label>
+    <sharedTo>
+        <group>SalesAdmins</group>
+    </sharedTo>
+</ListView>

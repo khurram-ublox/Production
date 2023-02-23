@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Needs_Period_Update__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+(X6_months_history_formula__c = 1 &amp;&amp; X6_months_history__c = false)
+||
+(X6_months_history_formula__c = 0 &amp;&amp; X6_months_history__c = true)
+||
+/* added 2013-11-04 Werner Grätzer */
+X3_months_history_formula__c &lt;&gt; X3_months_history__c
+||
+(Budget_Actual_FP_formula__c = 1 &amp;&amp; Budget_Actual_FP__c = false)
+||
+(Budget_Actual_FP_formula__c = 0 &amp;&amp; Budget_Actual_FP__c = true)
+||
+(Budget_Next_FP_formula__c = 1 &amp;&amp; Budget_next_FP__c = false)
+||
+(Budget_Next_FP_formula__c = 0 &amp;&amp; Budget_next_FP__c = true)
+||
+/* added 2013-11-04 Werner Grätzer */
+Future_Month_formula__c &lt;&gt; Future_Month__c
+,
+&quot;yes&quot;,
+&quot;no&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Needs Period Update</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

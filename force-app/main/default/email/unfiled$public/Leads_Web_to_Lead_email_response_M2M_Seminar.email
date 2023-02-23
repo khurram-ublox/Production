@@ -1,0 +1,45 @@
+Dear {!Lead.Name},  
+
+Thank you for registering for the CDMA M2M Seminar 2013. The information you submitted has been forwarded to a u-blox sales representative for processing and confirmation.  
+
+City / Date of participation:
+{!Lead.Event_place_and_date__c}
+
+Seminar agenda:
+  - Registration, check in & continental breakfast / refreshments (45 minutes)
+  - Welcome & Introduction (5 minutes)
+  - Sprint’s commitment to 2G, M2M capability (30 minutes)
+  - Advantages CDMA, Sprint certification process (30 minutes)
+  - Break (30 minutes)
+  - u-blox modules for CDMA and GPS/GNSS (30 minutes)
+  - Taoglas antennas, design recommendations for CDMA and GPS/GNSS (30 minutes)
+  - Hands-on training with C16-C20-00S reference design (30 minutes)
+  - Q & A (30 minutes)
+  - Seminar close., Local team available to answer questions, set appointment, etc.
+
+The agenda and all venue addresses can be found at:
+http://www.u-blox.com/en/m2m-seminar-2013-agenda.html
+
+
+The registration has been made for:
+
+Your name: {!Lead.Name}
+Company: {!Lead.Company}
+Address: {!Lead.Address} 
+Phone: {!Lead.Phone}
+E-Mail: {!Lead.Email}
+
+Credit card: {!LEFT(Lead.CC_Type__c,16)}
+Expiration date: {!LEFT(Lead.CC_expiry__c,2)}/{!RIGHT(Lead.CC_expiry__c,4)}
+Name as on the card: {!LEFT(Lead.CC_Holder_Name__c,32)}
+Last four digits of your credit card number: {!RIGHT(Lead.CC_Number__c, 4)}
+
+You will receive confirmation response within 4-5 business days.
+If you have further questions, please contact u-blox America Inc.
+E-mail: info_us@u-blox.com
+Phone: +1 (703) 483 3180
+
+We are looking forward to welcoming you at the seminar!
+
+Kind regards
+u-blox, Sprint, Taoglass

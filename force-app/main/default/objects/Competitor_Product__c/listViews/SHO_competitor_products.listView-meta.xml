@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHO_competitor_products</fullName>
+    <columns>Competitor__c</columns>
+    <columns>NAME</columns>
+    <columns>Closest_uB_Product__c</columns>
+    <columns>Technology__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Size__c</columns>
+    <columns>Link_website__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Category__c</field>
+        <operation>includes</operation>
+        <value>Short Range</value>
+    </filters>
+    <label>SHO competitor products</label>
+</ListView>

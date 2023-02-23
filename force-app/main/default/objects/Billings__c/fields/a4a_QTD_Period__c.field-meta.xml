@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_QTD_Period__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+YEAR(Invoice_Date__c) = YEAR(TODAY()-1) 
+&amp;&amp; 
+CEILING(MONTH(Invoice_Date__c+1)/3) = CEILING(MONTH(TODAY()-1)/3) 
+&amp;&amp; 
+(
+DAY(Invoice_Date__c) &lt;= DAY(TODAY()-1)  || MONTH(Invoice_Date__c) &lt; MONTH(TODAY()-1)
+)
+, 
+&quot;QTD&quot;, 
+IF( 
+YEAR(Invoice_Date__c) = YEAR(TODAY()-1)-1 
+&amp;&amp; 
+CEILING(MONTH(Invoice_Date__c+1)/3) = CEILING(MONTH(TODAY()-1)/3) 
+&amp;&amp; 
+MONTH(Invoice_Date__c) &lt;= MONTH(TODAY()-1) 
+&amp;&amp;
+(
+DAY(Invoice_Date__c) &lt;= DAY(TODAY()-1)  || MONTH(Invoice_Date__c) &lt; MONTH(TODAY()-1)
+) 
+, 
+&quot;PYQTD&quot; 
+, 
+NULL 
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a QTD Period</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <processMetadataValues>
+                    <name>inputDataType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>leftHandSideType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>operatorDataType</name>
+                    <value>
+                        <stringValue>DateTime</stringValue>
+                    </value>
+                </processMetadataValues>
+                <processMetadataValues>
+                    <name>rightHandSideType</name>
+                    <value>
+                        <stringValue>Boolean</stringValue>
+                    </value>
+                </processMetadataValues>
+                <leftValueReference>myVariable_current.CreatedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>SPRP: Fill IPR, FX rates</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE(
+CASE ( [Special_Price_Request_Product__c].IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;All except Interdigital&quot;,&quot;4&quot;,
+&quot;All except Qualcomm and Interdigital&quot;,&quot;5&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (TEXT( [Special_Price_Request_Product__c].Use_Restriction__c  ), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_USD__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_USD__c,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_USD__c,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_USD__c,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_USD__c,
+0),
+&quot;1&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_USD_QC__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_USD_QC__c,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_USD_QC__c,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_USD_QC__c,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_USD_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_M2M_USD__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_Telematics_USD__c,
+0),
+&quot;3&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c,
+0),
+&quot;4&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_USD_IDC__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_USD_IDC__c,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_USD_IDC__c,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_USD_IDC__c,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_USD_IDC__c,
+0),
+&quot;5&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_USD_QC_IDC__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_USD_QC_IDC__c,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_USD_QC_IDC__c,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_USD_QC_IDC__c,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_USD_QC_IDC__c,
+0),
+0
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A3_2265400040</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+CASE ( {!myVariable_current.IPR_Coverage__c},
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;All except Interdigital&quot;,&quot;4&quot;,
+&quot;All except Qualcomm and Interdigital&quot;,&quot;5&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (TEXT( {!myVariable_current.Use_Restriction__c}  ), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.M2M_USD__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_USD__c},
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_USD__c},
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_USD__c},
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_USD__c},
+0),
+&quot;1&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.M2M_USD_QC__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_USD_QC__c},
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_USD_QC__c},
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_USD_QC__c},
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_USD_QC__c},
+0),
+&quot;2&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_M2M_USD__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_Telematics_USD__c},
+0),
+&quot;3&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c},
+0),
+&quot;4&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.M2M_USD_IDC__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_USD_IDC__c},
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_USD_IDC__c},
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_USD_IDC__c},
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_USD_IDC__c},
+0),
+&quot;5&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.M2M_USD_QC_IDC__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_USD_QC_IDC__c},
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_USD_QC_IDC__c},
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_USD_QC_IDC__c},
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_USD_QC_IDC__c},
+0),
+0
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>CASE(
+CASE ( [Special_Price_Request_Product__c].IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;All except Interdigital&quot;,&quot;4&quot;,
+&quot;All except Qualcomm and Interdigital&quot;,&quot;5&quot;,
+&quot;NO&quot;),
+
+&quot;0&quot;,CASE (RIGHT (TEXT( [Special_Price_Request_Product__c].Use_Restriction__c ), LEN(TEXT(   [Special_Price_Request_Product__c].Use_Restriction__c ))-FIND(&quot; &quot;,TEXT( [Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;,  [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_Pct__c,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_Pct__c ,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_Pct__c ,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_Pct__c ,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_Pct__c ,
+0),
+
+&quot;1&quot;,CASE (RIGHT (TEXT( [Special_Price_Request_Product__c].Use_Restriction__c ), LEN(TEXT( [Special_Price_Request_Product__c].Use_Restriction__c  ))-FIND(&quot; &quot;,TEXT( [Special_Price_Request_Product__c].Use_Restriction__c ))),
+&quot;M2M&quot;,  [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_Pct_QC__c ,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c ,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_Pct_QC__c ,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_Pct__c ,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_Pct_QC__c,
+0),
+
+&quot;2&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c ), LEN(TEXT( [Special_Price_Request_Product__c].Use_Restriction__c  ))-FIND(&quot; &quot;,TEXT( [Special_Price_Request_Product__c].Use_Restriction__c  ))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_M2M_Pct__c ,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_Telematics_Pct__c ,
+0),
+
+&quot;3&quot;,CASE (RIGHT (TEXT( [Special_Price_Request_Product__c].Use_Restriction__c  ), LEN(TEXT( [Special_Price_Request_Product__c].Use_Restriction__c ))-FIND(&quot; &quot;,TEXT( [Special_Price_Request_Product__c].Use_Restriction__c ))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c ,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c ,
+0),
+
+&quot;4&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_Pct_IDC__c ,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_Pct_IDC__c ,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_Pct_IDC__c ,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_Pct_IDC__c ,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_Pct_IDC__c ,
+0),
+
+&quot;5&quot;,CASE (RIGHT (TEXT([Special_Price_Request_Product__c].Use_Restriction__c), LEN(TEXT([Special_Price_Request_Product__c].Use_Restriction__c))-FIND(&quot; &quot;,TEXT([Special_Price_Request_Product__c].Use_Restriction__c))),
+&quot;M2M&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.M2M_Pct_QC_IDC__c ,
+&quot;Telematics&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Telematics_Pct_QC_IDC__c ,
+&quot;Handset&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Handset_Pct_QC_IDC__c ,
+&quot;Laptop&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Laptop_Pct_QC_IDC__c ,
+&quot;Other&quot;, [Special_Price_Request_Product__c].Product__r.IPR_Cost__r.Other_Pct_QC_IDC__c ,
+0),
+0
+)</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_3_myRule_1_A2_1632581307</name>
+        <dataType>Number</dataType>
+        <expression>CASE(
+CASE ( {!myVariable_current.IPR_Coverage__c},
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;All except Interdigital&quot;,&quot;4&quot;,
+&quot;All except Qualcomm and Interdigital&quot;,&quot;5&quot;,
+&quot;NO&quot;),
+
+&quot;0&quot;,CASE (RIGHT (TEXT( {!myVariable_current.Use_Restriction__c} ), LEN(TEXT(   {!myVariable_current.Use_Restriction__c} ))-FIND(&quot; &quot;,TEXT( {!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;,  {!myVariable_current.Product__r.IPR_Cost__r.M2M_Pct__c},
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_Pct__c} ,
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_Pct__c} ,
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_Pct__c} ,
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_Pct__c} ,
+0),
+
+&quot;1&quot;,CASE (RIGHT (TEXT( {!myVariable_current.Use_Restriction__c} ), LEN(TEXT( {!myVariable_current.Use_Restriction__c}  ))-FIND(&quot; &quot;,TEXT( {!myVariable_current.Use_Restriction__c} ))),
+&quot;M2M&quot;,  {!myVariable_current.Product__r.IPR_Cost__r.M2M_Pct_QC__c} ,
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c} ,
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_Pct_QC__c} ,
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_Pct__c} ,
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_Pct_QC__c},
+0),
+
+&quot;2&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c} ), LEN(TEXT( {!myVariable_current.Use_Restriction__c}  ))-FIND(&quot; &quot;,TEXT( {!myVariable_current.Use_Restriction__c}  ))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_M2M_Pct__c} ,
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_Telematics_Pct__c} ,
+0),
+
+&quot;3&quot;,CASE (RIGHT (TEXT( {!myVariable_current.Use_Restriction__c}  ), LEN(TEXT( {!myVariable_current.Use_Restriction__c} ))-FIND(&quot; &quot;,TEXT( {!myVariable_current.Use_Restriction__c} ))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c} ,
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c} ,
+0),
+
+&quot;4&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.M2M_Pct_IDC__c} ,
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_Pct_IDC__c} ,
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_Pct_IDC__c} ,
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_Pct_IDC__c} ,
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_Pct_IDC__c} ,
+0),
+
+&quot;5&quot;,CASE (RIGHT (TEXT({!myVariable_current.Use_Restriction__c}), LEN(TEXT({!myVariable_current.Use_Restriction__c}))-FIND(&quot; &quot;,TEXT({!myVariable_current.Use_Restriction__c}))),
+&quot;M2M&quot;, {!myVariable_current.Product__r.IPR_Cost__r.M2M_Pct_QC_IDC__c} ,
+&quot;Telematics&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Telematics_Pct_QC_IDC__c} ,
+&quot;Handset&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Handset_Pct_QC_IDC__c} ,
+&quot;Laptop&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Laptop_Pct_QC_IDC__c} ,
+&quot;Other&quot;, {!myVariable_current.Product__r.IPR_Cost__r.Other_Pct_QC_IDC__c} ,
+0),
+0
+)</expression>
+        <scale>18</scale>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>TODAY() </stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_4_myRule_1_A1_1183548962</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>SPRP_Process_builder-1_InterviewLabel</interviewLabel>
+    <label>SPRP: Process builder</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Special_Price_Request_Product__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Special_Price_Request_Product__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Fill Exchange Rate Date</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <connector>
+            <targetReference>myRule_1_A2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Exchange Rate Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Exchange_Rate_Date__c</field>
+            <value>
+                <elementReference>formula_4_myRule_1_A1_1183548962</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Special_Price_Request_Product__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Special_Price_Request_Product__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A2</name>
+        <label>SPRP: Fill IPR Pct</label>
+        <locationX>100</locationX>
+        <locationY>300</locationY>
+        <connector>
+            <targetReference>myRule_1_A3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>IPR Pct</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>IPR_Pct__c</field>
+            <value>
+                <elementReference>formula_3_myRule_1_A2_1632581307</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Special_Price_Request_Product__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <processMetadataValues>
+            <name>evaluationType</name>
+            <value>
+                <stringValue>always</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>extraTypeInfo</name>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>isChildRelationship</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>reference</name>
+            <value>
+                <stringValue>[Special_Price_Request_Product__c]</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>referenceTargetField</name>
+        </processMetadataValues>
+        <name>myRule_1_A3</name>
+        <label>SPRP: Fill IPR USD</label>
+        <locationX>100</locationX>
+        <locationY>400</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <processMetadataValues>
+                <name>implicit</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </processMetadataValues>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>myVariable_current.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Number</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>IPR USD</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>IPR_USD__c</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A3_2265400040</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Special_Price_Request_Product__c</object>
+    </recordUpdates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Special_Price_Request_Product__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Special_Price_Request_Product__c</objectType>
+    </variables>
+</Flow>

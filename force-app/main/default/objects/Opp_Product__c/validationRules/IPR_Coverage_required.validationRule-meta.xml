@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Coverage_required</fullName>
+    <active>true</active>
+    <description>IPR Coverage required when Use Restriction is defined.</description>
+    <errorConditionFormula>IF(
+NOT(ISPICKVAL(Use_Restriction__c,&quot;&quot;)) &amp;&amp; ISPICKVAL(IPR_Coverage__c,&quot;&quot;) &amp;&amp;
+DATEVALUE (CreatedDate) &gt;= DATE (2021,04,23),
+TRUE, FALSE)</errorConditionFormula>
+    <errorDisplayField>IPR_Coverage__c</errorDisplayField>
+    <errorMessage>IPR Coverage must be selected.</errorMessage>
+</ValidationRule>

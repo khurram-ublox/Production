@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Microdis_chrismas_card_contacts</fullName>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Service_Item_2__c</columns>
+    <columns>Service_Item_1__c</columns>
+    <columns>PCN_Modules_Services__c</columns>
+    <columns>PCN_Standard_Chips__c</columns>
+    <columns>CONTACT.EMAIL_OPT_OUT</columns>
+    <columns>Left_the_company__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Panufnik</value>
+    </filters>
+    <label>Microdis chrismas card contacts</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RegionEMEA</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

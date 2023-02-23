@@ -1,0 +1,38 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" controller="AssistNowEnableCtrl">
+    <ltng:require styles="{!$Resource.ActionBoxCSS}"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="conform" type="Boolean" />
+    <aura:attribute name="cloneOppId" type="String" />
+    
+    <aura:if isTrue="{!not(empty(v.conform))}">
+        
+        <div class="modal-header slds-modal__header">
+            <h2 class="title slds-text-heading--medium" >AssistNow Enable</h2>
+        </div>
+        <div class="scrollable custom-modal-body">
+    
+            <aura:if isTrue="{!v.conform}">
+                <p>This will generate a new token and send it to this contact. Are you sure you want to do this?</p>
+                <aura:set attribute="else">
+                    <p>A token has already been generated for this contact. This will re-send the token to this contact. Are you sure you want to do this?</p>
+                </aura:set>
+            </aura:if> 
+    
+        </div>    
+        <div class="modal-footer slds-modal__footer">
+            <div class="forceChangeRecordTypeFooter">
+                <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.cancel}" >Cancel</button>
+                
+                <aura:if isTrue="{!v.conform}">
+                    <button type="button" class="slds-button slds-button--brand" onclick="{!c.ok}">Submit</button>
+                    <aura:set attribute="else">
+                       <button type="button" class="slds-button slds-button--brand" onclick="{!c.resendok}">Resend</button> 
+                    </aura:set>
+                </aura:if>  
+            </div>
+        </div>
+    
+    </aura:if> 
+</aura:component>

@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Product_Alert_added_Logistics_Overhead</fullName>
+        <description>Product: Alert added Logistics Overhead</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Product_Logistics_Overhead_added</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_COGS_added</fullName>
+        <description>Product: COGS added</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Product_COGS_newly_added</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_ES_pre_alert</fullName>
+        <description>Product: ES pre-alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Products_product_reached_ES</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Last_Time_Buy_Date_is_approaching</fullName>
+        <description>Product: Last Time Buy Date is approaching.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_Last_Time_Buy_Date_advance_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_Missing_documents_required_for_ES_gate</fullName>
+        <description>Product: Missing documents required for ES gate</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_Missing_documents_required_for_ES_gate</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_creation_alert_CEL</fullName>
+        <ccEmails>productstrategy-cel@u-blox.com</ccEmails>
+        <description>Product: creation alert (CEL)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>martin.pillat@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_new_product_created_in_Abacus</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_creation_alert_SHO</fullName>
+        <ccEmails>productstrategy-sho@u-blox.com</ccEmails>
+        <description>Product: creation alert (SHO)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>martin.pillat@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_new_product_created_in_Abacus</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_pre_alert_ES</fullName>
+        <description>Product: pre-alert ES</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Products_pre_alert_ES</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_pre_alert_IP</fullName>
+        <description>Product: pre-alert IP</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Products_pre_alert_IP</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_shop_product_to_EoL</fullName>
+        <description>Product: shop product to EoL</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tobias.straumann@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Products_Shop_product_reached_EOL</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_status_changed_to_EOL</fullName>
+        <description>Product: status changed to EOL</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_reached_EOL</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_status_changed_to_ES</fullName>
+        <ccEmails>rel-lab-team-GLOBAL@u-blox.com,gauri.patil@u-blox.com</ccEmails>
+        <description>Product: status changed to ES</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Quality</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>com-team-global@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>herbert.blaser@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sara.moss@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_reached_ES</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_status_changed_to_IP</fullName>
+        <ccEmails>rel-lab-team-GLOBAL@u-blox.com,ladm-team-Americas@u-blox.com,gauri.patil@u-blox.com</ccEmails>
+        <description>Product: status changed to IP</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Quality</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>tobias.straumann@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_reached_IP</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_status_changed_to_MP</fullName>
+        <description>Product: status changed to MP</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_reached_MP</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_status_changed_to_Obsolete</fullName>
+        <description>Product: status changed to Obsolete</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tobias.straumann@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_reached_Obsolete</template>
+    </alerts>
+    <alerts>
+        <fullName>Product_status_changed_to_PT</fullName>
+        <ccEmails>rel-lab-team-GLOBAL@u-blox.com</ccEmails>
+        <description>Product: status changed to PT</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Quality</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>herbert.blaser@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_reached_PT</template>
+    </alerts>
+    <alerts>
+        <fullName>Productcreationalert</fullName>
+        <ccEmails>productstrategy-pos@u-blox.com</ccEmails>
+        <description>Product: creation alert (POS)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Products_new_product_created_in_Abacus</template>
+    </alerts>
+    <alerts>
+        <fullName>Products_IPR_related_fields_check_needed</fullName>
+        <description>Products: IPR-related fields check needed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Products_IPR_fields_check_required</template>
+    </alerts>
+    <alerts>
+        <fullName>Products_Product_Status_mismatches_the_gate_dates</fullName>
+        <description>Products: Product Status mismatches the gate dates.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Products_product_status_mismatch</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>ProductTexttoDescription</fullName>
+        <description>Transfer Product Text Long to Product Description
+Changed from the following formula (on Aug 07 2013):
+Product_Text_1__c &amp;&quot; &quot;&amp; Product_Text_2__c</description>
+        <field>Description</field>
+        <formula>if(len( Product_Text_1__c )&lt;&gt;0 &amp;&amp; len( Product_Text_2__c )&lt;&gt;0 &amp;&amp; len( Product_Text_3__c )&lt;&gt;0, Product_Text_1__c &amp; BR() &amp; Product_Text_2__c &amp; BR() &amp; Product_Text_3__c,
+if(len( Product_Text_1__c )&lt;&gt;0 &amp;&amp; len( Product_Text_2__c )&lt;&gt;0 &amp;&amp; len( Product_Text_3__c )=0, Product_Text_1__c &amp; BR() &amp; Product_Text_2__c,
+if(len( Product_Text_1__c )&lt;&gt;0 &amp;&amp; len( Product_Text_2__c )=0 &amp;&amp; len( Product_Text_3__c )&lt;&gt;0, Product_Text_1__c &amp; BR() &amp; Product_Text_3__c,
+Product_Text_1__c )))</formula>
+        <name>Product Text to Description</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Active_FALSE</fullName>
+        <field>IsActive</field>
+        <literalValue>0</literalValue>
+        <name>Product: Active FALSE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Add_Logistics_Overhead</fullName>
+        <description>Add 3% by default</description>
+        <field>Logistics_Overhead__c</field>
+        <formula>0.03</formula>
+        <name>Product: Add Logistics Overhead</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Comment_Updated_Date</fullName>
+        <field>Comment_Updated_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Product: Comment Updated Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Checked_Date</fullName>
+        <description>Fill TODAY</description>
+        <field>IPR_Checked_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Product: Fill IPR Checked Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_Consumer</fullName>
+        <field>IPR_Pct_Consumer__c</field>
+        <formula>IPR_Cost__r.Consumer_Pct__c</formula>
+        <name>Product: Fill IPR Pct Consumer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_Handset</fullName>
+        <field>IPR_Pct_Handset__c</field>
+        <formula>IPR_Cost__r.Handset_Pct__c</formula>
+        <name>Product: Fill IPR Pct Handset</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_Laptop</fullName>
+        <field>IPR_Pct_Laptop__c</field>
+        <formula>IPR_Cost__r.Laptop_Pct__c</formula>
+        <name>Product: Fill IPR Pct Laptop</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_M2M</fullName>
+        <field>IPR_Pct_M2M__c</field>
+        <formula>IPR_Cost__r.M2M_Pct__c</formula>
+        <name>Product: Fill IPR Pct M2M</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_Other</fullName>
+        <field>IPR_Pct_Other__c</field>
+        <formula>IPR_Cost__r.Other_Pct__c</formula>
+        <name>Product: Fill IPR Pct Other</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_Prime</fullName>
+        <field>IPR_Pct_Prime__c</field>
+        <formula>IPR_Cost__r.Prime_Pct__c</formula>
+        <name>Product: Fill IPR Pct Prime</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_Pct_Telematics</fullName>
+        <field>IPR_Pct_Telematics__c</field>
+        <formula>IPR_Cost__r.Telematics_Pct__c</formula>
+        <name>Product: Fill IPR Pct Telematics</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_Consumer</fullName>
+        <field>IPR_USD_Consumer__c</field>
+        <formula>IPR_Cost__r.Consumer_USD__c</formula>
+        <name>Product: Fill IPR USD Consumer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_Handset</fullName>
+        <field>IPR_USD_Handset__c</field>
+        <formula>IPR_Cost__r.Handset_USD__c</formula>
+        <name>Product: Fill IPR USD Handset</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_Laptop</fullName>
+        <field>IPR_USD_Laptop__c</field>
+        <formula>IPR_Cost__r.Laptop_USD__c</formula>
+        <name>Product: Fill IPR USD Laptop</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_M2M</fullName>
+        <field>IPR_USD_M2M__c</field>
+        <formula>IPR_USD_M2M__c</formula>
+        <name>Product: Fill IPR USD M2M</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_Other</fullName>
+        <field>IPR_USD_Other__c</field>
+        <formula>IPR_Cost__r.Other_USD__c</formula>
+        <name>Product: Fill IPR USD Other</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_Prime</fullName>
+        <field>IPR_USD_Prime__c</field>
+        <formula>IPR_Cost__r.Prime_USD__c</formula>
+        <name>Product: Fill IPR USD Prime</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Fill_IPR_USD_Telematics</fullName>
+        <field>IPR_USD_Telematics__c</field>
+        <formula>IPR_Cost__r.Telematics_USD__c</formula>
+        <name>Product: Fill IPR USD Telematics</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Product_Owner_to_smoi</fullName>
+        <field>Product_Owner__c</field>
+        <lookupValue>stefano.moioli@u-blox.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Product: Product Owner to :smoi:</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Product_Owner_to_svin</fullName>
+        <description>Assign to Peter Fairhurst. Stephane Vincent is deactivated.</description>
+        <field>Product_Owner__c</field>
+        <lookupValue>oreste.concepito@u-blox.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Product: Product Owner to :svin:</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Remove_IPR_Technology_Changed</fullName>
+        <field>IPR_Technology_Changed__c</field>
+        <literalValue>0</literalValue>
+        <name>Product: Remove IPR Technology Changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Uncheck_IPR_Checked</fullName>
+        <description>Remove check</description>
+        <field>IPR_Checked__c</field>
+        <literalValue>0</literalValue>
+        <name>Product: Uncheck IPR Checked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Visible_In_Masterschedule_FALSE</fullName>
+        <field>Visible_In_Masterschedule__c</field>
+        <literalValue>0</literalValue>
+        <name>Product: Visible In Masterschedule FALSE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Product_Visible_To_Partner_FALSE</fullName>
+        <field>Visible_To_Partner__c</field>
+        <literalValue>0</literalValue>
+        <name>Product: Visible To Partner FALSE</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Product Text to Description</fullName>
+        <actions>
+            <name>ProductTexttoDescription</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product changed status to EOL</fullName>
+        <actions>
+            <name>Product_status_changed_to_EOL</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Status of product changed to End-of-Life</description>
+        <formula>ISCHANGED(Product_Status__c) &amp;&amp;
+ISPICKVAL(Product_Status__c, &quot;End of Life&quot;) &amp;&amp;
+NOT(ISPICKVAL(Product_Category__c, &quot;Internal Use Only&quot;)) &amp;&amp;
+NOT(TEXT(Product_Category__c)=&quot;&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product changed status to ES</fullName>
+        <actions>
+            <name>Product_status_changed_to_ES</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Status of product changed to Engineering Samples</description>
+        <formula>ISCHANGED(Product_Status__c) &amp;&amp;
+ISPICKVAL(Product_Status__c, &quot;Engineering Samples&quot;) &amp;&amp;
+NOT(ISPICKVAL(Product_Category__c, &quot;Internal Use Only&quot;)) &amp;&amp;
+NOT(TEXT(Product_Category__c)=&quot;&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product changed status to IP</fullName>
+        <actions>
+            <name>Product_status_changed_to_IP</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Status of product changed to Initial Production</description>
+        <formula>ISCHANGED(Product_Status__c) &amp;&amp;
+ISPICKVAL(Product_Status__c, &quot;Initial Production&quot;) &amp;&amp;
+NOT(ISPICKVAL(Product_Category__c, &quot;Internal Use Only&quot;)) &amp;&amp;
+NOT(TEXT(Product_Category__c)=&quot;&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product changed status to MP</fullName>
+        <actions>
+            <name>Product_status_changed_to_MP</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Status of product changed to Mass Production</description>
+        <formula>ISCHANGED(Product_Status__c) &amp;&amp;
+ISPICKVAL(Product_Status__c, &quot;Mass Production&quot;) &amp;&amp;
+NOT(ISPICKVAL(Product_Category__c, &quot;Internal Use Only&quot;)) &amp;&amp;
+NOT(TEXT(Product_Category__c)=&quot;&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product changed status to Obsolete</fullName>
+        <actions>
+            <name>Product_status_changed_to_Obsolete</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>equals</operation>
+            <value>Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Category__c</field>
+            <operation>notEqual</operation>
+            <value>Internal Use Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Category__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Status of product changed to Obsolete</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product changed status to PT</fullName>
+        <actions>
+            <name>Product_status_changed_to_PT</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>equals</operation>
+            <value>Prototypes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Category__c</field>
+            <operation>notEqual</operation>
+            <value>Internal Use Only</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Category__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Status of product changed to Prototypes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product creation alert</fullName>
+        <actions>
+            <name>Productcreationalert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.CreatedById</field>
+            <operation>contains</operation>
+            <value>Automatic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>notContain</operation>
+            <value>ADP,C027,C16,EVK-C,EVK-G,EVK-L,EVK-U,FW27,FW75,LEON,LISA,MPCI,SALA,TOBY,ACC-,EVK-O,EVK-R,EVK-W,OBC,OBI,OBS,ODIN,OLCI,OLP,OLS,OWL,OWS,PBS,PZC,RBE,RBS,RWE,WDK</value>
+        </criteriaItems>
+        <description>Inform PS POS when a new product has been created in Abacus</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product creation alert %28CEL%29</fullName>
+        <actions>
+            <name>Product_creation_alert_CEL</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.CreatedById</field>
+            <operation>contains</operation>
+            <value>Automatic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>contains</operation>
+            <value>ADP,C027,C16,EVK-C,EVK-G,EVK-L,EVK-R,EVK-U,FW27,FW75,LEON,LISA,MPCI,SARA,TOBY</value>
+        </criteriaItems>
+        <description>Inform PS CEL when a new product has been created in Abacus</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Add Logistics Overhead</fullName>
+        <actions>
+            <name>Product_Alert_added_Logistics_Overhead</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Product_Add_Logistics_Overhead</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Add 3% to Logistics Overhead if Use Abacus Cost is set and Logistics Overhead is empty.</description>
+        <formula>AND(
+ISCHANGED(Use_Abacus_Cost__c),
+Use_Abacus_Cost__c,
+ISNULL(Logistics_Overhead__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A COGS 1 added</fullName>
+        <actions>
+            <name>Product_COGS_added</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert when COGS 1 is added</description>
+        <formula>ISCHANGED(COGS_1__c) &amp;&amp; (
+  ISNULL(PRIORVALUE(COGS_1__c)) ||
+  PRIORVALUE(COGS_1__c)=0 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Comment Updated Date</fullName>
+        <actions>
+            <name>Product_Comment_Updated_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update when Comment has been updated</description>
+        <formula>ISCHANGED( Comment__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Fill IPR Checked Date</fullName>
+        <actions>
+            <name>Product_Fill_IPR_Checked_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Fill the date when the IPR Checked has been checked.</description>
+        <formula>ISCHANGED(IPR_Checked__c)&amp;&amp;(IPR_Checked__c=TRUE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Fill IPR USD Pct fields</fullName>
+        <actions>
+            <name>Product_Fill_IPR_Pct_Consumer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_Pct_Handset</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_Pct_Laptop</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_Pct_M2M</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_Pct_Other</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_Pct_Telematics</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_USD_Consumer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_USD_Handset</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_USD_Laptop</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_USD_M2M</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_USD_Other</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Fill_IPR_USD_Telematics</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Remove_IPR_Technology_Changed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>This workflow is required to fill IPR USD Pct fields in case IPR Cost field is changed in Product.</description>
+        <formula>ISCHANGED(IPR_Technology_Changed__c)&amp;&amp;IPR_Technology_Changed__c
+/*
+NOT(ISBLANK(IPR_Cost__c))||ISCHANGED(IPR_Cost__c)||(ISCHANGED(IPR_Technology_Changed__c)&amp;&amp;IPR_Technology_Changed__c)
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A IPR fields check required</fullName>
+        <actions>
+            <name>Products_IPR_related_fields_check_needed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>NOT(ISPICKVAL(Product_Category__c,&quot;Internal Use Only&quot;)) &amp;&amp; 
+(ISCHANGED(IPR__c) || ISCHANGED(IPR_Cost__c) || ISCHANGED(IPR_Technology__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Last Time Buy Date is approaching</fullName>
+        <actions>
+            <name>Product_Last_Time_Buy_Date_is_approaching</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Last_Time_Buy_Date__c</field>
+            <operation>equals</operation>
+            <value>NEXT 30 DAYS</value>
+        </criteriaItems>
+        <description>Notification that Last Time Buy Date is approaching.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Missing documents required for ES Gate</fullName>
+        <actions>
+            <name>Product_Missing_documents_required_for_ES_gate</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send an email alert if one of document availability fields are missing or later than ES.</description>
+        <formula>Visible_In_Masterschedule__c = true
+&amp;&amp;
+TEXT(Product_Category__c) &lt;&gt; &quot;Support tools&quot;
+&amp;&amp;
+(ISBLANK(PS_Availability_Date__c) || (PS_Availability_Date__c &gt; ES_Availability_Date__c) ||
+ISBLANK(DS_Availability_Date__c) || (DS_Availability_Date__c &gt; ES_Availability_Date__c) ||
+ISBLANK(Manual_Availability_Date__c) || (Manual_Availability_Date__c &gt; ES_Availability_Date__c))
+&amp;&amp;
+((TEXT(Product_Status__c) = &quot;In Development&quot;) ||
+(TEXT(Product_Status__c) = &quot;Prototypes&quot;) ||
+(TEXT(Product_Status__c) = &quot;Engineering Samples&quot;))
+&amp;&amp;
+(ISCHANGED(ES_Availability_Date__c) || ISCHANGED(Product_Status__c))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Notify shop product to EOL</fullName>
+        <actions>
+            <name>Product_shop_product_to_EoL</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send email alert</description>
+        <formula>AND(
+Shop_Active__c,
+ISCHANGED(Product_Status__c),
+ISPICKVAL(Product_Status__c, &quot;End of Life&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Owner to %3Aeste%3A</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Product_Owner__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>contains</operation>
+            <value>-u1,-u2,-l2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>notContain</operation>
+            <value>c16,c027</value>
+        </criteriaItems>
+        <description>Product Owner update to :este: (WCDMA, LTE(XXXX-L2 series))</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Owner to %3Asmoi%3A</fullName>
+        <actions>
+            <name>Product_Product_Owner_to_smoi</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Product_Owner__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>contains</operation>
+            <value>-g,-c,c16,c027</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>notContain</operation>
+            <value>ubx,sig,-ck,cdk-c1,evk-c1,tima,c17</value>
+        </criteriaItems>
+        <description>Product Owner update to :cstu: (LTE(except XXXX-L2 series))</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Owner to %3Asvin%3A</fullName>
+        <actions>
+            <name>Product_Product_Owner_to_svin</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Product_Owner__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>startsWith</operation>
+            <value>amy,eva,lea,max,neo,pci,pcm,rcb,tim,evk</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>notContain</operation>
+            <value>-c10,-c2,-d,-g,-h,-l,-n,-u,-5t,-6t,-7t,8t,8f,-6ppp,-7p,8p,m5q</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>notEqual</operation>
+            <value>neo-6p</value>
+        </criteriaItems>
+        <description>Product Owner update to :svin: (GNSS modules except PPP, Timing, antenna modules)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates</fullName>
+        <actions>
+            <name>Products_Product_Status_mismatches_the_gate_dates</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 and 2 and ((3 and 4 and 5) or (6 and 7 and 8) or (9 and 10 and 11) or (12 and 13 and 14) or (15 and 16 and 17) or (18 and 19))</booleanFilter>
+        <criteriaItems>
+            <field>Product2.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Visible_In_Masterschedule__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.PT_Availability_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.ES_Availability_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Prototypes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.ES_Availability_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.IP_Availability_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Engineering Samples</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.IP_Availability_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.MP_Availability_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Initial Production</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.MP_Availability_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.EOL_PCN_Issue_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Mass Production</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.EOL_PCN_Issue_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Last_Shipment_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>End of Life</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Last_Shipment_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Obsolete</value>
+        </criteriaItems>
+        <description>Notification when one of the gate dates have passed but Product Status has not been changed yet.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates %28EOL%2FPCN Issue Date passed%29</fullName>
+        <actions>
+            <name>Products_Product_Status_mismatches_the_gate_dates</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.EOL_PCN_Issue_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>End of Life,Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.EOL_PCN_Issue_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notification that Product Status is not End Of Life.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates %28ES Availability Date passed%29</fullName>
+        <actions>
+            <name>Products_Product_Status_mismatches_the_gate_dates</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.ES_Availability_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Engineering Samples,Initial Production,Mass Production,End of Life,Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.ES_Availability_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notification that Product Status is not Engineering Sample.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates %28IP Availability Date passed%29</fullName>
+        <actions>
+            <name>Products_Product_Status_mismatches_the_gate_dates</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.IP_Availability_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Initial Production,Mass Production,End of Life,Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.IP_Availability_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notification that Product Status is not Initial Production.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates %28Last Shipment Date passed%29</fullName>
+        <actions>
+            <name>Products_Product_Status_mismatches_the_gate_dates</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Last_Shipment_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>equals</operation>
+            <value>Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Last_Shipment_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notification that Product Status is not Obsolete.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates %28MP Availability Date passed%29</fullName>
+        <actions>
+            <name>Products_Product_Status_mismatches_the_gate_dates</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.MP_Availability_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Mass Production,End of Life,Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.MP_Availability_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notification that Product Status is not Mass Production.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Product Status mismatch the gate dates %28PT Availability Date passed%29</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.PT_Availability_Date__c</field>
+            <operation>lessThan</operation>
+            <value>TODAY</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Prototypes,Engineering Samples,Initial Production,Mass Production,End of Life,Obsolete</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.PT_Availability_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Notification that Product Status is not Prototype.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Set visibility checkboxes to FALSE</fullName>
+        <actions>
+            <name>Product_Visible_In_Masterschedule_FALSE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Product_Visible_To_Partner_FALSE</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Product2.Product_Status__c</field>
+            <operation>equals</operation>
+            <value>Obsolete</value>
+        </criteriaItems>
+        <description>When Product Status is Obsolete, Active, Visible In Masterschedule and Visible To Partner will be FALSE.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A Uncheck IPR Checked</fullName>
+        <actions>
+            <name>Product_Uncheck_IPR_Checked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Uncheck the flag whenever IPR changes to ask for control.</description>
+        <formula>ISCHANGED(IPR_Cost__c)||ISCHANGED(IPR_Class__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A creation alert %28SHO%29</fullName>
+        <actions>
+            <name>Product_creation_alert_SHO</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND (2 or 3)</booleanFilter>
+        <criteriaItems>
+            <field>Product2.CreatedById</field>
+            <operation>contains</operation>
+            <value>Automatic</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>contains</operation>
+            <value>ACC-,EVK-O,EVK-W,OBC,OBI,OBS,OLCI,OLP,OLS,OWL,OWS,PBS,PZC,WDK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Product2.Name</field>
+            <operation>contains</operation>
+            <value>ODIN,ELLA,EMMY,LILY,WB</value>
+        </criteriaItems>
+        <description>Inform PS SHO when a new product has been created in Abacus</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Product%3A pre-alert ES</fullName>
+        <active>false</active>
+        <description>Send email alert to product owner</description>
+        <formula>AND(NOT(OR(ISNULL(ES_Availability_Date__c),ISNULL( Product_Owner__c ))))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_pre_alert_ES</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product2.ES_Availability_Date__c</offsetFromField>
+            <timeLength>-30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Product%3A pre-alert IP</fullName>
+        <active>false</active>
+        <description>Send email alert to product owner</description>
+        <formula>AND(NOT(OR(ISNULL(IP_Availability_Date__c),ISNULL( Product_Owner__c ))))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Product_pre_alert_IP</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Product2.IP_Availability_Date__c</offsetFromField>
+            <timeLength>-30</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

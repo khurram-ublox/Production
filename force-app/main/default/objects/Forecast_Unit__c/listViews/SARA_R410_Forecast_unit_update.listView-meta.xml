@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SARA_R410_Forecast_unit_update</fullName>
+    <columns>Channel_Manager_End_Customer__c</columns>
+    <columns>Account__c</columns>
+    <columns>NAME</columns>
+    <columns>Total_Manual_Forecast__c</columns>
+    <columns>Last_Manual_Update__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>NAME</field>
+        <operation>contains</operation>
+        <value>SARA-R410</value>
+    </filters>
+    <filters>
+        <field>Reporting_Region__c</field>
+        <operation>contains</operation>
+        <value>America</value>
+    </filters>
+    <label>SARA-R410 Forecast unit update</label>
+    <sharedTo>
+        <group>Sales_Americas</group>
+    </sharedTo>
+</ListView>

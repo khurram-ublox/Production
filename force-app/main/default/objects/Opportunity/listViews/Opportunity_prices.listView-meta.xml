@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_prices</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Product_1__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Opp_Revenue_Without_Probability__c</columns>
+    <columns>Annual_Quantity__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>contains</operation>
+        <value>Production,Pre-production,Prototypes,Design-in</value>
+    </filters>
+    <filters>
+        <field>Product_1__c</field>
+        <operation>contains</operation>
+        <value>NEO-M8L</value>
+    </filters>
+    <filters>
+        <field>Number_of_attached_Products__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Opportunity prices NEO-M8L</label>
+    <sharedTo>
+        <group>PS_POS</group>
+    </sharedTo>
+</ListView>

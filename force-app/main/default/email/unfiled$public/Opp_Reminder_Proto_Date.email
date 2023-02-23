@@ -1,0 +1,7 @@
+Please be aware that the expected date when the prototypes for this opportunity are going into field test is in two weeks from now. Let’s make sure that the customer receives the support necessary to go to production ASAP!
+
+Opportunity Name: {!Opportunity.Name}
+Account Name: {!Opportunity.Account}
+Proto Date: {!Opportunity.Proto_Date__c}
+
+Link: {!Opportunity.Link}

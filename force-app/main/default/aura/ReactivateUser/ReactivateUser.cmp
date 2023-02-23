@@ -1,0 +1,14 @@
+<aura:component description="Reactivate users" access="global" controller="ReactivateUser" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+
+    <aura:attribute name="DeactivatedUser" type="User[]" />
+    <form>
+        <ui:inputEmail aura:id="searchUserName" label="Do you want to reactivate your deactivated profile?" class="field" value=""
+                       placeholder="Please enter your username!"/>
+        <br/>
+
+        <lightning:button label="Submit" onclick="{!c.getDeactivatedUserClient}"/>
+        <ui:outputText value="{!v.DeactivatedUser.isActive}" title="isActive" />
+
+    </form>
+
+</aura:component>

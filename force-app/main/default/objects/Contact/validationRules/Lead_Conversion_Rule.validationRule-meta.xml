@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Conversion_Rule</fullName>
+    <active>true</active>
+    <description>This rule will prevent the lead conversion only if the Account used will be &quot;Registered Community Users.&quot;</description>
+    <errorConditionFormula>AND(AccName__c = &quot;Registered Community Users&quot;, Lead_Converted__c  = True)</errorConditionFormula>
+    <errorMessage>Please don&apos;t use Registered Community Users account for Lead conversion.</errorMessage>
+</ValidationRule>

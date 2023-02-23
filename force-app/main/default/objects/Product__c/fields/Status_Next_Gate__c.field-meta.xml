@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Next_Gate__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(TEXT(Product_Status__c),
+&quot;Obsolete&quot;, &quot;Obs&quot;,
+&quot;End of Life&quot;, IF(ISBLANK(Last_Shipment_Date__c), &quot;EOL&quot;,&quot;EOL (Obs &quot; &amp; TEXT(Last_Shipment_Date__c) &amp; &quot;)&quot;),
+&quot;Mass Production&quot;, IF(ISBLANK(EOL_PCN_Issue_Date__c), &quot;MP&quot;, &quot;MP (EOL &quot; &amp; TEXT(EOL_PCN_Issue_Date__c) &amp; &quot;)&quot;),
+&quot;Initial Production&quot;, IF(TEXT(Product_Category__c ) = &quot;Support tools&quot;, IF(ISBLANK(EOL_PCN_Issue_Date__c), &quot;IP&quot;, &quot;IP (EOL &quot; &amp; TEXT(EOL_PCN_Issue_Date__c) &amp; &quot;)&quot;), IF(ISBLANK(MP_Availability_Date__c),&quot;IP&quot;,&quot;IP (MP &quot; &amp; TEXT(MP_Availability_Date__c) &amp; &quot;)&quot;)),
+&quot;Engineering Samples&quot;, IF(ISBLANK(IP_Availability_Date__c), &quot;ES&quot;, &quot;ES (IP &quot; &amp; TEXT(IP_Availability_Date__c) &amp; &quot;)&quot;),
+&quot;Prototypes&quot;, IF(ISBLANK(ES_Availability_Date__c), &quot;PT&quot;, &quot;PT (ES &quot; &amp; TEXT(ES_Availability_Date__c) &amp; &quot;)&quot;),
+&quot;In Development&quot;, IF(ISBLANK(PT_Availability_Date__c), IF(ISBLANK(ES_Availability_Date__c), &quot;DEV&quot;, &quot;DEV (ES &quot; &amp; TEXT(ES_Availability_Date__c) &amp; &quot;)&quot;), &quot;DEV (PT &quot; &amp; TEXT(PT_Availability_Date__c) &amp; &quot;)&quot;),
+TEXT(Product_Status__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status (Next Gate)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

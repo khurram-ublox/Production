@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Opportunities</fullName>
+    <availability>online</availability>
+    <description>List opportunities that make use of this products. Opens a new window.
+NOTE: It used to use &quot;Search_String__c&quot; instead of &quot;Name&quot; (old report ID: 00OD0000006VWT3)
+2015-05-20 khir: reverted to &quot;Search_String__c&quot;
+Orig: URL, /00O57000006XF0p?pv2=&quot;{!Product2.Search_String__c}&quot;&amp;pv3=&quot;{!Product2.Search_String__c}&quot;</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>1000</height>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Show Opportunities</masterLabel>
+    <openType>newWindow</openType>
+    <page>ProductUrlShowOpportunities</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <width>1400</width>
+</WebLink>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Category__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>select one of the product categories</inlineHelpText>
+    <label>Product Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CEL chips</fullName>
+                <color>#000066</color>
+                <default>false</default>
+                <label>CEL chips</label>
+            </value>
+            <value>
+                <fullName>CEL modules</fullName>
+                <color>#3333FF</color>
+                <default>false</default>
+                <label>CEL modules</label>
+            </value>
+            <value>
+                <fullName>CEL services</fullName>
+                <color>#9999FF</color>
+                <default>false</default>
+                <label>CEL services</label>
+            </value>
+            <value>
+                <fullName>CEL MA</fullName>
+                <color>#33FFFF</color>
+                <default>false</default>
+                <label>CEL MA</label>
+            </value>
+            <value>
+                <fullName>POS chips</fullName>
+                <color>#006600</color>
+                <default>false</default>
+                <label>POS chips</label>
+            </value>
+            <value>
+                <fullName>POS modules</fullName>
+                <color>#009900</color>
+                <default>false</default>
+                <label>POS modules</label>
+            </value>
+            <value>
+                <fullName>POS services</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+                <label>POS services</label>
+            </value>
+            <value>
+                <fullName>SHO chips</fullName>
+                <default>false</default>
+                <label>SHO chips</label>
+            </value>
+            <value>
+                <fullName>SHO modules</fullName>
+                <color>#990000</color>
+                <default>false</default>
+                <label>SHO modules</label>
+            </value>
+            <value>
+                <fullName>SHO services</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+                <label>SHO services</label>
+            </value>
+            <value>
+                <fullName>Antennas</fullName>
+                <color>#66FF99</color>
+                <default>false</default>
+                <label>Antennas</label>
+            </value>
+            <value>
+                <fullName>Support tools</fullName>
+                <color>#666666</color>
+                <default>false</default>
+                <label>Support tools</label>
+            </value>
+            <value>
+                <fullName>Internal Use Only</fullName>
+                <color>#DDDDDD</color>
+                <default>false</default>
+                <label>Internal Use Only</label>
+            </value>
+            <value>
+                <fullName>Services PPU</fullName>
+                <color>#FFFF66</color>
+                <default>false</default>
+                <label>Services PPU</label>
+            </value>
+            <value>
+                <fullName>Services Quota</fullName>
+                <color>#FFCC66</color>
+                <default>false</default>
+                <label>Services Quota</label>
+            </value>
+            <value>
+                <fullName>Services Monthly Fee</fullName>
+                <color>#FFCC33</color>
+                <default>false</default>
+                <label>Services Monthly Fee</label>
+            </value>
+            <value>
+                <fullName>Services Technical Service</fullName>
+                <color>#CC9933</color>
+                <default>false</default>
+                <label>Services Technical Service</label>
+            </value>
+            <value>
+                <fullName>Services MQTT anywhere</fullName>
+                <default>false</default>
+                <label>Services MQTT anywhere</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

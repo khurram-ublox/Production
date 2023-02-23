@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_edit_restriction</fullName>
+    <active>true</active>
+    <description>COGS should be editable only by API User (for Wiki COGS tool). UBX-AP &quot;00520000000rnjW&quot; can&apos;t edit either.</description>
+    <errorConditionFormula>AND(
+$User.Id&lt;&gt;&quot;0052p00000BkGWt&quot;, /* api wiki */
+$User.Id&lt;&gt;&quot;00557000006eQYE&quot;, /* wsha */
+$User.Id&lt;&gt;&quot;00557000007TldC&quot;, /* Werner Grätzer */
+$User.Id&lt;&gt;&quot;00557000008WnLe&quot;, /* ldra */
+$User.Id&lt;&gt;&quot;00520000000zbAX&quot;, /* khir */ 
+OR(
+ISCHANGED(COGS_1__c),
+ISCHANGED(COGS_2__c),
+ISCHANGED(COGS_3__c),
+ISCHANGED(COGS_4__c),
+ISCHANGED(Valid_For_1__c),
+ISCHANGED(Valid_For_2__c),
+ISCHANGED(Valid_For_3__c),
+ISCHANGED(Valid_For_4__c)
+)
+)</errorConditionFormula>
+    <errorMessage>COGS can be entered only through COGS User Interface (Wiki)</errorMessage>
+</ValidationRule>

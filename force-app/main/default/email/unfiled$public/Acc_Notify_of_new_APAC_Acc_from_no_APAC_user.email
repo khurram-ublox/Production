@@ -1,0 +1,7 @@
+Please note the following Account has been created
+
+Account Name: {!Account.Name}
+Country: {!Account.BillingCountry}
+Created by: {!Account.CreatedBy}
+uB Office: {!User.uB_Office__c}
+Link to the Account: {!Account.Link}

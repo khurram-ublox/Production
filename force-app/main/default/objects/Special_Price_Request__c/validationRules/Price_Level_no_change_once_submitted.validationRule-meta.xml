@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Level_no_change_once_submitted</fullName>
+    <active>true</active>
+    <description>Price Level should not change during Approval Process (except MSP created by Regional Head)</description>
+    <errorConditionFormula>NOT(ISBLANK(TEXT(Status__c))) &amp;&amp;
+NOT(ISPICKVAL(Status__c,&quot;Rejected&quot;)) &amp;&amp;
+NOT(ISPICKVAL(Status__c,&quot;Not Submitted&quot;)) &amp;&amp;
+ISCHANGED(Price_Level__c) &amp;&amp;
+NOT(
+NOT(ISPICKVAL(Price_Level__c,&quot;MSP (Minimum Sales Price)&quot;)) &amp;&amp;
+/*ISPICKVAL(Price_Level__c,&quot;PPP (Project Price Plan)&quot;) &amp;&amp;*/
+(
+(CreatedBy.Alias=&quot;atan&quot; &amp;&amp; $User.Alias=&quot;atan&quot;) ||
+(CreatedBy.Alias=&quot;egui&quot; &amp;&amp; $User.Alias=&quot;egui&quot;) ||
+(CreatedBy.Alias=&quot;sram&quot; &amp;&amp; $User.Alias=&quot;sram&quot;)))</errorConditionFormula>
+    <errorDisplayField>Price_Level__c</errorDisplayField>
+    <errorMessage>Price Level cannot be changed during Approval Process. Return to the initiator if this needs to be changed.</errorMessage>
+</ValidationRule>

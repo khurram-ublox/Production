@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVG_ASP__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Qty_Invoiced__c =0, 0, Total_Value__c / Qty_Invoiced__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Average ASP over the last 12 months</inlineHelpText>
+    <label>AVG ASP</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

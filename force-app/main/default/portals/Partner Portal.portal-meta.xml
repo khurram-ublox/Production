@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <admin>apiuser@u-blox.com</admin>
+    <defaultLanguage>en_US</defaultLanguage>
+    <description>Partner Portal</description>
+    <emailSenderAddress>info@u-blox.com</emailSenderAddress>
+    <emailSenderName>u-blox Partner Support</emailSenderName>
+    <enableSelfCloseCase>false</enableSelfCloseCase>
+    <forgotPassTemplate>Portal_Emails/PortalChangePwdEmail</forgotPassTemplate>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <loginHeaderDocument>Self_Service_Portal/Partner_Portal_Login_4.html</loginHeaderDocument>
+    <logoDocument>Self_Service_Portal/u_blox_logo_for_portal_new_ci_png.png</logoDocument>
+    <logoutUrl>https://www.u-blox.com/en</logoutUrl>
+    <newPassTemplate>Portal_Emails/PortalChangePwdEmail</newPassTemplate>
+    <newUserTemplate>Portal_Emails/NewPortalUserEmail</newUserTemplate>
+    <showActionConfirmation>false</showActionConfirmation>
+    <type>Partner</type>
+</Portal>

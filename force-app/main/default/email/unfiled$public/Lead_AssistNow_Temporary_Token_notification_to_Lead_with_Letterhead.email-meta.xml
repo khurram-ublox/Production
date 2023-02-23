@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to Contact (= customer) when the new token has been generated.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Lead: AssistNow Temporary Token notification to Lead with Letterhead</name>
+    <style>formalLetter</style>
+    <subject>u-blox Multi-GNSS AssistNow Service is activated for {!Contact.Name}</subject>
+    <textOnly>Dear {!Lead.Name}
+
+Thank you for your interest in u-blox&apos; online, globally-available assisted GNSS service, AssistNow.
+The service ensures a fast Time-To-First-Fix when using u-blox GNSS receivers, even under poor satellite signal conditions.
+
+The temporary token you will require for initial setup of the service is below.
+
+Temporary Token: {!Lead.AssistNow_Temporary_Token__c}
+
+Valid until: {!Lead.AssistNow_Temporary_Token_Valid_Until__c}
+
+A description of the AssistNow features and services can be found on the following web page:
+
+http://www.u-blox.com/en/assisted-gps.html
+
+
+Kind regards
+u-blox</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

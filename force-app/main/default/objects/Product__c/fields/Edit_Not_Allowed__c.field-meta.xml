@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Edit_Not_Allowed__c</fullName>
+    <description>Flag to be used to indicate the current user is not allowed to edit the Product record (although the record may be editable)</description>
+    <externalId>false</externalId>
+    <formula>OR(
+$User.ProfileId = &quot;00e20000000xD8Q&quot;, /* R&amp;D */
+$User.ProfileId = &quot;00e20000000zSSg&quot;, /* FAE */
+$User.ProfileId = &quot;00e200000015FVB&quot; /* Technical Manager */
+)</formula>
+    <inlineHelpText>Flag to be used to indicate the current user is not allowed to edit the Product record (although the record may be editable)</inlineHelpText>
+    <label>Edit Not Allowed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

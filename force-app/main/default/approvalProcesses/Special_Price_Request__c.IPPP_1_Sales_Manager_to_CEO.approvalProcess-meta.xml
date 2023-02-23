@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account__c</field>
+        <field>Opportunity__c</field>
+        <field>Total_Quantity__c</field>
+        <field>Total_Revenue__c</field>
+        <field>Total_Contribution__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_Team_Manager</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Team_Manager</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Team_Manager_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Pending</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Update_Reg_Head_Assignee_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <label>(PPP 1) Approval by Team Manager</label>
+        <name>PPP_1_Approval_by_Team_Manager</name>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_Regional_Head_EMEA</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Regional_Head</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Regional_Head_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Pending</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Special_Price_Request__c.Approved_By_Team_Manager__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>(PPP 1) Approval by Regional Head</label>
+        <name>PPP_1_Approval_by_Regional_Head</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_CEO</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_CEO</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Prices_Valid_Until</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_approved</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Special_Price_Request__c.Approved_By_Team_Manager__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Special_Price_Request__c.Approved_By_Regional_Head__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>(PPP 1) Approval by CEO</label>
+        <name>PPP_1_Approval_by_CEO</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>PPP Process 1: Sales Manager &gt; Team Manager &gt; Regional Head &gt; CEO
+Used also for RF Design (Pieter Lentz)</description>
+    <emailTemplate>unfiled$public/SPR_Request_update_notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>ISPICKVAL(Price_Level__c, &quot;PPP (Project Price Plan)&quot;) &amp;&amp;
+(
+(($User.ProfileId=&quot;00e20000000wr5F&quot; || $User.ProfileId=&quot;00e2p000001Prx6&quot; || $User.ProfileId=&quot;00e20000000wr56&quot;) &amp;&amp; /* Profile: Sales or Sales Community User or Management */
+NOT(ISPICKVAL($User.uB_Office__c, &quot;Corporate&quot;)) &amp;&amp;
+/* EMEA Team Manager */
+$User.Alias&lt;&gt;&quot;jare&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;pala&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;pwei&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;raba&quot; &amp;&amp;
+/* EMEA Italy (under West and South EMEA) */
+$User.Alias&lt;&gt;&quot;maor&quot; &amp;&amp;
+/* Americas direct report to Region Head */
+$User.Alias&lt;&gt;&quot;bdal&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;btri&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;cbel&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;jbru&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;mbro&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;ralh&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;rwal&quot; &amp;&amp;
+/* APAC JP reporting to Team Leader  */
+$User.Alias&lt;&gt;&quot;myos&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;tsuz&quot; &amp;&amp;
+/* APAC CN reporting to Team Leader */
+/* To :hyou: */
+$User.Alias&lt;&gt;&quot;brwu&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;dwan&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;kehu&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;tzhu&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;yoyu&quot; &amp;&amp;
+/* To :eriz: */
+$User.Alias&lt;&gt;&quot;jiyi&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;joez&quot; &amp;&amp; 
+$User.Alias&lt;&gt;&quot;mhua&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;rxia&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;tzha&quot; &amp;&amp;
+/* APAC KR reporting to Team Leader  */
+$User.Alias&lt;&gt;&quot;dbae&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;eshi&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;rayp&quot; &amp;&amp;
+/* APAC TW reporting to Team Leader  */
+$User.Alias&lt;&gt;&quot;mche&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;mich&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;rlin&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;rliu&quot; &amp;&amp;
+/* APAC Country Manager */
+$User.Alias&lt;&gt;&quot;dtan&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;mchi&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;asut&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;kson&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;tnak&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;hche&quot;
+/* Were excluded during absence of CN Country Manager
+$User.Alias&lt;&gt;&quot;fson&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;hyou&quot; &amp;&amp;
+$User.Alias&lt;&gt;&quot;sguo&quot; 
+*/
+) ||
+/* EMEA RF Design */
+$User.Alias=&quot;plent&quot;)</formula>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>SPR_Date_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Contribution_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Quantity_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Revenue_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Update_Team_Manager_Assignee_Emai</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>IPPP 1: Sales Manager to CEO</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>2</processOrder>
+    <recallActions>
+        <action>
+            <name>SPR_Status_Not_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

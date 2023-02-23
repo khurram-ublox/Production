@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Referral_Agreement_Update</name>
+        <label>Check Referral Agreement</label>
+        <locationX>572</locationX>
+        <locationY>1751</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Services_Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Referral_Agreement_Unchecked</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Uncheck_Referral_Agreement</name>
+        <label>Uncheck Referral Agreement</label>
+        <locationX>597</locationX>
+        <locationY>2023</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Services_Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Update_Flag</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update stage to 4 Evaluation when record approved with approval process.</description>
+        <name>Update_Opp_Stage</name>
+        <label>Update Opp Stage</label>
+        <locationX>566</locationX>
+        <locationY>1517</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>4 Evaluation</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Referral_Agreement_Checked</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>All_Opps_Decision</name>
+        <label>All Opps Decision</label>
+        <locationX>319</locationX>
+        <locationY>861</locationY>
+        <defaultConnector>
+            <targetReference>User_type_Standard</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>All_Opps</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Current_User_Internal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>All Opps</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Update_Flag</name>
+        <label>Check Update Flag</label>
+        <locationX>320</locationX>
+        <locationY>2231</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>updateFlag</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opportunity</targetReference>
+            </connector>
+            <label>Update Record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opp_embargo_countries_Decision</name>
+        <label>Opp: embargo countries Decision</label>
+        <locationX>318</locationX>
+        <locationY>702</locationY>
+        <defaultConnector>
+            <targetReference>All_Opps_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_embargo_countries</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OppembargocountriesCriteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_embargo_country_task</targetReference>
+            </connector>
+            <label>Opp: embargo countries</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Referral_Agreement_Checked</name>
+        <label>Referral Agreement Checked</label>
+        <locationX>319</locationX>
+        <locationY>1594</locationY>
+        <defaultConnector>
+            <targetReference>Referral_Agreement_Unchecked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Referral_Agreement</name>
+            <conditionLogic>1 AND(  2 OR 3 OR 4) AND 5 AND 6 AND 7</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Owner.Referral_Agreement__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_1__r.Product_Center__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_2__r.Product_Center__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_3__r.Product_Center__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Distributor_Name__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Distributor_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Services_Opportunity__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Referral_Agreement_Update</targetReference>
+            </connector>
+            <label>Check Referral Agreement</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Referral_Agreement_Unchecked</name>
+        <label>Referral Agreement Unchecked</label>
+        <locationX>315</locationX>
+        <locationY>1924</locationY>
+        <defaultConnector>
+            <targetReference>Check_Update_Flag</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Referral_Agreement_Unchecked_Condition</name>
+            <conditionLogic>1 OR ( 2 AND 3 AND 4 ) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Owner.Referral_Agreement__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_1__r.Product_Center__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_2__r.Product_Center__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_3__r.Product_Center__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Services_Opportunity__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Uncheck_Referral_Agreement</targetReference>
+            </connector>
+            <label>Referral Agreement Unchecked Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if record is approved with approval process.</description>
+        <name>Update_stage</name>
+        <label>Update stage</label>
+        <locationX>319</locationX>
+        <locationY>1433</locationY>
+        <defaultConnector>
+            <targetReference>Referral_Agreement_Checked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_if_record_approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval_Status_Flag__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Probability</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>10.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Probability</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>15.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opp_Stage</targetReference>
+            </connector>
+            <label>Check if record approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>User_type_PowerPartner</name>
+        <label>User type PowerPartner</label>
+        <locationX>65</locationX>
+        <locationY>1070</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_PowerPartner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.UserType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_Partner_Portal_Email_Alerts</targetReference>
+            </connector>
+            <label>If PowerPartner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>User_type_Standard</name>
+        <label>User type Standard</label>
+        <locationX>318</locationX>
+        <locationY>1070</locationY>
+        <defaultConnector>
+            <targetReference>User_type_PowerPartner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Standard_user</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.UserType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Standard</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Alert_Subflow</targetReference>
+            </connector>
+            <label>If Standard user</label>
+        </rules>
+    </decisions>
+    <description>After Flow trigger on Opportunity to Send Email Alerts, Chatter Posts and Field Updates
+Added the Condition the Referral Agreement for Services Opportunity.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CreatedDate_Plus_7</name>
+        <dataType>Date</dataType>
+        <expression>{!$Record.CreatedDate} + 7</expression>
+    </formulas>
+    <formulas>
+        <name>FocusDateFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.LastModifiedDate}-{!$Record__Prior.LastModifiedDate} &gt;= 0.000694*3</expression>
+    </formulas>
+    <formulas>
+        <name>OppembargocountriesCriteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(ISNEW(),
+OR(
+{!$Record.Account.BillingCountry}=&quot;CU&quot;,
+{!$Record.Account.BillingCountry}=&quot;BY&quot;,
+{!$Record.Account.BillingCountry}=&quot;IR&quot;,
+{!$Record.Account.BillingCountry}=&quot;KP&quot;,
+{!$Record.Account.BillingCountry}=&quot;SD&quot;,
+{!$Record.Account.BillingCountry}=&quot;SY&quot;,
+{!$Record.Account.BillingCountry}=&quot;UA&quot;,
+{!$Record.Account.BillingCountry}=&quot;AM&quot;,
+{!$Record.Account.BillingCountry}=&quot;AZ&quot;,
+{!$Record.Account.BillingCountry}=&quot;CF&quot;,
+{!$Record.Account.BillingCountry}=&quot;CG&quot;,
+{!$Record.Account.BillingCountry}=&quot;CI&quot;,
+{!$Record.Account.BillingCountry}=&quot;ER&quot;,
+{!$Record.Account.BillingCountry}=&quot;GN&quot;,
+{!$Record.Account.BillingCountry}=&quot;IQ&quot;,
+{!$Record.Account.BillingCountry}=&quot;LB&quot;,
+{!$Record.Account.BillingCountry}=&quot;LR&quot;,
+{!$Record.Account.BillingCountry}=&quot;LY&quot;,
+{!$Record.Account.BillingCountry}=&quot;MM&quot;,
+{!$Record.Account.BillingCountry}=&quot;SO&quot;,
+{!$Record.Account.BillingCountry}=&quot;ZW&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>RecordisNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>RegistrationExpirationchangeFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT(ISNULL({!$Record.Registration_Expiration__c}) ) &amp;&amp; {!$Record.Registration_Expiration__c} &lt;&gt; PRIORVALUE({!$Record.Registration_Expiration__c})  &amp;&amp; TEXT({!$Record.Distribution_Partner__c})  = &apos;Future&apos; &amp;&amp; 
+{!$Record.Registration_No__c}  &lt;&gt; NULL &amp;&amp;
+TEXT({!$Record.Distribution_Method__c}) &lt;&gt; NULL &amp;&amp; TEXT({!$Record.Area_opportunity_owner__c})  = &apos;EMEA&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>RemindertoupdateLatestStatusFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!$Record.RecordTypeId} = &quot;01220000000CqRn&quot;,
+NOT(OR(
+{!$Record.Account.Owner.Profile.Id} = &quot;00eD00000015ehS&quot;,
+{!$Record.Account.Owner.Profile.Id} = &quot;00eD00000015Trl&quot;,
+{!$Record.Account.Owner.Profile.Id} = &quot;00eD00000015UEf&quot;,
+{!$Record.Account.Owner.Profile.Id} = &quot;00eD000000160Nk&quot;,
+{!$Record.Account.Owner.Profile.Id} = &quot;00eD00000016DpY&quot;)),
+Text({!$Record.Focus__c}) = &quot;2 - Region&quot;,
+OR(
+Text({!$Record.StageName}) = &quot;3 Calling on&quot;,
+Text({!$Record.StageName}) = &quot;4 Evaluation&quot;,
+Text({!$Record.StageName}) = &quot;5 Design-in&quot;,
+Text({!$Record.StageName}) = &quot;6 Prototypes&quot;,
+Text({!$Record.StageName}) = &quot;7 Pre-Production&quot;),
+ISCHANGED({!$Record.LastModifiedDate}),
+{!$Record.OwnerId} = &quot;00520000000zbAX&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Opportunity: After Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: After Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Opportunity_embargo_country_task</name>
+        <label>Opportunity: embargo country task</label>
+        <locationX>588</locationX>
+        <locationY>769</locationY>
+        <connector>
+            <targetReference>All_Opps_Decision</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>CreatedDate_Plus_7</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>C</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Opportunity: embargo country</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>585</locationX>
+        <locationY>951</locationY>
+        <connector>
+            <targetReference>User_type_Standard</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>New_Opportunity__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>330</locationX>
+        <locationY>2509</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>202</locationX>
+        <locationY>257</locationY>
+        <connector>
+            <targetReference>Opp_embargo_countries_Decision</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <name>Email_Alert_Subflow</name>
+        <label>Email Alert Subflow</label>
+        <locationX>327</locationX>
+        <locationY>1258</locationY>
+        <connector>
+            <targetReference>Update_stage</targetReference>
+        </connector>
+        <flowName>Opportunity_Email_Alerts</flowName>
+        <inputAssignments>
+            <name>Record</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordisNew</name>
+            <value>
+                <elementReference>RecordisNew</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordPrior</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record</assignToReference>
+            <name>Record</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>updateFlag</assignToReference>
+            <name>updateFlag</name>
+        </outputAssignments>
+    </subflows>
+    <subflows>
+        <name>Opportunity_Partner_Portal_Email_Alerts</name>
+        <label>Opportunity: Partner Portal Email Alerts</label>
+        <locationX>72</locationX>
+        <locationY>1429</locationY>
+        <connector>
+            <targetReference>Update_stage</targetReference>
+        </connector>
+        <flowName>Opportunity_Partner_Portal_Email_Alerts</flowName>
+        <inputAssignments>
+            <name>Record</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordisNew</name>
+            <value>
+                <elementReference>RecordisNew</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordPrior</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record</assignToReference>
+            <name>Record</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>updateFlag</assignToReference>
+            <name>updateFlag</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>ChangeGlobalOpptoStage5</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Opportunity to Stage 5:&amp;nbsp;{!$Record.Name}, {!$Record.Latest_Status__c},&amp;nbsp;&lt;/p&gt;&lt;p&gt;by&amp;nbsp;{!$Record.LastModifiedBy.Username},&amp;nbsp;&lt;/p&gt;&lt;p&gt;https://u-blox.my.salesforce.com/{!$Record.Id}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Post_to_CELfocusgroup</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;CEL focus opportunity {!$Record.Name} updated.&lt;/p&gt;&lt;p&gt;Account: &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!$Record&lt;/span&gt;.Account.Name}&lt;/p&gt;&lt;p&gt;Stage: &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!$Record&lt;/span&gt;.StageName}&lt;/p&gt;&lt;p&gt;Latest Status:&amp;nbsp;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!$Record&lt;/span&gt;.Latest_Status__c},&amp;nbsp;&lt;/p&gt;&lt;p&gt;Modified by: &lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!$Record&lt;/span&gt;.LastModifiedBy.Username},&amp;nbsp;&lt;/p&gt;&lt;p&gt;Link: https://u-blox.my.salesforce.com/&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(62, 62, 60);&quot;&gt;{!$Record&lt;/span&gt;.Id}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>PosttoPOSfocusgroup</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;POS focus opportunity &quot;{!$Record.Name}&quot; updated.&lt;/p&gt;&lt;p&gt;Account: {!$Record.Account.Name}&lt;/p&gt;&lt;p&gt;Stage: {!$Record.StageName}&lt;/p&gt;&lt;p&gt;Latest Status:&amp;nbsp;{!$Record.Latest_Status__c},&amp;nbsp;&lt;/p&gt;&lt;p&gt;Modified by: {!$Record.LastModifiedBy.Username}&lt;/p&gt;&lt;p&gt;Link: https://u-blox.my.salesforce.com/{!$Record.Id}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>PosttoSHOfocusgroup</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;SHO focus opportunity &quot;{!$Record.Name}&quot; updated.&lt;/p&gt;&lt;p&gt;Account: {!$Record.Account.Name}&lt;/p&gt;&lt;p&gt;Stage: {!$Record.StageName}&lt;/p&gt;&lt;p&gt;Latest Status:&amp;nbsp;{!$Record.Latest_Status__c}&lt;/p&gt;&lt;p&gt;Modified by: {!$Record.LastModifiedBy.Username}&lt;/p&gt;&lt;p&gt;Link: https://u-blox.my.salesforce.com/{!$Record.Id}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>RemindertoupdateLatestStatus</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Please be aware that it is time to update the field “Latest Staus” for the opportunity&amp;nbsp;{!$Record.Name} . Let’s see what is the latest news for those big projects!&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>updateFlag</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

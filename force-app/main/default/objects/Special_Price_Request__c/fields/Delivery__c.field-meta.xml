@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Imported to Quotation (with New Quotation button)</inlineHelpText>
+    <label>Delivery</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FCA Flextronics Althofen (AT)</fullName>
+                <default>false</default>
+                <label>FCA Flextronics Althofen (AT)</label>
+            </value>
+            <value>
+                <fullName>FCA Amkor ATP3 Binan (PH)</fullName>
+                <default>false</default>
+                <label>FCA Amkor ATP3 Binan (PH)</label>
+            </value>
+            <value>
+                <fullName>FCA Thalwil (CH)</fullName>
+                <default>false</default>
+                <label>FCA Thalwil (CH)</label>
+            </value>
+            <value>
+                <fullName>FCA Reston (USA)</fullName>
+                <default>false</default>
+                <label>FCA Reston (USA)</label>
+            </value>
+            <value>
+                <fullName>EXW Reston (USA)</fullName>
+                <default>false</default>
+                <label>EXW Reston (USA)</label>
+            </value>
+            <value>
+                <fullName>DAP + add Place and Country manually, e.g. Shenzhen (CN)</fullName>
+                <default>false</default>
+                <label>DAP + add Place and Country manually, e.g. Shenzhen (CN)</label>
+            </value>
+            <value>
+                <fullName>DDP + add Place and Country manually, e.g. Shenzhen (CN)</fullName>
+                <default>false</default>
+                <label>DDP + add Place and Country manually, e.g. Shenzhen (CN)</label>
+            </value>
+            <value>
+                <fullName>EXW Althofen, Austria (Incoterms 2000)</fullName>
+                <default>false</default>
+                <label>EXW Althofen, Austria (Incoterms 2000)</label>
+            </value>
+            <value>
+                <fullName>EXW Thalwil, Switzerland (Incoterms 2000) for samples, EXW Althofen, Austria (Incoterms 2000) for complete packing units</fullName>
+                <default>false</default>
+                <label>EXW Thalwil, Switzerland (Incoterms 2000) for samples, EXW Althofen, Austria (Incoterms 2000) for complete packing units</label>
+            </value>
+            <value>
+                <fullName>EXW Biñan, Philippines (Incoterms 2000)</fullName>
+                <default>false</default>
+                <label>EXW Biñan, Philippines (Incoterms 2000)</label>
+            </value>
+            <value>
+                <fullName>EXW Thalwil, Switzerland (Incoterms 2000) for samples, EXW Biñan, Philippines (Incoterms 2000) for complete packing units</fullName>
+                <default>false</default>
+                <label>EXW Thalwil, Switzerland (Incoterms 2000) for samples, EXW Biñan, Philippines (Incoterms 2000) for complete packing units</label>
+            </value>
+            <value>
+                <fullName>EXW Thalwil, Switzerland (Incoterms 2000)</fullName>
+                <default>false</default>
+                <label>EXW Thalwil, Switzerland (Incoterms 2000)</label>
+            </value>
+            <value>
+                <fullName>EXW Reston VA, Unites States (Incoterms 2000)</fullName>
+                <default>false</default>
+                <label>EXW Reston VA, Unites States (Incoterms 2000)</label>
+            </value>
+            <value>
+                <fullName>DDU</fullName>
+                <default>false</default>
+                <label>DDU</label>
+            </value>
+            <value>
+                <fullName>DDP</fullName>
+                <default>false</default>
+                <label>DDP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

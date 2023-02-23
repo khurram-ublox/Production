@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>I_will_take_the_connecting_bus__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Bus option.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>u-blox will provide a connecting bus service to the event from electronica.</inlineHelpText>
+    <label>I will take the connecting bus</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

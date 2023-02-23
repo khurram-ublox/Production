@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>approval_by_ASM_or_VP_Sales</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND($RecordType.DeveloperName  = &quot;RMA_commercial&quot; , Approval_available__c  = false)</errorConditionFormula>
+    <errorDisplayField>Approval_available__c</errorDisplayField>
+    <errorMessage>The approval is not available and the RMA can therefore not be opened.
+Please get the written approval from ASM / VP Sales according to the Signing Rules</errorMessage>
+</ValidationRule>

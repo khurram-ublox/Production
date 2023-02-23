@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Orders_of_Product</fullName>
+    <availability>online</availability>
+    <description>Show orders related to this product
+NOTE: It used to use &quot;Search_String__c&quot; instead of &quot;Name&quot;
+2015-05-20: khir changed to &quot;ProductCode&quot;  from &quot;Name&quot;
+Orig: URL, /00O20000002YvRR?pv2=&quot;{!Product2.Search_String__c}&quot;&amp;pv3=&quot;{!Product2.Search_String__c}&quot;</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>1000</height>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Show Orders</masterLabel>
+    <openType>newWindow</openType>
+    <page>ProductUrlShowOrders</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <width>1400</width>
+</WebLink>

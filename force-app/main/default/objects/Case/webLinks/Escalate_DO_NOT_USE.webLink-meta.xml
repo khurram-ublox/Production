@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalate_DO_NOT_USE</fullName>
+    <availability>online</availability>
+    <description>FAE -&gt; TM; TM -&gt; AE/Quality
+JavaScript button. DO NOT USE for Service Cloud.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Escalate DO NOT USE</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+var CaseId = &quot;{!Case.Id}&quot;;
+var OwnerId = &quot;{!Case.OwnerId}&quot;;
+var CreatorId = &quot;{!Case.CreatedById}&quot;;
+var TransferOwnerId = &quot;{!Case.TransferOwnerId__c}&quot;;
+var EscalationSource = &quot;{!Case.Escalation_Source__c}&quot;;
+var CaseInitiatorSource = &quot;{!Case.Case_Initiator_SourceId__c}&quot;;
+var CaseCreatedByPartner = &quot;{!Case.Created_By_Partner__c}&quot;;
+var CurrentUserInternal = &quot;{!Case.Current_User_Internal__c}&quot;;
+var CaseType = &quot;{!Case.Type}&quot;;
+
+
+// creates a CaseTeamMember record for the actual owner of the case
+
+var ct = new sforce.SObject(&quot;CaseTeamMember&quot;);
+
+ct.ParentId = CaseId;
+ct.MemberId = OwnerId;
+
+ct.TeamRoleId = &quot;0B7D0000000CanX&quot;;       // standard team role (first and only available)
+
+var result = sforce.connection.create([ct]);
+
+//alert (CaseCreatedByPartner);
+
+// assigns the new case owner or case queue, based on Case.TransferOwnerId__c which contains the assignment logic
+// sets the Case Initiator (= Case Creator) which is used by the &quot;Return Case&quot; button, this button will return the case to the Case Initiator
+// adds timestamp to the appropriate field when escalated
+
+var c = new sforce.SObject(&quot;Case&quot;);
+
+// Set new owner according to fields TransferOwnerId
+c.Id = CaseId;
+
+if (((CaseType==&quot;Environmental&quot;)||(CaseType==&quot;Qualification / Reliability / Production&quot;)||(CaseType==&quot;Contract-Review&quot;)||(CaseType==&quot;Questionaire / Self-Assessments&quot;)||(CaseType==&quot;Failure Analysis (RMA)&quot;)) &amp;&amp; ((TransferOwnerId==&quot;00G20000001Lsac&quot;)||(TransferOwnerId==&quot;00G20000001LsZy&quot;)||(TransferOwnerId==&quot;00GD0000003uWXg&quot;))) {
+  c.OwnerId = &quot;00G20000001Lsn7&quot;;
+} else {
+  c.OwnerId = TransferOwnerId;
+}
+
+// if empty, set to case creator
+if (CaseInitiatorSource == &quot;&quot;){
+  c.Case_Initiator_Source__c = CreatorId;
+}
+
+if (EscalationSource == &quot;TM&quot;){
+  c.Set_Case_Escalated_Timestamp_by_TM__c = &apos;True&apos;;
+}
+// 2018.03.27 :khir: added for APAC escalations START
+else if (EscalationSource == &quot;FAE Leader&quot;){
+  c.Set_Case_Escalated_Timestamp_by_FAE_Lead__c = &apos;True&apos;;
+}
+else if (EscalationSource == &quot;AE APAC&quot;){
+  c.Set_Case_Escalated_Timestamp_by_AE_APAC__c = &apos;True&apos;;
+}
+// 2018.03.27 :khir: added for APAC escalations END
+else if (EscalationSource == &quot;FAE&quot;){
+
+  if ((CaseCreatedByPartner==1) &amp;&amp; (CurrentUserInternal==1)){
+    c.Set_Case_Escalated_Timestamp_by_FAE__c = &apos;False&apos;;
+    c.Set_Case_Escalated_Timestamp_by_TM__c  = &apos;True&apos;;
+  } else {
+    c.Set_Case_Escalated_Timestamp_by_FAE__c = &apos;True&apos;;
+    c.Set_Case_Escalated_Timestamp_by_TM__c  = &apos;False&apos;;
+  }
+
+}
+
+
+// set flag to trigger notification mail to new owner
+c.Send_Notification_Mail__c = &apos;True&apos;;
+
+var result = sforce.connection.update([c]);
+
+//alert (result)
+
+window.parent.location.href=&quot;/&quot;+CaseId;</url>
+</WebLink>

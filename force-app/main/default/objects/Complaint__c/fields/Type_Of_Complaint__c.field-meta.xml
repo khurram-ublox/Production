@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Of_Complaint__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Categorize the type of problem that caused the complaint</inlineHelpText>
+    <label>Type Of Complaint</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Liability claim</fullName>
+                <default>false</default>
+                <label>Liability claim</label>
+            </value>
+            <value>
+                <fullName>Logistics problem</fullName>
+                <default>false</default>
+                <label>Logistics problem</label>
+            </value>
+            <value>
+                <fullName>Missing feature</fullName>
+                <default>false</default>
+                <label>Missing feature</label>
+            </value>
+            <value>
+                <fullName>Quality problem</fullName>
+                <default>false</default>
+                <label>Quality problem</label>
+            </value>
+            <value>
+                <fullName>Technical problem</fullName>
+                <default>false</default>
+                <label>Technical problem</label>
+            </value>
+            <value>
+                <fullName>Warranty claim</fullName>
+                <default>false</default>
+                <label>Warranty claim</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

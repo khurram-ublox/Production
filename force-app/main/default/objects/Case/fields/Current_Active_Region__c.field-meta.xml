@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_Active_Region__c</fullName>
+    <description>In GMT
+07:00-15:00 EMEA
+15:00-23:00 Americas
+23:00-07:00 APAC</description>
+    <externalId>false</externalId>
+    <formula>IF((HOUR(TIMENOW())&gt;=7 &amp;&amp; HOUR(TIMENOW())&lt;15),&quot;EMEA&quot;,IF((HOUR(TIMENOW())&gt;=15 &amp;&amp; HOUR(TIMENOW())&lt;23),&quot;Americas&quot;,&quot;APAC&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>In GMT
+07:00-15:00 EMEA
+15:00-23:00 Americas
+23:00-07:00 APAC</inlineHelpText>
+    <label>Current Active Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

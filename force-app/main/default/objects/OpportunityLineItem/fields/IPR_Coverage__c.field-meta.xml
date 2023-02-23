@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Coverage__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>IPR coverage of u-blox. Only relevant for wireless products.</inlineHelpText>
+    <label>IPR Coverage</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Premium coverage</fullName>
+                <default>false</default>
+                <label>Premium coverage</label>
+            </value>
+            <value>
+                <fullName>Prime coverage</fullName>
+                <default>false</default>
+                <label>Prime coverage</label>
+            </value>
+            <value>
+                <fullName>Premium except Qualcomm</fullName>
+                <default>false</default>
+                <label>Premium except Qualcomm</label>
+            </value>
+            <value>
+                <fullName>Prime except Qualcomm</fullName>
+                <default>false</default>
+                <label>Prime except Qualcomm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

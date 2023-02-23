@@ -1,0 +1,8 @@
+The following Account has been created (Potential Competitor is checked).
+
+Account Name: {!Account.Name}
+Modified by: {!Account.LastModifiedBy}
+
+If this is not a competitor and there you have any contacts to send mass mails, remove clear "Potential Competitor" in this Account
+
+Link to the Account: {!Account.Link}

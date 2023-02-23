@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PIF_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Its a flag to keep record of PIF sent to a contact or not in the Portal case.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked if Project Information Form is sent (by Macro)</inlineHelpText>
+    <label>PIF Sent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

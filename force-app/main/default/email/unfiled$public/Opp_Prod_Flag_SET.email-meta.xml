@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Request approved to set the flag for the following Opp Product and the flag has been set.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Opp Prod: Flag SET</name>
+    <style>none</style>
+    <subject>Forecast Flag SET: {!Opp_Product__c.Product__c} for {!Opp_Product__c.Opportunity_Account__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

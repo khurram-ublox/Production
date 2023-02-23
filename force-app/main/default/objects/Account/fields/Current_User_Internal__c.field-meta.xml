@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Current_User_Internal__c</fullName>
+    <description>Used to flag the current user is an internal user, made for Process Builder to enable Chatter post.
+OLD
+NOT(OR(
+$User.ProfileId = &quot;00eD000000160IL&quot;, /* Distributor Limited FAE */
+$User.ProfileId = &quot;00eD00000015ehS&quot;, /* Distributor team */
+$User.ProfileId = &quot;00eD00000015Trl&quot;, /* Gold Partner User */
+$User.ProfileId = &quot;00eD00000015UEf&quot;, /* Distributor Standard */
+$User.ProfileId = &quot;00eD000000160Nk&quot;, /* Distributor Standard FAE */
+$User.ProfileId = &quot;00e57000001AvLY&quot;, /* Distributor RFD */
+$User.ProfileId = &quot;00eD00000016DpY&quot;, /* Distributor team extended */
+$User.ProfileId = &quot;00e57000001AvOm&quot;, /* Distributor RFD FAE */
+$User.ProfileId = &quot;00e57000001tRer&quot;, /* Distributor SE FAE */
+$User.ProfileId = &quot;00e57000001J6wk&quot;, /* Partner Community Distributor Standard */
+$User.ProfileId = &quot;00e57000001J73W&quot; /* Partner Community Distributor team extended */
+))</description>
+    <externalId>false</externalId>
+    <formula>AND(
+  ISPICKVAL($User.UserType,&quot;Standard&quot;),
+  $User.ProfileId &lt;&gt; &quot;00e2p000001opLR&quot;, /* Partner Base */
+  $User.ProfileId &lt;&gt; &quot;00e2p000001opYk&quot;, /* Partner Base Quotation */
+  $UserRole.Id &lt;&gt; &quot;00E57000001DHfr&quot; /* RF Design (distributor) */
+)</formula>
+    <inlineHelpText>Used to flag the current user is an internal user, made for Process Builder to enable Chatter post.</inlineHelpText>
+    <label>Current User Internal</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Restriction_not_correct</fullName>
+    <active>true</active>
+    <description>Check that only valid use restrictions are assigned to wireless product.</description>
+    <errorConditionFormula>if (
+  Product2.IPR_Class__c = &quot;2G&quot;, if (left (text(Use_Restriction__c),2) = &quot;2G&quot;, false, true),
+  if (
+    Product2.IPR_Class__c = &quot;3G&quot;, if (left (text(Use_Restriction__c),2) = &quot;3G&quot;, false, true),
+    if (
+	  AND(OR(Product2.IPR_Class__c=&quot;4G&quot;,ISPICKVAL(Product2.Technology__c,&quot;LTE&quot;),ISPICKVAL(Product2.Technology__c,&quot;NB-IoT&quot;)), NOT(ISPICKVAL(Product2.Technology__c, &quot;RPMA&quot;))),if (left (text(Use_Restriction__c),2) = &quot;4G&quot;,false,true),
+      false
+	)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>ServiceDate</errorDisplayField>
+    <errorMessage>Use Restriction does not match the type of wireless product</errorMessage>
+</ValidationRule>

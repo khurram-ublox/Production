@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Budget_Year__c</fullName>
+    <description>Name of Budget Year</description>
+    <externalId>false</externalId>
+    <label>Budget Year</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FY 2009</fullName>
+                <default>false</default>
+                <label>FY 2009</label>
+            </value>
+            <value>
+                <fullName>FY 2010</fullName>
+                <default>false</default>
+                <label>FY 2010</label>
+            </value>
+            <value>
+                <fullName>FY 2011</fullName>
+                <default>false</default>
+                <label>FY 2011</label>
+            </value>
+            <value>
+                <fullName>FY 2012</fullName>
+                <default>false</default>
+                <label>FY 2012</label>
+            </value>
+            <value>
+                <fullName>FY 2013</fullName>
+                <default>false</default>
+                <label>FY 2013</label>
+            </value>
+            <value>
+                <fullName>FY 2014</fullName>
+                <default>false</default>
+                <label>FY 2014</label>
+            </value>
+            <value>
+                <fullName>FY 2015</fullName>
+                <default>false</default>
+                <label>FY 2015</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

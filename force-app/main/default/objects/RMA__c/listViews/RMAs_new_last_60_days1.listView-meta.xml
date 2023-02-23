@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMAs_new_last_60_days1</fullName>
+    <columns>NAME</columns>
+    <columns>RMA_Status__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Account_Prio__c</columns>
+    <columns>Short_Description_Complaint__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Qty_received_from_customer__c</columns>
+    <columns>Days_Open__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <label>RMAs new last 60 days</label>
+</ListView>

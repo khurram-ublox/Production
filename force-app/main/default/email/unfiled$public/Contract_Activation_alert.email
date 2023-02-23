@@ -1,0 +1,7 @@
+The following contract has been activated
+
+Account: {!Contract.Account}
+Contract Name: {!Contract.Name}
+Contract Category: {!Contract.Contract_Category__c}
+
+Link: {!Contract.Link}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Competitor_Price</fullName>
+    <availability>online</availability>
+    <description>Button to be placed on the related list in Opp Product. Opens edit window with pre-filled Opp Product and Quantity</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Competitor Price</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/a0N/e?CF00N57000006EAi5={!Opp_Product__c.Name}&amp;CF00N57000006EAi5_lkid={!Opp_Product__c.Id}&amp;00N57000006EAi0={!Opp_Product__c.Annual_Quantity__c}&amp;00N57000006EDek={!Today}&amp;retURL=/{!Opp_Product__c.Id}</url>
+</WebLink>

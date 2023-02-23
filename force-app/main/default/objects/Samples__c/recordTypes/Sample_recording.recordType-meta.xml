@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_recording</fullName>
+    <active>true</active>
+    <description>Depreciated as part of ticket IN_SF_MTC-696</description>
+    <label>Sample recording</label>
+    <picklistValues>
+        <picklist>Free_of_Charge__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IPR_coverage__c</picklist>
+        <values>
+            <fullName>Premium coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium except Qualcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime except Qualcomm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Status__c</picklist>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipped</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sample_Usage__c</picklist>
+        <values>
+            <fullName>Samples in production %28IP%2C MP%29</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Sample Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_Restriction__c</picklist>
+        <values>
+            <fullName>2G Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Telematics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To provide Logistics with the shipping information needed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Sample: inform logistics of requested samples to be shipped</name>
+    <style>none</style>
+    <subject>Sample request {!Samples__c.Name} for {!Samples__c.Product__c} is ready for shipment to {!Samples__c.Ship_To__c}.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

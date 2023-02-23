@@ -1,0 +1,34 @@
+<apex:page standardController="Case" extensions="ClearNewFlagVFCtrl">
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/11.1/connection.js"></script>
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    <script>    
+    // See New Mail checkbox of the current Case
+    sforce.connection.sessionId = '{!$Api.Session_ID}';
+    var CaseId = "{!Case.Id}";
+    var NewMail = "false";
+    var c = new sforce.SObject("Case");                     
+    c.Id = CaseId;
+    if (NewMail == 'true') {
+        var r = window.confirm("There are apparently new mails you may not have read. This action will clear New Mail flag and change Status to Working. Are you sure you want to do this?");
+        //alert(r);
+        if (r == true) {
+            c.New_Mail__c =false;
+            c.Status = 'Working';
+            sforce.connection.update([c]);
+            
+            uJS.closeAndRefreshTab(CaseId); // from ApexJS.js
+        }else{
+            uJS.closeTab(CaseId); // from ApexJS.js
+        }
+    }
+    else {
+        var r = window.alert("There is no new mail.");
+        uJS.closeTab(CaseId); // from ApexJS.js                
+    }
+    </script>
+    
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Inform that Solution has been released and with some Solution information.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Solution: released</name>
+    <style>none</style>
+    <subject>SF: Solution {!Solution.SolutionNumber} has been released</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

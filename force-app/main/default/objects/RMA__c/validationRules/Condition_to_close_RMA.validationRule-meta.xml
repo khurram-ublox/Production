@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition_to_close_RMA</fullName>
+    <active>true</active>
+    <description>Checks that the fields and &quot;Decision&quot; and &quot;Decision Taken By&quot; are filled in when the RMA is closed.</description>
+    <errorConditionFormula>AND($RecordType.DeveloperName = &quot;RMA_technical&quot; , AND( 
+ISPICKVAL(RMA_Status__c , &quot;6 Closed&quot;), 
+OR(ISPICKVAL(Decision__c,&quot;&quot;), Decision_Taken_By__c =&quot;&quot;)
+))</errorConditionFormula>
+    <errorMessage>Fill in the fields &quot;Decision&quot; and &quot;Decision Taken By&quot; before closing the RMA.</errorMessage>
+</ValidationRule>

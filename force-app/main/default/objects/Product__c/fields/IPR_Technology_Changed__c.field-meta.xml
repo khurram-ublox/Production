@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Technology_Changed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag when IPR Technology picklist changed to update IPR cost fields (trigger the workflow)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag when IPR Technology picklist changed to update IPR cost fields (trigger the workflow)</inlineHelpText>
+    <label>IPR Technology Changed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

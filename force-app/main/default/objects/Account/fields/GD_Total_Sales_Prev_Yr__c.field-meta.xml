@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GD_Total_Sales_Prev_Yr__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Previous year u-blox Total Sales from GD in local currency.</inlineHelpText>
+    <label>GD Billings Prev Yr</label>
+    <summarizedField>GD_POS_Order__c.u_blox_Total_Sales__c</summarizedField>
+    <summaryFilterItems>
+        <field>GD_POS_Order__c.Invoice_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2021</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>GD_POS_Order__c.Invoice_Date__c</field>
+        <operation>lessOrEqual</operation>
+        <value>12/31/2021</value>
+    </summaryFilterItems>
+    <summaryForeignKey>GD_POS_Order__c.Project_Owner_Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

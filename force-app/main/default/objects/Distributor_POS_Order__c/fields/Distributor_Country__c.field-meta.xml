@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_Country__c</fullName>
+    <description>Distributor country</description>
+    <externalId>false</externalId>
+    <formula>Distributor_Account__r.BillingCountry</formula>
+    <inlineHelpText>Distributor country</inlineHelpText>
+    <label>Distributor Country</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

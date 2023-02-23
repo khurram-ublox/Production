@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Masterschedule_Partner_SHO</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>Type_No__c</columns>
+    <columns>Flash_FW__c</columns>
+    <columns>Product_Status__c</columns>
+    <columns>PT_Availability_Date__c</columns>
+    <columns>ES_Availability_Date__c</columns>
+    <columns>IP_Availability_Date__c</columns>
+    <columns>MP_Availability_Date__c</columns>
+    <columns>PS_Availability_Date__c</columns>
+    <columns>DS_Availability_Date__c</columns>
+    <columns>Manual_Availability_Date__c</columns>
+    <columns>Last_Shipment_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Visible_In_Masterschedule__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Visible_To_Partner__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product_Status__c</field>
+        <operation>equals</operation>
+        <value>Prototypes,Engineering Samples,Initial Production,Mass Production,End of Life</value>
+    </filters>
+    <filters>
+        <field>Product_Center__c</field>
+        <operation>equals</operation>
+        <value>Short Range</value>
+    </filters>
+    <label>Masterschedule Partner (SHO)</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

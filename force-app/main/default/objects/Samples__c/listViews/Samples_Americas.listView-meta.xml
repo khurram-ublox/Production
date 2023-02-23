@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Samples_Americas</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Product__c</columns>
+    <columns>Remark__c</columns>
+    <columns>uB_Office__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>americas</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Stacey</value>
+    </filters>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>equals</operation>
+        <value>New,Clarification required,PM review pending,AE review pending,Tentatively confirmed,Confirmed,Partially shipped,Shipped,Rejected</value>
+    </filters>
+    <label>Samples - Americas</label>
+</ListView>

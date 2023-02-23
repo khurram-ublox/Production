@@ -1,0 +1,13 @@
+<apex:page standardController="Account">
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    <script>
+        uJS.openReport({
+            Id : "00O2p000008YEEE",
+            v0 : "{!Account.SF_Account_Number__c}"
+        });
+    </script>
+    
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

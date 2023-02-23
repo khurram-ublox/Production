@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone_SPR</fullName>
+    <availability>online</availability>
+    <description>Clones the SPR with the added SPR Products (NOTE: exchange rates and costs in the SPR Products are NOT copied)</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clone SPR</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+var r = window.confirm(&quot;This will create a new Special Price Request even if you press Cancel in the following page. Are you sure if you want to do this?&quot;);
+if (r == true) {
+
+    var SPRId = &quot;{!Special_Price_Request__c.Id}&quot;;
+    var SPRAccountId = &quot;{!Special_Price_Request__c.AccountId__c}&quot;;
+    var SPROpportunityId = &quot;{!Special_Price_Request__c.OpportunityId__c}&quot;;
+    var SPRContactId = &quot;{!Special_Price_Request__c.ContactId__c}&quot;;
+    var SPRCurrency = &quot;{!Special_Price_Request__c.CurrencyIsoCode}&quot;;
+    var SPRComment = &apos;{!JSENCODE(Special_Price_Request__c.Comment_by_Requestor__c)}&apos;;
+    var SPRDelivery = &quot;{!Special_Price_Request__c.Delivery__c}&quot;;
+    var SPRPayment = &quot;{!Special_Price_Request__c.Payment__c}&quot;;
+    var SPRPriceLevel = &quot;{!Special_Price_Request__c.Price_Level__c}&quot;;
+
+    var NewSPR = new sforce.SObject(&quot;Special_Price_Request__c&quot;);
+    NewSPR.Account__c = SPRAccountId;
+    NewSPR.Opportunity__c = SPROpportunityId;
+    NewSPR.Contact__c = SPRContactId;
+    NewSPR.CurrencyIsoCode = SPRCurrency;
+    NewSPR.Comment_by_Requestor__c = SPRComment;
+    NewSPR.Delivery__c = SPRDelivery;
+    NewSPR.Payment__c = SPRPayment;
+    NewSPR.Price_Level__c = SPRPriceLevel;
+
+    var result = sforce.connection.create([NewSPR]);
+
+
+    if(result[0].success==&apos;true&apos;) {
+
+    var NewSPRId = result[0].id;
+
+    //queries all SPR Products related to this SPR
+    var result = sforce.connection.query(&quot;SELECT Id, Product__c, Quantity_P1__c, Quantity_P2__c, Quantity_P3__c, Quantity_P4__c, Quantity_P5__c, Unit_Price_P1__c, Unit_Price_P2__c, Unit_Price_P3__c, Unit_Price_P4__c, Unit_Price_P5__c, Year_P1__c, Year_P2__c, Year_P3__c, Year_P4__c, Year_P5__c, Use_Restriction__c, IPR_Coverage__c, CurrencyIsoCode, Distributor_Resale_Unit_Price_P1__c, Distributor_Additional_Fee_P1__c, Distributor_Commission_P1__c, Distributor_Resale_Unit_Price_P2__c, Distributor_Additional_Fee_P2__c, Distributor_Commission_P2__c, Distributor_Resale_Unit_Price_P3__c, Distributor_Additional_Fee_P3__c, Distributor_Commission_P3__c, Distributor_Resale_Unit_Price_P4__c, Distributor_Additional_Fee_P4__c, Distributor_Commission_P4__c, Distributor_Resale_Unit_Price_P5__c, Distributor_Additional_Fee_P5__c, Distributor_Commission_P5__c, Product_Cost_P1__c, Product_Cost_P2__c, Product_Cost_P3__c, Product_Cost_P4__c, Product_Cost_P5__c FROM Special_Price_Request_Product__c WHERE Special_Price_Request__c = &apos;&quot; +SPRId+ &quot;&apos;&quot;);
+
+    var records = result.getArray(&quot;records&quot;);
+
+    //Loop through the SPR Products in the records set
+    for(var i=0;i&lt;records.length;i++){
+
+//window.alert(&quot;Year P1: &quot;+records[i].Year_P1__c);
+
+        var NewSPRP = new sforce.SObject(&quot;Special_Price_Request_Product__c&quot;);
+        NewSPRP.Special_Price_Request__c = NewSPRId;
+        NewSPRP.Product__c = records[i].Product__c;
+        NewSPRP.CurrencyIsoCode = records[i].CurrencyIsoCode;
+        NewSPRP.Use_Restriction__c = records[i].Use_Restriction__c;
+        NewSPRP.IPR_Coverage__c = records[i].IPR_Coverage__c;
+
+        NewSPRP.Year_P1__c = records[i].Year_P1__c;
+        NewSPRP.Unit_Price_P1__c = records[i].Unit_Price_P1__c;
+        NewSPRP.Product_Cost_P1__c = records[i].Product_Cost_P1__c;
+        NewSPRP.Quantity_P1__c = records[i].Quantity_P1__c;
+        NewSPRP.Distributor_Resale_Unit_Price_P1__c = records[i].Distributor_Resale_Unit_Price_P1__c;
+        NewSPRP.Distributor_Additional_Fee_P1__c = records[i].Distributor_Additional_Fee_P1__c;
+        NewSPRP.Distributor_Commission_P1__c = records[i].Distributor_Commission_P1__c;
+
+        NewSPRP.Year_P2__c = records[i].Year_P2__c;
+        NewSPRP.Unit_Price_P2__c = records[i].Unit_Price_P2__c;
+        NewSPRP.Product_Cost_P2__c = records[i].Product_Cost_P2__c;
+        NewSPRP.Quantity_P2__c = records[i].Quantity_P2__c;
+        NewSPRP.Distributor_Resale_Unit_Price_P2__c = records[i].Distributor_Resale_Unit_Price_P2__c;
+        NewSPRP.Distributor_Additional_Fee_P2__c = records[i].Distributor_Additional_Fee_P2__c;
+        NewSPRP.Distributor_Commission_P2__c = records[i].Distributor_Commission_P2__c;
+
+        NewSPRP.Year_P3__c = records[i].Year_P3__c;
+        NewSPRP.Unit_Price_P3__c = records[i].Unit_Price_P3__c;
+        NewSPRP.Product_Cost_P3__c = records[i].Product_Cost_P3__c;
+        NewSPRP.Quantity_P3__c = records[i].Quantity_P3__c;
+        NewSPRP.Distributor_Resale_Unit_Price_P3__c = records[i].Distributor_Resale_Unit_Price_P3__c;
+        NewSPRP.Distributor_Additional_Fee_P3__c = records[i].Distributor_Additional_Fee_P3__c;
+        NewSPRP.Distributor_Commission_P3__c = records[i].Distributor_Commission_P3__c;
+
+        NewSPRP.Year_P4__c = records[i].Year_P4__c;
+        NewSPRP.Unit_Price_P4__c = records[i].Unit_Price_P4__c;
+        NewSPRP.Product_Cost_P4__c = records[i].Product_Cost_P4__c;
+        NewSPRP.Quantity_P4__c = records[i].Quantity_P4__c;
+        NewSPRP.Distributor_Resale_Unit_Price_P4__c = records[i].Distributor_Resale_Unit_Price_P4__c;
+        NewSPRP.Distributor_Additional_Fee_P4__c = records[i].Distributor_Additional_Fee_P4__c;
+        NewSPRP.Distributor_Commission_P4__c = records[i].Distributor_Commission_P4__c;
+
+        NewSPRP.Year_P5__c = records[i].Year_P5__c;
+        NewSPRP.Unit_Price_P5__c = records[i].Unit_Price_P5__c;
+        NewSPRP.Product_Cost_P5__c = records[i].Product_Cost_P5__c;
+        NewSPRP.Quantity_P5__c = records[i].Quantity_P5__c;
+        NewSPRP.Distributor_Resale_Unit_Price_P5__c = records[i].Distributor_Resale_Unit_Price_P5__c;
+        NewSPRP.Distributor_Additional_Fee_P5__c = records[i].Distributor_Additional_Fee_P5__c;
+        NewSPRP.Distributor_Commission_P5__c = records[i].Distributor_Commission_P5__c;
+
+        var result = sforce.connection.create([NewSPRP]);
+
+    }
+    window.parent.location.href=&quot;/&quot;+ NewSPRId +&quot;/e?retURL=%2F&quot;+NewSPRId;
+
+    } else {
+
+    alert(result[0].errors.message);
+
+    }
+}</url>
+</WebLink>

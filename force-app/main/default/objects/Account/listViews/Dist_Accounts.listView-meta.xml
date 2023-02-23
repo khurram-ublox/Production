@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dist_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>uB_Office__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>Billings_YTD__c</columns>
+    <columns>Billings_Prev_Yr__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Distributor__c</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Billings_YTD__c</field>
+        <operation>greaterThan</operation>
+        <value>USD 0</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Distributor,Sales Representative</value>
+    </filters>
+    <label>Dist Accounts</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

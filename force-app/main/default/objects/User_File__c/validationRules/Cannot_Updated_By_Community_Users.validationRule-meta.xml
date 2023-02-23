@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Updated_By_Community_Users</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT($User.UserType) = &apos;CspLitePortal&apos;</errorConditionFormula>
+    <errorMessage>Community User cannot update the record.</errorMessage>
+</ValidationRule>

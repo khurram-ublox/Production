@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voting_Behavior__c</fullName>
+    <externalId>false</externalId>
+    <label>Voting Behavior</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>independent</fullName>
+                <default>false</default>
+                <label>independent</label>
+            </value>
+            <value>
+                <fullName>supported by proxy-advisor</fullName>
+                <default>false</default>
+                <label>supported by proxy-advisor</label>
+            </value>
+            <value>
+                <fullName>through proxy-advisor</fullName>
+                <default>false</default>
+                <label>through proxy-advisor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

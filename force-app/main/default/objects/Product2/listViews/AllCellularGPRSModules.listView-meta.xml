@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllCellularGPRSModules</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Type_No__c</columns>
+    <columns>Packaging_Size__c</columns>
+    <columns>Status_Next_Gate__c</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>COGS_1__c</columns>
+    <columns>COGS_Pct__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Reporting_Category__c</field>
+        <operation>equals</operation>
+        <value>GPRS modules</value>
+    </filters>
+    <label>All Cellular GPRS Modules</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

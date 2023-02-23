@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_Contribution__c</fullName>
+    <description>Forecast_Sales__c 
+
+- Forecast__c * (
+
+/* Subtract cost */ 
+Forecast_Unit__r.Product__r.COGS_1__c 
++ Actual_Sales_Price__c * Forecast_Unit__r.Product__r.COGS_Pct__c
+
+/* Subtract IPR cost (simplified) */
++ Actual_Sales_Price__c * 
+if ( Forecast_Unit__r.Product__r.IPR__c &lt; 20, 0.00,
+if (  Forecast_Unit__r.Product__r.IPR__c &lt; 30, 0.05,
+if (  Forecast_Unit__r.Product__r.IPR__c &lt; 40, 0.15,
+0.15)))
+)</description>
+    <externalId>false</externalId>
+    <formula>Forecast_Sales__c 
+
+- Forecast__c * (
+
+/* Subtract cost */ 
+Forecast_Unit__r.Product__r.COGS_1__c 
++ Actual_Sales_Price__c * Forecast_Unit__r.Product__r.COGS_Pct__c
+
+/* Subtract IPR cost (simplified) */
++ Actual_Sales_Price__c * 
+if (  Forecast_Unit__r.Product__r.IPR_Cost__r.M2M_Pct__c &gt; 0, Forecast_Unit__r.Product__r.IPR_Cost__r.M2M_Pct__c, 0.00)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Contribution calculated from Actual sales price, forecast, and cost stored in product. No actual data is used, so this field should only be used for future business</inlineHelpText>
+    <label>Forecast Contribution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

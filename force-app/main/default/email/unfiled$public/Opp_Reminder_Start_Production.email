@@ -1,0 +1,7 @@
+Please be aware that the expected Start of Production date for this opportunity is in four weeks from now. Time to gear up to get the first production PO!
+
+Opportunity Name: {!Opportunity.Name}
+Account Name: {!Opportunity.Account}
+Start Production: {!Opportunity.CloseDate}
+
+Link: {!Opportunity.Link}

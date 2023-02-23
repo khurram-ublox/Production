@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_direct__c</fullName>
+    <description>Second phone number</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Store direct phone number under &quot;Phone&quot;, use &quot;Other Phone&quot; to store additional numbers like main number or assistant phone.</inlineHelpText>
+    <label>Other Phone 2</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Phone</type>
+</CustomField>

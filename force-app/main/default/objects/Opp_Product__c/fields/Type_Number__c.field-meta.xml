@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_Number__c</fullName>
+    <description>Unique product type number. Not used for quotations</description>
+    <externalId>false</externalId>
+    <formula>Product__r.Type_No__c</formula>
+    <inlineHelpText>Unique product type number. Not used for quotations</inlineHelpText>
+    <label>Type Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

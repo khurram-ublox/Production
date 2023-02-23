@@ -1,0 +1,5 @@
+The following mass mail has been sent and your follow-up action is required.
+Email Name: {!et4ae5__IndividualEmailResult__c.Name}
+Date Sent: {!et4ae5__IndividualEmailResult__c.et4ae5__DateSent__c}
+
+Link to record: {!et4ae5__IndividualEmailResult__c.Link}

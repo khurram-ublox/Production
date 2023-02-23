@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Measure_Report_Name_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>LEFT(a4a_Country__c &amp; &quot; - &quot; &amp;  a4a_Product__c &amp; &quot; - &quot; &amp;   Project_Owner_Account__r.SF_Account_Number__c ,40)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Measure Report Name Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

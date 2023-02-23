@@ -1,0 +1,52 @@
+<!--
+ - Created by wsha on 01/10/2018.
+ -->
+
+<aura:component description="List recently accessed items of a user" access="global" controller="RecentlyAccessedItems" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" >
+
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="RecentlyViewed" type="RecentlyViewed" />
+    <aura:attribute name="cbaseURL" type="String"/>
+    <aura:attribute name="cbaseURLtopic" type="String"/>
+    <aura:attribute name="cbaseURLprofile" type="String"/>
+    <aura:attribute name="cbaseURLcase" type="String"/>
+    <aura:attribute name="cbaseURLarticle" type="String"/>
+    <aura:attribute name="cbaseURLcontentdoc" type="String"/>
+    <aura:attribute name="pageType" type="String"/>
+    <aura:attribute name="resultType" type="String"/>
+    <aura:attribute name="RegisteredUser" type="String"/>
+    <aura:handler name="init" action="{!c.getUserTypeClient}" value="{!this}"/>
+
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <aura:renderIf isTrue="{!v.RegisteredUser}">
+    <lightning:card title="{! v.resultType=='Unique'? 'Your Recently Viewed ' + v.pageType+'s' : 'Your Recently Viewed Items'}">
+        <aura:set attribute="body">
+
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer recentlyViewedItems">
+                <!--    <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">Recently Viewed {!v.pageType}</th>
+            </tr>
+            </thead>-->
+                <tbody>
+                <aura:iteration items="{!v.RecentlyViewed}" var="rvi">
+                    <tr scope="row">
+                        <td> <a href="{!rvi.Type=='Topic' ? v.cbaseURL+'/s/topic/' + rvi.Id :
+                                            rvi.Type=='User' ? v.cbaseURL+'/s/profile/' + rvi.Id :
+                                                rvi.Type=='Case'? v.cbaseURL+'/s/case/' + rvi.Id :
+                                                    rvi.Type=='Knowledge__ka'? v.cbaseURL+'/s/article/' + 
+                                      					rvi.Id : v.cbaseURL+'/s/contentdocument/' + rvi.Id}">{!rvi.Name}</a> </td>
+                        
+
+                    </tr>
+                </aura:iteration>
+                </tbody>
+            </table>
+
+        </aura:set>
+    </lightning:card>
+    </aura:renderIf>
+
+</aura:component>

@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_to_Marketing_Management_Action</name>
+        <label>Post to Marketing Management Action</label>
+        <locationX>675</locationX>
+        <locationY>3315</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Update_Flag_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>CreatepostforChatter</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>Marketing Management</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>Group</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>Email_PS_SHO_assignment</name>
+        <label>Email PS SHO assignment</label>
+        <locationX>675</locationX>
+        <locationY>2300</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_SHO__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approve_MSP_as_CM</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Add_Email_PS_CEL</name>
+        <label>SPR: Add Email PS CEL</label>
+        <locationX>662</locationX>
+        <locationY>1208</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_CEL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Email_PS_CEL__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Add_Email_PS_POS_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Add_Email_PS_CEL_POS_SHO</name>
+        <label>SPR: Add Email PS CEL POS SHO</label>
+        <locationX>662</locationX>
+        <locationY>999</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_CEL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Email_PS_CEL__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_POS__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Email_PS_POS__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_SHO__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Email_PS_SHO__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Add_Email_PS_CEL_decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Add_Email_PS_POS</name>
+        <label>SPR: Add Email PS POS</label>
+        <locationX>664</locationX>
+        <locationY>1429</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_POS__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Email_PS_POS__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Add_Email_PS_SHO_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Add_Email_PS_SHO</name>
+        <label>SPR: Add Email PS SHO</label>
+        <locationX>668</locationX>
+        <locationY>1633</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_SHO__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Email_PS_SHO__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Remove_Email_PS_CEL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Clear_Approved_By_Regional_Head</name>
+        <label>SPR: Clear Approved By Regional Head</label>
+        <locationX>676</locationX>
+        <locationY>3055</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Approved_By_Regional_Head__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PPP_MSP_for_GAM_Acc_approved_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Remove_Email_PS_CEL_assignment</name>
+        <label>SPR: Remove Email PS CEL assignment</label>
+        <locationX>671</locationX>
+        <locationY>1846</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_CEL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Remove_Email_PS_POS_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Remove_Email_PS_POS_assignment</name>
+        <label>SPR: Remove Email PS POS assignment</label>
+        <locationX>674</locationX>
+        <locationY>2071</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Email_PS_POS__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Remove_Email_PS_SHO_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>SPR_Status_Approved</name>
+        <label>SPR: Status Approved</label>
+        <locationX>675</locationX>
+        <locationY>2544</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Approved_By_Team_Manager__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Date_Approved_By_Team_Manager__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DateApprovedByTeamManagerDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Approve_MSP_as_Regional_Head</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Status_Approved</name>
+        <label>Status Approved</label>
+        <locationX>680</locationX>
+        <locationY>2797</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Approved_By_Regional_Head__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Date_Approved_By_Regional_Head__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DateApprovedByTeamManager</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SPR_Clear_Approval_for_MSP_by_Regional_Head</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Automatically approve MSP in case the current user is the final approver.</description>
+        <name>Approve_MSP_as_CM</name>
+        <label>Approve MSP as CM</label>
+        <locationX>377</locationX>
+        <locationY>2435</locationY>
+        <defaultConnector>
+            <targetReference>Approve_MSP_as_Regional_Head</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approve_MSP_as_CM_decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproveMSPasCMCondition</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Status_Approved</targetReference>
+            </connector>
+            <label>Approve MSP as CM decision</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Automatically approve MSP as Regional head.</description>
+        <name>Approve_MSP_as_Regional_Head</name>
+        <label>Approve MSP as Regional Head</label>
+        <locationX>377</locationX>
+        <locationY>2675</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Clear_Approval_for_MSP_by_Regional_Head</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Approve_MSP_as_Regional_Head_decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ApproveMSPasRegionalHead</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Status_Approved</targetReference>
+            </connector>
+            <label>Approve MSP as Regional Head decision</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>PPP_MSP_for_GAM_Acc_approved_Decision</name>
+        <label>PPP/MSP for GAM Acc approved Decision</label>
+        <locationX>379</locationX>
+        <locationY>3196</locationY>
+        <defaultConnector>
+            <targetReference>Update_Flag_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PPP_MSP_for_GAM_Acc_approved_Criteria</name>
+            <conditionLogic>1 AND 2 AND 3 AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account__r.Global_Account_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MSP (Minimum Sales Price)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_Marketing_Management_Action</targetReference>
+            </connector>
+            <label>PPP/MSP for GAM Acc approved Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Add_Email_PS_All</name>
+        <label>SPR: Add Email PS All</label>
+        <locationX>379</locationX>
+        <locationY>906</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Add_Email_PS_CEL_decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SPR_Add_Email_PS_All_decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.LastModifiedDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Add_Email_PS_CEL_POS_SHO</targetReference>
+            </connector>
+            <label>SPR: Add Email PS All decision</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Add_Email_PS_CEL_decision</name>
+        <label>SPR: Add Email PS CEL decision</label>
+        <locationX>378</locationX>
+        <locationY>1101</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Add_Email_PS_POS_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Add_Email_PS_CEL_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity_CEL__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Add_Email_PS_CEL</targetReference>
+            </connector>
+            <label>Add Email PS CEL Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Add_Email_PS_POS_Decision</name>
+        <label>SPR: Add Email PS POS Decision</label>
+        <locationX>378</locationX>
+        <locationY>1320</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Add_Email_PS_SHO_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SPR_Add_Email_PS_POS_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity_POS__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Add_Email_PS_POS</targetReference>
+            </connector>
+            <label>SPR: Add Email PS POS Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Add_Email_PS_SHO_Decision</name>
+        <label>SPR: Add Email PS SHO Decision</label>
+        <locationX>377</locationX>
+        <locationY>1538</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Remove_Email_PS_CEL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SPR_Add_Email_PS_SHO_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity_SHO__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Add_Email_PS_SHO</targetReference>
+            </connector>
+            <label>SPR: Add Email PS SHO Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Clear Status and Approved By Regional Head checkbox if SPR (MSP) is created by Regional Head.</description>
+        <name>SPR_Clear_Approval_for_MSP_by_Regional_Head</name>
+        <label>SPR: Clear Approval for MSP by Regional Head</label>
+        <locationX>378</locationX>
+        <locationY>2932</locationY>
+        <defaultConnector>
+            <targetReference>PPP_MSP_for_GAM_Acc_approved_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Clear_Approval_for_MSP_by_Regional_Head</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ClearApprovalforMSPbyRegionalHead</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Clear_Approved_By_Regional_Head</targetReference>
+            </connector>
+            <label>Clear Approval for MSP by Regional Head</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Remove_Email_PS_CEL</name>
+        <label>SPR: Remove Email PS CEL</label>
+        <locationX>377</locationX>
+        <locationY>1753</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Remove_Email_PS_POS_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SPR_Remove_Email_PS_CEL_decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity_CEL__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Remove_Email_PS_CEL_assignment</targetReference>
+            </connector>
+            <label>SPR: Remove Email PS CEL decision</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Remove_Email_PS_POS_Decision</name>
+        <label>SPR: Remove Email PS POS Decision</label>
+        <locationX>376</locationX>
+        <locationY>1975</locationY>
+        <defaultConnector>
+            <targetReference>SPR_Remove_Email_PS_SHO_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SPR_Remove_Email_PS_POS_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity_POS__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SPR_Remove_Email_PS_POS_assignment</targetReference>
+            </connector>
+            <label>SPR: Remove Email PS POS Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SPR_Remove_Email_PS_SHO_Decision</name>
+        <label>SPR: Remove Email PS SHO Decision</label>
+        <locationX>377</locationX>
+        <locationY>2187</locationY>
+        <defaultConnector>
+            <targetReference>Approve_MSP_as_CM</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SPR_Remove_Email_PS_SHO_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity_SHO__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Total_Quantity__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Price_Level__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PPP (Project Price Plan)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_PS_SHO_assignment</targetReference>
+            </connector>
+            <label>SPR: Remove Email PS SHO Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Update_Flag_Decision</name>
+        <label>Update Flag Decision</label>
+        <locationX>380</locationX>
+        <locationY>3455</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Flag</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UpdateFlag</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_SPR_record</targetReference>
+            </connector>
+            <label>Update Flag</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>ApproveMSPasCM</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL( {!$Record.Price_Level__c}, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp;
+(( {!$Record.CreatedBy.Alias} =&quot;mchi&quot; &amp;&amp; {!$User.Alias} =&quot;mchi&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;ntha&quot; &amp;&amp; {!$User.Alias} =&quot;ntha&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;psbi&quot; &amp;&amp; {!$User.Alias} =&quot;psbi&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;sguo&quot; &amp;&amp; {!$User.Alias} =&quot;sguo&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;shki&quot; &amp;&amp; {!$User.Alias} =&quot;shki&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;tnak&quot; &amp;&amp; {!$User.Alias} =&quot;tnak&quot; )||
+( {!$Record.CreatedBy.Alias}  =&quot;tzho&quot; &amp;&amp; {!$User.Alias} =&quot;tzho&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <name>ApproveMSPasCMCondition</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL( {!$Record.Price_Level__c}, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp;
+(( {!$Record.CreatedBy.Alias} =&quot;tnak&quot; &amp;&amp; {!$User.Alias} =&quot;mchi&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;ntha&quot; &amp;&amp; {!$User.Alias} =&quot;ntha&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;psbi&quot; &amp;&amp; {!$User.Alias} =&quot;psbi&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;sguo&quot; &amp;&amp; {!$User.Alias} =&quot;sguo&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;shki&quot; &amp;&amp; {!$User.Alias} =&quot;shki&quot; )||
+( {!$Record.CreatedBy.Alias} =&quot;tnak&quot; &amp;&amp; {!$User.Alias} =&quot;tnak&quot; )||
+( {!$Record.CreatedBy.Alias}  =&quot;tzho&quot; &amp;&amp; {!$User.Alias} =&quot;tzho&quot; ))</expression>
+    </formulas>
+    <formulas>
+        <name>ApproveMSPasRegionalHead</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL( {!$Record.Price_Level__c}, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp; (
+({!$Record.CreatedBy.Alias} =&quot;atan&quot; &amp;&amp; {!$User.Alias}=&quot;atan&quot;) ||
+({!$Record.CreatedBy.Alias}=&quot;egui&quot; &amp;&amp; {!$User.Alias} =&quot;egui&quot;) ||
+({!$Record.CreatedBy.Alias}=&quot;sram&quot; &amp;&amp; {!$User.Alias} =&quot;sram&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>ClearApprovalforMSPbyRegionalHead</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED( {!$Record.Price_Level__c} )  &amp;&amp; 
+NOT(ISPICKVAL( {!$Record.Price_Level__c},&quot;MSP (Minimum Sales Price)&quot;)) &amp;&amp;
+ISPICKVAL( {!$Record.Status__c}, &quot;Approved&quot;) &amp;&amp;
+NOT( {!$Record.Approved_By_Team_Leader__c} ) &amp;&amp;
+NOT( {!$Record.Approved_By_Team_Manager__c} ) &amp;&amp;
+{!$Record.Approved_By_Regional_Head__c} &amp;&amp;
+(( {!$Record.CreatedBy.Alias} =&quot;atan&quot; &amp;&amp; $User.Alias =&quot;atan&quot;) ||
+( {!$Record.CreatedBy.Alias} =&quot;egui&quot; &amp;&amp; $User.Alias=&quot;egui&quot;) ||
+({!$Record.CreatedBy.Alias} =&quot;sram&quot; &amp;&amp; $User.Alias=&quot;sram&quot;))</expression>
+    </formulas>
+    <formulas>
+        <name>DateApprovedByTeamManager</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <name>DateApprovedByTeamManagerDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <name>TotalQuantityZero</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.Total_Quantity__c}=0</expression>
+    </formulas>
+    <interviewLabel>SPR: After Created/updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SPR: After Created/updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_SPR_record</name>
+        <label>Update SPR record</label>
+        <locationX>387</locationX>
+        <locationY>3678</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>261</locationX>
+        <locationY>521</locationY>
+        <connector>
+            <targetReference>SPR_Add_Email_PS_All</targetReference>
+        </connector>
+        <object>Special_Price_Request__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>CreatepostforChatter</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Approved {!$Record.Price_Level__c} request for {!$Record.Account__r.Name}.
+
+Related Opportunity: {!$Record.Opportunity__r.Name} https://u-blox.my.salesforce.com/{!$Record.Opportunity__r.Id}
+Total Revenue: {!$Record.Total_Revenue__c}
+Total Contribution: {!$Record.Total_Contribution__c}
+
+{!$Record.Name}: https://u-blox.my.salesforce.com/{!$Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailPSCEL</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;TEXT(stefano.moioli@u-blox.com)&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailPSCEL2</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;stefano.moioli@u-blox.com&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailPSPOS</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Peter.Fairhurst@u-blox.com&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailPSPOS2</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Peter.Fairhurst@u-blox.com&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailPSSHO</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;hakan.svegerud@u-blox.com&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailPSSHO2</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;hakan.svegerud@u-blox.com&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Emailtext</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;stefano.moioli@u-blox.com&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>UpdateFlag</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

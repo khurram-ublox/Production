@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_POS_Samples</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Type_No__c</columns>
+    <columns>Product_Owner_Email__c</columns>
+    <columns>Requested_Quantity__c</columns>
+    <columns>Confirmed__c</columns>
+    <columns>Requested_Delivery_Date__c</columns>
+    <columns>Request_Initiator__c</columns>
+    <columns>Sample_Usage__c</columns>
+    <columns>Ship_To__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>uB_Office__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>equals</operation>
+        <value>PM review pending,New</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2018 12:00 AM</value>
+    </filters>
+    <label>PS POS Samples</label>
+    <queue>ProductMarketing187991</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

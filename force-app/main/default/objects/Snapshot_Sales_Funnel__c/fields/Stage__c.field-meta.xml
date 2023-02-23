@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0 Competition</fullName>
+                <default>false</default>
+                <label>0 Competition</label>
+            </value>
+            <value>
+                <fullName>1 Lost</fullName>
+                <default>false</default>
+                <label>1 Lost</label>
+            </value>
+            <value>
+                <fullName>2 Inactive</fullName>
+                <default>false</default>
+                <label>2 Inactive</label>
+            </value>
+            <value>
+                <fullName>3 Calling on</fullName>
+                <default>false</default>
+                <label>3 Calling on</label>
+            </value>
+            <value>
+                <fullName>4 Evaluation</fullName>
+                <default>false</default>
+                <label>4 Evaluation</label>
+            </value>
+            <value>
+                <fullName>5 Design-in</fullName>
+                <default>false</default>
+                <label>5 Design-in</label>
+            </value>
+            <value>
+                <fullName>6 Prototypes</fullName>
+                <default>false</default>
+                <label>6 Prototypes</label>
+            </value>
+            <value>
+                <fullName>7 Pre-Production</fullName>
+                <default>false</default>
+                <label>7 Pre-Production</label>
+            </value>
+            <value>
+                <fullName>8 Production</fullName>
+                <default>false</default>
+                <label>8 Production</label>
+            </value>
+            <value>
+                <fullName>9 Closed - EoL</fullName>
+                <default>false</default>
+                <label>9 Closed - EoL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

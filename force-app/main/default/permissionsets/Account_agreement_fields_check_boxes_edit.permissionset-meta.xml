@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>* This permission set provide edit permission for Account fields &quot;Design Partner Agreement&quot;, &quot;Solution Partner Agreement&quot;, and &quot;Referral Agreement&quot;.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Design_Partner_Agreement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Referral_Agreement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Solution_Partner_Agreement__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Account agreement fields check boxes edit</label>
+</PermissionSet>

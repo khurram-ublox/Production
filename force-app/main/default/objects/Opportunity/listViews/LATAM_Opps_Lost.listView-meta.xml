@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LATAM_Opps_Lost</fullName>
+    <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>Latest_Status__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Account_Country__c</columns>
+    <columns>Product_3__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account_Channel_Manager__c</columns>
+    <columns>First_Date_Of_1_Lost__c</columns>
+    <columns>Reason__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Country__c</field>
+        <operation>contains</operation>
+        <value>AG,AI,AR,AW,BB,BM,BO,BR,BS,BZ,CL,CO,CR,CU,CW,DM,DO,EC,FK,GF,GP,GS,GT,GY,HN,HT,JM</value>
+    </filters>
+    <filters>
+        <field>Account_Country__c</field>
+        <operation>contains</operation>
+        <value>KN,KY,LC,MF,MQ,MS,MX,NI,PA,PE,PR,PY,SR,SV,SX,TC,TT,UY,VC,VE,VG,VI</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>contains</operation>
+        <value>1 Lost</value>
+    </filters>
+    <label>LATAM Opps Lost</label>
+    <sharedTo>
+        <group>Sales_Americas</group>
+    </sharedTo>
+</ListView>

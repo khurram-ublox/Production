@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fiscal_Period__c</fullName>
+    <description>Name of fiscal period</description>
+    <externalId>false</externalId>
+    <label>Fiscal Period</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Period 1 - January</fullName>
+                <default>false</default>
+                <label>Period 1 - January</label>
+            </value>
+            <value>
+                <fullName>Period 2 - February</fullName>
+                <default>false</default>
+                <label>Period 2 - February</label>
+            </value>
+            <value>
+                <fullName>Period 3 - March</fullName>
+                <default>false</default>
+                <label>Period 3 - March</label>
+            </value>
+            <value>
+                <fullName>Period 4 - April</fullName>
+                <default>false</default>
+                <label>Period 4 - April</label>
+            </value>
+            <value>
+                <fullName>Period 5 - May</fullName>
+                <default>false</default>
+                <label>Period 5 - May</label>
+            </value>
+            <value>
+                <fullName>Period 6 - June</fullName>
+                <default>false</default>
+                <label>Period 6 - June</label>
+            </value>
+            <value>
+                <fullName>Period 7 - July</fullName>
+                <default>false</default>
+                <label>Period 7 - July</label>
+            </value>
+            <value>
+                <fullName>Period 8 - August</fullName>
+                <default>false</default>
+                <label>Period 8 - August</label>
+            </value>
+            <value>
+                <fullName>Period 9 - September</fullName>
+                <default>false</default>
+                <label>Period 9 - September</label>
+            </value>
+            <value>
+                <fullName>Period 10 - October</fullName>
+                <default>false</default>
+                <label>Period 10 - October</label>
+            </value>
+            <value>
+                <fullName>Period 11 - November</fullName>
+                <default>false</default>
+                <label>Period 11 - November</label>
+            </value>
+            <value>
+                <fullName>Period 12 - December</fullName>
+                <default>false</default>
+                <label>Period 12 - December</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

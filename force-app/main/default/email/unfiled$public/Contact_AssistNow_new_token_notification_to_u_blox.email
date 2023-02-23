@@ -1,0 +1,6 @@
+The AssistNow Token for the following contact has been generated and is active now: 
+
+Company: {!Account.Name} 
+Name: {!Contact.Name} 
+
+Click on the link to access the relevant Contact: {!Contact.Link}

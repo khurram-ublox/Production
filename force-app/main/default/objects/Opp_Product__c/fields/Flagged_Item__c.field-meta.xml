@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flagged_Item__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked, you can edit the manual forecast in the report opened with &quot;Measure Report&quot; button.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If checked, you can edit the manual forecast in the report opened with &quot;Measure Report&quot; button. Press &quot;Submit for Approval&quot; button to check or uncheck.</inlineHelpText>
+    <label>Flagged Item</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

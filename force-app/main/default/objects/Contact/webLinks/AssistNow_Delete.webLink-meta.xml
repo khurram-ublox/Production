@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssistNow_Delete</fullName>
+    <availability>online</availability>
+    <description>Deletes the AssistNow Token</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>AssistNow Delete</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+// ToDo: remove unused vars
+
+var ContactId = &quot;{!Contact.Id}&quot;;
+var MGA = &quot;{!Contact.MGA__c}&quot;;
+var MGAToken = &quot;{!Contact.MGA_Token__c}&quot;;
+var MGARequestedDate = &quot;{!Contact.MGA_Requested_Date__c}&quot;;
+
+// check MGA and copy the token to MGA Token
+var c = new sforce.SObject(&quot;Contact&quot;);
+c.Id = ContactId;
+
+//if (MGAToken != &quot;&quot; &amp;&amp; MGARequestedDate != &quot;&quot;)
+if (MGA == true &amp;&amp; MGAToken != &quot;&quot;)
+{
+   // Pop-up window to confirm
+   var r = window.confirm(&quot;This will delete the existing token and block this Contact from using AssistNow. Are you sure you want to do this?&quot;);
+   if (r == true) 
+   {
+     // Delete AssistNow Token (MGA_Token__c)
+     c.MGA__c = &apos;False&apos;;
+     c.MGA_Token__c = null;
+     c.AssistNow_Token_To_Delete__c = MGAToken;
+     sforce.connection.update([c]);
+     window.parent.location.href=&quot;/&quot;+ContactId;
+   } 
+}
+else
+{
+   // Pop-up window
+   window.alert(&quot;This Contact has no AssistNow Token.&quot;);
+}</url>
+</WebLink>

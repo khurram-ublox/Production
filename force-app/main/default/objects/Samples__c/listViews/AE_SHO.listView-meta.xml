@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_SHO</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>Requested_Quantity__c</columns>
+    <columns>Confirmed__c</columns>
+    <columns>Order_Date__c</columns>
+    <columns>uB_Office__c</columns>
+    <columns>Delivery_Date__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Center__c</field>
+        <operation>equals</operation>
+        <value>Short Range</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Samples__c.Sample_request</value>
+    </filters>
+    <label>AE_SHO</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

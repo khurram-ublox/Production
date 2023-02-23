@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Lead_AssistNow_Temporary_Token</fullName>
+        <description>Lead: AssistNow Temporary Token</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Lead_AssistNow_Temporary_Token_notification_to_Lead_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Auto_response_for_webforms_for_new_website_with_Drupal_AssistNow</fullName>
+        <description>Lead: Auto response for webforms (for new website with Drupal, AssistNow). used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead: Auto response for webforms (for new website with Drupal, AssistNow)&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_Web_to_Lead_email_response_Service_registration_form_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Auto_response_for_webforms_for_new_website_with_Drupal_generic</fullName>
+        <description>Lead: Auto response for webforms (for new website with Drupal, generic). used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead: Auto response for webforms (for new website with Drupal, generic)&apos; .</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_Web_to_Lead_email_response_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Conversion_alert_to_new_Account_Owner</fullName>
+        <description>Lead: Conversion alert to new Account Owner. When the lead has been converted, send notifitcation to account owner.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Leads_new_opp_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Email_Alert_Project_Information_Form</fullName>
+        <ccEmails>nick.hayes@u-blox.com</ccEmails>
+        <description>Lead: Email Alert Project Information Form. used in flow &apos;&apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead: Notify gsol about new leads&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>giovanni.solito@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_Project_Information_Form</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Email_notification_for_EMEA_office_and_source_as_Project_Form_Customer_NB_I</fullName>
+        <description>Lead: Email notification for EMEA office and source as &quot;Project Form - Customer&quot;, &quot;NB-IoT Project Form&quot;</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>crystal.liu@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_Notify_News_Subscription</fullName>
+        <description>Lead: Notify News Subscription. Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead: Notify News Subscription&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_News_Subscription_submitted</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_created_Lead_action_EMEA_not_Project_Form_Customer_PCN</fullName>
+        <ccEmails>info@u-blox.com</ccEmails>
+        <description>Lead: inform about created Lead action (EMEA, not Project Form - Customer, PCN)</description>
+        <protected>false</protected>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_online_shop_purchase</fullName>
+        <description>Lead: inform about online shop purchase</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Leads_inform_owner_of_new_online_shop_purchase</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action</fullName>
+        <description>Lead: inform about web2lead action (EMEA). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (EMEA)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Admins_EMEA</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_ANZ</fullName>
+        <ccEmails>info_anz@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (ANZ). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (ANZ)&apos;.</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_APAC</fullName>
+        <ccEmails>info_ap@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (Rest of APAC). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (RoA)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>campaignMemberDerivedOwner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_Americas</fullName>
+        <ccEmails>info_us@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (Americas). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (Americas)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_China</fullName>
+        <ccEmails>info_cn@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (China). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (China)&apos;.</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_Digi_Key</fullName>
+        <description>Lead: inform about web2lead action (Digi-Key).</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Admins_EMEA</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_India</fullName>
+        <ccEmails>info_ap@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (India). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (India)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_Japan</fullName>
+        <ccEmails>info_jp@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (Japan). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (Japan)&apos;.</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_Korea</fullName>
+        <ccEmails>info_kr@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (Korea). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (Korea)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ks.son@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_PCN_APAC</fullName>
+        <ccEmails>info_ap@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action, PCN (APAC). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead: inform about web2lead action, PCN (APAC)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationPCN</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_PCN_Americas</fullName>
+        <ccEmails>info_us@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action, PCN (Americas). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / PCN subscription: send email alert (Americas)&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationPCN</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_PCN_EMEA</fullName>
+        <ccEmails>info@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action, PCN (EMEA). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / PCN subscription: send email alert (EMEA)&apos;.</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationPCN</template>
+    </alerts>
+    <alerts>
+        <fullName>Lead_inform_about_web2lead_action_Taiwan</fullName>
+        <ccEmails>info_tw@u-blox.com</ccEmails>
+        <description>Lead: inform about web2lead action (Taiwan). Used in flow &apos;Lead: Email Alerts&apos; and the flow node is &apos;Lead / project form: send email alert (Taiwan)&apos;.</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LeadsNewassignmentnotificationProjectInfo</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Lead_Add_Temporary_Token_Valid_Until</fullName>
+        <description>Add 30 days after the token is generated</description>
+        <field>AssistNow_Temporary_Token_Valid_Until__c</field>
+        <formula>TODAY()+30</formula>
+        <name>Lead: Add Temporary Token Valid Until</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Check_Financial_News</fullName>
+        <description>Check Financial News</description>
+        <field>Financial_News__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead: Check Financial News</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Check_Product_News</fullName>
+        <description>Check Product News</description>
+        <field>Product_News__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead: Check Product News</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Copy_Application_Type</fullName>
+        <description>Copy it to import to Opportunity</description>
+        <field>Application_Type_Copy__c</field>
+        <formula>TEXT(New_Application_Type__c)</formula>
+        <name>Lead: Copy Application Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Fill_Company</fullName>
+        <description>Fill Company for Leads generated from webform News Subscription where no Company can be given</description>
+        <field>Company</field>
+        <formula>IF(NOT(ISBLANK(Company_Webform__c)),Company_Webform__c, 
+CASE(Account_Type_Webform__c, 
+&quot;General public&quot;, FirstName&amp;&quot; &quot;&amp;LastName, 
+&quot;Private investor&quot;, FirstName&amp;&quot; &quot;&amp;LastName, 
+&quot;&quot;) 
+)</formula>
+        <name>Lead: Fill Company</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Marketing_Communication_Opt_Out</fullName>
+        <field>Marketing_Communication_Opt_Out__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead: Marketing Communication Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Project_Description_for_NB_IoT_Pro</fullName>
+        <field>Project_Description__c</field>
+        <formula>&quot;Region: &quot; &amp; NBIOT_Region__c &amp; BR() &amp;
+&quot;Email of u-blox Contact: &quot; &amp; NBIOT_Email_of_your_u_blox_contact__c  &amp; BR() &amp;
+BR() &amp;
+&quot;==Project Spec==&quot; &amp; BR() &amp;
+&quot;1. Prototype Production Date: &quot; &amp; TEXT(Date_Prototype__c) &amp; BR() &amp;
+&quot;2. Number of Modules required for the Prototype Phase: &quot; &amp; NBIOT_No_of_Modules_for_Prototype__c &amp; BR() &amp;
+&quot;3. Is there a requirement of performing Laboratory Trials: &quot; &amp; NBIOT_Requirement_of_Lab_Trial__c &amp; BR() &amp;
+&quot;Date: &quot; &amp; IF(NBIOT_Requirement_of_Lab_Trial__c=&quot;Yes&quot;,TEXT(NBIOT_Date_Lab_Trial__c),&quot;&quot;) &amp; BR() &amp;
+&quot;4. Are Field Trials planned : &quot; &amp; NBIOT_Field_Trial_Planned__c &amp; BR() &amp;
+&quot;Date of planned Trials: &quot; &amp; IF(NBIOT_Field_Trial_Planned__c=&quot;Yes&quot;,TEXT(NBIOT_Date_of_Field_Trial__c),&quot;&quot;) &amp; BR() &amp;
+&quot;Region/City: &quot; &amp; NBIOT_Region_City_of_Field_Trial__c &amp; BR() &amp;
+&quot;5. In case Field Trials are planned, which Operator(s) are you in contact with?: &quot; &amp; NBIOT_Operator_for_Field_Trial__c &amp; BR() &amp;
+&quot;6. Start of Production (SOP) : &quot; &amp; TEXT(Date_Production__c) &amp; BR() &amp;
+&quot;7. Planned Yearly Quantity after SOP: &quot; &amp; TEXT(Annual_Quantity__c) &amp; BR() &amp;
+&quot;8. Design House reference name: &quot; &amp; Design_House__c &amp; BR() &amp;
+&quot;9. End Customer reference name: &quot; &amp;  End_Customer__c &amp; BR() &amp;
+&quot;10. Purchasing Account reference name: &quot; &amp; NBIOT_Purchasing_Account_Reference_Name__c &amp; BR() &amp;
+&quot;11. Current Total Yearly Running Production of devices (meters, etc) : &quot; &amp; Current_Qty__c &amp; BR() &amp;
+&quot;12. Current Yearly Running Production of devices (meters, etc) with communication unit: &quot; &amp; NBIOT_Current_Qty_w_Communication_Unit__c &amp; BR() &amp;
+BR() &amp;
+&quot;==Tech Spec==&quot; &amp; BR() &amp;
+&quot;13. Frequency bands considered [800MHz, 850MHz, 900Mhz]: &quot; &amp; NBIOT_Freq_Bands_Considered__c &amp; BR() &amp;
+&quot;14. Detailed description of the end-device application (e.g. metering, telematics, street lighting, environmental monitoring and control, smart parking, ...): &quot; &amp; NBIOT_Detailed_Description_End_Device__c &amp; BR() &amp;
+&quot;15. Battery part number (indicate battery model name if available): &quot; &amp; NBIOT_Battery_Part_No__c &amp; BR() &amp;
+&quot;16. Battery cell size requirement    [D, C, AA, ...]: &quot; &amp; NBIOT_Battery_Cell_Size_Requirement__c &amp; BR() &amp;
+&quot;17. Battery capacity   [Ah]: &quot; &amp; NBIOT_Battery_Capacity__c &amp; BR() &amp;
+&quot;18. Expected transmit occasions per day towards the application server (uplink)    [number]: &quot; &amp; NBIOT_Exp_Uplink_Transmit_Occasion__c &amp; BR() &amp;
+&quot;19. Amout of data expected per transmit occasion   [bytes]: &quot; &amp; NBIOT_Amount_of_Data_per_Transmit__c &amp; BR() &amp;
+&quot;20. Device operating temperature range    [°C]: &quot; &amp; NBIOT_Device_Operation_Temperature_Range__c &amp; BR() &amp;
+&quot;21. Field FW update procedure required?      : &quot; &amp; NBIOT_Field_FW_Update_Procedure_Required__c &amp; BR() &amp;
+&quot;22. Preferred type of FW update procedure    [FOAT, FOTA]: &quot; &amp; NBIOT_Preferred_Type_of_FW_Update__c &amp; BR() &amp;
+&quot;23. Expected years of operation of the device in the field : &quot; &amp; NBIOT_Exp_Years_of_Operation_in_Field__c &amp; BR() &amp;
+&quot;24. Which protocol entities does your system architecture normally make use of   [pub/sub via COAP or MQTT, TCP, UDP, LWM2M, others]?: &quot; &amp; NBIOT_Protocol_Entities__c &amp; BR() &amp;
+&quot;25. Interfaces requested   [UART, SPI, I2C,...]: &quot; &amp; NBIOT_Interfaces_requested__c &amp; BR() &amp;
+&quot;26. Nested design with other cellular modules needed? [yes/no]: &quot; &amp; NBIOT_Nested_Design_Needed__c</formula>
+        <name>Lead: Project Description for NB-IoT Pro</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Set_Account_Record_Type</fullName>
+        <description>Set Account Record Type to convert based on Account Type given in the webform</description>
+        <field>Account_Record_Type__c</field>
+        <formula>CASE(Account_Type_Webform__c, 
+&quot;Media&quot;,&quot;Media&quot;, 
+&quot;Market Research&quot;,&quot;Media&quot;,
+&quot;Finance&quot;)</formula>
+        <name>Lead: Set Account Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_Set_Contact_Record_Type</fullName>
+        <description>Set Account Record Type to convert based on Account Type given in the webform</description>
+        <field>Contact_Record_Type__c</field>
+        <formula>CASE(Account_Type_Webform__c, 
+&quot;Media&quot;,&quot;Media&quot;, 
+&quot;Market Research&quot;,&quot;Media&quot;, 
+&quot;Finance&quot;)</formula>
+        <name>Lead: Set Contact Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_clear_catalog</fullName>
+        <field>Catalog__c</field>
+        <literalValue>0</literalValue>
+        <name>Lead: clear catalog</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_clear_newsletter</fullName>
+        <field>Newsletter__c</field>
+        <literalValue>0</literalValue>
+        <name>Lead: clear newsletter</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_clear_press_release</fullName>
+        <field>Press_Releases__c</field>
+        <literalValue>0</literalValue>
+        <name>Lead: clear press release</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_set_Catalog</fullName>
+        <description>For leads who fill in the web form, set all communication tools true.</description>
+        <field>Catalog__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead: set Catalog</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_set_PCN</fullName>
+        <description>For leads who fill in the web form, set all communication tools true.</description>
+        <field>Change_Notification__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead: set PCN</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_set_Production_notification</fullName>
+        <description>Set Product notification as true.</description>
+        <field>Change_Notification__c</field>
+        <literalValue>1</literalValue>
+        <name>Lead: set Production notification</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Lead_set_shop_order_date_if_missing</fullName>
+        <description>Copy the date of lead creation to the shop order date.</description>
+        <field>Lead_Received__c</field>
+        <formula>CreatedDate</formula>
+        <name>Lead: set shop order date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SetLeadstatustoTobedeleted</fullName>
+        <description>Set Lead Status of spam entries to &quot;To be deleted&quot;. The leads can be mass deleted on a regular basis</description>
+        <field>Status</field>
+        <literalValue>To be deleted</literalValue>
+        <name>Set Lead status to &quot;To be deleted&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>removefromfieldfax</fullName>
+        <description>Remove the leading &apos; that is imported from the u-shop</description>
+        <field>Fax</field>
+        <formula>RIGHT(Fax,  LEN(Fax) -1)</formula>
+        <name>remove &apos; from field fax</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>removefromfieldphone</fullName>
+        <description>Remove the leading &apos; that is imported from the u-shop</description>
+        <field>Phone</field>
+        <formula>RIGHT(Phone,  LEN(Phone ) -1)</formula>
+        <name>remove &apos; from field phone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Filter spam leads</fullName>
+        <actions>
+            <name>SetLeadstatustoTobedeleted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 and (2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>notContain</operation>
+            <value>shop</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>contains</operation>
+            <value>google</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LastName</field>
+            <operation>contains</operation>
+            <value>href</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>contains</operation>
+            <value>yahoo</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>equals</operation>
+            <value>home</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>equals</operation>
+            <value>[not provided]</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>contains</operation>
+            <value>hotmail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>contains</operation>
+            <value>nknown</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>contains</operation>
+            <value>http</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LastName</field>
+            <operation>contains</operation>
+            <value>http</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Company</field>
+            <operation>contains</operation>
+            <value>href</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Description</field>
+            <operation>contains</operation>
+            <value>href</value>
+        </criteriaItems>
+        <description>Automatically set Leads with specific words in email and customer name to status &quot;To be deleted&quot;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Filter spam leads %28created by web-to-lead%29</fullName>
+        <actions>
+            <name>SetLeadstatustoTobedeleted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>contains</operation>
+            <value>Project form,PCN,Service</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>contains</operation>
+            <value>Chris5263@gmx.de</value>
+        </criteriaItems>
+        <description>Automatically set Leads with specific words in email and customer name to status &quot;To be deleted&quot;</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F PCN subscription%3A send email alert %28APAC%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_PCN_APAC</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>2 AND (1 OR (3 AND 4))</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PCN subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Hongkong,Taiwan,Rest of APAC,Korea,Japan,China</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>PCN Subscription Form</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team and assigned account managers.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F PCN subscription%3A send email alert %28Americas%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_PCN_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>2 AND (1 OR (3 AND 4))</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PCN subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Americas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>PCN Subscription Form</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team and assigned account managers.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F PCN subscription%3A send email alert %28EMEA%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_PCN_EMEA</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>2 AND (1 OR (3 AND 4))</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PCN subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>EMEA,Corporate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>PCN Subscription Form</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team and assigned account managers.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F online shop%3A send email alert %28APAC%29</fullName>
+        <actions>
+            <name>Lead_inform_about_online_shop_purchase</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>u-shop order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Hongkong,Taiwan,Rest of APAC,Korea,Japan,China</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team and assigned account managers.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28ANZ%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_ANZ</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>startsWith</operation>
+            <value>Australia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team .</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28Americas%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>2 AND (1 OR (3 AND 4)) AND 5</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>startsWith</operation>
+            <value>Project form,Service Registration Form,Web</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Americas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>startsWith</operation>
+            <value>Project Form,Service Registration Form</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28China%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_China</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Hongkong,China</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28EMEA%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>(1 AND 2 AND (3 OR (4 AND 5) OR (4 AND 6) OR (4 AND 8) OR 7) AND 9) OR (10 AND (7 OR 8))</booleanFilter>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Corporate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Email</field>
+            <operation>notEqual</operation>
+            <value>Chris5263@gmx.de</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Project Form - Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>Project Form - Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>NB-IoT Project Form</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Marketing Automation</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>Event registration (aloom)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>EMEA</value>
+        </criteriaItems>
+        <description>When Lead Source is &quot;Project Form - Customer&quot;, &quot;NB-IoT Project Form&quot;, &quot;Event registration (aloom)&quot; or &quot;Marketing Automation&quot;, inform Lead Owner</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28India%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_India</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>startsWith</operation>
+            <value>India</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform Indian country manager and sales admin team .</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28Japan%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_Japan</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>startsWith</operation>
+            <value>Japan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28Korea%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_Korea</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>startsWith</operation>
+            <value>Korea</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28M2M Seminar 2013%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_Catalog</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>startsWith</operation>
+            <value>M2M Seminar 2013</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead (Road show registration form &quot;M2M Seminar 2013&quot;), inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28RoA%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_APAC</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>startsWith</operation>
+            <value>Rest of APAC</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team .</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead %2F project form%3A send email alert %28Taiwan%29</fullName>
+        <actions>
+            <name>Lead_inform_about_web2lead_action_Taiwan</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>startsWith</operation>
+            <value>Taiwan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>notEqual</operation>
+            <value>Global Distribution</value>
+        </criteriaItems>
+        <description>When Lead is created via web2lead, inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead creation%3A set online shop order date</fullName>
+        <actions>
+            <name>Lead_set_shop_order_date_if_missing</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>u-shop order</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Received__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>When shop orders are imported, set date of shop order to the date of lead creation.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Auto response for webforms %28AssistNow Temporary%29</fullName>
+        <actions>
+            <name>Lead_AssistNow_Temporary_Token</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_Add_Temporary_Token_Valid_Until</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Sends the email with the temporary token and adds the valid date</description>
+        <formula>AND(   ISPICKVAL(LeadSource, &quot;Webform&quot;),   ISPICKVAL(Lead_Source_Webform__c,&quot;AssistNow Temporary&quot;),   ISCHANGED(AssistNow_Temporary_Token__c),   NOT(ISBLANK(AssistNow_Temporary_Token__c)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Auto response for webforms %28for new website with Drupal%2C AssistNow%29</fullName>
+        <actions>
+            <name>Lead_Auto_response_for_webforms_for_new_website_with_Drupal_AssistNow</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Service Registration Form</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>Service Registration Form</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-lead.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Auto response for webforms %28for new website with Drupal%2C Contact Us%29</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <description>FOR NEW WEBFORMS: Created as Drupal webforms do not work with Auto-Response Rules of the web-to-lead.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Auto response for webforms %28for new website with Drupal%2C generic%29</fullName>
+        <actions>
+            <name>Lead_Auto_response_for_webforms_for_new_website_with_Drupal_generic</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2 OR 3 OR (4 AND (5 OR 6))</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Project Form - Distributor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>PCN subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>Project Form - Distributor</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>PCN Subscription Form</value>
+        </criteriaItems>
+        <description>Webform response except Project Information Form - Customer that is sent from Autopilot</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Check Financial News</fullName>
+        <actions>
+            <name>Lead_Check_Financial_News</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Fields_Of_Interest__c</field>
+            <operation>contains</operation>
+            <value>Financial News</value>
+        </criteriaItems>
+        <description>(For News Subscription) Check Financial News based on input given on the webform (Fields Of Interest)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Check Product News</fullName>
+        <actions>
+            <name>Lead_Check_Product_News</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Fields_Of_Interest__c</field>
+            <operation>contains</operation>
+            <value>Product News</value>
+        </criteriaItems>
+        <description>(For News Subscription) Check Product News based on input given on the webform (Fields Of Interest)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Copy Application Type</fullName>
+        <actions>
+            <name>Lead_Copy_Application_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.New_Application_Type__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Copy to import it to Opportunity</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Email Opt Out</fullName>
+        <actions>
+            <name>Lead_Marketing_Communication_Opt_Out</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HasOptedOutOfEmail</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A New Opp alert APAC</fullName>
+        <actions>
+            <name>Lead_Conversion_alert_to_new_Account_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>To notify the opportunity owner on lead conversion</description>
+        <formula>AND(
+BEGINS(Products_Of_Interest__c, &quot;Chip:&quot;),
+IsConverted,
+NOT(ISNULL(ConvertedOpportunityId))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Notify gsol about new leads</fullName>
+        <actions>
+            <name>Lead_Email_Alert_Project_Information_Form</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Lead.Products_Of_Interest__c</field>
+            <operation>contains</operation>
+            <value>IoT-Security-as-a-Service</value>
+        </criteriaItems>
+        <description>Temporary alert to notify Giovanni Solito and thingstream about new lead. It is for product services requests.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Project Description for NB-IoT Pro</fullName>
+        <actions>
+            <name>Lead_Project_Description_for_NB_IoT_Pro</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>NB-IoT Project Form</value>
+        </criteriaItems>
+        <description>Merge all fields submitted from NB-IoT project form to Project Description</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A Set Company and Record Types</fullName>
+        <actions>
+            <name>Lead_Notify_News_Subscription</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_Fill_Company</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Set_Account_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_Set_Contact_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>News Subscription</value>
+        </criteriaItems>
+        <description>(For News Subscription) Set Company and Record Types for conversion with the one entered on the web form.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A clear subscriptions when unsubscribing</fullName>
+        <actions>
+            <name>Lead_Marketing_Communication_Opt_Out</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_clear_catalog</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_clear_newsletter</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Lead_clear_press_release</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.HasOptedOutOfEmail</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Clears all subscriptions when the lead has unsubscribed.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A embargo countries</fullName>
+        <actions>
+            <name>New_Lead_in_one_of_the_embargo_countries</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Reminder that the created record is for embargo countries</description>
+        <formula>OR(
+Country=&quot;CU&quot;,
+Country=&quot;BY&quot;,
+Country=&quot;IR&quot;,
+Country=&quot;KP&quot;,
+Country=&quot;SD&quot;,
+Country=&quot;SY&quot;,
+Country=&quot;UA&quot;,
+Country=&quot;AM&quot;,
+Country=&quot;AZ&quot;,
+Country=&quot;CF&quot;,
+Country=&quot;CG&quot;,
+Country=&quot;CI&quot;,
+Country=&quot;ER&quot;,
+Country=&quot;GN&quot;,
+Country=&quot;IQ&quot;,
+Country=&quot;LB&quot;,
+Country=&quot;LR&quot;,
+Country=&quot;LY&quot;,
+Country=&quot;MM&quot;,
+Country=&quot;SO&quot;,
+Country=&quot;ZW&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A send email alert to info%40u-blox%2Ecom %28EMEA%29</fullName>
+        <actions>
+            <name>Lead_inform_about_created_Lead_action_EMEA_not_Project_Form_Customer_PCN</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_PCN</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND NOT((3 AND (4 OR 5 OR 6 OR 7)) OR 8)</booleanFilter>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>notEqual</operation>
+            <value>Project Form - Customer,PCN subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>EMEA,Corporate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Webform</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>Project Form - Customer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>News Subscription</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>PCN Subscription Form</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>NB-IoT Project Form</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>equals</operation>
+            <value>Marketing Automation</value>
+        </criteriaItems>
+        <description>When Lead is created on Salesforce or webforms EXCEPT &quot;Project Form - Customer&quot;, &quot;PCN subscription&quot;, &quot;NB-IoT&quot; or &quot;Marketing Automation&quot;, inform sales admin team.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead%3A ub Office as EMEA</fullName>
+        <actions>
+            <name>Lead_Email_notification_for_EMEA_office_and_source_as_Project_Form_Customer_NB_I</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Lead_set_Production_notification</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>EMEA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.Lead_Source_Webform__c</field>
+            <operation>equals</operation>
+            <value>,Project Form - Customer,NB-IoT Project Form</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.LeadSource</field>
+            <operation>notEqual</operation>
+            <value>Digi-Key</value>
+        </criteriaItems>
+        <description>When lead source is  &quot;Project Form - Customer&quot;, &quot;NB-IoT Project Form&quot;,  AND us office is &apos;EMEA&apos;. then sends the notification email to Crystal</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Remove %27 from fax number</fullName>
+        <actions>
+            <name>removefromfieldfax</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Fax</field>
+            <operation>contains</operation>
+            <value>&apos;</value>
+        </criteriaItems>
+        <description>remove the &apos;-symbol from the fax number when imported from u-shop</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Remove %27 from phone number</fullName>
+        <actions>
+            <name>removefromfieldphone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Lead.Phone</field>
+            <operation>contains</operation>
+            <value>&apos;</value>
+        </criteriaItems>
+        <description>remove the &apos;-symbol from the phone number when imported from u-shop</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>New_Lead_in_one_of_the_embargo_countries</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Lead in one of the embargo countries</subject>
+    </tasks>
+</Workflow>

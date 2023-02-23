@@ -1,0 +1,27 @@
+.THIS {
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+}
+
+.THIS.slds {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.THIS .centerBlock {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	height: 55px;
+	width: 55px;
+	margin: auto;
+}
+
+.THIS .hidden {
+	display: none;
+}

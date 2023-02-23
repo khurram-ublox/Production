@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Order__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>New Order added to this Account. Updated with Process. To be used for Chatter post.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>New Order added to this Account. Updated with Process. To be used for Chatter post.</inlineHelpText>
+    <label>New Order</label>
+    <referenceTo>Billings__c</referenceTo>
+    <relationshipLabel>Accounts</relationshipLabel>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

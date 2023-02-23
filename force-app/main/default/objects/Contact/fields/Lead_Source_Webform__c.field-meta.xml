@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Webform__c</fullName>
+    <description>Converted from Lead</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Converted from Lead</inlineHelpText>
+    <label>Lead Source Webform</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Lead_Source_Webform</valueSetName>
+    </valueSet>
+</CustomField>

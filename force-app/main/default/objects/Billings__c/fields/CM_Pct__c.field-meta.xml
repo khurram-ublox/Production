@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CM_Pct__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( Total_Value_CHF__c &gt; 0, Total_Contribution_CHF__c / Total_Value_CHF__c,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Contribution margin of this order in percent.</inlineHelpText>
+    <label>CM [%]</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

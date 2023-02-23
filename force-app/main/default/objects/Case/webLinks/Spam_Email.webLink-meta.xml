@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spam_Email</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Spam Email</masterLabel>
+    <openType>noSidebar</openType>
+    <page>SpamEmail</page>
+    <protected>false</protected>
+</WebLink>

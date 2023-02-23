@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country__c</fullName>
+    <description>Country in 2-character ISO Code (e.g. CH for Switzerland)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Country in 2-character ISO Code (e.g. CH for Switzerland)</inlineHelpText>
+    <label>Country</label>
+    <length>2</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

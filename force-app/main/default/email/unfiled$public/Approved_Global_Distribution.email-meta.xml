@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Approved - Global Distribution approval process template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Opportunity : Approved - Global Distribution</name>
+    <style>freeForm</style>
+    <subject>{!Opportunity.Registration_Type__c} - Approved</subject>
+    <textOnly>Greetings,
+Your registration request for {!Opportunity.Distribution_Partner__c} Project number {!Opportunity.Distributor_Project_ID__c} has been approved.
+
+The registration is granted a {!Opportunity.Distribution_Method__c} partnership.
+
+Approved Notes : {!ApprovalRequest.Comments}
+{!CASE(Opportunity.Registration_Type__c, &quot;Renew an existing registration&quot;,&quot;The new expiration date for this project is &quot;+ TEXT(Opportunity.Registration_Expiration__c) +&quot;.&quot;, &quot;The registration number for this opportunity is &quot;+Opportunity.Registration_No__c +&quot;  and expires on &quot;+ TEXT(Opportunity.Registration_Expiration__c) +&quot;.&quot;)}
+Account Name:  {!Opportunity.AccName__c}
+Opportunity: {!Opportunity.Name}
+
+Thank you for supporting u-blox,
+The u-blox Registration team.</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

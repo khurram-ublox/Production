@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Technology__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub Technology</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Technology__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Single GNSS</fullName>
+                <default>false</default>
+                <label>Single GNSS</label>
+            </value>
+            <value>
+                <fullName>Multi GNSS</fullName>
+                <default>false</default>
+                <label>Multi GNSS</label>
+            </value>
+            <value>
+                <fullName>ADR</fullName>
+                <default>false</default>
+                <label>ADR</label>
+            </value>
+            <value>
+                <fullName>UDR</fullName>
+                <default>false</default>
+                <label>UDR</label>
+            </value>
+            <value>
+                <fullName>Time sync</fullName>
+                <default>false</default>
+                <label>Time sync</label>
+            </value>
+            <value>
+                <fullName>Time &amp; frequency sync</fullName>
+                <default>false</default>
+                <label>Time &amp; frequency sync</label>
+            </value>
+            <value>
+                <fullName>Single band (L1)</fullName>
+                <default>false</default>
+                <label>Single band (L1)</label>
+            </value>
+            <value>
+                <fullName>Dual band</fullName>
+                <default>false</default>
+                <label>Dual band</label>
+            </value>
+            <value>
+                <fullName>Triple band</fullName>
+                <default>false</default>
+                <label>Triple band</label>
+            </value>
+            <value>
+                <fullName>Companion product</fullName>
+                <default>false</default>
+                <label>Companion product</label>
+            </value>
+            <value>
+                <fullName>High LTE category</fullName>
+                <default>false</default>
+                <label>High LTE category</label>
+            </value>
+            <value>
+                <fullName>Low LTE category</fullName>
+                <default>false</default>
+                <label>Low LTE category</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Standard Precision GNSS</controllingFieldValue>
+            <valueName>Single GNSS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Standard Precision GNSS</controllingFieldValue>
+            <valueName>Multi GNSS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Precision GNSS</controllingFieldValue>
+            <valueName>Single band (L1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Precision GNSS</controllingFieldValue>
+            <valueName>Dual band</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Precision GNSS</controllingFieldValue>
+            <valueName>Triple band</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>High Precision GNSS</controllingFieldValue>
+            <valueName>Companion product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead Reckoning</controllingFieldValue>
+            <valueName>ADR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead Reckoning</controllingFieldValue>
+            <valueName>UDR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Timing</controllingFieldValue>
+            <valueName>Time sync</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Timing</controllingFieldValue>
+            <valueName>Time &amp; frequency sync</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE</controllingFieldValue>
+            <valueName>High LTE category</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE</controllingFieldValue>
+            <valueName>Low LTE category</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,54 @@
+<!--
+CreatedBy : PARX
+Author: ogu
+Date: 2019/11/06
+Visualforce page to trigger the quotation from an opportunity
+--> 
+<apex:page standardController="Opportunity" extensions="OpportunityQuotationPageController" lightningStylesheets="true">
+    <apex:slds />
+    <apex:form >
+        <!--Outputfields and inputfields of new Opportunity--> 
+        <apex:pageblock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection columns="1" collapsible="false" title="New quotation properties">
+                <apex:outputField value="{!QuotationTemplate.Quotation_Account__c}"/>
+                <apex:outputField value="{!QuotationTemplate.CurrencyIsoCode}"/>
+                <apex:outputField value="{!QuotationTemplate.Referred_Opportunity__c}"/>
+                <apex:outputField value="{!QuotationTemplate.Referred_Opportunity_Account__c}"/>
+                
+            </apex:pageBlockSection>
+            <!-- Changes Made on 23rd Jan -->
+            <apex:outputPanel rendered="{!If(checkUblox == true, true,false)}">
+                <apex:pageBlockSection columns="1" collapsible="false" title="u-blox Quotation">
+                    <apex:inputField value="{!QuotationTemplate.CloseDate}"/>
+                    <apex:inputField value="{!QuotationTemplate.Type_of_quotation__c}"/>
+                    <apex:inputField value="{!QuotationTemplate.Special_Price_Request__c}"/>
+                    <apex:inputField value="{!QuotationTemplate.Automotive_RFQ_RFI__c}"/>
+                    <apex:inputField value="{!QuotationTemplate.Delivery_del__c}"/>
+                    <apex:inputField value="{!QuotationTemplate.Payment__c}"/>
+                    <apex:inputField value="{!QuotationTemplate.Remarks__c}"/>
+                    <apex:inputField value="{!QuotationTemplate.StageName}"/>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!If(checkTashang == true, true,false)}">
+                <apex:pageBlockSection columns="1" collapsible="false" title="Tashang Quotation">
+                    <apex:inputField value="{!TashangQuotationTemplate.CloseDate}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.Type_of_quotation__c}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.Special_Price_Request__c}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.Automotive_RFQ_RFI__c}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.Delivery_del__c}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.Payment__c}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.Remarks__c}"/>
+                    <apex:inputField value="{!TashangQuotationTemplate.StageName}"/>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            
+            <!-- Changes Completed -->
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!doCancel}" value="Cancel" id="doCancel"/>
+                <apex:commandButton action="{!doSave}" value="Save" id="doSave"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

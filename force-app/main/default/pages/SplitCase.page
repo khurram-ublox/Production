@@ -1,0 +1,18 @@
+<apex:page title="Split Case ({!Case.CaseNumber})" showHeader="false" sidebar="false" docType="html-5.0" standardStylesheets="false" standardController="Case">
+	<apex:includeScript value="/support/console/45.0/integration.js"/>
+	<apex:stylesheet value="{!URLFOR($Resource.SLDS0121, '/assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+	<apex:includeLightning />
+    
+	<div id="lightning"></div>
+
+	<script>
+		var selectedCaseId = '{!Case.Id}';
+
+		$Lightning.use("c:SplitCaseVFApp", function() {
+			$Lightning.createComponent("c:SplitCase", {'caseId': selectedCaseId}, "lightning", function(cmp) {
+				console.log('Component created successfully.');
+			});
+		});
+
+	</script>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_owner_can_not_be_partner_user</fullName>
+    <active>true</active>
+    <description>Partner/Portal users can not be account owners now. The account owner will be internal u-blox user. The accounts will be shared with partner users based on &apos;Partner Account&apos; field.</description>
+    <errorConditionFormula>OR(
+Owner.Profile.Id == $Setup.Hard_Code_Ids__c.Partner_Community_Profile_P_Base__c,
+Owner.Profile.Id ==  
+ $Setup.Hard_Code_Ids__c.Partner_Community_Profile__c)</errorConditionFormula>
+    <errorMessage>Partner users can not be account owners. Please select u-blox internal user as the account owner.</errorMessage>
+</ValidationRule>

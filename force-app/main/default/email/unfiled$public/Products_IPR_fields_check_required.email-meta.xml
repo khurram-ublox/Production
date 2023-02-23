@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Products: IPR related fields need to be checked</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Products: IPR fields check required</name>
+    <style>none</style>
+    <subject>Product alert: IPR-related fields in {!Product2.Type_No__c} changed</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

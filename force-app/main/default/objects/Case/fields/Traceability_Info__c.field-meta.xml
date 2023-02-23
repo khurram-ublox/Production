@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Traceability_Info__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For Modules: Serial Number and week code
+For IC: Lot number (as in the IC marking) and week code
+For Reels/Trays: reel number (Modules) Lot number (Ics)</inlineHelpText>
+    <label>Traceability Info</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

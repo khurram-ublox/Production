@@ -1,0 +1,7 @@
+Please be aware that the expected Decision date for this opportunity is today. Let's get ready to support the customer in his design!
+
+Opportunity Name: {!Opportunity.Name}
+Account Name: {!Opportunity.Account}
+Decision Date: {!Opportunity.Decision_Date__c}
+
+Link: {!Opportunity.Link}

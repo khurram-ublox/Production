@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>43.0</apiVersion>
+    <available>true</available>
+    <description>Email to inform owner when new web2lead record created.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Leads: inform owner of new web2lead record (VisualForce)</name>
+    <style>none</style>
+    <subject>Lead submitted:  from</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

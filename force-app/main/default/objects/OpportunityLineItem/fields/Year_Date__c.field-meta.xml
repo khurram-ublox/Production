@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Year_Date__c</fullName>
+    <description>Starting date of validity, it should be 1st January of the corresponding year, to be imported from Special Price Request Product field (Year Px)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Starting date of validity, it should be 1st January of the corresponding year, to be imported from Special Price Request Product field (Year Px)</inlineHelpText>
+    <label>Year (Date)</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

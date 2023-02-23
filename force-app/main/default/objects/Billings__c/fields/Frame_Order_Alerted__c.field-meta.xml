@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Frame_Order_Alerted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ticked (through Process) once alert was sent.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ticked (through Process) once alert was sent.</inlineHelpText>
+    <label>Frame Order Alerted</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

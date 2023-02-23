@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allublox5Products</fullName>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Type_No__c</columns>
+    <columns>Packaging_Size__c</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>Status_Next_Gate__c</columns>
+    <columns>Shop_Active__c</columns>
+    <columns>COGS_1__c</columns>
+    <columns>COGS_2__c</columns>
+    <columns>COGS_3__c</columns>
+    <columns>COGS_4__c</columns>
+    <columns>PRODUCT2.FAMILY</columns>
+    <columns>Reporting_Category__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Series__c</field>
+        <operation>equals</operation>
+        <value>BMD-2,BMD-3,R41Z</value>
+    </filters>
+    <filters>
+        <field>Product_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Obsolete</value>
+    </filters>
+    <label>SHO Active Rigado Products</label>
+    <sharedTo>
+        <group>PS_SHO</group>
+        <group>Recipients_SHO_Statistics</group>
+    </sharedTo>
+</ListView>

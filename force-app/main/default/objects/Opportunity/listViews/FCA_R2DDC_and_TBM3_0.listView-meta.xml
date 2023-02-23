@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCA_R2DDC_and_TBM3_0</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
+    <columns>Customer_Type__c</columns>
+    <columns>Account_Channel_Manager__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Opp_Total_Revenue__c</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>OPPORTUNITY.LAST_ACTIVITY</columns>
+    <columns>Latest_Status__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.NAME</field>
+        <operation>contains</operation>
+        <value>AVN R2,FCA R2,R2DDC,R2 DDC,TBM 3,TBM3</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>5/1/2019 12:00 AM</value>
+    </filters>
+    <label>FCA R2DDC and TBM3.0</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <roleAndSubordinates>Partner_Trilogy</roleAndSubordinates>
+    </sharedTo>
+</ListView>

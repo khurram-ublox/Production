@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EUS_Available__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When signed document is received and contract is active, you can now quote ECCN products to customer</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Auto ticked when signed EUS document is received (stored under Contracts) and contract is active, ready to quote</inlineHelpText>
+    <label>EUS Available</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

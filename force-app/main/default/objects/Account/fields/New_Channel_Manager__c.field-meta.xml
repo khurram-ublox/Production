@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Channel_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>If left empty, it will be populated if Account Owner is
+- u-blox (except Inside Sales US): Account Owner
+- u-blox (Inside Sales US) and distributor: Manager of the Account Owner</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If left empty, it will be populated if Account Owner is
+- u-blox (except Inside Sales US): Account Owner
+- u-blox (Inside Sales US) and distributor: Manager of the Account Owner</inlineHelpText>
+    <label>Channel Manager</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Standard,PowerPartner</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts3</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

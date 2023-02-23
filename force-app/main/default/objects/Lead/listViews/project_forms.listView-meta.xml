@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>project_forms</fullName>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>uB_Contact__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>uB_Office__c</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.LEAD_SOURCE</field>
+        <operation>startsWith</operation>
+        <value>Project</value>
+    </filters>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>Australia</value>
+    </filters>
+    <label>Project forms -ANZ</label>
+    <sharedTo>
+        <group>Business_Marketing</group>
+        <role>RegionAPAC</role>
+        <roleAndSubordinatesInternal>Australia</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Name_Type_No__c</fullName>
+    <description>Product Name (Type Number), used for Masterschedule Dashboard table.</description>
+    <externalId>false</externalId>
+    <formula>Name &amp; &quot; (&quot; &amp; Type_No__c &amp; &quot;)&quot;</formula>
+    <inlineHelpText>Product Name (Type Number), used for Masterschedule Dashboard table.</inlineHelpText>
+    <label>Product Name (Type No)</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

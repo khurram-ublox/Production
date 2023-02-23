@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_GNSS_PHE</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>Requested_Quantity__c</columns>
+    <columns>Confirmed__c</columns>
+    <columns>Delivered_Quantity__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>Requested_Delivery_Date__c</columns>
+    <columns>Planned_Delivery_Date__c</columns>
+    <columns>Opportunity__c</columns>
+    <filterScope>Queue</filterScope>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Rejected</value>
+    </filters>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Shipped</value>
+    </filters>
+    <label>AE POS Samples</label>
+    <queue>AEGNSS</queue>
+    <sharedTo>
+        <group>AE_POS</group>
+    </sharedTo>
+</ListView>

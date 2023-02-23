@@ -1,0 +1,12 @@
+**** News Subscription has been submitted ***  
+
+The following lead has been created:
+
+Lead Source: {!Lead.LeadSource}
+Company: {!Lead.Company} 
+Lead Name: {!Lead.Name}  
+Contact category (Account Type): {!Lead.Account_Type_Webform__c}
+Email: {!Lead.Email}
+
+
+Click on the link to access the lead directly:  {!Lead.Link}

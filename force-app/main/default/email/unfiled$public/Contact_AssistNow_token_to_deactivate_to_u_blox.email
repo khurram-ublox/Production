@@ -1,0 +1,9 @@
+The AssistNow Token for the following contact will be deactivated: 
+
+Company: {!Account.Name} 
+Name: {!Contact.Name} 
+AssistNow Token: {!Contact.AssistNow_Token_To_Delete__c}
+
+u-blox SVC Team will inform you as soon as the token has been deactivated. 
+
+Click on the link to access the relevant Contact: {!Contact.Link}

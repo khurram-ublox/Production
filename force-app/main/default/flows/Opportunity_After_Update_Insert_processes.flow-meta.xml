@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Update_Opp_Amount</name>
+        <label>Update Opp Amount</label>
+        <locationX>161</locationX>
+        <locationY>358</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Amount</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opp_Total_Revenue__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>update_opportunity_records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Update_opportunity_amount</name>
+        <label>Update opportunity amount</label>
+        <locationX>428</locationX>
+        <locationY>350</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_opportunity_amount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opp_Total_Revenue__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opp_Total_Revenue__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opp_Amount</targetReference>
+            </connector>
+            <label>Check opportunity amount</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Opportunity: After Update/Insert processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: After Update/Insert processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>update_opportunity_records</name>
+        <label>update opportunity records</label>
+        <locationX>161</locationX>
+        <locationY>562</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>309</locationX>
+        <locationY>21</locationY>
+        <connector>
+            <targetReference>Update_opportunity_amount</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

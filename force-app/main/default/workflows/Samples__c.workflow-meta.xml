@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Sample_Inform_Sales_Admin</fullName>
+        <description>Sample: Inform Sales Admin</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_status_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_Support_Only</fullName>
+        <description>Sample: Support Only</description>
+        <protected>false</protected>
+        <recipients>
+            <field>FAE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_email_to_sales_manager_or_Initiator_and_Sales_Admin</fullName>
+        <description>Sample: email to sales manager (or) Initiator and Sales Admin</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Account_Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Sample_inform_of_request_status_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Initiator_PM_and_SalesManager</fullName>
+        <description>Sample: inform Initiator PM and SalesManager</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Sample_inform_of_request_status_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Initiator_and_Sales_Manager</fullName>
+        <description>Sample: Inform Initiator and Sales Manager (S2/3/4/8)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Sample_inform_of_request_status_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Initiator_and_Sales_Manager_and_Admin</fullName>
+        <description>Sample: inform Initiator and Sales Manager and Admin</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Account_Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_status_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Sample_Owner_Requestor</fullName>
+        <description>Sample: inform Sample Owner, Requestor</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Sample_Owner_Requestor_Support</fullName>
+        <description>Sample: inform Sample Owner, Requestor, Support</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Sample_Owner_Requestor_Support_Americas</fullName>
+        <description>Sample: inform Sample Owner, Requestor, Support (Americas)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_Sample_Owner_Requestor_Support_without_Americas_support_email</fullName>
+        <description>Sample: inform Sample Owner, Requestor, Support (without Americas support email)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_logistics_of_requested_samples_to_be_shipped</fullName>
+        <ccEmails>silvia.belhadj@u-blox.com</ccEmails>
+        <description>Sample: inform logistics of requested samples to be shipped</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_logistics_of_requested_samples_to_be_shipped</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_of_AE_review</fullName>
+        <description>Sample: inform of AE review</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_of_new_request_CEL</fullName>
+        <ccEmails>productstrategy-cel@u-blox.com</ccEmails>
+        <description>Sample: inform of new request (CEL)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_of_new_request_POS</fullName>
+        <ccEmails>productstrategy-pos@u-blox.com</ccEmails>
+        <description>Sample: inform of new request (POS)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Sample_inform_of_new_request_SHO</fullName>
+        <ccEmails>productstrategy-sho@u-blox.com</ccEmails>
+        <description>Sample: inform of new request (SHO)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Product_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_request_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Samples_Final_approval_notification</fullName>
+        <description>Samples: Final approval notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Account_Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Approver_1_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Approver_2_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_Final_approval_notification_Sample_recording</template>
+    </alerts>
+    <alerts>
+        <fullName>Samples_Final_approval_notification_to_sben</fullName>
+        <description>Samples: Final approval notification to :sben:</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>keisuke.hirashima@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sabrina.benz@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_Final_approval_notification_Sample_recording</template>
+    </alerts>
+    <alerts>
+        <fullName>Samples_Final_approval_notification_to_sros</fullName>
+        <description>Samples: Final approval notification to :sros:</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>marlene.rosado@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_Final_approval_notification_Sample_recording</template>
+    </alerts>
+    <alerts>
+        <fullName>Samples_Final_rejection_notification</fullName>
+        <description>Samples: Final rejection notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Account_Owner_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Account_Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Approver_1_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Approver_2_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Request_Initiator_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_Final_rejection_notification_Sample_recording</template>
+    </alerts>
+    <alerts>
+        <fullName>Samples_Notification_to_ladm_team_americas</fullName>
+        <ccEmails>ladm-team-Americas@u-blox.com</ccEmails>
+        <ccEmails>logistics_us@u-blox.com</ccEmails>
+        <description>Samples: Notification to ladm-team-americas</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <recipient>ken.fowler@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sample_inform_of_new_recording</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Sample_Product_Owner_Email_update</fullName>
+        <field>Product_Owner_Email__c</field>
+        <formula>Product__r.Product_Owner__r.Email</formula>
+        <name>Sample: Product Owner Email update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Initiator_Email_update</fullName>
+        <field>Request_Initiator_Email__c</field>
+        <formula>IF( ISBLANK( Request_Initiator__c ) ,  CreatedBy.Email ,  Request_Initiator__r.Email )</formula>
+        <name>Sample: Request Initiator Email update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Status_to_Confirmed</fullName>
+        <field>Request_Status__c</field>
+        <literalValue>Confirmed</literalValue>
+        <name>Sample: Request Status to Confirmed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Status_to_New</fullName>
+        <field>Request_Status__c</field>
+        <literalValue>New</literalValue>
+        <name>Sample: Request Status to New</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Request_Status_to_Rejected</fullName>
+        <field>Request_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Sample: Request Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Update_Ship_To_Account</fullName>
+        <field>Ship_To_Account__c</field>
+        <formula>Ship_To__r.Account.Name</formula>
+        <name>Sample: Update Ship To Account</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Update_Ship_To_Country</fullName>
+        <field>Ship_To_Country__c</field>
+        <formula>Ship_To__r.MailingCountry</formula>
+        <name>Sample: Update Ship To Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_Update_uB_Support_Email</fullName>
+        <description>Update uB Support Email depending on uB Office</description>
+        <field>uB_Support_Email__c</field>
+        <formula>CASE( uB_Office__c , 
+&quot;Americas&quot;, &quot;support_us@u-blox.com&quot;, 
+&quot;China&quot;, &quot;support_cn@u-blox.com&quot;, 
+&quot;Hongkong&quot;, &quot;support_cn@u-blox.com&quot;, 
+&quot;Taiwan&quot;, &quot;support_tw@u-blox.com&quot;, 
+&quot;Korea&quot;, &quot;support_kr@u-blox.com&quot;, 
+&quot;Japan&quot;, &quot;support_jp@u-blox.com&quot;, 
+&quot;India&quot;, &quot;support_ap@u-blox.com&quot;, 
+&quot;Australia&quot;, &quot;support_ap@u-blox.com&quot;, 
+&quot;Rest of APAC&quot;, &quot;support_ap@u-blox.com&quot;, 
+&quot;&quot; 
+)</formula>
+        <name>Sample: Update uB Support Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_AE_CEL</fullName>
+        <field>OwnerId</field>
+        <lookupValue>AECEL</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to AE CEL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_AE_GNSS</fullName>
+        <field>OwnerId</field>
+        <lookupValue>AEGNSS</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to AE GNSS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_AE_SHO</fullName>
+        <description>Change Sample Owner to AE SHO</description>
+        <field>OwnerId</field>
+        <lookupValue>AE_SHO</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to AE SHO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_LADM_America</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Logistics_Admin_Americas</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to LADM America</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_LADM_EMEA</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Logistics_Admin_EMEA</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to LADM EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_PM</fullName>
+        <description>Change Sample Owner to PS POS</description>
+        <field>OwnerId</field>
+        <lookupValue>ProductMarketing187991</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to PM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_PS_CEL</fullName>
+        <description>Change Sample Owner to PS CEL</description>
+        <field>OwnerId</field>
+        <lookupValue>PS_CEL</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to PS CEL</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_PS_SHO</fullName>
+        <description>Change Sample Owner to PS SHO</description>
+        <field>OwnerId</field>
+        <lookupValue>PS_SHO</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to PS SHO</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sample_change_the_owner_to_SADM_EMEA</fullName>
+        <field>OwnerId</field>
+        <lookupValue>Sales_Admin_EMEA</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Sample: change the owner to SADM EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Samples_Add_Account_Owner_Email</fullName>
+        <description>Used to send final approval/rejection notification</description>
+        <field>Account_Owner_Email__c</field>
+        <formula>Account__r.Owner.Email</formula>
+        <name>Samples: Add Account Owner Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Samples_Add_Account_Sales_Admin_Email</fullName>
+        <field>Account_Sales_Admin_Email__c</field>
+        <formula>Account__r.Sales_Admin__r.Email</formula>
+        <name>Samples: Add Account Sales Admin Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Samples_Add_Approver_1_Email</fullName>
+        <description>Used to send email notification</description>
+        <field>Approver_1_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>Samples: Add Approver 1 Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Samples_Add_Approver_2_Email</fullName>
+        <description>Used to send email notification</description>
+        <field>Approver_2_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>Samples: Add Approver 2 Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_RT_Sample_Request</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Sample_request</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Update RT Sample Request</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Sample%3A %28Blueprint POS%29 inform the new request has been created%2E</fullName>
+        <actions>
+            <name>Sample_inform_of_AE_review</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_AE_GNSS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Sample_Usage__c</field>
+            <operation>notEqual</operation>
+            <value>&quot;Samples in production (IP, MP)&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>equals</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>notEqual</operation>
+            <value>Short Range</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;AE GNSS&quot;
+Used for Request Status=New (when Product Family = Blueprint)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A %28Blueprint SHO%29 inform the new request has been created%2E</fullName>
+        <actions>
+            <name>Sample_inform_of_AE_review</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_AE_SHO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Sample_Usage__c</field>
+            <operation>notEqual</operation>
+            <value>&quot;Samples in production (IP, MP)&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>equals</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>equals</operation>
+            <value>Short Range</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;AE SHO&quot;
+Used for Request Status=New (when Product Family = Blueprint)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A %28Blueprint%29 inform the request has been confirmed or partially delivered</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor_Support</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_inform_logistics_of_requested_samples_to_be_shipped</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Confirmed,Partially shipped</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>equals</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <description>Send the notification (owner unchanged)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A Confirmation alert for APAC exc%2E JP%2C TW</fullName>
+        <actions>
+            <name>Samples_Final_approval_notification_to_sros</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to SADM EMEA for APAC except  JP and TW</description>
+        <formula>AND(
+  RecordTypeId=&quot;012D0000000BVpD&quot;,
+  Notify_Sales_Admin_Thalwil__c,
+  ISCHANGED(Request_Status__c),
+  ISPICKVAL(Request_Status__c, &quot;Confirmed&quot;),
+  OR(
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;China&quot;),
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;Hongkong&quot;),
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;Korea&quot;),
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;India&quot;),
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;Australia&quot;),
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;Rest of APAC&quot;)
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A Confirmation alert for JP%2C TW</fullName>
+        <actions>
+            <name>Samples_Final_approval_notification_to_sben</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert to SADM EMEA for JP and TW</description>
+        <formula>AND(
+  RecordTypeId=&quot;012D0000000BVpD&quot;,
+  Notify_Sales_Admin_Thalwil__c,
+  ISCHANGED(Request_Status__c),
+  ISPICKVAL(Request_Status__c, &quot;Confirmed&quot;),
+  OR(
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;Japan&quot;),
+    ISPICKVAL(CreatedBy.uB_Office__c,&quot;Taiwan&quot;)
+  )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A Product Owner Email update</fullName>
+        <actions>
+            <name>Sample_Product_Owner_Email_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Product_Owner_Alias__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>This field is needed to send the notification to the Product Owner.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A Request Initiator Email update</fullName>
+        <actions>
+            <name>Sample_Request_Initiator_Email_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.CreatedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>This field is needed to send the notification to the Request Initiator or Record Creator.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A Update Ship To Account and Country</fullName>
+        <actions>
+            <name>Sample_Update_Ship_To_Account</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Sample_Update_Ship_To_Country</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>NOT(ISBLANK( Ship_To__c ))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A Update uB Support Email</fullName>
+        <actions>
+            <name>Sample_Update_uB_Support_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.uB_Office__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update uB Support Email depending on uB Office</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A embargo countries</fullName>
+        <actions>
+            <name>Sample_embargo_country</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Reminder that the created record is for embargo countries</description>
+        <formula>OR(
+Account__r.BillingCountry=&quot;CU&quot;,
+Account__r.BillingCountry=&quot;BY&quot;,
+Account__r.BillingCountry=&quot;IR&quot;,
+Account__r.BillingCountry=&quot;KP&quot;,
+Account__r.BillingCountry=&quot;SD&quot;,
+Account__r.BillingCountry=&quot;SY&quot;,
+Account__r.BillingCountry=&quot;UA&quot;,
+Account__r.BillingCountry=&quot;AM&quot;,
+Account__r.BillingCountry=&quot;AZ&quot;,
+Account__r.BillingCountry=&quot;CF&quot;,
+Account__r.BillingCountry=&quot;CG&quot;,
+Account__r.BillingCountry=&quot;CI&quot;,
+Account__r.BillingCountry=&quot;ER&quot;,
+Account__r.BillingCountry=&quot;GN&quot;,
+Account__r.BillingCountry=&quot;IQ&quot;,
+Account__r.BillingCountry=&quot;LB&quot;,
+Account__r.BillingCountry=&quot;LR&quot;,
+Account__r.BillingCountry=&quot;LY&quot;,
+Account__r.BillingCountry=&quot;MM&quot;,
+Account__r.BillingCountry=&quot;SO&quot;,
+Account__r.BillingCountry=&quot;ZW&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the new request has been created%2E %28CEL%29</fullName>
+        <actions>
+            <name>Sample_inform_of_new_request_CEL</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_PS_CEL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>New,PM review pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Sample_Usage__c</field>
+            <operation>notEqual</operation>
+            <value>&quot;Samples in production (IP, MP)&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>notEqual</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>equals</operation>
+            <value>Cellular</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;PS CEL&quot;
+Used for Request Status=New (when Product Family &lt;&gt; Blueprint), PM review pending, Product Center = Cellular</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the new request has been created%2E %28POS%29</fullName>
+        <actions>
+            <name>Sample_inform_of_new_request_POS</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_PM</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>New,PM review pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Sample_Usage__c</field>
+            <operation>notEqual</operation>
+            <value>&quot;Samples in production (IP, MP)&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>notEqual</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>notEqual</operation>
+            <value>Cellular,Short Range</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;Product Marketing&quot;
+Used for Request Status=New (when Product Family &lt;&gt; Blueprint), PM review pending</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the new request has been created%2E %28SHO%29</fullName>
+        <actions>
+            <name>Sample_inform_of_new_request_SHO</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_PS_SHO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>New,PM review pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Sample_Usage__c</field>
+            <operation>notEqual</operation>
+            <value>&quot;Samples in production (IP, MP)&quot;</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>notEqual</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>equals</operation>
+            <value>Short Range</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;PS SHO&quot;
+Used for Request Status=New (when Product Family &lt;&gt; Blueprint), PM review pending, Product Center = Cellular</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the request has been confirmed or partially delivered %28APAC%2C EMEA%29</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor_Support</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_SADM_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Confirmed,Partially shipped</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Ship_To_Country__c</field>
+            <operation>notEqual</operation>
+            <value>AR,BR,CA,CL,MX,US</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>notEqual</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;Sales Admin EMEA&quot;</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the request has been confirmed or partially delivered %28Americas%29</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor_Support_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_LADM_America</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Confirmed,Partially shipped</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Ship_To_Country__c</field>
+            <operation>equals</operation>
+            <value>AR,BR,CA,CL,MX,US</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Family__c</field>
+            <operation>notEqual</operation>
+            <value>Blueprint</value>
+        </criteriaItems>
+        <description>Send the notification to  ladm-team-emea, logistics_us and change owner to Queue &quot;Product Marketing&quot;</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the request has been confirmed or partially delivered %28Americas%2C to be handled by Americas%29</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor_Support</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_LADM_America</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Partially delivered,Confirmed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Americas</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Type_No__c</field>
+            <operation>startsWith</operation>
+            <value>C16-C20</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;Logistics Admin Americas&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the request needs AE review %28CEL%29</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_AE_CEL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>AE review pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>equals</operation>
+            <value>Cellular</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;AE CEL&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the request needs AE review %28GNSS%29</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_AE_GNSS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>AE review pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>notEqual</operation>
+            <value>Cellular,Short Range</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;AE GNSS&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the request needs AE review %28SHO%29</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Sample_change_the_owner_to_AE_SHO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>AE review pending</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Product_Center__c</field>
+            <operation>equals</operation>
+            <value>Short Range</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <description>Send the notification and change owner to Queue &quot;AE SHO&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Sample%3A inform the requested sample has been tentatively confirmed%2C delivered or rejected</fullName>
+        <actions>
+            <name>Sample_inform_Sample_Owner_Requestor_Support</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Clarification required,Rejected,Shipped,Tentatively confirmed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample request</value>
+        </criteriaItems>
+        <description>Send the notification (no change of owner)
+Used for Request Status=Clarification required,Tentatively confirmed,Rejected,Shipped</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Samples%3A New recording %28Americas%29</fullName>
+        <actions>
+            <name>Samples_Notification_to_ladm_team_americas</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample recording</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>Americas</value>
+        </criteriaItems>
+        <description>Send notification to ladm-team-americas</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Samples%3A New recording %28Americas%2C record type change%29</fullName>
+        <actions>
+            <name>Samples_Notification_to_ladm_team_americas</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Sample recording</value>
+        </criteriaItems>
+        <description>Send notification to ladm-team-americas when record type changed to Recording</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Samples%3A Sample recordinig %28APAC%29 initial Request Status to Confirmed</fullName>
+        <actions>
+            <name>Sample_Request_Status_to_Confirmed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set to Confirmed if
+- The current user is APAC
+- Country Manager or (Team leader and Quantity &lt;= 10)</description>
+        <formula>AND(
+/* Only APAC */
+  NOT(OR(
+    ISPICKVAL($User.uB_Office__c,&quot;Americas&quot;),
+    ISPICKVAL($User.uB_Office__c,&quot;EMEA&quot;),
+    ISPICKVAL($User.uB_Office__c,&quot;Corporate&quot;)
+  )),
+  OR(
+/* All Sales excl. Leaders and Country Managers (manager=:atan:) */
+    AND(
+      NOT($User.Team_Leader__c),
+      $User.ManagerId = &quot;00520000000wCRA&quot;
+    ),
+/* Team Leader or Technical Manager with Quantity &lt;= 10*/
+    AND(
+      OR(
+        $User.Team_Leader__c,
+        $User.ProfileId=&quot;00e200000015FVB&quot;
+      ),
+      Quantity__c&lt;=10
+    )
+  )
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Samples%3A Sample recordinig %28APAC%29 initial Request Status to New</fullName>
+        <actions>
+            <name>Sample_Request_Status_to_New</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set to New if
+- The current user is APAC
+- Not manager team leader or Country Manager
+- Team leader and Quantity &gt; 10</description>
+        <formula>AND(
+/* Only APAC */
+  NOT(OR(
+    ISPICKVAL($User.uB_Office__c,&quot;Americas&quot;),
+    ISPICKVAL($User.uB_Office__c,&quot;EMEA&quot;),
+    ISPICKVAL($User.uB_Office__c,&quot;Corporate&quot;)
+  )),
+  OR(
+/* All Sales excl. Leaders and Country Managers (manager=:atan:) */
+    AND(
+      NOT($User.Team_Leader__c),
+      $User.ManagerId &lt;&gt; &quot;00520000000wCRA&quot;
+    ),
+/* Team Leader or Technical Manager with Quantity &gt; 10*/
+    AND(
+      OR(
+        $User.Team_Leader__c,
+        $User.ProfileId=&quot;00e200000015FVB&quot;
+      ),
+      Quantity__c&gt;10
+    )
+  )
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Sample Record Type - Sample Record</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.LastModifiedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Sample Record</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Sample Record Type - Sample Request</fullName>
+        <actions>
+            <name>Update_RT_Sample_Request</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Samples__c.LastModifiedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Samples__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Sample Request</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Sample_embargo_country</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Sample: embargo country</subject>
+    </tasks>
+</Workflow>

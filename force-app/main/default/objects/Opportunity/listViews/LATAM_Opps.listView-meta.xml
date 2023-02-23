@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LATAM_Opps</fullName>
+    <booleanFilter>(1 OR 2) AND 3 AND 4</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Opp_Total_Revenue__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>Product_3__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Latest_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Country__c</field>
+        <operation>contains</operation>
+        <value>AG,AI,AR,AW,BB,BM,BO,BR,BS,BZ,CL,CO,CR,CU,CW,DM,DO,EC,FK,GF,GP,GS,GT,GY,HN,HT,JM</value>
+    </filters>
+    <filters>
+        <field>Account_Country__c</field>
+        <operation>contains</operation>
+        <value>KN,KY,LC,MF,MQ,MS,MX,NI,PA,PE,PR,PY,SR,SV,SX,TC,TT,UY,VC,VE,VG,VI</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>contains</operation>
+        <value>3 Calling on,4 Evaluation,5 Design-in,6 Prototypes,7 Pre-Production,8 Produ</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Ion</value>
+    </filters>
+    <label>LATAM Opps ION</label>
+    <sharedTo>
+        <group>Sales_Americas</group>
+    </sharedTo>
+</ListView>

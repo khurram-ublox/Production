@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_Optimum__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( History_Month__c  &gt; today(), Forecast__c * (1 +  Forecast_Unit__r.Upside_Potential__c ), Forecast__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Forecast with upside potential.</inlineHelpText>
+    <label>Forecast Optimum</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

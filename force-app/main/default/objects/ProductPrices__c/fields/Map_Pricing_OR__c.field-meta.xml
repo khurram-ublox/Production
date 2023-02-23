@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Map_Pricing_OR__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If this field is checked for any of the connected products, then it is checked here.</description>
+    <externalId>false</externalId>
+    <label>MAP Pricing (OR)</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_Of_Ranking__c</fullName>
+    <description>Used for validation rule of Stage. If this is 0, then the stage should be Lost.</description>
+    <externalId>false</externalId>
+    <label>Sum Of Ranking</label>
+    <summarizedField>Opp_Product__c.Ranking__c</summarizedField>
+    <summaryForeignKey>Opp_Product__c.Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

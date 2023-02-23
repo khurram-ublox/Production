@@ -1,0 +1,15 @@
+<apex:page action="{!if($Profile.Name =='Distributor Limited FAE' || $Profile.Name =='Distributor Standard' || $Profile.Name =='Distributor Standard FAE' || $Profile.Name =='Distributor team' || $Profile.Name =='Distributor team extended', 
+    URLFOR($Action.Product2.List, $ObjectType.Product2), 
+    urlFor($Action.Product2.Tab, $ObjectType.Product2,
+    null, true))}"
+  standardController="Product2" 
+  recordSetVar="products" 
+  tabStyle="Product2">
+
+  <!-- Replace with your markup -->  
+    
+<!--
+  This page replaces your Account home page for 
+  all users except Administrators.
+-->
+</apex:page>

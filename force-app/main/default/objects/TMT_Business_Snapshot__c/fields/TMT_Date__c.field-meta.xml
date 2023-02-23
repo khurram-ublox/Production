@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMT_Date__c</fullName>
+    <description>Subtract 3 days to set the date to end of previous month</description>
+    <externalId>false</externalId>
+    <formula>if( year(Date_End_of_Month__c) = 1999,
+datevalue( Execution_Time__c  - 3),
+Date_End_of_Month__c)
+
+/*  if( Date_End_of_Month__c = Datevalue(&quot;9/9/1999&quot;),
+datevalue( Execution_Time__c  - 3),
+Date_End_of_Month__c)  */</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TMT Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

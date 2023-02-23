@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_CEL__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Responsible from PS-CEL for this Strategic Business Opportunity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Responsible from PS-CEL for this Strategic Business Opportunity</inlineHelpText>
+    <label>Owner CEL</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Standard,PowerPartner</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>OpportunitiesCEL</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,13 @@
+The following online shop purchase has been made:
+
+Company: {!Lead.Company}
+Lead Name: {!Lead.Name}
+State, Country: {!Lead.State} {!Lead.Country}
+Owner: {!Lead.OwnerFullName} 
+
+Purchased items:
+{!Lead.Purchased_Items__c}
+
+Shipping date: {!Lead.Lead_Received__c}
+
+Click on the link to access the lead directly: {!Lead.Link}

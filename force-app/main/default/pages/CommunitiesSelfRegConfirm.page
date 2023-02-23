@@ -1,0 +1,60 @@
+<apex:page id="communitiesSelfRegConfirmPage" controller="CommunitiesSelfRegConfirmController" title="User Registration" lightningStylesheets="true" standardStylesheets="false" sidebar="false" showHeader="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+    <head>
+        <title>User Registration</title>
+        <apex:slds />
+    </head>
+    
+    <style type="text/css">
+            .slc-success {
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 20px;
+                border: 0px;
+                border-radius: 0px;
+                background-color: #ace1c9;
+                border-color: #ace1c9;
+                color: #1a1a1a;
+                margin-top: 10px;
+                display: block;
+                font-weight: 600;
+            }    
+        .slds-scope .slds-modal {
+            background-color: #fff;
+        }
+        .slds-scope .slds-modal__header {
+            background: #ff6e59;
+            color: white;
+        }
+    </style>
+
+
+                  <div class="slds-scope">
+
+                    <!--Thank you for registering. A verification email has been sent to you to confirm your registration.-->
+                      <!--Registration Success start-->
+    <div class="demo-only">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">A verification link has been sent to your email address</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p> We have sent an email with a confirmation link to your email address. Please allow 5-10 minutes for this message to arrive, if you don't get it instantly. </p>
+                </div>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+
+    <!--Registration Succes ends-->
+
+                  <br/>
+                  <br/>
+                  <!--<apex:outputLink value="{!$Page.//CommunitiesLogin}" rendered="{!$Site.LoginEnabled}">{!$Label.site.go_to_login_page}</apex:outputLink>-->
+                  <br/>
+                  </div>
+
+</apex:page>

@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Acc_Notify_changes_made_not_by_owner</fullName>
+        <description>Acc: Notify changes made not by owner. Used in flow Account: Email Alerts.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Acc_Notify_changes_made_not_by_owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Acc_Notify_required_change</fullName>
+        <description>Acc: Notify required change.</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Acc_Notify_required_change</template>
+    </alerts>
+    <alerts>
+        <fullName>Acc_Potential_Competitor_created</fullName>
+        <description>Acc: Potential Competitor created.  Used in flow &apos;Account: Email Alerts&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Acc_Notify_Potential_Competitor</template>
+    </alerts>
+    <alerts>
+        <fullName>Acc_notify_new_Owner</fullName>
+        <description>Acc: notify new Owner. Used in flow &apos;Account: Email Alerts&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Acc_Notify_new_Owner_of_new_Acc_from_Abacus</template>
+    </alerts>
+    <alerts>
+        <fullName>Acc_notify_of_new_APAC_Acc_from_non_APAC_user</fullName>
+        <description>Acc: notify of new APAC Acc from non-APAC user. Used in flow &apos;Account: Email Alerts&apos;.</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>adrian.tan@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>fen.weng@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Acc_Notify_of_new_APAC_Acc_from_no_APAC_user</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Acc_Check_Copy_Address_from_Abacus</fullName>
+        <description>Enable when the Account is Linked To Abacus.</description>
+        <field>Copy_Address_from_Abacus__c</field>
+        <literalValue>1</literalValue>
+        <name>Acc: Check Copy Address from Abacus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Check_Owner_Notified</fullName>
+        <description>Check  Owner Notified</description>
+        <field>Owner_Notified__c</field>
+        <literalValue>1</literalValue>
+        <name>Acc: Check Owner Notified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Correct_Channel_Manager</fullName>
+        <description>Copy Channel Manager of Account Owner (User object)</description>
+        <field>Channel_Manager__c</field>
+        <formula>Owner.Channel_Manager__c</formula>
+        <name>Acc: Correct Channel Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Correct_Email_Account_Owner</fullName>
+        <description>Copy Account Owner Email to Email Account Owner</description>
+        <field>Email_Account_Owner__c</field>
+        <formula>Owner.Email</formula>
+        <name>Acc: Correct Email Account Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Correct_Email_Channel_Manager</fullName>
+        <description>Copy Email Channel Manager from Account Owner (User object)</description>
+        <field>Email_Channel_Manager__c</field>
+        <formula>Owner.Email_Channel_Manager__c</formula>
+        <name>Acc: Correct Email Channel Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Owner_to_mkay</fullName>
+        <field>OwnerId</field>
+        <lookupValue>kimberly.berry@u-blox.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Acc: Owner to :mkay:</name>
+        <notifyAssignee>true</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Record_Type_to_Finance</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Finance</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Acc: Record Type to Finance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_Record_Type_to_Media</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Account_Media</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Acc: Record Type to Media</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Acc_set_Lead_Information_to_Lead_value</fullName>
+        <description>Copy information of online shop order</description>
+        <field>Shop_Purchase_Information__c</field>
+        <formula>if(len(text( Lead_Date_Shop_Order__c))=0,&quot;&quot;,&quot;Date online shop purchase: &quot; &amp; text(Lead_Date_Shop_Order__c) &amp; BR()) &amp;
+if (len(Lead_Purchased_Items__c)=0,&quot;&quot;,Lead_Purchased_Items__c &amp; BR()) &amp; 
+if(len(Lead_Qualification_Notes__c)=0,&quot;&quot;, BR() &amp; Lead_Qualification_Notes__c)</formula>
+        <name>Acc: set Lead Information to Lead values</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Account_copy_distributor_name</fullName>
+        <description>copy distributor name from user field</description>
+        <field>Distributor__c</field>
+        <formula>$User.Distributor_Name__c</formula>
+        <name>Account: copy distributor name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>AdressTransfer</fullName>
+        <description>Transfers Address data to Account Site field</description>
+        <field>Site</field>
+        <formula>BillingCity</formula>
+        <name>Adress Transfer</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CopyAbacusCity</fullName>
+        <field>BillingCity</field>
+        <formula>ShippingCity</formula>
+        <name>Copy Abacus City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CopyAbacusCountry</fullName>
+        <field>BillingCountry</field>
+        <formula>ShippingCountry</formula>
+        <name>Copy Abacus Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CopyAbacusState</fullName>
+        <field>BillingState</field>
+        <formula>ShippingState</formula>
+        <name>Copy Abacus State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CopyAbacusStreet</fullName>
+        <field>BillingStreet</field>
+        <formula>ShippingStreet</formula>
+        <name>Copy Abacus Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CopyAbacusZIP</fullName>
+        <field>BillingPostalCode</field>
+        <formula>ShippingPostalCode</formula>
+        <name>Copy Abacus ZIP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_View</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Finance</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Finance View</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Regular_View</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Regular</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Regular View</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VisitingAddresschanged</fullName>
+        <field>Visiting_Address_changed__c</field>
+        <literalValue>1</literalValue>
+        <name>Visiting Address changed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Acc%3A Change Owner UBX-AP %28Americas%29</fullName>
+        <actions>
+            <name>Acc_Owner_to_mkay</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Made to assign Accounts created from Abacus with missing State.</description>
+        <formula>(Owner.Id=&quot;00520000000rnjW&quot;) &amp;&amp; (Region__c=&quot;Americas&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Channel Manager mismatch</fullName>
+        <actions>
+            <name>Acc_Correct_Channel_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Acc_Correct_Email_Account_Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Acc_Correct_Email_Channel_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Correct Channel Manager and two email fields that are wrongly populated. Made for following action after Lead conversion as it doesn&apos;t update these fields.</description>
+        <formula>Owner.Email &lt;&gt; Email_Account_Owner__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Check Copy Address from Abacus</fullName>
+        <actions>
+            <name>Acc_Check_Copy_Address_from_Abacus</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Linked_to_Abacus__c</field>
+            <operation>contains</operation>
+            <value>1</value>
+        </criteriaItems>
+        <description>Enable this whenever an Account is linked to Abacus.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Contents changed not by Owner</fullName>
+        <actions>
+            <name>Acc_Notify_changes_made_not_by_owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Notify Account Owner and Record Creator in case the Account has been changed by someone else. (Requested by :flee: for APAC)</description>
+        <formula>IF((Region__c = &quot;APAC&quot;), IF((LastModifiedById &lt;&gt; Owner.Id), IF((LastModifiedById &lt;&gt; CreatedById), IF(CONTAINS(LastModifiedBy.Profile.Name, &quot;Distributor&quot;), (ISCHANGED(Name) || ISCHANGED(Priority__c) || ISCHANGED(Distributor__c)), false), false), false), false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Notify new Owner of new Account from Abacus</fullName>
+        <actions>
+            <name>Acc_notify_new_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Acc_Check_Owner_Notified</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Notify only if Account is created from Abacus and previous Owner is UBX-AP</description>
+        <formula>CreatedById=&quot;00520000000rnjW&quot; &amp;&amp;
+OwnerId&lt;&gt;&quot;00520000000rnjW&quot; &amp;&amp;
+/*PRIORVALUE(OwnerId)=&quot;00520000000rnjW&quot; &amp;&amp;*/
+CreatedDate&gt;=DATETIMEVALUE(&quot;2017-08-23 00:00:00&quot;) &amp;&amp;
+NOT(Owner_Notified__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Notify of new APAC Account from no-APAC user</fullName>
+        <actions>
+            <name>Acc_notify_of_new_APAC_Acc_from_non_APAC_user</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Notify only if APAC Account is created by no-APAC user</description>
+        <formula>AND( RecordType.Id=&quot;01257000000Be12&quot;, OR( ISPICKVAL(CreatedBy.uB_Office__c, &quot;Americas&quot;), ISPICKVAL(CreatedBy.uB_Office__c, &quot;EMEA&quot;), ISPICKVAL(CreatedBy.uB_Office__c, &quot;Corporate&quot;) ), CreatedById&lt;&gt;&quot;00520000000rnjW&quot; /* TO DO: ADD ALL APAC COUNTRIES */ , OR( BillingCountry=&quot;AU&quot;, BillingCountry=&quot;CN&quot;, BillingCountry=&quot;HK&quot;, BillingCountry=&quot;ID&quot;, BillingCountry=&quot;IN&quot;, BillingCountry=&quot;JP&quot;, BillingCountry=&quot;KR&quot;, BillingCountry=&quot;MY&quot;, BillingCountry=&quot;NZ&quot;, BillingCountry=&quot;PH&quot;, BillingCountry=&quot;SG&quot;, BillingCountry=&quot;TH&quot;, BillingCountry=&quot;TW&quot;, BillingCountry=&quot;VN&quot; ) )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Potential Competitor created</fullName>
+        <actions>
+            <name>Acc_Potential_Competitor_created</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Potential_Competitor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Sends email alert</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Record Type to Finance</fullName>
+        <actions>
+            <name>Acc_Record_Type_to_Finance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>For Lead conversion of News subscription. Change to Record Type &quot;Finance&quot; if Record Type To Convert is Finance and the Account has been created within the past 1 hour (0.042 day)</description>
+        <formula>(Record_Type_To_Convert__c=&quot;Finance&quot;) &amp;&amp; (NOW()-CreatedDate&lt;0.042)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Record Type to Media</fullName>
+        <actions>
+            <name>Acc_Record_Type_to_Media</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>For Lead conversion of News subscription. Change to Record Type &quot;Media&quot; if Record Type To Convert is Media and the Account has been created within the past 1 hour (0.042 day)</description>
+        <formula>(Record_Type_To_Convert__c=&quot;Media&quot;) &amp;&amp; (NOW()-CreatedDate&lt;0.042)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Reporting Area HQ to Corporate</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Reporting_Area__c</field>
+            <operation>contains</operation>
+            <value>HQ</value>
+        </criteriaItems>
+        <description>Change HQ imported from Abacus to Corporate.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Reporting Region HQ to Corporate</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Reporting_Region__c</field>
+            <operation>contains</operation>
+            <value>HQ</value>
+        </criteriaItems>
+        <description>Change HQ imported from Abacus to Corporate.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A Visiting Country check</fullName>
+        <actions>
+            <name>Acc_Notify_required_change</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Check whether it&apos;s correctly entered (in two alphabets). Record Type Media is excluded.</description>
+        <formula>AND(
+RecordTypeId=&quot;01257000000Be12&quot;,
+IF(LEN(ShippingCountry)&gt;0,
+OR(LEN(ShippingCountry)&lt;&gt;2,ShippingCountry=&quot;UK&quot;),
+OR(LEN(BillingCountry)&lt;&gt;2,BillingCountry=&quot;UK&quot;)
+)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Acc%3A embargo countries</fullName>
+        <actions>
+            <name>New_Account_in_one_of_the_embargo_countries</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Check if it&apos;s for embargo countries</description>
+        <formula>OR( BillingCountry=&quot;CU&quot;, BillingCountry=&quot;BY&quot;, BillingCountry=&quot;IR&quot;, BillingCountry=&quot;KP&quot;, BillingCountry=&quot;SD&quot;, BillingCountry=&quot;SY&quot;, BillingCountry=&quot;UA&quot;, BillingCountry=&quot;AM&quot;, BillingCountry=&quot;AZ&quot;, BillingCountry=&quot;CF&quot;, BillingCountry=&quot;CG&quot;, BillingCountry=&quot;CI&quot;, BillingCountry=&quot;ER&quot;, BillingCountry=&quot;GN&quot;, BillingCountry=&quot;IQ&quot;, BillingCountry=&quot;LB&quot;, BillingCountry=&quot;LR&quot;, BillingCountry=&quot;LY&quot;, BillingCountry=&quot;MM&quot;, BillingCountry=&quot;SO&quot;, BillingCountry=&quot;ZW&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account%3A new account AR%2CAW%2CBR</fullName>
+        <actions>
+            <name>Account_check_AR_AW_BR</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.ShippingCountry</field>
+            <operation>equals</operation>
+            <value>AR,AW,BR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.BillingCountry</field>
+            <operation>equals</operation>
+            <value>AR,AW,BR</value>
+        </criteriaItems>
+        <description>To notify Account Owner of newly created account in AR, AW, BR</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Account%3A populate Distributor Name</fullName>
+        <actions>
+            <name>Account_copy_distributor_name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>when the owner is a partner user and the field Distributor has not yet been set, copy the distributor name from the user information.</description>
+        <formula>( $User.Distributor_Name__c &lt;&gt; &quot;&quot;) &amp;&amp; ( $User.Distributor_Name__c &lt;&gt; &quot;Internal&quot;) &amp;&amp;  (Distributor__c  = &quot;&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Address Transfer</fullName>
+        <actions>
+            <name>AdressTransfer</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Account.Site</field>
+            <operation>notEqual</operation>
+            <value>empty</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Finance View</fullName>
+        <actions>
+            <name>Finance_View</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Proxy advisor,Advisor,Broker,Fund manager/ Portfolio manager,Private major shareholders</value>
+        </criteriaItems>
+        <description>Changes view once Account is set as financial</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead conversion%3A set Account fields for shop purchase</fullName>
+        <actions>
+            <name>Acc_set_Lead_Information_to_Lead_value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Account.Lead_Purchased_Items__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Lead_Qualification_Notes__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Populate Account fields for online shop history after Lead conversion</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Regular View</fullName>
+        <actions>
+            <name>Regular_View</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Type</field>
+            <operation>equals</operation>
+            <value>Customer,Car Brand/OEM,Distributor,Sales Representative,Broker / Reseller,Network Operator,Potential Distributor,System Integrator,Supplier,Strategic Partner,Other</value>
+        </criteriaItems>
+        <description>Changes view once Account is not set as financial</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Visiting Address</fullName>
+        <actions>
+            <name>CopyAbacusCity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CopyAbacusCountry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CopyAbacusState</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CopyAbacusStreet</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>CopyAbacusZIP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>VisitingAddresschanged</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.Copy_Address_from_Abacus__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Update visiting address to be the same as the Abacus address if the checkbox is set.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Visiting Address changed</fullName>
+        <actions>
+            <name>VisitingAddresschanged</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Sets the flag &quot;Visiting Address changed&quot; whenever visiting address elements change, this flag triggers the APEX Trigger updateContactVisitingAddressOnAccount on Account</description>
+        <formula>OR(  ISCHANGED(BillingCity),  ISCHANGED(BillingStreet),  ISCHANGED(BillingState),  ISCHANGED(BillingCountry),  ISCHANGED(BillingPostalCode)  )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Account_check_AR_AW_BR</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>A new account has been created in AR, AW or BR. In the Task of the link beow, click &quot;Related To&quot; to go to the account. Change the Account Owner if necessary.</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Account.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Account check (AR,AW,BR)</subject>
+    </tasks>
+    <tasks>
+        <fullName>New_Account_in_one_of_the_embargo_countries</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Account in one of the embargo countries</subject>
+    </tasks>
+</Workflow>

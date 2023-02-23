@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DK_Product_Center__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(LEFT(DK_Product__c,8),
+  &quot;EVK-ANNA&quot;, &quot;Short Range&quot;,
+  &quot;EVK-NINA&quot;, &quot;Short Range&quot;,
+  &quot;EVK-ODIN&quot;, &quot;Short Range&quot;,
+  CASE(LEFT(DK_Product__c,5),
+    &quot;ANNA-&quot;, &quot;Short Range&quot;,
+    &quot;C027-&quot;, &quot;Cellular&quot;,
+    &quot;C030-&quot;, &quot;Cellular&quot;,
+    &quot;C16-C&quot;, &quot;Cellular&quot;,
+    &quot;C16-U&quot;, &quot;Cellular&quot;,
+    &quot;EVK-C&quot;, &quot;Cellular&quot;,
+    &quot;EVK-L&quot;, &quot;Cellular&quot;,
+    &quot;EVK-N&quot;, &quot;Cellular&quot;,
+    &quot;EVK-R&quot;, &quot;Cellular&quot;,
+    &quot;EVK-U&quot;, &quot;Cellular&quot;,
+    &quot;EVK-W&quot;, &quot;Short Range&quot;,
+    &quot;LARA-&quot;, &quot;Cellular&quot;,
+    &quot;LISA-&quot;, &quot;Cellular&quot;,
+    &quot;MPCI-&quot;, &quot;Cellular&quot;,
+    &quot;NINA-&quot;, &quot;Short Range&quot;,
+    &quot;ODIN-&quot;, &quot;Short Range&quot;,
+    &quot;R41Z-&quot;, &quot;Short Range&quot;,
+    &quot;SARA-&quot;, &quot;Cellular&quot;,
+    &quot;TOBY-&quot;, &quot;Cellular&quot;,
+    CASE(LEFT(DK_Product__c,3),
+      &quot;ADP&quot;, &quot;Cellular&quot;,
+      &quot;BMD&quot;, &quot;Short Range&quot;,
+      &quot;Positioning&quot;
+    )
+  )
+)</formula>
+    <label>DK Product Center</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Support_Case</fullName>
+    <active>true</active>
+    <businessProcess>Support Process Standard</businessProcess>
+    <compactLayoutAssignment>With_Record_Type</compactLayoutAssignment>
+    <description>All support Cases.</description>
+    <label>Support Case</label>
+    <picklistValues>
+        <picklist>AE_Satisfaction__c</picklist>
+        <values>
+            <fullName>Above Normal Level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Average - OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improvement Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improvement Possible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Good Level</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Record_Type__c</picklist>
+        <values>
+            <fullName>Email Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Case</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Condition_of_Samples__c</picklist>
+        <values>
+            <fullName>Desoldered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In u-blox reel%2Ftray %28open%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In u-blox reel%2Ftray %28sealed%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loose samples %28never soldered%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On application board</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Request__c</picklist>
+        <values>
+            <fullName>8D report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Only Compensation %2F Replacement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FAE_Satisfaction__c</picklist>
+        <values>
+            <fullName>Above Normal Level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Average - OK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improvement Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Improvement Possible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very Good Level</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>E-Mail</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>u-blox Portal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin_of_Failure_at_Customer__c</picklist>
+        <values>
+            <fullName>0km %2F 0hrs failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>1 - High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Normal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Low</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Technology__c</picklist>
+        <values>
+            <fullName>Cellular</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GNSS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Range</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authentication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract-Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Design Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Documentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering Job</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure Analysis %28RMA%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification %2F Reliability %2F Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Questionaire %2F Self-Assessments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Requirement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical Question</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless Certificates</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Web_Salutation__c</picklist>
+        <values>
+            <fullName>---</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

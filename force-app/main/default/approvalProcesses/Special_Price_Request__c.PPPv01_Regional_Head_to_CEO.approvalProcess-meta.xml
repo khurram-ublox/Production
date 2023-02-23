@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_by_Head_of_Sales</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Head_of_Sales</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Head_of_Sales_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Pending</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>markus.schaefer@u-blox.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>(PPPv01) Approval by Head of Sales</label>
+        <name>PPPv01_Approval_by_Head_of_Sales</name>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_CEO</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_CEO</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Prices_Valid_Until</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Special_Price_Request__c.Total_Contribution_Pct__c</field>
+                <operation>lessThan</operation>
+                <value>17</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>(PPPv01) Approval by CEO</label>
+        <name>PPPv01_Approval_by_CEO</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>PPP Process: Regional Head  &gt; Head of Sales &gt; (if Total Contribution &lt; 17%) CEO</description>
+    <emailTemplate>unfiled$public/SPR_Request_update_notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>ISPICKVAL(Price_Level__c, &quot;PPP (Project Price Plan)&quot;) &amp;&amp; (
+$User.Hierarchy_Level__c=3
+)
+
+/*
+Backup
+------------------------------------
+IF(Name=&quot;SPR-013718&quot;,true,false) || OR(ISPICKVAL(Price_Level__c, &quot;PPP (Project Price Plan)&quot;),ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;)) &amp;&amp;
+($User.Alias=&quot;atan&quot; || $User.Alias=&quot;egui&quot; || $User.Alias=&quot;cbel&quot;)
+*/</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>SPR_Request_approved</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>SPR_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>SPR_Date_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Contribution_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Revenue_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>PPPv01: Regional Head to CEO</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recallActions>
+        <action>
+            <name>SPR_Status_Not_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

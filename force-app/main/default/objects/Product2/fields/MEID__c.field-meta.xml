@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MEID__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>(From Abacus)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus)</inlineHelpText>
+    <label>MEID</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

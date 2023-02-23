@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_Orders</fullName>
+    <availability>online</availability>
+    <description>Show orders related to this opportunity (account and products)
+Orig: URL, /00O57000006jOwh?pv2=&quot;{!Opportunity.Product_1__c},{!Opportunity.Product_2__c},{!Opportunity.Product_3__c},{!Opportunity.Product_4__c},{!Opportunity.Product_5__c}&quot;&amp;pv3=&quot;{!Opportunity.AccountId}&quot;&amp;pv4=&quot;{!Opportunity.AccountId}&quot;&amp;pv5=&quot;{!Opportunity.AccountId}&quot;</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Show Orders</masterLabel>
+    <openType>newWindow</openType>
+    <page>OpportunityUrlShowOrders</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+</WebLink>

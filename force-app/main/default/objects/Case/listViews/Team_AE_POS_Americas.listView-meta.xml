@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_AE_POS_Americas</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>Date_Escalated_by_FAE__c</columns>
+    <columns>Date_Escalated_by_TM__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>AE POS,AMER Support L2,apai,byou,csia,carm,dkim,dama,dbhu,eaho,fmad,ghun,imar,jluu,jzag,jesk,jilm,kkir,lmic,mdur,msul,mban,njaf,oola,pyan,rmak,smos,ssid,sdon,scap,stng,tchr,vkar,iwes,yshc,erei,tsha,rmcn,dber,dhan,jukr,sbro,cmit,klys,rmom</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Case_Initiator__c</field>
+        <operation>equals</operation>
+        <value>Support US,iwes,yshc,erei,tsha,rmcn,dber,dhan,jzag,jukr,sbro,cmit,klys,rmom</value>
+    </filters>
+    <filters>
+        <field>Technology__c</field>
+        <operation>equals</operation>
+        <value>GNSS</value>
+    </filters>
+    <label>Team AE POS Americas</label>
+    <sharedTo>
+        <group>AE_POS</group>
+        <group>PS_POS</group>
+        <roleAndSubordinatesInternal>RegionAmericas</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

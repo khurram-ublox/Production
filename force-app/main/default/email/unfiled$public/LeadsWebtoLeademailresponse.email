@@ -1,0 +1,7 @@
+Dear {!Lead.Name},  
+
+Thank you for taking the time to fill in the web form. The information has been forwarded to the sales manager.  
+
+Kind regards, 
+
+{!Organization.Name}

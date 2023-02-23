@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for Opp reminder to external customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>External_Mailing_with_u_blox_Logo</letterhead>
+    <name>Opp: Opp Reminder to customer English (HTML)</name>
+    <style>formalLetter</style>
+    <subject>u-blox; {!Opportunity.Name} - project update</subject>
+    <textOnly>Dear Mr {!Contact.LastName},
+
+I hope all is well with you.
+
+Based on our last conversation, you were considering {!Opportunity.Product_1__c}, {!Opportunity.Product_2__c}, {!Opportunity.Product_3__c}, for your project {!Opportunity.Name}.
+
+The timeline that you provided to me at that time was:
+
+• Start of Design: {!Opportunity.Decision_Date__c}
+• Prototypes: {!Opportunity.Proto_Date__c}
+• Start of Production: {!Opportunity.CloseDate}
+• Planned Yearly quantity from SOP: {!Opportunity.Annual_Quantity__c}
+
+I would  appreciate if you could please provide an updated status on the project mentioned. Also, please confirm if the timeline information that we have above is still correct, or if it has changed, please provide us with revised dates.
+
+In the meantime, if there is anything else I can assist you with, please let me know either via email or a phone call.
+
+Thank you for your help.
+
+Kindest regards,</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

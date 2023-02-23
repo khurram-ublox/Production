@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>e_NDA__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked, the email will be sent to the Contact with the URL to e-NDA form.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When checked, the email will be sent to the Contact with the URL to e-NDA form.</inlineHelpText>
+    <label>e-NDA</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

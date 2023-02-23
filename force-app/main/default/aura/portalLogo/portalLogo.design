@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="pageHeading" label="Page Heading" description="add your page heading" />
+    <design:attribute name="logotitle" label="Logo Title" description="Reliable. Smart. Secure." />
+</design:component>

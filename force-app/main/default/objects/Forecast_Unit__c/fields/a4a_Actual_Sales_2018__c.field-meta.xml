@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Actual_Sales_2018__c</fullName>
+    <externalId>false</externalId>
+    <label>a4a Actual Sales 2018 -</label>
+    <summarizedField>Forecast_Unit_Period__c.Actual_Sales__c</summarizedField>
+    <summaryFilterItems>
+        <field>Forecast_Unit_Period__c.History_Month__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>1/1/2018</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Forecast_Unit_Period__c.Forecast_Unit__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

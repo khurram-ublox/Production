@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Webinar_email__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Subscribe to Webinar email</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Subscribe to Webinar email</inlineHelpText>
+    <label>Webinar email</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

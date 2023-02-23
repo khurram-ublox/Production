@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APAC_flagged_items1</fullName>
+    <columns>Opportunity_Owner__c</columns>
+    <columns>Opportunity_Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Product__c</columns>
+    <columns>Revenue__c</columns>
+    <columns>Opportunity_Stage__c</columns>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Flagged_Item__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>China,Taiwan,Japan,Korea,ANZ,Rest of APAC,India</value>
+    </filters>
+    <label>APAC flagged items</label>
+</ListView>

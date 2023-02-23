@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>Set_Public</name>
+        <label>Set Public</label>
+        <locationX>452</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.IsVisibleInSelfService</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Should_update_Comments</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setComments</name>
+        <label>setComments</label>
+        <locationX>452</locationX>
+        <locationY>815</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Description</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>taskDescriptionUpdateTemplate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Should_Close_Task</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>setTaskCompleted</name>
+        <label>setTaskCompleted</label>
+        <locationX>452</locationX>
+        <locationY>1151</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Should_Close_Task</name>
+        <label>Should Close Task?</label>
+        <locationX>584</locationX>
+        <locationY>1031</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Close_Task</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Close_Task__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setTaskCompleted</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Close Task</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Only when a new Task is created, Public is set to true (excl. tasks related to SPR) so the user can change afterwards if needed.</description>
+        <name>Should_New_Task_Set_to_Public</name>
+        <label>Should New Task Set to Public?</label>
+        <locationX>582</locationX>
+        <locationY>359</locationY>
+        <defaultConnector>
+            <targetReference>Should_update_Comments</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Make_the_Task_public</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsVisibleInSelfService</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>setTasktoPublicFormula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordIsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Public</targetReference>
+            </connector>
+            <label>Make the Task public</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>For Custom Button &quot;Request Quotation&quot; to add Contact from the Task.</description>
+        <name>Should_update_Comments</name>
+        <label>Should update Comments?</label>
+        <locationX>584</locationX>
+        <locationY>694</locationY>
+        <defaultConnector>
+            <targetReference>Should_Close_Task</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Comments</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RecordIsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quotation</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>setComments</targetReference>
+            </connector>
+            <label>Update Comments</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>RecordIsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>setTasktoPublicFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>LEFT({!$Record.WhatId},3) != &apos;a0J&apos;</expression>
+    </formulas>
+    <interviewLabel>Task: Before Create/Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task: Before Create/Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>466</locationX>
+        <locationY>49</locationY>
+        <connector>
+            <targetReference>Should_New_Task_Set_to_Public</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>taskDescriptionUpdateTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!$Record.Description}
+NOTE: The quotation is to be issued to  
+Contact Link:https://eu4.salesforce.com/{!$Record.WhoId}</text>
+    </textTemplates>
+</Flow>

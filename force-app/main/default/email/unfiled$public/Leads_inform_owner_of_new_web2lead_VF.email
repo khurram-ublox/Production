@@ -1,0 +1,26 @@
+<messaging:emailTemplate subject="Lead submitted: {!relatedTo.Name} from {!relatedTo.Company}" recipientType="User" relatedToType="Lead" replyTo="{!relatedTo.Email}">
+<messaging:plainTextEmailBody >
+The following lead has been created:
+
+Lead Source: {!relatedTo.LeadSource}
+Lead submitted by: {!relatedTo.Submitter__c}
+Company: {!relatedTo.Company} 
+Lead Name: {!relatedTo.Name}  
+Phone: {!relatedTo.Phone}
+Email: {!relatedTo.Email}.
+Address: {!relatedTo.Street}, {!relatedTo.City}, {!relatedTo.State}, {!relatedTo.PostalCode}, {!relatedTo.Country}
+
+Description (Message from Contact Us webform): {!relatedTo.Description} 
+Project description: {!relatedTo.Project_Description__c}
+
+Request: {!relatedTo.Request__c}
+
+AssistNow Token requested: {!relatedTo.MGA__c}
+(If 1, on the converted Contact press AssistNow Request button to generate a new AssistNow Token. If 0, no additional action)
+
+The link has been sent by: {!relatedTo.uB_Contact__c}
+
+Click on the link to access the lead directly: https://u-blox.my.salesforce.com/{!relatedTo.Id}
+
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

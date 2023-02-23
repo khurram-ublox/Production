@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Received__c</fullName>
+    <description>If empty, a workflow sets the field to be equal to the Lead create date</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of Lead creation. Typically 1 to 7 days later than actual ship date.</inlineHelpText>
+    <label>Shop Order Ship Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

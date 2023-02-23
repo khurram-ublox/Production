@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>* This permission set will give users access to clone existing list view. 
+&quot;Manage Public List Views&quot; is enabled. 
+THis will make user enable to &apos;Create, edit, and delete public list views.&apos;</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Manage Public List Views</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>CreateCustomizeFilters</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditPublicFilters</name>
+    </userPermissions>
+</PermissionSet>

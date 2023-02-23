@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification to SVC Team when the token needs to be deactivated. This should contain only the token, no information on the contact.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contact: AssistNow token to deactivate (to u-blox SVC Team)</name>
+    <style>none</style>
+    <subject>[AssistNow Token] To be deactivated</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

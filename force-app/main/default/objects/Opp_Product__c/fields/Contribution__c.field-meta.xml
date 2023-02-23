@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution__c</fullName>
+    <description>The COGS (below) are now updated with Workflow:
+( Product__r.COGS_1__c + 
+CASE (text( Use_Restriction__c ),
+&quot;2G M2M&quot;, Product__r.IPR_USD_M2M__c + Product__r.IPR_Pct_M2M__c,
+&quot;3G M2M&quot;, Product__r.IPR_USD_M2M__c + Product__r.IPR_Pct_M2M__c,
+&quot;4G M2M&quot;, Product__r.IPR_USD_M2M__c + Product__r.IPR_Pct_M2M__c,
+...))</description>
+    <externalId>false</externalId>
+    <formula>Contribution_Unweighted__c * Status_Factor__c * Opportunity__r.Probability</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>(Revenue Unweighted - Annual_Quantity__c * COGS__c) * Opportunity Probability
+NOTE: 0 if Status is Alternative Product, Lost, Not Applicable</inlineHelpText>
+    <label>Contribution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

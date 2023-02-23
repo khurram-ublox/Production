@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competition__c</fullName>
+    <externalId>false</externalId>
+    <label>Competition</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amp’ed RF Technology</fullName>
+                <default>false</default>
+                <label>Amp’ed RF Technology</label>
+            </value>
+            <value>
+                <fullName>Bluegiga</fullName>
+                <default>false</default>
+                <label>Bluegiga</label>
+            </value>
+            <value>
+                <fullName>Broadcom</fullName>
+                <default>false</default>
+                <label>Broadcom</label>
+            </value>
+            <value>
+                <fullName>CEC</fullName>
+                <default>false</default>
+                <label>CEC</label>
+            </value>
+            <value>
+                <fullName>ConnectOne</fullName>
+                <default>false</default>
+                <label>ConnectOne</label>
+            </value>
+            <value>
+                <fullName>CSR (SiRF)</fullName>
+                <default>false</default>
+                <label>CSR (SiRF)</label>
+            </value>
+            <value>
+                <fullName>Digi International</fullName>
+                <default>false</default>
+                <label>Digi International</label>
+            </value>
+            <value>
+                <fullName>Fibocom</fullName>
+                <default>false</default>
+                <label>Fibocom</label>
+            </value>
+            <value>
+                <fullName>Furuno (eRide)</fullName>
+                <default>false</default>
+                <label>Furuno (eRide)</label>
+            </value>
+            <value>
+                <fullName>Gainspan</fullName>
+                <default>false</default>
+                <label>Gainspan</label>
+            </value>
+            <value>
+                <fullName>Gemalto (Cinterion)</fullName>
+                <default>false</default>
+                <label>Gemalto (Cinterion)</label>
+            </value>
+            <value>
+                <fullName>Globalsat</fullName>
+                <default>false</default>
+                <label>Globalsat</label>
+            </value>
+            <value>
+                <fullName>Holux</fullName>
+                <default>false</default>
+                <label>Holux</label>
+            </value>
+            <value>
+                <fullName>Huawei</fullName>
+                <default>false</default>
+                <label>Huawei</label>
+            </value>
+            <value>
+                <fullName>Intel</fullName>
+                <default>false</default>
+                <label>Intel</label>
+            </value>
+            <value>
+                <fullName>iWOW</fullName>
+                <default>false</default>
+                <label>iWOW</label>
+            </value>
+            <value>
+                <fullName>JRC</fullName>
+                <default>false</default>
+                <label>JRC</label>
+            </value>
+            <value>
+                <fullName>Laird</fullName>
+                <default>false</default>
+                <label>Laird</label>
+            </value>
+            <value>
+                <fullName>Lantronix</fullName>
+                <default>false</default>
+                <label>Lantronix</label>
+            </value>
+            <value>
+                <fullName>Linx</fullName>
+                <default>false</default>
+                <label>Linx</label>
+            </value>
+            <value>
+                <fullName>Locosys</fullName>
+                <default>false</default>
+                <label>Locosys</label>
+            </value>
+            <value>
+                <fullName>LS Research</fullName>
+                <default>false</default>
+                <label>LS Research</label>
+            </value>
+            <value>
+                <fullName>Marvell</fullName>
+                <default>false</default>
+                <label>Marvell</label>
+            </value>
+            <value>
+                <fullName>Mediatek</fullName>
+                <default>false</default>
+                <label>Mediatek</label>
+            </value>
+            <value>
+                <fullName>Microchip</fullName>
+                <default>false</default>
+                <label>Microchip</label>
+            </value>
+            <value>
+                <fullName>Murata</fullName>
+                <default>false</default>
+                <label>Murata</label>
+            </value>
+            <value>
+                <fullName>Navis</fullName>
+                <default>false</default>
+                <label>Navis</label>
+            </value>
+            <value>
+                <fullName>Nordic Semiconductor</fullName>
+                <default>false</default>
+                <label>Nordic Semiconductor</label>
+            </value>
+            <value>
+                <fullName>Novatel</fullName>
+                <default>false</default>
+                <label>Novatel</label>
+            </value>
+            <value>
+                <fullName>OriginGPS</fullName>
+                <default>false</default>
+                <label>OriginGPS</label>
+            </value>
+            <value>
+                <fullName>Other / unknown</fullName>
+                <default>false</default>
+                <label>Other / unknown</label>
+            </value>
+            <value>
+                <fullName>Panasonic</fullName>
+                <default>false</default>
+                <label>Panasonic</label>
+            </value>
+            <value>
+                <fullName>Qualcomm</fullName>
+                <default>false</default>
+                <label>Qualcomm</label>
+            </value>
+            <value>
+                <fullName>Quectel</fullName>
+                <default>false</default>
+                <label>Quectel</label>
+            </value>
+            <value>
+                <fullName>Redpine</fullName>
+                <default>false</default>
+                <label>Redpine</label>
+            </value>
+            <value>
+                <fullName>RoyalTek (Quanta Group)</fullName>
+                <default>false</default>
+                <label>RoyalTek (Quanta Group)</label>
+            </value>
+            <value>
+                <fullName>Sierra Wireless</fullName>
+                <default>false</default>
+                <label>Sierra Wireless</label>
+            </value>
+            <value>
+                <fullName>Silex Technologies</fullName>
+                <default>false</default>
+                <label>Silex Technologies</label>
+            </value>
+            <value>
+                <fullName>Simcom</fullName>
+                <default>false</default>
+                <label>Simcom</label>
+            </value>
+            <value>
+                <fullName>Skylab</fullName>
+                <default>false</default>
+                <label>Skylab</label>
+            </value>
+            <value>
+                <fullName>Skytraq</fullName>
+                <default>false</default>
+                <label>Skytraq</label>
+            </value>
+            <value>
+                <fullName>ST-Ericsson</fullName>
+                <default>false</default>
+                <label>ST-Ericsson</label>
+            </value>
+            <value>
+                <fullName>ST Microelectronics</fullName>
+                <default>false</default>
+                <label>ST Microelectronics</label>
+            </value>
+            <value>
+                <fullName>Taiyo Yuden</fullName>
+                <default>false</default>
+                <label>Taiyo Yuden</label>
+            </value>
+            <value>
+                <fullName>Telit</fullName>
+                <default>false</default>
+                <label>Telit</label>
+            </value>
+            <value>
+                <fullName>TI</fullName>
+                <default>false</default>
+                <label>TI</label>
+            </value>
+            <value>
+                <fullName>Trimble</fullName>
+                <default>false</default>
+                <label>Trimble</label>
+            </value>
+            <value>
+                <fullName>Unicorecomm</fullName>
+                <default>false</default>
+                <label>Unicorecomm</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

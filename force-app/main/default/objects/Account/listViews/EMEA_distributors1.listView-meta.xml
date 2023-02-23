@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_distributors1</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>Credit_Line_Insurance__c</columns>
+    <columns>Credit_Line_u_blox__c</columns>
+    <columns>Linked_to_Abacus__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Distributor__c</columns>
+    <columns>Priority__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>SF_Account_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.ADDRESS2_COUNTRY</field>
+        <operation>equals</operation>
+        <value>GR</value>
+    </filters>
+    <filters>
+        <field>Reporting_Region__c</field>
+        <operation>equals</operation>
+        <value>EMEA</value>
+    </filters>
+    <label>accounts GR</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

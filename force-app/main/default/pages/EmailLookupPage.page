@@ -1,0 +1,186 @@
+<apex:page controller="EmailLookupPageController" sidebar="false" showHeader="false">
+
+    <script>
+        
+        function fillOption(val){
+            var listId = "";
+            if(val == "to"){
+                listId = "rightListTo";
+            }else if(val == "cc"){
+                listId = "rightListCC";
+            }else if(val == "bcc"){
+                listId = "rightListBcc";
+            }
+            
+            moveSelected("leftList", listId);
+        }
+        
+        function removeOption(val){
+            var listId = "";
+            if(val == "to"){
+                listId = "rightListTo";
+            }else if(val == "cc"){
+                listId = "rightListCC";
+            }else if(val == "bcc"){
+                listId = "rightListBcc";
+            }
+            
+            moveSelected(listId, "leftList");
+        }
+        
+        function moveSelected(sourceListId, destinationListId){
+            var listFrom = document.getElementById(sourceListId).options;
+            
+            var listTo = document.getElementById(destinationListId);
+            
+            for ( var x = 0; x < listFrom.length; x++) {
+                if(listFrom[x].selected == true){
+                    listTo.appendChild(listFrom[x]);
+                    x--;
+                }
+            }
+            
+            listTo.focus();
+        }
+        function closeWindow() {
+            window.close();
+        }
+        function saveData(){
+            var listTo = document.getElementById("rightListTo").options;
+            var listCC = document.getElementById("rightListCC").options;
+            var listBcc = document.getElementById("rightListBcc").options;
+            
+            var strTo = "";
+            for ( var x = 0; x < listTo.length; x++) {
+                strTo += listTo[x].value + ",";
+            }
+            console.log(strTo);
+            
+            var strCC = "";
+            for ( var x = 0; x < listCC.length; x++) {
+                strCC += listCC[x].value + ",";
+            }
+            console.log(strCC);
+            
+            var strBcc = "";
+            for ( var x = 0; x < listBcc.length; x++) {
+                //strBcc += listBcc[x].value + "," + listBcc[x].text;
+                strBcc += listBcc[x].value + ",";
+            }
+            console.log(strBcc);
+            
+            strTo = strTo.slice(0, -1);
+            strCC= strCC.slice(0, -1);
+            strBcc= strBcc.slice(0, -1);
+            opener.callParent(strTo,strCC,strBcc);
+            window.close();
+        }
+    </script>
+    
+    <apex:form >
+        <div style="background: #fff url(/img/alohaSkin/lookup_bg.png) repeat-x;padding: 0;" >
+            <div style="padding: 13px;">
+                <div style="display: flex;font-size: 1.2em;">
+                    <apex:image url="{!$Resource.HomeImgIcon}" width="32" height="32" style="background-color: rgb(233,247,252);"/>
+                    <h1>Email Address Lookup</h1>
+                </div>
+                <br/><br/>
+                <div style="padding-top: 3px;">Only contacts or co-workers with stored email addresses are displayed in the box below</div>
+            </div>        
+        </div>    
+        <div style="padding-top: 3px; margin-left: 25px;">
+            <apex:outputLabel > Show: </apex:outputLabel>
+            <apex:selectList size="1" value="{!selectedShow }">
+              <apex:selectOptions value="{!showOptionList}"/>
+            </apex:selectList> <br/>
+        </div>
+        <br/>
+        
+        <apex:pageBlock id="pgb1">
+            <div style="padding-left: 3%;">
+                <table>
+                    <tr>
+                        <td style="padding-left: 10%;"><h1>Contacts:</h1></td>
+                        <td style="padding-left: 25%;"><h1>Additional To Recipients:</h1></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="leftList" class="multilist" multiple="multiple" size="18" style="width: 150px;">
+                                <apex:repeat value="{!userOptionList}" var="option">
+                                    <option value="{!option.value}">{!option.label}</option>
+                                </apex:repeat>
+                            </select>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td style="padding-left: 4%;">
+                                        <apex:commandButton value=">>" onclick="fillOption('to'); return false;" />
+                                        <br/>
+                                        <apex:commandButton value="<<" onclick="removeOption('to'); return false;"/>
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;
+                                        <select id="rightListTo" class="multilist" multiple="multiple" size="5" style="width: 150px;">
+                                            
+                                        </select>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td style="padding-left: 17%;">
+                                        <h1>CC Recipients:</h1>
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="padding-left: 4%;">
+                                        <apex:commandButton onclick="fillOption('cc'); return false;" value=">>" />
+                                        <br/>
+                                        <apex:commandButton value="<<" onclick="removeOption('cc'); return false;"/>
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;
+                                        <select id="rightListCC" class="multilist" multiple="multiple" size="5" style="width: 150px;">
+                                            
+                                        </select>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td></td>
+                                    <td style="padding-left: 17%;"><h1>BCC Recipients:</h1></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td style="padding-left: 4%;">
+                                        <apex:commandButton value=">>" onclick="fillOption('bcc'); return false;" />
+                                        <br/>
+                                        <apex:commandButton value="<<" onclick="removeOption('bcc'); return false;"/>
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;
+                                        <select id="rightListBcc" class="multilist" multiple="multiple" size="5" style="width: 150px;">
+                                            
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="padding-left: 17%;">
+                <table>
+                    <tr>
+                        <td><apex:commandButton value="Save" onclick="saveData(); return false;"/></td>
+                        <td><apex:commandButton value="Cancel" onclick="closeWindow(); return false;"/></td>
+                    </tr>
+                </table>
+            </div>
+            
+        </apex:pageBlock>
+        
+     </apex:form>
+</apex:page>

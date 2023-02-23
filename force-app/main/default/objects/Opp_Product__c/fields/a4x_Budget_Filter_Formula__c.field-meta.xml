@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4x_Budget_Filter_Formula__c</fullName>
+    <description>Do not change - used for Dimension Update - App4Forecast</description>
+    <externalId>false</externalId>
+    <formula>(
+Flagged_Item__c
+||
+/*a4x_Budget_Filter__c*/
+Budget_Item__c 
+||
+(
+Revenue__c &gt; 100000
+&amp;&amp;
+(Opportunity_Stage__c = &quot;4 Evaluation&quot; || Opportunity_Stage__c = &quot;5 Design-in&quot; || Opportunity_Stage__c = &quot;6 Prototypes&quot; || Opportunity_Stage__c = &quot;7 Pre-Production&quot;)
+&amp;&amp;
+(ISPICKVAL(Status__c, &quot;Won&quot;) || ISPICKVAL(Status__c, &quot;Evaluation&quot;))
+&amp;&amp;   Opportunity__r.CloseDate  &gt;= DATE(2022,01,01) 
+&amp;&amp;   Opportunity__r.CloseDate  &lt;= DATE(2022,12,31)
+)
+)
+&amp;&amp;
+NOT(a4x_Exclude_From_Budget__c)
+
+
+/* previous version until 12.10.2020
+Flagged_Item__c
+||
+ Budget_Item__c 
+||
+(
+Revenue__c &gt; 100000
+&amp;&amp;
+(Opportunity_Stage__c = &quot;4 Evaluation&quot; || Opportunity_Stage__c = &quot;5 Design-in&quot; || Opportunity_Stage__c = &quot;6 Prototypes&quot; || Opportunity_Stage__c = &quot;7 Pre-Production&quot;)
+&amp;&amp;
+(ISPICKVAL(Status__c, &quot;Won&quot;) || ISPICKVAL(Status__c, &quot;Evaluation&quot;))
+&amp;&amp;   Opportunity__r.CloseDate  &gt;= DATE(2021,01,01) 
+&amp;&amp;   Opportunity__r.CloseDate  &lt;= DATE(2021,12,31)
+)
+*/
+
+
+
+/* previous version until 14.9.2020
+(Flagged_Item__c 
+ || 
+Revenue__c &gt; 100000)
+&amp;&amp; (Opportunity_Stage__c = &quot;4 Evaluation&quot;  || Opportunity_Stage__c = &quot;5 Design-in&quot;  || Opportunity_Stage__c = &quot;6 Prototypes&quot;  || Opportunity_Stage__c = &quot;7 Pre-Production&quot;)
+&amp;&amp;
+(ISPICKVAL(Status__c, &quot;Won&quot;) || ISPICKVAL(Status__c, &quot;Evaluation&quot;))
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4x Budget Filter Formula</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

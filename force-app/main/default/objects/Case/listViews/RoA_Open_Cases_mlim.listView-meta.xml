@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RoA_Open_Cases_mlim</fullName>
+    <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Case_Initiator__c</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CASES.EMAIL</columns>
+    <columns>Product__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Duplicate,Closed</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>support IN,Support ANZ,Global Tech Support,Support APAC,APAC Channel,mlim,APAC Support L2,AE APAC POS</value>
+    </filters>
+    <filters>
+        <field>Case_Initiator__c</field>
+        <operation>equals</operation>
+        <value>mlim</value>
+    </filters>
+    <label>RoA Open Cases mlim</label>
+    <sharedTo>
+        <roleAndSubordinates>RegionAPAC</roleAndSubordinates>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Accounts_without_Application_Type</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>uB_Office__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>Billings_YTD__c</columns>
+    <columns>Billings_Prev_Yr__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Distributor__c</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Billings_YTD__c</field>
+        <operation>greaterThan</operation>
+        <value>USD 0</value>
+    </filters>
+    <filters>
+        <field>New_Application_Type__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>notEqual</operation>
+        <value>Distributor,Sales Representative</value>
+    </filters>
+    <label>Direct Accounts without Application Type</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

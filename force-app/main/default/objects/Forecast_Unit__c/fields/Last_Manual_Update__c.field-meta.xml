@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Manual_Update__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of last modification of a manual forecast</inlineHelpText>
+    <label>Last Manual Update</label>
+    <summarizedField>Forecast_Unit_Period__c.Last_Forecast_Manual_Update__c</summarizedField>
+    <summaryForeignKey>Forecast_Unit_Period__c.Forecast_Unit__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,56 @@
+.THIS {
+    height: 250px;
+}
+
+.THIS .slds-form--inline .slds-form-element__row {
+  margin-bottom: 0.5rem;
+}
+
+.THIS .slds-form--inline .slds-form-element__row + .slds-form-element__row {
+    clear: both;
+}
+
+.THIS .slds-form--inline .slds-form-element__control {
+  display: inline-block;
+  position: relative;
+}
+
+.THIS .slds-form--inline .slds-form-element__control + .slds-form-element__control {
+    padding-left: 0.5rem;
+}
+
+.THIS fieldset > .slds-form-element__label {
+    font-weight: bold;
+}
+
+@media (min-width: 48em) {
+    .THIS .slds-form--inline .slds-form-element__label {
+       /* white-space: nowrap;
+        overflow: hidden;*/
+        text-overflow: visible;
+    }
+}
+
+@media (min-height: 400px) {
+    .THIS {
+        height: 400px;
+    }
+}
+
+@media (min-height: 500px) {
+    .THIS {
+        height: 500px;
+    }
+}
+
+@media (min-height: 600px) {
+    .THIS {
+        height: 600px;
+    }
+}
+
+@media (min-height: 800px) {
+    .THIS {
+        height: 800px;
+    }
+}

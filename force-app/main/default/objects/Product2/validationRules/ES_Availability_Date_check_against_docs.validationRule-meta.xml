@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ES_Availability_Date_check_against_docs</fullName>
+    <active>false</active>
+    <description>All documents must be available before ES date.</description>
+    <errorConditionFormula>OR(
+ ES_Availability_Date__c &lt; PS_Availability_Date__c ,
+ ES_Availability_Date__c &lt; DS_Availability_Date__c ,
+ ES_Availability_Date__c &lt; Manual_Availability_Date__c 
+)</errorConditionFormula>
+    <errorDisplayField>ES_Availability_Date__c</errorDisplayField>
+    <errorMessage>ES Availability Date should be later than document availability dates (PS Availabity Date, DS Availability Date, Manual Availability Date).</errorMessage>
+</ValidationRule>

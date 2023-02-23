@@ -1,0 +1,21 @@
+Dear {!Contact.FirstName},
+
+Your new u-blox Partner Portal password can be found below.
+
+Click on this link to log into the Partner Portal:
+
+https://u-blox.my.salesforce.com/secur/login_portal.jsp?orgId=00D200000001ogf&portalId=060D0000000DVsi
+
+Please refer to the Partner Portal User's Guide to understand how you can work best with the u-blox Partner Portal.
+
+The guide can be downloaded as a PDF by clicking the corresponding link in the "Useful Links" box on the lower left corner of the portal home page.
+
+We hope you will make good use of the tool!
+With kind regards,
+u-blox
+
+u-blox Customer Support
+
+
+{!User_Name}
+{!Organization.Name} Customer Support

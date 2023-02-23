@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_product_must_be_active</fullName>
+    <active>false</active>
+    <description>Only active products can be used for opportunities</description>
+    <errorConditionFormula>00N20000001LEwG.IsActive = False</errorConditionFormula>
+    <errorMessage>Please select an active product.</errorMessage>
+</ValidationRule>

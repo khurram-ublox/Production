@@ -1,0 +1,16 @@
+<apex:page standardController="Product2">
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    <script>
+        // /00O57000006XF0p?pv2="{!Product2.Search_String__c}"&pv3="{!Product2.Search_String__c}"
+
+        uJS.openReport({
+            Id : "00O57000006XF0p",
+            v2 : "{!Product2.Search_String__c}",
+            v3 : "{!Product2.Search_String__c}"
+        });
+    </script>
+    
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

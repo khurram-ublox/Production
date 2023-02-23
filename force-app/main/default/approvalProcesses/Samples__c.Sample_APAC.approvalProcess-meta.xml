@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>Account__c</field>
+        <field>Product__c</field>
+        <field>Quantity__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Samples_Add_Approver_1_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>The approval request comes here if the submitter (current user) is not Team Leader.</description>
+        <entryCriteria>
+            <formula>AND(
+/* Users to be excluded: 2 JP Sales (direct report to the Country Manager) */
+/*removing hyos and mino */
+/* $User.Id &lt;&gt; &quot;005D0000003ySoE&quot;, :hyos: */
+/* $User.Id &lt;&gt; &quot;00557000006reTi&quot;, :mino: */
+
+/*Users to be excluded: 2 JP Sales (direct report to the Country Manager) */
+$User.Id &lt;&gt; &quot;0052p000009t93E&quot;, /* :aiki: */
+$User.Id &lt;&gt; &quot;00557000006eqkz&quot;, /* :skam: */
+$User.Id &lt;&gt; &quot;0052p000009AbWp&quot;, /* :ntan: */
+$User.Id &lt;&gt; &quot;00520000000wr6l&quot;, /* :hmac: */
+$User.Id &lt;&gt; &quot;00520000001UOwB&quot;, /* :moku: */
+$User.Id &lt;&gt; &quot;00520000000wZIw&quot;, /* :tnak : */
+
+
+/* Users to be excluded: CN Sales direct report to the Country Manager */
+$User.ManagerId &lt;&gt; &quot;005570000080rpj&quot;,
+NOT($User.Team_Leader__c),
+$User.ManagerId &lt;&gt; &quot;00520000000wCRA&quot;
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sample APAC 01: Team Leader approval</label>
+        <name>Sample_APAC_01_Team_Leader_approval</name>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Samples_Add_Approver_2_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>The approval request comes here if (1) the submitter is Team Leader and the requested quantity is &gt;10, or if (2) the manager of the submitter is not Region Head.</description>
+        <entryCriteria>
+            <formula>AND(
+  $User.ManagerId&lt;&gt;&quot;00520000000wCRA&quot;,
+  OR(
+    NOT($User.Team_Leader__c),
+    AND(
+      $User.Team_Leader__c,
+      Quantity__c&gt;10
+    )
+  )
+)</formula>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>Sample APAC 02: Country Manager Approval</label>
+        <name>Sample_APAC_02_Country_Manager_Approval</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>For uB Offices that have no Country Manager and the Approval should go to Region Head</description>
+        <entryCriteria>
+            <formula>AND(
+/* No Country Manager and direct report to Region Head APAC */
+  OR(
+    $User.Id=&quot;00557000006ilgg&quot;, /* :jooi: */
+    $User.Id=&quot;00520000000wIfP&quot; /* :mlim: */
+  ),
+  Quantity__c&gt;10
+)</formula>
+        </entryCriteria>
+        <label>Sample APAC 03: Region Head Approval</label>
+        <name>Sample_APAC_03_Region_Head_Approval</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+    </approvalStep>
+    <description>To be used only for Sample recording and APAC
+Record Type is Sample Recording / Sample.
+uBOffice should not be America,Corporate,EMEA
+Profile of User should be FAE, Technical Manager and Sales.
+User should not be Team Leader AND Adrian Tan is not the his/her Manager.
+If User is Team Leader OR has profile Technical Manager.
+Sample quantity is greater than 10</description>
+    <emailTemplate>unfiled$public/Sample_New_Sample_recording_for_approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND(
+/* Record Type &quot;Sample recording&quot; / &quot;Sample&quot; */
+   OR(
+   RecordTypeId=&quot;012D0000000BVpD&quot;,
+   RecordTypeId=&quot;0122p0000010aBH&quot;
+   ),
+/* Only APAC */
+  NOT(OR(
+    ISPICKVAL($User.uB_Office__c,&quot;Americas&quot;),
+    ISPICKVAL($User.uB_Office__c,&quot;EMEA&quot;),
+    ISPICKVAL($User.uB_Office__c,&quot;Corporate&quot;)
+  )),
+/* Only User Profile=Sales, (service FAE) FAE, TM */
+  OR(
+/* Profile=Sales excluding SADM (Role Name contains Admin) */
+    AND(
+      $User.ProfileId=&quot;00e20000000wr5F&quot;,
+      NOT(CONTAINS($UserRole.Name,&quot;Admin&quot;))
+    ),
+    $User.ProfileId=&quot;00e2p000001BMV8&quot;,
+    $User.ProfileId=&quot;00e200000015FVB&quot;,
+ /* user Yu-Lien Hsueh added here. IN_SF_MTC-474 */
+    $User.Id =&quot;0052p000009uOlO&quot;
+  ),
+  OR(
+/* All Sales excl. Country Managers (manager=:atan:) */
+    AND(
+      NOT($User.Team_Leader__c),
+      $User.ManagerId &lt;&gt; &quot;00520000000wCRA&quot;
+    ),
+/* Team Leader or Technical Manager with Quantity &gt; 10*/
+    AND(
+      OR(
+        $User.Team_Leader__c,
+        $User.ProfileId=&quot;00e200000015FVB&quot;
+      ),
+      Quantity__c&gt;10
+    )
+  )
+)</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Sample_Request_Status_to_Confirmed</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Samples_Final_approval_notification</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Sample_Request_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Samples_Final_rejection_notification</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Sample_Request_Status_to_New</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Samples_Add_Account_Owner_Email</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Samples_Add_Account_Sales_Admin_Email</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Sample APAC</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

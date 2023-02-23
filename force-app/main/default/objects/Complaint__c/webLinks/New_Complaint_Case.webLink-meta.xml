@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Complaint_Case</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Complaint</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!IF(BEGINS( $User.UIThemeDisplayed , &quot;Theme4&quot;),
+
+URLFOR(&apos;/lightning/o/Complaint__c/new&apos;, null, [defaultFieldValues=&quot;Account__c=&quot;+ Case.AccountId +&quot;,Affected_Opportunity__c=&quot;+ Case.OpportunityId__c +&quot;,Related_Case__c=&quot;+ Case.Id ,navigationLocation=&quot;RELATED_LIST&quot;,backgroundContext=&quot;/lightning/r/Opportunity/&quot;+Case.Id+&quot;/view&quot;]),
+URLFOR(&quot;/a04/e&quot;, null, [CF00N20000001f9kQ_lkid = Case.Id,CF00N20000001f9kQ = Case.CaseNumber,CF00N20000001eKHZ=Case.Opportunity__c,CF00N20000001eKHZ_lkid=Case.OpportunityId__c,CF00N200000014rTk= Case.Account_Name_Copy__c ,CF00N200000014rTk_lkid=Case.AccountId,retURL=Case.Id])
+
+)}</url>
+</WebLink>

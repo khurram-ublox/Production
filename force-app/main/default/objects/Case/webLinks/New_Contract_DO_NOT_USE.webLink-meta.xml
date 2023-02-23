@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Contract_DO_NOT_USE</fullName>
+    <availability>online</availability>
+    <description>To create the new Contract with information from the Case. Made for e-NDA (web-to-case).</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Contract JS</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+/*
+History
+2016.07.14 khir: Special_Terms__c removed.
+2016.12.02 khir: AccountName length limited to 64
+*/
+
+var AccountId = &quot;{!Account.Id}&quot;;
+var CaseId = &quot;{!Case.Id}&quot;;
+
+if (AccountId==&quot;&quot;){
+window.alert(&quot;Account is missing.&quot;);
+}
+
+else{
+
+var result = sforce.connection.query(&quot;SELECT Id, Name, OwnerId FROM Account WHERE Id = &apos;&quot; +AccountId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/*
+alert (records[0])
+*/
+
+var AccountName = records[0].Name;
+if (AccountName.length &gt; 64) {
+  AccountName = AccountName.substring(0,64);
+}
+var ContractOwnerId = records[0].OwnerId;
+
+
+var result = sforce.connection.query(&quot;SELECT Id, CaseNumber, CreatedDate, Type FROM Case WHERE Id = &apos;&quot; +CaseId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/*
+alert (records[0])
+*/
+
+var CaseCreatedDate = records[0].CreatedDate;
+var CaseType = records[0].Type;
+var ContractName = &quot;&quot;;
+
+var CONTR = new sforce.SObject(&quot;Contract&quot;);
+if (CaseType == &quot;Legal (e-NDA)&quot;) {
+  ContractName  = AccountName + &quot; - NDA - &quot; + CaseCreatedDate.substring(0, 4);
+  CONTR.Contract_Category__c = &quot;NDA&quot;;
+  CONTR.u_blox_Entity__c = &quot;u-blox AG&quot;;
+} else if (CaseType == &quot;Legal (e-NDA Americas)&quot;) {
+  ContractName  = AccountName + &quot; - NDA - &quot; + CaseCreatedDate.substring(0, 4);
+  CONTR.Contract_Category__c = &quot;NDA&quot;;
+  CONTR.u_blox_Entity__c = &quot;u-blox America Inc.&quot;;
+} else if (CaseType == &quot;Legal (e-LULA-M)&quot;) {
+  ContractName  = AccountName + &quot; - LULA-M - &quot; + CaseCreatedDate.substring(0, 4);
+  CONTR.Contract_Category__c = &quot;License Agreement&quot;;
+  CONTR.u_blox_Entity__c = &quot;u-blox AG&quot;;
+} else if (CaseType == &quot;Legal (e-LULA-N)&quot;) {
+  ContractName  = AccountName + &quot; - LULA-N - &quot; + CaseCreatedDate.substring(0, 4);
+  CONTR.Contract_Category__c = &quot;License Agreement&quot;;
+  CONTR.u_blox_Entity__c = &quot;u-blox AG&quot;;
+}
+
+CONTR.Name = ContractName;
+CONTR.OwnerId = ContractOwnerId;
+CONTR.AccountId = AccountId; 
+CONTR.Applicability__c = &quot;Group&quot;;
+CONTR.StartDate = CaseCreatedDate;
+CONTR.Contract_Survival_Period_Years__c = 5;
+CONTR.Related_Case__c = CaseId;
+
+/*
+	alert(&quot;owner: &quot;+ContractOwnerId+&quot;, account: &quot;+AccountId+&quot;, case: &quot;+CaseId+&quot;, CaseCreatedDate: &quot;+CaseCreatedDate);
+*/
+
+var result = sforce.connection.create([CONTR]);
+
+if (result[0].success==&apos;false&apos;){
+    alert(&quot;Error occurred. Please contact System Administrator.\nresult: &quot;+result);
+} else {
+    var ContractId = result[0].id;
+    window.parent.location.href=&quot;/&quot;+ ContractId +&quot;/e?retURL=%2F&quot;+ContractId;
+}
+
+}</url>
+</WebLink>

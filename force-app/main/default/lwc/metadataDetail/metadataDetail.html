@@ -1,0 +1,15 @@
+<template>
+	<lightning-card>
+        <h2 slot="title">
+            <span class="slds-text-title_bold slds-p-right_xx-small">{configInfo.objectName}</span> 
+			<span>({count})</span>
+			<div class="slds-text-body_small slds-p-bottom_medium slds-p-top_xx-small"><span>FILTER: {detail}</span></div>
+		</h2>
+		<div slot="actions">
+			<lightning-button-icon  icon-name="utility:download" variant="brand" alternative-text="Download" onclick={handleDownloadClick} ></lightning-button-icon>
+		</div>
+		<p class="slds-p-horizontal_small">
+			<lightning-formatted-rich-text value={recordListHTML}></lightning-formatted-rich-text>
+		</p>
+    </lightning-card>	
+</template>

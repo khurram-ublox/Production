@@ -1,0 +1,14 @@
+<!--
+ - Created by wsha on 01/10/2018.
+ -->
+
+<design:component>
+<!--<design:attribute name="cbaseURL" label="Community Base URL" description="" />
+    <design:attribute name="cbaseURLtopic" label="Topic URL" description="" />
+    <design:attribute name="cbaseURLprofile" label="Profile URL" description="" />
+    <design:attribute name="cbaseURLcase" label="Case URL" description="" />
+    <design:attribute name="cbaseURLarticle" label="Article URL" description="" />
+    <design:attribute name="cbaseURLcontentdoc" label="ContentDocument URL" description="" />-->
+    <design:attribute name="pageType" label="Page Type" datasource="Topic,Profile,Case,Article,Knowledge Article" required="false" description="Please indicate which page this component is hosted on."/>
+    <design:attribute name="resultType" label="Result Type" datasource="Unique, Mixed" required="true" description="Please indicate which type of results you want to see."/>
+</design:component>

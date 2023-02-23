@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAE_Satisfaction_on_closing</fullName>
+    <active>true</active>
+    <description>Make it mandatory on closing a Case (Support Case) for FAE and TM</description>
+    <errorConditionFormula>AND(
+  ISCHANGED(Status),
+  ISPICKVAL(Status, &quot;Closed&quot;),
+  RecordTypeId=&quot;012D0000000BarO&quot;,
+  NOT(ISBLANK(Date_Escalated_by_FAE__c)),
+  ISBLANK(TEXT(FAE_Satisfaction__c)),
+  OR(
+/*
+    $User.ProfileId=&quot;00e20000000ki5l&quot;,
+*/
+    $User.ProfileId=&quot;00e20000000zSSg&quot;,
+    $User.ProfileId=&quot;00e2p000001BMV8&quot;, 
+
+    $User.ProfileId=&quot;00e200000015FVB&quot;,
+    $User.ProfileId=&quot;00e2p000001BMJg&quot;
+  )
+)</errorConditionFormula>
+    <errorDisplayField>FAE_Satisfaction__c</errorDisplayField>
+    <errorMessage>Please add FAE Satisfaction</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Quotation</fullName>
+    <availability>online</availability>
+    <description>Create a new Quotation based on the approved Special Price Request</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>New Quotation</masterLabel>
+    <openType>sidebar</openType>
+    <page>New_Quotation_SPR</page>
+    <protected>false</protected>
+</WebLink>

@@ -1,0 +1,15 @@
+Dear {!Contact.FirstName},
+
+We have enabled the {!Organization.Name} partner portal for you. Please find below the login URL, your user name and password.
+
+Login URL:
+https://u-blox.my.salesforce.com/secur/login_portal.jsp?orgId=00D200000001ogf&portalId=060D0000000DVsi
+or simply click on the "Partner Log-in" link at the top right of our website www.u-blox.com
+
+When you log in for the first time, please read the Partner Portal User's Guide to understand how you can work best with the portal. 
+
+The guide can be downloaded as a PDF by clicking the corresponding link in the "Useful Links" box on the lower left corner of the portal home page.
+
+We hope you will make good use of the tool!
+With kind regards,
+{!Organization.Name}

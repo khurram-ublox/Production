@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referred_Opportunity_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This Quotation appears in this Account under Partner Quotations.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This Quotation appears in this Account under Partner Quotations.</inlineHelpText>
+    <label>Referred Opportunity Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Partner Quotations</relationshipLabel>
+    <relationshipName>ReferredOpportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

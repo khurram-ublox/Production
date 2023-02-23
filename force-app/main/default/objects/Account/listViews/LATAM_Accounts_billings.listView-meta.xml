@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LATAM_Accounts_billings</fullName>
+    <booleanFilter>(1 OR 2)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Billings_Prev_Yr__c</columns>
+    <columns>Billings_YTD__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_COUNTRY</field>
+        <operation>contains</operation>
+        <value>AG,AI,AR,AW,BB,BM,BO,BR,BS,BZ,CL,CO,CR,CU,CW,DM,DO,EC,FK,GF,GP,GS,GT,GY,HN,HT,JM</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.ADDRESS1_COUNTRY</field>
+        <operation>contains</operation>
+        <value>KN,KY,LC,MF,MQ,MS,MX,NI,PA,PE,PR,PY,SR,SV,SX,TC,TT,UY,VC,VE,VG,VI</value>
+    </filters>
+    <label>LATAM Accounts billings</label>
+    <sharedTo>
+        <role>RegionAmericas</role>
+    </sharedTo>
+</ListView>

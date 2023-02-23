@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Checked__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To be checked by Product Owner once confirmed that IPR Class and IPR Cost fields are correct.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To be checked by Product Owner once confirmed that IPR Class and IPR Cost fields are correct.</inlineHelpText>
+    <label>IPR Checked</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

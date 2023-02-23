@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Opportunity</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Opportunity</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+var AccountId = &quot;{!Account.Id}&quot;; 
+
+var result = sforce.connection.query(&quot;SELECT Id, Name, OppCloseDate__c, Abacus_Payterms__c, CurrencyIsoCode, OwnerId FROM Account WHERE Id = &apos;&quot; +AccountId+ &quot;&apos;&quot;); 
+var records = result.getArray(&quot;records&quot;); 
+
+
+//alert (records[0]) 
+
+
+var OppCloseDate = records[0].OppCloseDate__c;
+
+
+var OPP = new sforce.SObject(&quot;Opportunity&quot;); 
+OPP.Name = &quot;Enter Opportunity name&quot;; 
+OPP.OwnerId = &quot;{!Account.OwnerId}&quot;;
+OPP.CurrencyIsoCode = &quot;{!Account.CurrencyIsoCode}&quot;; 
+OPP.Opportunity_Account__c = &quot;{!Account.Id}&quot;;
+OPP.End_Customer_Account__c = &quot;{!Account.Id}&quot;;
+OPP.AccountId = &quot;{!Account.Id}&quot;;
+OPP.RecordTypeId = &quot;01220000000CqRn&quot;;/*Record ID für Opportunity*/ 
+OPP.StageName =&quot;3 Calling On&quot;; 
+OPP.CloseDate = OppCloseDate; 
+OPP.Market_Success__c = &quot;10% Uncertain&quot;; 
+OPP.Description = &quot;(Enter Description)&quot;;
+
+var result = sforce.connection.create([OPP]);
+
+//alert(result[0])
+
+if (result[0].success==&apos;false&apos;) {
+throw new Error(result[0].errors.message);
+}
+else {
+var OpportunityId = result[0].id; 
+window.parent.location.href=&quot;/&quot;+ OpportunityId +&quot;/e?retURL=%2F&quot;+OpportunityId;
+}</url>
+</WebLink>

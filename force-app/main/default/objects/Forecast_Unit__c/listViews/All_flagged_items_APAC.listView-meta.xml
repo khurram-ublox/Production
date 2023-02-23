@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_flagged_items_APAC</fullName>
+    <booleanFilter>(1 or 2) and 3 and 4</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>uB_Office__c</columns>
+    <columns>End_Customer__c</columns>
+    <columns>Last_Manual_Update__c</columns>
+    <columns>Sales_Last_6_Months__c</columns>
+    <columns>Sales_Last_3_Months__c</columns>
+    <columns>Total_Order_Book__c</columns>
+    <columns>Flagged_item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>equals</operation>
+        <value>SARA-U270-03S</value>
+    </filters>
+    <filters>
+        <field>Flag_change_request__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Propose_Flag_Removal__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Reporting_Region__c</field>
+        <operation>equals</operation>
+        <value>APAC</value>
+    </filters>
+    <label>All flagged items APAC</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RegionAPAC</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_data_source_RT__c</fullName>
+    <description>This field explains where the COGS values are taken from.
+They can be manually entered, taken from PM prediction or from sourcing prediction.
+For automated COGS retrieval, please DELETE all Product Cost Values.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field explains where the COGS values are taken from.
+They can be manually entered, taken from PM prediction or from sourcing prediction.
+For automated COGS retrieval, please DELETE all Product Cost Values.</inlineHelpText>
+    <label>COGS data source</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

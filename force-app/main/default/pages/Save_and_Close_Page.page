@@ -1,0 +1,300 @@
+<apex:page standardController="Case" extensions="SendEmailController" id="pg">
+    <apex:includeScript value="{!$Resource.jQuery}"/>
+    <apex:includeScript value="{!$Resource.jQueryUI}"/>
+    <apex:includeScript value="{!$Resource.tagit}"/>
+    <apex:stylesheet value="{!$Resource.tagitCss}"/>
+    <apex:stylesheet value="{!$Resource.tagitUIZendesk}"/>
+    
+    <script>
+        var userIdToEmailMap;
+        $( document ).ready(function() {
+            $("#toValue").tagit();
+            $("#ccValue").tagit();
+            $("#bccValue").tagit();
+            var toEmail = '{!toEmail}';
+            var toBcc = '{!bCc}';     
+            
+            setEmailFields(toEmail,toBcc);
+            userIdToEmailMap = JSON.parse('{!userIdToEmailMap}');
+        });
+        function confirmDialog() {
+            $("#errorDiv").html("").removeClass("error-msg");
+            $("#toDiv").removeClass("errorReq");
+            $("#subDiv").removeClass("errorReq");
+            isValidated = true;
+            
+            if($('ul#toValue li').length <= 1 || $('.subjectCls').val().trim() == "") {
+              $("#errorDiv").html("Required fields missing!").addClass("error-msg");
+              if($('ul#toValue li').length <= 1)
+                  $("#toDiv").addClass("errorReq");
+              if($('.subjectCls').val().trim() == "")
+                  $("#subDiv").addClass("errorReq");    
+              isValidated = false;
+            }
+        
+            if(isValidated){
+                var values = $('ul#toValue li').map(function() {
+                    return $(this).text();
+                });
+                var toEmails = values.get().join(',').slice(0, -1);
+                toEmails = toEmails.replace(/×/g,'');
+                
+                values = $('ul#ccValue li').map(function() {
+                    return $(this).text();
+                });
+                var ccEmails = values.get().join(',').slice(0, -1);
+                ccEmails = ccEmails.replace(/×/g,'');
+                
+                values = $('ul#bccValue li').map(function() {
+                    return $(this).text();
+                });
+                var bccEmails = values.get().join(',').slice(0, -1);
+                bccEmails = bccEmails.replace(/×/g,'');
+                
+                sendEmail(toEmails, ccEmails, bccEmails);
+                
+                updateCaseStatus();
+            }       
+        }
+        
+        function refreshParentWindow(){
+             window.parent.location.href = '/{!caseId}';    
+        }
+        
+        function showEmailPopup(){
+            //alert('popup');
+            var url = '/apex/EmailLookupPage';
+            var w = 600;
+            var h = 500;
+            var left = (screen.width/2)-(w/2);  
+            var top = (screen.height/2)-(h/2);
+            window.open(url, 'title', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+        }
+        
+        function callParent(toEmail, ccEmail, bccEmail){
+            console.log(toEmail);
+            console.log(ccEmail);
+            console.log(bccEmail);
+            if(toEmail != "" && toEmail != undefined){
+                if(toEmail.indexOf(",") >= 0){                
+                    $.each( toEmail.split(','), function( index, value ){
+                        $("#toValue").tagit("createTag", userIdToEmailMap[value]);
+                    });
+                }
+                else{
+                    $("#toValue").tagit("createTag", userIdToEmailMap[toEmail]);
+                }
+            }
+            
+            if(ccEmail != "" && ccEmail != undefined){
+                if(ccEmail.indexOf(",") >= 0){                
+                    $.each( ccEmail.split(','), function( index, value ){
+                        $("#ccValue").tagit("createTag", userIdToEmailMap[value]);
+                    });
+                }
+                else{
+                    $("#ccValue").tagit("createTag", userIdToEmailMap[ccEmail]);
+                }
+            }
+            
+            if(bccEmail != "" && bccEmail != undefined){
+                if(bccEmail.indexOf(",") >= 0){                
+                    $.each( bccEmail.split(','), function( index, value ){
+                        $("#bccValue").tagit("createTag", userIdToEmailMap[value]);
+                    });
+                }
+                else{
+                    $("#bccValue").tagit("createTag", userIdToEmailMap[bccEmail]);
+                }
+            }
+        }
+        
+        function setEmailFields(toEmail, bccEmail){
+            console.log(toEmail);
+            if(toEmail != "" && toEmail != undefined){
+                if(toEmail.indexOf(",") >= 0){                
+                    $.each( toEmail.split(','), function( index, value ){
+                        $("#toValue").tagit("createTag", value);
+                    });
+                }else if(toEmail.indexOf(";") >= 0){                
+                    $.each( toEmail.split(';'), function( index, value ){
+                        $("#toValue").tagit("createTag", value);
+                    });
+                }
+                else{
+                    $("#toValue").tagit("createTag", toEmail);
+                }
+            }
+            
+            if(bccEmail != "" && bccEmail != undefined){
+                if(bccEmail.indexOf(",") >= 0){                
+                    $.each( bccEmail.split(','), function( index, value ){
+                        $("#bccValue").tagit("createTag", value);
+                    });
+                }else if(toEmail.indexOf(";") >= 0){                
+                    $.each( toEmail.split(';'), function( index, value ){
+                        $("#toValue").tagit("createTag", value);
+                    });
+                }
+                else{
+                    $("#bccValue").tagit("createTag", bccEmail);
+                }
+            }
+        }        
+    </script>
+    
+    <style>
+        .error-msg{
+            color: #FF0000;
+            font-size: 14px;
+        }
+        .errorReq{
+            backgroundcolor: #FF0000;
+            border: 1px solid #FF0000;
+        }
+        .cke_browser_webkit{
+            border-radius: 5px;
+        }
+        .btnSend{
+            color: #fff;
+            background: none;
+            background-color: #5cb85c !important;
+            border-color: #4cae4c;
+            width: 100px;
+            height: 30px;
+            font-size: 13px;
+            float: right;
+        }
+        .sendButtonDiv{
+            background-color: #dedede;
+            border-radius: 2px;
+            height: 50px;
+            padding: 8px;
+            margin-left: -20px;
+        }
+        .borderadius{
+            border-radius: 3px;
+        }
+        .emailFeilds{
+            margin-top: 1px;
+            margin-bottom: 1px;
+        }
+        .redFont{
+            color: red;
+        }
+        .contentDiv{
+            height: 473px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        #errorDiv{
+            height: 16px;
+        }
+        .lookupIcon{
+            right: 35px;           
+            height: 16px;
+            width: 16px;
+            margin-left: -25px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+    </style> 
+    
+    <apex:form id="frm"> 
+        <div id="errorDiv">
+        </div>
+        
+        <div class="contentDiv"> 
+            <table>
+                <tr>
+                    <div>
+                        <td width="110px">From</td>
+                    </div>
+                    
+                    <td>
+                        <div>
+                            <apex:selectList styleClass="borderadius" size="1" value="{!selectedFrom}" style="background-color: whitesmoke;width:392px;height:30px;"> 
+                                <apex:selectOptions value="{!fromOptionList}" /> 
+                            </apex:selectList>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <div>
+                        <td><span class="redFont">*</span>&nbsp;To</td>
+                    </div>
+                    <td>
+                        <div id="toDiv">
+                            <ul id="toValue" class="borderadius emailFeilds" style="width:374px;display:inline-block;">
+                            </ul>
+                            <a href="" onclick="showEmailPopup();">
+                                <apex:image url="{!$Resource.LookupIcon}" styleClass="lookupIcon"/>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <div>
+                        <td>Cc</td>
+                    </div>
+                                      
+                    <div>
+                        <td>
+                            <div>
+                                <ul id="ccValue" class="borderadius emailFeilds" style="width:374px;display:inline-block;">
+                                </ul>
+                                <a href="" onclick="showEmailPopup();">
+                                    <apex:image url="{!$Resource.LookupIcon}" styleClass="lookupIcon"/>
+                                </a>
+                            </div>
+                        </td>
+                    </div>                  
+                    <br/>
+                </tr>
+                
+                <tr>
+                    <div>
+                        <td>Bcc</td>
+                    </div>
+                    <td>
+                        <div>
+                            <ul id="bccValue" class="borderadius emailFeilds" style="width:374px;display:inline-block;">
+                            </ul>  
+                            <a href="" onclick="showEmailPopup();">
+                                <apex:image url="{!$Resource.LookupIcon}" styleClass="lookupIcon"/>
+                            </a>
+                        </div>
+                    </td>           
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div><span class="redFont">*</span>&nbsp;Subject</div>
+                    </td>
+                    <td>
+                        <div id="subDiv"><apex:inputText id="subValue" styleClass="borderadius subjectCls" value="{!subject}" style="width:387px;height:26px;" required="true"/></div>
+                    </td>    
+                </tr>
+            </table>
+            
+            <br/>
+            <apex:outputPanel layout="block" style="overflow:auto;width:480px;height:290px">
+                <apex:inputTextarea value="{!mailBody}" richText="true"/>
+            </apex:outputPanel>
+        </div>        
+        <br/>
+        <div class="sendButtonDiv">
+            <button class="btnSend" onclick="confirmDialog();return false;">Send Email</button>
+        </div>       
+        
+        <apex:actionFunction name="updateCaseStatus" action="{!updateCaseStatus}" reRender="sta" oncomplete="refreshParentWindow()"/>
+        <apex:actionFunction name="sendEmail" action="{!sendEmail}" status="sta" reRender="sta" oncomplete="refreshParentWindow()">
+            <apex:param name="toEmails" value="" assignTo="{!toEmail}"/>
+            <apex:param name="ccEmails" value="" assignTo="{!cC}"/>
+            <apex:param name="bccEmails" value="" assignTo="{!bCc}"/>
+        </apex:actionFunction>                  
+        <apex:actionStatus startText="Please wait..." id="sta"></apex:actionStatus>
+    </apex:form>
+</apex:page>

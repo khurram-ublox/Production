@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ES_Under_Allocation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag set until product reach IP or if enough ES available (e.g. in case IP delayed)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag set until product reach IP or if enough ES available (e.g. in case IP delayed)</inlineHelpText>
+    <label>ES Under Allocation</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

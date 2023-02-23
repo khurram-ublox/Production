@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Terms__c</fullName>
+    <description>(From Abacus)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus)</inlineHelpText>
+    <label>Delivery Terms</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DAP</fullName>
+                <default>false</default>
+                <label>DAP</label>
+            </value>
+            <value>
+                <fullName>DAP TEST</fullName>
+                <default>false</default>
+                <label>DAP TEST</label>
+            </value>
+            <value>
+                <fullName>DDP</fullName>
+                <default>false</default>
+                <label>DDP</label>
+            </value>
+            <value>
+                <fullName>DDU</fullName>
+                <default>false</default>
+                <label>DDU</label>
+            </value>
+            <value>
+                <fullName>EXW</fullName>
+                <default>false</default>
+                <label>EXW</label>
+            </value>
+            <value>
+                <fullName>EXW Althofen (AT)</fullName>
+                <default>false</default>
+                <label>EXW Althofen (AT)</label>
+            </value>
+            <value>
+                <fullName>EXW Thalwil (CH)</fullName>
+                <default>false</default>
+                <label>EXW Thalwil (CH)</label>
+            </value>
+            <value>
+                <fullName>Ex Works Reston, VA (USA)</fullName>
+                <default>false</default>
+                <label>Ex Works Reston, VA (USA)</label>
+            </value>
+            <value>
+                <fullName>FCA Amkor ATP3 Binan PH</fullName>
+                <default>false</default>
+                <label>FCA Amkor ATP3 Binan PH</label>
+            </value>
+            <value>
+                <fullName>FCA Flextronics Althofen AT</fullName>
+                <default>false</default>
+                <label>FCA Flextronics Althofen AT</label>
+            </value>
+            <value>
+                <fullName>Lieferkondition</fullName>
+                <default>false</default>
+                <label>Lieferkondition</label>
+            </value>
+            <value>
+                <fullName>FCA Thalwil (CH)</fullName>
+                <default>false</default>
+                <label>FCA Thalwil (CH)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

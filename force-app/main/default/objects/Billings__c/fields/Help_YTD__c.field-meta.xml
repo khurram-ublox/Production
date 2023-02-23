@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Help_YTD__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( TODAY() &gt;= DATE( YEAR(TODAY()) , MONTH(Invoice_Date__c ) ,DAY(Invoice_Date__c ))
+,&quot;yes&quot; , &quot;no&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Help YTD</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

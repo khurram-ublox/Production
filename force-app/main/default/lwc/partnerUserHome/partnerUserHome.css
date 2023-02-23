@@ -1,0 +1,53 @@
+.mainCmp{
+    border-style: none;margin-top: -3%;
+}
+
+.welcomeMsg{
+    font-size: 20px;
+}
+
+.cAccLogo{
+    max-width: 90px;
+    max-height: 36px;
+}
+
+.mainDiv{
+    height: 56px; 
+    margin: 0 6px 30px 6px;
+}
+
+.imgDiv{
+    float:left; 
+    padding-right: 50px; 
+    margin-right: 50px; 
+    border-right: 2px solid #999;
+    height: 56px;
+    line-height: 56px;
+    vertical-align: middle;
+    max-width: 300px;
+}
+
+.msgDiv{
+    float:left; 
+    width: calc(100% - 400px); 
+    font-size:1.1em;
+}
+
+.boldText{
+    font-size:1.2em; 
+    font-weight:bold;
+    margin-bottom:3px;
+}
+
+.imgCls{
+    max-height: 90%;
+}
+
+@media only screen and (max-width: 600px) {
+    .msgDiv, .imgDiv {
+        width: 40%;
+    }
+    .mainDiv{
+        height: 80px; 
+    }
+}

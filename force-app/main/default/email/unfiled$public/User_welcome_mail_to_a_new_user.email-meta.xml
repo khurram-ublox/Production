@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mail to be sent when a new user is created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>User: welcome mail to a new user</name>
+    <style>none</style>
+    <subject>[Salesforce] new account for {!Target_User.FirstName} {!Target_User.LastName}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

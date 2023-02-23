@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_consistency_of_status</fullName>
+    <active>false</active>
+    <description>When the opportunity is lost (Stage &quot;Lost&quot;), check that the GPS and Wireless status are lost or not applicable.</description>
+    <errorConditionFormula>if(text(StageName ) = &quot;1 Lost&quot;,
+    if ( or(text ( DO_NOT_USE_GPS_Status__c) = &quot;Evaluation&quot;, text ( DO_NOT_USE_GPS_Status__c) = &quot;Evaluation&quot;, text ( DO_NOT_USE_Wireless_Status__c) = &quot;Evaluation&quot;, text ( DO_NOT_USE_Wireless_Status__c) = &quot;Evaluation&quot;), true,false),
+false)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>When the opportunity is lost, ensure that the two fields &quot;GPS Status&quot; and &quot;Wireless Status&quot; are set to either &quot;Not Applicable&quot; or &quot;Lost&quot;</errorMessage>
+</ValidationRule>

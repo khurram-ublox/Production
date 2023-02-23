@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="id" type="String" />
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="checked" type="Boolean" default="false"/>
+
+    <ltng:require styles="/resource/SLDS0121/assets/styles/salesforce-lightning-design-system-ltng.min.css"/>
+
+    <!--div class=""-->
+		<label class="slds-checkbox" for="{!v.id}">
+	        <input name="checkbox" type="checkbox" id="{!v.id}" aura:id="checkbox" checked="{!v.checked}" onclick="{!c.saveState}" />
+	        <span class="slds-checkbox--faux"></span>
+	        <span class="slds-form-element__label">{!v.label}</span>
+	    </label>
+	<!--/div-->
+
+</aura:component>

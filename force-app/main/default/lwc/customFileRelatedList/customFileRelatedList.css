@@ -1,0 +1,8 @@
+.slds-button_brand, .slds-button_neutral, .slds-button--neutral {
+    padding: 0rem 0rem 0rem !important;
+    margin-top: 0.4rem !important;
+    
+}
+.downloadBtnLayout {
+	padding-top: .4rem !important;
+}

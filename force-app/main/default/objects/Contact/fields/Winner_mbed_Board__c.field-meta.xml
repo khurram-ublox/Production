@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Winner_mbed_Board__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>10 contacts are winners of mbed board Tombola @ Embedded World 2014</description>
+    <externalId>false</externalId>
+    <label>Winner mbed Board</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

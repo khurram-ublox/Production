@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_Contribution_CHF__c</fullName>
+    <externalId>false</externalId>
+    <formula>Forecast_Contribution__c 
+*
+CASE( CurrencyIsoCode ,
+&quot;USD&quot;,$User.USDtoCHF__c,
+&quot;EUR&quot;,$User.EURtoCHF__c,
+&quot;JPY&quot;, $User.JPYtoCHF__c ,
+1
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Forecast contribution converted to CHF</inlineHelpText>
+    <label>Forecast Contribution CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+Your Special Price Request has been rejected. Here is the summary:
+
+Account: {!Special_Price_Request__c.Account__c}
+Opportunity: {!Special_Price_Request__c.Opportunity__c}
+Price Level: {!Special_Price_Request__c.Price_Level__c}
+
+Completed Step: {!ApprovalRequest.Process_Step_Name}
+
+Link: {!Special_Price_Request__c.Link}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Representatives_Americas</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Priority__c</columns>
+    <columns>Sales_Rep__c</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Billings_YTD__c</columns>
+    <columns>Billings_Prev_Yr__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>Americas</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.TYPE</field>
+        <operation>equals</operation>
+        <value>Sales Representative</value>
+    </filters>
+    <label>Sales Representatives Americas</label>
+    <sharedTo>
+        <role>RegionAmericas</role>
+    </sharedTo>
+</ListView>

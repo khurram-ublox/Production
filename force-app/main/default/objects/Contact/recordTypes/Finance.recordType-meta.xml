@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Finance</compactLayoutAssignment>
+    <label>Finance</label>
+    <picklistValues>
+        <picklist>Finance_Responsibility__c</picklist>
+        <values>
+            <fullName>Analyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auditor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment Banker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Journalist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portfolio manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trader</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Financial_target_group__c</picklist>
+        <values>
+            <fullName>A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Language__c</picklist>
+        <values>
+            <fullName>DE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>KO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ZH</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press Article</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search Engine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vertical Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webform</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Source_Webform__c</picklist>
+        <values>
+            <fullName>Annual and Half Year Report Order Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appointment Scheduler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AssistNow Temporary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Car Campaign Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Us Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Download file</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EN- UDR Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event - Investor and Analyst Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forum Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Distribution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High-Precision Campaign Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Relations Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IoT Healthcare Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Magazine Download Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NB-IoT Project Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEO-M8P Whitepaper Download Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NINA-B1 Whitepaper Download Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>News Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Shop Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCN Subscription Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset AMERICAS shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset ASIA shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset EMEA shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Order Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product catalog delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Form - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Form - Distributor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Register new account on AMERICAS online shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Register new account on ASIA online shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Register new account on EMEA online shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Registration Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Contact Us</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Sign-Up Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UDR Campaign Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar Contact Form</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Role__c</picklist>
+        <values>
+            <fullName>Analyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Analyst %28Report%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auditor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment banker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portfolio manager</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Sales%2FBroker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shareholder engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trader</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Written_Language__c</picklist>
+        <values>
+            <fullName>Chinese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japanese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korean</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>u_Center_Access__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

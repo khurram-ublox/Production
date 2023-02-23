@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Product_Services</fullName>
+    <active>true</active>
+    <description>Services product can be selected in this record type.</description>
+    <label>Opp Product Services</label>
+    <picklistValues>
+        <picklist>Competition__c</picklist>
+        <values>
+            <fullName>Amp%E2%80%99ed RF Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bluegiga</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Broadcom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CEC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSR %28SiRF%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ConnectOne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digi International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fibocom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Furuno %28eRide%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gainspan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gemalto %28Cinterion%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Globalsat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Holux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huawei</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JRC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LS Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laird</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lantronix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Linx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Locosys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marvell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mediatek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microchip</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Murata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nordic Semiconductor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novatel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OriginGPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %2F unknown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panasonic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quectel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Redpine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RoyalTek %28Quanta Group%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST Microelectronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ST-Ericsson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sierra Wireless</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silex Technologies</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simcom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skylab</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Skytraq</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiyo Yuden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trimble</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unicorecomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iWOW</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Flag_Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IPR_Coverage__c</picklist>
+        <values>
+            <fullName>All except Interdigital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All except QCOM and IDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All except Qualcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No coverage</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>Alternative Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incumbent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Opp Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strategy%2FTactics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26C</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong strategy%2Ftactics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MCU_Supplier__c</picklist>
+        <values>
+            <fullName>Microchip</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NXP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nvidia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renesas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STMicro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samsung</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TI</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>MCU_Type__c</picklist>
+        <values>
+            <fullName>AM335x</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM4x</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM5x</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AM6x</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RX100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RX200</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RX600</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RX700</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snapdragon 2xx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snapdragon 4xx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snapdragon 6xx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snapdragon 7xx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Snapdragon 8xx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tegra K1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iMX6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iMX7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iMX8</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Operating_System__c</picklist>
+        <values>
+            <fullName>Android</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Embedded Linux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other Linux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QNX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ubuntu Linux</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yocto Linux</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Previous_Status__c</picklist>
+        <values>
+            <fullName>Alternative Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Environment__c</picklist>
+        <values>
+            <fullName>OpenCPU ARM mbed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OpenCPU Espressif SDK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OpenCPU Nordic SDK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wirepas software</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>u-blox JavaScript</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>u-blox software</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Alternative Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Evaluation</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Lost</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Won</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_Restriction__c</picklist>
+        <values>
+            <fullName>2G Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Telematics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHO_Shipments_last_7d1</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>Qty_Ordered__c</columns>
+    <columns>Invoice_Date__c</columns>
+    <columns>Order_Date__c</columns>
+    <columns>Request_Date__c</columns>
+    <columns>Price_per_unit__c</columns>
+    <columns>Total_Value__c</columns>
+    <columns>Project_Owner_Account__c</columns>
+    <columns>Category__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Invoice_Date__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:14</value>
+    </filters>
+    <filters>
+        <field>Order_Status__c</field>
+        <operation>equals</operation>
+        <value>closed</value>
+    </filters>
+    <filters>
+        <field>Product_Center__c</field>
+        <operation>equals</operation>
+        <value>Short Range</value>
+    </filters>
+    <label>SHO shipments last 14d</label>
+    <sharedTo>
+        <group>PS_SHO</group>
+        <group>Recipients_SHO_Statistics</group>
+    </sharedTo>
+</ListView>

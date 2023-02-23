@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Coverage__c</fullName>
+    <externalId>false</externalId>
+    <label>IPR Coverage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Premium coverage</fullName>
+                <default>false</default>
+                <label>Premium coverage</label>
+            </value>
+            <value>
+                <fullName>Prime coverage</fullName>
+                <default>false</default>
+                <label>Prime coverage</label>
+            </value>
+            <value>
+                <fullName>Premium except Qualcomm</fullName>
+                <default>false</default>
+                <label>Premium except Qualcomm</label>
+            </value>
+            <value>
+                <fullName>Prime except Qualcomm</fullName>
+                <default>false</default>
+                <label>Prime except Qualcomm</label>
+            </value>
+            <value>
+                <fullName>No coverage</fullName>
+                <default>false</default>
+                <label>No coverage</label>
+            </value>
+            <value>
+                <fullName>Full coverage</fullName>
+                <default>false</default>
+                <label>Full coverage</label>
+            </value>
+            <value>
+                <fullName>All except Qualcomm</fullName>
+                <default>false</default>
+                <label>All except Qualcomm</label>
+            </value>
+            <value>
+                <fullName>All except Interdigital</fullName>
+                <default>false</default>
+                <label>All except Interdigital</label>
+            </value>
+            <value>
+                <fullName>All except QCOM and IDC</fullName>
+                <default>false</default>
+                <label>All except QCOM and IDC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

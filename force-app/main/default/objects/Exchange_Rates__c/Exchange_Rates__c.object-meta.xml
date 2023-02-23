@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Current exchange rates used for calculations in multiple objects. 
+Updated monthly based on the &quot;Fremdwährung - Monatsmittelkurse&quot;, issued by the Swiss tax authority once a month.
+Jenkins Project: Exchange_Rates_DB_2_Sales_Tool
+DO NOT DELETE!</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Exchange Rates * DO NOT TOUCH *</label>
+    <visibility>Public</visibility>
+</CustomObject>

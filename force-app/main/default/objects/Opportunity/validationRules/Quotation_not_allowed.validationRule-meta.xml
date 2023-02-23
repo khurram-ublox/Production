@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotation_not_allowed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND($RecordType.Name == &apos;Quotation&apos;,
+OR(Account.BillingCountry == &apos;CN&apos;,
+Account.BillingCountry == &apos;RU&apos;,
+Account.BillingCountry == &apos;VE&apos;,
+Account.BillingCountry == &apos;MM&apos;),
+Account.No_ECCN__c == false,
+OR(Account.Quotation_Not_Allowed__c,
+ISBLANK(TEXT(Account.Potential_military_use__c)),
+ISPICKVAL(Account.Potential_military_use__c, &apos;Refused to sign EUS&apos;)))</errorConditionFormula>
+    <errorMessage>Quotation can not be created either Quotation is not allowed or potential military use / user has not been mentioned for related Account</errorMessage>
+</ValidationRule>

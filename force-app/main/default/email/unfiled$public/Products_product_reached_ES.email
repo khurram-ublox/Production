@@ -1,0 +1,14 @@
+{!Product2.Type_No__c} changed the status to Engineering Samples. Please ensure the follow-up:
+- Product announcement
+- Add product to website 
+- Update product presentation 
+- Publication of PS on website, DS and manuals on distributor portal
+- Enable “Visible to Partner” in Salesforce (when applicable)
+- Further actions as defined market introduction plan & checklists
+- (Action for Quality & Environmental System Team) Start preparing environmental reports.
+
+Type number: {!Product2.Type_No__c}
+Product status: {!Product2.Product_Status__c}
+Product description: {!Product2.Product_Text_1__c} {!Product2.Product_Text_2__c}
+
+Link to record: {!Product2.Link}

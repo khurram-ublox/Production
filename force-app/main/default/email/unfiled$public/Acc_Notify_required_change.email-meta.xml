@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Correction required: Account&apos;s Visiting Country of Visiting Address should be in two alphabets.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acc: Notify required change</name>
+    <style>none</style>
+    <subject>Account {!Account.Name} needs correction (Visiting Country).</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

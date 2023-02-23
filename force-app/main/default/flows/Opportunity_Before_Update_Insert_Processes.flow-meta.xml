@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <description>copy today&apos;s date to the field &apos;Design-in Date&apos;.</description>
+        <name>copy_design_in_date</name>
+        <label>copy design-in date</label>
+        <locationX>69</locationX>
+        <locationY>3860</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Design_win_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Latest_Status_Technical_Modified_date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>market_classification_field_assignments</name>
+        <label>market classification field assignments</label>
+        <locationX>50</locationX>
+        <locationY>5779</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.New_Market__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Market_Classification__r.Market__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.New_Application_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Market_Classification__r.Market_Segment__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Services_Opportunity_Process_Checked</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set &apos; Latest Status Modified&apos; as today.</description>
+        <name>Opp_copy_date_status_change</name>
+        <label>Opp: copy date status change</label>
+        <locationX>68</locationX>
+        <locationY>4527</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Latest_Status_Modified__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>copy_previous_Stage</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set FAE Email to Account FAE&apos;s email.</description>
+        <name>Opp_Populate_FAE_Email</name>
+        <label>Opp: Populate FAE Email</label>
+        <locationX>60</locationX>
+        <locationY>5529</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FAE_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.FAE__r.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Market_classification_condition</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>copy the previous value  of stage to the field &quot;Previous Stage&quot;</description>
+        <name>Opp_set_Previous_Stage</name>
+        <label>Opp: set Previous Stage</label>
+        <locationX>63</locationX>
+        <locationY>4856</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Previous_Stage_del__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.StageName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Global_Distribution_Set_Stage_to_4</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set &apos;Latest Status Technical Modified&apos; as today.</description>
+        <name>Opp_Update_Latest_Status_Technical_Mod</name>
+        <label>Opp: Update Latest Status Technical Mod.</label>
+        <locationX>66</locationX>
+        <locationY>4195</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Latest_Status_Technical_Modified__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_record_date_status_change</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Services_opportunity_flag_checked</name>
+        <label>Services opportunity flag checked</label>
+        <locationX>55</locationX>
+        <locationY>6069</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Services_Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Services_Opportunity_Process_Unchecked</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Services_opportunity_flag_unchecked</name>
+        <label>Services opportunity flag unchecked</label>
+        <locationX>56</locationX>
+        <locationY>6416</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Services_Opportunity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>set the uB Office fields for design, owner, and design win to EMEA.</description>
+        <name>set_area_fields_to_EMEA</name>
+        <label>set area fields to EMEA</label>
+        <locationX>78</locationX>
+        <locationY>3635</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Area_Design_Win__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>EMEA</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Area_design_house__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>EMEA</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Area_opportunity_owner__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>EMEA</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Detect_design_in_and_copy_date</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set First Date of 1 Lost as today.</description>
+        <name>Set_First_Date_Of_1_Lost</name>
+        <label>Set First Date Of 1 Lost</label>
+        <locationX>124</locationX>
+        <locationY>788</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_1_Lost__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>opp_Add_First_Date_Of_3_Calling_on</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 3 Calling on&apos; as today</description>
+        <name>Set_First_Date_Of_3_Calling_on</name>
+        <label>Set First Date Of 3 Calling on</label>
+        <locationX>115</locationX>
+        <locationY>1052</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_3_Calling_on__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>opp_Add_First_Date_Of_4_Evaluation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 4 Evaluation&apos; as today</description>
+        <name>Set_First_Date_Of_4_Evaluation</name>
+        <label>Set First Date Of 4 Evaluation</label>
+        <locationX>113</locationX>
+        <locationY>1301</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_4_Evaluation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>opp_Add_First_Date_Of_5_Design_in</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 5 Design-in&apos; as today</description>
+        <name>Set_First_Date_Of_5_Design_in</name>
+        <label>Set First Date Of 5 Design-in</label>
+        <locationX>100</locationX>
+        <locationY>1586</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_5_Design_in__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Add_First_Date_Of_6_Prototypes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 6 Prototypes&apos; as today</description>
+        <name>Set_First_Date_Of_6_Prototypes</name>
+        <label>Set First Date Of 6 Prototypes</label>
+        <locationX>95</locationX>
+        <locationY>1816</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_6_Prototypes__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Add_First_Date_Of_7_Pre_Production</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 7 Pre-Production&apos; as today</description>
+        <name>Set_First_Date_Of_7_Pre_Production</name>
+        <label>Set First Date Of 7 Pre-Production</label>
+        <locationX>83</locationX>
+        <locationY>2111</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_7_Pre_Production__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Add_First_Date_Of_8_Production</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 8 Production&apos; as today</description>
+        <name>Set_First_Date_Of_8_Production</name>
+        <label>Set First Date Of 8 Production</label>
+        <locationX>86</locationX>
+        <locationY>2341</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_8_Production__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Add_First_Date_Of_9_Closed_EoL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set the &apos;First Date Of 9 Closed - EoL&apos; as today.</description>
+        <name>Set_First_Date_Of_9_Closed</name>
+        <label>Set  First Date Of 9 Closed</label>
+        <locationX>83</locationX>
+        <locationY>2667</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.First_Date_Of_9_Closed_EoL__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodaysDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_Name_as_Lead_Project_Name</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Name the Opportunity created through Lead conversion as Project Name given in the Lead.</description>
+        <name>Set_Name_as_Lead_Project_Name</name>
+        <label>Set Name as Lead Project Name</label>
+        <locationX>82</locationX>
+        <locationY>2976</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead_Project_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Lead_set_Opportunity_fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>set close date as lead production date.</description>
+        <name>set_Opportunity_field_Start_Production_Close_Date</name>
+        <label>set Opportunity field Start Production(Close Date)</label>
+        <locationX>140</locationX>
+        <locationY>515</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CloseDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead_Production_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_First_Date_Of_1_Lost</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Populate Opportunity fields after Lead conversion.</description>
+        <name>Set_Opportunity_Fields</name>
+        <label>Set Opportunity Fields</label>
+        <locationX>76</locationX>
+        <locationY>3291</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>3 Calling on</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Proto_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead_Proto_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Annual_Quantity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Lead_Planned_Qty__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Info_Lead_Qualification_del__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SetOppProjectDescription</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opp_set_area_fields_to_EMEA</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Set Stage to 4-Evaluation</description>
+        <name>Set_Stage_to_4_Eval</name>
+        <label>Set Stage to 4-Eval</label>
+        <locationX>61</locationX>
+        <locationY>5215</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>4 Evaluation</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>set_Populate_FAE_Email</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>set the &apos;First Date Of 1 Lost&apos; as today whenever the stage changes to &apos;1 Lost&apos;.</description>
+        <name>Add_First_Date_Of_1_Lost</name>
+        <label>Add First Date Of 1 Lost</label>
+        <locationX>417</locationX>
+        <locationY>672</locationY>
+        <defaultConnector>
+            <targetReference>opp_Add_First_Date_Of_3_Calling_on</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_1_Lost</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_1_Lost__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_1_Lost</targetReference>
+            </connector>
+            <label>Opportunity  Add First Date Of 1 Lost</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When a stage changes, copy the previous value to the field &quot;Previous Stage&quot;</description>
+        <name>copy_previous_Stage</name>
+        <label>copy previous Stage</label>
+        <locationX>430</locationX>
+        <locationY>4708</locationY>
+        <defaultConnector>
+            <targetReference>Global_Distribution_Set_Stage_to_4</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_copy_previous_Stage</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_set_Previous_Stage</targetReference>
+            </connector>
+            <label>Opp copy previous Stage</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>if the approval status flag is approved and the probability is less than 15 %, then set the stage to &apos;4 Evaluation&apos;.</description>
+        <name>Global_Distribution_Set_Stage_to_4</name>
+        <label>Global Distribution Set Stage to 4</label>
+        <locationX>434</locationX>
+        <locationY>5025</locationY>
+        <defaultConnector>
+            <targetReference>set_Populate_FAE_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Global_Distribution_Registration_Approved</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Approval_Status_Flag__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Probability</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>15.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Probability</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>10.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Stage_to_4_Eval</targetReference>
+            </connector>
+            <label>Global Distribution Registration Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Populate Opportunity fields after Lead conversion</description>
+        <name>Lead_set_Opportunity_fields</name>
+        <label>Lead set Opportunity fields</label>
+        <locationX>422</locationX>
+        <locationY>3152</locationY>
+        <defaultConnector>
+            <targetReference>Opp_set_area_fields_to_EMEA</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>lead_con_set_Opportunity_fields</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_Project_Description__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Lead_Planned_Qty__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Opportunity_Fields</targetReference>
+            </connector>
+            <label>lead con  set Opportunity fields</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Market_classification_condition</name>
+        <label>Market classification condition</label>
+        <locationX>428</locationX>
+        <locationY>5645</locationY>
+        <defaultConnector>
+            <targetReference>Services_Opportunity_Process_Checked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>market_classification_null_conditions</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Market_Classification__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Market_Classification__r.IsActive__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>market_classification_field_assignments</targetReference>
+            </connector>
+            <label>market classification null conditions</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 3 Calling on&apos; as today whenever the stage changes to &apos;3 Calling on&apos; or onwards.</description>
+        <name>opp_Add_First_Date_Of_3_Calling_on</name>
+        <label>opp: Add First Date Of 3 Calling on</label>
+        <locationX>412</locationX>
+        <locationY>915</locationY>
+        <defaultConnector>
+            <targetReference>opp_Add_First_Date_Of_4_Evaluation</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_3_Calling_on</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_3_Calling_on__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 Calling on</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 Evaluation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 Prototypes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_3_Calling_on</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 3 Calling on</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 4 Evaluation&apos; as today whenever the stage changes to &apos;4 Evaluation or onwards.</description>
+        <name>opp_Add_First_Date_Of_4_Evaluation</name>
+        <label>opp Add First Date Of 4 Evaluation</label>
+        <locationX>421</locationX>
+        <locationY>1157</locationY>
+        <defaultConnector>
+            <targetReference>opp_Add_First_Date_Of_5_Design_in</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_4_Evaluation</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_4_Evaluation__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 Evaluation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 Prototypes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_4_Evaluation</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 4 Evaluation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 5 Design-in&apos; as today whenever the stage changes to &apos; 5 Design-in&apos; or onwards.</description>
+        <name>opp_Add_First_Date_Of_5_Design_in</name>
+        <label>opp Add First Date Of 5 Design-in</label>
+        <locationX>418</locationX>
+        <locationY>1436</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Add_First_Date_Of_6_Prototypes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_5_Design_in</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR 4 OR 5 OR 6 )</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_5_Design_in__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 Prototypes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_5_Design_in</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 5 Design-in</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 6 Prototypes&apos; as today whenever the stage changes to &apos;6 Prototypes&apos;.</description>
+        <name>Opp_Add_First_Date_Of_6_Prototypes</name>
+        <label>Opp Add First Date Of 6 Prototypes</label>
+        <locationX>418</locationX>
+        <locationY>1685</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Add_First_Date_Of_7_Pre_Production</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_6_Prototypes</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5 )</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_6_Prototypes__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 Prototypes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_6_Prototypes</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 6 Prototypes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 7 Pre-Production&apos; as today whenever the stage changes to &apos;7 Pre-Production&apos;.</description>
+        <name>Opp_Add_First_Date_Of_7_Pre_Production</name>
+        <label>Opp Add First Date Of 7 Pre-Production</label>
+        <locationX>418</locationX>
+        <locationY>1970</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Add_First_Date_Of_8_Production</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_7_Pre_Production</name>
+            <conditionLogic>1 AND 2 AND( 3 OR 4 )</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_7_Pre_Production__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_7_Pre_Production</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 7 Pre-Production</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 8 Production&apos; as today whenever the stage changes to &apos;8 Production&apos;.</description>
+        <name>Opp_Add_First_Date_Of_8_Production</name>
+        <label>Opp Add First Date Of 8 Production</label>
+        <locationX>419</locationX>
+        <locationY>2247</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Add_First_Date_Of_9_Closed_EoL</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_8_Production</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_8_Production__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_8_Production</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 8 Production</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>set the &apos;First Date Of 9 Closed - EoL&apos; as today whenever the stage changes to &apos;9 Closed - EoL&apos;.</description>
+        <name>Opp_Add_First_Date_Of_9_Closed_EoL</name>
+        <label>Opp Add First Date Of 9 Closed - EoL</label>
+        <locationX>420</locationX>
+        <locationY>2504</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Name_as_Lead_Project_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Add_First_Date_Of_9_Closed_EoL</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.First_Date_Of_9_Closed_EoL__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>9 Closed - EoL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_First_Date_Of_9_Closed</targetReference>
+            </connector>
+            <label>Opportunity Add First Date Of 9 Closed - EoL</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When the opportunity changes its stage to design-in, prototype, pre-production, or production for the first time, copy the date to the field &quot;Design-in Date&quot;</description>
+        <name>Opp_Detect_design_in_and_copy_date</name>
+        <label>Opp Detect design-in and copy date</label>
+        <locationX>416</locationX>
+        <locationY>3740</locationY>
+        <defaultConnector>
+            <targetReference>Update_Latest_Status_Technical_Modified_date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Detect_design_in_and_copy_date</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR  4 OR 5 OR 6 )</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Design_win_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 Prototypes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>copy_design_in_date</targetReference>
+            </connector>
+            <label>Opportunity Detect design-in and copy date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Name the Opportunity created through Lead conversion as Project Name given in the Lead.</description>
+        <name>Opp_Name_as_Lead_Project_Name</name>
+        <label>Opp Name as Lead Project Name</label>
+        <locationX>423</locationX>
+        <locationY>2855</locationY>
+        <defaultConnector>
+            <targetReference>Lead_set_Opportunity_fields</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Name_as_Lead_Project_Name</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Lead_Project_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Name_as_Lead_Project_Name</targetReference>
+            </connector>
+            <label>Opportunity Name as Lead Project Name</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When Status of Opportunity changes, record the date of the change in &apos;Latest Status Modified&apos; as today.</description>
+        <name>Opp_record_date_status_change</name>
+        <label>Opp: record date status change</label>
+        <locationX>424</locationX>
+        <locationY>4365</locationY>
+        <defaultConnector>
+            <targetReference>copy_previous_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_date_status_change</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Latest_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_copy_date_status_change</targetReference>
+            </connector>
+            <label>Opp: date status change</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>For new opportunities set the uB Office fields for design, owner, and design win to EMEA.</description>
+        <name>Opp_set_area_fields_to_EMEA</name>
+        <label>Opp: set area fields to EMEA</label>
+        <locationX>424</locationX>
+        <locationY>3491</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Detect_design_in_and_copy_date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_set_area_fields_EMEA</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.uB_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>set_area_fields_to_EMEA</targetReference>
+            </connector>
+            <label>Opportunity set area fields EMEA</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Populate lead close date field after the lead conversion. Set the value of a lead close date to lead production date.</description>
+        <name>Opportunity_field_Start_Production</name>
+        <label>Opportunity field Start Production</label>
+        <locationX>421</locationX>
+        <locationY>380</locationY>
+        <defaultConnector>
+            <targetReference>Add_First_Date_Of_1_Lost</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Set_Opportunity_field_Start_Production</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead_Production_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>set_Opportunity_field_Start_Production_Close_Date</targetReference>
+            </connector>
+            <label>Set Opportunity field Start Production</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Services_Opportunity_Process_Checked</name>
+        <label>Services Opportunity Process Checked</label>
+        <locationX>427</locationX>
+        <locationY>5910</locationY>
+        <defaultConnector>
+            <targetReference>Services_opportunity_flag_checked</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Services_Opportunity_Process_Condition</name>
+            <conditionLogic>1 AND(  2 OR 3 OR 4) AND 5 AND 6 AND 7</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Referral_Agreement__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_1__r.Product_Center__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_2__r.Product_Center__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_3__r.Product_Center__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Distributor_Name__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Internal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Owner.Distributor_Name__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Services_Opportunity__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Services_Opportunity_Process_Unchecked</targetReference>
+            </connector>
+            <label>Services Opportunity Process Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Services_Opportunity_Process_Unchecked</name>
+        <label>Services Opportunity Process Unchecked</label>
+        <locationX>426</locationX>
+        <locationY>6250</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Services_Opportunity_Process_Unchecked_Condition</name>
+            <conditionLogic>(1 OR 2 OR 3 OR 4) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Referral_Agreement__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_1__r.Product_Center__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_2__r.Product_Center__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product_3__r.Product_Center__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Services</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Services_Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Services_opportunity_flag_unchecked</targetReference>
+            </connector>
+            <label>Services Opportunity Process Unchecked Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Used to send email alert to FAE.</description>
+        <name>set_Populate_FAE_Email</name>
+        <label>set Populate FAE Email</label>
+        <locationX>430</locationX>
+        <locationY>5363</locationY>
+        <defaultConnector>
+            <targetReference>Market_classification_condition</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Populate_FAE_Email_set</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.FAE__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Populate_FAE_Email</targetReference>
+            </connector>
+            <label>Populate FAE Email set</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When the Status of Opportunity changes, record the date of the change.</description>
+        <name>Update_Latest_Status_Technical_Modified_date</name>
+        <label>Update Latest Status Technical Modified date</label>
+        <locationX>423</locationX>
+        <locationY>4025</locationY>
+        <defaultConnector>
+            <targetReference>Opp_record_date_status_change</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_Update_Latest_Status_Technical_Modified_date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Latest_Status_Technical__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Update_Latest_Status_Technical_Mod</targetReference>
+            </connector>
+            <label>Opportunity Update Latest Status Technical Modified date</label>
+        </rules>
+    </decisions>
+    <description>This version contains market segment related condition and assignments. Contains condition and assignments related to Service opportunity referral program.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>isNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>SetOppProjectDescription</name>
+        <dataType>String</dataType>
+        <expression>if(len( {!$Record.Lead_Submitter__c} )=0,&quot;&quot;,BR() &amp; &quot;Info submitted by: &quot; &amp; {!$Record.Lead_Submitter__c} &amp; &quot; on &quot; &amp; text( {!$Record.Lead_Submit_Date__c} ) &amp; BR()) &amp;
+if(len( {!$Record.Lead_Project_Description__c} )=0,&quot;&quot;, &quot;Project description: &quot; &amp; {!$Record.Lead_Project_Description__c} &amp; BR() &amp; BR()) &amp;
+if(len({!$Record.Lead_Stage__c})=0,&quot;&quot;,&quot;Project stage: &quot; &amp; {!$Record.Lead_Stage__c} &amp; BR()) &amp;
+if(len(text( {!$Record.Lead_Production_Date__c}))=0,&quot;&quot;,&quot;Dates: &quot; &amp; if(len(text( {!$Record.Lead_Proto_Date__c}))=0,&quot;&quot;,&quot;prototypes: &quot; &amp; text( {!$Record.Lead_Proto_Date__c}) &amp; &quot;; &quot;) &amp; &quot;start production: &quot; &amp; text( {!$Record.Lead_Production_Date__c} ) &amp; BR()) &amp;
+if({!$Record.Lead_Planned_Qty__c}=0,&quot;&quot;,&quot;Planned annual quantity: &quot; &amp; text( {!$Record.Lead_Planned_Qty__c}) &amp; br()) &amp;
+/* kept for Leads created before Opp Product launch */
+if(len({!$Record.Lead_GPS_Product__c})=0,&quot;&quot;,&quot;GPS Product: &quot; &amp; {!$Record.Lead_GPS_Product__c} &amp; &quot;; &quot;) &amp;
+if(len({!$Record.Lead_Wireless_Product__c})=0,&quot;&quot;,&quot;Wireless Product: &quot; &amp; {!$Record.Lead_Wireless_Product__c} &amp; &quot;; &quot;) &amp; if(len({!$Record.Lead_Wireless_Product__c})=0,&quot;&quot;,br()) &amp;
+if(len({!$Record.Lead_Products_Of_Interest__c})=0,&quot;&quot;,&quot;Products of interest: &quot; &amp; {!$Record.Lead_Products_Of_Interest__c} &amp; &quot;;&quot; &amp; BR()) &amp;
+if(len({!$Record.Lead_End_Customer__c})=0,&quot;&quot;,&quot;End customer: &quot; &amp; {!$Record.Lead_End_Customer__c} &amp; &quot;, &quot; &amp; {!$Record.Lead_End_Customer_Country__c} &amp; &quot;; &quot;) &amp; if(len({!$Record.Lead_Design_House__c})=0,&quot;&quot;,&quot;Design-house: &quot; &amp; {!$Record.Lead_Design_House__c} &amp; &quot;, &quot; &amp; {!$Record.Lead_Design_House_Country__c} &amp; &quot;; &quot;) &amp; if(len({!$Record.Lead_CM__c})=0,&quot;&quot;,&quot;Manufacturing: &quot; &amp; {!$Record.Lead_CM__c} &amp; &quot;, &quot; &amp; {!$Record.Lead_CM_Country__c} ) &amp; br() &amp;
+/* kept for Leads created before Opp Product launch */
+if(len({!$Record.Lead_Current_GPS_Qty__c})=0,&quot;&quot;,&quot;Current annual GPS quantity: &quot; &amp; {!$Record.Lead_Current_GPS_Qty__c} &amp; BR()) &amp;
+if(len({!$Record.Lead_Current_Qty__c})=0,&quot;&quot;,&quot;Current annual quantity: &quot; &amp; {!$Record.Lead_Current_Qty__c} &amp; BR()) &amp;
+if(len({!$Record.Lead_Current_GPS_Supplier__c} )=0,&quot;&quot;,&quot;Current GPS supplier: &quot; &amp; {!$Record.Lead_Current_GPS_Supplier__c} &amp; BR()) &amp;
+if(len({!$Record.Lead_Current_Suppliers__c})=0,&quot;&quot;,&quot;Current suppliers: &quot; &amp; {!$Record.Lead_Current_Suppliers__c} &amp; BR()) &amp;
+if(len({!$Record.Lead_Current_Wireless_Qty__c})=0,&quot;&quot;,&quot;Current annual wireless quantity: &quot; &amp; {!$Record.Lead_Current_Wireless_Qty__c} &amp; BR()) &amp;
+if(len( {!$Record.Lead_Current_Wireless_Supplier__c} )=0,&quot;&quot;,&quot;Current wireless supplier: &quot; &amp; {!$Record.Lead_Current_Wireless_Supplier__c} &amp; BR()) &amp;
+if(len( {!$Record.Lead_Submitter__c} )=0,&quot;&quot;,&quot;Project information submitted by: &quot; &amp; {!$Record.Lead_Submitter__c} &amp; BR()) &amp;
+if(len( {!$Record.Lead_Request__c} )=0,&quot;&quot;,BR() &amp; &quot;Request: &quot; &amp; {!$Record.Lead_Request__c}) &amp;
+if(len( {!$Record.Lead_uB_Contact__c} )=0,&quot;&quot;, BR() &amp; &quot;u-blox contact: &quot; &amp; {!$Record.Lead_uB_Contact__c})</expression>
+    </formulas>
+    <formulas>
+        <name>TodaysDate</name>
+        <dataType>Date</dataType>
+        <expression>today()</expression>
+    </formulas>
+    <interviewLabel>Opportunity: Before Update/Insert Processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: Before Update/Insert Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>303</locationX>
+        <locationY>114</locationY>
+        <connector>
+            <targetReference>Opportunity_field_Start_Production</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

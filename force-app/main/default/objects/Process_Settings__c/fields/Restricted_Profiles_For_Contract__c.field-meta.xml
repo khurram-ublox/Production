@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restricted_Profiles_For_Contract__c</fullName>
+    <description>Restricted Profiles for users which cannot be Owner of Contracts</description>
+    <externalId>false</externalId>
+    <label>Restricted Profiles For Contract</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

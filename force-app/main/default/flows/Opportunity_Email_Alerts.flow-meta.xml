@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Approved_Global_Registration_Template_for_Future_Americas</name>
+        <label>Approved - Global Registration Template for Future Americas</label>
+        <locationX>228</locationX>
+        <locationY>3870</locationY>
+        <actionName>Opportunity.Approved_Global_Registration_Template_for_future_Americas</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Post_to_Chatter_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Denied_Global_Registration_Template_For_Future_Americas</name>
+        <label>Denied - Global Registration Template For Future Americas</label>
+        <locationX>522</locationX>
+        <locationY>3891</locationY>
+        <actionName>Opportunity.Denied_Global_Registration_Template_For_Future_Americas</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Post_to_Chatter_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opp_edited_by_distributor_not_owner</name>
+        <label>Opp: edited by distributor not owner</label>
+        <locationX>585</locationX>
+        <locationY>728</locationY>
+        <actionName>Opportunity.Opp_edited_by_distributor_not_owner</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision_for_Partner_Portal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Alert for Partner Portal User</description>
+        <name>Opp_edited_by_distributor_not_owner_for_Partner_Portal</name>
+        <label>Opp: edited by distributor not owner for Partner Portal</label>
+        <locationX>1002</locationX>
+        <locationY>948</locationY>
+        <actionName>Opportunity.Opp_edited_by_distributor_not_owner_for_Partner_Portal</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Reminder_of_Stage_5_to_FAE_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opp_Owner_different_from_Account_Owner_Alert</name>
+        <label>Opp: Owner different from Account Owner_Alert</label>
+        <locationX>643</locationX>
+        <locationY>1802</locationY>
+        <actionName>Opportunity.Opp_Owner_different_from_Account_Owner</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Owner_different_from_Account_Owner_Decision_for_Partner_Portal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Alert for Partner Portal</description>
+        <name>Opp_Owner_different_from_Account_Owner_for_Partner_Portal</name>
+        <label>Opp: Owner different from Account Owner for Partner Portal</label>
+        <locationX>995</locationX>
+        <locationY>2084</locationY>
+        <actionName>Opportunity.Opp_Owner_different_from_Account_Owner_for_Partner_Portal</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opportunity_alert_for_CDMA_module_project_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opp_Reminder_Stage_5_to_FAE</name>
+        <label>Opp: Reminder Stage 5 to FAE</label>
+        <locationX>645</locationX>
+        <locationY>1223</locationY>
+        <actionName>Opportunity.Opp_Reminder_Stage_5_to_FAE</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Reminder_of_Stage_5_to_FAE_Decision_For_Partner_Portal</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Alert for Partner Portal User</description>
+        <name>Opp_Reminder_Stage_5_to_FAE_for_Partner_Portal</name>
+        <label>Opp: Reminder Stage 5 to FAE for Partner Portal</label>
+        <locationX>1021</locationX>
+        <locationY>1512</locationY>
+        <actionName>Opportunity.Opp_Reminder_Stage_5_to_FAE_Partner_Portal</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Owner_different_from_Account_Owner_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opp_update_of_JODY_W1_THEO_P1_Opps</name>
+        <label>Opp: update of JODY-W1, THEO-P1 Opps</label>
+        <locationX>634</locationX>
+        <locationY>2856</locationY>
+        <actionName>Opportunity.Opp_update_of_JODY_W1_THEO_P1_Opps</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opportunity_send_mail_with_information_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opportunity_alert_mail_CDMA_module_project</name>
+        <label>Opportunity alert mail CDMA module project</label>
+        <locationX>637</locationX>
+        <locationY>2321</locationY>
+        <actionName>Opportunity.Opportunity_alert_mail_CDMA_module_project</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opportunity_alert_for_GSM_module_project_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opportunity_alert_mail_GSM_module_project</name>
+        <label>Opportunity alert mail GSM module project</label>
+        <locationX>638</locationX>
+        <locationY>2566</locationY>
+        <actionName>Opportunity.Opportunity_alert_mail_GSM_module_project</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opportunity_alert_for_JODY_W1_and_THEO_P1_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opportunity_mail_with_opportunity_information</name>
+        <label>Opportunity: mail with opportunity information</label>
+        <locationX>645</locationX>
+        <locationY>3157</locationY>
+        <actionName>Opportunity.Opportunity_mail_with_opportunity_information</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Cear_Checkbox_To_Send_mail</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>post_to_Marketing_Management</name>
+        <label>post to Marketing Management</label>
+        <locationX>634</locationX>
+        <locationY>3556</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Send_Email_to_Future_Americas_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>MarketingManagementMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.Marketing_Management_Group__c</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Post_to_Stage_5_global</name>
+        <label>Post to Stage 5 global</label>
+        <locationX>578</locationX>
+        <locationY>529</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>Stage5GlobalMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>Stage 5 global</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>Group</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Product_EMMY_W_OR_JODY_W</name>
+        <label>Product X: EMMY-W OR JODY-W</label>
+        <locationX>377</locationX>
+        <locationY>4661</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>ProductEMMY_W_OR_JODY_W</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>$Setup.Hard_Code_Ids__c.EMMY_W_JODY_W_MAYA_W_focus_group__c</elementReference>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>Cear_Checkbox_To_Send_mail</name>
+        <label>Cear Checkbox To Send mail</label>
+        <locationX>646</locationX>
+        <locationY>3313</locationY>
+        <assignmentItems>
+            <assignToReference>Record.Send_mail_with_info__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>GAM_Account_process_Decision</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Product_1_EMMY_W_OR_JODY_W_Message</name>
+        <label>Product 1: EMMY-W OR JODY-W Message</label>
+        <locationX>185</locationX>
+        <locationY>4405</locationY>
+        <assignmentItems>
+            <assignToReference>ProductEMMY_W_OR_JODY_W</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Product1EMMY_WORJODY_WMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Product_EMMY_W_OR_JODY_W</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Product_2_EMMY_W_OR_JODY_W_Message</name>
+        <label>Product_2_EMMY_W_OR_JODY_W_Message</label>
+        <locationX>377</locationX>
+        <locationY>4405</locationY>
+        <assignmentItems>
+            <assignToReference>ProductEMMY_W_OR_JODY_W</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Product2EMMY_WORJODY_WMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Product_EMMY_W_OR_JODY_W</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Product_3_EMMY_W_OR_JODY_W_Message</name>
+        <label>Product_3_EMMY_W_OR_JODY_W_Message</label>
+        <locationX>559</locationX>
+        <locationY>4403</locationY>
+        <assignmentItems>
+            <assignToReference>ProductEMMY_W_OR_JODY_W</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Product3EMMY_WORJODY_WMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Product_EMMY_W_OR_JODY_W</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>GAM_Account_process_Decision</name>
+        <label>GAM Account process Decision</label>
+        <locationX>359</locationX>
+        <locationY>3406</locationY>
+        <defaultConnector>
+            <targetReference>Send_Email_to_Future_Americas_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>GAM_Account_process</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Account.Global_Account_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Current_User_Internal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.LastModifiedDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Prior_LastModifiedDateFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>post_to_Marketing_Management</targetReference>
+            </connector>
+            <label>GAM Account process</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Email_Notification_Turned_On</name>
+        <label>Is Email Notification Turned On</label>
+        <locationX>364</locationX>
+        <locationY>224</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_Notification</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Flow_Notification_Settings__c.Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stage_Design_in</targetReference>
+            </connector>
+            <label>Send Email Notification</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Email alert if opportunity has been edited by distributors (only APAC)</description>
+        <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision</name>
+        <label>Opp: Inform Owner if Opp edited by distributor Decision</label>
+        <locationX>365</locationX>
+        <locationY>615</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision_for_Partner_Portal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Inform_Owner_if_Opp_edited_by_distributor</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR 4) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.UserType</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_edited_by_distributor_not_owner</targetReference>
+            </connector>
+            <label>Opp: Inform Owner if Opp edited by distributor</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Alert for Partner Portal</description>
+        <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision_for_Partner_Portal</name>
+        <label>Opp: Inform Owner if Opp edited by distributor Decision for Partner Portal</label>
+        <locationX>367</locationX>
+        <locationY>838</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Reminder_of_Stage_5_to_FAE_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision_Partner_Portal</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR 4) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision_Partner_Portal</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.UserType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_edited_by_distributor_not_owner_for_Partner_Portal</targetReference>
+            </connector>
+            <label>Opp: Inform Owner if Opp edited by distributor Decision Partner Portal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Email notification to both Account and Opportunity Owners when they are different</description>
+        <name>Opp_Owner_different_from_Account_Owner_Decision</name>
+        <label>Opp: Owner different from Account Owner Decision</label>
+        <locationX>365</locationX>
+        <locationY>1638</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Owner_different_from_Account_Owner_Decision_for_Partner_Portal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Owner_different_from_Account_Owner</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4) AND 5 AND (6 OR 7) AND 8</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.OwnerDifferent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.OwnerDifferent__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.OwnerDifferent__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.RecordType.Name</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.UserType</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Owner_different_from_Account_Owner_Alert</targetReference>
+            </connector>
+            <label>Opp: Owner different from Account Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Alert for partner portal user</description>
+        <name>Opp_Owner_different_from_Account_Owner_Decision_for_Partner_Portal</name>
+        <label>Opp: Owner different from Account Owner Decision for Partner Portal</label>
+        <locationX>361</locationX>
+        <locationY>1978</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_alert_for_CDMA_module_project_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Owner_different_from_Account_Owner_Decision_Partner_Portal</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4) AND 5 AND (6 OR 7) AND 8</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.OwnerDifferent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.OwnerDifferent__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.OwnerDifferent__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.RecordType.Name</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.UserType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Owner_different_from_Account_Owner_for_Partner_Portal</targetReference>
+            </connector>
+            <label>Opp: Owner different from Account Owner Decision Partner Portal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Reminder of Stage 5 to FAE (NOTE: Previously this WF was only for Focus=1,2,3)</description>
+        <name>Opp_Reminder_of_Stage_5_to_FAE_Decision</name>
+        <label>Opp: Reminder of Stage 5 to FAE Decision</label>
+        <locationX>367</locationX>
+        <locationY>1055</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Reminder_of_Stage_5_to_FAE_Decision_For_Partner_Portal</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Reminder_of_Stage_5_to_FAE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.uB_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.FAE_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.FAE__r.UserType</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Reminder_Stage_5_to_FAE</targetReference>
+            </connector>
+            <label>Opp: Reminder of Stage 5 to FAE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opp_Reminder_of_Stage_5_to_FAE_Decision_For_Partner_Portal</name>
+        <label>Opp: Reminder of Stage 5 to FAE Decision For Partner Portal</label>
+        <locationX>365</locationX>
+        <locationY>1399</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Owner_different_from_Account_Owner_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Reminder_of_Stage_5_to_FAE_Partner_Portal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.uB_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.FAE_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.FAE__r.UserType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Reminder_Stage_5_to_FAE_for_Partner_Portal</targetReference>
+            </connector>
+            <label>Opp: Reminder of Stage 5 to FAE Partner Portal</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When a CDMA module opportunity is created or the stage of the opportunity changes, send an alert to a group of people</description>
+        <name>Opportunity_alert_for_CDMA_module_project_Decision</name>
+        <label>Opportunity: alert for CDMA module project Decision</label>
+        <locationX>360</locationX>
+        <locationY>2197</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_alert_for_GSM_module_project_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_alert_for_CDMA_module_project</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Opportunity_alert_for_CDMA_module_project_criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_alert_mail_CDMA_module_project</targetReference>
+            </connector>
+            <label>Opportunity: alert for CDMA module project</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When a GSM module opportunity is created or the stage of the opportunity changes, send an alert to a group of people</description>
+        <name>Opportunity_alert_for_GSM_module_project_Decision</name>
+        <label>Opportunity: alert for GSM module project Decision</label>
+        <locationX>360</locationX>
+        <locationY>2440</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_alert_for_JODY_W1_and_THEO_P1_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_alert_for_GSM_module_project</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Opportunity_alert_for_GSM_module_project_Criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_alert_mail_GSM_module_project</targetReference>
+            </connector>
+            <label>Opportunity: alert for GSM module project</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When opportunity is created or updated, send an alert to a group of people</description>
+        <name>Opportunity_alert_for_JODY_W1_and_THEO_P1_Decision</name>
+        <label>Opportunity: alert for JODY-W1 and THEO-P1 Decision</label>
+        <locationX>359</locationX>
+        <locationY>2686</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_send_mail_with_information_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_alert_for_JODY_W1_and_THEO_P1</name>
+            <conditionLogic>(1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10) AND (11 OR 12) AND 13</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>THEO-P1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>THEO-P1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>THEO-P1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_4__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>THEO-P1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_4__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_5__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>THEO-P1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_5__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Latest_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.Latest_Status__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_update_of_JODY_W1_THEO_P1_Opps</targetReference>
+            </connector>
+            <label>Opportunity: alert for JODY-W1 and THEO-P1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When field &quot;Send mail with opportunity information&quot; is checked, send mail with main information to owner.</description>
+        <name>Opportunity_send_mail_with_information_Decision</name>
+        <label>Opportunity: send mail with information Decision</label>
+        <locationX>358</locationX>
+        <locationY>3036</locationY>
+        <defaultConnector>
+            <targetReference>GAM_Account_process_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opportunity_send_mail_with_information</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Send_mail_with_info__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opportunity_mail_with_opportunity_information</targetReference>
+            </connector>
+            <label>Opportunity: send mail with information</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Chatter Post on Opportunity update of these products, updated with custom domain</description>
+        <name>Post_to_Chatter_Decision</name>
+        <label>Post to Chatter Decision</label>
+        <locationX>367</locationX>
+        <locationY>4147</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Product_1_EMMY_W_OR_JODY_W</name>
+            <conditionLogic>1 AND 2 AND 8 AND 9 AND (3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Current_User_Internal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMMY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMMY-W2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_1__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W3</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.LastModifiedDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Prior_LastModifiedDateFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_1_EMMY_W_OR_JODY_W_Message</targetReference>
+            </connector>
+            <label>Product 1: EMMY-W OR JODY-W</label>
+        </rules>
+        <rules>
+            <name>Product_2_EMMY_W_OR_JODY_W</name>
+            <conditionLogic>1 AND 2 AND 8 AND 9 AND (3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Current_User_Internal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMMY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMMY-W2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_2__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W3</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordPrior.LastModifiedDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Prior_LastModifiedDateFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_2_EMMY_W_OR_JODY_W_Message</targetReference>
+            </connector>
+            <label>Product 2: EMMY-W OR JODY-W</label>
+        </rules>
+        <rules>
+            <name>Product_3_EMMY_W_OR_JODY_W</name>
+            <conditionLogic>1 AND 2 AND 8 AND (3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Current_User_Internal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMMY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMMY-W2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Product_3__r.Product_Series__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JODY-W3</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.LastModifiedDate</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Prior_LastModifiedDateFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Product_3_EMMY_W_OR_JODY_W_Message</targetReference>
+            </connector>
+            <label>Product 3: EMMY-W OR JODY-W</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Send Approval/Denial email notices for Future Americas.</description>
+        <name>Send_Email_to_Future_Americas_Decision</name>
+        <label>Send Email to Future Americas Decision</label>
+        <locationX>367</locationX>
+        <locationY>3725</locationY>
+        <defaultConnector>
+            <targetReference>Post_to_Chatter_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_on_Approve</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Approval_Status_Flag__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Approval_Status_Flag__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.Approval_Status_Flag__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Approved_Global_Registration_Template_for_Future_Americas</targetReference>
+            </connector>
+            <label>Send Email on Approve</label>
+        </rules>
+        <rules>
+            <name>Send_Email_on_Rejected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Approval_Status_Flag__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Rejected</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Approval_Status_Flag__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.Approval_Status_Flag__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Denied_Global_Registration_Template_For_Future_Americas</targetReference>
+            </connector>
+            <label>Send Email on Rejected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Stage_Design_in</name>
+        <label>Stage Design-in</label>
+        <locationX>364</locationX>
+        <locationY>442</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Post_to_Stage_5</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.Current_User_Internal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_Stage_5_global</targetReference>
+            </connector>
+            <label>Post to Stage 5</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Latest_Status__c} &lt;&gt; {!RecordPrior.Latest_Status__c},
+        {!Record.Decision_Date__c} &lt;&gt; {!RecordPrior.Decision_Date__c},
+        {!Record.Proto_Date__c} &lt;&gt; {!RecordPrior.Proto_Date__c},
+        {!Record.CloseDate} &lt;&gt; {!RecordPrior.CloseDate},
+        Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+    {!Record.LastModifiedBy.Profile.Name} = &quot;Partner Base&quot;,
+   {!Record.LastModifiedById} &lt;&gt; {!Record.OwnerId},
+    NOT(
+        OR(
+            Text({!Record.Account.uB_Office__c}) = &quot;Americas&quot;,
+            Text({!Record.Account.uB_Office__c}) = &quot;EMEA&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Criteria_for_Partner_Portal</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Latest_Status__c} &lt;&gt; {!RecordPrior.Latest_Status__c},
+        {!Record.Decision_Date__c} &lt;&gt; {!RecordPrior.Decision_Date__c},
+        {!Record.Proto_Date__c} &lt;&gt; {!RecordPrior.Proto_Date__c},
+        {!Record.CloseDate} &lt;&gt; {!RecordPrior.CloseDate},
+        Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+    {!Record.LastModifiedBy.Profile.Name} = &quot;Portal - Partner Base&quot;,
+   {!Record.LastModifiedById} &lt;&gt; {!Record.OwnerId},
+    NOT(
+        OR(
+            Text({!Record.Account.uB_Office__c}) = &quot;Americas&quot;,
+            Text({!Record.Account.uB_Office__c}) = &quot;EMEA&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Opportunity_alert_for_CDMA_module_project_criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+	OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Product_4__c} &lt;&gt; {!RecordPrior.Product_4__c},
+        {!Record.Product_5__c} &lt;&gt; {!RecordPrior.Product_5__c},
+	    Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+	OR(
+        BEGINS({!Record.Product_1__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_1__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_2__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_2__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_3__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_3__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_4__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_4__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_5__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_5__r.Name},&quot;FW&quot;)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Opportunity_alert_for_GSM_module_project_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+	OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Product_4__c} &lt;&gt; {!RecordPrior.Product_4__c},
+        {!Record.Product_5__c} &lt;&gt; {!RecordPrior.Product_5__c},
+	    Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+	OR(
+        BEGINS({!Record.Product_1__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_1__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_2__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_2__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_3__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_3__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_4__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_4__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_5__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_5__r.Name},&quot;SARA-G&quot;)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Post_to_Marketing_Management_Message</name>
+        <dataType>String</dataType>
+        <expression>&quot;The following +&apos;Record.RecordType.Name&apos;+ has been updated. \n \n Name: +&apos;Record.Name&apos;+ https://u-blox.my.salesforce.com/+&apos;Record.Id&apos;+ \n Account: &quot;+{!Record.Account.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>Prior_LastModifiedDateFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>{!RecordPrior.LastModifiedDate}+0.000694*3</expression>
+    </formulas>
+    <interviewLabel>V {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: Email Alerts</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>DefaultMode</runInMode>
+    <start>
+        <locationX>245</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Is_Email_Notification_Turned_On</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>MarketingManagementMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>The following {!Record.RecordType.Name} has been updated.
+Name: {!Record.Name} https://u-blox.my.salesforce.com/{!Record.Id}
+Account: {!Record.Account.Name}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Product1EMMY_WORJODY_WMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Opportunity you&apos;re following has been updated.
+Opportunity {!Record.Name} 
+Account: {!Record.Opportunity_Account__r.Name}
+Stage: {!Record.StageName}
+Product 1: {!Record.Product_1__r.Name}
+Updated by {!Record.LastModifiedBy.FirstName} {!Record.LastModifiedBy.LastName}
+Opportunity: https://u-blox.my.salesforce.com/{!Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Product2EMMY_WORJODY_WMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Opportunity you&apos;re following has been updated.
+Opportunity {!Record.Name} 
+Account: {!Record.Opportunity_Account__r.Name}
+Stage: {!Record.StageName}
+Product 1: {!Record.Product_1__r.Name}
+Product 2: {!Record.Product_2__r.Name}
+Updated by {!Record.LastModifiedBy.FirstName} {!Record.LastModifiedBy.LastName}
+Opportunity: https://u-blox.my.salesforce.com/{!Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Product3EMMY_WORJODY_WMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Opportunity you&apos;re following has been updated.
+Opportunity {!Record.Name} 
+Account: {!Record.Opportunity_Account__r.Name}
+Stage: {!Record.StageName}
+Product 1: {!Record.Product_1__r.Name}
+Product 2: {!Record.Product_2__r.Name}
+Product 3: {!Record.Product_3__r.Name}
+Updated by {!Record.LastModifiedBy.FirstName} {!Record.LastModifiedBy.LastName}
+Opportunity: https://u-blox.my.salesforce.com/{!Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Stage5GlobalMessage</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Opportunity to Stage 5: {!Record.Name}, {!Record.Latest_Status__c} by {!Record.LastModifiedBy.Username}
+https://u-blox.my.salesforce.com/{!Record.Id}</text>
+    </textTemplates>
+    <variables>
+        <description>Product 1: EMMY-W OR JODY-W
+Product 2: EMMY-W OR JODY-W
+Product 3: EMMY-W OR JODY-W</description>
+        <name>ProductEMMY_W_OR_JODY_W</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>RecordisNew</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RecordPrior</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>updateFlag</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

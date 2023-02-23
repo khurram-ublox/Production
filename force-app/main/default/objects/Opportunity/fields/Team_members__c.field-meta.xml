@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_members__c</fullName>
+    <description>Sales persons involved in the opportunity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the sales persons involved in the opportunity. If they are in a different area, grant access by adding them to the account team.</inlineHelpText>
+    <label>Team Members</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adam Andres</fullName>
+                <default>false</default>
+                <label>Adam Andres</label>
+            </value>
+            <value>
+                <fullName>Adam Strout</fullName>
+                <default>false</default>
+                <label>Adam Strout</label>
+            </value>
+            <value>
+                <fullName>Adrian Tan</fullName>
+                <default>false</default>
+                <label>Adrian Tan</label>
+            </value>
+            <value>
+                <fullName>Amitesh Bajaj</fullName>
+                <default>false</default>
+                <label>Amitesh Bajaj</label>
+            </value>
+            <value>
+                <fullName>Anthony Protopsaltis</fullName>
+                <default>false</default>
+                <label>Anthony Protopsaltis</label>
+            </value>
+            <value>
+                <fullName>Armin Böshenz</fullName>
+                <default>false</default>
+                <label>Armin Böshenz</label>
+            </value>
+            <value>
+                <fullName>Brad Sherrard</fullName>
+                <default>false</default>
+                <label>Brad Sherrard</label>
+            </value>
+            <value>
+                <fullName>Bruce Wu</fullName>
+                <default>false</default>
+                <label>Bruce Wu</label>
+            </value>
+            <value>
+                <fullName>Carine Loo</fullName>
+                <default>false</default>
+                <label>Carine Loo</label>
+            </value>
+            <value>
+                <fullName>Carlos Dias</fullName>
+                <default>false</default>
+                <label>Carlos Dias</label>
+            </value>
+            <value>
+                <fullName>Daniel Jungo</fullName>
+                <default>false</default>
+                <label>Daniel Jungo</label>
+            </value>
+            <value>
+                <fullName>David Sel</fullName>
+                <default>false</default>
+                <label>David Sel</label>
+            </value>
+            <value>
+                <fullName>Derek Wang</fullName>
+                <default>false</default>
+                <label>Derek Wang</label>
+            </value>
+            <value>
+                <fullName>Dylan Huang</fullName>
+                <default>false</default>
+                <label>Dylan Huang</label>
+            </value>
+            <value>
+                <fullName>Ellen Huang</fullName>
+                <default>false</default>
+                <label>Ellen Huang</label>
+            </value>
+            <value>
+                <fullName>Federico Dal Ferro</fullName>
+                <default>false</default>
+                <label>Federico Dal Ferro</label>
+            </value>
+            <value>
+                <fullName>Frederic Duhem</fullName>
+                <default>false</default>
+                <label>Frederic Duhem</label>
+            </value>
+            <value>
+                <fullName>Fredrik Borgstrom</fullName>
+                <default>false</default>
+                <label>Fredrik Borgstrom</label>
+            </value>
+            <value>
+                <fullName>Henry You</fullName>
+                <default>false</default>
+                <label>Henry You</label>
+            </value>
+            <value>
+                <fullName>Hiroshi Yoshimura</fullName>
+                <default>false</default>
+                <label>Hiroshi Yoshimura</label>
+            </value>
+            <value>
+                <fullName>Jan Reisen</fullName>
+                <default>false</default>
+                <label>Jan Reisen</label>
+            </value>
+            <value>
+                <fullName>Jason Meilhon</fullName>
+                <default>false</default>
+                <label>Jason Meilhon</label>
+            </value>
+            <value>
+                <fullName>Jean-Marie Dubois</fullName>
+                <default>false</default>
+                <label>Jean-Marie Dubois</label>
+            </value>
+            <value>
+                <fullName>JeeHoon Kim</fullName>
+                <default>false</default>
+                <label>JeeHoon Kim</label>
+            </value>
+            <value>
+                <fullName>Jennifer Nkire</fullName>
+                <default>false</default>
+                <label>Jennifer Nkire</label>
+            </value>
+            <value>
+                <fullName>Jim Neff</fullName>
+                <default>false</default>
+                <label>Jim Neff</label>
+            </value>
+            <value>
+                <fullName>Jochen Steinhauer</fullName>
+                <default>false</default>
+                <label>Jochen Steinhauer</label>
+            </value>
+            <value>
+                <fullName>John Demirali</fullName>
+                <default>false</default>
+                <label>John Demirali</label>
+            </value>
+            <value>
+                <fullName>Krystal Li</fullName>
+                <default>false</default>
+                <label>Krystal Li</label>
+            </value>
+            <value>
+                <fullName>Leo DeRosa</fullName>
+                <default>false</default>
+                <label>Leo DeRosa</label>
+            </value>
+            <value>
+                <fullName>Ludger Boeggering</fullName>
+                <default>false</default>
+                <label>Ludger Boeggering</label>
+            </value>
+            <value>
+                <fullName>Marco Tang</fullName>
+                <default>false</default>
+                <label>Marco Tang</label>
+            </value>
+            <value>
+                <fullName>Mark Murray</fullName>
+                <default>false</default>
+                <label>Mark Murray</label>
+            </value>
+            <value>
+                <fullName>Masanori Yoshida</fullName>
+                <default>false</default>
+                <label>Masanori Yoshida</label>
+            </value>
+            <value>
+                <fullName>Michael Li</fullName>
+                <default>false</default>
+                <label>Michael Li</label>
+            </value>
+            <value>
+                <fullName>Ming Chiang</fullName>
+                <default>false</default>
+                <label>Ming Chiang</label>
+            </value>
+            <value>
+                <fullName>Minoru Okuda</fullName>
+                <default>false</default>
+                <label>Minoru Okuda</label>
+            </value>
+            <value>
+                <fullName>Murali Thandavamurthy</fullName>
+                <default>false</default>
+                <label>Murali Thandavamurthy</label>
+            </value>
+            <value>
+                <fullName>Nick Tsai</fullName>
+                <default>false</default>
+                <label>Nick Tsai</label>
+            </value>
+            <value>
+                <fullName>Nic Papadopoulos</fullName>
+                <default>false</default>
+                <label>Nic Papadopoulos</label>
+            </value>
+            <value>
+                <fullName>Pasi Alajoki</fullName>
+                <default>false</default>
+                <label>Pasi Alajoki</label>
+            </value>
+            <value>
+                <fullName>Philipp Weingartner</fullName>
+                <default>false</default>
+                <label>Philipp Weingartner</label>
+            </value>
+            <value>
+                <fullName>Pietro Sbisa</fullName>
+                <default>false</default>
+                <label>Pietro Sbisa</label>
+            </value>
+            <value>
+                <fullName>Qing Yuan Yao</fullName>
+                <default>false</default>
+                <label>Qing Yuan Yao</label>
+            </value>
+            <value>
+                <fullName>Rajen Shah</fullName>
+                <default>false</default>
+                <label>Rajen Shah</label>
+            </value>
+            <value>
+                <fullName>Randy Walston</fullName>
+                <default>false</default>
+                <label>Randy Walston</label>
+            </value>
+            <value>
+                <fullName>Raphael Baude</fullName>
+                <default>false</default>
+                <label>Raphael Baude</label>
+            </value>
+            <value>
+                <fullName>Ray Park</fullName>
+                <default>false</default>
+                <label>Ray Park</label>
+            </value>
+            <value>
+                <fullName>Richard Lee</fullName>
+                <default>false</default>
+                <label>Richard Lee</label>
+            </value>
+            <value>
+                <fullName>Robert Liu</fullName>
+                <default>false</default>
+                <label>Robert Liu</label>
+            </value>
+            <value>
+                <fullName>Sam Guo</fullName>
+                <default>false</default>
+                <label>Sam Guo</label>
+            </value>
+            <value>
+                <fullName>Satish Dixit</fullName>
+                <default>false</default>
+                <label>Satish Dixit</label>
+            </value>
+            <value>
+                <fullName>Shiho Minkkinen</fullName>
+                <default>false</default>
+                <label>Shiho Minkkinen</label>
+            </value>
+            <value>
+                <fullName>Shone Kim</fullName>
+                <default>false</default>
+                <label>Shone Kim</label>
+            </value>
+            <value>
+                <fullName>Soyoung Lee</fullName>
+                <default>false</default>
+                <label>Soyoung Lee</label>
+            </value>
+            <value>
+                <fullName>Stephen Kim</fullName>
+                <default>false</default>
+                <label>Stephen Kim</label>
+            </value>
+            <value>
+                <fullName>Tesshu Naka</fullName>
+                <default>false</default>
+                <label>Tesshu Naka</label>
+            </value>
+            <value>
+                <fullName>Tobey Lee</fullName>
+                <default>false</default>
+                <label>Tobey Lee</label>
+            </value>
+            <value>
+                <fullName>Tonny Zhong</fullName>
+                <default>false</default>
+                <label>Tonny Zhong</label>
+            </value>
+            <value>
+                <fullName>William Cleaver</fullName>
+                <default>false</default>
+                <label>William Cleaver</label>
+            </value>
+            <value>
+                <fullName>Zhihong Ni</fullName>
+                <default>false</default>
+                <label>Zhihong Ni</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

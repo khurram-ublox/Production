@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Revenue_Without_Probability__c</fullName>
+    <description>Roll-up Summary of  &quot;Revenue With Status Factor&quot; (0 if Status is Alternative Product, Lost, Not Applicable) of all added Opp Products, without weighting factor (Probability)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Roll-up Summary of  &quot;Revenue With Status Factor&quot; (0 if Status is Alternative Product, Lost, Not Applicable) of all added Opp Products, without weighting factor (Probability)</inlineHelpText>
+    <label>Opp Revenue Without Probability</label>
+    <summarizedField>Opp_Product__c.Revenue_With_Status_Factor__c</summarizedField>
+    <summaryForeignKey>Opp_Product__c.Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automatic_Address_Updates_from__c</fullName>
+    <description>Interim solution until APEX code works</description>
+    <externalId>false</externalId>
+    <formula>IF( Same_as_Account_Visiting_Address__c, &quot;Account Billing Address&quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Automatic Address Updates from</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

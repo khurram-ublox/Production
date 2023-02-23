@@ -1,0 +1,24 @@
+.slds-form-element__label  {
+    display: none;
+}
+.lightning-helptext {
+    display:none;
+}
+.searchBar  {
+	background: #eee;
+	margin: 20px 0 !important;
+}
+.searchBar .slds-card__header {
+	font-weight: bold;
+}
+.searchButton {	
+	padding-top: 18px;
+}
+.slds-grid {	
+	height:60px;
+}
+.resultsDiv {
+	overflow: scroll;
+	width: 100%;
+	background: #ccc;
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Key_Manual_Forecast__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+Forecast_Unit__r.a4a_isAboveTreshold__c = True 
+&amp;&amp;
+LEN(Forecast_Unit__r.Project_Owner_Account__r.SF_Account_Number__c) &gt; 0 
+&amp;&amp; 
+History_Month__c &gt;= DATE(2020,01,01)
+&amp;&amp;
+Forecast_manual__c &gt;= 0
+
+,
+&quot;/UnitType:&quot; 
+&amp; 
+&quot;Quantity&quot;
+&amp;
+&quot;/Unit:&quot; 
+&amp; 
+&quot;PCS&quot; 
+&amp; 
+&quot;/Region:&quot; 
+&amp; 
+BLANKVALUE(Forecast_Unit__r.a4a_Region__c,&quot;Other&quot;) 
+&amp; 
+&quot;/ProductCategory:&quot; 
+&amp; 
+BLANKVALUE(TEXT(Forecast_Unit__r.Product__r.Reporting_Category__c),&quot;Other&quot;) 
+&amp; 
+&quot;/Country:&quot; 
+&amp; 
+BLANKVALUE(UPPER(Forecast_Unit__r.Project_Owner_Account__r.BillingCountry),&quot;Other&quot;) 
+&amp; 
+&quot;/Product:&quot; 
+&amp; 
+BLANKVALUE(Forecast_Unit__r.Product__r.ProductCode,&quot;Other&quot;) 
+&amp; 
+&quot;/ProjectOwner:&quot; 
+&amp; 
+Forecast_Unit__r.Project_Owner_Account__r.SF_Account_Number__c 
+&amp;
+/*
+&quot;/Id:&quot; 
+&amp; 
+Forecast_Unit__c
+&amp;
+*/
+&quot;/Meaning:ForecastAdjustment&quot; 
+&amp; 
+&quot;/Cube:ForecastAdjustment&quot; 
+&amp; 
+&quot;/Year:&quot; 
+&amp; 
+TEXT(Year(History_Month__c)) 
+&amp; 
+&quot;/Month:&quot; 
+&amp; 
+LPAD(TEXT(Month(History_Month__c)),2,&quot;0&quot;) 
+&amp; 
+&quot;/&quot; 
+, 
+NULL 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Key Manual Forecast</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

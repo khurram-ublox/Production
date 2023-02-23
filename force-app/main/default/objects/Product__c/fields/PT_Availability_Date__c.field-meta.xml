@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PT_Availability_Date__c</fullName>
+    <description>Date when parts are planned to be available at u-blox Thalwil or regional office</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date when parts are planned to be available at u-blox Thalwil or regional office</inlineHelpText>
+    <label>PT Availability Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

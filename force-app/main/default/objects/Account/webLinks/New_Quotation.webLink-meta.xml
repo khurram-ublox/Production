@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Quotation</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Quotation</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+//Created: 11.04.2008 - Werner Grätzer - projectnet gmbh
+//Changed: 22.04.2009 - OPP.AccountId = AccountId
+//Converted to JavaScript Button: 18.06.2014 - PRN-080751
+
+
+var AccountId = &quot;{!Account.Id}&quot;;
+var OpportunityId = &quot;{!Opportunity.Id}&quot;;
+//alert(OpportunityId);
+
+var result = sforce.connection.query(&quot;SELECT Id, Name, OppCloseDate__c, Abacus_Payterms__c, CurrencyIsoCode, OwnerId FROM Account WHERE Id = &apos;&quot; +AccountId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/*
+alert (records[0])
+*/
+
+var OppCloseDate = records[0].OppCloseDate__c;
+var PayTerms = records[0].Abacus_Payterms__c;
+
+
+if (OpportunityId==&quot;&quot;)
+{
+var OpportunityName = records[0].Name;
+var QuotationCurrency = records[0].CurrencyIsoCode;
+var QuotationOwnerId = records[0].OwnerId;
+}
+
+else
+{
+var result = sforce.connection.query(&quot;SELECT Name, CurrencyIsoCode, OwnerId FROM Opportunity WHERE Id = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+var OpportunityName = records[0].Name;
+var QuotationCurrency = records[0].CurrencyIsoCode;
+var QuotationOwnerId = records[0].OwnerId;
+}
+
+
+var OPP = new sforce.SObject(&quot;Opportunity&quot;);
+OPP.Name = OpportunityName;
+OPP.OwnerId = QuotationOwnerId
+OPP.CurrencyIsoCode = QuotationCurrency;
+OPP.Quotation_Account__c = AccountId;
+OPP.AccountId = AccountId; /* ADDED 22.04.2009 */ 
+OPP.RecordTypeId = &quot;01220000000CqRdAAK&quot;;/*Record ID für Quotation*/
+OPP.StageName =&quot;3 Calling On&quot;;
+OPP.CloseDate = OppCloseDate;
+OPP.Payment__c = PayTerms;
+OPP.Referred_Opportunity__c = OpportunityId;
+
+var result = sforce.connection.create([OPP]);
+
+if (result[0].success==&apos;false&apos;) {
+throw new Error(result[0].errors.message);
+} 
+
+var QuotationId = result[0].id;
+
+refreshContactRoles(AccountId,OpportunityId,QuotationId,&quot;Contact Quotation&quot;,&quot;Contact Commercial&quot;);
+
+function refreshContactRoles(AccountId,OpportunityId,RefreshId,RoleOPP,RoleACC){
+
+var result = sforce.connection.query(&quot;SELECT ContactId, IsPrimary FROM OpportunityContactRole WHERE Role = &apos;&quot; +RoleOPP+ &quot;&apos; AND OpportunityId = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+if (records.length == 0){
+var result = sforce.connection.query(&quot;SELECT ContactId, IsPrimary FROM AccountContactRole WHERE Role = &apos;&quot; +RoleACC+ &quot;&apos; AND AccountId = &apos;&quot; +AccountId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+}
+
+/* alert (records[0]) */
+
+
+var result = sforce.connection.query(&quot;SELECT Id FROM OpportunityContactRole WHERE OpportunityId = &apos;&quot; +RefreshId+ &quot;&apos;&quot;);
+var deleterecords = result.getArray(&quot;records&quot;);
+
+/* alert (deleterecords[0])*/
+
+if (deleterecords.length &lt; 7){
+for(var i=0;i&lt;deleterecords.length;i++){
+var delResult = sforce.connection.deleteIds([deleterecords[i].Id]);
+}
+}
+
+
+for(var i=0;i&lt;records.length;i++){
+
+
+var ROL = new sforce.SObject(&quot;OpportunityContactRole&quot;);
+ROL.ContactId = records[i].ContactId;
+ROL.IsPrimary = records[i].IsPrimary;
+ROL.OpportunityId = RefreshId;
+ROL.Role = RoleOPP;
+
+var result = sforce.connection.create([ROL]);
+
+/* alert (result[0])*/
+
+}
+}
+
+window.parent.location.href=&quot;/&quot;+ QuotationId +&quot;/e?retURL=%2F&quot;+QuotationId;</url>
+</WebLink>

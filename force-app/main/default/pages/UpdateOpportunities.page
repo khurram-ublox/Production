@@ -1,0 +1,141 @@
+<apex:page standardController="Product2" extensions="UpdateOpportunitiesVFCtrl" >
+<script type="text/javascript" src="/js/functions.js"></script>
+<script src="/soap/ajax/11.1/connection.js"></script>
+<script type="text/javascript">
+    sforce.connection.sessionId = '{!$Api.Session_ID}';   
+    var ProductId = "{!Product2.Id}";
+    var SuccessorProductId = "{!Product2.Successor_Product__c}";
+    /* khir: 2016.01.28 only text in Erfolgsmeldung was updated to explain the remaining opportunities. */
+    var Erfolgsmeldung = "All products in the opportunity line items have been updated with the successor product. The opportunity product has been updated in all concerned opportunities. If there are still opportunities remaining in the related list, check the Opportunities and Opp Products if Reason is given."
+    
+    
+    /* alert (ProductId) */
+    /* alert (SuccessorProductId) */
+    
+    if (SuccessorProductId == "")
+    
+    {
+    
+    alert ("There is no successor product defined.")
+    
+    
+    }
+    else
+    
+    {
+    
+    var Confirmation = prompt ("Do you really want to update the product entries of Opportunities and Quotations? Running this command will take a while and must not be interrupted. Please confirm with the word 'yes'","");
+    
+    
+    if (Confirmation == "yes")
+    
+    {
+    
+    /* Es werden alle PriceboorecordskEntry für dieses Produkt abgefragt */
+    
+    var result = sforce.connection.query("SELECT Id, CurrencyIsoCode FROM PricebookEntry WHERE Product2Id = '" +ProductId+ "'");
+    var PricebookEntries = result.getArray("records");
+    
+    /* alert (PricebookEntries[0]) */
+    
+    
+    /* Mit einer for-Schlaufe wird für jedes PricebookEntry das PricebookEntry des Successor Products in der gleichen Währung und des gleichen Pricebook abgefragt */
+    
+
+    for(var i=0;i<PricebookEntries.length;i++){
+    
+    var PricebookEntry = PricebookEntries[i].Id;
+    var Currency = PricebookEntries[i].CurrencyIsoCode;
+    
+    var result = sforce.connection.query("SELECT Id FROM PricebookEntry WHERE Product2Id = '" +SuccessorProductId+ "' AND CurrencyIsoCode = '" +Currency+ "'");
+    var records = result.getArray("records");
+    
+    
+    /* alert (records[0]) */
+    
+    /* Falls ein entsprechendes PricebookEntry für das Successor Product in der gleichen Währung im gleichen Pricebook vorhanden ist, werden alle Opp Line Items, die zum aktuellen Produkt gehören, abgefragt */
+    
+    var result = sforce.connection.query("SELECT Id,OpportunityId, Quantity, UnitPrice FROM OpportunityLineItem WHERE PriceBookEntryId = '" +PricebookEntry+ "'");
+    var OppLineItems = result.getArray("records");
+    
+    /* alert (OppLineItems[0]) */
+    
+    /* Gibt es Opportunity line items aber kein PricebookEntry für das Successor Product in der gleichen Währung im gleichen Pricebook wird ein alert ausgegeben - keine weitere Aktion */
+    
+    if (OppLineItems[0] != null && records[0] == null)
+    {
+    
+    
+    alert ("There is no corresponding PricebookEntry for " +Currency+ " defined.")
+    var Erfolgsmeldung = "Due to missing pricebook entries only part of the opportunity line items could be updated with the successor product. The opportunity product has been updated in all concerned opportunities."
+    
+    }
+    else if (records[0] != null)
+    
+    {
+    
+    var NewPricebookEntry = records[0].Id;
+    
+    
+    /* alert (NewPricebookEntry) */
+    
+    
+    /* Nun wird mit einer for-Schlaufe jedem Opp Line Item das neue PricebookEntry zugeordnet */
+    
+    
+    for(var k=0;k<OppLineItems.length;k++){
+    
+    var LIN = new sforce.SObject("OpportunityLineItem");
+    LIN.OpportunityId = OppLineItems[k].OpportunityId;
+    LIN.Quantity = OppLineItems[k].Quantity;
+    LIN.UnitPrice = OppLineItems[k].UnitPrice;
+    LIN.Description = OppLineItems[k].Description;
+    LIN.PriceBookEntryId = NewPricebookEntry;
+    var result = sforce.connection.create([LIN]);
+    
+    
+    /* alert (result[0]) */
+    
+    /* Anschliessend wird das bisherige Opp Line Item gelöscht */
+    
+    var delResult = sforce.connection.deleteIds([OppLineItems[k].Id]);
+    
+    
+    /* alert (delResult[0]) */
+    
+    }
+    }
+    
+    }
+    
+    
+    //Replace all Products in Opp Products
+    
+    var result = sforce.connection.query("SELECT Id FROM Opp_Product__c WHERE Product__c = '" +ProductId+ "'");
+    var OppProducts = result.getArray("records");
+    
+    for(var n=0;n<OppProducts.length;n++){
+    
+    var OPR = new sforce.SObject("Opp_Product__c");
+    OPR.Id = OppProducts[n].Id;
+    OPR.Product__c = SuccessorProductId;
+    
+    var result = sforce.connection.update([OPR]);
+
+    }
+   /* alert (result[0]);*/
+   /* var account = new sforce.SObject("Account");
+    account.Name = "my new account";
+    var result = sforce.connection.create([account]);
+    alert (result[0]);*/
+    
+    alert (Erfolgsmeldung)
+    }
+    }
+    window.parent.location.href="/one/one.app#/sObject/"+ ProductId; 
+    
+    
+</script>
+
+
+</apex:page>

@@ -1,0 +1,6 @@
+Please correct Visiting Country of Visiting Address in two alphabets (ISO 3166-1 Alpha-2 code, use GB not UK).
+
+Account: {!Account.Name}
+Visiting Country (to be changed): {!Account.BillingCountry}
+
+Link to the Account: {!Account.Link}

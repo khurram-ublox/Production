@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Quote</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Quote</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!URLFOR(IF($User.UITheme == &apos;Theme4d&apos;, &apos;/lightning/o/Quote/new?&amp;defaultFieldValues=OpportunityId=&apos;+Opportunity.Id +&apos;,AccountId=&apos;+Opportunity.AccountId  +&apos;,Quotation_Account__c=&apos;+Opportunity.AccountId+&apos;,Name=&apos;+Opportunity.Name+IF(NOT(ISBLANK(Opportunity.OppAutoNumber__c)),&apos;-u-blox-QR-&apos;+Opportunity.OppAutoNumber__c,NULL), &apos;/0Q0/e?retURL=&apos;+Opportunity.Id+&apos;&amp;oppid=&apos;+Opportunity.Id+&apos;&amp;CF00N2p000009T2FY=&apos;+Opportunity.AccName__c+&apos;&amp;CF00N2p000009T2FY_lkid=&apos;+Opportunity.AccountId+&apos;&amp;Name=&apos;+Opportunity.Name+IF(NOT(ISBLANK(Opportunity.OppAutoNumber__c)),&apos;-u-blox-QR-&apos;+Opportunity.OppAutoNumber__c,NULL)))}</url>
+</WebLink>

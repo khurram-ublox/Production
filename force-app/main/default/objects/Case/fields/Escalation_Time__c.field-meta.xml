@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalation_Time__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( text(Status) = &quot;Closed&quot;, Case_Returned__c -  Date_Escalated_by_TM__c,
+now() - Date_Escalated_by_TM__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Escalation Time in days. Time between Escalation Date TM and Case Returned</inlineHelpText>
+    <label>Escalation Time</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

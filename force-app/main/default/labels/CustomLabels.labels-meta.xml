@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Case_Double_Escalation_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Double Escalation Message</shortDescription>
+        <value>Case can not be escalated twice within 5 seconds</value>
+    </labels>
+    <labels>
+        <fullName>Case_Double_Owner_Change_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Double Owner Change Message</shortDescription>
+        <value>Owner can not be changed twice within 5 seconds</value>
+    </labels>
+    <labels>
+        <fullName>Case_Escalation_Time_Difference_in_Seonds</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Escalation Time Difference in Seonds</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>Case_Other_Technology</fullName>
+        <categories>Case</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Other Technology</shortDescription>
+        <value>Case can not be escalated for other technology, please manually assign the case to relevant person or change the technology</value>
+    </labels>
+    <labels>
+        <fullName>Case_Subject</fullName>
+        <categories>ucenter2_Community_Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Subject</shortDescription>
+        <value>u-center authentication request -</value>
+    </labels>
+    <labels>
+        <fullName>Case_Technology</fullName>
+        <categories>Case</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Technology</shortDescription>
+        <value>Please provide Case Technology</value>
+    </labels>
+    <labels>
+        <fullName>CommunityFileRecordNotPresent</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommunityFileRecordNotPresent</shortDescription>
+        <value>No data to display</value>
+    </labels>
+    <labels>
+        <fullName>CommunityUserFileUploadMsg</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommunityUserFileUploadMsg</shortDescription>
+        <value>You don&apos;t have access to upload files !</value>
+    </labels>
+    <labels>
+        <fullName>CreateUserFileFault</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CreateUserFileFault</shortDescription>
+        <value>There was issue while creating User File . Please contact System Admin !</value>
+    </labels>
+    <labels>
+        <fullName>Detail_Description</fullName>
+        <categories>ucenter2_Community_Registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Detail Description</shortDescription>
+        <value>This is open request for NDA version of u-center 2</value>
+    </labels>
+    <labels>
+        <fullName>NewLine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NewLine</shortDescription>
+        <value>-
+-</value>
+    </labels>
+    <labels>
+        <fullName>NotACommunityUserContact</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NotACommunityUserContact</shortDescription>
+        <value>You are not allowed to create User File for this contact as it is not associated with Community User !</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Env_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Portal Env Link</shortDescription>
+        <value>https://portal.u-blox.com/s/case/</value>
+    </labels>
+    <labels>
+        <fullName>PublicFilesContent</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PublicFilesContent</shortDescription>
+        <value>For accessing public documents or resources, Please &lt;a href=&quot;https://www.u-blox.com/en/product-resources&quot;&gt; click&lt;/a&gt; here.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_contact_name_validation_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO contact name validation error</shortDescription>
+        <value>Your first and last name must contain at least 2 characters (only letters).</value>
+    </labels>
+    <labels>
+        <fullName>SSO_duplicate_nickname_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO duplicate nickname error</shortDescription>
+        <value>Sorry, your nickname already exists. Please choose another nickname.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_duplicate_user_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO duplicate user error</shortDescription>
+        <value>Sorry, user with this email already exists. Please choose another email.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_email_validation_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO email validation error</shortDescription>
+        <value>Please type a valid email.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_general_user_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO general user error</shortDescription>
+        <value>Sorry, there was an error in the registration. Please try to register with another email or contact admin@u-blox.com.</value>
+    </labels>
+    <labels>
+        <fullName>SSO_nickname_validation_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO nickname validation error</shortDescription>
+        <value>Your nickname must contain at least 3 characters (letters/numbers/./_/-).</value>
+    </labels>
+    <labels>
+        <fullName>SalesToolFolderNotPresent</fullName>
+        <categories>SalesToolFileSync</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SalesToolFolderNotPresent</shortDescription>
+        <value>Library Folder is not present :</value>
+    </labels>
+    <labels>
+        <fullName>Skyvva_Account_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Skyvva Account Error Message</shortDescription>
+        <value>There is already a duplicate account.</value>
+    </labels>
+    <labels>
+        <fullName>Skyvva_Order_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Skyvva Order Error Message</shortDescription>
+        <value>There is already an order with the same order number.</value>
+    </labels>
+    <labels>
+        <fullName>UserAssociatedToGroupMsg</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserAssociatedToGroupMsg</shortDescription>
+        <value>User is associated to Group with file !</value>
+    </labels>
+    <labels>
+        <fullName>UserFileComponentError</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserFileComponentError</shortDescription>
+        <value>You do not have access to shared documents or resources. Please contact u-blox &lt;a href=&quot;mailto:support@u-blox.com&quot;&gt;support&lt;/a&gt;.</value>
+    </labels>
+    <labels>
+        <fullName>UserFileCreation</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserFileCreation</shortDescription>
+        <value>User File for the contact has been created !</value>
+    </labels>
+    <labels>
+        <fullName>UserFileNotPresent</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserFileNotPresent</shortDescription>
+        <value>You do not have access to shared documents or resources. Please contact  &lt;a href=&quot;https://portal.u-blox.com/s/contactsupport&quot;&gt;u-blox Support&lt;/a&gt;.</value>
+    </labels>
+    <labels>
+        <fullName>UserFilePresentMessage</fullName>
+        <categories>UserFileProcess</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserFilePresentMessage</shortDescription>
+        <value>User File is already created for this contact !</value>
+    </labels>
+    <labels>
+        <fullName>community_user_registration_right_panel_text_1</fullName>
+        <categories>community user registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>community user registration right panel text 1</shortDescription>
+        <value>track and change your orders</value>
+    </labels>
+    <labels>
+        <fullName>community_user_registration_right_panel_text_2</fullName>
+        <categories>community user registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>community user registration right panel text 2</shortDescription>
+        <value>subscribe to product documentation changes and updates</value>
+    </labels>
+    <labels>
+        <fullName>community_user_registration_right_panel_text_3</fullName>
+        <categories>community user registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>community user registration right panel text 3</shortDescription>
+        <value>receive technical support and raise questions on the support portal</value>
+    </labels>
+    <labels>
+        <fullName>community_user_registration_right_panel_text_4</fullName>
+        <categories>community user registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>community user registration right panel text 4</shortDescription>
+        <value>log in and use u-center 2 GNSS evaluation software</value>
+    </labels>
+    <labels>
+        <fullName>community_user_registration_right_panel_title</fullName>
+        <categories>community user registration</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>community user registration right panel title</shortDescription>
+        <value>Sign up for a u-blox account to:</value>
+    </labels>
+    <labels>
+        <fullName>Market_Classification_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Market Classification Message</shortDescription>
+        <value>There are records (Accounts/Opportunities/Leads) associated with the value you want to deactivate/delete. Please update the affected records first.</value>
+    </labels>
+    <labels>
+        <fullName>PartnerHomeFinanceMessage</fullName>
+        <categories>PartnerCommunity</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerHomeFinanceMessage</shortDescription>
+        <value>Manage accounts, contacts, investor events and activities. Enjoy your work!</value>
+    </labels>
+    <labels>
+        <fullName>PartnerHomeMessage</fullName>
+        <categories>PartnerCommunity</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerHomeMessage</shortDescription>
+        <value>Work on leads, register deals, and track progress with analytics.</value>
+    </labels>
+    <labels>
+        <fullName>PartnerPortalURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PartnerPortalURL</shortDescription>
+        <value>/s/detail/</value>
+    </labels>
+    <labels>
+        <fullName>All</fullName>
+        <categories>case, casefeedcomments</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The label is used in case feed comment component tabs</shortDescription>
+        <value>All</value>
+    </labels>
+    <labels>
+        <fullName>Customers</fullName>
+        <categories>case, casefeedcomments</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The label is used in case feed comment component tabs</shortDescription>
+        <value>Customers</value>
+    </labels>
+    <labels>
+        <fullName>Internal_users</fullName>
+        <categories>case, casefeedcomments</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The label is used in case feed comment component tabs</shortDescription>
+        <value>Internal users</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Portal_Base_URL</fullName>
+        <categories>PartnerCommunity</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Portal Base URL</shortDescription>
+        <value>https://partner.u-blox.com</value>
+    </labels>
+    <labels>
+        <fullName>partner_and_internal_users</fullName>
+        <categories>case, casefeedcomments</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The label is used in case feed comment component tabs</shortDescription>
+        <value>Partner and Internal Users</value>
+    </labels>
+</CustomLabels>

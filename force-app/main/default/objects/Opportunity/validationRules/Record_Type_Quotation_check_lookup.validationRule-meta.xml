@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Type_Quotation_check_lookup</fullName>
+    <active>true</active>
+    <description>Verify that the lookup fields Quotation Account and Account are the same for the record type Quotation</description>
+    <errorConditionFormula>/* Check only if record type = Quotation*/
+if ( RecordTypeId = &quot;01220000000CqRd&quot;,
+if ( AccountId &lt;&gt; Quotation_Account__r.Id , true,false),
+false)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>&quot;Account Name&quot; must be identical to &quot;Quotation Account&quot; (in section Quotation Information&quot;</errorMessage>
+</ValidationRule>

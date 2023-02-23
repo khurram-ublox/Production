@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualification_Report_Availability_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date when the Qualification Report becomes available (no later than MP Availability Date)</inlineHelpText>
+    <label>Qualification Report Availability Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>FUP_Copy_Forecast</fullName>
+        <field>Forecast_Copy__c</field>
+        <formula>Forecast__c</formula>
+        <name>FUP: Copy Forecast</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FUP_Copy_Forecast_Sales</fullName>
+        <field>Forecast_Sales_Copy__c</field>
+        <formula>Forecast_Sales__c</formula>
+        <name>FUP: Copy Forecast Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FUP_Update_Season_Index</fullName>
+        <description>Update FU period with season index for the specific month.</description>
+        <field>Season_Index__c</field>
+        <formula>/* Last update: Sep 2019, based on business 2017 and 2018 */
+
+CASE( Forecast_Unit__r.Account__r.uB_Office__c ,
+&quot;Americas&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,0.79,
+ &quot;02&quot;,0.9,
+ &quot;03&quot;,0.98,
+ &quot;04&quot;,0.74,
+ &quot;05&quot;,0.94,
+ &quot;06&quot;,1.25,
+ &quot;07&quot;,0.65,
+ &quot;08&quot;,1.12,
+ &quot;09&quot;,1.07,
+ &quot;10&quot;,1.20,
+ &quot;11&quot;,1.03,
+ &quot;12&quot;,1.34,
+1)
+,
+&quot;Australia&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.82	,
+&quot;02&quot;,	0.86	,
+&quot;03&quot;,	1.25	,
+&quot;04&quot;,	0.84	,
+&quot;05&quot;,	0.97	,
+&quot;06&quot;,	1.53	,
+&quot;07&quot;,	0.78	,
+&quot;08&quot;,	1.07	,
+&quot;09&quot;,	0.89	,
+&quot;10&quot;,	1.06	,
+&quot;11&quot;,	1.04	,
+&quot;12&quot;,	0.90	,
+
+1)
+,
+&quot;China&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.97,
+&quot;02&quot;,	0.69,
+&quot;03&quot;,	0.96,
+&quot;04&quot;,	0.92,
+&quot;05&quot;,	0.96,
+&quot;06&quot;,	1.22,
+&quot;07&quot;,	0.78,
+&quot;08&quot;,	0.98,
+&quot;09&quot;,	1.08,
+&quot;10&quot;,	1.06,
+&quot;11&quot;,	1.04,
+&quot;12&quot;,	1.33,
+1)
+,
+&quot;EMEA&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.99	,
+&quot;02&quot;,	1.09	,
+&quot;03&quot;,	1.07	,
+&quot;04&quot;,	0.98	,
+&quot;05&quot;,	1.04	,
+&quot;06&quot;,	1.14	,
+&quot;07&quot;,	0.69	,
+&quot;08&quot;,	0.87	,
+&quot;09&quot;,	0.96	,
+&quot;10&quot;,	1.08	,
+&quot;11&quot;,	0.95	,
+&quot;12&quot;,	1.14	,
+1)
+,
+&quot;India&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.96	,
+&quot;02&quot;,	0.90	,
+&quot;03&quot;,	0.94	,
+&quot;04&quot;,	1.16	,
+&quot;05&quot;,	1.04	,
+&quot;06&quot;,	1.09	,
+&quot;07&quot;,	0.97	,
+&quot;08&quot;,	0.93	,
+&quot;09&quot;,	1.00	,
+&quot;10&quot;,	0.97	,
+&quot;11&quot;,	0.98	,
+&quot;12&quot;,	1.05	,
+1)
+,
+&quot;Japan&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.93	,
+&quot;02&quot;,	0.91	,
+&quot;03&quot;,	0.85	,
+&quot;04&quot;,	1.04	,
+&quot;05&quot;,	1.07	,
+&quot;06&quot;,	1.27	,
+&quot;07&quot;,	0.75	,
+&quot;08&quot;,	1.04	,
+&quot;09&quot;,	0.88	,
+&quot;10&quot;,	0.96	,
+&quot;11&quot;,	0.88	,
+&quot;12&quot;,	1.42	,
+1)
+,
+&quot;Korea&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.63	,
+&quot;02&quot;,	0.81	,
+&quot;03&quot;,	1.05	,
+&quot;04&quot;,	0.78	,
+&quot;05&quot;,	1.11	,
+&quot;06&quot;,	1.24	,
+&quot;07&quot;,	0.82	,
+&quot;08&quot;,	0.90	,
+&quot;09&quot;,	0.92	,
+&quot;10&quot;,	0.89	,
+&quot;11&quot;,	0.93	,
+&quot;12&quot;,	1.93	,
+1)
+,
+&quot;Taiwan&quot;,
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.84	,
+&quot;02&quot;,	0.97	,
+&quot;03&quot;,	1.13	,
+&quot;04&quot;,	0.95	,
+&quot;05&quot;,	1.17	,
+&quot;06&quot;,	1.50	,
+&quot;07&quot;,	0.40	,
+&quot;08&quot;,	0.95	,
+&quot;09&quot;,	1.06	,
+&quot;10&quot;,	0.88	,
+&quot;11&quot;,	1.01	,
+&quot;12&quot;,	1.16	,
+1)
+,
+/* Rest of APAC Offices*/
+CASE( RIGHT(Fiscal_Period2__c,2) ,
+&quot;01&quot;,	0.94	,
+&quot;02&quot;,	0.95	,
+&quot;03&quot;,	0.96	,
+&quot;04&quot;,	0.71	,
+&quot;05&quot;,	1.26	,
+&quot;06&quot;,	1.07	,
+&quot;07&quot;,	0.86	,
+&quot;08&quot;,	1.34	,
+&quot;09&quot;,	0.88	,
+&quot;10&quot;,	0.91	,
+&quot;11&quot;,	1.07	,
+&quot;12&quot;,	1.06	,
+1)
+)</formula>
+        <name>FUP: Update Season Index</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FUP_Update_Total_Sales_and_Order</fullName>
+        <description>Total sales = actual sales + order book</description>
+        <field>Total_Sales_and_Order__c</field>
+        <formula>Actual_Sales__c + Order_Book__c</formula>
+        <name>FUP: Update Total Sales and Order</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FUP_Update_external_Reference_ID</fullName>
+        <description>Update name of FUP with external reference ID</description>
+        <field>Name</field>
+        <formula>FCUPReference_ext_ID__c</formula>
+        <name>FUP: Update name of FUP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FUP_update_3_months_history_forward</fullName>
+        <description>Set to one if there is sales or orderbook in the period of 3 months in the past and 6 months in the future</description>
+        <field>X3_months_history__c</field>
+        <formula>X3_months_history_formula__c</formula>
+        <name>FUP: update 3 months history forward</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FUP_update_Future_Month</fullName>
+        <description>1 if month &gt;= actual month, 0 else</description>
+        <field>Future_Month__c</field>
+        <formula>Future_Month_formula__c</formula>
+        <name>FUP: update Future Month</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_6_months_period</fullName>
+        <field>X6_months_history__c</field>
+        <literalValue>1</literalValue>
+        <name>Update 6 months period</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_6_months_periods_false</fullName>
+        <field>X6_months_history__c</field>
+        <literalValue>0</literalValue>
+        <name>Update 6 months periods false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Budget_Actual_FP_false</fullName>
+        <field>Budget_Actual_FP__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Budget Actual FP false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Budget_Actual_FP_true</fullName>
+        <field>Budget_Actual_FP__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Budget Actual FP true</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Budget_Next_FP_false</fullName>
+        <field>Budget_next_FP__c</field>
+        <literalValue>0</literalValue>
+        <name>Update Budget Next FP false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Budget_Next_FP_true</fullName>
+        <field>Budget_next_FP__c</field>
+        <literalValue>1</literalValue>
+        <name>Update Budget Next FP true</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Last_Forecast_Manual_Update</fullName>
+        <field>Last_Forecast_Manual_Update__c</field>
+        <formula>TODAY()</formula>
+        <name>Update Last Forecast Manual Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>FUP%3A Update 3 months history%2C future month</fullName>
+        <actions>
+            <name>FUP_update_3_months_history_forward</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FUP_update_Future_Month</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.FCUPReference_ext_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update number fields that are set for certain time periods. This is used to filter roll-up summaries.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FUP%3A Update Last Forecast Manual Update</fullName>
+        <actions>
+            <name>Update_Last_Forecast_Manual_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When the manual forecast is changed, update the date of the last modification</description>
+        <formula>AND(
+ISCHANGED(Forecast_manual__c),
+NOT( ISCHANGED(API_Workflow_Rule__c) )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FUP%3A Update Name</fullName>
+        <actions>
+            <name>FUP_Update_external_Reference_ID</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Set name to external reference ID</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FUP%3A Update Season Index</fullName>
+        <actions>
+            <name>FUP_Update_Season_Index</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.FCUPReference_ext_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update season index depending on month and uB Office</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FUP%3A Update Total Sales and Order</fullName>
+        <actions>
+            <name>FUP_Copy_Forecast</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FUP_Copy_Forecast_Sales</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FUP_Update_Total_Sales_and_Order</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.FCUPReference_ext_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Calculate Total Sales as the sum of actual sales and order book</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update 6 months period false</fullName>
+        <actions>
+            <name>Update_6_months_periods_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.X6_months_history_formula__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update 6 months period true</fullName>
+        <actions>
+            <name>Update_6_months_period</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.X6_months_history_formula__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Budget Actual FP false</fullName>
+        <actions>
+            <name>Update_Budget_Actual_FP_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.Budget_Actual_FP_formula__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Budget Actual FP true</fullName>
+        <actions>
+            <name>Update_Budget_Actual_FP_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.Budget_Actual_FP_formula__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Budget Next FP false</fullName>
+        <actions>
+            <name>Update_Budget_Next_FP_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.Budget_Next_FP_formula__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Budget Next FP true</fullName>
+        <actions>
+            <name>Update_Budget_Next_FP_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit_Period__c.Budget_Next_FP_formula__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

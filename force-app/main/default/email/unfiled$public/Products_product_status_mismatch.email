@@ -1,0 +1,16 @@
+{!Product2.Type_No__c} Product Status mismatches the gate dates.
+
+Product status: {!Product2.Product_Status__c}
+
+PT Availability Date: {!Product2.PT_Availability_Date__c}
+ES Availability Date: {!Product2.ES_Availability_Date__c}
+IP Availability Date: {!Product2.IP_Availability_Date__c}
+MP Availability Date: {!Product2.MP_Availability_Date__c}
+EOL/PCN Issue Date: {!Product2.EOL_PCN_Issue_Date__c}
+Last Shipment Date: {!Product2.Last_Shipment_Date__c}
+
+Please ensure the follow-up:
+- Product status change in Abacus
+
+
+Link to record: {!Product2.Link}

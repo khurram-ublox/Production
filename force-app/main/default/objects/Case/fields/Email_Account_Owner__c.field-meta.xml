@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Account_Owner__c</fullName>
+    <description>Used for workflows.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Email address of the account owner related to this Case.</inlineHelpText>
+    <label>Email Account Owner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

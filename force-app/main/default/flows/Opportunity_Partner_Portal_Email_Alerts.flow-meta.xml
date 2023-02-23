@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Opp_edited_by_distributor_not_owner_for_Partner_Portal</name>
+        <label>Opp: edited by distributor not owner for Partner Portal</label>
+        <locationX>630</locationX>
+        <locationY>894</locationY>
+        <actionName>Opportunity.Opp_edited_by_distributor_not_owner_for_Partner_Portal</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Reminder_of_Stage_5_to_FAE_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opp_Owner_different_from_Account_Owner_for_Partner_Portal</name>
+        <label>Opp: Owner different from Account Owner for Partner Portal</label>
+        <locationX>629</locationX>
+        <locationY>1488</locationY>
+        <actionName>Opportunity.Opp_Owner_different_from_Account_Owner_for_Partner_Portal</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Opp_Reminder_Stage_5_to_FAE_for_Partner_Portal</name>
+        <label>Opp: Reminder Stage 5 to FAE for Partner Portal</label>
+        <locationX>628</locationX>
+        <locationY>1203</locationY>
+        <actionName>Opportunity.Opp_Reminder_Stage_5_to_FAE_Partner_Portal</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_Owner_different_from_Account_Owner_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Is_Email_Notification_Turned_On</name>
+        <label>Is Email Notification Turned On</label>
+        <locationX>363</locationX>
+        <locationY>499</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_Notification</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Flow_Notification_Settings__c.Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision</targetReference>
+            </connector>
+            <label>Send Email Notification</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Email alert if opportunity has been edited by distributors (only APAC)</description>
+        <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Decision</name>
+        <label>Opp: Inform Owner if Opp edited by distributor Decision</label>
+        <locationX>364</locationX>
+        <locationY>754</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Reminder_of_Stage_5_to_FAE_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Inform_Owner_if_Opp_edited_by_distributor</name>
+            <conditionLogic>1 AND 2 AND ( 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>Opp_Inform_Owner_if_Opp_edited_by_distributor_Criteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_edited_by_distributor_not_owner_for_Partner_Portal</targetReference>
+            </connector>
+            <label>Opp: Inform Owner if Opp edited by distributor</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Email notification to both Account and Opportunity Owners when they are different</description>
+        <name>Opp_Owner_different_from_Account_Owner_Decision</name>
+        <label>Opp: Owner different from Account Owner Decision</label>
+        <locationX>362</locationX>
+        <locationY>1346</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Owner_different_from_Account_Owner</name>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.OwnerDifferent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>1.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Opportunity</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.OwnerDifferent__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.OwnerDifferent__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.Owner.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Owner_different_from_Account_Owner_for_Partner_Portal</targetReference>
+            </connector>
+            <label>Opp: Owner different from Account Owner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Reminder of Stage 5 to FAE (NOTE: Previously this WF was only for Focus=1,2,3)</description>
+        <name>Opp_Reminder_of_Stage_5_to_FAE_Decision</name>
+        <label>Opp: Reminder of Stage 5 to FAE Decision</label>
+        <locationX>363</locationX>
+        <locationY>1040</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Owner_different_from_Account_Owner_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Opp_Reminder_of_Stage_5_to_FAE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>RecordPrior.StageName</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.Account.uB_Office__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Record.FAE_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>RecordisNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Opp_Reminder_Stage_5_to_FAE_for_Partner_Portal</targetReference>
+            </connector>
+            <label>Opp: Reminder of Stage 5 to FAE</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Opp_Inform_Owner_if_Opp_edited_by_distributor_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Latest_Status__c} &lt;&gt; {!RecordPrior.Latest_Status__c},
+        {!Record.Decision_Date__c} &lt;&gt; {!RecordPrior.Decision_Date__c},
+        {!Record.Proto_Date__c} &lt;&gt; {!RecordPrior.Proto_Date__c},
+        {!Record.CloseDate} &lt;&gt; {!RecordPrior.CloseDate},
+        Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+    {!Record.LastModifiedBy.Profile.Name} = &quot;Portal - Partner Base&quot;,
+   {!Record.LastModifiedById} &lt;&gt; {!Record.OwnerId},
+    NOT(
+        OR(
+            Text({!Record.Account.uB_Office__c}) = &quot;Americas&quot;,
+            Text({!Record.Account.uB_Office__c}) = &quot;EMEA&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Opportunity_alert_for_CDMA_module_project_criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+	OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Product_4__c} &lt;&gt; {!RecordPrior.Product_4__c},
+        {!Record.Product_5__c} &lt;&gt; {!RecordPrior.Product_5__c},
+	    Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+	OR(
+        BEGINS({!Record.Product_1__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_1__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_2__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_2__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_3__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_3__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_4__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_4__r.Name},&quot;FW&quot;),
+        BEGINS({!Record.Product_5__r.Name},&quot;LISA-C&quot;),BEGINS({!Record.Product_5__r.Name},&quot;FW&quot;)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Opportunity_alert_for_GSM_module_project_Criteria</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+	OR(
+        {!Record.Product_1__c} &lt;&gt; {!RecordPrior.Product_1__c},
+        {!Record.Product_2__c} &lt;&gt; {!RecordPrior.Product_2__c},
+        {!Record.Product_3__c} &lt;&gt; {!RecordPrior.Product_3__c},
+        {!Record.Product_4__c} &lt;&gt; {!RecordPrior.Product_4__c},
+        {!Record.Product_5__c} &lt;&gt; {!RecordPrior.Product_5__c},
+	    Text({!Record.StageName}) &lt;&gt; Text({!RecordPrior.StageName})
+    ),
+	OR(
+        BEGINS({!Record.Product_1__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_1__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_2__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_2__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_3__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_3__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_4__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_4__r.Name},&quot;SARA-G&quot;),
+        BEGINS({!Record.Product_5__r.Name},&quot;LEON&quot;),BEGINS({!Record.Product_5__r.Name},&quot;SARA-G&quot;)
+	)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Post_to_Marketing_Management_Message</name>
+        <dataType>String</dataType>
+        <expression>&quot;The following +&apos;Record.RecordType.Name&apos;+ has been updated. \n \n Name: +&apos;Record.Name&apos;+ https://u-blox.my.salesforce.com/+&apos;Record.Id&apos;+ \n Account: &quot;+{!Record.Account.Name}</expression>
+    </formulas>
+    <formulas>
+        <name>Prior_LastModifiedDateFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>{!RecordPrior.LastModifiedDate}+0.000694*3</expression>
+    </formulas>
+    <interviewLabel>Opportunity: Partner Portal Email Alerts {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: Partner Portal Email Alerts</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <runInMode>DefaultMode</runInMode>
+    <start>
+        <locationX>244</locationX>
+        <locationY>271</locationY>
+        <connector>
+            <targetReference>Is_Email_Notification_Turned_On</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>RecordisNew</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>RecordPrior</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>updateFlag</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

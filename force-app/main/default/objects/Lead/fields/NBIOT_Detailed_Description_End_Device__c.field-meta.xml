@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NBIOT_Detailed_Description_End_Device__c</fullName>
+    <description>For NB-IoT Form</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For NB-IoT Form</inlineHelpText>
+    <label>NBIOT Detailed Description End Device</label>
+    <length>10000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <email>ladm-team-emea@u-blox.com</email>
+    <name>Logistics Admin EMEA</name>
+    <queueMembers>
+        <users>
+            <user>peter.zimmermann@u-blox.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Samples__c</sobjectType>
+    </queueSobject>
+</Queue>

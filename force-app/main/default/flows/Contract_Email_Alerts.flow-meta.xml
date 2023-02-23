@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_Notification_to_u_blox_Legal</name>
+        <label>Email Notification to u-blox Legal</label>
+        <locationX>516</locationX>
+        <locationY>599</locationY>
+        <actionName>Contract.Contract_Activation_alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>EUS_Contract_Activated</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>currentRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Sales_Admin_China</name>
+        <label>Sales Admin China</label>
+        <locationX>730</locationX>
+        <locationY>928</locationY>
+        <actionName>Contract.Contract_EUS_Available_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Related_Account</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>currentRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Sales_Admin_Myanmar</name>
+        <label>Sales Admin Myanmar</label>
+        <locationX>728</locationX>
+        <locationY>1144</locationY>
+        <actionName>Contract.Contract_EUS_Available_Email_Alert_MM</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Related_Account</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>currentRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Sales_Admin_RU_AND_VE</name>
+        <label>Sales Admin RU AND VE</label>
+        <locationX>723</locationX>
+        <locationY>1356</locationY>
+        <actionName>Contract.Contract_EUS_Available_Email_Alert_RU_VE</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Update_Related_Account</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>currentRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>EUS_Contract_Activated</name>
+        <label>EUS Contract Activated</label>
+        <locationX>219</locationX>
+        <locationY>738</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>EUS_Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentRecord.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Activated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>currentRecord.Contract_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>End Use Statement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>priorRecord.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Activated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>EUS_for_China</targetReference>
+            </connector>
+            <label>EUS Available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>EUS_for_China</name>
+        <label>EUS for China</label>
+        <locationX>465</locationX>
+        <locationY>926</locationY>
+        <defaultConnector>
+            <targetReference>EUS_for_Myanmar</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Notification_to_China_Admin</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentRecord.Account.BillingCountryFormula__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CN</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sales_Admin_China</targetReference>
+            </connector>
+            <label>Send Notification to China Admin</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>EUS_for_Myanmar</name>
+        <label>EUS for Myanmar</label>
+        <locationX>467</locationX>
+        <locationY>1146</locationY>
+        <defaultConnector>
+            <targetReference>EUS_for_Russia_and_Venezuela</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Notification_Myanmar_Admin</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentRecord.Account.BillingCountryFormula__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MM</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sales_Admin_Myanmar</targetReference>
+            </connector>
+            <label>Send Notification Myanmar Admin</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>EUS_for_Russia_and_Venezuela</name>
+        <label>EUS for Russia and Venezuela</label>
+        <locationX>466</locationX>
+        <locationY>1359</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Notification_to_Russia_Admin</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>currentRecord.Account.BillingCountryFormula__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>RU</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>currentRecord.Account.BillingCountryFormula__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sales_Admin_RU_AND_VE</targetReference>
+            </connector>
+            <label>Send Notification to Russia Admin</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Email_Notification_Turned_On</name>
+        <label>Is Email Notification Turned On</label>
+        <locationX>219</locationX>
+        <locationY>236</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Email_Notification</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Flow_Notification_Settings__c.Contract__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Sales_Agreement_Contract_Activated</targetReference>
+            </connector>
+            <label>Send Email Notification</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Sales_Agreement_Contract_Activated</name>
+        <label>Sales Agreement Contract Activated</label>
+        <locationX>218</locationX>
+        <locationY>488</locationY>
+        <defaultConnector>
+            <targetReference>EUS_Contract_Activated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Activation_Email_to_u_blox_Legal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentRecord.Contract_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sales Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>currentRecord.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Activated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>priorRecord.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Activated</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Email_Notification_to_u_blox_Legal</targetReference>
+            </connector>
+            <label>Activation Email to u-blox Legal</label>
+        </rules>
+    </decisions>
+    <description>Flow on Contract to send Email Alerts</description>
+    <interviewLabel>Contract: Email Alerts {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract: Email Alerts</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Related_Account</name>
+        <label>Update Related Account</label>
+        <locationX>1002</locationX>
+        <locationY>1144</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>currentRecord.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EUS_Available__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Potential_military_use__c</field>
+            <value>
+                <stringValue>EUS Required</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>101</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Is_Email_Notification_Turned_On</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>currentRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contract</objectType>
+    </variables>
+    <variables>
+        <name>priorRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contract</objectType>
+    </variables>
+</Flow>

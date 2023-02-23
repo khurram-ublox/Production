@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RecalculateContributionIN</fullName>
+    <columns>NAME</columns>
+    <columns>Invoice_Date__c</columns>
+    <columns>Calculate_Total_COGS_CHF__c</columns>
+    <columns>Product_ID__c</columns>
+    <columns>Qty_Invoiced__c</columns>
+    <columns>Price_CHF__c</columns>
+    <columns>Use_Restriction__c</columns>
+    <columns>Total_Value_CHF__c</columns>
+    <columns>Total_Contribution_CHF__c</columns>
+    <columns>Total_IPR_Cost_CHF__c</columns>
+    <columns>Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Order_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Invoice_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>10/1/2014</value>
+    </filters>
+    <filters>
+        <field>SF_Account_Number__c</field>
+        <operation>equals</operation>
+        <value>3098</value>
+    </filters>
+    <label>Recalculate contribution WL</label>
+    <sharedTo>
+        <group>MasterAccess</group>
+    </sharedTo>
+</ListView>

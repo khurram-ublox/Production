@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_EUR__c</fullName>
+    <externalId>false</externalId>
+    <formula>COGS_1__c * $User.USDtoEUR__c</formula>
+    <inlineHelpText>Cost in Euro. Calculated from COGS and exchange rate for the current month.</inlineHelpText>
+    <label>COGS EUR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

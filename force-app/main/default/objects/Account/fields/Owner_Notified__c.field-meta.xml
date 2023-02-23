@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner_Notified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Account has been created from Abacus and the email alert has been sent to the new Owner.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked if the Account has been created from Abacus and the email alert has been sent to the new Owner.</inlineHelpText>
+    <label>Owner Notified</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,5 @@
+Please be aware that {!Billings__c.Product__c} has been ordered.
+Account: {!Billings__c.Account__c}
+Product: {!Billings__c.Product__c}
+
+Link: {!Billings__c.Link}

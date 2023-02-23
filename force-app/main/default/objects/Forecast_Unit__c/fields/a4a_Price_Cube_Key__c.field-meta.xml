@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Price_Cube_Key__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+a4a_isAboveTreshold__c = True 
+&amp;&amp; 
+LEN(Project_Owner_Account__r.SF_Account_Number__c) &gt; 0 
+, 
+&quot;/ProjectOwner:&quot; 
+&amp; 
+Project_Owner_Account__r.SF_Account_Number__c 
+&amp; 
+&quot;/Product:&quot; 
+&amp; 
+BLANKVALUE(Product__r.ProductCode,&quot;Other&quot;) 
+&amp; 
+&quot;/Country:&quot; 
+&amp; 
+BLANKVALUE(UPPER(Project_Owner_Account__r.BillingCountry),&quot;Other&quot;) 
+&amp; 
+&quot;/ProductCategory:&quot; 
+&amp; 
+BLANKVALUE(TEXT(Product__r.Reporting_Category__c),&quot;Other&quot;) 
+&amp; 
+&quot;/Region:&quot; 
+&amp; 
+BLANKVALUE(TEXT(Project_Owner_Account__r.uB_Office__c),&quot;Other&quot;) 
+&amp; 
+&quot;/UnitType:&quot; 
+&amp; 
+&quot;GC&quot; 
+&amp; 
+&quot;/Unit:&quot; 
+&amp; 
+&quot;CHF&quot; 
+&amp; 
+&quot;/Meaning:Price&quot; 
+&amp; 
+&quot;/Cube:Price&quot; 
+&amp; 
+&quot;/&quot; 
+, 
+NULL 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Price Cube Key</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

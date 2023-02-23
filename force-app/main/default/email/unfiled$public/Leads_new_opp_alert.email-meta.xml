@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>(Inactive) Made for APAC chip project qualification</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Leads: new opp alert</name>
+    <style>none</style>
+    <subject>CCP stage 2 -  {!Lead.Company}_ {!Lead.Products_Of_Interest__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

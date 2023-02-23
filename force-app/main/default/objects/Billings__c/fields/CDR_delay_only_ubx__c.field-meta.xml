@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CDR_delay_only_ubx__c</fullName>
+    <description>If the reason for a delay is not equal to &quot;financial&quot; or &quot;customer request&quot;, the value is =CDR delay, else &quot;0&quot;</description>
+    <externalId>false</externalId>
+    <formula>IF(OR(CONTAINS (Confirm_Date_Not_Met__c, &quot;Financial&quot;), CONTAINS (Confirm_Date_Not_Met__c, &quot;request&quot;)), 0, CDR_delay__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>If the reason for a delay is not equal to &quot;financial&quot; or &quot;customer request&quot;, the value is = CDR delay, else &quot;0&quot;</inlineHelpText>
+    <label>CDR delay only ubx</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

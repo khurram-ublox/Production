@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>API_Workflow_Rule__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This fields is for API purposes to not update &apos;Month&apos; when &apos;Manual Forecast&apos; is changed. The field is defined in the workflow rule FUP: Update Last Forecast Manual Update, ID: 01QD0000000CDtF</description>
+    <externalId>false</externalId>
+    <label>API Workflow Rule</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

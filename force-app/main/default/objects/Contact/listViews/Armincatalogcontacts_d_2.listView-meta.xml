@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Armincatalogcontacts_d_2</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <columns>CONTACT.ADDRESS2_CITY</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>PCN_Automotive_Chips__c</columns>
+    <columns>PCN_Standard_Chips__c</columns>
+    <columns>PCN_Modules_Services__c</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>Becker,Harman,Bosch,Delphi,Continental,Panasonic,Alpine,Mitsubishi,Kostal,denso</value>
+    </filters>
+    <label>Automotive Accounts</label>
+    <language>en_US</language>
+    <sharedTo>
+        <role>Americas</role>
+    </sharedTo>
+</ListView>

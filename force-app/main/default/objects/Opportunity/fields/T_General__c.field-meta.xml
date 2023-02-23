@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_General__c</fullName>
+    <defaultValue>&quot;Prices are to be understood in the indicated currency and exclusive of VAT. Prices are valid for a firm purchase order for the total quoted quantity and shipment within 12 months after the date of order confirmation. Call-offs are only accepted in multiples of the packing unit. This quotation is valid for 30 days and supersedes all previous quotations. Payment terms are as indicated below. The attached General Terms and Conditions apply.&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>T General</label>
+    <length>1024</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

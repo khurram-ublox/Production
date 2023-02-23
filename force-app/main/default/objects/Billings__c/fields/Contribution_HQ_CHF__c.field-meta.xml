@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution_HQ_CHF__c</fullName>
+    <description>This is a formula field because there is a workflow that otherwise calls more than the limit of 10 field updates (Order: recalculate contribution)</description>
+    <externalId>false</externalId>
+    <formula>Total_Contribution_CHF__c  -
+ Contribution_Americas_CHF__c -
+ Contribution_China_CHF__c -
+ Contribution_EMEA_CHF__c -
+ Contribution_Japan__c -
+ Contribution_Korea_CHF__c -
+ Contribution_RoA_CHF__c -
+ Contribution_Taiwan_CHF__c -
+ Contribution_India_CHF__c -
+ Contribution_Australia_CHF__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Contribution that is assigned to Headquarters. Stored when order is closed.</inlineHelpText>
+    <label>Contribution Corporate CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

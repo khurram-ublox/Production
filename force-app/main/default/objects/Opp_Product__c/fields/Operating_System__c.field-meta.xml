@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operating_System__c</fullName>
+    <externalId>false</externalId>
+    <label>Operating System</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Embedded Linux</fullName>
+                <default>false</default>
+                <label>Embedded Linux</label>
+            </value>
+            <value>
+                <fullName>Yocto Linux</fullName>
+                <default>false</default>
+                <label>Yocto Linux</label>
+            </value>
+            <value>
+                <fullName>Ubuntu Linux</fullName>
+                <default>false</default>
+                <label>Ubuntu Linux</label>
+            </value>
+            <value>
+                <fullName>Other Linux</fullName>
+                <default>false</default>
+                <label>Other Linux</label>
+            </value>
+            <value>
+                <fullName>Android</fullName>
+                <default>false</default>
+                <label>Android</label>
+            </value>
+            <value>
+                <fullName>QNX</fullName>
+                <default>false</default>
+                <label>QNX</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

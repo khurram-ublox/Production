@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_COGS_Info__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This is the link to currently valid COGS information</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the link to currently valid COGS information</inlineHelpText>
+    <label>Predicted COGS Info</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Products</relationshipLabel>
+    <relationshipName>Products1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comment_required_if_no_price_no_quantity</fullName>
+    <active>true</active>
+    <errorConditionFormula>((ISBLANK(Unit_Price_USD__c)||ISBLANK(Quantity__c)||LEFT( Competitor_Product__r.Name ,7)=&quot;Unknown&quot;))&amp;&amp;ISBLANK(Comment__c)</errorConditionFormula>
+    <errorDisplayField>Comment__c</errorDisplayField>
+    <errorMessage>Please add comment if Competitor Product, Quantity or Unit Price is unknown.</errorMessage>
+</ValidationRule>

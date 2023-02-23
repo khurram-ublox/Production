@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distribution_Partner__c</fullName>
+    <externalId>false</externalId>
+    <label>Distribution Partner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>RFPD</fullName>
+                <default>false</default>
+                <label>RFPD</label>
+            </value>
+            <value>
+                <fullName>Digi-Key</fullName>
+                <default>false</default>
+                <label>Digi-Key</label>
+            </value>
+            <value>
+                <fullName>Mouser</fullName>
+                <default>false</default>
+                <label>Mouser</label>
+            </value>
+            <value>
+                <fullName>Symmetry Electronics</fullName>
+                <default>false</default>
+                <label>Symmetry Electronics</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

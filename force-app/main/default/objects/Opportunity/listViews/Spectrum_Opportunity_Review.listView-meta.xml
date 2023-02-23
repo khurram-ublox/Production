@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spectrum_Opportunity_Review</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Focus__c</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Opp_Total_Revenue__c</columns>
+    <columns>Design_win_Date__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>FAE__c</columns>
+    <columns>Account_Channel_Manager__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Latest_Status_Modified__c</columns>
+    <columns>Latest_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Channel_Manager__c</field>
+        <operation>equals</operation>
+        <value>Bob Colburn</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Opportunity</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Powell</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>equals</operation>
+        <value>3 Calling on,4 Evaluation,5 Design-in,6 Prototypes,7 Pre-Production</value>
+    </filters>
+    <label>Spectrum Opportunity Review</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

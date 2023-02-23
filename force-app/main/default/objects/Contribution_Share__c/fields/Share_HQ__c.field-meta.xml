@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Share_HQ__c</fullName>
+    <externalId>false</externalId>
+    <formula>1 - Share_Americas__c - Share_China__c - Share_EMEA__c - Share_Japan__c - Share_Korea__c - Share_Taiwan__c - Share_RoA__c -  Share_India__c  -  Share_Australia__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Share HQ = 100% - share of all other regions</inlineHelpText>
+    <label>Share HQ</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

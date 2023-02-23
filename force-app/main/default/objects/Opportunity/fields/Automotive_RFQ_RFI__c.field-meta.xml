@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automotive_RFQ_RFI__c</fullName>
+    <description>Link to DMS where the original document is stored. The finalised document should be attached to this Quotation under Notes &amp; Attachment.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Link to DMS where the original document is stored.</inlineHelpText>
+    <label>Automotive RFQ/RFI</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Url</type>
+</CustomField>

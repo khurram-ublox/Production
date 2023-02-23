@@ -1,0 +1,11 @@
+*** order alert ***
+
+The following order has been assigned to another Account. Corrective action:
+- delete the order record in Salesforce
+- open the order in Abacus and save again.
+=> a new order record with the correct connection to the Account will be created
+
+Account old: {!Billings__c.Account__c}
+Order No: {!Billings__c.Name}
+
+Link to record: {!Billings__c.Link}

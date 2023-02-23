@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Focus__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>+ Focus-1 Attention from EC. &gt;  500k CHF contribution, requires direct coverage and special FAE/RAE/AE support. 
++ Focus-2 Special attention by regional sales heads or country managers. &gt; 250k CHF contribution.
++ Focus-3 Any opportunity which is important for region and will have direct u-blox resources assigned (A, B or C account). 
++ Focus-4 Distributor opportunity which can be supported Disti FAE
++ Focus-5 no direct u-blox support. Supported through Portal or channel partner</inlineHelpText>
+    <label>Focus</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Corporate</fullName>
+                <default>false</default>
+                <label>1 - Corporate</label>
+            </value>
+            <value>
+                <fullName>2 - Region</fullName>
+                <default>false</default>
+                <label>2 - Region</label>
+            </value>
+            <value>
+                <fullName>3 - Territory</fullName>
+                <default>false</default>
+                <label>3 - Territory</label>
+            </value>
+            <value>
+                <fullName>4 - Area</fullName>
+                <default>false</default>
+                <label>4 - Area</label>
+            </value>
+            <value>
+                <fullName>5 - Portal</fullName>
+                <default>true</default>
+                <label>5 - Portal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

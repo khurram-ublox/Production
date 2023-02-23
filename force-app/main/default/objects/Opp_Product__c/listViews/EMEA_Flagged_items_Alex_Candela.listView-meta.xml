@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Flagged_items_Alex_Candela</fullName>
+    <columns>Opportunity_Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Product__c</columns>
+    <columns>Revenue__c</columns>
+    <columns>Opportunity_Stage__c</columns>
+    <columns>NAME</columns>
+    <columns>Flagged_Item__c</columns>
+    <columns>Demand_Forecast__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Flagged_Item__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Channel_Manager__c</field>
+        <operation>contains</operation>
+        <value>Alex Candela</value>
+    </filters>
+    <label>EMEA Flagged items Alex Candela</label>
+    <sharedTo>
+        <group>Sales_EMEA</group>
+    </sharedTo>
+</ListView>

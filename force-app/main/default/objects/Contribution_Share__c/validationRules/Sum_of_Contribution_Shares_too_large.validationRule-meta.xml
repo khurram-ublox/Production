@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_of_Contribution_Shares_too_large</fullName>
+    <active>true</active>
+    <errorConditionFormula>or(Share_HQ__c &gt; 1, Share_HQ__c &lt; 0)</errorConditionFormula>
+    <errorMessage>The sum of all &quot;Share xx&quot; fields, shown as &quot;Share HQ&quot;, must be between 0% and 100%</errorMessage>
+</ValidationRule>

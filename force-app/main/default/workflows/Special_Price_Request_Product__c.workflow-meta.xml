@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>SPRP_Fill_CHFtoUSD</fullName>
+        <field>CHFtoUSD__c</field>
+        <formula>1/$User.USDtoCHF__c</formula>
+        <name>SPRP: Fill CHFtoUSD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_EURtoUSD</fullName>
+        <field>EURtoUSD__c</field>
+        <formula>1/$User.USDtoEUR__c</formula>
+        <name>SPRP: Fill EURtoUSD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_Exchange_Rate_Date</fullName>
+        <field>Exchange_Rate_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>SPRP: Fill Exchange Rate Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_IPR_Pct</fullName>
+        <field>IPR_Pct__c</field>
+        <formula>CASE(
+CASE (IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;All except Interdigital&quot;,&quot;4&quot;,
+&quot;All except Qualcomm and Interdigital&quot;,&quot;5&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct__c,
+0),
+&quot;1&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct__c,
+0),
+&quot;3&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c,
+0),
+&quot;4&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct_IDC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct_IDC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct_IDC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct_IDC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct_IDC__c,
+0),
+&quot;5&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct_QC_IDC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct_QC_IDC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct_QC_IDC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct_QC_IDC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct_QC_IDC__c,
+0),
+0
+)</formula>
+        <name>SPRP: Fill IPR Pct</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_IPR_USD</fullName>
+        <field>IPR_USD__c</field>
+        <formula>CASE(
+CASE (IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;All except Interdigital&quot;,&quot;4&quot;,
+&quot;All except Qualcomm and Interdigital&quot;,&quot;5&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD__c,
+0),
+&quot;1&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD__c,
+0),
+&quot;3&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c,
+0),
+&quot;4&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_IDC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_IDC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_IDC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_IDC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_IDC__c,
+0),
+&quot;5&quot;,CASE (RIGHT (TEXT(Use_Restriction__c), LEN(TEXT(Use_Restriction__c))-FIND(&quot; &quot;,TEXT(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_QC_IDC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_QC_IDC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_QC_IDC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_QC_IDC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_QC_IDC__c,
+0),
+0
+)</formula>
+        <name>SPRP: Fill IPR USD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_JPYtoUSD</fullName>
+        <field>JPYtoUSD__c</field>
+        <formula>1/ $User.USDtoJPY__c</formula>
+        <name>SPRP: Fill JPYtoUSD</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_Product_Cost_1</fullName>
+        <description>Copy Product:COG4</description>
+        <field>Product_Cost_P1__c</field>
+        <formula>Product__r.COGS_4__c</formula>
+        <name>SPRP: Fill Product Cost 1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_Product_Cost_2</fullName>
+        <field>Product_Cost_P2__c</field>
+        <formula>Product__r.COGS_4__c</formula>
+        <name>SPRP: Fill Product Cost 2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_Product_Cost_3</fullName>
+        <field>Product_Cost_P3__c</field>
+        <formula>Product__r.COGS_4__c</formula>
+        <name>SPRP: Fill Product Cost 3</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_Product_Cost_4</fullName>
+        <field>Product_Cost_P4__c</field>
+        <formula>Product__r.COGS_4__c</formula>
+        <name>SPRP: Fill Product Cost 4</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Fill_Product_Cost_5</fullName>
+        <field>Product_Cost_P5__c</field>
+        <formula>Product__r.COGS_4__c</formula>
+        <name>SPRP: Fill Product Cost 5</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Product_Center_Cellular</fullName>
+        <field>Product_Center_picklist__c</field>
+        <literalValue>Cellular</literalValue>
+        <name>SPRP: Product Center Cellular</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Product_Center_Positioning</fullName>
+        <field>Product_Center_picklist__c</field>
+        <literalValue>Positioning</literalValue>
+        <name>SPRP: Product Center Positioning</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPRP_Product_Center_Short_Range</fullName>
+        <field>Product_Center_picklist__c</field>
+        <literalValue>Short Range</literalValue>
+        <name>SPRP: Product Center Short Range</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>SPRP%3A Fill IPR%2C FX rates</fullName>
+        <actions>
+            <name>SPRP_Fill_Exchange_Rate_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPRP_Fill_IPR_Pct</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPRP_Fill_IPR_USD</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.CreatedDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Populates IPR and exchange rates required for contribution calculation</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Fill Product Cost 1</fullName>
+        <actions>
+            <name>SPRP_Fill_Product_Cost_1</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Unit_Price_P1__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Product_Cost_P1__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populates Product Cost 1 (copied from Product:COGS 1)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Fill Product Cost 2</fullName>
+        <actions>
+            <name>SPRP_Fill_Product_Cost_2</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Unit_Price_P2__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Product_Cost_P2__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populates Product Cost 2 (copied from Product:COGS 1)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Fill Product Cost 3</fullName>
+        <actions>
+            <name>SPRP_Fill_Product_Cost_3</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Unit_Price_P3__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Product_Cost_P3__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populates Product Cost 3 (copied from Product:COGS 1)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Fill Product Cost 4</fullName>
+        <actions>
+            <name>SPRP_Fill_Product_Cost_4</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Unit_Price_P4__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Product_Cost_P4__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populates Product Cost 4 (copied from Product:COGS 1)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Fill Product Cost 5</fullName>
+        <actions>
+            <name>SPRP_Fill_Product_Cost_5</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Unit_Price_P5__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request_Product__c.Product_Cost_P5__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Populates Product Cost 5 (copied from Product:COGS 1)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Product Center CEL</fullName>
+        <actions>
+            <name>SPRP_Product_Center_Cellular</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISPICKVAL(Product__r.Product_Center__c, &quot;Cellular&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Product Center POS</fullName>
+        <actions>
+            <name>SPRP_Product_Center_Positioning</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISPICKVAL(Product__r.Product_Center__c, &quot;Positioning&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPRP%3A Product Center SHO</fullName>
+        <actions>
+            <name>SPRP_Product_Center_Short_Range</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISPICKVAL(Product__r.Product_Center__c, &quot;Short Range&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

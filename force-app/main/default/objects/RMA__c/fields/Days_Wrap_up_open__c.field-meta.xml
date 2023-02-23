@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Days_Wrap_up_open__c</fullName>
+    <externalId>false</externalId>
+    <formula>case( RMA_Status__c ,
+&quot;6 Closed&quot;,  Date_Credit_Note__c  -  Date_Parts_received__c ,
+today() - Date_Parts_received__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>(Date_Parts_received) until (Date_Credit_Note)</inlineHelpText>
+    <label>Days Wrap-up open</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Key Opportunity information for a wireless design project</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Opportunity: alert for wireless design</name>
+    <style>none</style>
+    <subject>SF alert: Wireless opportunity {!Opportunity.Account}, {!Opportunity.00N20000001dpcJ}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Failure_detail__c</fullName>
+    <description>Indicates what exactly the error was</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates what exactly the error was</inlineHelpText>
+    <label>Failure detail</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Failure_mode__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>wrong p/n offered</fullName>
+                <default>false</default>
+                <label>wrong p/n offered</label>
+            </value>
+            <value>
+                <fullName>wrong p/n requested at logistics</fullName>
+                <default>false</default>
+                <label>wrong p/n requested at logistics</label>
+            </value>
+            <value>
+                <fullName>wrong p/n confirmed by logistics</fullName>
+                <default>false</default>
+                <label>wrong p/n confirmed by logistics</label>
+            </value>
+            <value>
+                <fullName>wrong p/n entered in Abacus order</fullName>
+                <default>false</default>
+                <label>wrong p/n entered in Abacus order</label>
+            </value>
+            <value>
+                <fullName>wrong qty entered in Abacus order</fullName>
+                <default>false</default>
+                <label>wrong qty entered in Abacus order</label>
+            </value>
+            <value>
+                <fullName>type number changed over time</fullName>
+                <default>false</default>
+                <label>type number changed over time</label>
+            </value>
+            <value>
+                <fullName>wrong p/n ordered</fullName>
+                <default>false</default>
+                <label>wrong p/n ordered</label>
+            </value>
+            <value>
+                <fullName>wrong qty ordered - goodwill return</fullName>
+                <default>false</default>
+                <label>wrong qty ordered - goodwill return</label>
+            </value>
+            <value>
+                <fullName>return for FW upgrade</fullName>
+                <default>false</default>
+                <label>return for FW upgrade</label>
+            </value>
+            <value>
+                <fullName>expedite packs wrong parts</fullName>
+                <default>false</default>
+                <label>expedite packs wrong parts</label>
+            </value>
+            <value>
+                <fullName>expedite mixes up parcels</fullName>
+                <default>false</default>
+                <label>expedite mixes up parcels</label>
+            </value>
+            <value>
+                <fullName>expedite packs wrong quantity</fullName>
+                <default>false</default>
+                <label>expedite packs wrong quantity</label>
+            </value>
+            <value>
+                <fullName>stock return to u-blox</fullName>
+                <default>false</default>
+                <label>stock return to u-blox</label>
+            </value>
+            <value>
+                <fullName>Flex produced wrong version (FW or HW)</fullName>
+                <default>false</default>
+                <label>Flex produced wrong version (FW or HW)</label>
+            </value>
+            <value>
+                <fullName>Damaged product</fullName>
+                <default>false</default>
+                <label>Damaged product</label>
+            </value>
+            <value>
+                <fullName>Flextronics label issue</fullName>
+                <default>false</default>
+                <label>Flextronics label issue</label>
+            </value>
+            <value>
+                <fullName>Amkor label issue</fullName>
+                <default>false</default>
+                <label>Amkor label issue</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Failure u-blox</controllingFieldValue>
+            <valueName>wrong p/n offered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure u-blox</controllingFieldValue>
+            <valueName>wrong p/n requested at logistics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure u-blox</controllingFieldValue>
+            <valueName>wrong p/n confirmed by logistics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure u-blox</controllingFieldValue>
+            <valueName>wrong p/n entered in Abacus order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure u-blox</controllingFieldValue>
+            <valueName>wrong qty entered in Abacus order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure u-blox</controllingFieldValue>
+            <valueName>type number changed over time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure Customer</controllingFieldValue>
+            <valueName>wrong p/n ordered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure Customer</controllingFieldValue>
+            <valueName>wrong qty ordered - goodwill return</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure Customer</controllingFieldValue>
+            <valueName>return for FW upgrade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure Customer</controllingFieldValue>
+            <valueName>stock return to u-blox</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure expedite</controllingFieldValue>
+            <valueName>expedite packs wrong parts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure expedite</controllingFieldValue>
+            <valueName>expedite mixes up parcels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure expedite</controllingFieldValue>
+            <valueName>expedite packs wrong quantity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure Production</controllingFieldValue>
+            <valueName>Flex produced wrong version (FW or HW)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Failure Production</controllingFieldValue>
+            <valueName>Damaged product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Flextronics label issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Amkor label issue</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

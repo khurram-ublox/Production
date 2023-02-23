@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Environment_check_for_SHO</fullName>
+    <active>false</active>
+    <description>Don&apos;t allow to save if Software Environment is empty. Profile API Admin is excluded.</description>
+    <errorConditionFormula>AND(
+RecordTypeId=&quot;012D0000000BaPe&quot;,
+OR(ISPICKVAL(Status__c,&quot;Evaluation&quot;),ISPICKVAL(Status__c,&quot;Won&quot;)),
+OR(Opportunity_Stage__c=&quot;5 Design-in&quot;,Opportunity_Stage__c=&quot;6 Prototypes&quot;,Opportunity_Stage__c=&quot;7 Pre-Production&quot;,Opportunity_Stage__c=&quot;8 Production&quot;),
+OR(ISNULL(TEXT(Software_Environment__c)), ISPICKVAL(Software_Environment__c, &quot;&quot;)),
+NOT($User.ProfileId=&quot;00eD00000016L3v&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Software_Environment__c</errorDisplayField>
+    <errorMessage>Software Environment is required.</errorMessage>
+</ValidationRule>

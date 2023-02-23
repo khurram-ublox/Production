@@ -1,0 +1,3 @@
+Please be aware that the opportunity "{!Opportunity.Name}" of {!Opportunity.Account} has reached stage S5 – Design-in TODAY: let’s help the customer in his design and help him go to production quickly and smoothly!
+
+Link: https://u-blox.my.salesforce.com/{!Opportunity.Id}

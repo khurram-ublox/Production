@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catalog__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check if Lead should receive the Catalog by post mail.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if Lead should receive the Catalog by post mail.</inlineHelpText>
+    <label>Catalog</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

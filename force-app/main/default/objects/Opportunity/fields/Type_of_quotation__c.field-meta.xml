@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_quotation__c</fullName>
+    <description>Is the quotation budgetary or binding?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is the quotation budgetary or binding?</inlineHelpText>
+    <label>Type of Quotation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quotation</fullName>
+                <default>true</default>
+                <label>Quotation</label>
+            </value>
+            <value>
+                <fullName>Budgetary Quotation</fullName>
+                <default>false</default>
+                <label>Budgetary Quotation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_to_Last_OwnerVF</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Return to Last Owner</masterLabel>
+    <openType>replace</openType>
+    <page>Return_to_Last_Owner</page>
+    <protected>false</protected>
+</WebLink>

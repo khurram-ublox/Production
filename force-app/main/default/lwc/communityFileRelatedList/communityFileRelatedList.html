@@ -1,0 +1,21 @@
+<template>
+    <div class="relListDiv">
+        <div if:true={showFileRelatedList} >
+            <template if:true={recordId}>
+                <c-custom-file-related-list 
+                    title = {title} 
+                    showdetails = false
+                    showfileupload = false
+                    showsync = false
+                    record-id = {recordId}
+                    used-in-community = true
+                    show-filters = true
+                    search-u-r-l-param = {searchURLParam}                    
+                ></c-custom-file-related-list>
+            </template>
+        </div>
+        <div if:false={showFileRelatedList} class="slds-align_absolute-center" >
+            <lightning-formatted-rich-text value={showMessage}></lightning-formatted-rich-text>
+        </div>
+    </div>
+</template>

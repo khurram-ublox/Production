@@ -1,0 +1,2 @@
+<apex:page controller="CommunitiesURLRedirect" action="{!redirectToSelfRegistration}" sidebar="false" showHeader="false">
+</apex:page>

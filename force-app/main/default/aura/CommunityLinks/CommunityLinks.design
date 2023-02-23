@@ -1,0 +1,7 @@
+<design:component >
+    <design:attribute name="forgotPasswordLabel" default="Forgot Password?"/>
+    <design:attribute name="forgotPasswordUrl"/>
+    <design:attribute name="selfRegisterLabel" default="Create account"/>
+    <design:attribute name="selfRegisterUrl"/>
+    <design:attribute name="newToublox" default="New to u-blox?"/>
+</design:component>

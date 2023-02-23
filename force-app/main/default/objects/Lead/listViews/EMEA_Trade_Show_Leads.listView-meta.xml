@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Trade_Show_Leads</fullName>
+    <columns>Exhibition__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Lead_Source_Copy__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Open,Qualified,Unqualified</value>
+    </filters>
+    <filters>
+        <field>Lead_Source_Copy__c</field>
+        <operation>equals</operation>
+        <value>Trade Show</value>
+    </filters>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>contains</operation>
+        <value>EMEA</value>
+    </filters>
+    <label>EMEA Trade Show Leads</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RegionEMEA</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

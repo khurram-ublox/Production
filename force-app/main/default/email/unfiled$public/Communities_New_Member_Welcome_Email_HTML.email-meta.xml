@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Auto-response when new case is submitted online (e-NDA).</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Communities: New Member Welcome Email HTML</name>
+    <style>formalLetter</style>
+    <subject>Welcome to u-blox</subject>
+    <textOnly>Good to have you on board!
+Dear {!Receiving_User.Username},
+
+Thank you for registering. Here is a link to log in to your account:
+{!Community_Url}
+
+This link is valid for the next 7 days. After that, please go to the reset password section to get a new link.
+
+
+Kind regards,
+
+Your u-blox team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

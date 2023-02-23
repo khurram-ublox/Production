@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To notify a new Owner of a new Account from Abacus</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acc: Notify new Owner of new Acc from Abacus</name>
+    <style>none</style>
+    <subject>Account alert: {!Account.Name} has been created in Abacus</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

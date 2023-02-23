@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>HB_shared_Leads</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>sharing records to Hubspot Integrations</description>
+        <label>HB shared Leads</label>
+        <sharedTo>
+            <role>hubspot</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>HB_Duplicate__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Leads_Sharing_Inside_Sales_Americas</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Leads assigned to Queue Inside Sales Americas are shared with Sales Americas</description>
+        <label>Leads Sharing Inside Sales Americas</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>RegionAmericas</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <queue>Inside_Sales_Americas</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Leads_shared_with_u_blox_Internal_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Leads shared with u-blox Internal Users</label>
+        <sharedTo>
+            <group>All_u_blox_Internal_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ubloxEC</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

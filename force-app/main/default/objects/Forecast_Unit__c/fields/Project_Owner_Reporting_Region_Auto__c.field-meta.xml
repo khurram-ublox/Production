@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Owner_Reporting_Region_Auto__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case (TEXT(Project_Owner_Account__r.Reporting_Area__c),
+&quot;AU&quot;,&quot;Australia&quot;,
+&quot;NZ&quot;,&quot;Australia&quot;,
+&quot;IN&quot;,&quot;India&quot;,
+&quot;MY&quot;,&quot;Rest of APAC&quot;,
+&quot;PH&quot;,&quot;Rest of APAC&quot;,
+&quot;SG&quot;,&quot;Rest of APAC&quot;,
+&quot;TH&quot;,&quot;Rest of APAC&quot;,
+&quot;JP&quot;,&quot;Japan&quot;,
+&quot;CN&quot;,&quot;China&quot;,
+&quot;HK&quot;,&quot;China&quot;,
+&quot;TW&quot;,&quot;Taiwan&quot;,
+&quot;KR&quot;,&quot;Korea&quot;,
+&quot;Rest of APAC&quot;,&quot;Rest of APAC&quot;,
+
+Case(TEXT(Project_Owner_Account__r.Reporting_Region__c) ,
+&quot;EMEA&quot;,&quot;EMEA&quot;,
+&quot;AMERICAS&quot;, &quot;Americas&quot;,
+ TEXT(Project_Owner_Account__r.uB_Office__c) )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Project Owner Reporting Region Auto</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

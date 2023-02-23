@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verify_EUS_contract_before_Activatation</fullName>
+    <active>true</active>
+    <description>Verify EUS document is received signed and stamped before activating the contract</description>
+    <errorConditionFormula>AND(ISPICKVAL(Contract_Category__c, &apos;End Use Statement&apos;),
+NOT(EUS_Document_Received__c),  ISPICKVAL(Status,&apos;Activated&apos;))</errorConditionFormula>
+    <errorMessage>Please verify EUS document is received signed and stamped before activating the contract</errorMessage>
+</ValidationRule>

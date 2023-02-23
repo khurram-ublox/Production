@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shop_Purchase_Information__c</fullName>
+    <description>Concatenated from 3 shop order fields with a workflow after Lead conversion.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Shop order information from lead conversion</inlineHelpText>
+    <label>Shop Purchase Information</label>
+    <length>500</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>8</visibleLines>
+</CustomField>

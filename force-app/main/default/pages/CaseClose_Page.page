@@ -1,0 +1,28 @@
+<apex:page standardController="Case" extensions="UpdateCaseController" id="pg">
+    <apex:includeScript value="/support/console/41.0/integration.js"/>
+    <script type="text/javascript">
+        window.onload = function() {
+            
+            if(!('{!Case.status}' === 'Closed')){
+                updateCaseStatus();    
+            }
+        }
+        
+        function refreshParentWindow() {
+            
+            if (sforce.console.isInConsole()) {
+                sforce.console.getFocusedPrimaryTabId(showTabId);
+            }else{
+                window.parent.location.href = '/{!caseId}';
+            }
+        }
+        var showTabId = function showTabId(result) {
+            
+            sforce.console.refreshPrimaryTabById(result.id, true);
+        };
+    </script>
+    
+    <apex:form >
+        <apex:actionFunction name="updateCaseStatus" action="{!updateCaseStatus}" oncomplete="refreshParentWindow()"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor__c</fullName>
+    <description>Competitor name that produces this Competitor Product</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Competitor name that produces this Competitor Product</inlineHelpText>
+    <label>Competitor</label>
+    <referenceTo>Competitor__c</referenceTo>
+    <relationshipLabel>Competitor Products</relationshipLabel>
+    <relationshipName>Competitor_Products</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

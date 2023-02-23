@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RDR_CHF__c</fullName>
+    <description>equal to RDR * Total Value CHF.</description>
+    <externalId>false</externalId>
+    <formula>RDR__c *  Total_Value_CHF__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Weighted Request Delivery Reliability.
+=&gt; if delivery happened no later than date requested, the field is equal to Total Value CHF. Else it is zero.</inlineHelpText>
+    <label>RDR CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

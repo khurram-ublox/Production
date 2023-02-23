@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Grade_Text__c</fullName>
+    <description>Product Grade that appears on the quotation.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(PricebookEntry.Product2.Product_Grade__c),
+&quot; &quot;,
+BR() &amp; PricebookEntry.Product2.Product_Grade__c
+)</formula>
+    <inlineHelpText>Product Grade that appears on the quotation.</inlineHelpText>
+    <label>Product Grade Text</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

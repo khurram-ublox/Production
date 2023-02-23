@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>sami.azam@u-blox.com</contactEmail>
+    <label>U Center2</label>
+    <oauthConfig>
+        <callbackUrl>u-blox.ucenter2:
+https://u-blox.ucenter2</callbackUrl>
+        <consumerKey>3MVG9WtWSKUDG.x5Y23yoJF1XRe9wZ3CgWLbRnmm1WX.csOFikicghL5HAe76zGrKOBSVzqjRX.OZ5nSri7tG</consumerKey>
+        <idTokenConfig>
+            <idTokenIncludeAttributes>true</idTokenIncludeAttributes>
+            <idTokenIncludeCustomPerms>false</idTokenIncludeCustomPerms>
+            <idTokenIncludeStandardClaims>false</idTokenIncludeStandardClaims>
+            <idTokenValidity>60</idTokenValidity>
+        </idTokenConfig>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isConsumerSecretOptional>true</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>BYPASS</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <plugin>UCenterConnectedApp</plugin>
+    <sessionPolicy>
+        <sessionTimeout>1440</sessionTimeout>
+    </sessionPolicy>
+</ConnectedApp>

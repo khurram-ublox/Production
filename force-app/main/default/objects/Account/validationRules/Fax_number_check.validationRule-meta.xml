@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fax_number_check</fullName>
+    <active>false</active>
+    <description>Checks that fax number is written in internatinoal format</description>
+    <errorConditionFormula>NOT( BEGINS(  Fax, &quot;+&quot;))</errorConditionFormula>
+    <errorDisplayField>Fax</errorDisplayField>
+    <errorMessage>Fax number must start with &quot;+&quot; followed by country code.
+Example: +1 703 555 1212</errorMessage>
+</ValidationRule>

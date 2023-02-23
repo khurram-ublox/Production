@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Person_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Person (Salesforce User) who introduced this Lead. Transferred to Opportunity.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Person (Salesforce User) who introduced this Lead. Transferred to Opportunity.</inlineHelpText>
+    <label>Lead Source Person (User)</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Standard,PowerPartner</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Leads</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

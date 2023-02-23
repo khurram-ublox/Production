@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4x_Budget_Price_CHF__c</fullName>
+    <externalId>false</externalId>
+    <formula>BLANKVALUE(
+
+BLANKVALUE(
+IF(Budget_Price_next_FY__c = 0, NULL, Budget_Price_next_FY__c)
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 0.99,
+&quot;USD&quot;, 0.98,
+&quot;JPY&quot;, 0.00789,
+1
+)
+,
+IF(a4x_Applicable_Sales_Price_CHF__c = 0, NULL, a4x_Applicable_Sales_Price_CHF__c)
+)
+,
+
+Unit_Price__c 
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 0.99,
+&quot;USD&quot;, 0.98,
+&quot;JPY&quot;, 0.00789,
+1
+)
+
+)
+
+/* previous version until 16.11.2022
+BLANKVALUE(
+
+BLANKVALUE(
+IF(Budget_Price_next_FY__c = 0, NULL, Budget_Price_next_FY__c)
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 1.045,
+&quot;USD&quot;, 0.935,
+&quot;JPY&quot;, 0.00789,
+1
+)
+,
+IF(a4x_Applicable_Sales_Price_CHF__c = 0, NULL, a4x_Applicable_Sales_Price_CHF__c)
+)
+,
+
+Unit_Price__c 
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 1.045,
+&quot;USD&quot;, 0.935,
+&quot;JPY&quot;, 0.00789,
+1
+)
+
+)
+
+/* previous version until 10.09.2022
+
+BLANKVALUE(
+
+BLANKVALUE(
+IF(Budget_Price_next_FY__c = 0, NULL, Budget_Price_next_FY__c)
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 1.08,
+&quot;USD&quot;, 0.92,
+&quot;JPY&quot;, 0.0083,
+1
+)
+,
+IF(a4x_Applicable_Sales_Price_CHF__c = 0, NULL, a4x_Applicable_Sales_Price_CHF__c)
+)
+,
+
+Unit_Price__c 
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 1.08,
+&quot;USD&quot;, 0.92,
+&quot;JPY&quot;, 0.0083,
+1
+)
+
+)
+
+*/
+/* previous version until 10.09.2021
+
+BLANKVALUE(
+
+BLANKVALUE(
+Budget_Price_next_FY__c
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 1.08,
+&quot;USD&quot;, 0.91,
+&quot;JPY&quot;, 0.0086,
+1
+)
+,
+IF(a4x_Latest_Sales_Price_CHF__c = 0, NULL,a4x_Latest_Sales_Price_CHF__c)
+)
+,
+
+Unit_Price__c 
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, 1.08,
+&quot;USD&quot;, 0.91,
+&quot;JPY&quot;, 0.0086,
+1
+)
+
+)
+
+*/
+
+/* previous version until 11.10.2020
+BLANKVALUE(
+
+BLANKVALUE(
+Budget_Price_next_FY__c
+/
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, CURRENCYRATE(&quot;EUR&quot;),
+&quot;CHF&quot;, CURRENCYRATE(&quot;CHF&quot;),
+&quot;CNY&quot;, CURRENCYRATE(&quot;CNY&quot;),
+&quot;JPY&quot;, CURRENCYRATE(&quot;JPY&quot;),
+1
+)
+*
+CURRENCYRATE(&quot;CHF&quot;)
+,
+IF(a4x_Latest_Sales_Price_CHF__c = 0, NULL,a4x_Latest_Sales_Price_CHF__c)
+)
+,
+
+Unit_Price__c 
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, CURRENCYRATE(&quot;EUR&quot;),
+&quot;CHF&quot;, CURRENCYRATE(&quot;CHF&quot;),
+&quot;CNY&quot;, CURRENCYRATE(&quot;CNY&quot;),
+&quot;JPY&quot;, CURRENCYRATE(&quot;JPY&quot;),
+1
+)
+*
+CURRENCYRATE(&quot;CHF&quot;)
+)
+*/</formula>
+    <label>a4x Budget Price CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

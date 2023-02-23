@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status_for_Prototype</fullName>
+    <active>true</active>
+    <description>For Prototype RecordType, only Products with the Status &quot;Prototypes&quot; and &quot;In Development&quot; are allowed.</description>
+    <errorConditionFormula>AND(
+$RecordType.DeveloperName =&quot;Prototypes&quot;,
+NOT(
+OR(
+ISPICKVAL(Product__r.Product_Status__c,&quot;In Development&quot;),
+ISPICKVAL(Product__r.Product_Status__c,&quot;Prototypes&quot;)
+))
+)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>For Prototype RecordType, only Products with the Status &quot;Prototypes&quot; and &quot;In Development&quot; are allowed.</errorMessage>
+</ValidationRule>

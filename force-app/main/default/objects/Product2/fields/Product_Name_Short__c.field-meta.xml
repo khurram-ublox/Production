@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Name_Short__c</fullName>
+    <externalId>false</externalId>
+    <formula>case (Product_Center__c,
+&quot;Cellular&quot;, left(Name , 7),
+&quot;Positioning&quot;, left(Name , 6),
+&quot;Short Range&quot;, left(Name , 7),
+left(Name , 7)
+)</formula>
+    <inlineHelpText>Short version of product name, used to group products for statistical analysis</inlineHelpText>
+    <label>Product Name Short</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

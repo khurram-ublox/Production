@@ -1,0 +1,13 @@
+Your Special Price Request has been approved. Here is the summary:
+
+Account: {!Special_Price_Request__c.Account__c}
+Opportunity: {!Special_Price_Request__c.Opportunity__c}
+Price Level: {!Special_Price_Request__c.Price_Level__c}
+
+Total Revenue 
+Initial: {!Special_Price_Request__c.Total_Revenue_Initial__c} 
+Approved: {!Special_Price_Request__c.Total_Revenue__c} 
+
+Completed Step: {!ApprovalRequest.Process_Step_Name}
+
+Link: {!Special_Price_Request__c.Link}

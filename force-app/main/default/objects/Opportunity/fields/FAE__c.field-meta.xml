@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAE__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FAE for the opportunity. The value is populated from Account on Insert and can be changed.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>FAE for the opportunity. The value is populated from Account and can be updated any time.</inlineHelpText>
+    <label>FAE</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Standard,PowerPartner</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunities1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

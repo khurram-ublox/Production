@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <description>After flow trigger which only has schedule path to execute for Digi-Key Contacts
+Assigning All Tasks of the Contact to its related Account
+Also Deleting the Digi-Key Contact</description>
+    <interviewLabel>Contact: Schedule Path Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact: Schedule Path</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Contact_Delete_record</name>
+        <label>Contact: Delete record</label>
+        <locationX>532</locationX>
+        <locationY>380</locationY>
+        <inputReference>$Record</inputReference>
+    </recordDeletes>
+    <recordUpdates>
+        <name>Add_Account_and_remove_Contact_from_Digi_Key_Task</name>
+        <label>Add Account and remove Contact from Digi-Key Task</label>
+        <locationX>277</locationX>
+        <locationY>378</locationY>
+        <connector>
+            <targetReference>Contact_Delete_record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhoId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Account.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhoId</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordUpdates>
+    <start>
+        <locationX>150</locationX>
+        <locationY>27</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LeadSource</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Digi-Key</stringValue>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <name>From_Dgi_Key_Lead</name>
+            <connector>
+                <targetReference>Add_Account_and_remove_Contact_from_Digi_Key_Task</targetReference>
+            </connector>
+            <label>From Dgi-Key Lead</label>
+            <offsetNumber>5</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>LastModifiedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

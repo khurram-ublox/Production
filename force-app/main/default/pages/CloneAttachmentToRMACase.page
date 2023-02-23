@@ -1,0 +1,20 @@
+<apex:page title="Clone Attachments to Case" showHeader="false" sidebar="false" docType="html-5.0" standardStylesheets="false" standardController="RMA__c">
+    <apex:includeScript value="/support/console/45.0/integration.js"/>    
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0121, '/assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+    <apex:includeLightning />
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <div id="lightning"></div>
+    <script>
+    var RelatedCaseRMA = '{!RMA__c.Related_Case__c}';
+    var RMAId = '{!RMA__c.Id}';
+    if(RelatedCaseRMA == 'Null' ||RelatedCaseRMA == '' || RelatedCaseRMA == 'undefined' ){
+        alert('The RMA does not have any related case.');
+        uJS.closeTab(RMAId);
+    }
+    $Lightning.use("c:CloneAttachmentToRMACaseApp", function() {
+        $Lightning.createComponent("c:CloneAttachmentToRMACase", {'RMAcaseId': RelatedCaseRMA, 'RMAId' :RMAId }, "lightning", function(cmp) {
+            console.log('Component created successfully.');
+        });
+    });
+    </script>
+</apex:page>

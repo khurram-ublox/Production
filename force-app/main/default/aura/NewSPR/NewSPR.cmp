@@ -1,0 +1,71 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId,force:hasSObjectName" access="global" controller="NewSPRCtrl">
+    <ltng:require styles="{!$Resource.ActionBoxCSS}"/>
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="getIds" type="Object"/>
+    <aura:attribute name="loading" type="Boolean" default="false"/>
+    <aura:attribute name="sobjecttype" type="String" default="{!v.sObjectName}"/>
+    <aura:attribute name="errorMessage" type="String" />
+    <aura:attribute name="recordId" type="string" />
+    <aura:attribute name="record" type="Object" description="The record object to be displayed"/>
+    <aura:attribute name="recordFields" type="Object" description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData"/>
+    
+    <force:recordData aura:id="recordLoader"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.recordFields}"
+                      mode="EDIT"/>
+
+    <div>
+        <div class="slds-is-relative">
+            <aura:if isTrue="{! v.loading }">
+                <lightning:spinner size="medium" variant="brand" />
+            </aura:if>
+            <aura:if isTrue="{! not(empty(v.recordFields))}">
+                <!-- OTHER MODAL MARK-UP HERE --> 
+                <div>
+                    <div class="modal-header slds-modal__header">
+                        <h2 class="title slds-text-heading--medium" >New SPR</h2>
+                    </div>
+                    
+                    <div class="custom-modal-body">
+                        
+                        <div aura:id="errorDiv" class="errorDiv slds-hide">{!v.errorMessage}</div>
+                        <lightning:recordEditForm aura:id="sprForm" objectApiName="Special_Price_Request__c" onsubmit="{!c.handleSave}" onerror="{!c.handleError}">
+                                                            
+                            <div class="slds-grid slds-grid_align-space slds-box">
+                                <div class="slds-col slds-size_1-of-1">
+                                    <lightning:inputField fieldName="Account__c" value="{!v.getIds.AccountId}" disabled ="true" />
+                                    <aura:if isTrue="{!v.getIds.OpportunityId}">
+                                        <lightning:inputField fieldName="Opportunity__c" value="{!v.getIds.OpportunityId}"  disabled ="true" />
+                                        <aura:set attribute="else">
+                                            <lightning:inputField fieldName="Opportunity__c" />
+                                        </aura:set>
+                                    </aura:if> 
+                                    <lightning:inputField fieldName="Price_Level__c" value="" required="true"  />
+                                    <lightning:inputField fieldName="Comment_by_Requestor__c" value=""/>
+                                    <lightning:inputField fieldName="Prices_Valid_Until__c" value="" />
+                                </div>
+                            </div>     
+                            
+                            
+                            <div class="modal-footer slds-modal__footer">
+                                <div class="forceChangeRecordTypeFooter">
+                                    <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.handleCancel}">Cancel</button>
+                                    <lightning:button variant="brand" label="Submit" type="submit" class="slds-button slds-button--brand" />
+                                </div>
+                            </div>
+                            
+                        </lightning:recordEditForm>
+                        
+                    </div>
+                </div>
+            </aura:if>
+        </div>
+    </div>
+    
+</aura:component>

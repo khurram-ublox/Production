@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TMT_Billing_CHF_Prev_Yr__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( and(Invoice_Date__c &gt;= (today()-730), Invoice_Date__c &lt; (today()-365)), Total_Value_CHF__c ,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Total Value CHF if invoice date within TMT period of a year ago, 0 else</inlineHelpText>
+    <label>TMT Billing CHF Prev Yr</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

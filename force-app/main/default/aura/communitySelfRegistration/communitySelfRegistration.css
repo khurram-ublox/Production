@@ -1,0 +1,180 @@
+.THIS {
+	font-family: 'u-blox';
+}
+
+.THIS input[type="text"], .THIS input[type="password"], .THIS textarea, .THIS select, .THIS radio {
+            
+    font-size: 14px;
+    height: 40px;            
+}
+
+.THIS .slds-form-element__label {                       
+            font-size: 14px;
+            font-weight:bold;
+            padding-top: 20px;
+            color: #1a1a1a;
+            font-weight: 700;
+}
+.THIS .slds-button {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            vertical-align: middle;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 0px solid transparent;
+            white-space: nowrap;
+            padding: 0.4rem !important;
+    		border-radius:0% !important;    		
+            font-size: 14px;
+            font-weight:bold;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #ffffff;
+            background-color: #FF6E59;
+            border-color: #FF6E59;
+            
+            
+            outline: none !important;
+            width: 100%;
+            min-width:100px;    		
+            
+}
+.THIS .slds-button--neutral:focus,
+        .THIS .slds-button--neutral:hover,
+        .THIS .slds-button_neutral:focus,
+        .THIS .slds-button_neutral:hover {
+            background-color: #ff4126;
+            border-color: rgb(255, 110, 89);
+            color: white;
+        }
+
+.THIS a:focus,.THIS a:hover {
+            text-decoration: underline;
+            color: #ff4126;
+        }
+.THIS .slds-input{
+            border-radius: 0px!important;
+            border: 2px solid #9a9a9a!important;
+    		width: 100%;
+        }
+.THIS .slds-input:focus,.THIS .slds-input:hover {            
+            border: 2px solid #1a1a1a!important;
+        }
+.THIS .slds-button:focus {
+            box-shadow: none;
+        }
+.THIS .slds-text-body_regular {
+            font-size: 16px;
+            font-size: 14px; 
+            color:#2a2a2a;          
+        }        
+             
+.THIS .slds-text-body_regular a {
+            color: #FF6E59;
+        }
+        
+.THIS .error-msg {
+    padding: 15px;
+    background: #ffbbba;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+        
+.THIS .container {
+      position: relative;      
+      color: white;
+}
+
+.THIS .backbtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    left: 20px;
+    top: 40px;
+    
+    /* Super Light Grey F7F7F7 */
+    
+    background: #F7F7F7;    
+    border-radius: 40px !important;
+    font-weight:bold;
+    color:black;
+}
+.THIS .container {
+  display: block;
+  position: relative;
+  padding-right: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.THIS .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.THIS .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;  
+  border: 2px solid #9a9a9a;  
+}
+
+/* On mouse-over, add a u-blox orange background color */
+.THIS .container:hover input ~ .checkmark {
+  /*background-color: #FF6E59;*/
+    border: 2px solid #1a1a1a;
+}
+
+/* When the checkbox is checked, add a u-blox orange background */
+.THIS .container input:checked ~ .checkmark {
+  background-color: #FF6E59;
+  border: 2px solid #FF6E59;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.THIS .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.THIS .container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.THIS .container .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

@@ -1,0 +1,10 @@
+.THIS .slds-tabs_default__content {
+    padding: 0px 0px 1em 0px;
+}
+
+.cProductPricesWidget.pricingStatus {
+    position: relative;
+    top: 12px;
+    right: 25px;
+    float: right;
+}

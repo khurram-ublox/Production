@@ -1,0 +1,15 @@
+{!Product2.Type_No__c} changed the status to Initial Production. Please ensure the follow-up:
+- Update EVK, ref. design & sample stocks to new revision immediately (incl. WL EVK)
+- Modules: Publish all documents on website, remove old ones from distributor portal
+- Update opportunities to new type number in Salesforce
+- Set old type number to EOL in Abacus
+- Update of product flyer and linecard in case of specification changes
+- Update feature request pages in TWiki
+- Publish Type Approval and MNO certifications 
+- Further actions as defined market introduction plan & checklists
+
+Type number: {!Product2.Type_No__c}
+Product status: {!Product2.Product_Status__c}
+Product description: {!Product2.Product_Text_1__c} {!Product2.Product_Text_2__c}
+
+Link to record: {!Product2.Link}

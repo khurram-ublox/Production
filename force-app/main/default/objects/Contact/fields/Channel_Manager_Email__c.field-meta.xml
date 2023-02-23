@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Manager_Email__c</fullName>
+    <description>Email of the Channel Manager, added for mass mailing of Embedded WOrld and MWC 2015.</description>
+    <externalId>false</externalId>
+    <formula>Account.New_Channel_Manager__r.Email</formula>
+    <inlineHelpText>Email of the Channel Manager</inlineHelpText>
+    <label>Channel Manager Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

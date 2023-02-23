@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Winners_mbed_board_Tombola</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.FIRST_NAME</columns>
+    <columns>CONTACT.LAST_NAME</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.ADDRESS2_CITY</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Winner_mbed_Board__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Winners mbed board Tombola</label>
+    <sharedTo>
+        <group>RecipientsEMEAOrderBook</group>
+    </sharedTo>
+</ListView>

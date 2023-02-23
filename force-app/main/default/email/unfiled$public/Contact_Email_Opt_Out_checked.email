@@ -1,0 +1,10 @@
+The following Contact has unsubscribed and now marked as "Email Opt Out" in Salesforce:
+Contact Name: {!Contact.Full_Name__c}
+Email: {!Contact.Email}
+Link: {!Contact.Link}
+
+To reactivate this email address, please do the following:
+
+1) In {!Contact.Link} either attach the email from the customer or add a short note using Log a Call, writing that this Contact has agreed to reactivate.
+2) If the address is correct, tick "Reactivate Email Address"
+3) You will receive the email notification when it's been reactivated.

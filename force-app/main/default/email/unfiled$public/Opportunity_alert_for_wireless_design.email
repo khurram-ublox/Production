@@ -1,0 +1,9 @@
+The following opportunity was created or changed the stage:
+
+Account: {!Opportunity.Account}, {!Account.BillingCountry}
+Opportunity: {!Opportunity.Name} 
+
+Wireless product: {!Opportunity.00N20000001dpcJ} 
+Stage: {!Opportunity.StageName}
+
+Link to the Opportunity: {!Opportunity.Link}

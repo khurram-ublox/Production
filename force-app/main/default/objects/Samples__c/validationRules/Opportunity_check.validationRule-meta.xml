@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_check</fullName>
+    <active>false</active>
+    <description>Check if the Opportunity is filled in case Sample Usage is Demonstrator, Prototype (for customer) or ES (volume).
+
+Deactivated as per new sample design (Vivian is stakeholder)</description>
+    <errorConditionFormula>ISBLANK( Opportunity__c ) &amp;&amp; OR(TEXT(Sample_Usage__c) = &quot;Demonstrator&quot;, TEXT(Sample_Usage__c) = &quot;Prototype (for customer)&quot;, TEXT(Sample_Usage__c) = &quot;ES (volume)&quot;)</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>Opportunity is required for Sample Usage = Demonstrator, Prototype (for customer) or ES (volume).</errorMessage>
+</ValidationRule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_Satisfaction__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Editable only for AE</inlineHelpText>
+    <label>AE Satisfaction</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Improvement Needed</fullName>
+                <default>false</default>
+                <label>Improvement Needed</label>
+            </value>
+            <value>
+                <fullName>Improvement Possible</fullName>
+                <default>false</default>
+                <label>Improvement Possible</label>
+            </value>
+            <value>
+                <fullName>Average - OK</fullName>
+                <default>false</default>
+                <label>Average - OK</label>
+            </value>
+            <value>
+                <fullName>Above Normal Level</fullName>
+                <default>false</default>
+                <label>Above Normal Level</label>
+            </value>
+            <value>
+                <fullName>Very Good Level</fullName>
+                <default>false</default>
+                <label>Very Good Level</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

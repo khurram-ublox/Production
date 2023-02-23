@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Active_Opps__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Sum of Opp Revenues of active Opportunities (Calling on, Evaluation, Design-in, Prototype, Pre-production, Production)</inlineHelpText>
+    <label>Total Active Opps</label>
+    <summarizedField>Opportunity.Amount</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity.StageName</field>
+        <operation>equals</operation>
+        <value>3 Calling on, 4 Evaluation, 5 Design-in, 6 Prototypes, 7 Pre-Production, 8 Production</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Opportunity.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>Opportunity</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity.AccountId</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

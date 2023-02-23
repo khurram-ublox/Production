@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Detection_of_Failure__c</fullName>
+    <description>Describe how the customer detected the failure/non conformity (e.g. Electrical test, Visual Inspection, QA inspection).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe how the customer detected the failure/non conformity (e.g. Electrical test, Visual Inspection, QA inspection).</inlineHelpText>
+    <label>Detection of Failure</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

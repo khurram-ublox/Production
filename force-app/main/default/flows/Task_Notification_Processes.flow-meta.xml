@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Task_Send_Notification</name>
+        <label>Task Send Notification</label>
+        <locationX>50</locationX>
+        <locationY>648</locationY>
+        <actionName>Task.Task_Send_Notification</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>update_Task</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>Set_Send_Notification_to_false</name>
+        <label>Set Send Notification to false</label>
+        <locationX>238</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Send_Notification__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Task_Send_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>check_Send_Notification_checkbox</name>
+        <label>check Send Notification checkbox</label>
+        <locationX>229</locationX>
+        <locationY>386</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Send_Notification_checkbox_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Send_Notification__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Lead conversion (no Opportunity generated)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Send_Notification_to_false</targetReference>
+            </connector>
+            <label>Send Notification checkbox Condition</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Task : Notification Processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task : Notification Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>update_Task</name>
+        <label>update Task</label>
+        <locationX>50</locationX>
+        <locationY>902</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>114</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>check_Send_Notification_checkbox</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

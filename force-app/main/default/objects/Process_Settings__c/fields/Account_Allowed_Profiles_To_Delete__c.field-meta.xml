@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Allowed_Profiles_To_Delete__c</fullName>
+    <description>Profiles able to delete accounts in any criteria.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Profiles able to delete accounts in any criteria.</inlineHelpText>
+    <label>Account: Allowed Profiles To Delete</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

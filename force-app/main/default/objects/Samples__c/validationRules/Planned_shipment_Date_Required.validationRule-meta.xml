@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Planned_shipment_Date_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Request_Status__c,&apos;Confirmed&apos;), ISBLANK(Planned_Delivery_Date__c ),OR(RecordType.DeveloperName = &apos;Engineering_Samples&apos;,RecordType.DeveloperName = &apos;Prototypes&apos;))</errorConditionFormula>
+    <errorMessage>The Planned Shipment Date field is mandatory, please enter a Planned Shipment Date.</errorMessage>
+</ValidationRule>

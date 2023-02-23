@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To be used for email alerts for specific products</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Order: product-specific alert</name>
+    <style>none</style>
+    <subject>Order alert: {!Billings__c.Product_ID__c} for {!Billings__c.Name}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

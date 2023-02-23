@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_Status_Pending_allowed</fullName>
+    <active>true</active>
+    <description>Only Api User and :wsha: should be allowed to use Status other than Pending</description>
+    <errorConditionFormula>AND(
+  /* $User.Id&lt;&gt;&quot;005D0000003wh71&quot;,commenting this  api user */
+  $User.Id&lt;&gt;&quot;00557000006eQYE&quot;, /* wsha */
+  $User.Id&lt;&gt;&quot;00557000007TldC&quot;, /* Werner Grätzer */
+  $User.Id&lt;&gt;&quot;00557000008WnLe&quot;, /* ldra */
+  $User.Id&lt;&gt;&quot;00520000000zbAX&quot;, /* khir */
+  $User.Id&lt;&gt;&quot;0052p00000AIuag&quot;, /* api marketing */
+  $User.Id&lt;&gt;&quot;0052p00000BkGWt&quot;, /* api wiki */
+  TEXT(Status)&lt;&gt;&quot;Pending&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Status should be Pending when manually editing.</errorMessage>
+</ValidationRule>

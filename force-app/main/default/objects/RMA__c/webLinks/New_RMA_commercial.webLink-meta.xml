@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_RMA_commercial</fullName>
+    <availability>online</availability>
+    <description>Opens a new &quot;RMA commercial&quot; in edit mode (record not created yet)</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New RMA commercial</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a00/e?CF00ND0000004EYEw={!Case.CaseNumber}&amp;CF00ND0000004EYEw_lkid={!Case.Id}&amp;RecordType=01220000000Pg8F&amp;ent=01I200000000JDF&amp;CF00N20000000pXDX={!Case.Account}&amp;CF00N20000000pXDX_lkid={!Case.AccountId}&amp;CF00N20000000pX12={!Case.Product__c}&amp;CF00N20000000pX12_lkid={!Case.ProductId__c}&amp;retURL=/{!Case.Id}</url>
+</WebLink>

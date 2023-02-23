@@ -1,0 +1,4 @@
+Please note the following Account has been created in Abacus and transferred to you.
+
+Account Name: {!Account.Name}
+Link to the Account: {!Account.Link}

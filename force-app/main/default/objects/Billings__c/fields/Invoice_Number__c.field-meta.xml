@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Number__c</fullName>
+    <description>This field is used to determine that a shipment has actually been made. In cases of pre-payment, the invoice quantity and invoice date might be set in order to print a pro-forma invoice, but the shipment awaits the payment.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus) Identification number of the invoice sent to customer.</inlineHelpText>
+    <label>Invoice Number</label>
+    <length>12</length>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

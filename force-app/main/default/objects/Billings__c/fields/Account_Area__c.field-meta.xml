@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Area__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Contains(&quot;BY:CZ:GE:HU:KZ:PL:SK:UA&quot;, Account__r.ShippingCountry ),&quot;Eastern Europe&quot;,
+IF(Contains(&quot;DK:EE:FI:IS:LT:LV:NO:SE&quot;,Account__r.ShippingCountry ),&quot;Nordic&quot;,
+IF(Contains(&quot;EG:MA:TN:ZA&quot;,Account__r.ShippingCountry ),&quot;Africa&quot;,
+IF(Contains(&quot;AE,IL,JO,KW,LB,OM,PS,QA,SA,SY&quot;,Account__r.ShippingCountry ),&quot;Middle East&quot;,
+IF(Contains(&quot;BG,GR,HR,TR,RO,RS,SI&quot;,Account__r.ShippingCountry ),&quot;SE Europe&quot;,
+IF(Contains(&quot;AN:CO:EC:GT:PR:VE:VG&quot;,Account__r.ShippingCountry ),&quot;Rest of Americas&quot;,
+IF(Contains(&quot;MY:PH&quot;,Account__r.ShippingCountry ),&quot;Rest of APAC&quot; ,
+IF(Contains(&quot;GB:IE:UK&quot;,Account__r.ShippingCountry ),&quot;UK&quot;,
+IF(Contains(&quot;AR:AT:AU:BR:CA:CH:CL:CN:DE:FR:HK:IL:IN:IT:JP:KR:MX:NZ:SG:TH:TR:TW:US:UY:ZA&quot;,Account__r.ShippingCountry ),Account__r.ShippingCountry ,
+
+Case(Account__r.ShippingCountry ,
+&quot;BE&quot;,&quot;Benelux&quot;,
+&quot;LI&quot;,&quot;CH&quot;,
+&quot;NL&quot;,&quot;Benelux&quot;,
+&quot;LU&quot;,&quot;Benelux&quot;,
+&quot;ES&quot;,&quot;ES, PT&quot;,
+&quot;PT&quot;,&quot;ES, PT&quot;,
+&quot;RU&quot;,&quot;Russia&quot;,
+&quot;Corporate&quot;)
+)))))))))</formula>
+    <inlineHelpText>Area derived from Abacus Address (country)</inlineHelpText>
+    <label>Account Area</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

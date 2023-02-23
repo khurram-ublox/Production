@@ -1,0 +1,15 @@
+The following Solution has been released:
+
+Solution Number: {!Solution.SolutionNumber}
+Solution Title: {!Solution.SolutionName}
+Owner: {!Solution.Owner__c}
+Search Keyword: {!Solution.Search_Keyword__c}
+Status: {!Solution.Status}
+Public: {!Solution.IsPublished}
+
+Solution Details:
+{!Solution.SolutionNote}
+
+Bug Reference: {!Case.Bug_Reference__c}
+
+Link to the Solution: {!Solution.Link}

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account__c</field>
+        <field>Opportunity__c</field>
+        <field>Total_Quantity__c</field>
+        <field>Total_Revenue__c</field>
+        <field>Total_Contribution__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_Team_Leader</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Team_Leader</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Team_Leader_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Pending</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <label>(MSP EMEA 1.1) Approval by Team Leader</label>
+        <name>MSP_EMEA_1_1_Approval_by_Team_Leader</name>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_Team_Manager</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Team_Manager</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Team_Manager_Email</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Status_Pending</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Special_Price_Request__c.Approved_By_Team_Leader__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>GotoNextStep</ifCriteriaNotMet>
+        <label>(MSP EMEA 1.2) Approval by Team Manager</label>
+        <name>MSP_EMEA_1_2_Approval_by_Team_Manager</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_Regional_Head_EMEA</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Regional_Head</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Prices_Valid_Until</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_approved</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Special_Price_Request__c.Approved_By_Team_Manager__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </criteriaItems>
+        </entryCriteria>
+        <label>(MSP EMEA 1.3) Approval by Regional Head</label>
+        <name>MSP_EMEA_1_3_Approval_by_Regional_Head</name>
+        <rejectBehavior>
+            <type>BackToPrevious</type>
+        </rejectBehavior>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>MSP Process for EMEA 1: Sales Manager &gt; Team Manager &gt; Area Manager &gt; Regional Head
+Used for Italy
+EMEA only</description>
+    <emailTemplate>unfiled$public/SPR_Request_update_notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp;
+($User.ProfileId=&quot;00e20000000wr5F&quot; || $User.ProfileId=&quot;00e2p000001Prx6&quot;) &amp;&amp; /* Profile: Sales or Sales Community User */
+ISPICKVAL($User.uB_Office__c, &quot;EMEA&quot;) &amp;&amp;
+
+$User.Hierarchy_Level__c =6
+
+/*
+Backup
+------------------
+ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp;
+($User.ProfileId=&quot;00e20000000wr5F&quot; || $User.ProfileId=&quot;00e2p000001Prx6&quot;) &amp;&amp; /\* Profile: Sales or Sales Community User *\/
+ISPICKVAL($User.uB_Office__c, &quot;EMEA&quot;) &amp;&amp;
+/\* EMEA Team Manager *\/
+/\*commented
+$User.Alias=&quot;maor&quot;*\/
+$User.Alias=&quot;scri&quot;
+*/</formula>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>SPR_Date_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Contribution_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Quantity_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Revenue_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Remove_Email_PS_CEL</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Remove_Email_PS_POS</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Remove_Email_PS_SHO</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Update_Team_Manager_Assignee_Emai</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>MSP EMEA 1: Sales to Regional Head</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>9</processOrder>
+    <recallActions>
+        <action>
+            <name>SPR_Status_Not_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MCU_Comment_check</fullName>
+    <active>true</active>
+    <description>Comment is mandatory if MCU Supplier is added but MCU Type is empty</description>
+    <errorConditionFormula>AND(NOT(ISPICKVAL(MCU_Supplier__c,&quot;&quot;)),ISPICKVAL(MCU_Type__c,&quot;&quot;),ISBLANK(MCU_Comment__c))</errorConditionFormula>
+    <errorDisplayField>MCU_Comment__c</errorDisplayField>
+    <errorMessage>Comment required if MCU Type is empty.</errorMessage>
+</ValidationRule>

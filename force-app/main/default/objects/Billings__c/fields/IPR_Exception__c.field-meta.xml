@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Exception__c</fullName>
+    <description>Checked if the invalid combination of Application Type and Use Restriction has been controlled and the explanation in IPR Exception Comment is given.</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(IPR_Exception_Comment__c), false, true)</formula>
+    <inlineHelpText>Checked if the invalid combination of Application Type and Use Restriction has been controlled and the explanation in IPR Exception Comment is given.</inlineHelpText>
+    <label>IPR Exception</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

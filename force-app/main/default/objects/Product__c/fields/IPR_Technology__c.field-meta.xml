@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Technology__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Technology related to Cellular Technology</inlineHelpText>
+    <label>IPR Technology</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Cellular_Technology__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EV-DO</fullName>
+                <default>false</default>
+                <label>EV-DO</label>
+            </value>
+            <value>
+                <fullName>1xRTT</fullName>
+                <default>false</default>
+                <label>1xRTT</label>
+            </value>
+            <value>
+                <fullName>GSM</fullName>
+                <default>false</default>
+                <label>GSM</label>
+            </value>
+            <value>
+                <fullName>Rel 5/6</fullName>
+                <default>false</default>
+                <label>Rel 5/6</label>
+            </value>
+            <value>
+                <fullName>Rel 7+</fullName>
+                <default>false</default>
+                <label>Rel 7+</label>
+            </value>
+            <value>
+                <fullName>Rel 9&amp;10 single</fullName>
+                <default>false</default>
+                <label>Rel 9&amp;10 single</label>
+            </value>
+            <value>
+                <fullName>Rel 9&amp;10 multi</fullName>
+                <default>false</default>
+                <label>Rel 9&amp;10 multi</label>
+            </value>
+            <value>
+                <fullName>Cat 1 single-mode</fullName>
+                <default>false</default>
+                <label>Cat 1 single-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 1 multi-mode</fullName>
+                <default>false</default>
+                <label>Cat 1 multi-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 1 multi-mode NO 3G</fullName>
+                <default>false</default>
+                <label>Cat 1 multi-mode NO 3G</label>
+            </value>
+            <value>
+                <fullName>Cat 3 single-mode</fullName>
+                <default>false</default>
+                <label>Cat 3 single-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 3 multi-mode</fullName>
+                <default>false</default>
+                <label>Cat 3 multi-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 4 single-mode</fullName>
+                <default>false</default>
+                <label>Cat 4 single-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 4 multi-mode</fullName>
+                <default>false</default>
+                <label>Cat 4 multi-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 6 single-mode</fullName>
+                <default>false</default>
+                <label>Cat 6 single-mode</label>
+            </value>
+            <value>
+                <fullName>Cat 6 multi-mode</fullName>
+                <default>false</default>
+                <label>Cat 6 multi-mode</label>
+            </value>
+            <value>
+                <fullName>Cat M single-mode</fullName>
+                <default>false</default>
+                <label>Cat M single-mode</label>
+            </value>
+            <value>
+                <fullName>Cat M multi-mode</fullName>
+                <default>false</default>
+                <label>Cat M multi-mode</label>
+            </value>
+            <value>
+                <fullName>Cat M multi-mode NO 3G</fullName>
+                <default>false</default>
+                <label>Cat M multi-mode NO 3G</label>
+            </value>
+            <value>
+                <fullName>NB-IoT</fullName>
+                <default>false</default>
+                <label>NB-IoT</label>
+            </value>
+            <value>
+                <fullName>NB-IoT CN</fullName>
+                <default>false</default>
+                <label>NB-IoT CN</label>
+            </value>
+            <value>
+                <fullName>RPMA</fullName>
+                <default>false</default>
+                <label>RPMA</label>
+            </value>
+            <value>
+                <fullName>not applicable</fullName>
+                <default>false</default>
+                <label>not applicable</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>RPMA</controllingFieldValue>
+            <valueName>RPMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GPRS</controllingFieldValue>
+            <controllingFieldValue>EDGE</controllingFieldValue>
+            <valueName>GSM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not applicable</controllingFieldValue>
+            <valueName>not applicable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HSDPA</controllingFieldValue>
+            <controllingFieldValue>HSUPA</controllingFieldValue>
+            <valueName>Rel 5/6</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HSPA+</controllingFieldValue>
+            <valueName>Rel 7+</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDMA 1xRTT</controllingFieldValue>
+            <valueName>1xRTT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDMA EV-DO</controllingFieldValue>
+            <valueName>EV-DO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-only</controllingFieldValue>
+            <valueName>Cat 1 single-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-only</controllingFieldValue>
+            <valueName>Cat 3 single-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-only</controllingFieldValue>
+            <valueName>Cat 4 single-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-only</controllingFieldValue>
+            <valueName>Cat 6 single-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-only</controllingFieldValue>
+            <valueName>Cat M single-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat 1 multi-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat 1 multi-mode NO 3G</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat 3 multi-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat 4 multi-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat 6 multi-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat M multi-mode</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LTE-multi</controllingFieldValue>
+            <valueName>Cat M multi-mode NO 3G</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CIoT</controllingFieldValue>
+            <valueName>NB-IoT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CIoT</controllingFieldValue>
+            <valueName>NB-IoT CN</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

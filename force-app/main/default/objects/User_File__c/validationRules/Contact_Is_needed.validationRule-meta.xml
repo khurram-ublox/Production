@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Is_needed</fullName>
+    <active>true</active>
+    <errorConditionFormula>ContactId__c  = &apos;&apos; || ContactId__c  = NULL</errorConditionFormula>
+    <errorMessage>Please select contact id.</errorMessage>
+</ValidationRule>

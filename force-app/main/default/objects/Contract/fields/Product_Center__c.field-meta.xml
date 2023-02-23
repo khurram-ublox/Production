@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Center__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Center</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>POS</fullName>
+                <default>false</default>
+                <label>POS</label>
+            </value>
+            <value>
+                <fullName>CELL</fullName>
+                <default>false</default>
+                <label>CELL</label>
+            </value>
+            <value>
+                <fullName>SHO</fullName>
+                <default>false</default>
+                <label>SHO</label>
+            </value>
+            <value>
+                <fullName>SER</fullName>
+                <default>false</default>
+                <label>SER</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

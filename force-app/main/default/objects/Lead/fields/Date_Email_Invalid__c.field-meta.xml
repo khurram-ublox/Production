@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_Email_Invalid__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date when the Email address has been defined as invalid by ExactTarget</inlineHelpText>
+    <label>Date Email Invalid</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

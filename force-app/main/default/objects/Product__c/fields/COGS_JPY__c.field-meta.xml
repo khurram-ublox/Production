@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_JPY__c</fullName>
+    <externalId>false</externalId>
+    <formula>COGS_1__c  *  $User.USDtoJPY__c</formula>
+    <inlineHelpText>Cost in Yen. Calculated from COGS and exchange rate for the current month.</inlineHelpText>
+    <label>COGS JPY</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

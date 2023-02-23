@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Level__c</fullName>
+    <description>Price level
+RSP: Price = RSP
+TPD: RSP &gt; Price &gt;= TPD
+MSP: TPD &gt; Price &gt;= MSP
+PPP: MSP &gt; Price</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Price level
+RSP: Price = RSP
+TPD: RSP &gt; Price &gt;= TPD
+MSP: TPD &gt; Price &gt;= MSP
+PPP: MSP &gt; Price
+NOTE: No Approval Process required for TPD</inlineHelpText>
+    <label>Price Level</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PPP (Project Price Plan)</fullName>
+                <default>false</default>
+                <label>PPP (Project Price Plan)</label>
+            </value>
+            <value>
+                <fullName>MSP (Minimum Sales Price)</fullName>
+                <default>false</default>
+                <label>MSP (Minimum Sales Price)</label>
+            </value>
+            <value>
+                <fullName>TPD (Transfer Price for Distributor)</fullName>
+                <default>false</default>
+                <label>TPD (Transfer Price for Distributor)</label>
+            </value>
+            <value>
+                <fullName>RSP (Recommended Sales Price)</fullName>
+                <default>false</default>
+                <label>RSP (Recommended Sales Price)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

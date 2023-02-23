@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Center__c</fullName>
+    <description>Product Center of the sample product</description>
+    <externalId>false</externalId>
+    <formula>TEXT(Product__r.Product_Center__c)</formula>
+    <inlineHelpText>Product Center of the sample product</inlineHelpText>
+    <label>Product Center</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

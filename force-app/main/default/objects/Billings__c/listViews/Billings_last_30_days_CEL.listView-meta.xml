@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billings_last_30_days_CEL</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>Order_Handling_Region__c</columns>
+    <columns>Order_Status__c</columns>
+    <columns>Invoice_Date__c</columns>
+    <columns>Delivery_Date__c</columns>
+    <columns>Qty_Invoiced__c</columns>
+    <columns>Total_Value__c</columns>
+    <columns>End_Customer_Account__c</columns>
+    <columns>Direct_Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Invoice_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_DAYS:30</value>
+    </filters>
+    <filters>
+        <field>Order_Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <filters>
+        <field>Product_Center__c</field>
+        <operation>equals</operation>
+        <value>Cellular</value>
+    </filters>
+    <label>Billings last 30 days - CEL</label>
+</ListView>

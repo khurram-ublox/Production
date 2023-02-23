@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_tradeshow_exhibition__c</fullName>
+    <description>Tradeshows u-blox visits</description>
+    <externalId>false</externalId>
+    <label>Event, tradeshow, exhibition</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AMIV Kontakt.15</fullName>
+                <default>false</default>
+                <label>AMIV Kontakt.15</label>
+            </value>
+            <value>
+                <fullName>ARM TechCon</fullName>
+                <default>false</default>
+                <label>ARM TechCon</label>
+            </value>
+            <value>
+                <fullName>Canadian Wireless Trade Show</fullName>
+                <default>false</default>
+                <label>Canadian Wireless Trade Show</label>
+            </value>
+            <value>
+                <fullName>CES 2016</fullName>
+                <default>false</default>
+                <label>CES 2016</label>
+            </value>
+            <value>
+                <fullName>Connected Fleets</fullName>
+                <default>false</default>
+                <label>Connected Fleets</label>
+            </value>
+            <value>
+                <fullName>CTIA 2015</fullName>
+                <default>false</default>
+                <label>CTIA 2015</label>
+            </value>
+            <value>
+                <fullName>ELIV</fullName>
+                <default>false</default>
+                <label>ELIV</label>
+            </value>
+            <value>
+                <fullName>Embedded Conference Scandinavia / m2m summit scandinavia</fullName>
+                <default>false</default>
+                <label>Embedded Conference Scandinavia / m2m summit scandinavia</label>
+            </value>
+            <value>
+                <fullName>Embedded World (EW)</fullName>
+                <default>false</default>
+                <label>Embedded World (EW)</label>
+            </value>
+            <value>
+                <fullName>EPFL Forum</fullName>
+                <default>false</default>
+                <label>EPFL Forum</label>
+            </value>
+            <value>
+                <fullName>ESC (Brazil)</fullName>
+                <default>false</default>
+                <label>ESC (Brazil)</label>
+            </value>
+            <value>
+                <fullName>European Utility Week (EUW)</fullName>
+                <default>false</default>
+                <label>European Utility Week (EUW)</label>
+            </value>
+            <value>
+                <fullName>IMTS2015</fullName>
+                <default>false</default>
+                <label>IMTS2015</label>
+            </value>
+            <value>
+                <fullName>ISGNSS</fullName>
+                <default>false</default>
+                <label>ISGNSS</label>
+            </value>
+            <value>
+                <fullName>ITS World Congress</fullName>
+                <default>false</default>
+                <label>ITS World Congress</label>
+            </value>
+            <value>
+                <fullName>Japan IT Week Autumn</fullName>
+                <default>false</default>
+                <label>Japan IT Week Autumn</label>
+            </value>
+            <value>
+                <fullName>Mobile World Congress (MWC)</fullName>
+                <default>false</default>
+                <label>Mobile World Congress (MWC)</label>
+            </value>
+            <value>
+                <fullName>Small Cells Americas 2015</fullName>
+                <default>false</default>
+                <label>Small Cells Americas 2015</label>
+            </value>
+            <value>
+                <fullName>SPS IPC Drives</fullName>
+                <default>false</default>
+                <label>SPS IPC Drives</label>
+            </value>
+            <value>
+                <fullName>Taitronics 2015</fullName>
+                <default>false</default>
+                <label>Taitronics 2015</label>
+            </value>
+            <value>
+                <fullName>Telematics Brazil &amp; LATAM</fullName>
+                <default>false</default>
+                <label>Telematics Brazil &amp; LATAM</label>
+            </value>
+            <value>
+                <fullName>Telematics West Coast (TU)</fullName>
+                <default>false</default>
+                <label>Telematics West Coast (TU)</label>
+            </value>
+            <value>
+                <fullName>Wireless Congress</fullName>
+                <default>false</default>
+                <label>Wireless Congress</label>
+            </value>
+            <value>
+                <fullName>YOW! Connected</fullName>
+                <default>false</default>
+                <label>YOW! Connected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

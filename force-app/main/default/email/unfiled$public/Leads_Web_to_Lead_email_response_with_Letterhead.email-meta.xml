@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Auto-response when new lead is submitted online (for generic use).</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Leads: Web-to-Lead email response with Letterhead</name>
+    <style>formalLetter</style>
+    <subject>{!Organization.Name} Thank you for your submission</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.Name},
+
+Thank you for providing your details. The submitted information has been forwarded to a u-blox sales representative for processing and confirmation.
+
+The data submitted will be held in strict confidence.
+
+
+Kind regards
+u-blox</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

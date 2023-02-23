@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>FU_Copy_End_Customer_uB_Office</fullName>
+        <field>End_Customer_uB_Office_Copy__c</field>
+        <formula>TEXT(End_Customer__r.uB_Office__c)</formula>
+        <name>FU: Copy End Customer uB Office</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FU_Copy_Reporting_uB_Office</fullName>
+        <description>Copy Reporting_uB_Office__c to Reporting_uB_Office_Copy__c that is used for Sharing Rules to grant access to members of &quot;Reporting uB Office&quot; in case the owner is from other uB office.</description>
+        <field>Reporting_uB_Office_Copy__c</field>
+        <formula>Reporting_uB_Office__c</formula>
+        <name>FU: Copy Reporting uB Office</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FU_Update_Name</fullName>
+        <description>Set name of forecast unit to external reference ID</description>
+        <field>Name</field>
+        <formula>FCUReference_ext_ID__c</formula>
+        <name>FU: Update Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>FU_Update_Packaging_Size</fullName>
+        <description>Set packaging size to 1</description>
+        <field>Packaging_Size__c</field>
+        <formula>1</formula>
+        <name>FU: Update Packaging Size</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Replace_Null_Values_of_Actual_Sales_Pric</fullName>
+        <field>Actual_Sales_Price__c</field>
+        <formula>COGS_based_Sales_Price__c</formula>
+        <name>Replace Null Values of Actual Sales Pric</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>FU%3A Packaging Size 0</fullName>
+        <actions>
+            <name>FU_Update_Packaging_Size</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit__c.Packaging_Size__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>If packaging size is 0, set it to 1</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FU%3A Set Name</fullName>
+        <actions>
+            <name>FU_Update_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Forecast_Unit__c.FCUReference_ext_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Set name of forecast unit to reference ID</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>FU%3A Update Reporting uB Office Copy</fullName>
+        <actions>
+            <name>FU_Copy_End_Customer_uB_Office</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>FU_Copy_Reporting_uB_Office</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Used for Sharing Rules to grant access to members of &quot;Reporting uB Office&quot; in case the owner is from other uB office.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Replace Null Values of Actual Sales Price</fullName>
+        <actions>
+            <name>Replace_Null_Values_of_Actual_Sales_Pric</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Forecast_Unit__c.Actual_Sales_Price__c</field>
+            <operation>equals</operation>
+            <value>,USD 0</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_ordering_code__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ordering Code that is unique for a specific customer</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ordering Code that is unique for a specific customer</inlineHelpText>
+    <label>Custom ordering code</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

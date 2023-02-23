@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_2__c</fullName>
+    <description>Forecast 2 for future use (is already included in Analytic Snapshot)</description>
+    <externalId>false</externalId>
+    <formula>IF( History_Month__c &lt; DATE( YEAR(TODAY()) , MONTH(TODAY()) ,15) ,
+Actual_Sales__c,
+IF( History_Month__c = DATE( YEAR(TODAY()) , MONTH(TODAY()) ,15) ,
+MAX((Actual_Sales__c + Order_Book__c), Forecast_manual__c ),
+MAX( Order_Book__c, BLANKVALUE(Forecast_manual__c , MAX(Order_Book__c,Forecast_3__c)))
+)
+)</formula>
+    <label>Forecast 2</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

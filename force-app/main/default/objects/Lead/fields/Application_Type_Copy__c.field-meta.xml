@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Type_Copy__c</fullName>
+    <description>Made to import to Opportunity, to be copied with workflow</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Made to import to Opportunity, to be copied with workflow</inlineHelpText>
+    <label>Application Type Copy</label>
+    <length>200</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

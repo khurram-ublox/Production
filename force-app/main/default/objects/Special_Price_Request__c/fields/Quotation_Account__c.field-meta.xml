@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotation_Account__c</fullName>
+    <description>Automatically populated with Contact Account. If no Contact, the same as Account (Opportunity Account if there is Opportunity).</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Contact__c), Account__r.Name , Contact__r.Account.Name )</formula>
+    <inlineHelpText>Automatically populated with Contact Account. If no Contact, the same as Account (Opportunity Account if there is Opportunity).</inlineHelpText>
+    <label>Quotation Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

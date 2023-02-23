@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEAAllInActiveInterterritoryopps</fullName>
+    <booleanFilter>1 AND (2 OR 3) AND (4 OR 5 OR 6) AND (7 OR 8 OR 9)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Area_opportunity_owner__c</columns>
+    <columns>Area_design_house__c</columns>
+    <columns>Area_manufacturing__c</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>lessThan</operation>
+        <value>3 Calling on</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>greaterThan</operation>
+        <value>8 Production</value>
+    </filters>
+    <filters>
+        <field>Area_opportunity_owner__c</field>
+        <operation>contains</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Area_design_house__c</field>
+        <operation>contains</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Area_manufacturing__c</field>
+        <operation>includes</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Area_opportunity_owner__c</field>
+        <operation>notContain</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Area_design_house__c</field>
+        <operation>notContain</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Area_manufacturing__c</field>
+        <operation>excludes</operation>
+        <value>EMEA</value>
+    </filters>
+    <label>EMEA All InActive Inter-territory opps.</label>
+    <sharedTo></sharedTo>
+</ListView>

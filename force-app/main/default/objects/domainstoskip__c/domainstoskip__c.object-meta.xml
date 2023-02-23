@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Add email domains to skip the closed cases from split.
+Case will reopen instead of split</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Email Case - Domains to skip</label>
+    <visibility>Public</visibility>
+</CustomObject>

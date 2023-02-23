@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send customer a url link to e-NDA form for America accounts</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Contact: e-NDA Americas link with Letterhead</name>
+    <style>formalLetter</style>
+    <subject>u-blox Americas Inc.: Non-Disclosure and Restricted Use Agreement (NDA) with u-blox AG</subject>
+    <textOnly>Dear {!Contact.Salutation} {!Contact.FirstName} {!Contact.LastName},
+
+Please find below the link to the standard mutual NDA with u-blox America, Inc.:
+
+https://www.u-blox.com/en/non-disclosure-agreement-americas?ub_contact__c={!User.Alias}
+
+Under this link, you will be able to fill in a web form and to agree to the terms of the NDA by validly submitting the form.
+
+We thank you and send you our best regards,
+
+u-blox America Inc.
+1902 Campus Commons Drive
+Suite 310
+Reston, VA 20191
+USA
+
+Phone: +1 703 483 3180
+Fax: +1 703 483 3179
+Email: info_us@u-blox.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(OR((AND(Account_ID__c=&quot;00120000004eEZF&quot;,Product_ID__c = &quot;01t20000000EOLh&quot;)),(AND(Account_ID__c=&quot;001D000001Ul998&quot;,Product_ID__c = &quot;01t57000006rAsc&quot;)) )),
+
+IF( ISBLANK(TEXT(End_Customer__r.Reporting_Region__c)), TEXT(Account__r.Reporting_Region__c) , TEXT(End_Customer__r.Reporting_Region__c)) ,
+
+&quot;Corporate&quot;)</formula>
+    <label>Reporting Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

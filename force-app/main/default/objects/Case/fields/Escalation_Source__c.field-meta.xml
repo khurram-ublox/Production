@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Escalation_Source__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(OR($User.ProfileId=&quot;00e200000015FVB&quot;,$User.ProfileId=&quot;00e2p000001BMJg&quot;),&quot;TM&quot;,
+  IF(ISPICKVAL($User.uB_Office__c,&quot;Rest of APAC&quot;),&quot;AE APAC&quot;,
+    IF($User.Team_Leader__c,&quot;FAE Leader&quot;,&quot;FAE&quot;)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Escalation Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Coverage_Text__c</fullName>
+    <description>Note: &quot;No coverage&quot; can no longer be selected. The text item still exists -  but such a condition cannot be enforced</description>
+    <externalId>false</externalId>
+    <formula>If ( PricebookEntry.Product2.IPR__c &gt; 0,
+Case ( IPR_Coverage__c,
+&quot;Premium coverage&quot;,BR() &amp; &quot;Premium Standard Essential Patents coverage.&quot;,
+&quot;Prime coverage&quot;,BR() &amp; &quot;Prime Standard Essential Patents coverage.&quot;,
+&quot;Premium except Qualcomm&quot;,BR() &amp; &quot;Premium Standard Essential Patents coverage to customer being licensed by Qualcomm.&quot;,
+&quot;Prime except Qualcomm&quot;,BR() &amp; &quot;Prime Standard Essential Patents coverage to customer being licensed by Qualcomm.&quot;,
+&quot;Full coverage&quot;,&quot; &quot;,
+&quot;All except Qualcomm&quot;,BR() &amp; &quot;Price subject to customer being licensed by Qualcomm.&quot;,
+&quot;All except Interdigital&quot;,BR() &amp; &quot;Price subject to customer being licensed by Interdigital.&quot;,
+&quot;All except QCOM and IDC&quot;,BR() &amp; &quot;Price subject to customer being licensed by Qualcomm and Interdigital.&quot;,
+&quot;No coverage&quot;, BR() &amp; &quot;Price subject to customer providing to u-blox full liability for essential patents.&quot;,
+&quot; &quot;),
+&quot; &quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Text visible on quotations</inlineHelpText>
+    <label>IPR Coverage Text</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

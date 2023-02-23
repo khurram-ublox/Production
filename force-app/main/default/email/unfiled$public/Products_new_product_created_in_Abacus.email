@@ -1,0 +1,16 @@
+The following product has been created in Abacus. Please ensure the follow-up:
+- Complete product description in Salesforce, add std price (USD, EUR, JPY) and activate product
+- Create/update product page in TWiki (incl. feature request)
+- Label definition (in case of new form factor)
+- Define EVK and support products
+- Indicative pricing for price list
+- Define market introduction plan
+- Definition of sample volume (incl. evaluation kits)
+- Preliminary product presentation 
+- Product definition in Master Schedule (if reasonable)
+
+Type number: {!Product2.Type_No__c}
+Product status: {!Product2.Product_Status__c}
+Product description: {!Product2.Product_Text_1__c} {!Product2.Product_Text_2__c}
+
+Link to record: {!Product2.Link}

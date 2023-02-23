@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Restriction_Check</fullName>
+    <active>true</active>
+    <description>If the selected Product has IPR Class, Use Restriction and Coverage should be given.
+---
+AND(NOT(ISBLANK(Product__r.IPR_Class__c)),
+OR(
+(Product__r.IPR_Class__c &lt;&gt; LEFT(TEXT(Use_Restriction__c),2)),
+ISBLANK(TEXT(IPR_Coverage__c))))</description>
+    <errorConditionFormula>IF(Product__r.IPR_Class__c = &quot;2G&quot;, IF(LEFT(TEXT(Use_Restriction__c),2) = &quot;2G&quot;, FALSE, TRUE),
+IF(Product__r.IPR_Class__c = &quot;3G&quot;, IF(LEFT(TEXT(Use_Restriction__c),2) = &quot;3G&quot;, FALSE, TRUE),
+IF(AND(OR(Product__r.IPR_Class__c=&quot;4G&quot;,ISPICKVAL(Product__r.Technology__c,&quot;LTE&quot;),ISPICKVAL(Product__r.Technology__c,&quot;NB-IoT&quot;)), NOT(ISPICKVAL(Product__r.Technology__c, &quot;RPMA&quot;))), IF(LEFT(TEXT(Use_Restriction__c),2) = &quot;4G&quot;, FALSE, TRUE),
+FALSE)))</errorConditionFormula>
+    <errorDisplayField>Use_Restriction__c</errorDisplayField>
+    <errorMessage>Choose relevant Use Restriction and IPR Coverage</errorMessage>
+</ValidationRule>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catalog_cards_contacts</fullName>
+    <booleanFilter>1 AND 2 AND (3 or 4 or 5 or 6 or 7)</booleanFilter>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Service_Item_2__c</columns>
+    <columns>Service_Item_1__c</columns>
+    <columns>PCN_Modules_Services__c</columns>
+    <columns>CDK_Update__c</columns>
+    <columns>CONTACT.EMAIL_OPT_OUT</columns>
+    <columns>Left_the_company__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Email_address_probably_not_valid__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Service_Item_1__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>jdub</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>hrob</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>aboe</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>ktie</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>fcat</value>
+    </filters>
+    <label>EMEA Catalog &amp; christmas cards contacts</label>
+    <language>en_US</language>
+    <sharedTo></sharedTo>
+</ListView>

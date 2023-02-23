@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>If you cannot find the product you would like to add, contact product manager.
+NOTE 2018.09.17: ZED-F9L was removed from Lookup Filter requested by :jare:
+NOTE 2019.09.26: Lookup Filter deactivated requested by :jare:</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you cannot find the product you would like to add, contact product manager.</inlineHelpText>
+    <label>Product</label>
+    <lookupFilter>
+        <active>false</active>
+        <filterItems>
+            <field>Product2.Name</field>
+            <operation>notEqual</operation>
+            <value>UBX-A9940-KA,UBX-F9240-KA</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Special Price Request Products</relationshipLabel>
+    <relationshipName>Project_Price_Plan_Products</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

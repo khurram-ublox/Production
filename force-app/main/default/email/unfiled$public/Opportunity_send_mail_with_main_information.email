@@ -1,0 +1,39 @@
+Please provide a status update on the following opportunity:
+
+Opportunity name:  {!Opportunity.Name}
+Customer:  {!Opportunity.Account}
+Product 1: {!Opportunity.Product_1__c}
+Product 2: {!Opportunity.Product_2__c}
+Product 3: {!Opportunity.Product_3__c}
+
+Your status update:
+
+Is this opportunity / project still on-going?
+If not, reason: 
+
+If yes:
+
+- Products (if deviating from the above)
+
+- Prototypes
+  * when not yet available
+      planned date for prototypes: 
+      planned design review (at u-blox):
+
+  * if available
+      evaluation results: 
+      next steps:
+      date of design review (at u-blox): 
+
+- Production
+  * when production started
+      expected volume for next 12 months: 
+
+  * if production not yet started
+      planned date production ramp-up: 
+      expected 12 month qty: 
+
+
+Thank you for your timely feedback.
+kind regards
+{!Account.OwnerFullName}

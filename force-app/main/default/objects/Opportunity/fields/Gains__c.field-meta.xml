@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gains__c</fullName>
+    <description>Added on request OpenIssues52917</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Describe the desired outcome and benefits when job is done correctly
+[Required, expected, desired, unexpected]</inlineHelpText>
+    <label>Gains</label>
+    <length>1000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

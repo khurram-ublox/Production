@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_ubx_M9_products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Type_No__c</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>Product_Status__c</columns>
+    <columns>Linked_to_Abacus__c</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>Product_Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Positioning_Engine__c</field>
+        <operation>equals</operation>
+        <value>u-blox A9,u-blox D9,u-blox F9,u-blox M9</value>
+    </filters>
+    <label>All u-blox M9, F9, A9, D9 products</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

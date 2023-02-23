@@ -1,0 +1,8 @@
+Dear {!Contact.OwnerFirstName}
+
+The following contact email address is now active so mass mails will be sent.
+
+Company: {!Account.Name} 
+Name: {!Contact.Name} 
+Email: {!Contact.Email}
+Contact URL: {!Contact.Link}

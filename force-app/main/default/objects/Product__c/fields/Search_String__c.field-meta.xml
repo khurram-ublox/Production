@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_String__c</fullName>
+    <description>Orig:
+case( Product_Category__c,
+&quot;POS chips&quot;, LEFT ( ProductCode,14),
+&quot;CEL modules&quot;, LEFT ( ProductCode,9),
+&quot;SHO modules&quot;, Name ,
+&quot;SHO services&quot;, Name ,
+ProductCode)</description>
+    <externalId>false</externalId>
+    <formula>Name</formula>
+    <inlineHelpText>Search string used for &quot;Show Orders&quot; and &quot;Show Opportunities&quot;. Depends on product category.</inlineHelpText>
+    <label>Search String</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

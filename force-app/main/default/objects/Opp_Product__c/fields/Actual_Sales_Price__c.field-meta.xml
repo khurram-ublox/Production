@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Sales_Price__c</fullName>
+    <externalId>false</externalId>
+    <formula>a4x_Applicable_Sales_Price_CHF__c 
+
+/  
+
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;,  $Setup.Constant_Exchange_Rates__c.EUR2CHF__c ,
+&quot;JPY&quot;,   $Setup.Constant_Exchange_Rates__c.JPY2CHF__c ,
+&quot;USD&quot;, $Setup.Constant_Exchange_Rates__c.USD2CHF__c ,
+1
+)
+/*
+a4x_Latest_Sales_Price_CHF__c 
+
+/ $User.USDtoCHF__c
+
+*
+
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, $User.USDtoEUR__c,
+&quot;JPY&quot;,  $User.USDtoJPY__c,
+  1
+)
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Actual Sales Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

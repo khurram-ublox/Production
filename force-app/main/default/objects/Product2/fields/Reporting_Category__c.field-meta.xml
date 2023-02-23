@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Category__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Category used for sales reporting</inlineHelpText>
+    <label>Reporting Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>u-blox A9</fullName>
+                <default>false</default>
+                <label>u-blox A9</label>
+            </value>
+            <value>
+                <fullName>u-blox D9</fullName>
+                <default>false</default>
+                <label>u-blox D9</label>
+            </value>
+            <value>
+                <fullName>u-blox F10</fullName>
+                <default>false</default>
+                <label>u-blox F10</label>
+            </value>
+            <value>
+                <fullName>u-blox F9</fullName>
+                <color>#6600CC</color>
+                <default>false</default>
+                <label>u-blox F9</label>
+            </value>
+            <value>
+                <fullName>u-blox M10</fullName>
+                <default>false</default>
+                <label>u-blox M10</label>
+            </value>
+            <value>
+                <fullName>u-blox M9</fullName>
+                <color>#9999FF</color>
+                <default>false</default>
+                <label>u-blox M9</label>
+            </value>
+            <value>
+                <fullName>u-blox M8</fullName>
+                <color>#CC66CC</color>
+                <default>false</default>
+                <label>u-blox M8</label>
+            </value>
+            <value>
+                <fullName>u-blox 8</fullName>
+                <color>#663366</color>
+                <default>false</default>
+                <label>u-blox 8</label>
+            </value>
+            <value>
+                <fullName>u-blox 7</fullName>
+                <color>#993399</color>
+                <default>false</default>
+                <label>u-blox 7</label>
+            </value>
+            <value>
+                <fullName>u-blox 6</fullName>
+                <color>#66FFFF</color>
+                <default>false</default>
+                <label>u-blox 6</label>
+            </value>
+            <value>
+                <fullName>u-blox 5</fullName>
+                <color>#3366FF</color>
+                <default>false</default>
+                <label>u-blox 5</label>
+            </value>
+            <value>
+                <fullName>Antaris 4</fullName>
+                <color>#330099</color>
+                <default>false</default>
+                <label>Antaris 4</label>
+            </value>
+            <value>
+                <fullName>GNSS various</fullName>
+                <color>#AFCADF</color>
+                <default>false</default>
+                <label>GNSS various</label>
+            </value>
+            <value>
+                <fullName>GNSS solutions</fullName>
+                <color>#78C953</color>
+                <default>false</default>
+                <label>GNSS solutions</label>
+            </value>
+            <value>
+                <fullName>GNSS non-UBX</fullName>
+                <color>#006600</color>
+                <default>false</default>
+                <label>GNSS non-UBX</label>
+            </value>
+            <value>
+                <fullName>GPRS modules</fullName>
+                <color>#F3D904</color>
+                <default>false</default>
+                <label>GPRS modules</label>
+            </value>
+            <value>
+                <fullName>HSPA modules</fullName>
+                <color>#A53711</color>
+                <default>false</default>
+                <label>HSPA modules</label>
+            </value>
+            <value>
+                <fullName>CDMA modules</fullName>
+                <color>#FFCC66</color>
+                <default>false</default>
+                <label>CDMA modules</label>
+            </value>
+            <value>
+                <fullName>LTE modules</fullName>
+                <color>#663300</color>
+                <default>false</default>
+                <label>LTE modules</label>
+            </value>
+            <value>
+                <fullName>LTE chips</fullName>
+                <color>#CC9933</color>
+                <default>false</default>
+                <label>LTE chips</label>
+            </value>
+            <value>
+                <fullName>RPMA modules</fullName>
+                <default>false</default>
+                <label>RPMA modules</label>
+            </value>
+            <value>
+                <fullName>CIoT modules</fullName>
+                <default>false</default>
+                <label>CIoT modules</label>
+            </value>
+            <value>
+                <fullName>Wireless solutions</fullName>
+                <color>#FF6600</color>
+                <default>false</default>
+                <label>Wireless solutions</label>
+            </value>
+            <value>
+                <fullName>Bluetooth</fullName>
+                <color>#660000</color>
+                <default>false</default>
+                <label>Bluetooth</label>
+            </value>
+            <value>
+                <fullName>Multiradio</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+                <label>Multiradio</label>
+            </value>
+            <value>
+                <fullName>Wi-Fi</fullName>
+                <color>#FF6666</color>
+                <default>false</default>
+                <label>Wi-Fi</label>
+            </value>
+            <value>
+                <fullName>SHO services</fullName>
+                <color>#FF9966</color>
+                <default>false</default>
+                <label>SHO services</label>
+            </value>
+            <value>
+                <fullName>V2X</fullName>
+                <default>false</default>
+                <label>V2X</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <color>#666666</color>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

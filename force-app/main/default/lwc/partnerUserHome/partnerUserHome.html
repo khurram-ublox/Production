@@ -1,0 +1,22 @@
+<template>
+  <template if:true={userRec}>    
+      <div class="mainDiv">
+        <template if:true={userAccLogoPresent} >
+          <div class="slds-float_left imgDiv">
+            <img src={userAccLogoLink} class="imgCls" alt="Company Logo"/>
+          </div>       
+        </template>  
+        <div class="msgDiv">
+            <div class="boldText">Welcome {userRec.fields.FirstName.value}!</div>
+            <template if:false={isFinanceUser}>
+              <div>{label.PARTNER_HOME_MESSAGE_LABEL}</div>
+            </template>
+            <template if:true={isFinanceUser}>
+              <div>{label.FINANCE_PARTNER_HOME_MESSAGE_LABEL}</div>
+            </template>
+        </div>
+        <div class="slds-float_none"></div>
+      </div>
+    
+  </template>
+</template>

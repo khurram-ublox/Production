@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solution_made_by_Bryan</fullName>
+    <columns>SOLUTION.SOLUTION_NUMBER</columns>
+    <columns>SOLUTION.STATUS</columns>
+    <columns>SOLUTION.ISSUE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>SOLUTION.CREATED_DATE</columns>
+    <columns>Internal_Release_only__c</columns>
+    <columns>Propose_External_Release__c</columns>
+    <columns>Status_Change_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SOLUTION.STATUS</field>
+        <operation>equals</operation>
+        <value>Released</value>
+    </filters>
+    <filters>
+        <field>Owner__c</field>
+        <operation>equals</operation>
+        <value>Bryan Young</value>
+    </filters>
+    <label>Solution made by Bryan</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>ubloxEC</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

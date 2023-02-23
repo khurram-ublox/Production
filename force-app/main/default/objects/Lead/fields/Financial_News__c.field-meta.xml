@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Financial_News__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>From webform News Subscription via Field Of Interest, to be converted to Contact: Financial News</description>
+    <externalId>false</externalId>
+    <inlineHelpText>From webform News Subscription via Field Of Interest, to be converted to Contact: Financial News</inlineHelpText>
+    <label>Financial News</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

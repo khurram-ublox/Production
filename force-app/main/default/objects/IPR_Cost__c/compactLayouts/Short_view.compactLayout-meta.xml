@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Short_view</fullName>
+    <fields>Name</fields>
+    <fields>M2M_Pct__c</fields>
+    <fields>Prime_M2M_Pct__c</fields>
+    <fields>Telematics_Pct__c</fields>
+    <fields>Prime_Telematics_Pct__c</fields>
+    <label>Short view</label>
+</CompactLayout>

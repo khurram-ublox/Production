@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Focus_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Focus account of the account owner, editable only for the Account Owner or Channel_Manager.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Focus account of the account owner, editable only for the Account Owner or Channel_Manager.</inlineHelpText>
+    <label>Focus Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

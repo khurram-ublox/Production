@@ -1,0 +1,1901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approved_Global_Registration_Template</fullName>
+        <ccEmails>registrations@u-blox.com</ccEmails>
+        <description>Approved - Global Registration Template.  Used in approval process &apos; Opportunity: Global Distribution Project&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Approved_Global_Distribution</template>
+    </alerts>
+    <alerts>
+        <fullName>Approved_Global_Registration_Template_EMEA</fullName>
+        <description>Approved - Global Registration Template EMEA.  Used in approval process &apos;Global Distribution Project EMEA&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>crystal.liu@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Account_Channel_Manager_Obj__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Approved_Global_Distribution</template>
+    </alerts>
+    <alerts>
+        <fullName>Approved_Global_Registration_Template_for_future_Americas</fullName>
+        <ccEmails>TIA.UBlox@FutureElectronics.com</ccEmails>
+        <description>Approved - Global Registration Template for Future Americas</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Approved_Global_Distribution</template>
+    </alerts>
+    <alerts>
+        <fullName>Denied_Global_Registration_Template</fullName>
+        <ccEmails>registrations@u-blox.com</ccEmails>
+        <description>Denied - Global Registration Template.  Used in approval process &apos; Opportunity: Global Distribution Project&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Denied_Global_Distribution</template>
+    </alerts>
+    <alerts>
+        <fullName>Denied_Global_Registration_Template_EMEA</fullName>
+        <description>Denied - Global Registration Template EMEA</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>crystal.liu@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <field>Account_Channel_Manager_Obj__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Denied_Global_Distribution</template>
+    </alerts>
+    <alerts>
+        <fullName>Denied_Global_Registration_Template_For_Future_Americas</fullName>
+        <ccEmails>TIA.UBlox@FutureElectronics.com</ccEmails>
+        <description>Denied - Global Registration Template For Future Americas</description>
+        <protected>false</protected>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Denied_Global_Distribution</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Opp_Includes_SARA_R422_mail_to_Creator</fullName>
+        <description>Opportunity: New Opp Includes SARA R422 mail to Creator</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/New_Opp_Includes_SARA_R422_mail_to_Creator</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Close_Opportunity_due_to_no_follow_up</fullName>
+        <description>Opp: Close Opportunity due to no follow-up</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>support@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opp_Close_Opportunity_due_to_no_follow_up</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Owner_different_from_Account_Owner</fullName>
+        <description>Opp: Owner different from Account Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Alert_Owner_difference_Account_Opportunity</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Owner_different_from_Account_Owner_for_Partner_Portal</fullName>
+        <description>Opp: Owner different from Account Owner for Partner Portal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Alert_Owner_difference_Account_Opportunity_for_Partner_Portal</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Quotation_alert</fullName>
+        <description>Opp: Quotation alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Quotation_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Registration_Expiration</fullName>
+        <description>Opp : Registration Expiration</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opp_Distribution_Registration_Expire</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Registration_Expiration_For_Partner_Portal</fullName>
+        <description>Opp : Registration Expiration For Partner Portal</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Lead_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opp_Distribution_Registration_Expire_For_Partner_Portal</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Decision_Date</fullName>
+        <description>Opp: Reminder Decision Date</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Decision_Date</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Decision_Date_Today_to_Account_Owner</fullName>
+        <description>Opp: Reminder Decision Date Today (to Account Owner)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Decision_Date_Today_Acc_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Decision_Date_Today_to_FAE</fullName>
+        <description>Opp: Reminder Decision Date Today (to FAE)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>FAE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Decision_Date_Today_FAE</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Opportunity_will_be_closed_Automatically</fullName>
+        <description>Opp: Reminder Opportunity will be closed Automatically</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>umar.arshad@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opp_Reminder_Opportunity_will_be_closed_Automatically</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Opportunity_will_be_closed_Automatically_four_weeks</fullName>
+        <description>Opp: Reminder Opportunity will be closed Automatically</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>umar.arshad@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>support@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opp_Reminder_Opportunity_will_be_closed_Automatically_four_weeks</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Proto_Date</fullName>
+        <description>Opp: Reminder Proto Date</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Proto_Date</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Stage_4_to_FAE</fullName>
+        <description>Opp: Reminder Stage 4 to FAE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>FAE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Stage_4_FAE</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Stage_5_to_FAE</fullName>
+        <description>Opp: Reminder Stage 5 to FAE</description>
+        <protected>false</protected>
+        <recipients>
+            <field>FAE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Stage_5_FAE</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Stage_5_to_FAE_Partner_Portal</fullName>
+        <description>Opp: Reminder Stage 5 to FAE for Partner Portal</description>
+        <protected>false</protected>
+        <recipients>
+            <field>FAE_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Stage_5_FAE_for_Partner_Portal</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Start_Production</fullName>
+        <description>Opp: Reminder Start Production</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Start_Production</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Reminder_Start_Production_Today</fullName>
+        <description>Opp: Reminder Start Production Today</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Reminder_Start_Production_Today</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_edited_by_distributor_not_owner</fullName>
+        <description>Opp: edited by distributor not owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Changed_by_distributor_not_owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_edited_by_distributor_not_owner_for_Partner_Portal</fullName>
+        <description>Opp: edited by distributor not owner for Partner Portal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Changed_by_distributor_not_owner_Partner_Portal</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_update_of_JODY_W1_THEO_P1_Opps</fullName>
+        <description>Opp: update of JODY-W1, THEO-P1 Opps</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>costas.meimetis@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ezra.stein@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_generic_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Approved_Email_Services_Team</fullName>
+        <description>Opportunity: Approved Email Services Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>neil.hamilton@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sami.azam@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tony.doubell@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opportunity_Approved_Email_Services_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Email_sent_to_distributors</fullName>
+        <description>Opportunity Email sent to distributors</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>sami.azam@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opportunity_Approval_Process_Distributor_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Global_Distribution_submit_for_approval</fullName>
+        <description>Opportunity Global Distribution submit for approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opportunity_Global_Distribution_submit_for_approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Reject_Distributor_Email</fullName>
+        <description>Opportunity: Reject Distributor Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <recipient>sami.azam@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_Reject_Distributor_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Submitted_Email_Services_Team</fullName>
+        <description>Opportunity: Submitted Email Services Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>neil.hamilton@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sami.azam@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tony.doubell@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opportunity_Submitted_Email_Services_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_alert_mail</fullName>
+        <description>Opportunity alert mail wireless design</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>herbert.blaser@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>stefano.moioli@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_alert_for_wireless_design</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_alert_mail_CDMA_module_project</fullName>
+        <description>Opportunity alert mail CDMA module project</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>stefano.moioli@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_alert_for_CDMA_modules</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_alert_mail_GSM_module_project</fullName>
+        <description>Opportunity alert mail GSM module project</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>stefano.moioli@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_alert_for_GSM_modules</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_alert_mail_WCDMA_module_project</fullName>
+        <description>Opportunity alert mail WCDMA module project</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ezra.stein@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_alert_for_WCDMA_modules</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_mail_with_opportunity_information</fullName>
+        <description>Opportunity: mail with opportunity information</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opportunity_send_mail_with_main_information</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_with_SARA_R422</fullName>
+        <description>Opportunity with SARA R422</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>neil.hamilton@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/X1_0_New_Opp_Includes_SARA_R422</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Process_Stage_Approved</fullName>
+        <field>Approval_Process_Stage__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval Process Stage Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Process_Stage_Rejected</fullName>
+        <field>Approval_Process_Stage__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approval Process Stage Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Process_Stage_Submitted</fullName>
+        <field>Approval_Process_Stage__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Approval Process Stage Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Status</fullName>
+        <field>Approval_Status_Flag__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Generate_Registration_No</fullName>
+        <description>Registration no. will be generated using AutoNumber field if it is not null else considers last 6 digits of Opp Id as the field was created earlier without considering Generate auto number for old records.</description>
+        <field>Registration_No__c</field>
+        <formula>IF(ISBLANK(Registration_No__c),IF(ISBLANK(OppAutoNumber__c),RIGHT(Id,6),TEXT(VALUE(MID(OppAutoNumber__c,2,245)))) &amp; &quot;-&quot; &amp;
+TEXT(Year(TODAY()))&amp; LPAD(TEXT(Month(TODAY())),2,&quot;0&quot;) &amp; LPAD(TEXT(Day(TODAY())),2,&quot;0&quot;) ,Registration_No__c)</formula>
+        <name>Generate Registration No.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_1_Lost</fullName>
+        <field>First_Date_Of_1_Lost__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 1 Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_3_Calling_on</fullName>
+        <field>First_Date_Of_3_Calling_on__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 3 Calling on</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_4_Evaluation</fullName>
+        <field>First_Date_Of_4_Evaluation__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 4 Evaluation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_5_Design_in</fullName>
+        <field>First_Date_Of_5_Design_in__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 5 Design-in</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_6_Prototypes</fullName>
+        <field>First_Date_Of_6_Prototypes__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 6 Prototypes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_7_Pre_Production</fullName>
+        <field>First_Date_Of_7_Pre_Production__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 7 Pre-Production</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_8_Production</fullName>
+        <field>First_Date_Of_8_Production__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 8 Production</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Add_First_Date_Of_9_Closed_EoL</fullName>
+        <field>First_Date_Of_9_Closed_EoL__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Add First Date Of 9 Closed - EoL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Name_as_Lead_Project_Name</fullName>
+        <description>Name the Opportunity as Lead Project Name, used for Lead conversion</description>
+        <field>Name</field>
+        <formula>Lead_Project_Name__c</formula>
+        <name>Opp: Name as Lead Project Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Populate_FAE_Email</fullName>
+        <field>FAE_Email__c</field>
+        <formula>Account.FAE__r.Email</formula>
+        <name>Opp: Populate FAE Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Update_Latest_Status_Technical_Mod</fullName>
+        <field>Latest_Status_Technical_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp: Update Latest Status Technical Mod.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_clear_checkbox_Send_mail</fullName>
+        <description>clear the checkbox that was set to initiate mailing</description>
+        <field>Send_mail_with_info__c</field>
+        <literalValue>0</literalValue>
+        <name>Opp: clear checkbox &quot;Send mail..&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_copy_date_status_change</fullName>
+        <description>When the status of an opportunity changes, record the date of change</description>
+        <field>Latest_Status_Modified__c</field>
+        <formula>today()</formula>
+        <name>Opp: copy date status change</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_copy_design_in_date</fullName>
+        <description>Copy today&apos;s date to field &quot;Design-in Date&quot;</description>
+        <field>Design_win_Date__c</field>
+        <formula>today()</formula>
+        <name>Opp: copy design-in date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_Annual_Qty_to_lead_value</fullName>
+        <description>Copy planned annual quantity from lead value.</description>
+        <field>Annual_Quantity__c</field>
+        <formula>Lead_Planned_Qty__c</formula>
+        <name>Opp: set Annual Qty to lead value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_Close_Date_to_Lead_value</fullName>
+        <description>Copy the value from lead conversion</description>
+        <field>CloseDate</field>
+        <formula>Lead_Production_Date__c</formula>
+        <name>Opp: set Close Date to Lead value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_Previous_Stage</fullName>
+        <description>Copy the previous stage</description>
+        <field>Previous_Stage_del__c</field>
+        <formula>text(priorvalue(StageName))</formula>
+        <name>Opp: set Previous Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_Project_Info_to_lead_values</fullName>
+        <description>Concatenate information in all fields from lead conversion</description>
+        <field>Info_Lead_Qualification_del__c</field>
+        <formula>if(len( Lead_Submitter__c )=0,&quot;&quot;,BR() &amp; &quot;Info submitted by: &quot; &amp; Lead_Submitter__c &amp; &quot; on &quot; &amp; text( Lead_Submit_Date__c ) &amp; BR()) &amp; 
+if(len( Lead_Project_Description__c )=0,&quot;&quot;, &quot;Project description: &quot; &amp; Lead_Project_Description__c &amp; BR() &amp; BR()) &amp;
+if(len(Lead_Stage__c)=0,&quot;&quot;,&quot;Project stage: &quot; &amp; Lead_Stage__c &amp; BR()) &amp;
+if(len(text( Lead_Production_Date__c))=0,&quot;&quot;,&quot;Dates: &quot; &amp; if(len(text( Lead_Proto_Date__c))=0,&quot;&quot;,&quot;prototypes: &quot; &amp; text( Lead_Proto_Date__c) &amp; &quot;;  &quot;) &amp; &quot;start production: &quot; &amp; text( Lead_Production_Date__c ) &amp; BR()) &amp;
+if(Lead_Planned_Qty__c=0,&quot;&quot;,&quot;Planned annual quantity: &quot; &amp; text( Lead_Planned_Qty__c) &amp; br()) &amp;
+/* kept for Leads created before Opp Product launch */
+if(len(Lead_GPS_Product__c)=0,&quot;&quot;,&quot;GPS Product: &quot; &amp; Lead_GPS_Product__c &amp; &quot;;  &quot;) &amp;
+if(len(Lead_Wireless_Product__c)=0,&quot;&quot;,&quot;Wireless Product: &quot; &amp; Lead_Wireless_Product__c &amp; &quot;;  &quot;) &amp; if(len(Lead_Wireless_Product__c)=0,&quot;&quot;,br()) &amp;
+if(len(Lead_Products_Of_Interest__c)=0,&quot;&quot;,&quot;Products of interest: &quot; &amp; Lead_Products_Of_Interest__c &amp; &quot;;&quot; &amp; BR()) &amp;
+if(len(Lead_End_Customer__c)=0,&quot;&quot;,&quot;End customer: &quot; &amp; Lead_End_Customer__c &amp; &quot;, &quot; &amp; Lead_End_Customer_Country__c &amp; &quot;;   &quot;) &amp; if(len(Lead_Design_House__c)=0,&quot;&quot;,&quot;Design-house: &quot; &amp; Lead_Design_House__c &amp; &quot;, &quot; &amp; Lead_Design_House_Country__c &amp; &quot;;   &quot;) &amp; if(len(Lead_CM__c)=0,&quot;&quot;,&quot;Manufacturing: &quot; &amp; Lead_CM__c &amp; &quot;, &quot; &amp; Lead_CM_Country__c ) &amp; br() &amp;
+/* kept for Leads created before Opp Product launch */
+if(len(Lead_Current_GPS_Qty__c)=0,&quot;&quot;,&quot;Current annual GPS quantity: &quot; &amp; Lead_Current_GPS_Qty__c &amp; BR()) &amp;
+if(len(Lead_Current_Qty__c)=0,&quot;&quot;,&quot;Current annual quantity: &quot; &amp; Lead_Current_Qty__c &amp; BR()) &amp;
+if(len(Lead_Current_GPS_Supplier__c )=0,&quot;&quot;,&quot;Current GPS supplier: &quot; &amp; Lead_Current_GPS_Supplier__c &amp; BR()) &amp;
+if(len(Lead_Current_Suppliers__c)=0,&quot;&quot;,&quot;Current suppliers: &quot; &amp; Lead_Current_Suppliers__c &amp; BR()) &amp;
+if(len(Lead_Current_Wireless_Qty__c)=0,&quot;&quot;,&quot;Current annual wireless quantity: &quot; &amp; Lead_Current_Wireless_Qty__c &amp; BR()) &amp;
+if(len( Lead_Current_Wireless_Supplier__c )=0,&quot;&quot;,&quot;Current wireless supplier: &quot; &amp; Lead_Current_Wireless_Supplier__c  &amp; BR()) &amp;
+if(len( Lead_Submitter__c )=0,&quot;&quot;,&quot;Project information submitted by: &quot; &amp; Lead_Submitter__c &amp; BR()) &amp;
+if(len( Lead_Request__c )=0,&quot;&quot;,BR() &amp; &quot;Request: &quot; &amp; Lead_Request__c) &amp;
+if(len(  Lead_uB_Contact__c )=0,&quot;&quot;, BR() &amp; &quot;u-blox contact: &quot; &amp; Lead_uB_Contact__c)</formula>
+        <name>Opp: set Project Info to lead values</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_Proto_Date_to_Lead_value</fullName>
+        <description>Copy prototyping date from lead value</description>
+        <field>Proto_Date__c</field>
+        <formula>Lead_Proto_Date__c</formula>
+        <name>Opp: set Proto Date to Lead value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_market_success</fullName>
+        <description>Set initial value of market sucess after lead conversion</description>
+        <field>Market_Success__c</field>
+        <literalValue>10% Uncertain</literalValue>
+        <name>Opp: set market success</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_stage</fullName>
+        <description>Set initial stage to Calling on after lead conversion</description>
+        <field>StageName</field>
+        <literalValue>3 Calling on</literalValue>
+        <name>Opp: set stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_uB_Office_Opp_DH_EMEA</fullName>
+        <field>Area_design_house__c</field>
+        <literalValue>EMEA</literalValue>
+        <name>Opp: set uB Office Opp DH EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_uB_Office_Opp_DW_EMEA</fullName>
+        <field>Area_Design_Win__c</field>
+        <literalValue>EMEA</literalValue>
+        <name>Opp: set uB Office Opp DW EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_set_uB_Office_Opp_Owner_EMEA</fullName>
+        <field>Area_opportunity_owner__c</field>
+        <literalValue>EMEA</literalValue>
+        <name>Opp: set uB Office Opp Owner EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Pending_Status</fullName>
+        <field>Approval_Status_Flag__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Pending Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recall_Status</fullName>
+        <field>Approval_Status_Flag__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Recall Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_Status</fullName>
+        <field>Approval_Status_Flag__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Registration_Created_Date_EMEA</fullName>
+        <field>Registration_Created_Date__c</field>
+        <formula>IF(ISCHANGED(Registration_No__c),TODAY(), Registration_Created_Date__c)</formula>
+        <name>Set Registration Created Date EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Registration_Expiration</fullName>
+        <description>Set Registration Expiration date to today date + 6 months</description>
+        <field>Registration_Expiration__c</field>
+        <formula>IF(ISNULL(Registration_Expiration__c),ADDMONTHS(TODAY(),6),Registration_Expiration__c)</formula>
+        <name>Set Registration Expiration</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_to_4_Eval</fullName>
+        <field>StageName</field>
+        <literalValue>4 Evaluation</literalValue>
+        <name>Stage to 4-Eval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateOppAmount</fullName>
+        <description>System field Amount is set equal to Opportunity Revenue</description>
+        <field>Amount</field>
+        <formula>Opp_Total_Revenue__c</formula>
+        <name>Update Opp Amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Registration_Created_Date</fullName>
+        <field>Registration_Created_Date__c</field>
+        <formula>IF(ISCHANGED(Registration_No__c),TODAY(), Registration_Created_Date__c)</formula>
+        <name>Update Registration Created Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Registration_Created_Date_EMEA</fullName>
+        <field>Registration_Created_Date__c</field>
+        <formula>IF(ISCHANGED(Registration_No__c),TODAY(), Registration_Created_Date__c)</formula>
+        <name>Update Registration Created Date EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Lead conversion%3A set Opportunity field Start Production%28Close Date%29</fullName>
+        <actions>
+            <name>Opp_set_Close_Date_to_Lead_value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Lead_Production_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Populate Opportunity fields after Lead conversion</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Lead conversion%3A set Opportunity fields</fullName>
+        <actions>
+            <name>Opp_set_Annual_Qty_to_lead_value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_set_Project_Info_to_lead_values</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_set_Proto_Date_to_Lead_value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_set_stage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Lead_Project_Description__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Lead_Planned_Qty__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Populate Opportunity fields after Lead conversion</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 1 Lost</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_1_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_1_Lost__c), TEXT(StageName)=&quot;1 Lost&quot; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 3 Calling on</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_3_Calling_on</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_3_Calling_on__c), OR( TEXT(StageName)=&quot;3 Calling on&quot;, TEXT(StageName)=&quot;4 Evaluation&quot;, TEXT(StageName)=&quot;5 Design-in&quot;, TEXT(StageName)=&quot;6 Prototypes&quot;, TEXT(StageName)=&quot;7 Pre-Production&quot;, TEXT(StageName)=&quot;8 Production&quot; ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 3 Calling on %28on creation%29</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_3_Calling_on</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Added to populate the field when Opportunity is created.</description>
+        <formula>AND(ISBLANK(First_Date_Of_3_Calling_on__c), OR( TEXT(StageName)=&quot;3 Calling on&quot;, TEXT(StageName)=&quot;4 Evaluation&quot;, TEXT(StageName)=&quot;5 Design-in&quot;, TEXT(StageName)=&quot;6 Prototypes&quot;, TEXT(StageName)=&quot;7 Pre-Production&quot;, TEXT(StageName)=&quot;8 Production&quot; ) )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 4 Evaluation</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_4_Evaluation</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_4_Evaluation__c), OR( TEXT(StageName)=&quot;4 Evaluation&quot;, TEXT(StageName)=&quot;5 Design-in&quot;, TEXT(StageName)=&quot;6 Prototypes&quot;, TEXT(StageName)=&quot;7 Pre-Production&quot;, TEXT(StageName)=&quot;8 Production&quot; ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 5 Design-in</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_5_Design_in</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_5_Design_in__c), OR( TEXT(StageName)=&quot;5 Design-in&quot;, TEXT(StageName)=&quot;6 Prototypes&quot;, TEXT(StageName)=&quot;7 Pre-Production&quot;, TEXT(StageName)=&quot;8 Production&quot; ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 6 Prototypes</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_6_Prototypes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_6_Prototypes__c), OR( TEXT(StageName)=&quot;6 Prototypes&quot;, TEXT(StageName)=&quot;7 Pre-Production&quot;, TEXT(StageName)=&quot;8 Production&quot; ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 7 Pre-Production</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_7_Pre_Production</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_7_Pre_Production__c), OR( TEXT(StageName)=&quot;7 Pre-Production&quot;, TEXT(StageName)=&quot;8 Production&quot; ) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 8 Production</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_8_Production</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_8_Production__c), TEXT(StageName)=&quot;8 Production&quot; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Add First Date Of 9 Closed - EoL</fullName>
+        <actions>
+            <name>Opp_Add_First_Date_Of_9_Closed_EoL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>AND( ISCHANGED(StageName), ISBLANK(First_Date_Of_9_Closed_EoL__c), TEXT(StageName)=&quot;9 Closed - EoL&quot; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Global Distribution Registration Approved</fullName>
+        <actions>
+            <name>Stage_to_4_Eval</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Approval_Status_Flag__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>lessThan</operation>
+            <value>15</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.Probability</field>
+            <operation>greaterOrEqual</operation>
+            <value>10</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Inform Owner if Opp edited by distributor</fullName>
+        <actions>
+            <name>Opp_edited_by_distributor_not_owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert if opportunity has been edited by distributors (only APAC)</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+
+(ISCHANGED(StageName) ||
+ISCHANGED(Product_1__c) ||
+ISCHANGED(Product_2__c) ||
+ISCHANGED(Product_3__c) ||
+ISCHANGED(Latest_Status__c) ||
+ISCHANGED(Decision_Date__c) ||
+ISCHANGED(Proto_Date__c) ||
+ISCHANGED(CloseDate))&amp;&amp;
+(LastModifiedById &lt;&gt; OwnerId) &amp;&amp;
+ISPICKVAL(LastModifiedBy.UserType, &quot;Partner&quot;) &amp;&amp; NOT (ISPICKVAL(Account.uB_Office__c, &quot;Americas&quot;) ||
+ISPICKVAL(Account.uB_Office__c, &quot;EMEA&quot;))
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Name as Lead Project Name</fullName>
+        <actions>
+            <name>Opp_Name_as_Lead_Project_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Lead_Project_Name__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Name the Opportunity created through Lead conversion as Project Name given in the Lead.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Owner different from Account Owner</fullName>
+        <actions>
+            <name>Opp_Owner_different_from_Account_Owner</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.OwnerDifferent__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Opportunity</value>
+        </criteriaItems>
+        <description>Email notification to both Account and Opportunity Owners when they are different</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Populate FAE Email</fullName>
+        <actions>
+            <name>Opp_Populate_FAE_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.FAE__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Used to send email alert to FAE</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Quotation reminder EMEA</fullName>
+        <active>false</active>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+AND(
+  RecordType.Id=&quot;01220000000CqRd&quot;,
+  ISPICKVAL(Account.New_Channel_Manager__r.uB_Office__c, &quot;EMEA&quot;)
+)
+
+*/</formula>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Quotation_alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CreatedDate</offsetFromField>
+            <timeLength>14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Decision Date</fullName>
+        <active>false</active>
+        <description>Reminder of Decision Date (NOTE: For all Focus now, this WF was previously only for Focus=1,2)</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+
+ Note: Add the following only to put Opportunities into the WF queue
+  Time_Based_WF_Flag__c=true,
+
+AND(
+
+  RecordTypeId=&quot;01220000000CqRn&quot;,
+  OR(
+    text(StageName)=&quot;3 Calling on&quot;,
+    text(StageName)=&quot;4 Evaluation&quot;),
+  OR(
+    text(Account.uB_Office__c)=&quot;EMEA&quot;,
+    OwnerId=&quot;00520000000zbAX&quot;)
+)
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>Opportunity.Decision_Date__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Decision_Date_Today_to_Account_Owner</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Decision_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Decision Date %28Focus%3D3%2C4%29</fullName>
+        <active>false</active>
+        <description>Reminder of Decision Date</description>
+        <formula>true
+/* Note: Add the following only to put Opportunities into the WF queue
+  Time_Based_WF_Flag__c=true,
+Time_Based_WF_Flag__c=true,
+
+AND(
+
+
+
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;),
+OR(
+text(Focus__c)=&quot;3 - Territory&quot;,
+text(Focus__c)=&quot;4 - Area&quot;),
+OR(
+text(Account.uB_Office__c)=&quot;EMEA&quot;, OwnerId=&quot;00520000000zbAX&quot;))
+
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Decision_Date_Today_to_Account_Owner</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Decision_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Decision Date %28Focus%3D5%29</fullName>
+        <active>false</active>
+        <description>Reminder of Decision Date (Focus=5, only to Partner Users)</description>
+        <formula>AND(
+/*
+Time_Based_WF_Flag__c=true,
+*/
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;),
+text(Focus__c)=&quot;5 - Portal&quot;,
+OR(
+OwnerId=&quot;00520000000zbAX&quot;,
+OwnerId=&quot;005D0000004U64L&quot;,
+OwnerId=&quot;005D0000002nqcS&quot;,
+OwnerId=&quot;005D00000032d61&quot;,
+OwnerId=&quot;00557000005u8qm&quot;,
+OwnerId=&quot;005D0000001xDP3&quot;,
+OwnerId=&quot;005D0000001xDf1&quot;,
+OwnerId=&quot;005D0000002156W&quot;,
+OwnerId=&quot;005D0000001CVnx&quot;,
+OwnerId=&quot;00557000005SEV1&quot;,
+OwnerId=&quot;00557000005SB9v&quot;,
+OwnerId=&quot;005D0000001CTah&quot;,
+OwnerId=&quot;005D0000001xDeT&quot;,
+OwnerId=&quot;005D0000001CTaX&quot;,
+OwnerId=&quot;005D0000001CUQn&quot;,
+OwnerId=&quot;00557000005u8qr&quot;,
+OwnerId=&quot;005D0000001xDP8&quot;,
+OwnerId=&quot;005D0000004Udkt&quot;,
+OwnerId=&quot;005D0000001xExa&quot;,
+OwnerId=&quot;005D0000001xcp7&quot;,
+OwnerId=&quot;005D0000001xPQn&quot;,
+OwnerId=&quot;005D0000001xEyi&quot;,
+OwnerId=&quot;005D0000001xdWL&quot;,
+OwnerId=&quot;005D0000004T0sc&quot;,
+OwnerId=&quot;005D0000001xHNg&quot;,
+OwnerId=&quot;005570000063REz&quot;,
+OwnerId=&quot;005D0000003xVWa&quot;,
+OwnerId=&quot;005D0000001CUR2&quot;,
+OwnerId=&quot;005D00000034Yms&quot;,
+OwnerId=&quot;005D0000003HWYY&quot;,
+OwnerId=&quot;005D00000021IX6&quot;,
+OwnerId=&quot;005D0000002X6Cz&quot;,
+OwnerId=&quot;005D0000004Vxle&quot;,
+OwnerId=&quot;005D0000003FBJv&quot;,
+OwnerId=&quot;005D0000002WJC0&quot;
+))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Decision_Date_Today_to_Account_Owner</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Decision_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Latest Status not updated since 4 weeks %28Focus%3D1%2C2%29</fullName>
+        <active>false</active>
+        <description>Reminder to Account Owner to update Latest Status.</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+
+AND(
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(text(Focus__c)=&quot;1 - Corporate&quot;, text(Focus__c)=&quot;2 - Region&quot;),
+OR(text(StageName)=&quot;3 Calling on&quot;, text(StageName)=&quot;4 Evaluation&quot;, text(StageName)=&quot;5 Design-in&quot;, text(StageName)=&quot;6 Prototypes&quot;, text(StageName)=&quot;7 Pre-Production&quot;),
+OR(text(Account.uB_Office__c)=&quot;EMEA&quot;, OwnerId=&quot;00520000000zbAX&quot;)
+)
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Latest_Status_to_update</name>
+                <type>Task</type>
+            </actions>
+            <offsetFromField>Opportunity.Latest_Status_Modified__c</offsetFromField>
+            <timeLength>28</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Latest Status not updated since 4 weeks %28Focus%3D2%29</fullName>
+        <active>false</active>
+        <description>Reminder to Account Owner to update Latest Status.</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+AND( RecordTypeId=&quot;01220000000CqRn&quot;, text(Focus__c)=&quot;2 - Region&quot;, OR( text(StageName)=&quot;3 Calling on&quot;, text(StageName)=&quot;4 Evaluation&quot;, text(StageName)=&quot;5 Design-in&quot;, text(StageName)=&quot;6 Prototypes&quot;, text(StageName)=&quot;7 Pre-Production&quot; ), OR( text(Account.uB_Office__c)=&quot;EMEA&quot;, OwnerId=&quot;00520000000zbAX&quot; ) )
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opportunity_Latest_Status_to_update</name>
+                <type>Task</type>
+            </actions>
+            <offsetFromField>Opportunity.Latest_Status_Modified__c</offsetFromField>
+            <timeLength>28</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Proto Date %28Focus%3D1%2C2%29</fullName>
+        <active>false</active>
+        <description>Reminder of milestone dates (Decision Date, Proto Date)</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+AND(
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;,
+text(StageName)=&quot;5 Design-in&quot;),
+OR(
+text(Focus__c)=&quot;1 - Corporate&quot;,
+text(Focus__c)=&quot;2 - Region&quot;),
+OR(
+text(Account.uB_Office__c)=&quot;EMEA&quot;, OwnerId=&quot;00520000000zbAX&quot;))
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Proto_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Proto_Date__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Proto Date %28Focus%3D5%29</fullName>
+        <active>false</active>
+        <description>Reminder of milestone dates (Decision Date, Proto Date, Focus=5 only to Partner Users)</description>
+        <formula>AND(
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;,
+text(StageName)=&quot;5 Design-in&quot;),
+text(Focus__c)=&quot;5 - Portal&quot;,
+OR(
+OwnerId=&quot;00520000000zbAX&quot;,
+OwnerId=&quot;005D0000004U64L&quot;,
+OwnerId=&quot;005D0000002nqcS&quot;,
+OwnerId=&quot;005D00000032d61&quot;,
+OwnerId=&quot;00557000005u8qm&quot;,
+OwnerId=&quot;005D0000001xDP3&quot;,
+OwnerId=&quot;005D0000001xDf1&quot;,
+OwnerId=&quot;005D0000002156W&quot;,
+OwnerId=&quot;005D0000001CVnx&quot;,
+OwnerId=&quot;00557000005SEV1&quot;,
+OwnerId=&quot;00557000005SB9v&quot;,
+OwnerId=&quot;005D0000001CTah&quot;,
+OwnerId=&quot;005D0000001xDeT&quot;,
+OwnerId=&quot;005D0000001CTaX&quot;,
+OwnerId=&quot;005D0000001CUQn&quot;,
+OwnerId=&quot;00557000005u8qr&quot;,
+OwnerId=&quot;005D0000001xDP8&quot;,
+OwnerId=&quot;005D0000004Udkt&quot;,
+OwnerId=&quot;005D0000001xExa&quot;,
+OwnerId=&quot;005D0000001xcp7&quot;,
+OwnerId=&quot;005D0000001xPQn&quot;,
+OwnerId=&quot;005D0000001xEyi&quot;,
+OwnerId=&quot;005D0000001xdWL&quot;,
+OwnerId=&quot;005D0000004T0sc&quot;,
+OwnerId=&quot;005D0000001xHNg&quot;,
+OwnerId=&quot;005570000063REz&quot;,
+OwnerId=&quot;005D0000003xVWa&quot;,
+OwnerId=&quot;005D0000001CUR2&quot;,
+OwnerId=&quot;005D00000034Yms&quot;,
+OwnerId=&quot;005D0000003HWYY&quot;,
+OwnerId=&quot;005D00000021IX6&quot;,
+OwnerId=&quot;005D0000002X6Cz&quot;,
+OwnerId=&quot;005D0000004Vxle&quot;,
+OwnerId=&quot;005D0000003FBJv&quot;,
+OwnerId=&quot;005D0000002WJC0&quot;
+))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Proto_Date</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.Proto_Date__c</offsetFromField>
+            <timeLength>-14</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Start Production</fullName>
+        <active>false</active>
+        <description>Reminder of Start Production (NOTE: For all Focus now, this WF was previously only for Focus=1,2)</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+
+AND(
+  RecordTypeId=&quot;01220000000CqRn&quot;,
+  OR(
+    text(StageName)=&quot;3 Calling on&quot;,
+    text(StageName)=&quot;4 Evaluation&quot;,
+    text(StageName)=&quot;5 Design-in&quot;,
+    text(StageName)=&quot;6 Prototypes&quot;,
+    text(StageName)=&quot;7 Pre-Production&quot;),
+  OR(
+    text(Account.uB_Office__c)=&quot;EMEA&quot;,
+    OwnerId=&quot;00520000000zbAX&quot;)
+)
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Start_Production_Today</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>-28</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Start Production %28Focus%3D3%2C4%29</fullName>
+        <active>false</active>
+        <description>Reminder of Start Production</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+
+AND(
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;,
+text(StageName)=&quot;5 Design-in&quot;,
+text(StageName)=&quot;6 Prototypes&quot;,
+text(StageName)=&quot;7 Pre-Production&quot;),
+OR(
+text(Focus__c)=&quot;3 - Territory&quot;,
+text(Focus__c)=&quot;4 - Area&quot;),
+OR(text(Account.uB_Office__c)=&quot;EMEA&quot;,
+OwnerId=&quot;00520000000zbAX&quot;))
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Start_Production_Today</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Start Production %28Focus%3D5%29</fullName>
+        <active>false</active>
+        <description>Reminder of Start Production (Focus=5, only to the Partner Users)</description>
+        <formula>AND(
+/*
+Time_Based_WF_Flag__c=true,
+*/
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;,
+text(StageName)=&quot;5 Design-in&quot;,
+text(StageName)=&quot;6 Prototypes&quot;,
+text(StageName)=&quot;7 Pre-Production&quot;),
+text(Focus__c)=&quot;5 - Portal&quot;,
+OR(
+OwnerId=&quot;00520000000zbAX&quot;,
+OwnerId=&quot;005D0000004U64L&quot;,
+OwnerId=&quot;005D0000002nqcS&quot;,
+OwnerId=&quot;005D00000032d61&quot;,
+OwnerId=&quot;00557000005u8qm&quot;,
+OwnerId=&quot;005D0000001xDP3&quot;,
+OwnerId=&quot;005D0000001xDf1&quot;,
+OwnerId=&quot;005D0000002156W&quot;,
+OwnerId=&quot;005D0000001CVnx&quot;,
+OwnerId=&quot;00557000005SEV1&quot;,
+OwnerId=&quot;00557000005SB9v&quot;,
+OwnerId=&quot;005D0000001CTah&quot;,
+OwnerId=&quot;005D0000001xDeT&quot;,
+OwnerId=&quot;005D0000001CTaX&quot;,
+OwnerId=&quot;005D0000001CUQn&quot;,
+OwnerId=&quot;00557000005u8qr&quot;,
+OwnerId=&quot;005D0000001xDP8&quot;,
+OwnerId=&quot;005D0000004Udkt&quot;,
+OwnerId=&quot;005D0000001xExa&quot;,
+OwnerId=&quot;005D0000001xcp7&quot;,
+OwnerId=&quot;005D0000001xPQn&quot;,
+OwnerId=&quot;005D0000001xEyi&quot;,
+OwnerId=&quot;005D0000001xdWL&quot;,
+OwnerId=&quot;005D0000004T0sc&quot;,
+OwnerId=&quot;005D0000001xHNg&quot;,
+OwnerId=&quot;005570000063REz&quot;,
+OwnerId=&quot;005D0000003xVWa&quot;,
+OwnerId=&quot;005D0000001CUR2&quot;,
+OwnerId=&quot;005D00000034Yms&quot;,
+OwnerId=&quot;005D0000003HWYY&quot;,
+OwnerId=&quot;005D00000021IX6&quot;,
+OwnerId=&quot;005D0000002X6Cz&quot;,
+OwnerId=&quot;005D0000004Vxle&quot;,
+OwnerId=&quot;005D0000003FBJv&quot;,
+OwnerId=&quot;005D0000002WJC0&quot;
+))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Start_Production_Today</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder Start Production Today</fullName>
+        <active>false</active>
+        <description>Reminder of Start Production</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+
+AND(
+RecordTypeId=&quot;01220000000CqRn&quot;,
+OR(
+text(StageName)=&quot;3 Calling on&quot;,
+text(StageName)=&quot;4 Evaluation&quot;,
+text(StageName)=&quot;5 Design-in&quot;,
+text(StageName)=&quot;6 Prototypes&quot;,
+text(StageName)=&quot;7 Pre-Production&quot;),
+OR(
+text(Focus__c)=&quot;1 - Corporate&quot;,
+text(Focus__c)=&quot;2 - Region&quot;,
+text(Focus__c)=&quot;3 - Territory&quot;,
+text(Focus__c)=&quot;4 - Area&quot;),
+OR(text(Account.uB_Office__c)=&quot;EMEA&quot;, OwnerId=&quot;00520000000zbAX&quot;) )
+*/</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Opp_Reminder_Start_Production_Today</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder of Stage 4 to FAE</fullName>
+        <actions>
+            <name>Opp_Reminder_Stage_4_to_FAE</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Reminder to FAE of Stage 4</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+and(
+ischanged(StageName),
+text(StageName)=&quot;4 Evaluation&quot;,
+OR(text(Focus__c)=&quot;1 - Corporate&quot;,text(Focus__c)=&quot;2 - Region&quot;,text(Focus__c)=&quot;3 - Territory&quot;),text(Account.uB_Office__c)=&quot;EMEA&quot;
+)
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Reminder of Stage 5 to FAE</fullName>
+        <actions>
+            <name>Opp_Reminder_Stage_5_to_FAE</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Reminder of Stage 5 to FAE (NOTE: Previously this WF was only for Focus=1,2,3)</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+and(
+  ischanged(StageName),
+  text(StageName)=&quot;5 Design-in&quot;,
+  text(Account.uB_Office__c)=&quot;EMEA&quot;
+)
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A Update Latest Status Technical Modified date</fullName>
+        <actions>
+            <name>Opp_Update_Latest_Status_Technical_Mod</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When Status of Opportunity changes, record the date of change</description>
+        <formula>ISCHANGED(Latest_Status_Technical__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A embargo countries</fullName>
+        <actions>
+            <name>Opportunity_embargo_country</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Reminder that the created record is for embargo countries</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+OR(
+Account.BillingCountry=&quot;CU&quot;,
+Account.BillingCountry=&quot;BY&quot;,
+Account.BillingCountry=&quot;IR&quot;,
+Account.BillingCountry=&quot;KP&quot;,
+Account.BillingCountry=&quot;SD&quot;,
+Account.BillingCountry=&quot;SY&quot;,
+Account.BillingCountry=&quot;UA&quot;,
+Account.BillingCountry=&quot;AM&quot;,
+Account.BillingCountry=&quot;AZ&quot;,
+Account.BillingCountry=&quot;CF&quot;,
+Account.BillingCountry=&quot;CG&quot;,
+Account.BillingCountry=&quot;CI&quot;,
+Account.BillingCountry=&quot;ER&quot;,
+Account.BillingCountry=&quot;GN&quot;,
+Account.BillingCountry=&quot;IQ&quot;,
+Account.BillingCountry=&quot;LB&quot;,
+Account.BillingCountry=&quot;LR&quot;,
+Account.BillingCountry=&quot;LY&quot;,
+Account.BillingCountry=&quot;MM&quot;,
+Account.BillingCountry=&quot;SO&quot;,
+Account.BillingCountry=&quot;ZW&quot;)
+*/</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A record status change date</fullName>
+        <actions>
+            <name>Opp_copy_date_status_change</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When Status of Opportunity changes, record the date of change</description>
+        <formula>ischanged ( Latest_Status__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp%3A set area fields to EMEA</fullName>
+        <actions>
+            <name>Opp_set_uB_Office_Opp_DH_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_set_uB_Office_Opp_DW_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_set_uB_Office_Opp_Owner_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Account.uB_Office__c</field>
+            <operation>equals</operation>
+            <value>EMEA</value>
+        </criteriaItems>
+        <description>For new opportunities set the uB Office fields for design, owner, and design win to EMEA.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A alert for CDMA module project</fullName>
+        <actions>
+            <name>Opportunity_alert_mail_CDMA_module_project</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>When a CDMA module opportunity is created or the stage of the opportunity changes, send an alert to a group of people</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+and(
+or(
+ischanged(Product_1__c),
+ischanged(Product_2__c),
+ischanged(Product_3__c),
+ischanged(Product_4__c),
+ischanged(Product_5__c),
+ischanged(StageName)),
+or(
+BEGINS(Product_1__r.Name,&quot;LISA-C&quot;),BEGINS(Product_1__r.Name,&quot;FW&quot;),
+BEGINS(Product_2__r.Name,&quot;LISA-C&quot;),BEGINS(Product_2__r.Name,&quot;FW&quot;),
+BEGINS(Product_3__r.Name,&quot;LISA-C&quot;),BEGINS(Product_3__r.Name,&quot;FW&quot;),
+BEGINS(Product_4__r.Name,&quot;LISA-C&quot;),BEGINS(Product_4__r.Name,&quot;FW&quot;),
+BEGINS(Product_5__r.Name,&quot;LISA-C&quot;),BEGINS(Product_5__r.Name,&quot;FW&quot;)))
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A alert for GSM module project</fullName>
+        <actions>
+            <name>Opportunity_alert_mail_GSM_module_project</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>When a GSM module opportunity is created or the stage of the opportunity changes, send an alert to a group of people</description>
+        <formula>true
+/*
+commenting this to minimize the number of references.
+and(
+or(
+ischanged(Product_1__c),
+ischanged(Product_2__c),
+ischanged(Product_3__c),
+ischanged(Product_4__c),
+ischanged(Product_5__c),
+ischanged(StageName)),
+or(
+BEGINS(Product_1__r.Name,&quot;LEON&quot;),BEGINS(Product_1__r.Name,&quot;SARA-G&quot;),
+BEGINS(Product_2__r.Name,&quot;LEON&quot;),BEGINS(Product_2__r.Name,&quot;SARA-G&quot;),
+BEGINS(Product_3__r.Name,&quot;LEON&quot;),BEGINS(Product_3__r.Name,&quot;SARA-G&quot;),
+BEGINS(Product_4__r.Name,&quot;LEON&quot;),BEGINS(Product_4__r.Name,&quot;SARA-G&quot;),
+BEGINS(Product_5__r.Name,&quot;LEON&quot;),BEGINS(Product_5__r.Name,&quot;SARA-G&quot;)))
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A alert for JODY-W1 and THEO-P1</fullName>
+        <actions>
+            <name>Opp_update_of_JODY_W1_THEO_P1_Opps</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>When opportunity is created or updated, send an alert to a group of people</description>
+        <formula>true
+/*
+commenting this to minimize the number of references. 
+and(
+or(
+ISPICKVAL(Product_1__r.Product_Series__c,&quot;THEO-P1&quot;),
+ISPICKVAL(Product_1__r.Product_Series__c,&quot;JODY-W1&quot;),
+ISPICKVAL(Product_2__r.Product_Series__c,&quot;THEO-P1&quot;),
+ISPICKVAL(Product_2__r.Product_Series__c,&quot;JODY-W1&quot;),
+ISPICKVAL(Product_3__r.Product_Series__c,&quot;THEO-P1&quot;),
+ISPICKVAL(Product_3__r.Product_Series__c,&quot;JODY-W1&quot;),
+ISPICKVAL(Product_4__r.Product_Series__c,&quot;THEO-P1&quot;),
+ISPICKVAL(Product_4__r.Product_Series__c,&quot;JODY-W1&quot;),
+ISPICKVAL(Product_5__r.Product_Series__c,&quot;THEO-P1&quot;),
+ISPICKVAL(Product_5__r.Product_Series__c,&quot;JODY-W1&quot;)
+),
+or(
+ISCHANGED( Latest_Status__c ),
+ISCHANGED( StageName ))
+)
+*/</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A copy previous Stage</fullName>
+        <actions>
+            <name>Opp_set_Previous_Stage</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When a stage changes, copy the previous value to the field &quot;Previous Stage&quot;</description>
+        <formula>ischanged (StageName)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A detect design-in and copy date</fullName>
+        <actions>
+            <name>Opp_copy_design_in_date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When the opportunity changes its stage to design-in, prototype, pre-production, or production for the first time, copy the date to the field &quot;Design-in Date&quot;</description>
+        <formula>ischanged (StageName) &amp;&amp; isnull( Design_win_Date__c ) &amp;&amp; 
+OR(
+ispickval (StageName,&quot;5 Design-in&quot;),
+ispickval (StageName,&quot;6 Prototypes&quot;),
+ispickval (StageName,&quot;7 Pre-Production&quot;),
+ispickval (StageName,&quot;8 Production&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportunity%3A send mail with information</fullName>
+        <actions>
+            <name>Opportunity_mail_with_opportunity_information</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Opp_clear_checkbox_Send_mail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Send_mail_with_info__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When field &quot;Send mail with opportunity information&quot; is checked, send mail with main information to owner.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update opportunity amount</fullName>
+        <actions>
+            <name>UpdateOppAmount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Opp_Total_Revenue__c</field>
+            <operation>notEqual</operation>
+            <value>CHF 0</value>
+        </criteriaItems>
+        <description>Set field equal to Opp Revenue</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Opportunity_Latest_Status_to_update</fullName>
+        <assignedToType>accountOwner</assignedToType>
+        <description>Please be aware that it is time to update the field “Latest Status” for this opportunity. Let’s see what is the latest news for those big projects!</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Opportunity.Today__c</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Opportunity Latest Status to update</subject>
+    </tasks>
+    <tasks>
+        <fullName>Opportunity_embargo_country</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Opportunity: embargo country</subject>
+    </tasks>
+</Workflow>

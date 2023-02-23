@@ -1,0 +1,265 @@
+<aura:component controller="ProductPricesAbacusCtrl" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="message" type="String"/>
+    <aura:attribute name="mapStatus" type="String"/>
+    <aura:attribute name="abacusStatus" type="String"/>
+    <aura:attribute name="issuesStatus" type="String"/>
+    <aura:attribute name="productPricingScore" type="Integer"/>
+	<aura:attribute name="productPricesStatus" type="String"/>    
+    <aura:attribute name="productPrices" type="ProductPrices__c[]"/>
+    <aura:attribute name="mapProductPrices" type="ProductPrices__c[]"/>
+    <aura:attribute name="productPricesWithIssues" type="ProductPrices__c[]"/>
+    <aura:attribute name="productStatus" type="String"/>    
+    <aura:attribute name="selectedTab" type="String"/>   
+    
+    <aura:attribute name="productId" type="Id"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="product" type="Product2"/>
+    
+    <aura:attribute name="abacusProductPrices" type="AbacusProductPrices[]"/>
+    <aura:attribute name="abacusProductPricesCurrentlyDisplayed" type="AbacusProductPrices[]"/>
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="abacusColumns" type="List"/>
+    <aura:attribute name="exportSettingOnlyShopActive" type="Boolean" default="true"/>
+    <aura:attribute name="productpricesColumns" type="List"/>
+    
+    <aura:attribute name="addProductPrice_Name" type="String"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+
+    <!--<lightning:button label="toggle Map Table" onclick="{!c.toggleMapTable}"/>
+    <lightning:button label="toggle Abacus Table" onclick="{!c.toggleAbacusTable}"/>-->
+    <aura:if isTrue="{! v.recordId != null}">
+        <div class="pricingStatus">
+           <aura:if isTrue="{! and(v.abacusProductPricesCurrentlyDisplayed.length == 0, v.productPrices.length == 0 )}">
+            <lightning:dynamicIcon type="strength" option="0" alternativeText=""/>  
+            <lightning:helptext content="Next step: add product prices"/>
+           </aura:if>
+           <aura:if isTrue="{! and(and(v.abacusProductPricesCurrentlyDisplayed.length == 0, v.productPrices.length > 0), v.product.Shop_Active__c == true)}">
+            <lightning:dynamicIcon type="strength" option="1" alternativeText=""/>
+            <lightning:helptext content="Product status need to be either 'Engineering Samples', 'Production Ready', 'Initial Production', 'Mass Production' or 'End of Life' "/>
+           </aura:if>
+           <aura:if isTrue="{! and(and(v.abacusProductPricesCurrentlyDisplayed.length == 0, v.productPrices.length > 0), v.product.Shop_Active__c == false)}">
+            <lightning:dynamicIcon type="strength" option="2" alternativeText=""/>
+            <lightning:helptext content="Product needs to be activated in Abacus"/> 
+            </aura:if>
+     <!--      <aura:if isTrue="{! and(and(v.abacusProductPricesCurrentlyDisplayed.length > 0, v.productPrices.length > 0), v.product.Shop_Active__c == false )}">
+            <lightning:dynamicIcon type="strength" option="2" alternativeText=""/>
+            <lightning:helptext content="Product needs to be activated in Abacus"/>    
+           </aura:if>-->
+           <aura:if isTrue="{! and(and(v.abacusProductPricesCurrentlyDisplayed.length > 0, v.productPrices.length > 0), v.product.Shop_Active__c == true)}">
+            <lightning:dynamicIcon type="strength" option="3" alternativeText=""/>
+           </aura:if>
+        </div>
+    </aura:if>
+	
+    <lightning:tabset selectedTabId="{! v.selectedTab}">
+        <aura:if isTrue="{!v.recordId != null}">
+            <lightning:tab label="Product Prices" id="zero">
+                <lightning:layout horizontalAlign="spread">
+                    <lightning:layoutItem padding="around-small">
+                       <lightning:formattedRichText value="{! v.productPricesStatus}"></lightning:formattedRichText>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem padding="around-small">
+                        <lightning:buttonIcon iconName="utility:add" disabled="{! v.productStatus == 'loading'}" onclick="{! c.addProductPrice }" alternativeText="add a new product price" /> 
+                        <lightning:buttonIcon iconName="utility:refresh"  disabled="{! v.productPricesStatus == 'loading'}"  onclick="{! c.getProductPrices }" alternativeText="refresh" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <div id="productpricestable">
+                    <lightning:datatable data="{! v.productPrices }"
+                        columns="{! v.productpricesColumns }"
+                        keyField="id"   
+                        hideCheckboxColumn="true"/>
+                </div>
+                <aura:if isTrue="{! v.productPricesStatus != 'loading'}">
+                    <aura:set attribute="else">
+                        <lightning:spinner alternativeText="Loading" />
+                    </aura:set>
+                </aura:if> 
+            </lightning:tab>
+        </aura:if> 
+        <lightning:tab label="Abacus" id="one">
+            <lightning:layout horizontalAlign="spread">
+            	<lightning:layoutItem padding="around-small">
+                   <lightning:formattedRichText value="{! v.abacusStatus}"></lightning:formattedRichText>
+                   <aura:if isTrue="{! and(v.abacusProductPricesCurrentlyDisplayed.length == 0, v.productPrices.length > 0)}">
+                       <aura:if isTrue="{! v.product.Shop_Active__c == true}">
+                       	<br/>the abacus export is empty because the product has the status "{! v.productPrices[0].productStatus}"<br/>
+                        <aura:set attribute="else">
+	                    	 <br/>the abacus export is empty because the field 'Shop Active' is not checked<br/>
+                		</aura:set>
+                       </aura:if>
+                    </aura:if>
+            	</lightning:layoutItem>
+                <lightning:layoutItem >
+                    <lightning:layout horizontalAlign="end">
+                        <lightning:layoutItem padding="around-medium">
+                          <lightning:input type="checkbox" label="only 'Shop Active'" name="export_setting_only_shop_active" checked="{! v.exportSettingOnlyShopActive}" onchange="{! c.abacusOnlyShopActiveCheckboxClick }"/>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem padding="around-small">
+                            <lightning:button label="Abacus Export!" onclick="{!c.abacusExportPopup}" disabled="{! v.abacusProductPrices.length == 0}"/>    
+                            <lightning:buttonIcon iconName="utility:refresh"  disabled="{! v.abacusStatus == 'loading'}"  onclick="{! c.getAbacusPrices }" alternativeText="refresh" />       
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </lightning:layoutItem>
+        	</lightning:layout>
+            <aura:if isTrue="{! v.abacusProductPricesCurrentlyDisplayed.length >= 1}">
+                <div id="abacustable">
+                    <lightning:datatable data="{! v.abacusProductPricesCurrentlyDisplayed }"
+                                         columns="{! v.abacusColumns }"
+                                         keyField="id"   
+                                         hideCheckboxColumn="true"/>
+                </div>
+            </aura:if>   
+            
+            <aura:if isTrue="{! and(v.abacusStatus != 'loading', v.mapStatus != 'loading')}">
+                <aura:set attribute="else">
+                    <lightning:spinner alternativeText="Loading" />
+                </aura:set>
+            </aura:if>
+        </lightning:tab>
+        <lightning:tab label="Map" id="three">
+        	<lightning:layout horizontalAlign="spread">
+            	<lightning:layoutItem padding="around-small">
+                   <lightning:formattedRichText value="{! v.mapStatus}"></lightning:formattedRichText>
+            	</lightning:layoutItem>
+            	<lightning:layoutItem padding="around-small">
+                    <lightning:button label="Map Export!" onclick="{!c.export}" disabled="{! v.mapProductPrices.length == 0}"/>
+                    <lightning:button label="Publish to Distributors" onclick="" disabled="{! v.mapProductPrices.length == 0}"/>
+                    <lightning:buttonIcon iconName="utility:refresh"  disabled="{! v.mapStatus == 'loading'}"  onclick="{! c.getMAPPrices }" alternativeText="refresh" />
+            	</lightning:layoutItem>
+        	</lightning:layout>
+
+              <div id="maptable" >
+                
+              <lightning:datatable data="{! v.mapProductPrices }"
+                columns="{! v.mycolumns }"
+                keyField="id"  
+                hideCheckboxColumn="true"/>
+            </div>
+       		<aura:if isTrue="{! and(v.abacusStatus != 'loading', v.mapStatus != 'loading')}">
+            	<aura:set attribute="else">
+                	<lightning:spinner alternativeText="Loading" />
+                </aura:set>
+    		</aura:if>
+       </lightning:tab>
+       <aura:if isTrue="{!v.productPricesWithIssues.length > 0}">
+            <lightning:tab label="Product Price Issues" id="four">
+                <lightning:layout horizontalAlign="spread">
+                    <lightning:layoutItem padding="around-small">
+                       <lightning:formattedRichText value="{! v.issuesStatus}"></lightning:formattedRichText><br/>
+                       <lightning:formattedRichText value="Could not find products for these product prices:"></lightning:formattedRichText> 
+                    </lightning:layoutItem>
+        		</lightning:layout>
+                <div id="maptableissues" >
+                  <lightning:datatable data="{! v.productPricesWithIssues }"
+                    columns="{! v.mycolumns }"
+                    keyField="id"  
+                    hideCheckboxColumn="true"/>
+                </div>
+            </lightning:tab>
+        </aura:if>
+
+    </lightning:tabset>
+        
+    <div class="slds">
+        <div role="dialog" class="slds-modal slds-modal--prompt slds-fade-in-hide" aura:id="modaldialog">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header slds-theme--info">
+                    <button class="slds-button slds-button--icon-inverse slds-notify__close" onclick="{!c.hidePopup}">
+                        <c:SVG class="slds-button__icon slds-button__icon--large" xlinkHref="/resource/SLDS105/assets/icons/action-sprite/svg/symbols.svg#close">
+                        </c:SVG>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading--medium">Have the current prices been approved?</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div>
+                       <lightning:button label="Confirm" onclick="{!c.abacusExport}" class="slds-button slds-button_success"/>
+                       <lightning:button label="Abort" onclick="{!c.abortAbacusExport}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+      <div class="slds">
+        <div role="dialog" class="slds-modal slds-modal--prompt slds-fade-in-hide" aura:id="modalcreatepricedialog">
+            <div class="slds-modal__container"> 
+                    <lightning:card title="Add a Product Price">  
+                        <p class="slds-p-horizontal_small">
+                          <lightning:recordEditForm 
+                            aura:id="myRecordForm"                         	
+                          	objectApiName="ProductPrices__c"  
+                            onload="{!c.handleAddProductPriceLoad}"
+            				onsubmit="{!c.handleAddProductPriceSubmit}"
+                            onsuccess="{!c.handleAddProductPriceSuccess}" >
+                                <lightning:messages />
+                                    <div class="slds-grid">
+                                        <div class="slds-col slds-size_2-of-3">
+                                            <lightning:inputField aura:id="addPP_Name" fieldName="Name" disabled="true" /> 
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-3">
+                                            <lightning:helptext content="this field will be automatically upated on submission"/>
+                                        </div>
+                              		</div>
+                               		<div class="slds-grid">
+                                        <div class="slds-col slds-size_2-of-3">
+                                            <lightning:inputField aura:id="addPP_Product_Name"  fieldName="Product_Name__c" disabled="true" />
+                                            <lightning:inputField aura:id="addPP_Ordering_Number" fieldName="Ordering_Number__c" disabled="true" />
+                                            <lightning:inputField aura:id="addPP_Currency" fieldName="CurrencyIsoCode" disabled="true" />
+                                        </div>
+                              		</div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_1" fieldName="Price_USD_Sample_Size_1__c"/>
+                                        </div>
+                              		</div>
+                              		<div class="slds-grid">
+                                    	<div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_10" fieldName="Price_USD_Sample_Size_10__c"/>
+                                        </div>
+                              		</div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_50" fieldName="Price_USD_Sample_Size_50__c"/>
+                                        </div>
+                                    </div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_100" fieldName="Price_USD_Sample_Size_100__c"/>
+                                        </div>
+                                    </div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_250" fieldName="Price_USD_Sample_Size_250__c"/>
+                                        </div>
+                                    </div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_500" fieldName="Price_USD_Sample_Size_500__c"/>
+                                        </div>
+                                    </div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_Price_Sample_Size_1000" fieldName="Price_USD_Sample_Size_1000__c"/>
+                                        </div>
+                                    </div>
+                              		<div class="slds-grid">
+                                        <div class="slds-col slds-size_3-of-3">
+                                            <lightning:inputField aura:id="addPP_ValidFrom"  onchange="{!c.handleValidFromChange}" fieldName="Valid_From__c"/>
+                                        </div>
+                                    </div>
+                                <lightning:button class="slds-m-top_small slds-button_success" type="submit" label="Create new" />
+                                <lightning:button class="slds-m-top_small" onclick="{!c.handleAddProductPriceCancel}" label="Abort" />
+                            </lightning:recordEditForm>
+                        </p>
+                    </lightning:card>
+              
+                    
+         
+              
+            </div>
+        </div>
+	</div>
+    <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop">
+	</div>
+</aura:component>

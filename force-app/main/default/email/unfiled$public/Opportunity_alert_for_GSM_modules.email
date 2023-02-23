@@ -1,0 +1,15 @@
+The following opportunity was created or changed the stage:
+
+Account: {!Opportunity.Account}, {!Account.BillingCountry}
+Opportunity: {!Opportunity.Name}
+Application: {!Opportunity.Application_type__c}
+Annual quantity: {!Opportunity.Annual_Quantity__c}
+Start Production: {!Opportunity.CloseDate}
+Stage: {!Opportunity.StageName}
+(Previous Stage: {!Opportunity.Previous_Stage_del__c})
+Channel manager: {!Account.Channel_Manager__c}
+
+Description:
+{!Opportunity.Description}
+
+Link to the Opportunity: {!Opportunity.Link}

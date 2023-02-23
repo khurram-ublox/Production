@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllPublicSolutions</fullName>
+    <booleanFilter>1 or 2</booleanFilter>
+    <columns>SOLUTION.ISSUE</columns>
+    <columns>SOLUTION.STATUS</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>SOLUTION.CREATED_DATE</columns>
+    <columns>SOLUTION.LAST_UPDATE</columns>
+    <columns>SOLUTION.IS_PUBLISHED_PKB</columns>
+    <columns>SOLUTION.EXTERNAL</columns>
+    <columns>IS_HTML</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SOLUTION.IS_PUBLISHED_PKB</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>SOLUTION.EXTERNAL</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All public Solutions</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

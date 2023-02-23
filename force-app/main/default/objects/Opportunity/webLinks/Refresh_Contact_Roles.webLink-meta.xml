@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Refresh_Contact_Roles</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Refresh Contact Roles</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+var QuotationId = &quot;{!Opportunity.Id}&quot;;
+var QuotationAccountId = &quot;{!Opportunity.Quotation_AccountId__c}&quot;;
+var OpportunityId = &quot;{!Opportunity.Referred_OpportunityId__c}&quot;;
+
+/* alert(OpportunityId) */
+
+refreshContactRoles(QuotationAccountId,OpportunityId,QuotationId,&quot;Contact Quotation&quot;,&quot;Contact Commercial&quot;);
+
+function refreshContactRoles(AccountId,OpportunityId,RefreshId,RoleOPP,RoleACC){
+
+var result = sforce.connection.query(&quot;SELECT ContactId, IsPrimary FROM OpportunityContactRole WHERE Role = &apos;&quot; +RoleOPP+ &quot;&apos; AND OpportunityId = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+if (records.length == 0){
+var result = sforce.connection.query(&quot;SELECT ContactId, IsPrimary FROM AccountContactRole WHERE Role = &apos;&quot; +RoleACC+ &quot;&apos; AND AccountId = &apos;&quot; +AccountId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+}
+
+/* alert (records[0]) */
+
+
+var result = sforce.connection.query(&quot;SELECT Id FROM OpportunityContactRole WHERE OpportunityId = &apos;&quot; +RefreshId+ &quot;&apos;&quot;);
+var deleterecords = result.getArray(&quot;records&quot;);
+
+/* alert (deleterecords[0])*/
+
+if (deleterecords.length &lt; 7){
+for(var i=0;i&lt;deleterecords.length;i++){
+var delResult = sforce.connection.deleteIds([deleterecords[i].Id]);
+}
+}
+
+
+for(var i=0;i&lt;records.length;i++){
+
+
+var ROL = new sforce.SObject(&quot;OpportunityContactRole&quot;);
+ROL.ContactId = records[i].ContactId;
+ROL.IsPrimary = records[i].IsPrimary;
+ROL.OpportunityId = RefreshId;
+ROL.Role = RoleOPP;
+
+var result = sforce.connection.create([ROL]);
+
+/* alert (result[0])*/
+
+}
+}
+
+
+window.parent.location.href=&quot;/&quot; + QuotationId ;</url>
+</WebLink>

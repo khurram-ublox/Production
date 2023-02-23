@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>psve_D_K_leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>DK_Product__c</columns>
+    <columns>DK_Total_Value_USD__c</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Lead_Source_Webform__c</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.LAST_UPDATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>Americas</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Open,Qualified,Unqualified</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>notEqual</operation>
+        <value>jaan</value>
+    </filters>
+    <filters>
+        <field>DK_Product__c</field>
+        <operation>contains</operation>
+        <value>NINA,ODIN</value>
+    </filters>
+    <label>psve D-K leads</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RegionAmericas</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

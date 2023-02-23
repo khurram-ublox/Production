@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Owner__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Owner of Case. For open Cases this is the user who is currently in charge, for closed cases it is the person in contact with the customer</inlineHelpText>
+    <label>Owner</label>
+    <length>30</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

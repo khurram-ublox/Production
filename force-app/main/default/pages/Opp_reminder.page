@@ -1,0 +1,388 @@
+<apex:page standardController="Opportunity" extensions="SendOppReminderController" action="{!populateTemplate}" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<!-- <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" /> -->
+
+<!-- wysiwyg -->
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+  <!-- //you can choose different versions of the library (basic/advanced and so on) -->
+    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+
+        CKEDITOR.config.toolbar = [
+       ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste','Find','Replace','-','Outdent','Indent','-','Print'],
+       ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+       ['Image','Table','-','Link','Flash','Smiley','TextColor','BGColor']
+       
+    ] ;
+
+
+
+           
+        function ReloadCkEditor() {
+            for(name in CKEDITOR.instances)
+             {
+                delete CKEDITOR.instances[name];
+             }
+            
+            
+            CKEDITOR.replaceAll();
+        }
+
+
+    </script>   
+   
+<!-- wysiwyg -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Opportunity reminder app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+
+
+  <apex:slds />
+</head>
+
+
+
+<!-- div slds-scope start -->
+    <div class="slds-scope">
+
+     <!-- MASTHEAD -->
+    <p class="slds-text-heading--label slds-m-bottom--small">
+      Send Opportunity Reminder
+    </p>
+    <!-- / MASTHEAD -->
+
+    <!-- wasim -->
+
+    <!-- PAGE HEADER -->
+<div class="slds-page-header slds-theme_alert-texture" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <!-- LAYOUT GRID -->
+  <div class="slds-grid">
+
+    <!-- GRID COL -->
+    <div class="slds-col slds-has-flexi-truncate">
+<!-- HEADING AREA -->
+<!-- MEDIA OBJECT = FIGURE + BODY -->
+<div class="slds-media slds-no-space slds-grow">
+  <div class="slds-media__figure">
+    <svg aria-hidden="true" class="slds-icon  slds-icon-standard-opportunity">
+      <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#opportunity')}"></use>
+    </svg>
+    <svg aria-hidden="true" class="slds-icon  slds-icon-standard-email">
+      <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#email')}"></use>
+    </svg>
+  </div>
+
+
+  <div class="slds-media__body">
+    <p class="slds-text-title--caps slds-line-height--reset">Contact Roles</p>
+    <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Opportunity Reminder">Opportunity Reminer</h1>
+  </div>
+</div>
+<!-- / MEDIA OBJECT -->
+<!-- /HEADING AREA -->
+    </div>
+
+  </div>
+  <!-- / LAYOUT GRID -->
+
+  </div>
+
+  <!-- / PAGE HEADER -->
+
+    <!-- wasim -->
+
+
+    
+    <!-- Give some space after header -->
+    <div class="slds-p-top_x-large"> </div>
+
+
+<!-- Apex Form -->
+    <apex:form id="mailForm">
+        <div style="display:none">
+            <apex:inputField value="{!Opportunity.Id}"/>
+        </div> 
+        <apex:pageBlock id="dataSection">
+            <apex:pageMessages id="pageMessages" />
+
+
+
+  
+           
+<!-- HEADING AREA -->
+<!-- COMMAND BUTTONS AND LANGUAGE SELECT -->
+
+    <div class="slds-page-header" id="cmdBtns-and-lang">
+    
+            <div class="slds-grid">
+
+                <div class="slds-col"> 
+                <div class="slds-form-element">
+                <label class="slds-form-element__label" for="select-lang">Select Language</label>
+                <div class="slds-select_container slds-size_1-of-12">
+         
+
+                  <apex:selectList styleClass="slds-form-element__control slds-select slds-select_container" value="{!templateLang}" multiselect="false" size="1">
+                  <apex:actionSupport event="onchange" action="{!populateTemplate}" oncomplete="ReloadCkEditor();"/>
+                      <apex:selectOption itemLabel="English" itemValue="_English"/>
+                      <apex:selectOption itemLabel="French" itemValue="_French"/>
+                      <apex:selectOption itemLabel="German" itemValue="_German"/>
+                      <apex:selectOption itemLabel="Italian" itemValue="_Italian"/>
+                      <apex:selectOption itemLabel="Spanish" itemValue="_Spanish"/>
+                  </apex:selectList>
+
+
+                </div>
+                </div>
+                </div>
+
+
+            <!-- Permission start -->
+            <apex:outputPanel rendered="{!$Permission.can_send_opportunity_reminder}">
+              
+               <!-- Command buttons -->
+            <div class="slds-align_absolute-center">
+                <apex:commandButton value="Send Mail" action="{!send}" style="color: #fff" styleClass="slds-button slds-button--success slds-theme_alert-texture "/>
+                <apex:commandButton value="Cancel" action="{!cancel}" style="color: #4bca81" immediate="true" styleClass="slds-button slds-button--neutral"/>
+                
+                <a href="https://wiki.u-blox.com/getDoc?docnr=UBX-17048992&published=true" 
+                   class="slds-button slds-button--neutral slds-theme_alert-texture"
+                   style="color: #4bca81"
+                   target="_blank">Help</a>                            
+                
+            </div> 
+            <!-- / Command buttons -->
+
+            </apex:outputPanel>
+
+
+            <apex:outputPanel rendered="{!!$Permission.can_send_opportunity_reminder}">
+
+           
+              <div class="slds-notify_container slds-is-relative ">
+                <div class="slds-notify slds-notify_toast slds-theme_warning slds-theme_alert-texture" role="alert">
+                  <span class="slds-assistive-text">info</span>
+                  <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small">You are not authorized to send Opportunity Reminder. </h2>
+                    <p>If you need access to this tool, please send a request to 
+                        <a href="mailto:itsupport@u-blox.com?Subject=Authorization required - Opportunity Reminder
+                                &Cc=wasim.shahzad@u-blox.com;keisuke.hirashima@u-blox.com">itsupport@u-blox.com</a>. 
+                    </p>
+                    
+                  </div>                  
+                </div>
+
+
+                <div class="slds-no-flex">
+                    <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" styleClass="slds-button slds-button--neutral slds-theme_alert-texture"/>
+                    <!-- <apex:commandButton value="Help" action="{!refresh}" styleClass="slds-button slds-button_inverse"/> -->
+                      <a href="https://wiki.u-blox.com/getDoc?docnr=UBX-17048992&published=true" 
+                         class="slds-button slds-button--neutral slds-theme_alert-texture"
+                         target="_blank">Help</a>  
+                </div> 
+
+
+              </div>
+
+             
+            
+
+            </apex:outputPanel>
+
+
+            <!-- Permission ends -->
+
+
+
+            </div>
+
+    </div>
+
+<!-- / COMMAND BUTTONS AND LANGUAGE SELECT -->
+<!-- /HEADING AREA -->
+
+   
+    <!-- Give some space after header -->
+    <div class="slds-p-top_x-large"> </div>
+
+         <div class="slds-grid">
+           
+            <div class="slds-form slds-form_stacked ">
+                <div class="slds-form-element slds-size_7-of-7">
+
+               
+                   <div style="{!IF(emailMsg.ToAddress == 'placeholder@email.field','display:block;', 'display:block')}">
+                    <label class="slds-form-element__label">To</label>
+                    <apex:inputText id="idRecipient" styleClass="slds-input" value="{!emailMsg.ToAddress}" />
+                    <!-- <input id="idRecipient" class="slds-input" value="{!emailMsg.ToAddress}"/> -->
+                   </div>       
+       
+
+                    <label class="slds-form-element__label">Cc</label>
+                    <apex:inputText id="idCcRecipients" styleClass="slds-input" value="{!emailMsg.CcAddress}"/>
+                    <!-- <input id="idCcRecipients" class="slds-input" value="{!emailMsg.CcAddress}"/> -->
+
+
+                    <label class="slds-form-element__label">Bcc</label>
+                    <apex:inputText id="idBccRecipients" styleClass="slds-input" value="{!emailMsg.BccAddress}"/>
+                    <!-- <input id="idBccRecipients" class="slds-input" value="{!emailMsg.BccAddress}"/> -->
+
+
+                    <label class="slds-form-element__label">Subject</label>
+                    <apex:inputText id="idSubject" styleClass="slds-input" required="true" value="{!emailMsg.Subject}"/>    
+
+                    <apex:pageBlock id="richText">
+                    <label class="slds-form-element__label">Body</label>
+                    <div class="slds-form-element__control">
+                        <apex:inputTextarea id="idBody" styleClass="ckeditor" richText="false" rows="20" value="{!emailMsg.HTMLBody}"/>
+                       
+                    </div>
+                    </apex:pageBlock>
+
+                </div>
+
+            </div>
+
+            <div class="slds-col">
+
+    <!-- OPPORTUNITY CONTACT ROLES AND OPP PRODUCTS -->
+     <div class="slds-form-element slds-size_5-of-6 slds-float_right" >
+
+     <article class="slds-card">
+      <div class="slds-card__header slds-grid">
+      <header class="slds-media slds-media_center slds-has-flexi-truncate">
+        <div class="slds-media__body">
+            <h2> 
+                <span class="slds-text-heading_small">Opportunity Contact Roles</span>
+            </h2>
+        </div>
+      </header>
+      <div class="slds-no-flex">
+        <!-- <Button class="slds-button slds-button--neutral">Select Email</Button> -->
+      </div>
+      </div>
+      <div class="slds-card__body">
+       <apex:dataTable value="{!OppConRoles}" var="ContactRole" styleClass="slds-table slds-table--bordered" onRowClick="clickElem(this);">
+            <apex:column headerValue="NAME" value="{!ContactRole.Contact.Name}"/>
+            <apex:column headerValue="EMAIL">
+                <apex:outputText value="{!IF(ContactRole.Contact.Email == null || ContactRole.Contact.Email == '','Email is not given',ContactRole.Contact.Email)}"/>
+                <!-- <apex:outputText onclick="popToEmailField('{!ContactRole.Contact.Email}'); return false;" 
+                                 value="{!ContactRole.Contact.Email}"
+                                 styleClass="email">
+                                 {!ContactRole.Contact.Email}
+                </apex:outputText> -->
+            </apex:column>
+            <apex:column headerValue="PRIMARY CONTACT">
+                <apex:outputText value="{!IF(ContactRole.isPrimary == true,'Yes','No')}"/>
+            </apex:column>
+            <apex:column headerValue="ROLE" value="{!ContactRole.Role}"/>
+          </apex:dataTable>
+        </div>
+        <div class="slds-card__footer"></div>
+      </article>
+
+
+     <article class="slds-card">
+     <div class="slds-card__header slds-grid">
+     <header class="slds-media slds-media_center slds-has-flexi-truncate">
+     <div class="slds-media__body">
+        <h2>
+            <span class="slds-text-heading_small">Opportunity Products</span>
+        </h2>
+     </div>
+     </header>
+     <div class="slds-no-flex">
+        <apex:commandButton value="Fetch" action="{!fetchOppProds}" immediate="true" styleClass="slds-button slds-button--neutral"/>
+     </div>
+     </div>
+      
+     <div class="slds-card__body">
+
+          <apex:dataTable value="{!OppProducts}" var="OppProd" styleClass="slds-table slds-table--bordered ">
+            <apex:column headerValue="NAME" >
+                <apex:outputlink value="/{!OppProd.Id}" target="_blank" >{!OppProd.Name}</apex:outputlink>
+            </apex:column>
+            <apex:column headerValue="PRODUCT NAME" value="{!OppProd.Product__r.Name}"/>
+            <apex:column headerValue="STATUS" value="{!OppProd.Status__c}"/>
+          </apex:dataTable>
+         <!--  <apex:outputText value="ta-da! nothing to fetch here." rendered="{!tada}"/> -->
+
+          <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert" style="{!IF(tada,'display:block;', 'display:none;')}" >
+
+                    
+            <span class="slds-icon_container slds-icon_container_circle slds-icon-action-announcement" title="Description of icon when needed">
+                <svg class="slds-icon" aria-hidden="true">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/action-sprite/svg/symbols.svg#announcement"></use>
+                </svg>
+                <span class="slds-assistive-text">Description of icon</span>
+            </span>
+            <div class="slds-text-heading_medium"><b>ta-da!</b> nothing to fetch here.</div>
+          
+           
+          </div> 
+
+     </div>
+     <div class="slds-card__footer"></div>
+     </article>
+
+      
+
+      </div>
+      <!-- / OPPORTUNITY CONTACT ROLES AND OPP PRODUCTS -->
+
+
+
+</div>
+
+      </div>
+
+    
+
+        </apex:pageBlock>
+    </apex:form>
+
+    <!-- / Apex Form -->
+
+
+<!-- Give some space after form -->
+<div class="slds-p-top_x-large"></div>
+
+<!-- FOOTER -->
+<footer role="contentinfo" class="slds-p-around--large">
+  <!-- LAYOUT GRID -->
+ 
+  <div class="slds-grid slds-grid--align-spread">
+    <p class="slds-col">Salesforce Opportunity Reminder</p>
+    <!-- <p class="slds-col">&copy; u-blox - Wasim Shahzad</p> -->
+    <p class="slds-col"><script>document.write("&copy; u-blox - "+new Date().getFullYear());</script></p>
+  </div>
+  
+  <!-- / LAYOUT GRID -->
+</footer>
+<!-- / FOOTER -->
+
+</div>
+<!-- /div slds-scope ends -->
+
+<script>
+/*function popToEmailField(elm){
+if(elm != ''){
+$('[id$=idRecipient]').val(elm);
+alert()
+}
+}
+
+
+ $j = jQuery.noConflict();
+    function clickElem(elem){
+        alert($j(elem).find(".email").html());
+        var dataCellValue = $j(elem).find(".email").html();
+    }*/
+
+</script>
+
+</apex:page>

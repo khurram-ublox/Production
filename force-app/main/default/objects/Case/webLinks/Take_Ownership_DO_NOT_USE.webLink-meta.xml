@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Take_Ownership_DO_NOT_USE</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Take Ownership DO NOT USE</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+// ToDo: remove unused vars
+
+var CaseId = &quot;{!Case.Id}&quot;;
+var OwnerId = &quot;{!Case.OwnerId}&quot;;
+var CreatorId = &quot;{!Case.CreatedById}&quot;;
+var RecordTypeId = &quot;{!Case.RecordTypeId}&quot;;
+var TransferOwnerId = &quot;{!Case.TransferOwnerId__c}&quot;;
+var EscalationTarget = &quot;{!Case.Escalation_Source__c}&quot;;
+var UserId = &quot;{!$User.Id}&quot;;
+
+
+// creates a CaseTeamMember record for the actual user
+
+// If Owner is not u-blox Automatic Process, the current Owner is added as Team Member.
+if (OwnerId!=&quot;00520000000rnjW&quot;) {
+
+var ct = new sforce.SObject(&quot;CaseTeamMember&quot;);
+
+ct.ParentId = CaseId;
+ct.MemberId = OwnerId;
+// first implementation: ct.MemberId = UserId;
+
+ct.TeamRoleId = &quot;0B7D0000000CanX&quot;;
+
+var result = sforce.connection.create([ct]);
+
+//alert (result)
+//alert (&quot;PLEASE IGNORE this Debug message result ct&quot;+result);
+}
+// changes Ownership to the actual user and Status to &quot;Working&quot;
+
+var c = new sforce.SObject(&quot;Case&quot;);
+
+c.Id = CaseId;
+c.OwnerId = UserId;
+//Case 00114373
+if(RecordTypeId != &quot;01257000000Nczf&quot;)
+{
+    c.Status = &quot;Working&quot;;
+}
+var result = sforce.connection.update([c]);
+
+//alert (result)
+window.location.href = window.location.href;
+//window.parent.location.href=&quot;/&quot;+CaseId;</url>
+</WebLink>

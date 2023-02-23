@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_uB_Office__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LEN( Account__r.ShippingCountry )&lt;&gt;2,
+TEXT(Account__r.uB_Office__c), 
+
+IF(Contains(&quot;AN:AR:BR:CA:CL:CO:EC:GT:MX:PA:PE:PR:SV:US:UY:VE&quot;, Account__r.ShippingCountry ),&quot;Americas&quot;,
+IF(Contains(&quot;AE:AM:AT:BA:BE:BG:BY:CH:CY:CZ:DE:DK:EE:EG:ES:FI:FR:GB:GE:GR:HR:HU:IE:IQ:IL:IS:IT:JO:KE:KZ:LB:LI:LT:LU:LV:MA:MD:MT:NG:NL:NO:PL:PT:RO:RS:RU:SE:SA:SI:SK:SM:TJ:TR:UA:UK:ZA&quot;, Account__r.ShippingCountry ),&quot;EMEA&quot;,
+IF(Contains(&quot;ID:MY:PH:PK:SG:TH:VN&quot;,Account__r.ShippingCountry ),&quot;Rest of APAC&quot;, 
+
+Case(Account__r.ShippingCountry ,
+&quot;IN&quot;,&quot;India&quot;,
+&quot;JP&quot;,&quot;Japan&quot;,
+&quot;KR&quot;,&quot;Korea&quot;,
+&quot;TW&quot;,&quot;Taiwan&quot;,
+&quot;CN&quot;,&quot;China&quot;,
+&quot;HK&quot;,&quot;China&quot;,
+&quot;AU&quot;,&quot;Australia&quot;,
+&quot;NZ&quot;,&quot;Australia&quot;,
+TEXT(Account__r.uB_Office__c))
+)))
+)</formula>
+    <inlineHelpText>copy from Account uB Office</inlineHelpText>
+    <label>Account uB Office</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

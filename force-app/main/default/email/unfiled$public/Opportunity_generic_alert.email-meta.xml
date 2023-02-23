@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Key Opportunity information for a GSM module project</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Opportunity: generic alert</name>
+    <style>none</style>
+    <subject>Opportunity alert: {!Opportunity.Name} updated</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

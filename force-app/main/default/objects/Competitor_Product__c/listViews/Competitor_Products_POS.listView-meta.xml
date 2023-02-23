@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitor_Products_POS</fullName>
+    <columns>NAME</columns>
+    <columns>Competitor__c</columns>
+    <columns>Product_Category__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Category__c</field>
+        <operation>equals</operation>
+        <value>Position &amp; Time</value>
+    </filters>
+    <label>Competitor Products POS</label>
+</ListView>

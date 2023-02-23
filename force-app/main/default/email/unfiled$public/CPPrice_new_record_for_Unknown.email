@@ -1,0 +1,5 @@
+New record has been created by {!Competitor_Product_Price__c.CreatedBy}
+
+Comment: {!Competitor_Product_Price__c.Comment__c}
+
+Link: {!Competitor_Product_Price__c.Link}

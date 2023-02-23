@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_products_must_contain_lifetime</fullName>
+    <active>true</active>
+    <description>Deployed on 12/07/2021. Services products must have lifetime value set.</description>
+    <errorConditionFormula>AND(RecordTypeId = &quot;0122p00000043gT&quot;, 
+NOT(
+AND(Opportunity_Lifetime_Year__c &gt; 0,
+Opportunity_Lifetime_Year__c &lt; 6)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Opportunity_Lifetime_Year__c</errorDisplayField>
+    <errorMessage>Allowed lifetime value for Services Opp Products is between 1 to 5 years..</errorMessage>
+</ValidationRule>

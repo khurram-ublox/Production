@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_AE_CEL_customized_per_Account</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Product__c</columns>
+    <columns>Effort_Spent__c</columns>
+    <columns>CASES.LAST_UPDATE</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Escalation_Time__c</columns>
+    <columns>Type_Number__c</columns>
+    <columns>Case_Initiator__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Bug_Reference__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.NAME</field>
+        <operation>contains</operation>
+        <value>prosa</value>
+    </filters>
+    <filters>
+        <field>Technology__c</field>
+        <operation>equals</operation>
+        <value>Cellular</value>
+    </filters>
+    <label>Team AE CEL customized per Account</label>
+    <sharedTo>
+        <group>AE_CEL</group>
+    </sharedTo>
+</ListView>

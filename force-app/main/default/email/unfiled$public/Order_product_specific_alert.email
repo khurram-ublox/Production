@@ -1,0 +1,8 @@
+This is to inform you that the following order has been placed.
+
+Account: {!Billings__c.Account__c}
+End Customer: {!Billings__c.End_Customer_Account__c}
+Project Owner: {!Billings__c.Project_Owner_Account__c}
+Product: {!Billings__c.Product_ID__c}
+
+Link: {!Billings__c.Link}

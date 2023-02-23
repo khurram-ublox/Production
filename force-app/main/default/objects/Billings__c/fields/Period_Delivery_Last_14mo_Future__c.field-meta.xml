@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Period_Delivery_Last_14mo_Future__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF((
+MONTH( Delivery_Date__c ) - MONTH(TODAY())
++
+(YEAR( Delivery_Date__c ) - YEAR (TODAY()))*12
+)
+&gt; -14
+,
+1
+,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Orders with delivery date 14 months in the past and in the future. Can be used to display both the closed and open orders in one graph.</inlineHelpText>
+    <label>Period Delivery Last 14mo and Future</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

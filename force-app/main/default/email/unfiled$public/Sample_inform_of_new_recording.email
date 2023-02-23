@@ -1,0 +1,14 @@
+**** SAMPLE RECORDING NOTIFICATION ***
+
+The following sample recording has been created:
+
+Company:        {!Samples__c.Account__c}
+SF Account Number: {!Samples__c.SF_Account_Number__c}
+Product:        {!Samples__c.Type_No__c}
+Created by: {!Samples__c.CreatedBy}
+Request Initiator (if different from the creator): {!Samples__c.Request_Initiator__c}
+
+
+Remark:    {!Samples__c.Remark__c}
+
+Click on the link to access the Sample:  {!Samples__c.Link}

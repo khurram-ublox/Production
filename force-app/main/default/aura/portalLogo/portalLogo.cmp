@@ -1,0 +1,14 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" description = "community logo">
+	<aura:attribute name="pageHeading" type="String" default="add your page heading here" access="global"/>
+	<aura:attribute name="logotitle" type="String" default="Reliable. Smart. Secure." access="global"/>
+    
+	<div class="slds-align_absolute-center " >
+		<img src="{!$Resource.logo}" class="ubxlogo_image" />	
+	</div>
+	<div class="slds-align_absolute-center">
+		<p class="ubxlogo_text_down">{!v.logotitle}</p>	
+	</div>
+	<div class="slds-align_absolute-left">
+		<p class="ubxpage_heading">{!v.pageHeading}</p>
+	</div>
+</aura:component>

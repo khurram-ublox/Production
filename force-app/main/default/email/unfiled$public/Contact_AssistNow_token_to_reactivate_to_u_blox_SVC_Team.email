@@ -1,0 +1,7 @@
+The following AssistNow Token needs to be reactivated: 
+
+{!Contact.MGA_Token__c} 
+
+Action of SVC Team: Please do the following: 
+1) Reactivate the token. 
+2) Inform {!Contact.OwnerEmail} and {!Contact.MGA_Support_Email__c} as soon as it's activated.

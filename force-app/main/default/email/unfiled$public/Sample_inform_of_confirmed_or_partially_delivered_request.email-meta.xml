@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To inform that a sample request has been confirmed or partially delivered.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Sample: inform of confirmed or partially delivered request</name>
+    <style>none</style>
+    <subject>Sample request {!Samples__c.Name} for {!Samples__c.Product__c} has been {!Samples__c.Request_Status__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

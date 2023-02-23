@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Solutions_ready_for_release_or_EoL</fullName>
+    <columns>SOLUTION.SOLUTION_NUMBER</columns>
+    <columns>SOLUTION.STATUS</columns>
+    <columns>SOLUTION.ISSUE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>SOLUTION.CREATED_DATE</columns>
+    <columns>Internal_Release_only__c</columns>
+    <columns>Propose_External_Release__c</columns>
+    <columns>SOLUTION.EXTERNAL</columns>
+    <columns>SOLUTION.IS_PUBLISHED_PKB</columns>
+    <columns>Status_Change_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SOLUTION.STATUS</field>
+        <operation>equals</operation>
+        <value>Ready for Review,Ready for EoL</value>
+    </filters>
+    <label>All Solutions ready for release or EoL</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>ubloxEC</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

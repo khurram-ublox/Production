@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MFi_License_Required__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Product requiring MFi License., can be ordered only by &quot;MFi Licensee&quot; Account</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Product requiring MFi License., can be ordered only by &quot;MFi Licensee&quot; Account</inlineHelpText>
+    <label>MFi License Required</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

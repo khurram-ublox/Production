@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId"  access="global" controller="CloneSPR">	    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="cloneSprId" type="String" />
+     <p>This will create a new Special Price Request even if you press Cancel in the following page. Are you sure if you want to do this?</p>
+     <br></br>
+    <lightning:button variant="brand" label="Ok" onclick="{!c.ok}" />
+	<lightning:button variant="brand" label="Cancel" onclick="{!c.cancel}" />    
+</aura:component>

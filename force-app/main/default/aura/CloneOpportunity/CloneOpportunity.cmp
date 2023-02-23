@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId"  access="global" controller="CloneOpp">	    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="cloneOppId" type="String" />
+     <p>Press Okay if you want to Clone this Opportunity. Otherwise Press Cancel.</p>
+     <br></br>
+    <lightning:button variant="brand" label="Ok" onclick="{!c.ok}" />
+	<lightning:button variant="brand" label="Cancel" onclick="{!c.cancel}" />    
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_Name__c</fullName>
+    <description>See Worksflow for RMA.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Name of distributor will be copied to the field with the same name of all RMAs connected to this account. The sharing rule will ensure access to these RMAs</inlineHelpText>
+    <label>Distributor Name</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

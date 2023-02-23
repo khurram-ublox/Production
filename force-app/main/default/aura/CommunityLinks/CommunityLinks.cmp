@@ -1,0 +1,20 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="forgotPasswordLabel" type="String" required="false" default="Forgot Password?"/>
+    <aura:attribute name="selfRegisterLabel" type="String" required="false" default="Create account"/>
+    <aura:attribute name="newToublox" type="String" required="false" default="New to u-blox?"/>
+    <aura:attribute name="forgotPasswordUrl" type="String" required="false" default="/s/login/ForgotPassword"/>
+    <aura:attribute name="selfRegisterUrl" type="String" required="false" default="/s/login/SelfRegister"/>
+    <aura:attribute name="communityForgotPasswordUrl" type="String" />
+    <aura:attribute name="communitySelfRegisterUrl" type="String" />
+    <aura:attribute name="userSource" type="String" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}"/>
+
+    <div  class="slds-align_absolute-left" >
+        <span><a href="{!if(v.communityForgotPasswordUrl == null, v.forgotPasswordUrl, v.communityForgotPasswordUrl)}">{!v.forgotPasswordLabel}</a></span>
+    </div>
+    <div  class="slds-align_absolute-left" style="padding-top: 24px;">    
+        <span>{!v.newToublox} <a href="{!if(v.communitySelfRegisterUrl == null, v.selfRegisterUrl, v.communitySelfRegisterUrl)}">{!v.selfRegisterLabel}</a></span>
+                                    
+    </div>
+</aura:component>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Francesca_Opportunities</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Quotation</value>
+    </filters>
+    <filters>
+        <field>ACCOUNT.SITE</field>
+        <operation>equals</operation>
+        <value>IT</value>
+    </filters>
+    <label>EMEA Italy Opportunities</label>
+    <sharedTo></sharedTo>
+</ListView>

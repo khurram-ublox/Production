@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify user about his deactivation.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Communities: DeactivationAlert to User</name>
+    <style>formalLetter</style>
+    <subject>Your {!Community_Name} account deactivated</subject>
+    <textOnly>Hi {!User.FirstName},
+
+Your account is currently frozen and will be deactivated within a few days. If you would like to delete your account and all of your data (without the possibility to reactivate it), please send your request to: info@u-blox.com.
+
+Best regards,
+u-blox Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

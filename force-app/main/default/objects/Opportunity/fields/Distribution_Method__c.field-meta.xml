@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distribution_Method__c</fullName>
+    <description>Demand Shared or Fulfillment only.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Demand Shared or Fulfillment only.</inlineHelpText>
+    <label>Distribution Method</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demand Shared</fullName>
+                <default>false</default>
+                <label>Demand Shared</label>
+            </value>
+            <value>
+                <fullName>Fulfillment Only</fullName>
+                <default>false</default>
+                <label>Fulfillment Only</label>
+            </value>
+            <value>
+                <fullName>Quote Only</fullName>
+                <default>false</default>
+                <label>Quote Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

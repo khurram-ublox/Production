@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotation_Not_Allowed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Quote is not allowed to customer if customer refused to sign the end use / user statement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Auto ticked on customer refused to sign the EUS document</inlineHelpText>
+    <label>Quotation Not Allowed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

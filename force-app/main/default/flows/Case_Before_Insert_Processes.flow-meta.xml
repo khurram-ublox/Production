@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <assignments>
+        <name>assign_case_origin</name>
+        <label>assign case origin</label>
+        <locationX>827</locationX>
+        <locationY>679</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Origin</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Partner Portal</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Copy case record type to the picklist field.</description>
+        <name>Copy_Record_Type</name>
+        <label>Copy Record Type</label>
+        <locationX>821</locationX>
+        <locationY>370</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Case_Record_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.RecordType.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_user_type</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_user_type</name>
+        <label>Check user type</label>
+        <locationX>816</locationX>
+        <locationY>509</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>is_user_type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$User.UserType</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PowerPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_case_origin</targetReference>
+            </connector>
+            <label>is user type?</label>
+        </rules>
+    </decisions>
+    <description>Handles Case before insert processes.</description>
+    <environments>Default</environments>
+    <interviewLabel>Case: Before Insert Processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case: Before Insert Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>619</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Copy_Record_Type</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

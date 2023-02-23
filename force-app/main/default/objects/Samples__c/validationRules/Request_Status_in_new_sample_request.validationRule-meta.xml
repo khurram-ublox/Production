@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Status_in_new_sample_request</fullName>
+    <active>true</active>
+    <description>Check if Request Status of a new Sample request is New.</description>
+    <errorConditionFormula>AND( RecordTypeId=&quot;012D0000000BVp8&quot;, TEXT(Request_Status__c) &lt;&gt; &quot;New&quot; , ISBLANK( CreatedDate ))</errorConditionFormula>
+    <errorDisplayField>Request_Status__c</errorDisplayField>
+    <errorMessage>A new Sample request should be created always with Request Status = New.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>Add_Account</name>
+        <label>Add Account</label>
+        <locationX>835</locationX>
+        <locationY>166</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Opp_Product__r.Opportunity__r.Account.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Price_Info_Date_TODAY</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Price_Information_Date_TODAY</name>
+        <label>Price Information Date TODAY</label>
+        <locationX>830</locationX>
+        <locationY>408</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Price_Information_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TodayDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>UpdateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>If_Flag_is_True</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Has_Opportunity</name>
+        <label>Has Opportunity</label>
+        <locationX>540</locationX>
+        <locationY>54</locationY>
+        <defaultConnector>
+            <targetReference>Price_Info_Date_TODAY</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Opportunity_decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opp_Product__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_Account</targetReference>
+            </connector>
+            <label>Has Opportunity decision</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_Flag_is_True</name>
+        <label>If Flag is True</label>
+        <locationX>542</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_CPP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UpdateFlag</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Record</targetReference>
+            </connector>
+            <label>Update CPP</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Price_Info_Date_TODAY</name>
+        <label>Price Info Date TODAY</label>
+        <locationX>540</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>If_Flag_is_True</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Price_Info_Date_TODAY_decision</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Price_Information_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Price_Information_Date_TODAY</targetReference>
+            </connector>
+            <label>Price Info Date TODAY decision</label>
+        </rules>
+    </decisions>
+    <description>For &quot;Competitor Product Price&quot; on each time record created or edited.</description>
+    <formulas>
+        <name>TodayDate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Competitor Product Price: After Created / Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Competitor Product Price: After Created / Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Record</name>
+        <label>Update Record</label>
+        <locationX>822</locationX>
+        <locationY>670</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>21</locationX>
+        <locationY>36</locationY>
+        <connector>
+            <targetReference>Has_Opportunity</targetReference>
+        </connector>
+        <object>Competitor_Product_Price__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>UpdateFlag</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

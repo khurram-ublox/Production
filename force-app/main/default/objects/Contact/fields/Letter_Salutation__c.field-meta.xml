@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Letter_Salutation__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Salutation , &quot;Herr&quot;),&quot;Sehr geehrter Herr&quot;&amp;&quot; &quot; &amp; LastName , (IF( ISPICKVAL( Salutation , &quot;Frau&quot;),&quot;Sehr geehrte Frau&quot;&amp;&quot; &quot; &amp; LastName ,(IF( ISPICKVAL( Salutation , &quot;Herr Prof.&quot;),&quot;Sehr geehrter Herr Prof.&quot;&amp;&quot; &quot; &amp; LastName , (IF( ISPICKVAL( Salutation , &quot;Frau Prof.&quot;),&quot;Sehr geehrte Frau Prof.&quot;&amp;&quot; &quot; &amp; LastName , (IF( ISPICKVAL( Salutation , &quot;Herr Dr.&quot;),&quot;Sehr geehrter Herr Dr.&quot;&amp;&quot; &quot; &amp; LastName , (IF( ISPICKVAL( Salutation , &quot;Frau Dr.&quot;),&quot;Sehr geehrte Frau Dr.&quot;&amp;&quot; &quot; &amp; LastName , (IF( ISPICKVAL( Salutation , &quot;Dear&quot;),&quot;Dear&quot;&amp;&quot; &quot; &amp; FirstName &amp;&quot; &quot; &amp; LastName&amp;&quot;,&quot; , (IF( ISPICKVAL( Salutation , &quot;Mr.&quot;),&quot;Dear Mr.&quot;&amp;&quot; &quot; &amp;LastName&amp;&quot;,&quot; , (IF( ISPICKVAL( Salutation , &quot;Mrs.&quot;),&quot;Dear Mrs.&quot;&amp;&quot; &quot; &amp;LastName&amp;&quot;,&quot; , (IF( ISPICKVAL( Salutation , &quot;Ms.&quot;),&quot;Dear Ms.&quot;&amp;&quot; &quot; &amp;LastName&amp;&quot;,&quot; , &quot;Dear&quot;&amp;&quot; &quot; &amp; FirstName &amp;&quot; &quot; &amp; LastName&amp;&quot;,&quot;)))))))))))))))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Letter Salutation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

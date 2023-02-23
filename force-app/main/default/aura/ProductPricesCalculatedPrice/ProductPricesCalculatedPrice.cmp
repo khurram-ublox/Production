@@ -1,0 +1,26 @@
+<aura:component  controller="ProductPricesAbacusCtrl" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="currency" type="String" />
+    <aura:attribute name="price" type="Double" />
+    <aura:attribute name="priceUSD" type="Double" />
+    <aura:attribute name="nextPrice" type="Double" />
+    <aura:attribute name="nextPriceUSD" type="Double" />
+    <aura:attribute name="priceValidUntil" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+     <lightning:card title="Calculated Product Unit Price">
+        <p class="slds-p-horizontal_small">
+            <aura:if isTrue="{! v.currency != ''}"> 
+            	{!v.currency}  {!v.price}  <aura:if isTrue="{! v.currency != 'USD'}"> (USD {!v.priceUSD})</aura:if>
+                <aura:if isTrue="{! v.nextPrice != 0}">
+                    valid until {! v.priceValidUntil } <br/>
+                   {!v.currency}  {!v.nextPrice}   <aura:if isTrue="{! v.currency != 'USD'}"> (USD {!v.nextPriceUSD} )</aura:if> (upcoming unit price)
+                </aura:if>
+                <aura:set attribute="else">
+                 There is no Product Prices data for this product.  
+                </aura:set>
+            </aura:if>
+        </p>
+    </lightning:card>
+</aura:component>

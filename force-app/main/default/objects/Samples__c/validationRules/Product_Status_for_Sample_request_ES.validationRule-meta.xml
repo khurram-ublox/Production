@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status_for_Sample_request_ES</fullName>
+    <active>true</active>
+    <description>For ES request, only ES Under Allocation product is allowed.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Request_Status__c,&quot;New&quot;),
+  RecordTypeId=&quot;012D0000000BVp8&quot;,
+  NOT(Owner:Queue.Id=&quot;00GD0000004KcjM&quot;),
+  NOT(Owner:Queue.Id=&quot;00G20000001Lsah&quot;),
+  NOT(Owner:Queue.Id=&quot;00GD0000004KcjR&quot;),
+  ISPICKVAL(Product__r.Product_Status__c,&quot;Engineering Samples&quot;),
+  NOT(Product__r.ES_Under_Allocation__c)
+)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>For request for Engineering Samples, the product must be &quot;ES Under Allocation&quot;.</errorMessage>
+</ValidationRule>

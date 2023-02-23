@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<a href="https://www.u-blox.com/"><img src="https://c.eu4.content.force.com/servlet/servlet.ImageServer?id=015570000054V9a&amp;oid=00D200000001ogf" alt="" border="0" align="left"></a><br><br><br><br><br><br><b>Good to have you on board!</b>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<div style=""><div style=""><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b><br></b></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><b>Dear&nbsp;<font size="3"><font face="arial">{!Receiving_User.Username},</font></font></b></div><div style=""><b style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></b><font face="arial">Thank you for registering. Here is a link to log in to your account:</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><a href="{!Community_Url}">{!Community_Url}</a></font></div><div style=""><div style=""><font size="3" style=""><br><font face="arial">This link is valid for the next 7 days. After that, please go to the reset password section to get a new link.</font></font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font size="3"><br><br>Kind regards,</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font size="3"><br>Your u-blox team</font></div></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial"><br></font></div></div></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To notify of a new APAC Account from no-APAC user</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acc: Notify of new APAC Acc from no-APAC user</name>
+    <style>none</style>
+    <subject>Account alert: {!Account.Name} has been created by {!Account.CreatedBy}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

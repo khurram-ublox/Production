@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Report_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>LEFT(Country__c &amp; &quot; - &quot; &amp; Ordering_Code__c &amp; 
+IF(LEN(SF_Account_Number__c) &gt; 0,&quot; - &quot; &amp; SF_Account_Number__c,&quot;&quot;) 
+,40)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Report Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

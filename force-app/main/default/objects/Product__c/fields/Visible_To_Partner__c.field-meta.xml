@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visible_To_Partner__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When checked, the product will be included in the Masterschedule visible to the partner.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When checked, the product will be included in the Masterschedule visible to the partner.</inlineHelpText>
+    <label>Visible To Partner</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

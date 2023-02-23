@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHO_Shipments_last_7d</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>Qty_Ordered__c</columns>
+    <columns>Order_Date__c</columns>
+    <columns>Request_Date__c</columns>
+    <columns>Delivery_Date__c</columns>
+    <columns>Total_Value__c</columns>
+    <columns>Project_Owner_Account__c</columns>
+    <columns>End_Customer_Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Request_Date__c</field>
+        <operation>greaterThan</operation>
+        <value>NEXT_N_DAYS:720</value>
+    </filters>
+    <filters>
+        <field>Order_Status__c</field>
+        <operation>equals</operation>
+        <value>open</value>
+    </filters>
+    <filters>
+        <field>Frame_Order__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Orders with request dates &gt; 2yrs out</label>
+</ListView>

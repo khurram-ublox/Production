@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBO_PC_SER__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Strategic Business Opportunity for Product Center Services, editable for Product Strategy teams</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Strategic Business Opportunity for Product Center Services, editable for Product Strategy teams</inlineHelpText>
+    <label>SBO SER</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

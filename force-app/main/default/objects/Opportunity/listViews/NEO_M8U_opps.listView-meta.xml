@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NEO_M8U_opps</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Product_1__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_1__c</field>
+        <operation>equals</operation>
+        <value>NEO-M8U</value>
+    </filters>
+    <label>NEO-M8U opps</label>
+    <sharedTo>
+        <group>Business_Marketing</group>
+        <group>PS_POS</group>
+    </sharedTo>
+</ListView>

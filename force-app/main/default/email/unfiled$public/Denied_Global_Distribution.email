@@ -1,0 +1,27 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[&nbsp;<table border="0" cellpadding="0" cellspacing="0" width="468" style="border-collapse:
+ collapse;width:351pt">
+ <colgroup><col width="468" style="mso-width-source:userset;mso-width-alt:16337;width:351pt">
+ </colgroup><tbody><tr height="20" style="height:15.0pt">
+  <td height="20" class="xl66" width="468" style="height:15.0pt;width:351pt">Greetings,</td>
+ </tr>
+ <tr height="19" style="height:14.5pt">
+  <td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt">&nbsp;</td>
+ </tr>
+ <tr height="35" style="height:26.0pt">
+  <td height="35" class="xl65" width="468" style="height:26.0pt;width:351pt">Your
+  registration request for&nbsp;<span style="font-size: 16px; background-color: rgb(255, 255, 255);">{!Opportunity.Distribution_Partner__c}&nbsp;</span>Project number&nbsp;<font class="font5">{!Opportunity.Distributor_Project_ID__c}&nbsp;is denied.</font></td>
+ </tr>
+ <tr height="19" style="height:14.5pt">
+  <td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt"><br><div style="font-size: 12pt;">Account Name:&nbsp;&nbsp;{!Opportunity.AccName__c}</div><div><span style="font-size: 12pt;">Opportunity:&nbsp; &nbsp;</span><a href="https://u-blox--devpramod.my.salesforce.com/p/email/template/EmailTemplateEditorUi/{!Opportunity.Link}">{!Opportunity.Name}</a></div>&nbsp;</td>
+ </tr>
+ <tr height="19" style="height:14.5pt">
+  <td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt">The
+  reason for denying your request is: {!ApprovalRequest.Comments}<br></td></tr><tr height="19" style="height:14.5pt"><td height="19" class="xl67" style="height:14.5pt"><div style="font-size: 16px;"><br></div><div style="font-size: 16px;">Thank you for supporting u-blox,</div><div style="font-size: 16px;">&nbsp;</div><div style="font-size: 16px;">The u-blox Registration team.</div></td></tr>
+ <tr height="19" style="height:14.5pt">
+  <td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt"><br></td>
+ </tr></tbody></table><table border="0" cellpadding="0" cellspacing="0" width="468" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; border-collapse: collapse; width: 351pt;"><colgroup><col width="468" style="mso-width-source:userset;mso-width-alt:16337;width:351pt"></colgroup><tbody><tr height="37" style="mso-height-source:userset;height:27.65pt"><td height="37" class="xl63" width="468" style="height:27.65pt;width:351pt"></td></tr><tr height="19" style="height:14.5pt"><td height="19" class="xl64" style="height:14.5pt"></td></tr><tr height="48" style="mso-height-source:userset;height:36.0pt"><td height="48" class="xl65" width="468" style="height:36.0pt;width:351pt"></td></tr><tr height="19" style="height:14.5pt"><td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt"></td></tr><tr height="35" style="height:26.0pt"><td height="35" class="xl65" width="468" style="height:26.0pt;width:351pt"></td></tr><tr height="19" style="height:14.5pt"><td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt"></td></tr><tr height="52" style="height:39.0pt"><td height="52" class="xl65" width="468" style="height:39.0pt;width:351pt"></td></tr><tr height="19" style="height:14.5pt"><td height="19" class="xl65" width="468" style="height:14.5pt;width:351pt"></td></tr><tr height="19" style="height:14.5pt"><td height="19" class="xl66" style="height:14.5pt"></td></tr><tr height="20" style="height:15.0pt"><td height="20" class="xl65" width="468" style="height:15.0pt;width:351pt"></td></tr><tr height="20" style="height:15.0pt"><td height="20" class="xl65" width="468" style="height:15.0pt;width:351pt"></td></tr></tbody></table>]]></td>
+</tr>
+</table>

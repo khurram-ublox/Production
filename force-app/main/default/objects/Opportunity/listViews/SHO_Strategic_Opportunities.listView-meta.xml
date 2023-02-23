@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHO_Strategic_Opportunities</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Account_Country__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>Product_3__c</columns>
+    <columns>Owner_SHO__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Application_type__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Opportunity</value>
+    </filters>
+    <filters>
+        <field>SBO_SHO__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>SHO Strategic Opportunities</label>
+    <sharedTo>
+        <group>Recipients_SHO_Statistics</group>
+    </sharedTo>
+</ListView>

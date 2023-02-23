@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Corrected if the channel manager wrong and needs email for more info.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acc: Notify Channel Manager mismatch</name>
+    <style>none</style>
+    <subject>Account {!Account.Name} Channel Manager correction</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

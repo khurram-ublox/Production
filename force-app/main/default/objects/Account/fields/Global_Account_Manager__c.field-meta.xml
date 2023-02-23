@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Global_Account_Manager__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Name of User that coordinates all activities with such a Global Account and its subsidiaries</description>
+    <externalId>false</externalId>
+    <inlineHelpText>to be decided by regional sales heads
+
+Coordination Tasks
+- Strategic and tactic planning and guidance
+- Information and action planning on all actual and potential projects.
+- Quotations definition and approval
+- Contact guidance
+- Closing of deal</inlineHelpText>
+    <label>Global Account Manager</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Standard,PowerPartner</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

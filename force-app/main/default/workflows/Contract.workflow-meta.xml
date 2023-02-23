@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contract_Activation_alert</fullName>
+        <ccEmails>legal-team-GLOBAL@u-blox.com</ccEmails>
+        <description>Contract: Activation alert</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_Activation_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_EUS_Available_Email_Alert</fullName>
+        <description>Contract: EUS Available Email Alert China</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>adrian.tan@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>hamilton.chen@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_EUS_Available_Activation_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_EUS_Available_Email_Alert_MM</fullName>
+        <description>Contract: EUS Available Email Alert Myanmar</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>adrian.tan@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>dennis.tan@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_EUS_Available_Activation_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_EUS_Available_Email_Alert_RU_VE</fullName>
+        <description>Contract: EUS Available Email Alert Russia and Venezuela</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <field>Sales_Admin_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>raphael.baude@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contract_EUS_Available_Activation_alert</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Contract_Fill_Contract_Name</fullName>
+        <description>Fills Contract Name (Account Name + Contract Category + Contract Start Date)</description>
+        <field>Name</field>
+        <formula>Account.Name &amp; &quot; - &quot; &amp; TEXT(Contract_Category__c) &amp; &quot; - &quot; &amp; TEXT(YEAR(StartDate))</formula>
+        <name>Contract: Fill Contract Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_Status_to_Ended</fullName>
+        <description>Change Status to Ended</description>
+        <field>Status</field>
+        <literalValue>Ended</literalValue>
+        <name>Contract: Status to Ended</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contract_copy_Account_Name</fullName>
+        <description>Copies Account name to text field</description>
+        <field>Contract_Search_Info__c</field>
+        <formula>Account.Name</formula>
+        <name>Contract: copy Account Name</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Contract%3A Activation alert</fullName>
+        <actions>
+            <name>Contract_Activation_alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert sent to Legal</description>
+        <formula>AND(
+  ISPICKVAL(Contract_Category__c, &quot;Sales Agreement&quot;),
+  ISCHANGED(Status),
+  ISPICKVAL(Status, &quot;Activated&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract%3A Change Status to Ended</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>equals</operation>
+            <value>Activated</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.EndDate</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Run on Contract End Date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Contract_Status_to_Ended</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Contract.EndDate</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Contract%3A Fill Contract Name with given texts</fullName>
+        <actions>
+            <name>Contract_Fill_Contract_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contract.Name</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Fills Contract Name with Account Name, Contract Category and Contract Start Date (year)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contract%3A copy account name for search</fullName>
+        <actions>
+            <name>Contract_copy_Account_Name</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contract.Status</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Copies account name to a text field to support search for the company name</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

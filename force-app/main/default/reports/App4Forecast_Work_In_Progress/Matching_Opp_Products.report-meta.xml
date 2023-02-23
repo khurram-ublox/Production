@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.Opp_Products__r$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opp_Products__r$Flagged_Item__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opp_Products__r$Opportunity_Account__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opp_Products__r$Product__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opp_Products__r$Demand_Forecast__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Do not change - report is used to show the Matching Opp Products</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.Opp_Products__r$a4x_Report_Filter_Reference__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$StageName</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>0 Competition,1 Lost,2 Inactive</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Matching Opp Products</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunity_Product_Product__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

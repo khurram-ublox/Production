@@ -1,0 +1,19 @@
+**** SAMPLE REQUEST NOTIFICATION ***
+
+The following sample request has been updated:
+
+Company:        {!Samples__c.Account__c}
+Product:        {!Samples__c.Product__c}
+Sample Usage:        {!Samples__c.Sample_Usage__c}
+Requested quantity: {!Samples__c.Quantity__c}
+Requested by: {!Samples__c.CreatedBy}
+uB Office:        {!Samples__c.uB_Office__c}
+
+Request Status:    {!Samples__c.Request_Status__c}
+Remark:    {!Samples__c.Remark__c}
+
+Confirmed quantity: {!Samples__c.Confirmed__c}
+Planned Delivery Date: {!Samples__c.Planned_Delivery_Date__c}
+Shipped quantity (only when shipped): {!Samples__c.Quantity__c}
+
+Click on the link to access the Sample:  {!Samples__c.Link}

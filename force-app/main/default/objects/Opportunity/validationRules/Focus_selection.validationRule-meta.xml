@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Focus_selection</fullName>
+    <active>true</active>
+    <description>Limits the selection of 1 and 2 for Profile Management, and only 4 and 5 for Distributors</description>
+    <errorConditionFormula>ISCHANGED( Focus__c ) &amp;&amp; (
+($User.ProfileId &lt;&gt; &quot;00e20000000wr56&quot; &amp;&amp; $User.ProfileId &lt;&gt; &quot;00eD00000015qkT&quot; &amp;&amp; $User.ProfileId &lt;&gt; &quot;00e20000000ki5l&quot; &amp;&amp; $User.ProfileId &lt;&gt; &quot;00e20000000wr5F&quot; &amp;&amp; $User.ProfileId &lt;&gt; &quot;00e20000000wsfT&quot; &amp;&amp; $User.Id &lt;&gt; &quot;0052p000009AYem&quot; &amp;&amp; $User.Id &lt;&gt; &quot;0052p000008IaIc&quot;) &amp;&amp; ( text(Focus__c) = &quot;1 - Corporate&quot; || text(Focus__c) = &quot;2 - Region&quot;)
+||
+($User.ProfileId = &quot;00eD00000015ehS&quot; || $User.ProfileId = &quot;00eD00000015UEf&quot; || $User.ProfileId = &quot;00eD00000016DpY&quot;) &amp;&amp; ( text(Focus__c) = &quot;1 - Corporate&quot; || text(Focus__c) = &quot;2 - Region&quot; || text(Focus__c) = &quot;3 - Territory&quot;)
+)
+/* 
+Given Access to following people on request
+Fen Weng, Id = 0052p000009AYem
+Kimberly Berry, Id = 0052p000008IaIc
+Sales = 00e20000000wr5F
+Super Sales = 00e20000000wsfT
+*/</errorConditionFormula>
+    <errorDisplayField>Focus__c</errorDisplayField>
+    <errorMessage>&quot;1 - Corporate&quot; and &quot;2 - Region&quot; should be decided by Management.
+Distributors can choose &quot;5 - Portal&quot;.</errorMessage>
+</ValidationRule>

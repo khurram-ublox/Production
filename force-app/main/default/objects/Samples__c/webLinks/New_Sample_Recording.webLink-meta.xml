@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Sample_Recording</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Sample Recording</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a09/e?RecordType=&quot;012D0000000BVpD&quot;&amp;CF00ND0000005YyeO={!Contact.Full_Name__c}&amp;CF00N20000001No2c={!Account.Name}</url>
+</WebLink>

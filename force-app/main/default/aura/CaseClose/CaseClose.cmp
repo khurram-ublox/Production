@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global">
+
+    <aura:attribute name="recordId" type="Id" />
+
+    <div class=" slds-box">
+    <div class="slds-heading slds-card__header slds-grid "> <!--slds-border_bottom  -->
+        	<h2 class="slds-card__header-title">
+        		<a class="slds-card__header-link slds-truncate">
+               		<span>Close Case</span>
+                </a>
+            </h2>
+    </div>
+    <lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Case">
+                    <lightning:inputField fieldName="Status" defualt=""/>                
+                    <lightning:inputField fieldName="Comments" defualt=""/>
+    <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Save" />
+	</lightning:recordEditForm>
+    </div> 
+</aura:component>

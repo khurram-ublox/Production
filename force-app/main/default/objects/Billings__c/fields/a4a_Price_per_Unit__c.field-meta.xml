@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Price_per_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+
+Price_CHF__c&gt;0, 
+
+Price_CHF__c, 
+
+Price_per_unit__c * 
+
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, $Setup.Constant_Exchange_Rates__c.EUR2CHF__c ,
+&quot;JPY&quot;, $Setup.Constant_Exchange_Rates__c.JPY2CHF__c ,
+&quot;USD&quot;, $Setup.Constant_Exchange_Rates__c.USD2CHF__c ,
+1
+)
+)
+
+/* previous version until 22.5.2022
+
+Price_per_unit__c * $Setup.Constant_Exchange_Rates__c.USD2CHF__c
+
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Price per Unit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

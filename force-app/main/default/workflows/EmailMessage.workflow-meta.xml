@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Case_Clear_New_Mail</fullName>
+        <description>Clear &quot;New Mail&quot; checkbox of the parent Case</description>
+        <field>New_Mail__c</field>
+        <literalValue>0</literalValue>
+        <name>Case: Clear New Mail</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Set_Status_to_Working</fullName>
+        <description>Change Case Status to &quot;Working&quot;</description>
+        <field>Status</field>
+        <literalValue>Working</literalValue>
+        <name>Case: Set Status to Working</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_Need_To_Respond</fullName>
+        <field>Status</field>
+        <literalValue>Need To Respond</literalValue>
+        <name>Case: Status Need To Respond</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_New_Input</fullName>
+        <description>Change Case Status to &quot;New Input&quot;</description>
+        <field>Status</field>
+        <literalValue>New Input</literalValue>
+        <name>Case: Status New Input</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>EmailMessage_Check_New_Mail</fullName>
+        <description>Check &quot;New Mail&quot; checkbox of the parent Case</description>
+        <field>New_Mail__c</field>
+        <literalValue>1</literalValue>
+        <name>EmailMessage: Check New Mail</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LastEmailCreatedDate</fullName>
+        <description>Write Created Date into cases field.</description>
+        <field>LastEmailCreatedDate__c</field>
+        <formula>CreatedDate</formula>
+        <name>LastEmailCreatedDate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LastEmailCreatedStatus</fullName>
+        <description>Write Status &quot;New&quot; onto Case field when email arrived</description>
+        <field>LastEmailCreatedStatus__c</field>
+        <literalValue>New</literalValue>
+        <name>LastEmailCreatedStatus</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>LastEmailStatusUpdate</fullName>
+        <field>LastEmailCreatedStatus__c</field>
+        <literalValue>Read (Update not new from email message)</literalValue>
+        <name>LastEmailStatusUpdate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>ParentId</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>EmailMessage%3A Case Status to New Input</fullName>
+        <actions>
+            <name>Case_Clear_New_Mail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Case_Status_New_Input</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Change Case Status to &quot;New Input&quot; if
+- Case Status is &quot;Working&quot; or &quot;New Input&quot; and there are new mails (New Mail flagged).
+- Case Status is &quot;Closed&quot; or &quot;Waiting or Response&quot; and a new mail has come.</description>
+        <formula>((ISPICKVAL(Parent.Status, &quot;Working&quot;)||ISPICKVAL(Parent.Status, &quot;New Input&quot;))&amp;&amp;ISPICKVAL(Status,&quot;Sent&quot;)&amp;&amp;Parent.New_Mail__c)
+||
+(ISPICKVAL(Parent.Status, &quot;Working&quot;)||(ISPICKVAL(Parent.Status, &quot;Closed&quot;)||ISPICKVAL(Parent.Status, &quot;Waiting For Response&quot;))&amp;&amp;Incoming&amp;&amp;ISPICKVAL(Status,&quot;New&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>EmailMessage%3A New mail</fullName>
+        <actions>
+            <name>EmailMessage_Check_New_Mail</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>To flag there is a new mail while Case Status is &quot;Working&quot; or &quot;New Input&quot;</description>
+        <formula>(ISPICKVAL(Parent.Status, &quot;Working&quot;)||ISPICKVAL(Parent.Status, &quot;New Input&quot;))&amp;&amp;Incoming&amp;&amp;ISPICKVAL(Status,&quot;New&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>EmailMessage%3A Sent without new incoming mail</fullName>
+        <actions>
+            <name>Case_Set_Status_to_Working</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Change Case Status to &quot;Working&quot; if there are no new mails.</description>
+        <formula>ISPICKVAL(Status,&quot;Sent&quot;)&amp;&amp;NOT(Parent.New_Mail__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>LastEmailCreated</fullName>
+        <actions>
+            <name>LastEmailCreatedDate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>LastEmailCreatedStatus</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>EmailMessage.Incoming</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When email is arriving and record is created it triggers diverse actions.
+This workflow not needed anymore</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>LastEmailStatusChange</fullName>
+        <actions>
+            <name>LastEmailStatusUpdate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>EmailMessage.Status</field>
+            <operation>notEqual</operation>
+            <value>New</value>
+        </criteriaItems>
+        <description>Updates Email Status to read if it not &quot;new&quot;.
+This Workflow moved to Flow = Email Message: After Created/Updated</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

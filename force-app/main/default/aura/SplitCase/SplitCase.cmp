@@ -1,0 +1,137 @@
+<aura:component access="PUBLIC" implements="force:appHostable,flexipage:availableForAllPageTypes" controller="CaseService">
+    <aura:attribute name="caseId" type="Id" />
+    <aura:attribute name="originalCase" type="Case" default="{ 'sobjectType': 'Case' }" />
+    <aura:attribute name="newCase" type="Case" default="{ 'sobjectType': 'Case' }" />
+    <aura:attribute name="currentUser" type="User" default="{ 'sobjectType': 'User' }" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+
+    <ltng:require styles="/resource/SLDS0121/assets/styles/salesforce-lightning-design-system-ltng.min.css"/>
+	<ltng:require scripts="{!$Resource.uJS}"></ltng:require>
+    
+    <!-- Event handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <div class="slds" style="height: 100%;">
+        <div class="slds-scrollable--y">
+            <c:Spinner show="{!v.showSpinner}" />
+            <form class="slds-m-left--small slds-form--inline">
+                <fieldset>
+                    <legend class="slds-form-element__label">Case Information</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Subject" label="Subject" type="string" value="" required="true"/>
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--6-of-12" apiName="ParentId" label="Parent Case" type="lookup" lookupType="Case" value=""/>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Type" label="Type" type="picklist" value="{!v.originalCase.Type}" required="true"/>
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--6-of-12" apiName="OwnerId" label="Case Owner" type="string" readOnly="true" value="{!v.currentUser.Name}"/>
+                        </div>
+                        <div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Priority" label="Priority" type="picklist" value="3 - Low" required="true"/>
+                            &nbsp;
+                        </div>
+                        <div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Origin" label="Case Origin" type="picklist" value="{!v.originalCase.Origin}" required="true"/>
+                            &nbsp;
+                        </div>
+                        <div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Status" label="Status" type="picklist" value="New" required="true"/>
+                            &nbsp;
+                        </div>
+                        <!--div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size-5-of-12" apiName="IsEscalated" label="Escalated" type="checkbox" value="false"/>
+                            <!-c:FormCell class="slds-form-element slds-size-6-of-12" apiName="CreatedDate" label="Date/Time Opened" type="datetime" value="{!v.originalCase.CreatedDate}"/>
+                        </div-->
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="slds-form-element__label">Description Information</legend>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Technology__c" label="Technology" type="picklist" value=""/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Product__c" label="Product" type="lookup" 
+                                    lookupType="Product2" lookupDescriptionFields="Type_No__c,Product_Status__c" value="{!v.originalCase.Product__c}"/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Description" label="Description" type="textarea" maxLength="32000" value="Please fill in description"/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Comments" label="Internal Comments" type="textarea" maxLength="4000" value="{!v.originalCase.Comments}"/>
+                    </div>
+                    <!--div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size-5-of-12" apiName="Bug_Reference__c" label="Bug Reference" type="string" value=""/>
+                    </div-->
+                </fieldset>
+                <fieldset>
+                    <legend class="slds-form-element__label">Contact Information</legend>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="AccountId" label="Account Name" type="lookup" 
+                                    lookupType="Account" lookupDescriptionFields="SF_Account_Number__c,BillingCityFormula__c,BillingCountryFormula__c"
+                                    value="{!v.originalCase.AccountId}"/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="Opportunity__c" label="Opportunity" type="lookup" 
+                                    lookupType="Opportunity" lookupDescriptionFields="AccName__c,Prod1Name__c,Prod2Name__c,Prod3Name__c"  
+                                    value="{!v.originalCase.Opportunity__c}"/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="ContactId" label="Contact Name" type="lookup" 
+                                    lookupType="Contact" lookupDescriptionFields="Function__c,AccName__c,MailingCity"
+                                    value="{!v.originalCase.ContactId}"/>
+                    </div>
+                    
+                </fieldset>
+                <!--fieldset>
+                    <legend class="slds-form-element__label">Web Information</legend>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size-5-of-12" apiName="SuppliedCompany" label="Web Company" type="string" value="{!v.originalCase.SuppliedCompany}"/>
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size-6-of-12" apiName="SuppliedEmail" label="Web Email" type="string" value="{!v.originalCase.SuppliedEmail}"/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size-5-of-12" apiName="SuppliedName" label="Web Name" type="string" value="{!v.originalCase.SuppliedName}"/>
+                    </div>
+                </fieldset-->
+                <fieldset>
+                    <legend class="slds-form-element__label">Customer Portal</legend>
+                    <div class="slds-form-element__row">
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="IsVisibleInSelfService" label="Visible in Self-Service Portal" type="checkbox" value="{!v.originalCase.IsVisibleInSelfService}"/>
+                    </div>
+                </fieldset>
+                <!--fieldset>
+                    <legend class="slds-form-element__label">System Information</legend>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size-5-of-12">&nbsp;</div>
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size-6-of-12" apiName="Distributor_Name__c" label="Distributor Name" type="string" value="{!v.originalCase.Distributor_Name__c}"/>
+                    </div>
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size-5-of-12">&nbsp;</div>
+                        <c:FormCell aura:id="cell" class="slds-form-element slds-size-6-of-12" apiName="Email_Account_Owner__c" label="Email Account Owner" type="string" value="{!v.originalCase.Email_Account_Owner__c}"/>
+                    </div>
+                </fieldset-->
+                <div class="slds-form-element__row">
+                    <span class="slds-form-element__label" style="font-weight:bold">Case Comments</span>
+                    <div class="slds-m-left--small slds-m-right--small slds-size--1-of-1" style="width: 88.5%;">
+                        <c:CaseComments aura:id="caseComments" originalCaseId="{!v.caseId}"/>
+                    </div>
+                </div>
+                <div class="slds-form-element__row">
+                    <span class="slds-form-element__label" style="font-weight:bold">Case Emails</span>
+                    <div class="slds-m-left--small slds-m-right--small slds-size--1-of-1" style="width: 88.5%;">
+                        <c:CaseEmails aura:id="caseEmails" originalCaseId="{!v.caseId}"/>
+                    </div>
+                </div>
+                 <div class="slds-form-element__row">
+                    <span class="slds-form-element__label" style="font-weight:bold">Case Attachments</span>
+                    <div class="slds-m-left--small slds-m-right--small slds-size--1-of-1" style="width: 88.5%;">
+                        <c:CaseAttachments aura:id="caseAttachments" originalCaseId="{!v.caseId}"/>
+                    </div>
+                </div>
+                <div class="slds-text-align--center slds-m-right--xx-large slds-p-right--xx-large">
+                    <button class="slds-button slds-button--brand" type="button" onclick="{!c.save}">Save</button>
+                    <button class="slds-button slds-button--neutral" type="button" onclick="{!c.cancel}">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</aura:component>

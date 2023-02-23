@@ -1,0 +1,5 @@
+Hi
+
+IP Availability Date of {!Product2.Type_No__c} is now {!Product2.IP_Availability_Date__c} If this is no longer valid, update it and add Comment.
+
+Link to this product: {!Product2.Link}

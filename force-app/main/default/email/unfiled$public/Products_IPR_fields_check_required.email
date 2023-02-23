@@ -1,0 +1,8 @@
+{!Product2.Type_No__c} (Type number: {!Product2.Type_No__c}): Please check the following and correct if needed.
+- IPR Class: {!Product2.IPR_Class__c} (this needs to be changed in Abacus)
+- IPR Cost: {!Product2.IPR_Cost__c}
+- IPR Technology: {!Product2.IPR_Technology__c}
+
+Product status: {!Product2.Product_Status__c}
+
+Link to record: {!Product2.Link}

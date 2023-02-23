@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_POS_xDR</fullName>
+    <booleanFilter>(1 AND 2 AND 3 AND 4) OR (5 AND 3)</booleanFilter>
+    <columns>Date_Escalated_To_AE_Pos__c</columns>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <columns>Product__c</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>Effort_Spent__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Escalated_To_AE_Pos__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>F9140-KA,9V,9Y,9R,A9,9K,9L,6R,8U,M8L,KA-DR,8E,G6000-BA,B78,B88,DR,Andr,M934</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>AE POS</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>jilm,eaho,apai,vkar,njaf,jluu,ssid,pyan,sdon,kkir,stng,ahof</value>
+    </filters>
+    <label>AE POS - PRO-APS</label>
+    <sharedTo>
+        <group>AE_POS</group>
+    </sharedTo>
+</ListView>

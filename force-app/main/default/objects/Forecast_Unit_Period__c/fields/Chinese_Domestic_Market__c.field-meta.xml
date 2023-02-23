@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chinese_Domestic_Market__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Order served from China. Updated when Chinese Domestic Market in the related Order is checked/unchecked.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Order served from China. Updated when Chinese Domestic Market in the related Order is checked/unchecked.</inlineHelpText>
+    <label>Chinese Domestic Market</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

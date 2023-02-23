@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asia_ubx_7_Opportunities</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>Product_3__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account_uB_Office__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_uB_Office__c</field>
+        <operation>equals</operation>
+        <value>japan,china,taiwan,korea,india,rest of apac</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>0 Competition,1 Lost,2 Inactive,9 Closed - EoL</value>
+    </filters>
+    <label>Asia ubx 7 Opportunities</label>
+    <sharedTo>
+        <role>ubloxHQ</role>
+        <roleAndSubordinatesInternal>RegionAPAC</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

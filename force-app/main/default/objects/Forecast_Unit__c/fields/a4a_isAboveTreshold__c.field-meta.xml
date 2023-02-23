@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_isAboveTreshold__c</fullName>
+    <externalId>false</externalId>
+    <formula>a4a_Flagged_Item_Opp_Product__c 
+
+/* previous formula till 11.11.2019
+(a4a_Actual_Sales_2018__c + a4a_Manual_Forecast_2020__c)
+
+*
+
+CASE ( CurrencyIsoCode, 
+&quot;USD&quot;, 1.00, 
+&quot;EUR&quot;, 1.16, 
+&quot;JPY&quot;, 0.0088, 0)
+
+* 
+
+Budget_Price__c
+
+&gt;
+
+$Setup.a4x__app4forecast__c.a4x__Treshold__c / 3 * 1.5
+
+ || 
+
+a4a_Manual_Forecast_2020__c
+
+*
+
+CASE ( CurrencyIsoCode, 
+&quot;USD&quot;, 1.00, 
+&quot;EUR&quot;, 1.16, 
+&quot;JPY&quot;, 0.0088, 0)
+
+* 
+
+Budget_Price__c
+
+&gt;
+
+ $Setup.a4x__app4forecast__c.a4x__Treshold__c  / 4.5
+
+ || 
+
+Product__r.Product_Grade__c = &quot;Automotive Grade&quot;
+
+&amp;&amp;
+
+a4a_Manual_Forecast_2020__c
+
+*
+
+CASE ( CurrencyIsoCode, 
+&quot;USD&quot;, 1.00, 
+&quot;EUR&quot;, 1.16, 
+&quot;JPY&quot;, 0.0088, 0)
+
+* 
+
+Budget_Price__c
+
+&gt;
+
+0
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a isAboveTreshold</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

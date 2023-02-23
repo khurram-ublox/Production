@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Opp_Prod_Flag_is_removed</fullName>
+        <description>Opp Prod: Flag is removed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Prod_Flag_REMOVED</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Prod_Flag_is_set</fullName>
+        <description>Opp Prod: Flag is set</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Prod_Flag_SET</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Prod_Flag_removal_request_rejected</fullName>
+        <description>Opp Prod: Flag removal request rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Prod_Flag_removal_request_REJECTED</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Prod_Flag_request_rejected</fullName>
+        <description>Opp Prod: Flag request rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Prod_Flag_request_REJECTED</template>
+    </alerts>
+    <alerts>
+        <fullName>Opp_Prod_Notify_opp_owner_based_on_Cellular_products</fullName>
+        <description>Opp Prod: Notify opp owner based on Cellular products</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Opp_Prod_Notify_opp_owner_based_on_Cellular_products</template>
+    </alerts>
+    <alerts>
+        <fullName>opp_prod_Notify_opp_owner_POS_M8_M9_M10</fullName>
+        <description>opp prod: Notify opp owner POS M8, M9, M10</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/opp_prod_Notify_opp_owner_POS_M8_M9_M10</template>
+    </alerts>
+    <alerts>
+        <fullName>opp_prod_Notify_opp_owner_POS_ZED_F9</fullName>
+        <description>opp prod: Notify opp owner POS ZED F9</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/opp_prod_Notify_opp_owner_POS_ZED_F9</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Budget_IPR</fullName>
+        <field>Budget_IPR__c</field>
+        <formula>IF( Product_Center__c &lt;&gt; &quot;Cellular&quot; , 0,
+CASE(
+CASE (text(IPR_Coverage__c),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct__c,
+0),
+&quot;1&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct_QC__c,
+0),
+&quot;2&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct__c,
+0),
+&quot;3&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c,
+0),0))</formula>
+        <name>Budget IPR %</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Budget_IPR_Amount</fullName>
+        <field>Budget_IPR_Amount__c</field>
+        <formula>IF( Product_Center__c &lt;&gt; &quot;Cellular&quot; , 0,
+CASE(
+CASE (text(IPR_Coverage__c),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD__c,
+0),
+&quot;1&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_QC__c,
+0),
+&quot;2&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD__c,
+0),
+&quot;3&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c,
+0),0))</formula>
+        <name>Budget IPR Amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Budget_IPR_next_FY</fullName>
+        <field>IPR_value_next_FY__c</field>
+        <formula>/* 2. COGS in percent */
+IF(ISNULL(Product__r.COGS_Pct__c),0,Budget_Calculate_Price__c*Product__r.COGS_Pct__c) +
+/* 3. IPR-related cost (only for CEL Amount) */
+Budget_IPR_Amount__c +
+/* 3. IPR-related cost (only for CEL percentage) */
+Budget_Calculate_Price__c* Budget_IPR__c</formula>
+        <name>Budget IPR next FY</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_COGS_update</fullName>
+        <description>Updates COGS
+Non CEL: Product.COGS1 + Unit Price * Product.COGS_Pct
+CEL: Product.COGS1 + Product.IPR_USD * User.USD_Rate + Unit Price * Product.IPR_Pct</description>
+        <field>COGS__c</field>
+        <formula>/* 1. COGS 1 in USD */
+Product__r.COGS_1__c +
+/* 2. COGS in percent */
+IF(ISNULL(Product__r.COGS_Pct__c),0,Unit_Price__c*Product__r.COGS_Pct__c) +
+/* 3. IPR-related cost (only for CEL) */
+IF( Product_Center__c &lt;&gt; &quot;Cellular&quot; , 0,
+CASE(
+CASE (text(IPR_Coverage__c),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Telematics_Pct__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Handset_Pct__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Laptop_Pct__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Other_Pct__c,
+0),
+&quot;1&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Telematics_Pct_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Handset_Pct_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Laptop_Pct_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Other_Pct_QC__c,
+0),
+&quot;2&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Prime_M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Prime_Telematics_Pct__c,
+0),
+&quot;3&quot;,
+CASE (RIGHT (text(Use_Restriction__c), LEN(text(Use_Restriction__c))-FIND(&quot; &quot;,text(Use_Restriction__c))),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c * USD_Rate__c + Unit_Price__c * Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c,
+0),0))</formula>
+        <name>Opp Prod: COGS update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Check_Flagged_Item</fullName>
+        <field>Flagged_Item__c</field>
+        <literalValue>1</literalValue>
+        <name>Opp Prod: Check Flagged Item</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Clear_Date_Lost</fullName>
+        <field>Date_Lost__c</field>
+        <name>Opp Prod: Clear Date Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Clear_Date_Won</fullName>
+        <field>Date_Won__c</field>
+        <name>Opp Prod: Clear Date Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Clear_Stage_Lost</fullName>
+        <field>Stage_Lost__c</field>
+        <name>Opp Prod: Clear Stage Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Clear_Stage_Won</fullName>
+        <field>Stage_Won__c</field>
+        <name>Opp Prod: Clear Stage Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Fill_Annual_Quantity</fullName>
+        <field>Annual_Quantity__c</field>
+        <formula>Opportunity__r.Annual_Quantity__c</formula>
+        <name>Opp Prod: Fill Annual Quantity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Flag_Approval_Status_Approved</fullName>
+        <field>Flag_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Opp Prod: Flag Approval Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Flag_Approval_Status_Pending</fullName>
+        <field>Flag_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Opp Prod: Flag Approval Status Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Flag_Approval_Status_Recalled</fullName>
+        <field>Flag_Approval_Status__c</field>
+        <literalValue>Recalled</literalValue>
+        <name>Opp Prod: Flag Approval Status Recalled</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Flag_Approval_Status_Rejected</fullName>
+        <field>Flag_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Opp Prod: Flag Approval Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Remove_Flagged_Item</fullName>
+        <field>Flagged_Item__c</field>
+        <literalValue>0</literalValue>
+        <name>Opp Prod: Remove Flagged Item</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Update_Date_Lost</fullName>
+        <description>Set to TODAY</description>
+        <field>Date_Lost__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp Prod: Update Date Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Update_Date_Won</fullName>
+        <description>Set to TODAY</description>
+        <field>Date_Won__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp Prod: Update Date Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Update_Stage_Lost</fullName>
+        <description>Set to Opportunity Stage</description>
+        <field>Stage_Lost__c</field>
+        <formula>TEXT(Opportunity__r.StageName)</formula>
+        <name>Opp Prod: Update Stage Lost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Update_Stage_Won</fullName>
+        <description>Set to Opportunity Stage</description>
+        <field>Stage_Won__c</field>
+        <formula>TEXT(Opportunity__r.StageName)</formula>
+        <name>Opp Prod: Update Stage Won</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_Update_Status_Modified</fullName>
+        <field>Status_Modified__c</field>
+        <formula>TODAY()</formula>
+        <name>Opp Prod: Update Status Modified</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Opp_Prod_clear_flag_update_Contribution</fullName>
+        <description>Clear flag after COGS update</description>
+        <field>Update_Contribution__c</field>
+        <literalValue>0</literalValue>
+        <name>Opp Prod: clear flag update Contribution</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>a4x_Update_Key_For_Dimension_Key</fullName>
+        <field>a4x_Key_Dim_Update__c</field>
+        <formula>IF(
+a4x_Budget_Filter_Formula__c,
+SF_Account_Number__c &amp;&quot;-&quot;&amp; Ordering_Code__c,
+NULL
+)</formula>
+        <name>a4x Update Key For Dimension Key</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Opp Prod%3A COGS update</fullName>
+        <actions>
+            <name>Budget_IPR</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Budget_IPR_Amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Budget_IPR_next_FY</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_COGS_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_clear_flag_update_Contribution</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Updates COGS when Product has been updated (triggered by Apex Trigger updateCOGSOnOppProduct), or Product, Unit Price or Currency has been changed.</description>
+        <formula>(Update_Contribution__c = true) || ISCHANGED(Product__c) || ISCHANGED(Unit_Price__c) || ISCHANGED(CurrencyIsoCode)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A COGS update %28not by Api User%29</fullName>
+        <actions>
+            <name>Opp_Prod_clear_flag_update_Contribution</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Only clear the flag if COGS is updated by Api User.</description>
+        <formula>((Update_Contribution__c = true) || ISCHANGED(Product__c) || ISCHANGED(Unit_Price__c) || ISCHANGED(CurrencyIsoCode)) &amp;&amp;  ($User.Id=&quot;005D0000003wh71&quot;)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Clear Date and Stage Won Lost</fullName>
+        <actions>
+            <name>Opp_Prod_Clear_Date_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Date_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Stage_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Stage_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Clear Date Won/Lost and Stage Won/Lost if Status is changed to something else than Won/Lost</description>
+        <formula>AND(
+ISCHANGED(Status__c),
+NOT(ISPICKVAL(Status__c, &quot;Won&quot;)),
+NOT(ISPICKVAL(Status__c, &quot;Lost&quot;))
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Fill Annual Quantity</fullName>
+        <actions>
+            <name>Opp_Prod_Fill_Annual_Quantity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opp_Product__c.Annual_Quantity__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Annual Quantity is filled automatically on new record creation.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Update Date and Stage Lost</fullName>
+        <actions>
+            <name>Opp_Prod_Clear_Date_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Stage_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Date_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Stage_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set Date Lost and Stage Lost</description>
+        <formula>AND(
+ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &quot;Lost&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Update Date and Stage Lost %28Initial%29</fullName>
+        <actions>
+            <name>Opp_Prod_Clear_Date_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Stage_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Date_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Stage_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set Date Won and Stage Lost (when created Opp Product is already Lost)</description>
+        <formula>ISPICKVAL(Status__c, &quot;Lost&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Update Date and Stage Won</fullName>
+        <actions>
+            <name>Opp_Prod_Clear_Date_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Stage_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Date_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Stage_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set Date Won and Stage Won</description>
+        <formula>AND(
+ISCHANGED(Status__c),
+ISPICKVAL(Status__c, &quot;Won&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Update Date and Stage Won %28Initial%29</fullName>
+        <actions>
+            <name>Opp_Prod_Clear_Date_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Clear_Stage_Lost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Date_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Opp_Prod_Update_Stage_Won</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Set Date Won and Stage Won (when created Opp Product is already Won)</description>
+        <formula>ISPICKVAL(Status__c, &quot;Won&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opp Prod%3A Update Status Modified</fullName>
+        <actions>
+            <name>Opp_Prod_Update_Status_Modified</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Add the date when Status has been changed.</description>
+        <formula>ischanged( Status__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>a4x Update Dimension Update Key</fullName>
+        <actions>
+            <name>a4x_Update_Key_For_Dimension_Key</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opp_Product__c.LastModifiedById</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

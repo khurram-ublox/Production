@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Logistics__c</fullName>
+    <description>Stocking type: Maintained by u-blox with the goal to ensure turn business. Only products in status IP or MP can be stocking types (to be checked in the product consistency reports
+Non-stocking type: Product is only produced upon receipt of an order. Products in EOL are automatically none-stocking types.
+Customer product: It is automatically Non-stocking type. Custom products are not visible to distributors.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Stocking type: Maintained by u-blox. (Only products in status IP or MP)
+Non-stocking type: Product is only produced upon receipt of an order.
+Custom product: This is also Non-stocking type. Not visible to distributors.</inlineHelpText>
+    <label>Logistics</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Stocking type</fullName>
+                <default>false</default>
+                <label>Stocking type</label>
+            </value>
+            <value>
+                <fullName>Non-stocking type</fullName>
+                <default>false</default>
+                <label>Non-stocking type</label>
+            </value>
+            <value>
+                <fullName>Custom product</fullName>
+                <default>false</default>
+                <label>Custom product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

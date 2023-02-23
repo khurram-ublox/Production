@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Successor_Product__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>Most recent product version used for opportunities and quotations.</inlineHelpText>
+    <label>Successor Product</label>
+    <referenceTo>Product2</referenceTo>
+    <relationshipLabel>Products (Successor Product)</relationshipLabel>
+    <relationshipName>Products2</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

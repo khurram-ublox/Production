@@ -1,0 +1,161 @@
+<!--
+ - Created by wsha on 24/10/2018.
+ -->
+
+<aura:component description="SubscriptionManagement" access="global" controller="SubscriptionManagement" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+
+    <aura:attribute name="onlineUser" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="ConSubDetailsAttribute" type="User"/>
+    <aura:attribute name="internalUser" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getUserSubscriptionsClient}"/>
+
+
+    <h1 class="slds-text-heading_large">My Subscription</h1>
+<div class="slds-p-top_small slds-m-bottom_x-large">The Subscriptions are not available.</div>
+    <!-- The whole page is commented-->
+      <aura:if isTrue="False">
+    <aura:renderIf isTrue="{!v.ConSubDetailsAttribute.Email}">
+    <form>
+        <div class="slds-text-heading_small slds-p-top_large">Preferences for <strong>{!v.ConSubDetailsAttribute.Email}</strong></div>
+
+        <div class="slds-p-top_large">
+            <aura:renderIf isTrue="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail}">
+                <b>You are already unsubscribed from following subscriptions. If you want to re-subscribe please contact community administrator.</b>
+            </aura:renderIf>
+            <aura:renderIf isTrue="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail!=true}">
+                Any changes you make here will take effect within 5-7 business days. You can change your preferences at any time!
+            </aura:renderIf>
+        </div>
+
+
+        <!--<aura:if isTrue="{!v.onlineUser=='Guest'}">
+        <ui:inputEmail aura:id="searchUserEmail" label="Please enter your email to check the subscription status." class="field" value=""
+                       placeholder="Please enter your email address."/>
+        <br/>
+
+        <lightning:button label="Submit" onclick="{!c.getUnregisteredUserSubscriptionsClient}"/>
+
+        </aura:if>-->
+
+
+        <aura:if isTrue="{!v.onlineUser!='Guest'}">
+
+            <div class="slds-form-element__row slds-p-top_small" style="display: none">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail}" name="EmailOptOut"  />
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Email Opt Out</span>
+                    </label>
+                </div>
+            </div>
+
+
+
+
+            <div class="slds-form-element__row slds-p-top_small">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Service_Item_3__c}" name="ServiceItem" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Information about new products and technology</span>
+                    </label>
+                </div>
+            </div>
+            <div class="slds-form-element__row slds-p-top_small">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Event_email__c}" name="EventEmail" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Invitation to conferences, trade shows and events</span>
+                    </label>
+                </div>
+            </div>
+            <div class="slds-form-element__row slds-p-top_small">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Webinar_email__c}" name="Webinar" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Invitation to our webinars</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- added 22/02/2019 -->
+            <div class="slds-form-element__row slds-p-top_small slds-hide">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Email_uCenter__c}" name="uCenter" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">U-center updates</span>
+                    </label>
+                </div>
+            </div>
+            <div class="slds-form-element__row slds-p-top_small slds-hide">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Email_Blog__c}" name="Blog" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Notification when a new blog post is published</span>
+                    </label>
+                </div>
+            </div>
+            <div class="slds-form-element__row slds-p-top_small slds-hide">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Email_Event_Attendance__c}" name="EventAttendance" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Notification when we’ll be attending an event</span>
+                    </label>
+                </div>
+            </div>
+            <div class="slds-form-element__row slds-p-top_small slds-hide">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.Email_Magazine__c}" name="Magazine" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                        <span class="slds-checkbox--faux"></span>
+                        <span class="slds-form-element__label">Notification about our latest magazine</span>
+                    </label>
+                </div>
+            </div>
+            
+            
+            <div class="slds-form-element__row slds-p-top_large">
+                <div class="slds-form-element">
+                    <ui:button class="slds-button slds-button_brand communityBtn form-control" aura:id="button" label="Save changes" press="{!c.setUserSubscriptionsClient}" disabled="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail==true?true:false}"/>
+                    <ui:button class="form-control" aura:id="button" label="Go Back" press="{!c.goBack}" />
+                </div>
+            </div>
+
+           <!-- <div class="slds-text-heading_small slds-p-top_large">Or you can unsubscribe from all promotional emails.</div>
+
+            <div class="slds-form-element__row slds-p-top_small" style="display: none">
+                <div class="slds-form-element">
+                    <label class="slds-checkbox">
+                        <ui:inputCheckbox aura:id="checkbox" value="{!v.ConSubDetailsAttribute.Contact.HasOptedOutOfEmail}" name="EmailOptOut"  />
+                        <span class="slds-checkbox&#45;&#45;faux"></span>
+                        <span class="slds-form-element__label">Email Opt Out</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="slds-form-element__row slds-p-top_small">
+                <div class="slds-form-element">
+                    <ui:button class="form-control" aura:id="Unsubscribe" label="Unsubscribe" press="{!c.setUserSubscriptionsClient}" />
+                </div>
+            </div>-->
+
+            <div class="slds-m-bottom_x-large"></div>
+
+        </aura:if>
+
+    </form>
+    </aura:renderIf>
+
+    <aura:renderIf isTrue="{!!v.ConSubDetailsAttribute}">
+        <div class="slds-text-heading_small slds-p-top_large slds-p-bottom_large">Sorry, the subscription center is not available for u-blox employees.</div>
+    </aura:renderIf>
+    </aura:if>
+</aura:component>

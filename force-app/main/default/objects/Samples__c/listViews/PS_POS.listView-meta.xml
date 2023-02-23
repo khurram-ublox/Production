@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_POS</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Type_No__c</columns>
+    <columns>Requested_Quantity__c</columns>
+    <columns>Confirmed__c</columns>
+    <columns>Requested_Delivery_Date__c</columns>
+    <columns>Request_Initiator__c</columns>
+    <columns>Sample_Usage__c</columns>
+    <columns>Ship_To__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>uB_Office__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>PS POS</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,47 @@
+<aura:component access="public" implements="force:lightningQuickAction,force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName" controller="CaseService">
+    <aura:attribute name="RMAcaseId" type="Id" />
+    <aura:attribute name="RMAId" type="Id" />
+    <aura:attribute name="originalCase" type="Case" default="{ 'sobjectType': 'Case' }" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true" />
+    <aura:attribute name="mycolumn" type="Object[]"/>
+    
+    <ltng:require styles="/resource/SLDS0121/assets/styles/salesforce-lightning-design-system-ltng.min.css"/>
+    <ltng:require scripts="{!$Resource.uJS}"></ltng:require>
+    
+    <!-- Event handlers -->
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <div style="height: 100%;">
+        <div class="slds-scrollable--y">
+            <c:Spinner show="{!v.showSpinner}" />
+            <form class="slds-m-left--small slds-form--inline">
+                <fieldset>
+                    <legend class="slds-form-element__label">Case Information</legend>
+                    <div class="form-element__group">
+                        <div class="slds-form-element__row">
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--5-of-12" apiName="CaseNumber" label="Case Number" type="string" readOnly="true" value="{!v.originalCase.CaseNumber}" required="true"/>
+                            <c:FormCell aura:id="cell" class="slds-form-element slds-size--6-of-12" apiName="Subject" label="Subject" type="string" readOnly="true" value="{!v.originalCase.Subject}"/>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <div class="slds-form-element__row">
+                    <span class="slds-form-element__label" style="font-weight:bold">RMA Attachments</span>
+                    <div class="slds-m-left--small slds-m-right--small slds-size--1-of-1" style="width: 88.5%;">
+                        <c:CaseAttachmentRMA aura:id="caseAttachmentRMA" RMAId="{!v.RMAId}" fromEmail="true" fromRMA = "true"/>
+                    </div>
+                    <span class="slds-form-element__label" style="font-weight:bold">RMA Files</span>
+                    <div class="slds-m-left--small slds-m-right--small slds-size--1-of-1" style="width: 88.5%;">
+                        <c:CaseFilesRMA aura:id="caseFilesRMA" RMAId="{!v.RMAId}" fromEmail="true" fromRMA = "true"/>
+                    </div>
+                </div>
+                
+                &nbsp;
+                <div class="slds-text-align--center slds-m-right--xx-large slds-p-right--xx-large">
+                    <button class="slds-button slds-button--brand" type="button" onclick="{!c.save}">Save</button>
+                    <button class="slds-button slds-button--neutral" type="button" onclick="{!c.cancel}">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>    
+</aura:component>

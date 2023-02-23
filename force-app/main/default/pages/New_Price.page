@@ -1,0 +1,21 @@
+<apex:page standardController="Competitor_Product_Price__c" recordSetVar="comproducts" extensions="NewPriceCtrl">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/11.1/connection.js"></script>
+    <script type="text/javascript">
+      $( document ).ready(function() { 
+       var Competitor ='{!compProduct.Competitor__c}';
+       var CompetitorName ='{!compProduct.Competitor__r.Name}';
+       var Name= '{!compProduct.Name}';
+       var id='{!compProduct.Id}';
+       var myDate = new Date('{!Today()}');  
+       var today=(myDate.getMonth()+1) + "/" + myDate.getDate() + "/" + myDate.getFullYear();   
+      if((typeof sforce != 'undefined') && sforce && (!!sforce.one) ){             
+              sforce.one.createRecord('Competitor_Product_Price__c',null,{'Competitor__c' : Competitor,'Competitor_Product__c':id,'Price_Information_Date__c':myDate} );                 
+        } else {
+           window.top.location='/a0N/e?CF00N570000060BFI='+CompetitorName+'&CF00N570000060BFI_lkid='+Competitor+'&CF00N57000006EAhv='+Name+'&CF00N57000006EAhv_lkid='+id+'&00N57000006EDek='+today+'&retURL=/'+id;
+        }
+     });
+    </script>
+
+</apex:page>

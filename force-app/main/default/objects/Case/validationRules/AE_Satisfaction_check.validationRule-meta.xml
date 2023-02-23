@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_Satisfaction_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISCHANGED(AE_Satisfaction__c),
+LEFT(TEXT($User.Team__c),2)&lt;&gt;&quot;AE&quot;)
+/*
+$User.ProfileId=&quot;00e20000000ki5l&quot;,
+*/</errorConditionFormula>
+    <errorDisplayField>AE_Satisfaction__c</errorDisplayField>
+    <errorMessage>AE Satisfaction can be edited only by AE.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Owner_with_Profile</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(Owner.Profile.Name = &apos;Partner Base Quotation&apos;,Owner.Profile.Name = &apos;Partner Base&apos;)</errorConditionFormula>
+    <errorMessage>Contract Cannot be present with Owner having profile &apos;Partner Base Quotation&apos;</errorMessage>
+</ValidationRule>

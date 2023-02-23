@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Contribution_CHF__c</fullName>
+    <description>Orig:
+if ( Order_Status__c = &quot;Open&quot;,
+Total_Value_CHF__c 
+/* Subtract total COGS and COGS in Pct */
+- Qty_Ordered__c  *  Product__r.COGS_CHF__c 
+- Total_Value_CHF__c  *  Product__r.COGS_Pct__c ,
+0)</description>
+    <externalId>false</externalId>
+    <formula>if ( Order_Status__c = &quot;Open&quot;,
+Total_Value_CHF__c 
+/* Subtract total COGS and COGS in Pct */
+- Qty_Ordered__c  * IF(ISBLANK(Product__r.COGS_CHF__c),0,Product__r.COGS_CHF__c) 
+- Total_Value_CHF__c  *  IF(ISBLANK(Product__r.COGS_Pct__c),0,Product__r.COGS_Pct__c) ,
+0)</formula>
+    <inlineHelpText>Expected contribution of this open order. Empty if Order status &lt;&gt; Open</inlineHelpText>
+    <label>Expected Contribution CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

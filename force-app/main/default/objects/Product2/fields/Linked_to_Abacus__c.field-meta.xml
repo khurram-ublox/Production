@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_to_Abacus__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( From_Abacus__c = true , IMAGE(&quot;/img/samples/color_green.gif&quot;, &quot;green&quot;, 10, 20),&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Linked to Abacus</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>New_Partner_in_embargo_countries</name>
+        <label>New Partner in embargo countries</label>
+        <locationX>638</locationX>
+        <locationY>333</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Task_for_Partner_Opportunity_Owner</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>PartnerAccount_BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>OpportunityAccount_BillingCountry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Partner_in_one_of_the_embargo_countries</targetReference>
+            </connector>
+            <label>Task for Partner Opportunity Owner</label>
+        </rules>
+    </decisions>
+    <description>Flow trigger on Partner Role object to execute only after creation of record</description>
+    <formulas>
+        <name>CurrentDate_plus_7</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 7</expression>
+    </formulas>
+    <formulas>
+        <description>If Record.Opportunity_Account_r.BillingCountry is equal to any of these (&quot;CU&quot;,&quot;BY&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;SD&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;AM&quot;,&quot;AZ&quot;,&quot;CF&quot;,&quot;CG&quot;,&quot;CI&quot;,&quot;ER&quot;,&quot;GN&quot;,&quot;IQ&quot;,&quot;LB&quot;,&quot;LR&quot;,&quot;LY&quot;,&quot;MM&quot;,&quot;SO&quot;,&quot;ZW&quot;) then return {True}</description>
+        <name>OpportunityAccount_BillingCountry</name>
+        <dataType>Boolean</dataType>
+        <expression>Or( 
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;CU&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;BY&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;IR&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;KP&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;SD&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;SY&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;UA&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;AM&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;AZ&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;CF&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;CG&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;CI&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;ER&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;GN&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;IQ&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;LB&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;LR&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;LY&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;MM&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;SO&quot;,
+{!$Record.Opportunity_Account__r.BillingCountry} =&quot;ZW&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>If Record.Partner_Account__r.BillingCountry is equal to any of these (&quot;CU&quot;,&quot;BY&quot;,&quot;IR&quot;,&quot;KP&quot;,&quot;SD&quot;,&quot;SY&quot;,&quot;UA&quot;,&quot;AM&quot;,&quot;AZ&quot;,&quot;CF&quot;,&quot;CG&quot;,&quot;CI&quot;,&quot;ER&quot;,&quot;GN&quot;,&quot;IQ&quot;,&quot;LB&quot;,&quot;LR&quot;,&quot;LY&quot;,&quot;MM&quot;,&quot;SO&quot;,&quot;ZW&quot;) then return {True}</description>
+        <name>PartnerAccount_BillingCountry</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!$Record.Partner_Account__r.BillingCountry} = &quot;CU&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;BY&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;IR&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;KP&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;SD&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;SY&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;UA&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;AM&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;AZ&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;CF&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;CG&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;CI&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;ER&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;GN&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;IQ&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;LB&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;LR&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;LY&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;MM&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;SO&quot;,
+{!$Record.Partner_Account__r.BillingCountry} =&quot;ZW&quot;)</expression>
+    </formulas>
+    <interviewLabel>Partner Role {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Partner Role: After Create</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create new Task when New Partner in one of the embargo countries</description>
+        <name>New_Partner_in_one_of_the_embargo_countries</name>
+        <label>New Partner in one of the embargo countries</label>
+        <locationX>650</locationX>
+        <locationY>562</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>CurrentDate_plus_7</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Owner.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>C</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>New Partner in one of the embargo countries</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>519</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>New_Partner_in_embargo_countries</targetReference>
+        </connector>
+        <object>Partner_Role__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

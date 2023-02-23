@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4x_Key_Dim_Update__c</fullName>
+    <description>Do not change - used for Dimension Update - App4Forecast</description>
+    <externalId>true</externalId>
+    <label>a4x Key Dim Update</label>
+    <length>100</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>stand_alone_samples1</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Opportunity_Account__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Confirmed__c</columns>
+    <columns>Type_No__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>Request_Initiator__c</columns>
+    <columns>Planned_Delivery_Date__c</columns>
+    <columns>Product__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>JODY-W2</value>
+    </filters>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Tentatively confirmed</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>notContain</operation>
+        <value>EVKx</value>
+    </filters>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>notEqual</operation>
+        <value>Koreax</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>Samples__c.Sample_recording</value>
+    </filters>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed,New,PM review pending</value>
+    </filters>
+    <label>JODY-W263 sample requests 29.04.2020</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

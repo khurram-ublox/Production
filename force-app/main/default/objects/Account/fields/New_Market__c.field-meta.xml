@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Market__c</fullName>
+    <externalId>false</externalId>
+    <label>Market</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>New_Application_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Automotive</fullName>
+                <default>false</default>
+                <label>Automotive</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>Consumer</fullName>
+                <default>false</default>
+                <label>Consumer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>EV charging</controllingFieldValue>
+            <controllingFieldValue>Micromobility</controllingFieldValue>
+            <controllingFieldValue>OEM telematics (first mount)</controllingFieldValue>
+            <controllingFieldValue>Mobile robotics</controllingFieldValue>
+            <controllingFieldValue>Aftermarket telematics</controllingFieldValue>
+            <controllingFieldValue>Unmanned aerial vehicles (UAV)</controllingFieldValue>
+            <controllingFieldValue>Payments and vending</controllingFieldValue>
+            <controllingFieldValue>Wearables</controllingFieldValue>
+            <controllingFieldValue>Network infrastructure and time sync</controllingFieldValue>
+            <controllingFieldValue>Mobile computing</controllingFieldValue>
+            <controllingFieldValue>Metering and utility</controllingFieldValue>
+            <controllingFieldValue>Gateways and routers</controllingFieldValue>
+            <controllingFieldValue>Smart city</controllingFieldValue>
+            <controllingFieldValue>Distribution</controllingFieldValue>
+            <controllingFieldValue>Autonomous driving</controllingFieldValue>
+            <controllingFieldValue>Industrial automation and monitoring</controllingFieldValue>
+            <controllingFieldValue>Infotainment and navigation</controllingFieldValue>
+            <controllingFieldValue>Asset tracking and management</controllingFieldValue>
+            <controllingFieldValue>Vehicle monitoring and control</controllingFieldValue>
+            <controllingFieldValue>Smart buildings/ smart home</controllingFieldValue>
+            <controllingFieldValue>Advanced telematics (first mount)</controllingFieldValue>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Automotive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EV charging</controllingFieldValue>
+            <controllingFieldValue>Micromobility</controllingFieldValue>
+            <controllingFieldValue>OEM telematics (first mount)</controllingFieldValue>
+            <controllingFieldValue>Mobile robotics</controllingFieldValue>
+            <controllingFieldValue>Aftermarket telematics</controllingFieldValue>
+            <controllingFieldValue>Unmanned aerial vehicles (UAV)</controllingFieldValue>
+            <controllingFieldValue>Payments and vending</controllingFieldValue>
+            <controllingFieldValue>Wearables</controllingFieldValue>
+            <controllingFieldValue>Network infrastructure and time sync</controllingFieldValue>
+            <controllingFieldValue>Mobile computing</controllingFieldValue>
+            <controllingFieldValue>Metering and utility</controllingFieldValue>
+            <controllingFieldValue>Gateways and routers</controllingFieldValue>
+            <controllingFieldValue>Smart city</controllingFieldValue>
+            <controllingFieldValue>Distribution</controllingFieldValue>
+            <controllingFieldValue>Autonomous driving</controllingFieldValue>
+            <controllingFieldValue>Industrial automation and monitoring</controllingFieldValue>
+            <controllingFieldValue>Infotainment and navigation</controllingFieldValue>
+            <controllingFieldValue>Asset tracking and management</controllingFieldValue>
+            <controllingFieldValue>Vehicle monitoring and control</controllingFieldValue>
+            <controllingFieldValue>Smart buildings/ smart home</controllingFieldValue>
+            <controllingFieldValue>Advanced telematics (first mount)</controllingFieldValue>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Industrial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>EV charging</controllingFieldValue>
+            <controllingFieldValue>Micromobility</controllingFieldValue>
+            <controllingFieldValue>OEM telematics (first mount)</controllingFieldValue>
+            <controllingFieldValue>Mobile robotics</controllingFieldValue>
+            <controllingFieldValue>Aftermarket telematics</controllingFieldValue>
+            <controllingFieldValue>Unmanned aerial vehicles (UAV)</controllingFieldValue>
+            <controllingFieldValue>Payments and vending</controllingFieldValue>
+            <controllingFieldValue>Wearables</controllingFieldValue>
+            <controllingFieldValue>Network infrastructure and time sync</controllingFieldValue>
+            <controllingFieldValue>Mobile computing</controllingFieldValue>
+            <controllingFieldValue>Metering and utility</controllingFieldValue>
+            <controllingFieldValue>Gateways and routers</controllingFieldValue>
+            <controllingFieldValue>Smart city</controllingFieldValue>
+            <controllingFieldValue>Distribution</controllingFieldValue>
+            <controllingFieldValue>Autonomous driving</controllingFieldValue>
+            <controllingFieldValue>Industrial automation and monitoring</controllingFieldValue>
+            <controllingFieldValue>Infotainment and navigation</controllingFieldValue>
+            <controllingFieldValue>Asset tracking and management</controllingFieldValue>
+            <controllingFieldValue>Vehicle monitoring and control</controllingFieldValue>
+            <controllingFieldValue>Smart buildings/ smart home</controllingFieldValue>
+            <controllingFieldValue>Advanced telematics (first mount)</controllingFieldValue>
+            <controllingFieldValue>Healthcare</controllingFieldValue>
+            <valueName>Consumer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

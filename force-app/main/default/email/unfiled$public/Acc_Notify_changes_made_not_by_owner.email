@@ -1,0 +1,9 @@
+This is to inform you that one of the following fields has been changed.
+
+Account Name: {!Account.Name}
+Distributor: {!Account.Distributor__c}
+Priority: {!Account.Priority__c}
+
+Modified by: {!Account.LastModifiedBy}
+
+Link to the Account: {!Account.Link}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_3__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(History_Month__c &gt; Forecast_Unit__r.Product__r.Last_Shipment_Date__c ,
+0,
+IF( History_Month__c &lt; DATE( YEAR(TODAY()) , MONTH(TODAY()) ,15) ,
+Actual_Sales__c,
+
+ROUND(
+
+(Forecast_Unit__r.AVG_Sales_Last_3_Months__c * 3 + Forecast_Unit__r.Sales_Last_6_Months__c) / 9
+
+*
+
+MIN(Forecast_Unit__r.AVG_Sales_Last_3_Months__c * 6 / MAX(Forecast_Unit__r.Sales_Last_6_Months__c ,1),2)
+
+*
+Season_Index__c
+/
+MAX(Forecast_Unit__r.Packaging_Size__c,1)
+,0)
+*
+MAX(Forecast_Unit__r.Packaging_Size__c,1)
+)
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Forecast calculated automatically by the system, based on order history.</inlineHelpText>
+    <label>System Forecast</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>a4x_Forecast_Next_Year</name>
+    </customPermissions>
+    <description>* Users with these permission set can see and update the Forecast for next year earlier in the previous year.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>a4x App4Forecast Forecast Next Year</label>
+    <license>Salesforce</license>
+</PermissionSet>

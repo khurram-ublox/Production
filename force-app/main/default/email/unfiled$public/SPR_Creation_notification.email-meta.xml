@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for New SPR created with record information.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SPR: Creation notification</name>
+    <style>none</style>
+    <subject>SPR: Creation notification</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

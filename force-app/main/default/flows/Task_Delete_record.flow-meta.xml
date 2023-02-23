@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <interviewLabel>Task: Delete record {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task: Delete record</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Task_Delete_record</name>
+        <label>Task: Delete record</label>
+        <locationX>201</locationX>
+        <locationY>133</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>VAR_TaskID</elementReference>
+            </value>
+        </filters>
+        <object>Task</object>
+    </recordDeletes>
+    <startElementReference>Task_Delete_record</startElementReference>
+    <status>Active</status>
+    <variables>
+        <description>Variable for Task ID to be used for Flow and Process</description>
+        <name>VAR_TaskID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

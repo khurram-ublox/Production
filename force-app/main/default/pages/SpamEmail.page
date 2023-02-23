@@ -1,0 +1,38 @@
+<apex:page standardController="Case" extensions="SpamEmailCtrl">
+   <apex:includeScript value="/support/console/51.0/integration.js"/>
+   <apex:includeScript value="{!$Resource.uJS}"/>
+   <apex:stylesheet value="{!$Resource.uCSS}"/>
+   <script type="text/javascript" src="/js/functions.js"></script>
+    <script>
+    getRemoteAccount();
+    function getRemoteAccount() {         
+          
+        var id="{!Case.id}";
+        var answer = window.confirm("Are you sure to Spam the case?");
+		if(answer==true){
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.SpamEmailCtrl.spamCaseId}', 
+            id,
+            function(result, event){
+                if (event.status) {
+                    if(result==true){  
+                        //confirmation meesage
+                           uJS.closeAndRefreshTab(id); // from ApexJS.js
+                    }else if(result==false){
+                        alert('Sorry, there was an error during spaming the case.'); 
+                        uJS.closeTab(id); // from ApexJS.js
+                    }                                       
+                } else {
+                    uJS.closeTab(id); // from ApexJS.js
+                }
+                return false;
+            },
+            {escape: true}
+        );
+		}else{
+		uJS.closeTab(id); // from ApexJS.js
+		}
+    }  
+    </script>
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

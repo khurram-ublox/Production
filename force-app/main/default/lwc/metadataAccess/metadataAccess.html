@@ -1,0 +1,62 @@
+<template>
+<div class="slds-m-left_small slds-m-right_small">
+	<lightning-record-edit-form object-api-name="Account" onsubmit={handleSubmit} onload={handleLoad}>
+	<article class="slds-card searchBar">
+		<div class="slds-card__header slds-grid">
+		  <header class="slds-media slds-media_center slds-has-flexi-truncate">
+			<div class="slds-media__figure">
+			  <span class="slds-icon_container slds-icon-standard-account" title="account">
+				<lightning-icon icon-name="standard:employee_job_position" alternative-text="Employee Job" title="Employee Job"></lightning-icon>
+				<span class="slds-assistive-text">employee_job_position</span>
+			  </span>
+			</div>
+			<div class="slds-media__body">
+				<h2 class="slds-card__header-title"><span>Leaver's Report</span></h2>
+			</div>
+		  </header>
+		</div>
+		<div class="slds-card__body slds-card__body_inner">
+			<div class="slds-grid slds-wrap slds-gutters">
+				<div class="slds-col slds-size_1-of-6">
+					<!-- <label for="currentuid">Leaver</label>
+					<lightning-input-field id="currentuid" field-name="FAE__c" variant="label-hidden"></lightning-input-field> -->
+					<c-custom-lookup-lwc icon-name="standard:user"
+                         s-object-api-name="user"
+						 where-clause = "UserType = 'Standard'"
+                         label="Leaver"
+                         onlookupupdate={handlelookupupdate}
+                         placeholder="Search People..."
+						 ></c-custom-lookup-lwc>
+				</div>
+				<div class="slds-col slds-size_1-of-6">
+					<label for="nextuid">Successor</label>
+					<lightning-input-field label="Successor" id="nextuid"  field-name="New_Channel_Manager__c" variant="label-hidden"></lightning-input-field>
+				</div>
+				<div class="slds-col slds-size_4-of-6">
+					<div class="searchButton">
+						<lightning-button variant="brand" type="submit" label="Search"></lightning-button>
+					</div>
+				</div>
+			</div>
+
+
+		  </div>
+
+	</article>
+	</lightning-record-edit-form> 
+
+	<template if:true={startSearch}>
+	<lightning-card class="resultBar">
+		<lightning-tabset>
+			<template for:each={configDataObj} for:item="config" >
+				<lightning-tab label={config.objectName} key={config.objectName}>
+				<div key={config.objectName}>
+					<c-metadata-detail config-info={config} conn={connObj} users-object={userObjects}></c-metadata-detail>
+				</div>   
+				</lightning-tab>
+			</template>
+		</lightning-tabset>
+	</lightning-card>
+	</template>
+</div>
+</template>

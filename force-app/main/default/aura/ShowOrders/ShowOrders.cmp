@@ -1,0 +1,51 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:isUrlAddressable" 
+                access="global"
+                controller="ShowOrderslist">
+
+    
+	<aura:attribute name="recordId" type="Id" />
+    <!--<aura:attribute name="Accounts" type="Account" />
+		<aura:attribute name="Opportunities" type="Opportunity"-->
+    <aura:attribute name="Orders" type="Billings__c[]" />
+    <aura:attribute name="dataSpinner" type="Boolean" />
+    <aura:attribute name="AccountName" type="String" />
+    <aura:attribute name="Columns" type="List" />
+    <aura:handler name="init" value="{!this }" action="{!c.init }"/>
+	
+    <aura:attribute name="sortedBy" type="String" default="Name"/>
+    <aura:attribute name="sortedDirection" type="string" default="asc" />
+
+    <div>
+    <aura:if isTrue="{!v.dataSpinner}">
+      <div class="slds-spinner_inline slds-var-m-top_x-large spinnerBox">
+        <lightning:spinner alternativeText="Loading" size="medium" />
+      </div>
+        <aura:set attribute="else">
+          <div class="slds-clearfix slds-var-m-bottom_large">
+            <div class="slds-float_left">
+              <h1 class="slds-page-header__title"><strong>{!v.AccountName}</strong></h1>
+              <div class="slds-text-body_small">Total order records: {!v.Orders.length}</div>
+            </div>
+
+            <div class="slds-float_right">
+              <lightning:button label="Download" class="slds-var-m-right_x-small" onclick="{! c.downloadTableData }" />
+            </div>
+          </div>
+
+          <div class="datatable">
+          <lightning:datatable data="{!v.Orders}" class="wrapped-header-datatable"
+                                  columns="{!v.Columns}"
+                                  keyField="Id"
+                                  hideCheckboxColumn="true"
+                                  showRowNumberColumn="false"
+                        onsort="{!c.sortColumn}"
+                                  sortedBy="{!v.sortedBy}"
+                                  sortedDirection="{!v.sortedDirection}">
+              </lightning:datatable>
+            </div>
+            <div class="datatable_fix slds-var-m-right_x-small"></div>
+
+        </aura:set>
+    </aura:if>
+    </div>
+</aura:component>

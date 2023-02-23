@@ -1,0 +1,50 @@
+<apex:page standardController="skyvvasolutions__Integration__c" showHeader="true" tabStyle="skyvvasolutions__Integration__c" id="mainPage" >
+
+<apex:tabPanel switchType="client" value="{!$CurrentPage.parameters.selTab}" id="IntegrationTabPanel">
+<apex:tab label="Details" name="IntDetails" id="tabdetails">
+    <apex:detail relatedList="false" title="true"/>
+</apex:tab>
+<apex:tab label="Interfaces" name="Interfaces" id="tabInterface">
+    <apex:include pageName="skyvvasolutions__InterfacesOverviewPage" id="intfOverview"/>
+</apex:tab>
+<apex:tab label="Workflows" name="Workflows" id="tabWorkflow">
+    <!--apex:include pageName="skyvvasolutions__WorkflowsOverviewPage" id="workflowsOverview"/-->
+    <!--apex:iframe src="/apex/skyvvasolutions__WorkflowsOverviewPage?id={!$CurrentPage.parameters.id}" scrolling="true" id="workflowsOverview"/!-->
+    <a href="/apex/skyvvasolutions__WorkflowsOverviewPage?id={!$CurrentPage.parameters.id}" target="_blank" >Related Workflows</a>
+</apex:tab>
+
+<apex:tab label="Messages" name="Messages" id="tabMessages">
+    <apex:pageBlock title="Storage Usage" id="pbBlockMsg">
+       <apex:outputPanel id="tblStorageMsg" layout="inline"></apex:outputPanel>
+       <a href="/setup/org/orgstorageusage.jsp?id=00D1w0000000Xrn&setupid=CompanyResourceDisk" target="_blank" >Storage Usage</a>
+
+    </apex:pageBlock>
+    <!--apex:include pageName="skyvvasolutions__DynamicIntegrationMessagePage" id="msgBoard"/-->
+    <a href="/apex/skyvvasolutions__DynamicIntegrationMessagePage?id={!$CurrentPage.parameters.id}" >Related Messages</a>
+    
+</apex:tab>
+
+<apex:tab label="Logs" name="Logs" id="tabLogs">
+    <apex:pageBlock title="Storage Usage" id="pbBlockLog">
+       <apex:outputPanel id="tblStorageLog" layout="inline"></apex:outputPanel>
+       <a href="/setup/org/orgstorageusage.jsp?id=00D1w0000000Xrn&setupid=CompanyResourceDisk" target="_blank" >Storage Usage</a>
+    </apex:pageBlock>
+    <apex:relatedList subject="{!skyvvasolutions__Integration__c}" list="skyvvasolutions__Logs__r" />
+    <!--apex:include pageName="skyvvasolutions__ILogsView" id="tabILogsView"/-->
+    <a href="/apex/skyvvasolutions__ILogsView?id={!$CurrentPage.parameters.id}" target="_blank" >Related Process Logs</a>
+</apex:tab>
+
+<!--apex:tab label="License" name="license" id="tablicense">   
+    <apex:include pageName="skyvvasolutions__LicenseKeyOverview" id="tablicenseKeyOverview"/>
+</apex:tab-->
+
+</apex:tabPanel>
+
+<script type="text/javascript">
+
+window.onload = function() {
+    
+}
+</script>
+
+</apex:page>

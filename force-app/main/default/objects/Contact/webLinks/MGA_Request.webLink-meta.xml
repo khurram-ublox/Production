@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MGA_Request</fullName>
+    <availability>online</availability>
+    <description>Generate a new AssistNow (MGA) token and copy it to field &quot;AssistNow Token&quot;</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>AssistNow Enable</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+// ToDo: remove unused vars
+
+var ContactId = &quot;{!Contact.Id}&quot;;
+var MGA = &quot;{!Contact.MGA__c}&quot;;
+var MGAToken = &quot;{!Contact.MGA_Token__c}&quot;;
+var MGARequestedDate = &quot;{!Contact.MGA_Requested_Date__c}&quot;;
+
+// check MGA and copy the token to MGA Token
+var c = new sforce.SObject(&quot;Contact&quot;);
+c.Id = ContactId;
+
+console.log(MGA+&apos;, &apos;+MGAToken + &apos;, &apos;+MGARequestedDate );
+
+//if (MGAToken == &quot;&quot; &amp;&amp; MGARequestedDate == &quot;&quot;)
+if (MGAToken == &quot;&quot;)
+{
+    var r = window.confirm(&quot;This will generate a new token and send it to this Contact. Are you sure you want to do this?&quot;);
+    if (r == true) 
+    {
+      // generate MGA Token
+      // Make sure the URL http://token-live1.services.u-blox.com is added in
+      // Your name | Administration Setup | Security Control | Remote Site Settings
+      sforce.connection.remoteFunction(
+      {
+        url : &quot;https://token-live1.services.u-blox.com/GetToken.ashx?key=84cba94b-24fd-48db-a370-d5b81805db52&quot;,
+        async : false,
+        onSuccess : function(response) 
+        {
+          c.MGA_Token__c = new String(response);
+          c.MGA__c = &apos;True&apos;;
+          var result = sforce.connection.update([c]);
+
+          if (result[0].success==&apos;false&apos;) { 
+            throw new Error(result[0].errors.message); 
+          } 
+          else {
+            window.parent.location.href=&quot;/&quot;+ContactId;
+          }
+        },
+        onFailure : function(response) 
+        {
+          alert(&quot;Failed &quot; + response)
+        }
+      });
+	}
+}
+else if (MGA == true &amp;&amp; MGAToken != &quot;&quot;)
+{
+  var r = window.confirm(&quot;A token has already been generated for this Contact. This will re-send the token to this Contact. Are you sure you want to do this?&quot;);
+  if (r == true) 
+  {
+    c.AssistNow_Token_Resend__c = &apos;True&apos;;
+    sforce.connection.update([c]);
+    window.parent.location.href=&quot;/&quot;+ContactId;
+  }
+}
+//else if (MGA == false &amp;&amp; MGAToken != &quot;&quot; &amp;&amp; MGARequestedDate != &quot;&quot;)
+//{
+//    c.MGA__c = &apos;True&apos;;
+//    sforce.connection.update([c]);
+//    window.parent.location.href=&quot;/&quot;+ContactId;
+//}</url>
+</WebLink>

@@ -1,0 +1,43 @@
+<apex:page showHeader="true">
+  <apex:includeLightning />
+  <div id='divMsg'>
+
+	<apex:slds />
+    <div class="slds-scope">
+
+		<div class="demo-only" style="height:10rem;position:relative">
+			<div class="slds-spinner_container">
+			  <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+				<span class="slds-assistive-text">Loading</span>
+				<div class="slds-spinner__dot-a"></div>
+				<div class="slds-spinner__dot-b"></div>
+			  </div>
+			</div>
+		  </div>
+
+    </div>
+
+  </div>
+  <div id="MetaCmp" style="min-height: 400px;" ></div>
+  <script>
+    var useMetaParam = "{!$CurrentPage.parameters.m}";  
+    var metaParam = (useMetaParam == 'true' || useMetaParam == 'TRUE' || useMetaParam == 1) ? true : false;
+    try{
+    $Lightning.use("c:MetApp", function() {
+        $Lightning.createComponent("c:metadataAccess", {
+            userSessionId : '{!$Api.Session_Id}',
+            useMetaAPI : metaParam
+        },
+        "MetaCmp",
+            function(component) {
+             document.getElementById("divMsg").innerHTML = '';            
+            }
+       );
+    });
+    }catch(ex)
+    {
+        document.getElementById("divMsg").innerHTML = JSON.stringify(ex); 
+    }
+    </script>
+  
+</apex:page>

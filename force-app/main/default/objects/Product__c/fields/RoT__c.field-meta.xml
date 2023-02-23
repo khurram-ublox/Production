@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RoT__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is maintained in Abacus</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus) Checked if the product contains a secure Root Of Trust</inlineHelpText>
+    <label>RoT</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

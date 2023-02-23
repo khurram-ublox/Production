@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>After_Record_Create_Update_Decisions</name>
+        <label>After Record Create/Update Decisions</label>
+        <locationX>537</locationX>
+        <locationY>128</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>COGS_Fields_Update_Decision</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Update_Contribution__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Unit_Price__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyIsoCode</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_COGS</targetReference>
+            </connector>
+            <label>COGS Fields Update Decision</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>Budget_IPR</name>
+        <dataType>Number</dataType>
+        <expression>{!Budget_IPR_Calculation} * 100</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>Budget_IPR_Amount</name>
+        <dataType>Currency</dataType>
+        <expression>IF( {!$Record.Product_Center__c} &lt;&gt; &quot;Cellular&quot; , 0,
+IF(ISBLANK({!$Record.Product__r.IPR_Cost__c}),0,
+CASE(
+CASE (text({!$Record.IPR_Coverage__c}),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD__c},
+0),
+&quot;1&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD_QC__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD_QC__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD_QC__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD_QC__c},
+0),
+&quot;2&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD__c},
+0),
+&quot;3&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c},
+0),0)))</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>Budget_IPR_Calculation</name>
+        <dataType>Number</dataType>
+        <expression>IF( {!$Record.Product_Center__c} &lt;&gt; &quot;Cellular&quot; , 0,
+IF(ISBLANK({!$Record.Product__r.IPR_Cost__c}),0,
+    CASE(
+        CASE (text({!$Record.IPR_Coverage__c}),
+        &quot;Full coverage&quot;, &quot;0&quot;,
+        &quot;Premium coverage&quot;, &quot;0&quot;,
+        &quot;All except Qualcomm&quot;, &quot;1&quot;,
+        &quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+        &quot;Prime coverage&quot;,&quot;2&quot;,
+        &quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+        &quot;NO&quot;),
+        &quot;0&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_Pct__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_Pct__c},
+        &quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_Pct__c},
+        &quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_Pct__c},
+        &quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_Pct__c},
+        0),
+        &quot;1&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_Pct_QC__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_Pct_QC__c},
+        &quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_Pct_QC__c},
+        &quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_Pct_QC__c},
+        &quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_Pct_QC__c},
+        0),
+        &quot;2&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct__c},
+        0),
+        &quot;3&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c},
+        0)
+    ,0)
+))</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>COGS_Field_Update</name>
+        <dataType>Currency</dataType>
+        <expression>/* 1. COGS 1 in USD */
+{!$Record.Product__r.COGS_1__c} +
+/* 2. COGS in percent */
+IF(ISNULL({!$Record.Product__r.COGS_Pct__c}),0,{!$Record.Unit_Price__c}*{!$Record.Product__r.COGS_Pct__c}) +
+/* 3. IPR-related cost (only for CEL) */
+IF( {!$Record.Product_Center__c} &lt;&gt; &quot;Cellular&quot; , 0,
+IF(ISBLANK({!$Record.Product__r.IPR_Cost__c}),0,
+CASE(
+CASE (text({!$Record.IPR_Coverage__c}),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.M2M_Pct__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Telematics_Pct__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Handset_Pct__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Laptop_Pct__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Other_Pct__c},
+0),
+&quot;1&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.M2M_Pct_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Telematics_Pct_QC__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Handset_Pct_QC__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Laptop_Pct_QC__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Other_Pct_QC__c},
+0),
+&quot;2&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct__c},
+0),
+&quot;3&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c},
+0),0)))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>IPR_Next_FY</name>
+        <dataType>Currency</dataType>
+        <expression>IF(ISNULL({!$Record.Product__r.COGS_Pct__c}),0,{!$Record.Budget_Calculate_Price__c}*{!$Record.Product__r.COGS_Pct__c}) +
+{!Budget_IPR_Amount} +
+{!$Record.Budget_Calculate_Price__c} * {!Budget_IPR_Calculation}</expression>
+        <scale>3</scale>
+    </formulas>
+    <interviewLabel>Opp Product: After Record create/update Processes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opp Product: After Record create/update Processes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_COGS</name>
+        <label>Update COGS</label>
+        <locationX>545</locationX>
+        <locationY>396</locationY>
+        <inputAssignments>
+            <field>Budget_IPR_Amount__c</field>
+            <value>
+                <elementReference>Budget_IPR_Amount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Budget_IPR__c</field>
+            <value>
+                <elementReference>Budget_IPR</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>COGS__c</field>
+            <value>
+                <elementReference>COGS_Field_Update</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IPR_value_next_FY__c</field>
+            <value>
+                <elementReference>IPR_Next_FY</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Update_Contribution__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>59</locationX>
+        <locationY>47</locationY>
+        <connector>
+            <targetReference>After_Record_Create_Update_Decisions</targetReference>
+        </connector>
+        <object>Opp_Product__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

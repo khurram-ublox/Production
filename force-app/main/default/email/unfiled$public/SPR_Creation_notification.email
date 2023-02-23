@@ -1,0 +1,13 @@
+New Special Price Request has been created. Here is the summary:
+
+Account: {!Special_Price_Request__c.Account__c}
+Opportunity: {!Special_Price_Request__c.Opportunity__c}
+Price Level: {!Special_Price_Request__c.Price_Level__c}
+
+Request Owner: {!Special_Price_Request__c.OwnerFullName}
+Link: {!Special_Price_Request__c.Link}
+
+Your actions
+1. Go to: {!Special_Price_Request__c.Link}
+2. To check the details (Unit Prices, Quantities, Revenues, Contributions) go to each added record (listed under "Project Price Plan Products").
+3. Approve or reject: Under "Approval History" section, click "Approve/Reject". (NOTE: After you have approved, the record will be locked so it can no longer be edited.)

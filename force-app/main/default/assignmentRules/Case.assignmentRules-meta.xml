@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Assignment Rule e-NDA</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>lyle.geck@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;lyge&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>maria.herrero@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,OR(Web_uB_Contact__c=&quot;arsa&quot;,Web_uB_Contact__c=&quot;mher&quot;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>dennis.tan@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;dtan&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>piotr.kuniniec@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;pkun&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>york.yu@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;yoyu&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>carolyn.xing@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;cxin&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>figo.deng@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;fden&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>eric.zhong@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;eriz&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>lancelot.mei@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;lmei&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>york.yu@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;tzhu&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>eric.zhong@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;joez&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>eric.zhong@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;eriz&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>eric.zhong@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;rxia&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>fen.weng@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;fwen&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>khurram.shahzad@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;ksha&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>vivien.yuan@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;vyua&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>amy.kim@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;amki&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>andrew.suttle@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;asut&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>adrian.tan@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;atan&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>carine.loo@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;cloo&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>stephen.huelsen@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;skau&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>alex.candela@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, OR(Web_uB_Contact__c=&quot;dsel&quot;,Web_uB_Contact__c=&quot;acan&quot;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>edgar.shin@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;eshi&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>federico.dalferro@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;fdal&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>fiona.peng@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;fpen&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>vladimir.stoyanov@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;vsto&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>hamilton.chen@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;hche&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>eiji.iriyama@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;hyos&quot;)
+/* Hiroshi left, Eiji added temporarily. */</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>kevin.hu@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, OR(Web_uB_Contact__c=&quot;hyou&quot;, Web_uB_Contact__c=&quot;kehu&quot; ))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>martin.karrer@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, OR(Web_uB_Contact__c=&quot;jare&quot;, Web_uB_Contact__c=&quot;maka&quot; ))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jan.schnitzer@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;jsch&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jason.gong@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, OR(Web_uB_Contact__c=&quot;jmei&quot;, Web_uB_Contact__c=&quot;jgon &quot; ) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jimmy.yi@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;jiyi&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ks.son@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;kson&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>leo.derosa@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;lder&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>marco.tang@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;mata&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>marlene.rosado@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;mros&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>martin.karrer@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;maka&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>tatiuska.rojas@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,OR( Web_uB_Contact__c=&quot;mpil&quot;,Web_uB_Contact__c=&quot;taro&quot;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>masanori.yoshida@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;myos&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>alan.teng@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, OR(Web_uB_Contact__c=&quot;mchi&quot;,Web_uB_Contact__c=&quot;aten&quot;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>minoru.okuda@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;moku&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>michael.huang@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;mhua&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>tatiuska.rojas@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;dvan&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>niyaz.majeed@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;nmaj&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>pasi.alajoki@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;pala&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>raphael.baude@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;raba&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>cherry.jiang@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;cjia&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>raphael.baude@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;raba&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ray.park@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;rayp&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>robert.liu@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;rliu&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>beata.adamczyk@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;bada&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>gian-claudio.dallacqua@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;gdal&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>vivian.vonwil@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;vvon&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>sakiko.kamatani@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;skam&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>eiji.iriyama@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;eiri&quot;)
+
+/*replaced tnak with eiri as requested in jira ticket IN_SF_MTC-17*/</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>wendy.wang@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;wwan&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>hiroshi.machida@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;,Web_uB_Contact__c=&quot;hmac&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>zoe.li@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(RecordTypeId=&quot;012D0000000BarT&quot;, Web_uB_Contact__c=&quot;zoli&quot;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Inside_Sales_Americas</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(
+NOT(ISPICKVAL(Type, &apos;End Use Statement&apos;)),
+RecordTypeId=&quot;012D0000000BarT&quot;,
+OR(
+Web_Country__c=&quot;US&quot;,
+Web_Country__c=&quot;BR&quot;,
+Web_Country__c=&quot;CA&quot;,
+Web_Country__c=&quot;MX&quot;,
+Web_Country__c=&quot;US&quot;,
+Web_Country__c=&quot;BR&quot;,
+Web_Country__c=&quot;CA&quot;,
+Web_Country__c=&quot;MX&quot;,
+Web_uB_Contact__c=&quot;aand&quot;,
+Web_uB_Contact__c=&quot;apro&quot;,
+Web_uB_Contact__c=&quot;astr&quot;,
+Web_uB_Contact__c=&quot;bodw&quot;,
+Web_uB_Contact__c=&quot;bcam&quot;,
+Web_uB_Contact__c=&quot;bshe&quot;,
+Web_uB_Contact__c=&quot;dber&quot;,
+Web_uB_Contact__c=&quot;efud&quot;,
+Web_uB_Contact__c=&quot;erei&quot;,
+Web_uB_Contact__c=&quot;iwes&quot;,
+Web_uB_Contact__c=&quot;jdem&quot;,
+Web_uB_Contact__c=&quot;jkul&quot;,
+Web_uB_Contact__c=&quot;jnef&quot;,
+Web_uB_Contact__c=&quot;jrei&quot;,
+Web_uB_Contact__c=&quot;jwhi&quot;,
+Web_uB_Contact__c=&quot;maxm&quot;,
+Web_uB_Contact__c=&quot;mdav&quot;,
+Web_uB_Contact__c=&quot;mhin&quot;,
+Web_uB_Contact__c=&quot;mkay&quot;,
+Web_uB_Contact__c=&quot;mmil&quot;,
+Web_uB_Contact__c=&quot;mmur&quot;,
+Web_uB_Contact__c=&quot;msis&quot;,
+Web_uB_Contact__c=&quot;npap&quot;,
+Web_uB_Contact__c=&quot;pmcc&quot;,
+Web_uB_Contact__c=&quot;qvun&quot;,
+Web_uB_Contact__c=&quot;rleg&quot;,
+Web_uB_Contact__c=&quot;rmcn&quot;,
+Web_uB_Contact__c=&quot;rsha&quot;,
+Web_uB_Contact__c=&quot;rwal&quot;,
+Web_uB_Contact__c=&quot;sgud&quot;,
+Web_uB_Contact__c=&quot;tsha&quot;,
+Web_uB_Contact__c=&quot;vcon&quot;,
+Web_uB_Contact__c=&quot;wcle&quot;,
+Web_uB_Contact__c=&quot;yshc&quot;
+))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>cherry.jiang@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(
+RecordTypeId=&quot;012D0000000BarT&quot;,
+OR(Web_Country__c=&quot;CN&quot;,Web_Country__c=&quot;HK&quot;)
+)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>sakiko.kamatani@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(
+RecordTypeId=&quot;012D0000000BarT&quot;,
+Web_Country__c=&quot;JP&quot;
+)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>soyoung.lee@u-blox.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <formula>AND(
+RecordTypeId=&quot;012D0000000BarT&quot;,
+Web_Country__c=&quot;KR&quot;
+)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Sales_Admin_EMEA</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Legal Case</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>notEqual</operation>
+                <value>End Use Statement</value>
+            </criteriaItems>
+            <template>Case_Emails/Case_inform_the_owner_on_e_NDA</template>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>assign Cases</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>ProductMarketing187991</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Documentation,Feature Request</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>AEGNSS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Training</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SupportUS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Account.uB_Office__c</field>
+                <operation>equals</operation>
+                <value>Americas</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SupportAPAC</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Account.uB_Office__c</field>
+                <operation>equals</operation>
+                <value>Hongkong,Taiwan,Rest of APAC,Korea,Japan,China</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>SupportEMEA187991</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Account.uB_Office__c</field>
+                <operation>equals</operation>
+                <value>EMEA,HQ</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

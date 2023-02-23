@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>* This permission set allow Service cloud users like Service FAE, RAE or TM to have custom Email publisher called Email 2.0 in Case Feed tab</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Email 2.0 Access</label>
+    <pageAccesses>
+        <apexPage>EmailPublisher</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+</PermissionSet>

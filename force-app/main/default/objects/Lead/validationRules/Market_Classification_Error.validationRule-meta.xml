@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Classification_Error</fullName>
+    <active>true</active>
+    <description>Shows error when the lead is covered without the Market Classification.</description>
+    <errorConditionFormula>AND(IsConverted,Market_Classification__c==&apos;&apos;  )</errorConditionFormula>
+    <errorDisplayField>X1st_Bounce__c</errorDisplayField>
+    <errorMessage>Please select Market Segment before converting the lead.</errorMessage>
+</ValidationRule>

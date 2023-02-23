@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>bsits-team-thalwil@u-blox.com</contactEmail>
+    <label>DrupalConnect</label>
+    <oauthConfig>
+        <callbackUrl>https://testsite.u-blox.com/en/salesforce/oauth_callback
+https://www.u-blox.com/en/salesforce/oauth_callback</callbackUrl>
+        <consumerKey>3MVG9WtWSKUDG.x5Y23yoJF1XRTitYeBq7HctMpmpNBKH1Kz9jqXQ4UaQshY5EijMajhLyqnEgUsmLPA0mjI9</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

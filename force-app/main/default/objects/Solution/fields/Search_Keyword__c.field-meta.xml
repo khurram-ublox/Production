@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Search_Keyword__c</fullName>
+    <description>Add words you want to use for search</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Add words you want to use for search</inlineHelpText>
+    <label>Search Keyword</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

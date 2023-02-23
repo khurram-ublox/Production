@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_CHF__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Qty_Invoiced__c =0,0,Total_Value_CHF__c / Qty_Invoiced__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>price per unit in CHF (with Abacus exchange rate)</inlineHelpText>
+    <label>Price CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

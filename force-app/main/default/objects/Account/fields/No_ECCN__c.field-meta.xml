@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_ECCN__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>No need to check customer website if user choose this option</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose this If quote is not about ECCN (Export Control Classification Number) products, no needs to check customer website in this case</inlineHelpText>
+    <label>No ECCN</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

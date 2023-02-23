@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exhibition__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>List with upcoming tradeshows to connect to newly created opportunity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List with upcoming tradeshows to connect to newly created opportunity</inlineHelpText>
+    <label>Exhibition</label>
+    <referenceTo>Exhibition__c</referenceTo>
+    <relationshipLabel>Opportunities</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

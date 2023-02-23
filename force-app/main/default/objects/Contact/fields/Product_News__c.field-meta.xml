@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_News__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Made for Record Type Media</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked if product-related news should be sent</inlineHelpText>
+    <label>Product News</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

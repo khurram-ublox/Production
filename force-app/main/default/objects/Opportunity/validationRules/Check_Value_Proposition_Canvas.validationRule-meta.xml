@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Value_Proposition_Canvas</fullName>
+    <active>true</active>
+    <description>Added on request OpenIssues52917</description>
+    <errorConditionFormula>AND(
+  OR(
+    ISPICKVAL(Focus__c, &quot;1 - Corporate&quot;),
+    ISPICKVAL(Focus__c, &quot;2 - Region&quot;)
+  ),
+  OR(
+    ISBLANK( Value_Proposition__c ),
+    ISBLANK( Gain_Creators__c ),
+    ISBLANK( Pain_Relievers__c ),
+    ISBLANK( Customer_Type__c  ),
+    ISBLANK( Gains__c ),
+    ISBLANK( Pains__c ),
+    ISBLANK( Customer_Jobs__c )
+  ),
+  OR(
+    $User.ProfileId = &quot;00e20000000wr5F&quot;, /* Sales */
+    $User.ProfileId = &quot;00e20000000wr56&quot;, /* Management */
+    $User.ProfileId = &quot;00e2p000001opLR&quot;, /* Partner Base */
+    $User.ProfileId = &quot;00e2p000001opYk&quot; /* Partner Base Quotation */
+  )
+)</errorConditionFormula>
+    <errorMessage>Fields in Value Proposition Canvas should be filled if Focus is 1 or 2.</errorMessage>
+</ValidationRule>

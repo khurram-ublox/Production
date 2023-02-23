@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Notification_regarding_Closure</name>
+        <label>Notification regarding Closure</label>
+        <locationX>264</locationX>
+        <locationY>1332</locationY>
+        <actionName>Opportunity.Opp_Close_Opportunity_due_to_no_follow_up</actionName>
+        <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Opp_loop</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>Opp_loop.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <name>Add_Record</name>
+        <label>Add Record</label>
+        <locationX>264</locationX>
+        <locationY>1212</locationY>
+        <assignmentItems>
+            <assignToReference>all_opp</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Opp_loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Notification_regarding_Closure</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>add_record1</name>
+        <label>add record</label>
+        <locationX>264</locationX>
+        <locationY>756</locationY>
+        <assignmentItems>
+            <assignToReference>all_opp</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Opp_loop</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Opportunities_to_be_closed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assign_Close_Status</name>
+        <label>assign Close Status</label>
+        <locationX>264</locationX>
+        <locationY>1092</locationY>
+        <assignmentItems>
+            <assignToReference>Opp_loop.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>9 Closed - EoL</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Opp_loop.Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>No Follow-Up</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Remove_Auto_Close_Date</name>
+        <label>Remove Auto-Close Date</label>
+        <locationX>264</locationX>
+        <locationY>636</locationY>
+        <assignmentItems>
+            <assignToReference>Opp_loop.Opportunity_Close_Date__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>add_record1</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Opportunities_to_be_closed</name>
+        <label>Opportunities to be closed</label>
+        <locationX>396</locationX>
+        <locationY>972</locationY>
+        <defaultConnector>
+            <targetReference>Opp_loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>closed_opportunities</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6) AND 7</conditionLogic>
+            <conditions>
+                <leftValueReference>Opp_loop.Opportunity_Close_Date__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Today</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 Calling on</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 Evaluation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 Design-in</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>6 Prototypes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>7 Pre-Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.Opportunity_Close_Date__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>Opp_loop.CloseDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_Close_Status</targetReference>
+            </connector>
+            <label>closed opportunities</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Remove_Auto_Date_Time</name>
+        <label>Remove Auto Date Time</label>
+        <locationX>396</locationX>
+        <locationY>516</locationY>
+        <defaultConnector>
+            <targetReference>Opportunities_to_be_closed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_Is_Modified</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Opp_loop.CloseDate</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Today</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8 Production</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Opp_loop.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>9 Closed - EoL</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Remove_Auto_Close_Date</targetReference>
+            </connector>
+            <label>Record Is Modified</label>
+        </rules>
+    </decisions>
+    <description>This is to close the opportunities to whom reminder has been sent</description>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Opp: Schedule to close opp exceeding time limit {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opp: Schedule to close opp exceeding time limit</label>
+    <loops>
+        <name>Opp_loop</name>
+        <label>Opp_loop</label>
+        <locationX>176</locationX>
+        <locationY>396</locationY>
+        <collectionReference>opp_list</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Remove_Auto_Date_Time</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>update</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>opp_list</name>
+        <label>opp_list</label>
+        <locationX>176</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Opp_loop</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6) AND 7</filterLogic>
+        <filters>
+            <field>Opportunity_Close_Date__c</field>
+            <operator>LessThanOrEqualTo</operator>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>3 Calling on</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>4 Evaluation</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>5 Design-in</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>6 Prototypes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>7 Pre-Production</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Opportunity_Close_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <sortField>Opportunity_Close_Date__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>update</name>
+        <label>update</label>
+        <locationX>176</locationX>
+        <locationY>1644</locationY>
+        <inputReference>all_opp</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>opp_list</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2017-05-02</startDate>
+            <startTime>04:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>all_opp</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+</Flow>

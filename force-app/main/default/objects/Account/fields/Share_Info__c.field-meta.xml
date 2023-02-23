@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Share_Info__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Are shares declared, estimated or in share book?</inlineHelpText>
+    <label>Shareholding Infobase</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>declared</fullName>
+                <default>false</default>
+                <label>declared</label>
+            </value>
+            <value>
+                <fullName>estimated</fullName>
+                <default>false</default>
+                <label>estimated</label>
+            </value>
+            <value>
+                <fullName>Share book</fullName>
+                <default>false</default>
+                <label>Share book</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

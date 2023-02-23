@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Store recordIds used in Flows, validations rules and formulas.</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Hard Code Ids</label>
+    <visibility>Public</visibility>
+</CustomObject>

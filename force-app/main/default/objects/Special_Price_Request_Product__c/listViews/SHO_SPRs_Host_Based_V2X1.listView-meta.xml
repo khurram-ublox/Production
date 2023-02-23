@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHO_SPRs_Host_Based_V2X1</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Ordering_Code__c</columns>
+    <columns>Year_P1__c</columns>
+    <columns>Quantity_P1__c</columns>
+    <columns>Unit_Price_P1__c</columns>
+    <columns>Contribution_Pct_P1__c</columns>
+    <columns>Year_P2__c</columns>
+    <columns>Quantity_P2__c</columns>
+    <columns>Unit_Price_P2__c</columns>
+    <columns>Contribution_Pct_P2__c</columns>
+    <columns>Quantity_P3__c</columns>
+    <columns>Unit_Price_P3__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Center__c</field>
+        <operation>equals</operation>
+        <value>POS modules</value>
+    </filters>
+    <filters>
+        <field>Product_Series__c</field>
+        <operation>contains</operation>
+        <value>NEO</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>LAST_N_DAYS:180</value>
+    </filters>
+    <label>SHO SPRs Host Based &amp; V2X</label>
+</ListView>

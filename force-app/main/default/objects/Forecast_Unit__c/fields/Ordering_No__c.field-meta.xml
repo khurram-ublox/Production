@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ordering_No__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Product__r.Automotive_Product__c,  Product__r.Type_No__c, Product__r.ProductCode)</formula>
+    <inlineHelpText>For automotive products: type number; for other products: ordering code</inlineHelpText>
+    <label>Ordering Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

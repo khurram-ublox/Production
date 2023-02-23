@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Bookings__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Bookings last 12 months, in local currency</inlineHelpText>
+    <label>TMT Bookings</label>
+    <precision>11</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

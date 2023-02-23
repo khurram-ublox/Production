@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contact_Alert_Email_Opt_Out</fullName>
+        <description>Contact: Alert Email Opt Out</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_Email_Opt_Out_checked</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Alert_Email_invalid</fullName>
+        <description>Contact: Alert Email invalid</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_Email_invalid_checked</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_AssistNow_new_token_notification_to_Contact</fullName>
+        <description>Contact: AssistNow new token notification to Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_AssistNow_new_token_notification_to_Contact_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_AssistNow_new_token_notification_to_u_blox</fullName>
+        <description>Contact: AssistNow new token notification to u-blox</description>
+        <protected>false</protected>
+        <recipients>
+            <field>MGA_Support_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_AssistNow_new_token_notification_to_u_blox</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_AssistNow_token_to_deactivate_to_u_blox</fullName>
+        <description>Contact: AssistNow token to deactivate (to u-blox)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>MGA_Support_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_AssistNow_token_to_deactivate_to_u_blox</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_AssistNow_token_to_deactivate_to_u_blox_SVC_Team</fullName>
+        <ccEmails>prod-svc-team-GLOBAL@u-blox.com</ccEmails>
+        <description>Contact: AssistNow token to deactivate (to u-blox SVC POS Team)</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_AssistNow_token_to_deactivate_to_u_blox_SVC_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_AssistNow_token_to_reactivate_to_u_blox</fullName>
+        <description>Contact: AssistNow token to reactivate (to u-blox)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>MGA_Support_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_AssistNow_token_to_reactivate_to_u_blox</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_AssistNow_token_to_reactivate_to_u_blox_SVC_Team</fullName>
+        <ccEmails>svc-pos-team-GLOBAL@u-blox.com</ccEmails>
+        <description>Contact: AssistNow token to reactivate (to u-blox SVC POS Team)</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_AssistNow_token_to_reactivate_to_u_blox_SVC_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Notify_Email_is_active</fullName>
+        <description>Contact: Notify Email is active</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_Email_reactivated</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Opt_out_alert</fullName>
+        <description>Contact: Opt out alert. Used in flow &apos;Contact: Email Alerts&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lukas.dragosek@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>soha.farahnak@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_mass_mailing_internal_distribution_opt_out_Autopilot</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Send_e_EUS_Link</fullName>
+        <description>Contact: Send e_EUS Link. Used in flow &apos;Contact: Email Alerts&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_e_EUS_link_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Send_e_LULA_M_link</fullName>
+        <description>Contact: Send e-LULA-M link. Used in flow &apos;Contact: Email Alerts&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_e_LULA_M_link_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Send_e_LULA_N_link</fullName>
+        <description>Contact: Send e-LULA-N link. Used in flow &apos;Contact: Email Alerts&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_e_LULA_N_link_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Send_e_NDA_Americas_link</fullName>
+        <description>Contact: Send e-NDA Americas link. Used in flow &apos;Contact: Email Alerts&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>info_us@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_e_NDA_Americas_link_with_Letterhead</template>
+    </alerts>
+    <alerts>
+        <fullName>Contact_Send_e_NDA_link</fullName>
+        <description>Contact: Send e-NDA link. Used in flow &apos;Contact: Email Alerts&apos;</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Contact_e_NDA_link_with_Letterhead</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>CO_Finance_view</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Finance</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>CO: Finance view</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CO_std_view</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Standard</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>CO: std view</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ClearPCNModules</fullName>
+        <description>Clear change notification entry</description>
+        <field>PCN_Modules_Services__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear Product Notifications</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Conact_clear_email_invalid</fullName>
+        <description>Clear flag Email Invalid</description>
+        <field>Email_address_probably_not_valid__c</field>
+        <literalValue>0</literalValue>
+        <name>Conact: clear email invalid</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactClearCDKupdate</fullName>
+        <description>Clear CDK update</description>
+        <field>CDK_Update__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear CDK update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactClearNewsletter</fullName>
+        <description>Clear Customer email</description>
+        <field>Service_Item_3__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact. Clear Customer email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactClearPressRelease</fullName>
+        <description>Clear Press Release</description>
+        <field>Press_Releases__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear Press Release</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ContactClearXmasCard</fullName>
+        <description>Clear Xmas Card entry</description>
+        <field>Service_Item_2__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear Christmas Card</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Add_Date_Email_Invalid</fullName>
+        <description>Fill &quot;Date Email Invalid&quot; with TODAY.</description>
+        <field>Date_Email_Invalid__c</field>
+        <formula>TODAY()</formula>
+        <name>Contact: Add Date Email Invalid</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_AssistNow_Requested_Date_update</fullName>
+        <field>MGA_Requested_Date__c</field>
+        <formula>NOW()</formula>
+        <name>Contact: AssistNow Requested Date update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_AssistNow_Support_Email_update</fullName>
+        <field>MGA_Support_Email__c</field>
+        <formula>CASE( TEXT(Owner.uB_Office__c) , 
+&quot;Americas&quot;, &quot;support_us@u-blox.com&quot;, 
+&quot;EMEA&quot;, &quot;support@u-blox.com&quot;, 
+&quot;Corporate&quot;, &quot;support@u-blox.com&quot;, 
+&quot;China&quot;, &quot;support_cn@u-blox.com&quot;, 
+&quot;Hongkong&quot;, &quot;support_cn@u-blox.com&quot;, 
+&quot;Taiwan&quot;, &quot;support_tw@u-blox.com&quot;, 
+&quot;Korea&quot;, &quot;support_kr@u-blox.com&quot;, 
+&quot;Japan&quot;, &quot;support_jp@u-blox.com&quot;, 
+&quot;India&quot;, &quot;support_ap@u-blox.com&quot;, 
+&quot;Australia&quot;, &quot;support_ap@u-blox.com&quot;, 
+&quot;Rest of APAC&quot;, &quot;support_ap@u-blox.com&quot;, 
+&quot;support@u-blox.com&quot; 
+)</formula>
+        <name>Contact: AssistNow Support Email update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_AssistNow_Support_uB_update</fullName>
+        <field>MGA_Support_uB_Office__c</field>
+        <formula>TEXT(Owner.uB_Office__c)</formula>
+        <name>Contact: AssistNow Support uB update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Clear_Catalog</fullName>
+        <description>Clear catalog entry</description>
+        <field>Service_Item_1__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear Catalog</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Clear_Event_email</fullName>
+        <description>Set Event email to false</description>
+        <field>Event_email__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear Event email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Clear_PCN_automotive_chips</fullName>
+        <description>Clear subscription for PCN automotive chips</description>
+        <field>PCN_Automotive_Chips__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear PCN automotive chips</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Clear_PCN_chips</fullName>
+        <field>PCN_Standard_Chips__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear PCN chips</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Clear_Webinar_email</fullName>
+        <description>Set Webiar email to false</description>
+        <field>Webinar_email__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Clear Webinar email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Date_Email_Invalid_clear</fullName>
+        <description>Clear the field</description>
+        <field>Date_Email_Invalid__c</field>
+        <name>Contact: Date Email Invalid clear</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Date_Email_Invalid_update</fullName>
+        <field>Date_Email_Invalid__c</field>
+        <formula>TODAY()</formula>
+        <name>Contact: Date Email Invalid update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Last_Date_Email_Invalid_update</fullName>
+        <description>Copy Date Email Invalid</description>
+        <field>Last_Date_Email_Invalid__c</field>
+        <formula>Date_Email_Invalid__c</formula>
+        <name>Contact: Last Date Email Invalid update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Marketing_Communication_Opt_Out</fullName>
+        <field>Marketing_Communication_Opt_Out__c</field>
+        <literalValue>1</literalValue>
+        <name>Contact: Marketing Communication Opt Out</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Record_Type_to_Finance</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Finance</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Contact: Record Type to Finance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Record_Type_to_Media</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Contact_Media</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Contact: Record Type to Media</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_Remove_Reactivate_Email_Address</fullName>
+        <field>Reactivate_Email_Address__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: Remove Reactivate Email Address</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_clear_field_Date_Email_Invalid</fullName>
+        <description>Remove the date in &quot;Date Email Invalid&quot;</description>
+        <field>Date_Email_Invalid__c</field>
+        <name>Contact: clear field Date Email Invalid</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_copy_Email_Invalid_Date</fullName>
+        <description>Copy the last Email Invalid Date to the Previous Email Invalid Date</description>
+        <field>Last_Date_Email_Invalid__c</field>
+        <formula>Date_Email_Invalid__c</formula>
+        <name>Contact: copy Email Invalid Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Contact_uncheck_AssistNow_Token_Resend</fullName>
+        <description>To uncheck AssistNow Token Resend right after the token has been re-sent</description>
+        <field>AssistNow_Token_Resend__c</field>
+        <literalValue>0</literalValue>
+        <name>Contact: uncheck AssistNow Token Resend</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ResetVisitingAddresschangedflag</fullName>
+        <field>Visiting_Address_changed__c</field>
+        <literalValue>0</literalValue>
+        <name>Reset Visiting Address changed flag</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateMailingCity</fullName>
+        <field>MailingCity</field>
+        <formula>Account.BillingCity</formula>
+        <name>Update Mailing City</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateMailingCountry</fullName>
+        <field>MailingCountry</field>
+        <formula>Account.BillingCountry</formula>
+        <name>Update Mailing Country</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateMailingState</fullName>
+        <field>MailingState</field>
+        <formula>Account.BillingState</formula>
+        <name>Update Mailing State</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateMailingStreet</fullName>
+        <field>MailingStreet</field>
+        <formula>Account.BillingStreet</formula>
+        <name>Update Mailing Street</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateMailingZIP</fullName>
+        <field>MailingPostalCode</field>
+        <formula>Account.BillingPostalCode</formula>
+        <name>Update Mailing ZIP</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>COP%3A Record Type Finance</fullName>
+        <actions>
+            <name>CO_Finance_view</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Role__c</field>
+            <operation>equals</operation>
+            <value>Analyst,Analyst (Report),Auditor,Consultant,Investment banker,Portfolio manager,Sales/Broker,Shareholder engagement,Trader</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>COP%3A Record Type Std</fullName>
+        <actions>
+            <name>CO_std_view</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Role__c</field>
+            <operation>notEqual</operation>
+            <value>Portfolio manager,Investment banker,Sales/Broker,Analyst (Report),Trader,Auditor,Consultant</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Regular</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Alert Email Opt Out</fullName>
+        <actions>
+            <name>Contact_Alert_Email_Opt_Out</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert on opt out</description>
+        <formula>AND(ISCHANGED(HasOptedOutOfEmail), HasOptedOutOfEmail,NOT(Owner.Id=&quot;005D0000003wh71&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Alert Email invalid</fullName>
+        <actions>
+            <name>Contact_Alert_Email_invalid</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert on hard-bounce</description>
+        <formula>AND(ISCHANGED(Email_address_probably_not_valid__c), Email_address_probably_not_valid__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A AssistNow Support Email update</fullName>
+        <actions>
+            <name>Contact_AssistNow_Support_Email_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.OwnerId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Update the support email of uB office where the Contact Owner is located.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A AssistNow Support uB Office update</fullName>
+        <actions>
+            <name>Contact_AssistNow_Support_uB_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.OwnerId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>This is used to update AssistNow Support Email.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A AssistNow new token generated</fullName>
+        <actions>
+            <name>Contact_AssistNow_new_token_notification_to_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Contact_AssistNow_Requested_Date_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_AssistNow_new_token_generated</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send the notifications to u-blox Contact Owner and support address.
+Fill the requested date and time in MGA Requested Date.</description>
+        <formula>AND( /* 2019.02.13 khir commented out below that caused not sending the token */ /*  ISCHANGED(MGA__c), */   MGA__c,   ISCHANGED(MGA_Token__c),   NOT(ISNULL(MGA_Token__c)) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A AssistNow token to deactivate</fullName>
+        <actions>
+            <name>Contact_AssistNow_token_to_deactivate_to_u_blox_SVC_Team</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Contact_AssistNow_token_to_deactivate</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.MGA__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MGA_Token__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MGA_Requested_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.AssistNow_Token_To_Delete__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Send the notifications to u-blox Contact Owner, support address and SVC POS Team Reigate.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A AssistNow token to reactivate</fullName>
+        <actions>
+            <name>Contact_AssistNow_token_to_reactivate_to_u_blox</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Contact_AssistNow_token_to_reactivate_to_u_blox_SVC_Team</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.MGA__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MGA_Token__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.MGA_Requested_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Send the notifications to u-blox Contact Owner, support address and SVC POS Team Reigate.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A AssistNow token to resend</fullName>
+        <actions>
+            <name>Contact_AssistNow_new_token_notification_to_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Contact_AssistNow_Requested_Date_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_uncheck_AssistNow_Token_Resend</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_AssistNow_token_sent</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.AssistNow_Token_Resend__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Made to be triggered when AssistNow Enable button was pressed while the token is already available and to be re-sent.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Clear Date Email Invalid</fullName>
+        <actions>
+            <name>Contact_clear_field_Date_Email_Invalid</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Email_address_probably_not_valid__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Date_Email_Invalid__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Last_Date_Email_Invalid__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>When flag Email Invalid is removed, copy the Email Invalid date to the previous email invalid date, then clear the date.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Copy Date Email Invalid</fullName>
+        <actions>
+            <name>Contact_copy_Email_Invalid_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Email_address_probably_not_valid__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Date_Email_Invalid__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>When flag Email Invalid is removed, copy the &quot;Date Email Invalid&quot; to &quot;Last Date Email Invalid&quot;.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Date Email Invalid update</fullName>
+        <actions>
+            <name>Contact_Date_Email_Invalid_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update the field with the date when Email Invalid has been checked.</description>
+        <formula>ISCHANGED(Email_address_probably_not_valid__c) &amp;&amp; Email_address_probably_not_valid__c = true</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Email Opt Out</fullName>
+        <actions>
+            <name>Contact_Marketing_Communication_Opt_Out</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Contact.HasOptedOutOfEmail</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Left_the_company__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Enable MGA</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Service_Item_1__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Last Date Email Invalid update</fullName>
+        <actions>
+            <name>Contact_Date_Email_Invalid_clear</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Last_Date_Email_Invalid_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Copy Date Email Invalid to Last Date Email Invalid and clear Date Email Invalid</description>
+        <formula>ISCHANGED(Email_address_probably_not_valid__c) &amp;&amp; Email_address_probably_not_valid__c = false</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Record Type to Finance</fullName>
+        <actions>
+            <name>Contact_Record_Type_to_Finance</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Record_Type_To_Convert__c</field>
+            <operation>contains</operation>
+            <value>Finance</value>
+        </criteriaItems>
+        <description>For Lead conversion of News subscription</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Record Type to Media</fullName>
+        <actions>
+            <name>Contact_Record_Type_to_Media</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Record_Type_To_Convert__c</field>
+            <operation>contains</operation>
+            <value>Media</value>
+        </criteriaItems>
+        <description>For Lead conversion of News subscription</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Remove Product Notification</fullName>
+        <actions>
+            <name>ClearPCNModules</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Left_the_company__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When Left company is ticked, remove this flag.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Remove Reactivate Email Address</fullName>
+        <actions>
+            <name>Contact_Notify_Email_is_active</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Contact_Remove_Reactivate_Email_Address</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Remove &quot;Reactivate Email Address&quot; checkbox when both &quot;Email invalid&quot; and &quot;Email Opt Out&quot; have become empty.</description>
+        <formula>AND(
+  OR(
+    ISCHANGED(HasOptedOutOfEmail),
+    ISCHANGED(Email_address_probably_not_valid__c)
+  ),
+  NOT(HasOptedOutOfEmail),
+  NOT(Email_address_probably_not_valid__c)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-LULA-M link to Contact</fullName>
+        <actions>
+            <name>Contact_Send_e_LULA_M_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_e_LULA_M_webform_link_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-LULA-M.
+khir: changed from &quot;AND(ISCHANGED(e_LULA_M__c),e_LULA_M__c=true)&quot;</description>
+        <formula>AND(   ISCHANGED(e_LULA_M__c),   e_LULA_M__c=true )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-LULA-M link to Contact %28created%29</fullName>
+        <actions>
+            <name>Contact_Send_e_LULA_M_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_e_LULA_M_webform_link_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-LULA-M.
+NOTE: This Workflow is needed for created Contact.</description>
+        <formula>e_LULA_M__c=true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-LULA-N link to Contact</fullName>
+        <actions>
+            <name>Contact_Send_e_LULA_N_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_e_LULA_N_webform_link_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-LULA-N.</description>
+        <formula>AND(   ISCHANGED(e_LULA_N__c),   e_LULA_N__c=true )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-LULA-N link to Contact %28created%29</fullName>
+        <actions>
+            <name>Contact_Send_e_LULA_N_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_e_LULA_N_webform_link_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-LULA-N.
+NOTE: This Workflow is needed for created Contact.</description>
+        <formula>e_LULA_N__c=true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-NDA Americas link to Contact</fullName>
+        <actions>
+            <name>Contact_Send_e_NDA_Americas_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_e_NDA_webform_link_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-NDA Americas. (Account uB Office=Americas)</description>
+        <formula>and(   ISCHANGED(e_NDA__c),   e_NDA__c=true,   text(Account.uB_Office__c) = &quot;Americas&quot; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-NDA Americas link to Contact %28created%29</fullName>
+        <actions>
+            <name>Contact_Send_e_NDA_Americas_link</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Email_e_NDA_webform_link_sent_to_the_customer</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-NDA Americas. (Account uB Office=Americas)
+NOTE: This Workflow is needed for created Contact.</description>
+        <formula>and(
+e_NDA__c=true,
+text(Account.uB_Office__c) = &quot;Americas&quot;
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-NDA link to Contact</fullName>
+        <actions>
+            <name>Contact_Send_e_NDA_link</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-NDA.
+khir: changed from AND(ISCHANGED(e_NDA__c),e_NDA__c=true)&quot;&quot;</description>
+        <formula>and(   ISCHANGED(e_NDA__c),   e_NDA__c=true,   text(Account.uB_Office__c) &lt;&gt; &quot;Americas&quot; )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A Send e-NDA link to Contact %28created%29</fullName>
+        <actions>
+            <name>Contact_Send_e_NDA_link</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Send email with URL to e-NDA.
+This Workflow is needed for created Contact.</description>
+        <formula>and(
+e_NDA__c=true,
+text(Account.uB_Office__c) &lt;&gt; &quot;Americas&quot;
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A clear subscriptions when leaving or unsubscribing</fullName>
+        <actions>
+            <name>ContactClearNewsletter</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactClearPressRelease</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>ContactClearXmasCard</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Clear_Catalog</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Clear_Event_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Contact_Clear_Webinar_email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <field>Contact.Left_the_company__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.HasOptedOutOfEmail</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Clears all subscriptions when the customer has left the company or has unsubscribed.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Contact%3A internal user opted out</fullName>
+        <actions>
+            <name>Contact_Opt_out_alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Account.Name</field>
+            <operation>equals</operation>
+            <value>u-blox Internal Communication</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.HasOptedOutOfEmail</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Email_address_probably_not_valid__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Send alert when an internal user opted out or email address is invalid</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Mailing Address update - Visiting Address changed in Account</fullName>
+        <actions>
+            <name>ResetVisitingAddresschangedflag</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingCity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingCountry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingState</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingStreet</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingZIP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Visiting_Address_changed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Same_as_Account_Visiting_Address__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Copies address elements from the Account visiting address to the mailing address whenever the flag &quot;Contact.Visiting_Address_changed__c&quot; is set by the APEX Class AccountVisitingAddress</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Mailing Address update - after click on %22Same as Account Visiting Address%22 in Contact</fullName>
+        <actions>
+            <name>UpdateMailingCity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingCountry</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingState</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingStreet</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>UpdateMailingZIP</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Same_as_Account_Visiting_Address__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Copies address elements from the Account visiting address to the mailing address after manual setting the flag &quot;Same as Account Visiting Address&quot;</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Contact_AssistNow_new_token_generated</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>New AssistNow Token for this Contact has been generated and sent.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Contact: AssistNow new token generated</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_AssistNow_token_sent</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>New AssistNow Token for this Contact has been sent.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Contact: AssistNow token sent</subject>
+    </tasks>
+    <tasks>
+        <fullName>Contact_AssistNow_token_to_deactivate</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The AssistNow Token for this Contact will be deactivated. u-blox SVC Team will inform you as soon as the token has been deactivated.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Contact: AssistNow token to deactivate</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_e_LULA_M_webform_link_sent_to_the_customer</fullName>
+        <assignedToType>creator</assignedToType>
+        <description>e-LULA-M link has been sent.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: e-LULA-M webform link sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_e_LULA_N_webform_link_sent_to_the_customer</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>e-LULA-N link has been sent.</description>
+        <dueDateOffset>0</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Completed</status>
+        <subject>Email: e-LULA-N webform link sent to the customer</subject>
+    </tasks>
+    <tasks>
+        <fullName>Email_e_NDA_webform_link_sent_to_the_customer</fullName>
+        <assignedToType>creator</assignedToType>
+        <description>e-NDA link has been sent. Set the Status to Completed once the Case has been closed.</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>In Progress</status>
+        <subject>Email: e-NDA webform link sent to the customer</subject>
+    </tasks>
+</Workflow>

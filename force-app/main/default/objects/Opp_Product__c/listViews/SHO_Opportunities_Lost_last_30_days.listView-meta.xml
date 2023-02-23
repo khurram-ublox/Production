@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SHO_Opportunities_Lost_last_30_days</fullName>
+    <columns>Opportunity__c</columns>
+    <columns>Opportunity_Account__c</columns>
+    <columns>Application_Type__c</columns>
+    <columns>Product__c</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Loss_Reason__c</columns>
+    <columns>Loss_Reason_Remark__c</columns>
+    <columns>Comment__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Center__c</field>
+        <operation>equals</operation>
+        <value>Short Range</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Lost</value>
+    </filters>
+    <filters>
+        <field>Status_Modified__c</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:30</value>
+    </filters>
+    <label>SHO Opportunities Lost last 30 days</label>
+    <sharedTo>
+        <group>Recipients_SHO_Statistics</group>
+    </sharedTo>
+</ListView>

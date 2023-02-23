@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APAC_Open_Commercial_RMA</fullName>
+    <columns>Account_Prio__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>Short_Description_Complaint__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Qty_received_from_customer__c</columns>
+    <columns>Days_Open__c</columns>
+    <columns>Days_analysis_open__c</columns>
+    <columns>Reaction_Time__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>RMA_Status__c</columns>
+    <columns>Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>notEqual</operation>
+        <value>EMEA,Americas</value>
+    </filters>
+    <filters>
+        <field>RMA_Status__c</field>
+        <operation>notEqual</operation>
+        <value>6 Closed</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>RMA__c.RMA_commercial</value>
+    </filters>
+    <label>APAC Open Commercial RMA</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RegionEMEA</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

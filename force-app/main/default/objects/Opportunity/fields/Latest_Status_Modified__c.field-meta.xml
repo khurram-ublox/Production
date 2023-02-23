@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Status_Modified__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date at which the field &quot;Latest Status&quot; was changed for the last time.</inlineHelpText>
+    <label>Latest Status Modified</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

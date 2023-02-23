@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Update_Unique_Id</name>
+        <label>Update Unique Id</label>
+        <locationX>383</locationX>
+        <locationY>598</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CS_Unique_ID__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GenerateCSUniqueID</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>CS_Decisions_to_update_fields</name>
+        <label>CS Decisions to update fields</label>
+        <locationX>559</locationX>
+        <locationY>414</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Name_not_equal_to_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Unique_Id</targetReference>
+            </connector>
+            <label>Name not equal to null</label>
+        </rules>
+    </decisions>
+    <description>This will execute after the record is created or updated.</description>
+    <formulas>
+        <description>Concatenate fields to create CS Unique Id Field. Format will be as follows.
+CS-{Account SF Number}-{End Customer Account SF Number}-{Project Owner Account SF Number}-{Product Name}</description>
+        <name>GenerateCSUniqueID</name>
+        <dataType>String</dataType>
+        <expression>if (!ISBLANK( {!$Record.Product_Filter_Value__c} ),
+&quot;CS-&quot; &amp; {!$Record.Account__r.SF_Account_Number__c} &amp; &quot;-&quot; &amp; {!$Record.End_Customer__r.SF_Account_Number__c} &amp; &quot;-&quot; &amp; {!$Record.Project_Owner_Account__r.SF_Account_Number__c} &amp; &quot;-&quot; &amp; {!$Record.Product_Filter_Value__c}, 
+&quot;CS-&quot; &amp; {!$Record.Account__r.SF_Account_Number__c} &amp; &quot;-&quot; &amp; {!$Record.End_Customer__r.SF_Account_Number__c} &amp; &quot;-&quot; &amp; {!$Record.Project_Owner_Account__r.SF_Account_Number__c} &amp; &quot;-&quot; &amp; {!$Record.Product__r.Name} )</expression>
+    </formulas>
+    <interviewLabel>Contribution Share: After record is saved {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contribution Share: After record is saved</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>451</locationX>
+        <locationY>105</locationY>
+        <connector>
+            <targetReference>CS_Decisions_to_update_fields</targetReference>
+        </connector>
+        <object>Contribution_Share__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

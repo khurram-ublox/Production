@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temp_Flag_Recalculate__c</fullName>
+    <description>Used for a mass recalculate of the period flags</description>
+    <externalId>false</externalId>
+    <formula>IF(History_Month__c &gt;=  DATE(2013,01,01),True,False)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Temp Flag Recalculate</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

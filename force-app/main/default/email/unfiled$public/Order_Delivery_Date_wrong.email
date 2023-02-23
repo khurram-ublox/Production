@@ -1,0 +1,9 @@
+*** Order Alert ***
+
+Please check the Delivery Date of the following open Order:
+Order Name: {!Billings__c.Name}
+Account: {!Billings__c.Account__c}
+Country: {!Billings__c.Account_Country__c}
+Delivery Date: {!Billings__c.Delivery_Date__c}
+
+Link to Salesforce Order record: {!Billings__c.Link}

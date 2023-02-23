@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Roles</fullName>
+    <availability>online</availability>
+    <description>Show all Accounts that have a Partner Role with this Account
+Orig: URL, /00OD000000554oY?pv0=&quot;{!Account.Id}&quot;</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Show Partners</masterLabel>
+    <openType>newWindow</openType>
+    <page>AccountUrlShowPartners</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+</WebLink>

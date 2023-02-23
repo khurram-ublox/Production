@@ -1,0 +1,11 @@
+Please arrange the following shipment:
+
+Product: {!Samples__c.Product__c}
+Quantity: {!Samples__c.Confirmed__c}
+Ship to: {!Samples__c.Ship_To__c}
+
+Once the shipment has been arranged, please provide {!Samples__c.Ship_To__c} with the tracking number.
+
+Request confirmed by: {!Samples__c.LastModifiedBy}
+
+Click on the Salesforce link to access the Sample:  {!Samples__c.Link}

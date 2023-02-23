@@ -1,0 +1,22 @@
+The following Contribution Share has been deactivated:
+
+Account: {!Contribution_Share__c.Account__c}
+End Customer: {!Contribution_Share__c.End_Customer__c}
+Project Owner: {!Contribution_Share__c.Project_Owner_Account__c}
+Product: {!Contribution_Share__c.Product_Name__c}
+
+Shares (in %)
+Americas: {!Contribution_Share__c.Share_Americas__c}
+Australia: {!Contribution_Share__c.Share_Australia__c}
+China: {!Contribution_Share__c.Share_China__c}
+EMEA: {!Contribution_Share__c.Share_EMEA__c}
+HQ: {!Contribution_Share__c.Share_HQ__c}
+India: {!Contribution_Share__c.Share_India__c}
+Japan: {!Contribution_Share__c.Share_Japan__c}
+Korea: {!Contribution_Share__c.Share_Korea__c}
+RoA: {!Contribution_Share__c.Share_RoA__c}
+Taiwan: {!Contribution_Share__c.Share_Taiwan__c}
+
+Record Owner: {!Contribution_Share__c.OwnerFullName}
+
+Link: {!Contribution_Share__c.Link}

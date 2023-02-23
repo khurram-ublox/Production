@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Year_COGS_Value__c</fullName>
+    <description>Next Year COGS Value from COGS1,2,3,4 in format
+Q1:Q2:Q3:Q4</description>
+    <externalId>false</externalId>
+    <formula>IF(AND(NOT(ISBLANK(Valid_For_1__c)),CONTAINS(LEFT(Valid_For_1__c,CEILING(LEN(Valid_For_1__c)/2)),TEXT((Year(TODAY())+1)-2000))),TEXT(COGS_1__c)&amp;&quot;:&quot;,&quot;&quot;) &amp;
+IF(AND(NOT(ISBLANK(Valid_For_2__c)),CONTAINS(LEFT(Valid_For_2__c,CEILING(LEN(Valid_For_2__c)/2)),TEXT((Year(TODAY())+1)-2000))),TEXT(COGS_2__c)&amp;&quot;:&quot;,&quot;&quot;) &amp;
+IF(AND(NOT(ISBLANK(Valid_For_3__c)),CONTAINS(LEFT(Valid_For_3__c,CEILING(LEN(Valid_For_3__c)/2)),TEXT((Year(TODAY())+1)-2000))),TEXT(COGS_3__c)&amp;&quot;:&quot;,&quot;&quot;) &amp;
+IF(AND(NOT(ISBLANK(Valid_For_4__c)),CONTAINS(LEFT(Valid_For_4__c,CEILING(LEN(Valid_For_4__c)/2)),TEXT((Year(TODAY())+1)-2000))),TEXT(COGS_4__c)&amp;&quot;&quot;,&quot;&quot;)</formula>
+    <label>Next Year COGS Value</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Notify_Sales_Admin_Thalwil__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Made for email notification</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if Sales Admin Thalwil needs to arrange the sample shipment</inlineHelpText>
+    <label>Notify Sales Admin Thalwil</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

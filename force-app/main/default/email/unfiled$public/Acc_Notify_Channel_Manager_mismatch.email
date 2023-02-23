@@ -1,0 +1,11 @@
+Channel Manager was wrong and corrected as below.
+
+Account: {!Account.Name}
+Owner: {!Account.OwnerFullName}
+Owner: {!Account.OwnerEmail}
+
+Channel Manager: {!Account.Channel_Manager__c}
+Email Channel Manager: {!Account.Email_Channel_Manager__c}
+Email Account Owner: {!Account.Email_Account_Owner__c}
+
+Link to the Account: {!Account.Link}

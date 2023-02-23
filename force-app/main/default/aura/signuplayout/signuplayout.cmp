@@ -1,0 +1,26 @@
+<aura:component implements="forceCommunity:layout" access="global" description="Sign up Layout">
+    <aura:attribute name="space1" type="Aura.Component[]"/>
+    <aura:attribute name="content" type="Aura.Component[]"/>
+    <aura:attribute name="space2" type="Aura.Component[]"/>
+    <aura:attribute name="imagePlaceholder" type="Aura.Component[]"/>
+
+    <div>
+        <div class="left">
+            <div class="wrap">
+                <div class="form">{!v.content}</div>
+            </div>
+            </div>
+        <div class="right">
+            <div class="wrap">
+                <p>{!$Label.c.community_user_registration_right_panel_title}</p>
+                <ul>
+                    <li>{!$Label.c.community_user_registration_right_panel_text_1}</li>
+                    <li>{!$Label.c.community_user_registration_right_panel_text_2}</li>
+                    <li>{!$Label.c.community_user_registration_right_panel_text_3}</li>
+                    <li>{!$Label.c.community_user_registration_right_panel_text_4}</li>
+                </ul>
+            </div> 
+        </div>
+    </div>
+    
+</aura:component>

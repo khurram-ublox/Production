@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send customer a url link to e-LULA-N form</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Contact: e-LULA-N link with Letterhead</name>
+    <style>formalLetter</style>
+    <subject>u-blox AG: Limited Use License Agreement (LULA-N) with u-blox AG</subject>
+    <textOnly>Dear {!Contact.Salutation} {!Contact.FirstName} {!Contact.LastName},
+
+Please find below the link to the Limited Use License Agreement (LULA-N) with u-blox AG required for the NXP V2X SW package:
+
+https://www.u-blox.com/en/limited-use-license-agreement-nxp?ub_contact__c={!User.Alias}
+
+Under this link, you will be able to fill in a web form and to agree to the terms of the LULA by validly submitting the form.
+
+We thank you and send you our best regards,
+
+u-blox AG
+Zürcherstrasse 68
+8800 Thalwil
+Switzerland
+
+Phone:  +41 44 722 74 44
+Fax:      +41 44 722 74 47
+Email:    info@u-blox.com</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

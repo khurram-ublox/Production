@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_in_CHF_at_const_exch_rate__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(CurrencyIsoCode,
+&quot;EUR&quot;, $Setup.Constant_Exchange_Rates__c.EUR2CHF__c ,
+&quot;JPY&quot;,  $Setup.Constant_Exchange_Rates__c.JPY2CHF__c ,
+&quot;USD&quot;,  $Setup.Constant_Exchange_Rates__c.USD2CHF__c ,
+1.00) * Sales__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Sales in CHF at const exch rate</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,3 @@
+Please be aware that we issued a quotation to the account {!Opportunity.Account} two weeks ago. Let's see if we are competitive and we can win the business! Please also update the opportunity with the feedback and any Competitor products price you have gathered in two weeks.
+
+Link to the Quotation: https://u-blox.my.salesforce.com/{!Opportunity.Id}

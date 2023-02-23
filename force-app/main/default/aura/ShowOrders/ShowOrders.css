@@ -1,0 +1,48 @@
+.THIS .spinnerBox {
+    height: 200px;
+    padding-top:100px;
+}
+
+.THIS .datatable {
+    height:500px;
+}
+
+.THIS .datatable tbody td, .THIS .datatable tbody th {
+    font-size: 0.9em;
+}
+
+.THIS .datatable_fix {
+    height: 30px;
+    border-top: 1px solid #ccc;
+}
+
+.THIS .slds-cell-fixed {
+    background-color: #eee;
+}  
+
+.THIS .wrapped-header-datatable .slds-table .slds-th__action .slds-truncate{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: unset;
+    white-space: pre-line;
+    /*  uncomment this if you want break the words further */
+    /* word-wrap: break-word;*/
+
+}
+
+.THIS .wrapped-header-datatable .slds-table .slds-th__action {
+    height: 3rem;
+    font-size: 0.8em;
+}
+
+.THIS .slds-table_header-fixed_container, .THIS .slds-table--header-fixed_container {
+    padding-top: 3rem;
+}
+
+.THIS .wrapped-header-datatable .slds-table .slds-line-height_reset {
+    height: 0rem;
+}
+
+.THIS .slds-table_header-fixed thead th, .THIS .slds-table--header-fixed thead th {
+    padding-top: 0rem;
+}

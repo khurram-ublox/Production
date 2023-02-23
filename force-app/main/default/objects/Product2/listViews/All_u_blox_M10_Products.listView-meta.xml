@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_u_blox_M10_Products</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>Type_No__c</columns>
+    <columns>Packaging_Size__c</columns>
+    <columns>Status_Next_Gate__c</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>PRODUCT2.ACTIVE</columns>
+    <columns>Successor_Product_Type_No__c</columns>
+    <columns>Cellular_Technology__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Positioning_Engine__c</field>
+        <operation>equals</operation>
+        <value>u-blox M10</value>
+    </filters>
+    <label>All u-blox M10 Products</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

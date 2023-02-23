@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>tony.doubell@u-blox.com</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Approval_Process_Stage_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Opportunity_Approved_Email_Services_Team</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>Opportunity_Email_sent_to_distributors</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>neil.hamilton@u-blox.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>tony.doubell@u-blox.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Opportunity steps</label>
+        <name>Opportunity_steps</name>
+        <rejectionActions>
+            <action>
+                <name>Approval_Process_Stage_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>Opportunity_Reject_Distributor_Email</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>This process will approve or reject the opportunities related to services.</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( Owner.Referral_Agreement__c ,
+OR(TEXT( Product_1__r.Product_Center__c ) = &apos;Services&apos;,
+TEXT(Product_2__r.Product_Center__c ) = &apos;Services&apos;, TEXT(Product_3__r.Product_Center__c ) = &apos;Services&apos; ),
+OR(Owner.ProfileId = &apos;00e2p000001opLR&apos;,
+Owner.ProfileId = &apos;00e2p000001opYk&apos;,
+Owner.ProfileId = &apos;00e2p000001VcSm&apos;,
+Owner.ProfileId = &apos;00e2p000001VcSn&apos;
+),
+OR($User.ProfileId =&apos;00e2p000001opLR&apos;,
+$User.ProfileId =&apos;00e2p000001opYk&apos;,
+$User.ProfileId =&apos;00e2p000001VcSm&apos;,
+$User.ProfileId =&apos;00e2p000001VcSn&apos;,
+$User.Alias = &apos;tdou&apos;)
+)</formula>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Approval_Process_Stage_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Opportunity_Submitted_Email_Services_Team</name>
+            <type>Alert</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Services Opportunity Process</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>3</processOrder>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

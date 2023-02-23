@@ -1,0 +1,129 @@
+/* u-blox regular font added for all web */
+@font-face{
+    font-family:'u-blox';
+    src:url(../resource/ubloxWRgEot);
+    src:url(../resource/ubloxWRgEot?#iefix) format("embedded-opentype"),
+        url(../resource/ubloxWRgWoff2) format("woff2"),
+        url(../resource/ubloxWRgWoff) format("woff"),
+        url(../resource/ubloxARgTtf) format("truetype");
+ }
+/* u-blox bold font added */
+@font-face{
+    font-family:'u-blox';
+    src:url(../resource/ubloxWBdEot);
+    src:url(../resource/ubloxWBdEot?#iefix) format("embedded-opentype"),
+        url(../resource/ubloxWBdWoff2) format("woff2"),
+        url(../resource/ubloxWBdWoff) format("woff"),
+    	url(../resource/ubloxABdTtf) format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+/* common hearding style - making it bold */
+  h1, h2, h3, h4, h5, h6 {
+      font-weight:bold
+  }
+/* common style for body */
+  body {
+      font-size: 14px;
+      overflow: initial !important;
+  }
+/* common style for button */
+  button {
+      font-weight:bold;
+         border-radius: 0;
+  }
+/* common style for focus */
+  :focus {
+      outline:none;
+  }
+/* For rounding all the input boxes  */
+  input#continue {
+      border-radius: 0;
+  }
+
+.uiInput--input.input:focus, .uiInput--input .input:focus, .uiInput--input.input:active, .uiInput--input .input:active,
+  .uiInput--textarea .textarea:focus, .uiInput--textarea.textarea:focus, .uiInput--textarea .textarea:active, .uiInput--textarea.textarea:active
+  {
+      border-color: rgba(0, 0, 0, 0.7);
+      box-shadow: none;
+  }
+/*  text input style.. used in profile, contact page & settings*/
+  .uiInput--input.input:focus,
+  .uiInput--input .input:active,
+  .uiInput--textarea .textarea:focus,
+  .uiInput--textarea.textarea:active,
+  .uiInput--select.select:focus,
+  .uiInput--select .select:active,
+  .uiInput--select .uiPopupTrigger a:focus,
+  .uiInput--select .uiPopupTrigger a:active,
+  .forceChatterParticipantsInput.outer.focussed
+  {
+      border-color: #9a9a9a;
+      box-shadow: none;
+  }
+.uiInput--input .input, .uiInput--input.input {   
+    border-radius: 0px !important;
+}
+
+button.action-bar-action-toggleFilter.reportAction.report-action-toggleFilter.slds-button.slds-not-selected.slds-button_icon-border {
+    display: none;
+}
+
+.reportBuilder .edge-builder-ii .report-header .actionBarButtonGroup .slds-tooltip-trigger:only-child button.reportAction, .reportBuilder .edge-builder-ii .headerPanel .actionBarButtonGroup .slds-tooltip-trigger:only-child button.reportAction {
+    display: none;
+}
+
+.forceCommunityCreateRecordButton button, .forceCommunityCreateRecordButton .triggerLink {
+    background: white !important;
+    border: 3px solid #ff6e59 !important;
+    color: #ff6e59 !important;
+    transition: 0.3s !important;
+}
+
+.forceCommunityCreateRecordButton button:hover, .forceCommunityCreateRecordButton .triggerLink:hover {
+    background: #ff6e59 !important;
+    color: white !important;
+}
+.siteforcePrmBody .forceCommunityCreateRecordButton .triggerLabel {
+    font-weight: 600 !important;
+}
+
+.forceCommunityGlobalNavigation .slds-list__item a, .forceCommunityGlobalNavigation .slds-list__item button {
+font-weight: 600 !important;
+}
+
+.forceCommunityGlobalNavigation .slds-list__item .slds-is-nested a {
+font-weight: 300 !important;
+}
+
+.comm-page-home .comm-layout-column:nth-of-type(1) .forceCommunityRecordListCompact,
+.comm-page-home .comm-layout-column:nth-of-type(2) .forceCommunityRecordListCompact {
+border-top: 3px solid #ff6e59 !important;
+}
+
+.cSearchContainer .slds-container_fluid, .cSearchContainer .slds-container--fluid {
+width: 95%
+}
+
+.slds-list_horizontal>.slds-list__item:nth-last-child(2) {
+    order: 22 !important;
+    margin-left: auto;
+}
+.comm-page-custom-user-guide-distributor img {
+    max-width: 85%;
+}
+
+.forceCommunityCreateRecordButton .subMenu .subMenu {
+	box-shadow: initial !important;
+}
+
+.comm-page-account-management .slds-page-header .forceActionsContainer{
+	display:none !important;
+}
+.comm-page-login-home .cPartnerloginlayout #sfdc_username_container:before{
+    content: "Username";
+}
+.comm-page-forgot-password .cPartnerloginlayout .salesforceIdentityForgotPassword2:before{
+    content: "Username";
+}
+:root { --dxp-c-section-columns-max-width: 1170px; }

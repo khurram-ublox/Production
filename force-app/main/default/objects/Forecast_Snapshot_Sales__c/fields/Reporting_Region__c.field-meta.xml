@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Contains(&quot;JP:KR:TW:CN:HK:TW:AU:IN:NZ:SG:TH:Rest of Asia&quot;, Reporting_Area__c ),&quot;APAC&quot;,
+IF(Contains(&quot;AR:BR:CA:CL:MX:US:UY:Rest of Americas&quot;, Reporting_Area__c ),&quot;Americas&quot;,
+IF(Contains(&quot;AT:Benelux:CH:DE:Eastern Europe:ES:FR:IL:IT:Nordic:Rest of EMEA:TR:UK:ZA&quot;, Reporting_Area__c ),&quot;EMEA&quot;,
+&quot;HQ&quot;
+)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Reporting Region</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

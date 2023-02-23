@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RMA_technical</fullName>
+    <active>true</active>
+    <description>RMA technical</description>
+    <label>RMA technical</label>
+    <picklistValues>
+        <picklist>Commercial_Decision__c</picklist>
+        <values>
+            <fullName>Credit Note with Replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Credit Note without Replacement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Condition_of_Samples__c</picklist>
+        <values>
+            <fullName>Desoldered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In u-blox reel%2Ftray %28open%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In u-blox reel%2Ftray %28sealed%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loose samples %28never soldered%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On application board</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_Request__c</picklist>
+        <values>
+            <fullName>8D report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Only Compensation %2F Replacement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Decision__c</picklist>
+        <values>
+            <fullName>Closed without replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodwill credit note</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Goodwill replacement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warranty credit note</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warranty replacement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Failure_detail__c</picklist>
+        <values>
+            <fullName>expedite mixes up parcels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>expedite packs wrong parts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>expedite packs wrong quantity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>return for FW upgrade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>type number changed over time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong p%2Fn confirmed by logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong p%2Fn entered in Abacus order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong p%2Fn offered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong p%2Fn ordered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong p%2Fn requested at logistics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong qty entered in Abacus order</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>wrong qty ordered - goodwill return</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Failure_mode__c</picklist>
+        <values>
+            <fullName>Failure Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure expedite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failure u-blox</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>NOT_USED_Detection_of_Failure__c</picklist>
+        <values>
+            <fullName>Arrival at end customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assembly end test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Before assembly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incoming inspection at customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upon shipping %28before arrival at customer%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin_of_failure_at_customer__c</picklist>
+        <values>
+            <fullName>0km %2F 0hrs failure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualification</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RMA_Status__c</picklist>
+        <values>
+            <fullName>1 New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2 Analysis FAE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Analysis AE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 External Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 Wrap-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 Closed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>RMA_Type__c</picklist>
+        <values>
+            <fullName>Authorized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unauthorized</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

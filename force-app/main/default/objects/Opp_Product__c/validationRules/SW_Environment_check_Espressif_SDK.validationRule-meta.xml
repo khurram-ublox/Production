@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SW_Environment_check_Espressif_SDK</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Software_Environment__c, &quot;OpenCPU Espressif SDK&quot;) &amp;&amp; 
+LEFT(Product__r.Name, 8) &lt;&gt; &quot;NINA-W10&quot; &amp;&amp;
+NOT($User.ProfileId=&quot;00e20000000ki5l&quot;) &amp;&amp;
+NOT($User.ProfileId=&quot;00eD00000016L3v&quot;)</errorConditionFormula>
+    <errorDisplayField>Software_Environment__c</errorDisplayField>
+    <errorMessage>&quot;OpenCPU Espressif SDK&quot;  is not available for the selected product.</errorMessage>
+</ValidationRule>

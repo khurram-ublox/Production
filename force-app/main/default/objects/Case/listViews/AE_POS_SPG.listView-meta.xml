@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_POS_SPG</fullName>
+    <booleanFilter>((1 AND (2 OR 10) AND 3 AND 4 AND 7) OR  (5 AND 6)) OR (8 AND 9)</booleanFilter>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>Product__c</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.ORIGIN</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Date_Escalated_To_AE_Pos__c</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Escalated_To_AE_Pos__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>notContain</operation>
+        <value>9Y,9V,9R,9K,9P,D9,9T,9Z,9L,TM,FT,6R,8E,8U,7P,M8L,DR,M8E,G6000-BA,B78,B88,M8P,8T,6T,8F,5T,A9,9H</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>AE POS</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>mdur,msul,jesk,rmak,imar,oola,mban</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>notContain</operation>
+        <value>F9140-KA</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>ATR</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>AE POS</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>u-center</value>
+    </filters>
+    <label>AE POS - PRO-SPS</label>
+    <sharedTo>
+        <group>AE_POS</group>
+    </sharedTo>
+</ListView>

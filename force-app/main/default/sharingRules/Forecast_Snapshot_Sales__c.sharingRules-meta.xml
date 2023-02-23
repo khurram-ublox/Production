@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>ubloxHQA188663</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>u-blox HQA</label>
+        <sharedTo>
+            <role>ubloxHQ</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>ubloxHQ</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

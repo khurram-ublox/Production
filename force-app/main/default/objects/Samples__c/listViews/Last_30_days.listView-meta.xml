@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_30_days</fullName>
+    <columns>Product_Owner_Alias__c</columns>
+    <columns>Product_Center__c</columns>
+    <columns>Request_Status__c</columns>
+    <columns>Abacus_Reference__c</columns>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Product__c</columns>
+    <columns>Remark__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>uB_Office__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>LAST_N_DAYS:60</value>
+    </filters>
+    <filters>
+        <field>Request_Status__c</field>
+        <operation>equals</operation>
+        <value>Confirmed</value>
+    </filters>
+    <filters>
+        <field>Abacus_Reference__c</field>
+        <operation>lessThan</operation>
+        <value>1</value>
+    </filters>
+    <label>* Last 30 days</label>
+    <sharedTo>
+        <group>System_Admins</group>
+    </sharedTo>
+</ListView>

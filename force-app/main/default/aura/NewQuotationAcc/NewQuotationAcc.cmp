@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"  access="global" controller="NewQuotationAccCtrl">	
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="cloneOppId" type="String" />
+    <p>Please Wait, New Quotation is creating</p>
+</aura:component>

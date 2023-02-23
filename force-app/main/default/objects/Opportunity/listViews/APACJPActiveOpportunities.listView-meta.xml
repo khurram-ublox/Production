@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APACJPActiveOpportunities</fullName>
+    <booleanFilter>1 AND 2 AND (3 or 4 or 5 or 6)</booleanFilter>
+    <columns>Account_Prio__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>Product_3__c</columns>
+    <columns>Product_4__c</columns>
+    <columns>Product_5__c</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Opp_Total_Revenue__c</columns>
+    <columns>Market_Success__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Focus__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>contains</operation>
+        <value>3,4,5,6,7,8</value>
+    </filters>
+    <filters>
+        <field>Account_uB_Office__c</field>
+        <operation>equals</operation>
+        <value>Japan</value>
+    </filters>
+    <filters>
+        <field>Area_design_house__c</field>
+        <operation>equals</operation>
+        <value>Japan</value>
+    </filters>
+    <filters>
+        <field>Area_manufacturing__c</field>
+        <operation>includes</operation>
+        <value>Japan</value>
+    </filters>
+    <filters>
+        <field>Account_uB_Office__c</field>
+        <operation>equals</operation>
+        <value>Japan</value>
+    </filters>
+    <label>APAC JP Active Opportunities</label>
+    <sharedTo>
+        <role>Japan</role>
+    </sharedTo>
+</ListView>

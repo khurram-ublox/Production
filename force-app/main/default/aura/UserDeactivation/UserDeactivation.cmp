@@ -1,0 +1,88 @@
+<aura:component controller="UserDeactivation" implements="forceCommunity:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:attribute name="user" type="User"/>
+    <aura:attribute name="reason_set" type="String" default=""/>
+    
+    <h1 class="slds-text-heading_large">Deactivate My Profile</h1> 
+    
+    <aura:if isTrue="{!v.user.Id}">
+	<form>
+        <div class="slds-text-heading_small slds-p-top_large">Do you really want to deactivate your profile?</div>
+
+        <div class="slds-p-top_small">
+            <b>Reason for leaving:</b>
+        </div>
+
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="useless" name="reason" value="useless" change="{!c.onGroup}" />
+                <span>I don't find the community portal useful</span>
+            </label>
+        </div>
+                    
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_xx-small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="many_emails" name="reason" value="many_emails" change="{!c.onGroup}" />
+                <span>I get too many emails, requests from u-blox</span>
+            </label>
+        </div>
+            
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_xx-small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="another_account" name="reason" value="another_account" change="{!c.onGroup}" />
+                <span>I have another account</span>
+            </label>
+        </div>
+            
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_xx-small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="privacy_concern" name="reason" value="privacy_concern" change="{!c.onGroup}" />
+                <span>I have a privacy concern</span>
+            </label>
+        </div>
+            
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_xx-small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="temporary_deactivation" name="reason" value="temporary_deactivation" change="{!c.onGroup}" />
+                <span>This is temporary. I'll be back</span>
+            </label>
+        </div>
+                    
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_xx-small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="hacked" name="reason" value="hacked" change="{!c.onGroup}" />
+                <span>My account was hacked</span>
+            </label>
+        </div>
+                    
+        <div class="uiInput uiInputRadio uiInput--default uiInput--radio slds-m-top_xx-small">
+            <label class="uiLabel-left form-element__label uiLabel">
+                <ui:inputRadio text="other" name="reason" value="other" change="{!c.onGroup}" />
+                <span>Other</span>
+            </label>
+        </div>
+        
+        <div class="slds-p-top_large" style="color:red;">
+            By deactivating your profile you will lose access to the website!
+        </div>
+        
+        <div class="slds-form-element__row slds-p-top_small">
+            <div class="slds-form-element">
+                <ui:button class="slds-button slds-button_brand communityBtn form-control" aura:id="button" label="Deactivate" press="{!c.deactivate}"/>
+                
+                <ui:button class="form-control" aura:id="button" label="Cancel" press="{!c.cancel}"/>
+                
+            </div>
+        </div>
+
+        
+        <div class="slds-m-bottom_x-large"></div>
+        
+	</form>
+        
+        <aura:set attribute="else">
+            <div class="slds-p-top_small">Sorry, you don't have a permission to access this page!</div>
+        </aura:set>
+        
+    </aura:if>
+</aura:component>

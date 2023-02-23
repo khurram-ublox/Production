@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prev_Owner_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>To be used to store previous owner (Contact linked to Partner User). Made for project IN_SFC_PALIUP</description>
+    <externalId>false</externalId>
+    <label>Prev Owner Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Contacts</relationshipLabel>
+    <relationshipName>Contacts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

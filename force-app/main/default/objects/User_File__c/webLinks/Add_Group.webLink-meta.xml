@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Group</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add Group</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>{!IF($User.UIThemeDisplayed = &apos;Theme4d&apos;,
+URLFOR(&quot;/lightning/o/User_Group_Item__c/new?count=4&amp;nooverride=1&amp;useRecordTypeCheck=1&amp;navigationLocation=RELATED_LIST&amp;defaultFieldValues=User__c=&quot;&amp;User_File__c.OwnerId&amp;&quot;&amp;backgroundContext=%2Flightning%2Fr%2FUser_File__c%2F&quot;&amp;User_File__c.Id&amp;&quot;%2Fview&quot;),
+URLFOR(&quot;/a2X/e?CF00N0E0000084R61=&quot;&amp;User_File__c.OwnerFullName&amp;&quot;&amp;CF00N0E0000084R61_lkid=&quot;&amp;User_File__c.OwnerId&amp;&quot;&amp;retURL=/&quot;&amp;User_File__c.Id)
+)}</url>
+</WebLink>

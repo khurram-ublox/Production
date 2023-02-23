@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>When multiple products are in evaluation, set the most probable one as “Evaluation”, all others as “Alternative product”. These will not count as revenue or contribution.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When multiple products are in evaluation, set the most probable one as “Evaluation”, all others as “Alternative product”. These will not count as revenue or contribution.</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Alternative Product</fullName>
+                <default>false</default>
+                <label>Alternative Product</label>
+            </value>
+            <value>
+                <fullName>Evaluation</fullName>
+                <default>true</default>
+                <label>Evaluation</label>
+            </value>
+            <value>
+                <fullName>Won</fullName>
+                <default>false</default>
+                <label>Won</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <label>Lost</label>
+            </value>
+            <value>
+                <fullName>Not applicable</fullName>
+                <default>false</default>
+                <label>Not applicable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

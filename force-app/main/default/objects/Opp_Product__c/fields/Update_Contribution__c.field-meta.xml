@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Contribution__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Triggers new calculation of contribution with updated values (COGS, etc.). Once it&apos;s been updated, it&apos;s unticked automatically.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Triggers new calculation of contribution with updated values (COGS, etc.). Once it&apos;s been updated, it&apos;s unticked automatically.</inlineHelpText>
+    <label>Update Contribution</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

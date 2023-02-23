@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_filled_for_e_NDA_e_LULA_M</fullName>
+    <active>true</active>
+    <description>Check if there is valid email before e-NDA, e-LULA-M</description>
+    <errorConditionFormula>(ISBLANK(Email)||((Email_address_probably_not_valid__c=TRUE)&amp;&amp;(Reactivate_Email_Address__c=FALSE)))&amp;&amp;((ISCHANGED(e_NDA__c)&amp;&amp;(e_NDA__c=TRUE))||(ISCHANGED(e_LULA_M__c)&amp;&amp;(e_LULA_M__c=TRUE)))</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>For e-NDA/e-LULA-M Email should be filled or checked if it&apos;s valid. If the Email is valid, tick &quot;Reactivate Email Address&quot;</errorMessage>
+</ValidationRule>

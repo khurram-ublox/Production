@@ -1,0 +1,8 @@
+{!Product2.Type_No__c} changed the status to End-of-Life.
+
+Type number: {!Product2.Type_No__c}
+Product status: {!Product2.Product_Status__c}
+Product description: {!Product2.Product_Text_1__c} {!Product2.Product_Text_2__c}
+
+
+Link to record: {!Product2.Link}

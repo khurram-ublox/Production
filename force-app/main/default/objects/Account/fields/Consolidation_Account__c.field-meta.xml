@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consolidation_Account__c</fullName>
+    <description>Orig: IF(LEN( Cluster_Account__c) =0, Name , Cluster_Account__c )</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(ParentId),Name,Parent.Name)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Parent Account, or itself if no Parent Account</inlineHelpText>
+    <label>Consolidation Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

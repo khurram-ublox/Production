@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_to_Last_Owner_DO_NOT_USE</fullName>
+    <availability>online</availability>
+    <description>Changes Case Owner to last one and notifies him/her</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Return to Last Owner DO NOT USE</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+var CaseId = &quot;{!Case.Id}&quot;;
+var OwnerId = &quot;{!Case.OwnerId}&quot;;
+//var LastOwnerId = &quot;{!Case.Last_Owner_ID__c}&quot;;
+var LastOwnerId = &quot;{!Case.Return_ToId__c}&quot;;
+var LastOwner = &quot;{!Case.Return_To__c}&quot;;
+
+if (LastOwnerId == &quot;&quot;){ 
+    window.alert(&quot;There is no Comment added. Please press Escalate or change the Case Owner manually.&quot;);
+}
+else {
+	
+//    var r = window.confirm(&quot;This will return the Case to the last owner. Are you sure you want to do this?&quot;); 
+    var r = window.confirm(&quot;This will return the Case to &quot;+LastOwner+&quot; who made the last Comment before you. Are you sure you want to do this?&quot;); 
+
+    if (r == true) 
+    { 
+        var UserId = &quot;{!$User.Id}&quot;;
+
+// creates a CaseTeamMember record for the actual owner of the case
+
+        var ct = new sforce.SObject(&quot;CaseTeamMember&quot;);
+
+        ct.ParentId = CaseId;
+        ct.MemberId = UserId;
+
+        ct.TeamRoleId = &quot;0B7D0000000CanX&quot;;
+
+        var result = sforce.connection.create([ct]);
+
+//alert (result)
+
+// returns case to the case initiator
+// adds timestamp when returned to case initiator
+
+        var c = new sforce.SObject(&quot;Case&quot;);
+
+        c.Id = CaseId;
+        c.OwnerId = LastOwnerId;
+        c.Set_Case_Returned_Timestamp__c = &apos;True&apos;;
+
+// set flag to trigger notification mail to new owner
+        c.Send_Notification_Mail__c = &apos;True&apos;;
+
+        var result = sforce.connection.update([c]);
+
+//alert (result)
+
+        window.parent.location.href=&quot;/&quot;+CaseId;
+    }
+}</url>
+</WebLink>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Special_Terms__c</fullName>
+    <description>Indicates special terms</description>
+    <externalId>false</externalId>
+    <label>Special Terms</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Automotive customer</fullName>
+                <default>false</default>
+                <label>Automotive customer</label>
+            </value>
+            <value>
+                <fullName>EoL/PCN conditions beyond standard</fullName>
+                <default>false</default>
+                <label>EoL/PCN conditions beyond standard</label>
+            </value>
+            <value>
+                <fullName>Epidemic failure &gt; 5 years</fullName>
+                <default>false</default>
+                <label>Epidemic failure &gt; 5 years</label>
+            </value>
+            <value>
+                <fullName>GNSS only</fullName>
+                <default>false</default>
+                <label>GNSS only</label>
+            </value>
+            <value>
+                <fullName>IFRS 15</fullName>
+                <default>false</default>
+                <label>IFRS 15</label>
+            </value>
+            <value>
+                <fullName>LoL equal or greater than 1 mio USD</fullName>
+                <default>false</default>
+                <label>LoL equal or greater than 1 mio USD</label>
+            </value>
+            <value>
+                <fullName>No sub-cap for late delivery</fullName>
+                <default>false</default>
+                <label>No sub-cap for late delivery</label>
+            </value>
+            <value>
+                <fullName>Payment terms &gt;30 days</fullName>
+                <default>false</default>
+                <label>Payment terms &gt;30 days</label>
+            </value>
+            <value>
+                <fullName>Removal and installation &gt; 5 years</fullName>
+                <default>false</default>
+                <label>Removal and installation &gt; 5 years</label>
+            </value>
+            <value>
+                <fullName>Royalties to u-blox</fullName>
+                <default>false</default>
+                <label>Royalties to u-blox</label>
+            </value>
+            <value>
+                <fullName>SEP coverage beyond GT&amp;C</fullName>
+                <default>false</default>
+                <label>SEP coverage beyond GT&amp;C</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

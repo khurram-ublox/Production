@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_uB_Office__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case (Reporting_Area__c,
+&quot;AU&quot;,&quot;Australia&quot;,
+&quot;NZ&quot;,&quot;Australia&quot;,
+&quot;IN&quot;,&quot;India&quot;,
+&quot;MY&quot;,&quot;Rest of APAC&quot;,
+&quot;PH&quot;,&quot;Rest of APAC&quot;,
+&quot;SG&quot;,&quot;Rest of APAC&quot;,
+&quot;TH&quot;,&quot;Rest of APAC&quot;,
+&quot;JP&quot;,&quot;Japan&quot;,
+&quot;CN&quot;,&quot;China&quot;,
+&quot;HK&quot;,&quot;China&quot;,
+&quot;TW&quot;,&quot;Taiwan&quot;,
+&quot;KR&quot;,&quot;Korea&quot;,
+&quot;Rest of APAC&quot;,&quot;Rest of APAC&quot;,
+
+Case(Reporting_Region__c ,
+&quot;EMEA&quot;,&quot;EMEA&quot;,
+&quot;AMERICAS&quot;, &quot;Americas&quot;,
+&quot;HQ&quot;)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Derived from Reporting Area</inlineHelpText>
+    <label>Reporting uB Office</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

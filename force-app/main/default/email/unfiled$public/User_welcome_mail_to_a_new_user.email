@@ -1,0 +1,20 @@
+Hi {!Target_User.FirstName}
+
+Welcome to u-blox Salesforce CRM!
+
+We just created your Salesforce account. To successfully log in and use the CRM system, please do the following:
+
+•	Activate your account by clicking the link you have received in a separate e-mail.
+•	Log in to http://u-blox.my.salesforce.com
+•	Set up the multi-factor authentication (MFA). More on https://ubloxcom.sharepoint.com/SitePages/Multifactor-Authentication.Salesforce.aspx
+•	Modify your password / personal settings: go to Personal Setup / My Personal Information.
+•	Follow an on-line video training session "Getting Started: Navigating Salesforce", accessible via "Help & Training" (at the top of the website).
+•	Learn about the u-blox specific implementations on the Salesforce InfoCentre page:
+https://ubloxcom.sharepoint.com/SitePages/Salesforce.aspx
+
+We hope you will make good use of the tool. In case you need a help, please open a ticket using the Salesforce InfoCentre page (link above).
+
+
+Regards,
+
+u-blox Salesforce Team

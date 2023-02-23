@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_No__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>Assigned by u-blox Sales Operations - upon Approval of Registration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Assigned by u-blox Sales Operations - upon Approval of Registration.</inlineHelpText>
+    <label>Registration No</label>
+    <length>25</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

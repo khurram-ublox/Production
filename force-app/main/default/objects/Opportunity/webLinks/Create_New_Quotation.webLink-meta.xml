@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_New_Quotation</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Quotation</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+//Created: 11.04.2008 - Werner Grätzer - projectnet gmbh
+//Changed: 22.04.2009 - OPP.AccountId = AccountId
+//Changed: 04.08.2015 - :khir: added Referred_Opportunity_Account__c
+//Converted to JavaScript Button: 18.06.2014 - PRN-080751
+
+
+var AccountId = &quot;{!Account.Id}&quot;;
+var OpportunityId = &quot;{!Opportunity.Id}&quot;;
+var QuotationId = &apos;&apos;;
+var RoleOPPStr = &quot;Contact Quotation&quot;;
+
+var accResult = sforce.connection.query(&quot;SELECT Id, Name, OppCloseDate__c, Abacus_Payterms__c, CurrencyIsoCode, OwnerId FROM Account WHERE Id = &apos;&quot; +AccountId+ &quot;&apos;&quot;);
+var records = accResult.getArray(&quot;records&quot;);
+
+var OppCloseDate = records[0].OppCloseDate__c;
+var PayTerms = records[0].Abacus_Payterms__c;
+
+
+if (OpportunityId==&quot;&quot;)
+{
+	var OpportunityName = records[0].Name;
+	var QuotationCurrency = records[0].CurrencyIsoCode;
+	var QuotationOwnerId = records[0].OwnerId;
+}
+else
+{
+	var oppResult = sforce.connection.query(&quot;SELECT Name, CurrencyIsoCode, OwnerId FROM Opportunity WHERE Id = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+	var records = oppResult.getArray(&quot;records&quot;);
+
+	var OpportunityName = records[0].Name;
+	var QuotationCurrency = records[0].CurrencyIsoCode;
+	var QuotationOwnerId = records[0].OwnerId;
+}
+
+//Id RecordTypeId = [SELECT Id FROM RecordType WHERE SobjectType=&apos;Case&apos; and Name = &apos;Quotation&apos; LIMIT 1].Id;
+
+var OPP = new sforce.SObject(&quot;Opportunity&quot;);
+OPP.Name = OpportunityName;
+OPP.OwnerId = QuotationOwnerId
+OPP.CurrencyIsoCode = QuotationCurrency;
+OPP.Quotation_Account__c = AccountId;
+OPP.Referred_Opportunity_Account__c = AccountId; /* ADDED 04.08.2015 by :khir: */
+OPP.AccountId = AccountId; /* ADDED 22.04.2009 */
+OPP.RecordTypeId = &quot;01220000000CqRdAAK&quot;;/*Record ID für Quotation*/
+OPP.StageName =&quot;3 Calling On&quot;;
+OPP.CloseDate = OppCloseDate;
+OPP.Payment__c = PayTerms;
+OPP.Referred_Opportunity__c = OpportunityId;
+
+var oppCreate = sforce.connection.create([OPP],{onSuccess: handleOppSuccess, onFailure: handleOppFailure});
+
+
+function handleOppSuccess(result){
+	var records = result;
+	if(records[0].success!=&quot;false&quot;)
+	{
+		QuotationId = records[0].id;
+		//If started from an opportunity
+		if (OpportunityId!=&quot;&quot;) {
+			//queries all opp products related to this opportunity
+			sforce.connection.query(&quot;SELECT Id, Product__c, Annual_Quantity__c, Unit_Price__c, Use_Restriction__c, IPR_Coverage__c FROM Opp_Product__c WHERE Opportunity__c = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;,
+								{onSuccess: handleGetOppProdSuccess, onFailure: handleGetOppProdFailure}
+							);
+			
+		}
+	}
+	else{
+		showError(records[0].errors.message);
+	}	
+}
+
+function handleOppFailure(error){
+	showError(error.message);
+}
+
+var oppProdRecords;
+var countOppProd = 0;
+function handleGetOppProdSuccess(result){
+	var records = result.getArray(&quot;records&quot;);
+	oppProdRecords = records;
+	//Loop through the opp products in the records set
+	countOppProd = records.length;
+	if(countOppProd&gt;0)
+	{
+		for(var i=0;i&lt;records.length;i++){
+			//queries the PriceBookEntryId matching this opp product
+			var resultPBE = sforce.connection.query(&quot;SELECT Id,Product2Id FROM PricebookEntry WHERE Product2Id = &apos;&quot; +records[i].Product__c+ &quot;&apos; AND CurrencyIsoCode = &apos;&quot; +QuotationCurrency+ &quot;&apos;&quot;,
+			{onSuccess: handleGetPBEntrySuccess, onFailure: handleGetPBEntryFailure});	
+		}	
+	}else{
+		refreshContactRoles(AccountId,OpportunityId,QuotationId,&quot;Contact Quotation&quot;,&quot;Contact Commercial&quot;);			
+	}
+}
+
+function handleGetOppProdFailure(error){
+	showError(error.message);
+	redirectFunc();
+}
+
+var LINArr = [];
+
+function handleGetPBEntrySuccess(result){
+	var records2 = result.getArray(&quot;records&quot;);
+	if (records2.length&gt;0){
+		var recObj = oppProdRecords.find(x =&gt; x.Product__c === records2[0].Product2Id);
+		if(recObj){
+			//create an opp line item in the quotation for this opp product
+			var LIN = new sforce.SObject(&quot;OpportunityLineItem&quot;);
+			LIN.OpportunityId = QuotationId;
+			LIN.PriceBookEntryId = records2[0].Id;
+			LIN.Quantity = recObj.Annual_Quantity__c;
+			LIN.UnitPrice = recObj.Unit_Price__c;
+			LIN.Use_Restriction__c = recObj.Use_Restriction__c;
+			LIN.IPR_Coverage__c = recObj.IPR_Coverage__c
+			LINArr.push(LIN);
+			countOppProd --;
+			if(countOppProd == 0 &amp;&amp; LINArr.length&gt;0)
+			{	
+				var result = sforce.connection.create(LINArr,{onSuccess: function(result) {
+					for(var ij =0 ;ij&lt;result.length;ij++)
+					{
+						if(result[ij].success==&quot;false&quot;)
+						{
+							console.log(result[ij].errors.message); 
+						}
+				
+					}
+					refreshContactRoles(AccountId,OpportunityId,QuotationId,&quot;Contact Quotation&quot;,&quot;Contact Commercial&quot;);					
+				}
+				, onFailure: function(error){
+						showError(error.message);
+						redirectFunc();
+				}
+				});	
+			}		
+		}
+		
+	}else{
+			refreshContactRoles(AccountId,OpportunityId,QuotationId,&quot;Contact Quotation&quot;,&quot;Contact Commercial&quot;);			
+	}
+			
+}
+
+function handleGetPBEntryFailure(error){
+	showError(error.message);
+	redirectFunc();
+}
+
+function refreshContactRoles(AccountId,OpportunityId,RefreshId,RoleOPP,RoleACC){
+	if(OpportunityId != &quot;&quot;) {
+		sforce.connection.query(&quot;SELECT ContactId, IsPrimary FROM OpportunityContactRole WHERE Role = &apos;&quot; +RoleOPP+ &quot;&apos; AND OpportunityId = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;,{
+			onSuccess: handleGetOppConRoleSuccess
+			, onFailure: function(error){
+					showError(error.message);
+			}
+			});
+		
+	}
+	
+	/*if (records.length == 0){
+		var result = sforce.connection.query(&quot;SELECT ContactId, IsPrimary FROM AccountContactRole WHERE Role = &apos;&quot; +RoleACC+ &quot;&apos; AND AccountId = &apos;&quot; +AccountId+ &quot;&apos;&quot;);
+		var records = result.getArray(&quot;records&quot;);
+	}*/
+
+	if(RefreshId != &quot;&quot;) {
+		var result = sforce.connection.query(&quot;SELECT Id FROM OpportunityContactRole WHERE OpportunityId = &apos;&quot; +RefreshId+ &quot;&apos;&quot;);
+		var deleterecords = result.getArray(&quot;records&quot;);
+
+		if (deleterecords.length &lt; 7){
+			for(var i=0;i&lt;deleterecords.length;i++){
+				var delResult = sforce.connection.deleteIds([deleterecords[i].Id]);
+			}
+		}
+	}	
+}
+
+function handleGetOppConRoleSuccess(result){
+	var records = result.getArray(&quot;records&quot;);
+	var RolArr = [];
+	for(var i=0;i&lt;records.length;i++){
+		var ROL = new sforce.SObject(&quot;OpportunityContactRole&quot;);
+		ROL.ContactId = records[i].ContactId;
+		ROL.IsPrimary = records[i].IsPrimary;
+		ROL.OpportunityId = QuotationId;
+		ROL.Role = RoleOPPStr;
+		RolArr.push(ROL);		
+	}
+	if(RolArr.length&gt;0)
+		sforce.connection.create(RolArr,{onSuccess: handleCreateOppConRoleSuccess, onFailure: handleCreateOppConRoleFailure});
+	else
+		redirectFunc();
+	
+}
+
+function handleCreateOppConRoleSuccess(result){
+	for(var ij =0 ;ij&lt;result.length;ij++)
+	{
+		if(result[ij].success==&quot;false&quot;)
+		{
+			console.log(result[ij].errors.message); 
+		}
+
+	}
+	redirectFunc();
+}
+
+
+function redirectFunc(){
+	if(QuotationId!=&apos;&apos;)
+		window.parent.location.href=&quot;/&quot;+ QuotationId +&quot;/e?retURL=%2F&quot;+QuotationId;
+}
+function handleCreateOppConRoleFailure(error){
+	showError(error.message);
+}
+
+function showError(error){
+	alert(&apos;Error :&apos;+error);
+	throw new Error(error);
+}</url>
+</WebLink>

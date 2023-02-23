@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Share_China_out_of_range</fullName>
+    <active>true</active>
+    <errorConditionFormula>or(Share_China__c &gt; 1, Share_China__c &lt; 0)</errorConditionFormula>
+    <errorDisplayField>Share_China__c</errorDisplayField>
+    <errorMessage>The field must be set between 0 and 100 [percent]</errorMessage>
+</ValidationRule>

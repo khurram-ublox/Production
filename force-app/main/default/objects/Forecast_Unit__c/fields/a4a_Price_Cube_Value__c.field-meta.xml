@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Price_Cube_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>NULLVALUE(Actual_Sales_Price__c,NULLVALUE(Budget_Price_next_FY__c,Budget_Price__c))
+
+*
+CASE( CurrencyIsoCode , 
+&quot;USD&quot;,$User.USDtoCHF__c, 
+&quot;EUR&quot;,$User.EURtoCHF__c, 
+&quot;JPY&quot;, $User.JPYtoCHF__c , 
+1
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Price Cube Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

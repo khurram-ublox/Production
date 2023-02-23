@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Closure_Reminder_Sent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Cases LastModifiedDate between 150 days to 359 will not be closed yet but after 1 notification and 1 month later they will be if not modified by owner to take action.
+This checkbox is used to remember the notification is sent or not.
+Also used in Portal Community Case Schedule Reminder</description>
+    <externalId>false</externalId>
+    <label>Last Closure Reminder Sent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

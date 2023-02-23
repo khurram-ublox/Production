@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Account created for potentional competitor and needs email for some other details.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acc: Notify Potential Competitor</name>
+    <style>none</style>
+    <subject>Account: {!Account.Name} has been created (Potential Competitor)</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

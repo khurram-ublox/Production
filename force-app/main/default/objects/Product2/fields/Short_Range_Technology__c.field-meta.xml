@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Short_Range_Technology__c</fullName>
+    <externalId>false</externalId>
+    <label>Short Range Technology</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BT Classic</fullName>
+                <default>false</default>
+                <label>BT Classic</label>
+            </value>
+            <value>
+                <fullName>BT Low Energy</fullName>
+                <default>false</default>
+                <label>BT Low Energy</label>
+            </value>
+            <value>
+                <fullName>BT Dual-mode</fullName>
+                <default>false</default>
+                <label>BT Dual-mode</label>
+            </value>
+            <value>
+                <fullName>Wi-Fi 802.11ac</fullName>
+                <default>false</default>
+                <label>Wi-Fi 802.11ac</label>
+            </value>
+            <value>
+                <fullName>Wi-Fi 802.11n</fullName>
+                <default>false</default>
+                <label>Wi-Fi 802.11n</label>
+            </value>
+            <value>
+                <fullName>802.11p</fullName>
+                <default>false</default>
+                <label>802.11p</label>
+            </value>
+            <value>
+                <fullName>802.15.4</fullName>
+                <default>false</default>
+                <label>802.15.4</label>
+            </value>
+            <value>
+                <fullName>Multiradio</fullName>
+                <default>false</default>
+                <label>Multiradio</label>
+            </value>
+            <value>
+                <fullName>Not applicable</fullName>
+                <default>true</default>
+                <label>Not applicable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

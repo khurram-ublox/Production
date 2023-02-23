@@ -1,0 +1,14 @@
+There is a request to remove the flag of the following Opp Product for the forecast.
+
+Account: {!Opp_Product__c.Opportunity_Account__c}
+Product: {!Opp_Product__c.Product__c}
+Annual Quantity: {!Opp_Product__c.Annual_Quantity__c}
+Opportunity Stage: {!Opp_Product__c.Opportunity_Stage__c}
+Start Production: {!Opp_Product__c.Start_Production__c}
+Opp Product Status: {!Opp_Product__c.Status__c}
+
+Opportunity Owner: {!Opp_Product__c.Opportunity_Owner__c}
+
+The following actions are needed
+1. Go to {!Opp_Product__c.Link}
+2. Approve or reject.

@@ -1,0 +1,46 @@
+<aura:component controller="CaseService">
+    <aura:attribute name="originalCaseId" type="String" access="public"/>
+    
+    <aura:attribute name="fromEmail" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="caseFiles" type="ContentDocument" />
+    <aura:attribute name="selectedFileIds" type="List" default="[]" />
+    <aura:attribute name="caseFilesWrapped" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.loadCaseFiles}" />
+    <aura:handler name="change" value="{!v.originalCaseId}" action="{!c.loadCaseFiles}" />
+
+    <aura:attribute name="fromRMA" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="RMAId" type="String" access="public"/>
+    
+   
+    <aura:if isTrue="{!v.fromRMA}">
+        <div>
+            <table class="slds-table slds-table--bordered">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>File Name</th>
+                        <th>Size</th>
+                        <th>Created Date</th>
+                        <th>Created By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.caseFilesWrapped}" var="file">
+                        <tr>
+                            <td class="slds-col slds-size--1-of-12"><input id="{!file.Id}" type="checkbox" checked="{!file.selected}" onchange="{!c.onSelect}"/></td>
+                            <td class="slds-col slds-size--5-of-12">{!file.Title}</td>
+                            <td class="slds-col slds-size--2-of-12" data-label="Size"> 
+                                <ui:outputNumber value="{!file.ContentSize/1024}"/>KB
+                            </td>
+                            <td class="slds-col slds-size--2-of-12" data-label="Created Date"> 
+                                <ui:outputDateTime value="{!file.CreatedDate}"/>
+                            </td>
+                            <td class="slds-col slds-size--2-of-12"><a onclick="{!c.openCreater}" data-accId="{!file.CreatedById}" data-accName="{!file.CreatedBy.Name}">{!file.CreatedBy.Name}</a></td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </aura:if>
+
+</aura:component>

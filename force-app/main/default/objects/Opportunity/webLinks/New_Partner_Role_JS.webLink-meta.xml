@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Partner_Role_JS</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Partner Role</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+var OppID = &quot;{!Opportunity.Id}&quot;;
+var UserID = &quot;{!$User.Id}&quot;;
+var AccountID =&quot;{!Account.Id}&quot;;
+
+/* Hier wird der Variable__c des aktuellen Users abgefragt mit der Information über die letzte Opportunity */
+
+var result = sforce.connection.query(&quot;SELECT Id, Name, LastOppID__c, LastPartnerRoleID__c FROM Variable__c WHERE Name = &apos;&quot; +UserID+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/* Falls ein Record vorhanden ist, wird diese ID als VariableID gesetzt */
+
+if (records[0] != null)
+{
+
+var LastOppID = records[0].LastOppID__c;
+var VariableID = records[0].Id;
+var LastPartnerRoleID = records[0].LastPartnerRoleID__c;
+
+/* Falls ein Eintrag LastPartnerRoleID existiert, wird der Partner_Account__c davon abgefragt, um zu prüfen, ob dieser ausgefüllt wurde */
+
+if (LastPartnerRoleID!= null)
+{
+
+var result = sforce.connection.query(&quot;SELECT Id, IsDeleted, Partner_Account__c FROM Partner_Role__c WHERE Id = &apos;&quot; +LastPartnerRoleID+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/* Falls die Partner Role nicht schon gelöscht ist und kein Partner_Account__c existiert, wird die Partner Role gelöscht */
+
+if (records[0] != null)
+{
+
+if (records[0].Partner_Account__c == null)
+{
+
+var delResult = sforce.connection.deleteIds([LastPartnerRoleID]);
+
+}
+}
+}
+}
+
+
+/* Sonst wird jetzt ein neuer Variable__c record erstellt und diese Id als VariableID gesetzt. */
+
+else
+{
+var VAR = new sforce.SObject(&quot;Variable__c&quot;);
+VAR.Name = UserID;
+var result = sforce.connection.create([VAR]);
+
+
+var VariableID = result[0].id;
+
+}
+
+/* Falls die OppID leer ist - dies ist beim Save&amp;New der Fall, wird die OppID mit dem Wert aus dem Variable__c Record gespiesen, also LastOppID__c gesetzt */
+
+if (OppID==&quot;&quot;)
+{
+var OppID = LastOppID;
+
+/* Zusätzlich wird jetzt noch der zu dieser Opportunity gehörende Account abgefragt und als AccountID gesetzt. */
+
+var result = sforce.connection.query(&quot;SELECT AccountId FROM Opportunity WHERE Id = &apos;&quot; +OppID+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+var AccountID = records[0].AccountId;
+}
+
+/* Nun kann die neue Partner Role angelegt werden mit allen notwendigen Parametern */
+
+var PAR = new sforce.SObject(&quot;Partner_Role__c&quot;);
+PAR.Opportunity_Account__c = AccountID;
+PAR.Opportunity__c = OppID;
+var result = sforce.connection.create([PAR]);
+
+// alert(result[0])
+
+var PartnerRole = result[0].id;
+
+/* Zusätzlich wird die OppID und die LastPartnerRoleID bei Variable__c in den Record des aktuellen Users geschrieben, dass er bei einem allfälligen Save&amp;New wieder zur Verfügung steht */
+
+var VAR = new sforce.SObject(&quot;Variable__c&quot;);
+VAR.Id = VariableID;
+VAR.LastPartnerRoleID__c = PartnerRole;
+VAR.LastOppID__c = OppID;
+var result = sforce.connection.update([VAR]);
+
+/* Die Partner Role wird im Editiermodus dem Benutzer zur Vervollständigung angezeigt. */
+
+window.parent.location.href=&quot;/&quot; + PartnerRole + &quot;/e?retURL=%2F&quot; + PartnerRole ;</url>
+</WebLink>

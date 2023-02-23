@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_CaseVF</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>page</linkType>
+    <masterLabel>Return Case</masterLabel>
+    <openType>replace</openType>
+    <page>Return_Case</page>
+    <protected>false</protected>
+</WebLink>

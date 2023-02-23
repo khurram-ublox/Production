@@ -1,0 +1,17 @@
+<aura:component implements="forceCommunity:layout" access="global" description="Partner Sign in Layout">
+    <aura:attribute name="space1" type="Aura.Component[]"/>
+    <aura:attribute name="content" type="Aura.Component[]"/>
+    <aura:attribute name="space2" type="Aura.Component[]"/>
+    <aura:attribute name="imagePlaceholder" type="Aura.Component[]"/>
+
+    <div>
+        <div class="left">
+            <div class="wrap">
+                <div class="form">{!v.content}</div>
+            </div>
+            </div>
+        <div class="right">            
+        </div>
+    </div>
+    
+</aura:component>

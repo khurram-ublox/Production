@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FAE_Satisfaction_check</fullName>
+    <active>true</active>
+    <description>FAE Satisfaction field should be edited only by FAE, TM or System Admin.</description>
+    <errorConditionFormula>AND(ISCHANGED(FAE_Satisfaction__c),
+NOT(OR(
+/*
+$User.ProfileId=&quot;00e20000000ki5l&quot;,
+*/
+$User.ProfileId=&quot;00e20000000zSSg&quot;,
+$User.ProfileId=&quot;00e2p000001BMV8&quot;,
+$User.ProfileId=&quot;00e2p000001opLR&quot;,
+
+$User.ProfileId=&quot;00e200000015FVB&quot;,
+$User.ProfileId=&quot;00e2p000001BMJg&quot;,
+CONTAINS($User.Title,&quot;FAE&quot;))))</errorConditionFormula>
+    <errorDisplayField>FAE_Satisfaction__c</errorDisplayField>
+    <errorMessage>FAE Satisfaction field can be edited only by FAE / TM.</errorMessage>
+</ValidationRule>

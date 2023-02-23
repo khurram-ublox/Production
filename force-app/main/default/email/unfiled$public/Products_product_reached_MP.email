@@ -1,0 +1,13 @@
+{!Product2.Type_No__c} changed the status to Mass Production. Please ensure the follow-up:
+- In-depth review of product and support webpages 
+- Review product presentation
+- Publish Type Approvals and MNO certifications 
+- Deactivate old type no in Salesforce
+- Publication of Type Approval and MNO certifications 
+- Further actions as defined market introduction plan
+
+Type number: {!Product2.Type_No__c}
+Product status: {!Product2.Product_Status__c}
+Product description: {!Product2.Product_Text_1__c} {!Product2.Product_Text_2__c}
+
+Link to record: {!Product2.Link}

@@ -1,0 +1,32 @@
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" controller="ServiceCloud_MacroController"
+access="global">
+<aura:attribute name="btnLabel" type="string" default="Run Macro" />
+<aura:attribute name="toEmail" type="string" access="PRIVATE"/>
+<aura:attribute name="ccEmail" type="string" access="PRIVATE"/>
+<aura:attribute name="BccEmail" type="string" access="PRIVATE"/>
+<aura:attribute name="optionsFrom" type="List" access="PRIVATE"/>
+<aura:attribute name="selectedFromAddress" type="string" access="PRIVATE"/>
+<aura:attribute name="options" type="List" access="PRIVATE"/>
+<aura:attribute name="selectedValue" type="String" access="PRIVATE"/>
+<aura:handler name="init" value="{!this}" action="{!c.macrosDropDown}" />
+<aura:handler name="init" value="{!this}" action="{!c.fromDropDown}" />
+<aura:handler name="init" value="{!this}" action="{!c.toAddress}" />
+
+<lightning:select name="macro" label="Select a macro" aura:id="macroid" value="{!v.selectedValue}">
+    <aura:iteration items="{!v.options}" var="option">
+        <option text="{!option.label}" value="{!option.id}" />
+    </aura:iteration>
+</lightning:select>
+
+<lightning:select name="from" label="From" aura:id="fromid" value="{!v.selectedFromAddress}">
+    <aura:iteration items="{!v.optionsFrom}" var="option">
+        <option text="{!option.label}" value="{!option.id}" />
+    </aura:iteration>
+</lightning:select>
+
+<lightning:input type="email" name="toemail" value="{!v.toEmail}" label="To" />
+<lightning:input type="email" name="ccemail" value="{!v.ccEmail}" label="Cc" />
+<lightning:input type="email" name="bccemail" value="{!v.BccEmail}" label="Bcc" /><br/>
+<lightning:button class="slds-float_right" label="{!v.btnLabel}" iconName="utility:play" iconPosition="left"  variant="brand" onclick="{!c.macroAction}"/>
+
+</aura:component>

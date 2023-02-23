@@ -1,0 +1,141 @@
+<apex:page showHeader="true" sidebar="false" lightningStylesheets="true" standardController="QuoteLineItem" recordSetVar="pricebreaks" extensions="quoteLineItemPriceBreaksCtrl" docType="html-5.0">
+    
+    <style>
+        .customTable {
+            margin: 20px 0px 20px 0px;
+        }
+        .customTable, th, td {
+            padding: 3px 5px 5px 5px;
+        }
+        
+    </style>   
+    <apex:form >
+        <apex:pageBlock id="pbmultiprice">
+            <apex:pageMessages />
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveAll}" />
+                <apex:commandButton value="Cancel" action="{!returnToQuote}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem rendered="{!showQuoteLookup}">
+                    <apex:outputLabel value="Add price bresks from an existing quote"></apex:outputLabel>
+                    <apex:inputField value="{!quoteLookupId.QuoteId}" onselect="existingitems(value)"/>                    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:actionFunction name="existingitems" action="{!addPriceBreaksFromExistingQuote}" reRender="pbmultiprice" status="myStatus">
+                <apex:param name="qid" assignTo="{!quoteId}" value="" />
+            </apex:actionFunction>
+            <apex:actionStatus startText="loading..." id="myStatus"/>
+            
+            
+            <apex:repeat value="{!quoteLineItems}" var="item" id="itemstable">
+            
+                <table class="customTable">
+                    <tr style="color: #000;font-size: .9em;font-weight: bold;">
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Suggested Resale</th>
+                    <th>IPR Coverage</th>
+                    <th>Use Restriction</th>
+                    </tr>
+                    <tr >
+                        <td><apex:inputField value="{!item.Product2Id}"/></td>
+                        <td><apex:inputField value="{!item.Quantity}"/></td>
+                        <td><apex:inputField value="{!item.UnitPrice}"/></td>
+                        <td><apex:inputField value="{!item.Suggested_resale__c}"/></td>
+                        <td><apex:inputField value="{!item.IPR_Coverage__c}"/></td>
+                        <td><apex:inputField value="{!item.Use_Restriction__c}"/></td>
+                    </tr>
+                </table>
+            
+            <apex:pageBlockTable title="Price Breaks" style="width:100%;margin-top:20px;" value="{!multiPriceBreaks[item]}" var="break">
+                
+                <apex:column style="width:100px" headerValue="Product">
+                    <apex:outputText value="{!break.productName}"/>                    
+                </apex:column>
+                <apex:column style="width:100px" headerValue="Product Code">
+                    <apex:outputText value="{!break.orderingCode}"/>
+                </apex:column>
+               
+                <apex:column style="width:100px" headerValue="Year">
+                    <apex:inputField style="width:100px" value="{!break.priceBreak.Year__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="Samples < 100">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_100__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="1K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_1k__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="4K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_4k__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="50K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_50k__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="100K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_100k__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="250K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_250k__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="500K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_500k__c}"/>
+                </apex:column>
+                <apex:column style="width:130px" headerValue="1000K+">
+                    <apex:inputField style="width:130px" value="{!break.priceBreak.Price_Sample_1000k__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+            </apex:repeat>      
+        </apex:pageBlock>
+    </apex:form>
+   <!--
+   <apex:includeScript value="/support/console/45.0/integration.js"/>
+   <apex:includeScript value="{!$Resource.uJS}"/>
+   <apex:stylesheet value="{!$Resource.uCSS}"/>
+   <script type="text/javascript" src="/js/functions.js"></script>
+    <script>  
+    getRemotePriceBreaks();
+    function getRemotePriceBreaks() {         
+        var id="{!QuoteLineItem.QuoteId}";
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.quoteLineItemPriceBreaksCtrl.addPriceBreaks}', 
+            id,
+            function(result, event){
+                if (event.status) {
+                    if(result==true){  
+                        uJS.closeAndRefreshTab(id); // from ApexJS.js
+                    }else if(result==false){
+                        alert('Sorry, there was an error during adding price breaks.'); 
+                        uJS.closeTab(id); // from ApexJS.js
+                    }                                       
+                } else {
+                    alert(event.message);
+                    uJS.closeTab(id); // from ApexJS.js
+                }
+                return false;
+            }, 
+            {escape: true}
+        );
+    }  
+    </script>
+
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+    <!--
+    <apex:includeLightning />    
+    <div id="quotelineitempricebreakId" />    
+    <script>
+        $Lightning.use("c:quoteLineItemPriceBreakApp", function() {
+            $Lightning.createComponent("c:quoteLineItemPriceBreaks",
+              { 
+              },
+              "quotelineitempricebreakId",
+              function(cmp) {
+                 console.log('LWC Componenet added in VF page');
+              });
+        });
+    </script>-->
+</apex:page>

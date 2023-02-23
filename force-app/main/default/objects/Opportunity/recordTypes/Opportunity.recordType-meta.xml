@@ -1,0 +1,2641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity</fullName>
+    <active>true</active>
+    <businessProcess>Sales Process</businessProcess>
+    <compactLayoutAssignment>Opportunity</compactLayoutAssignment>
+    <label>Opportunity</label>
+    <picklistValues>
+        <picklist>Application_type__c</picklist>
+        <values>
+            <fullName>ADAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ATM%2C POS%2C vending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aviation %26 UAV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Base station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Car connectivity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital camera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driving recorder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Emergency call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Femtocell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GPS mouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Home entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-car navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machine control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Military %26 government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile gaming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile hotspot and router</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoring %26 control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notebook%2C tablet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PND</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People %26 animal tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Radar detector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation %26 sports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remote display</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Road pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Router and gateway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seismic survey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stolen vehicle recovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle tracking</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approval_Process_Stage__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Approval_Status_Flag__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recalled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Area_Design_Win__c</picklist>
+        <values>
+            <fullName>Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hongkong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rest of APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiwan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Area__c</picklist>
+        <values>
+            <fullName>AZ%2C NM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bay Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brazil%2C Argentina%2C Chile%2C Uruguay%2C Paraguay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO%2C UT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CO%2C UT%2C CA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbia%2C Peru%2C Venezuela%2C Equador%2C Bolivia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eastern %26 South US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eastern Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eastern US</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FL%2C VA%2C MD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flextronics%2C Benchmark%2C Celestica</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GA%2C AL%2C NC%2C SC%2C E%2ETN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IA%2C KS%2C MO%2C NE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IA%2C KS%2C MO%2C NE%2C MN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IA%2C KS%2C MO%2C NE%2C Southern IL%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IL%2CWI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latin America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Island%2C North NJ%2C CT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Los Angeles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MA%2C NH%2C ME%2C RI%2C VT%2C Raytheon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD%2C GA%2C AL%2C NC%2C SC%2C TN%2C VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MD%2C VA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MI%2C IN%2C OH%2C W%2E PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico%2C Foxconn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ND%2C SD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North  %26 West  US %26 Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North %2F West Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North America</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PA%2C NY%2C NJ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacific Northwest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plexus%2C Jabil%2C Sanmina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quebec %2F Ottawa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resellers%2C Distributors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sacremento%2C Reno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Diego</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South %2F East Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Southern NJ%2C Southeast PA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TX%2C OK%2C MS%2C LA%2C AR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toronto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upstate NY %26 New England%2C BAE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upstate NY%2C CT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Western Canada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Western US</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Area_design_house__c</picklist>
+        <values>
+            <fullName>Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hongkong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rest of APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiwan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Area_manufacturing__c</picklist>
+        <values>
+            <fullName>Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hongkong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rest of APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiwan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Area_opportunity_owner__c</picklist>
+        <values>
+            <fullName>Americas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EMEA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hongkong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rest of APAC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiwan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Branch__c</picklist>
+        <values>
+            <fullName>Adelaide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asia Hq</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Atlanta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Auckland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Baltimore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bangalore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bangkok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barcelona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basque</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beijing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Belgium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bologna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bolton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brazil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budapest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Calgary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charlotte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chengdu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chennai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cheshire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chicago</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Christchurch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clearwater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cleveland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daegu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dallas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dayton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Detroit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dortmund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dublin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>El Paso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Erfurt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fairfield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fort Lauderdale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frankfurt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gdansk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gothenburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grand Rapids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guadalajara</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guangzhou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ha Noi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ha%27Er Bin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Halifax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hamburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hangzhou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hannover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Helsinki</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ho Chi Minh City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hong Kong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Houston</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hsinchu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huntsville</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indianapolis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Irvine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jakarta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kansas City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kaunas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kuala Lumpur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leipiz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>London</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long Island</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Los Angeles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lyon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Madrid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manchester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manila</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Melbourne</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memphis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milano</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Milwaukee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minneapolis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moncton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monterrey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Montreal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moscow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mount Laurel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mumbai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Munich</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nanjing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netherlands</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Delhi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ningbo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orlando</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Osaka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oslo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ottawa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Padova</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paris</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phoenix</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pittsburgh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prague</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Puerto Rico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pune</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qingdao</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quebec City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raleigh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rennes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rochester</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Romania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rouen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sacramento</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salt Lake City</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Diego</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>San Jose</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seattle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seoul</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shanghai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shenyang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shenzhen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sofia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>St Louis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stockholm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stuttgart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suzhou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Syracuse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taipei</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tallin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tel Aviv</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tianjin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Torino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toronto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toulouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tulsa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turkey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upstate NY</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vancouver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vejle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vienna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warsaw</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wuhan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Xi%27An</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Xiamen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yohohama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zhengzhou</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zurich</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BusinessUnit__c</picklist>
+        <values>
+            <fullName>Tashang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>u-blox</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DO_NOT_USE_Use_Restriction_del__c</picklist>
+        <values>
+            <fullName>2G Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Telematics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_del__c</picklist>
+        <values>
+            <fullName>DAP %2B add Place and Country manually%2C e%2Eg%2E Shenzhen %28CN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DDP %2B add Place and Country manually%2C e%2Eg%2E Shenzhen %28CN%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FCA Amkor ATP3 Binan %28PH%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FCA Flextronics Althofen %28AT%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FCA Thalwil %28CH%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distribution_Method__c</picklist>
+        <values>
+            <fullName>Demand Shared</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fulfillment Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Distribution_Partner__c</picklist>
+        <values>
+            <fullName>Digi-Key</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Future</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mouser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RFPD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Symmetry Electronics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_tradeshow_exhibition__c</picklist>
+        <values>
+            <fullName>AMIV Kontakt%2E15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ARM TechCon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CES 2016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CTIA 2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canadian Wireless Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Fleets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ELIV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EPFL Forum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ESC %28Brazil%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Embedded Conference Scandinavia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Embedded World %28EW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>European Utility Week %28EUW%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IMTS2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISGNSS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ITS World Congres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan IT Week Autumn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile World Congress %28MWC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SPS IPC Drives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Cells Americas 2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taitronics 2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematics Brazil %26 LATAM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematics West Coast %28TU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireless Congress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>YOW%21 Connected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Focus__c</picklist>
+        <values>
+            <fullName>1 - Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Territory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Portal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fulfillment_Margin__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digi-Key</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press Article</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospecting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Rep</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Search Engine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vertical Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Source_Webform__c</picklist>
+        <values>
+            <fullName>Annual and Half Year Report Order Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Appointment Scheduler</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AssistNow Temporary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Car Campaign Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contact Us Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Download file</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EN- UDR Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event - Investor and Analyst Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Forum Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Global Distribution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High-Precision Campaign Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor Relations Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IoT Healthcare Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Magazine Download Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NB-IoT Project Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEO-M8P Whitepaper Download Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NINA-B1 Whitepaper Download Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>News Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Shop Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PCN Subscription Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset AMERICAS shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset ASIA shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset EMEA shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Order Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product catalog delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Form - Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Form - Distributor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Register new account on AMERICAS online shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Register new account on ASIA online shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Register new account on EMEA online shop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Registration Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Contact Us</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Services Sign-Up Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UDR Campaign Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar Contact Form</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Market_Cluster__c</picklist>
+        <values>
+            <fullName>Asset Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonomous Driving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Buildings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green Mobility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry 4%2E0 %2F IIoT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infotainment and Navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shared Application</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart City%2C Infrastructure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Metering %2F Utility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Retail %26 Payments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Control</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Market_Success__c</picklist>
+        <values>
+            <fullName>1%25 Unlikely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%25 Uncertain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>100%25 Order Visible</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>70%25 Postitive Outlook</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Market__c</picklist>
+        <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Application_Type__c</picklist>
+        <values>
+            <fullName>Advanced telematics %28first mount%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aftermarket telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset tracking and management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Autonomous driving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distribution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EV charging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateways and routers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial automation and monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infotainment and navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metering and utility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micromobility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile computing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile robotics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network infrastructure and time sync</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM telematics %28first mount%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payments and vending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart buildings%2F smart home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart city</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unmanned aerial vehicles %28UAV%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle monitoring and control</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wearables</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>New_Market__c</picklist>
+        <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment__c</picklist>
+        <values>
+            <fullName>-</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 days end of month net</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 days net</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 days upon approved credit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 days net</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash in advance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cash on delivery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>L%2FC irrevocable and confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%2FT in advance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason__c</picklist>
+        <values>
+            <fullName>Auto Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Features</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Follow-up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incumbent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor Opp Qualification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Stopped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>T%26C</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Registration_Type__c</picklist>
+        <values>
+            <fullName>Add parts to existing project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renew an existing project</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Team_members__c</picklist>
+        <values>
+            <fullName>Adam Andres</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adam Strout</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Adrian Tan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amitesh Bajaj</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anthony Protopsaltis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Armin Böshenz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brad Sherrard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bruce Wu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Carine Loo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Daniel Jungo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>David Sel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Derek Wang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dylan Huang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Federico Dal Ferro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Frederic Duhem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Henry You</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hiroshi Yoshimura</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jan Reisen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jason Meilhon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JeeHoon Kim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jennifer Nkire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jim Neff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jochen Steinhauer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>John Demirali</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Krystal Li</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leo DeRosa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ludger Boeggering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marco Tang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mark Murray</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Masanori Yoshida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Michael Li</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ming Chiang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minoru Okuda</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Murali Thandavamurthy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nic Papadopoulos</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nick Tsai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pasi Alajoki</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philipp Weingartner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pietro Sbisa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qing Yuan Yao</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rajen Shah</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Randy Walston</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raphael Baude</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ray Park</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richard Lee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robert Liu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sam Guo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shiho Minkkinen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shone Kim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soyoung Lee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stephen Kim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tesshu Naka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tobey Lee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tonny Zhong</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_quotation__c</picklist>
+        <values>
+            <fullName>Budgetary Quotation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quotation</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_Case__c</picklist>
+        <values>
+            <fullName>AD L2%2B %28passenger cars%2C trucks%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AD L3 %28passenger cars%2C trucks%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AD L4 %28commercial vehicle%2C robot taxi%2C trucks%2C good deliveries%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AD L5 %28commercial vehicle%2C robot taxi%2C good deliveries%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ADAS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ATM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After market monitoring system</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After market navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>After market telematics%2C fleet management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Android driver support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset tracker %28large%29 for cargo%2C container%2C trailer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asset tracker %28small%29 for parcel%2C loggers%2C luggage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Augmented reality navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basic navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Battery monitoring system</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Building security and automation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connected tools and industrial assembly solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dash camera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital signage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital tachograph%2F Electric Logging device%2C drive recorder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Driver monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EV charging %28on board%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EV charging station</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EV charging unit %28on board%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electricity metering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engine start</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Factory logistic optimization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance and trading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gas metering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway%2C router%2C hotspot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green mobility and infotainment and navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grid quality monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heat metering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heavy machinery and construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital and clinical health monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IT networks and data center</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indoor lighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infotainment applications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Keyless entry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lawn Mower</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leakage detection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Macro cells</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mapping%2C geographic survey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micromobility private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micromobility shared</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Navigation %26 infotainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notebook%2C tablet%2C terminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On board wireless backhauling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet and animal livestock tracker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Precision Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Predictive maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process automation control %28sensor%2C actuator%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional audio%2Fvideo%2C broadcasting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rear and side mirror camera monitoring system</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remote configuration and control solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Road tolling system</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Robotics and automated guided vehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SVR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Safe worker monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Security alarm panel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seismic exploration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service%2C configuration interface solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small cells %28micro%2C femto%2C pico%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart city sensor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smart street lighting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solar panel inverter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sport and fitness wearables</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surveillance camera</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TCU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematic%2C Infotainment and navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telematic%2C infotainment and navigation and autonomous driving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test%2C certification equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tyre pressure monitoring system</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAV and drones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UBI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V2X RSU</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V2X on board</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vechicle control and infotainment and navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle Monitoring and infotainment and navigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle update over the air</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vending machine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water metering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eCall</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eHealth home monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eHealth wearables</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

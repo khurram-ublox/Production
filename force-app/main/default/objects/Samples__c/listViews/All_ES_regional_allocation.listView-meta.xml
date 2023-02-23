@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_ES_regional_allocation</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product__c</columns>
+    <columns>Type_No__c</columns>
+    <columns>Quantity__c</columns>
+    <columns>Delivery_Date__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sample_Usage__c</field>
+        <operation>equals</operation>
+        <value>ES (regional allocation)</value>
+    </filters>
+    <label>All ES (regional allocation)</label>
+</ListView>

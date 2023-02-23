@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Americas_Incomplete_Accounts_non_Z_JWH</fullName>
+    <booleanFilter>(1 or 2 or 3) and 4 and 5</booleanFilter>
+    <columns>Priority__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>ACCOUNT.ADDRESS1_STATE</columns>
+    <columns>New_Application_Type__c</columns>
+    <columns>Annual_volume__c</columns>
+    <columns>ACCOUNT.URL</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>ACCOUNT.URL</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>New_Application_Type__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>Annual_volume__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>Americas</value>
+    </filters>
+    <filters>
+        <field>Priority__c</field>
+        <operation>notEqual</operation>
+        <value>Z,C,X</value>
+    </filters>
+    <label>Americas Incomplete Accounts (non-Z) JWH</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

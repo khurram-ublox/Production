@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Order_Number_Required</fullName>
+    <active>true</active>
+    <description>Request Status has changed to Shipped. Enter Order No in Abacus Reference field.</description>
+    <errorConditionFormula>AND( ISPICKVAL(Request_Status__c, &apos;Shipped&apos;), ISBLANK(Abacus_Reference__c),OR(RecordType.DeveloperName = &apos;Engineering_Samples&apos;,RecordType.DeveloperName = &apos;Prototypes&apos;,RecordType.DeveloperName = &apos;Samples&apos;))</errorConditionFormula>
+    <errorDisplayField>Abacus_Reference__c</errorDisplayField>
+    <errorMessage>Please First Enter Order No from Abacus in the field Abacus Reference.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clone_Opp</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clone Opp</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+//Created: 04.07.2008 - Werner Grätzer - projectnet gmbh
+//27.03.09: hbla Field Priority__c replaced by Market__c
+//22.04.09: OPP.Opportunity_Account__c = AccountId; 
+//14.10.10: hbla added various fields to copy all relevant fields
+//13.05.15: khir deleted all fields starting with &quot;GPS&quot; and &quot;Wireless&quot;
+//10.06.15: Converted to JavaScript Button: PRN-090828 - Werner Grätzer
+//10.06.15: added the opp product creation: PRN-090828 - Werner Grätzer
+//21.04.17: :khir: updated with New_Application_Type__c and New_Market__c, removed Market_Success__c
+
+var AccountId = &quot;{!Account.Id}&quot;;
+var OpportunityId = &quot;{!Opportunity.Id}&quot;;
+
+
+var result = sforce.connection.query(&quot;SELECT Id, Name, OwnerId, CurrencyIsoCode, RecordTypeId, Annual_Quantity__c, New_Application_Type__c, New_Market__c, CloseDate, Description, Area_opportunity_owner__c, Area_design_house__c, Area_manufacturing__c, Area_Design_Win__c, Remark_Contribution__c,Team_members__c FROM Opportunity WHERE Id = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+//alert (records[0])
+
+var QuotationCurrency = records[0].CurrencyIsoCode;
+
+// Creates cloned opportuntiy
+var OPP = new sforce.SObject(&quot;Opportunity&quot;);
+OPP.AccountId = AccountId;
+OPP.Opportunity_Account__c = AccountId;
+OPP.Name = records[0].Name + &quot; - New generation&quot;;
+OPP.OwnerId = records[0].OwnerId;
+OPP.CurrencyIsoCode = records[0].CurrencyIsoCode; 
+OPP.RecordTypeId = &quot;01220000000CqRn&quot;;      /*Record ID für Opportunity*/
+OPP.Annual_Quantity__c = records[0].Annual_Quantity__c;
+OPP.New_Application_Type__c = records[0].New_Application_Type__c;
+OPP.New_Market__c = records[0].New_Market__c;
+OPP.StageName =&quot;3 Calling On&quot;;
+OPP.CloseDate = records[0].CloseDate; 
+
+OPP.Description = records[0].Description;
+
+OPP.Area_opportunity_owner__c = records[0].Area_opportunity_owner__c;
+OPP.Area_design_house__c = records[0].Area_design_house__c;
+OPP.Area_manufacturing__c = records[0].Area_manufacturing__c;
+OPP.Area_Design_Win__c = records[0].Area_Design_Win__c;
+OPP.Remark_Contribution__c = records[0].Remark_Contribution__c;
+OPP.Team_members__c = records[0].Team_members__c;
+
+var result = sforce.connection.create([OPP]);
+
+//alert (result[0])
+
+var ClonedOppId = result[0].id;
+
+// alert (ClonedOppId)
+
+
+//queries all opp products related to the original opportunity
+var result = sforce.connection.query(&quot;SELECT Id, Product__c, Annual_Quantity__c, Unit_Price__c, Use_Restriction__c, IPR_Coverage__c FROM Opp_Product__c WHERE Opportunity__c = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+//alert (records[0])
+
+//Loop through the opp products in the records set
+for(var i=0;i&lt;records.length;i++){
+
+
+
+//create an opp product item in the cloned opportuntiy for this opp product
+var OPR = new sforce.SObject(&quot;Opp_Product__c&quot;);
+OPR.Opportunity__c = ClonedOppId;
+OPR.Product__c = records[i].Product__c;
+OPR.Annual_Quantity__c = records[i].Annual_Quantity__c;
+OPR.Unit_Price__c = records[i].Unit_Price__c;
+OPR.Use_Restriction__c = records[i].Use_Restriction__c;
+OPR.IPR_Coverage__c = records[i].IPR_Coverage__c
+
+var result = sforce.connection.create([OPR]);
+
+//alert (result[0])
+
+}
+
+//queries all contact roles from the original opportunity
+var result = sforce.connection.query(&quot;SELECT Id, ContactId, IsPrimary, Role FROM OpportunityContactRole WHERE OpportunityId = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/* alert (records[0]) */
+
+//loop through the contact roles in the records set
+for(var i=0;i&lt;records.length;i++){
+
+//creates the same contact roles for the cloned opportunity
+var ROL = new sforce.SObject(&quot;OpportunityContactRole&quot;);
+ROL.ContactId = records[i].ContactId;
+ROL.IsPrimary = records[i].IsPrimary;
+ROL.Role = records[i].Role;
+ROL.OpportunityId = ClonedOppId;
+
+var result = sforce.connection.create([ROL]);
+
+/* alert (result[0]) */
+
+}
+//queries the partner roles from the original opportunity
+var result = sforce.connection.query(&quot;SELECT Id, Opportunity_Account__c, Partner_Account__c, Partner_Role__c FROM Partner_Role__c WHERE Opportunity__c = &apos;&quot; +OpportunityId+ &quot;&apos;&quot;);
+var records = result.getArray(&quot;records&quot;);
+
+/* alert (records[0]) */
+
+//loop through the partner roles in the records set
+for(var i=0;i&lt;records.length;i++){
+
+//creates the same partner roles for the cloned opportunity
+var PAR = new sforce.SObject(&quot;Partner_Role__c&quot;);
+PAR.Opportunity__c = ClonedOppId;
+PAR.Opportunity_Account__c = records[i].Opportunity_Account__c;
+PAR.Partner_Account__c = records[i].Partner_Account__c;
+PAR.Partner_Role__c = records[i].Partner_Role__c;
+
+var result = sforce.connection.create([PAR]);
+
+/* alert (result[0]) */
+
+}
+
+window.parent.location.href=&quot;/&quot;+ ClonedOppId + &quot;/e?retURL=%2F&quot; + ClonedOppId;</url>
+</WebLink>

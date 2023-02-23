@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CDR__c</fullName>
+    <description>Confirm Delivery Performance</description>
+    <externalId>false</externalId>
+    <formula>if( ISBLANK(Confirm_Date__c), 1, 
+if ( Delivery_Date__c &lt;=  Confirm_Date__c ,1,0)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Confirm Delivery Performance. 1 if delivery date &lt;= confirm date, else 0</inlineHelpText>
+    <label>CDR</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

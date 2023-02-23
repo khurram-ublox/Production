@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Revenue_Initial__c</fullName>
+    <description>Initial Total Revenue when the request has been submitted</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Initial Total Revenue when the request has been submitted</inlineHelpText>
+    <label>Total Revenue Initial</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

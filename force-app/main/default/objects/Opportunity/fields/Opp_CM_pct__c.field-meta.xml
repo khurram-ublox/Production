@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_CM_pct__c</fullName>
+    <description>Old one:
+/* if clause implemented with a check whether 
+- (annual quantity is zero) or 
+- (GPS: either all of the ASPs and NRE are zero, or GPS is lost ) and
+- (wireless: either all ASP or NRE are zero, or Wireless is lost)
+This is done to keep the formula short. Using the formula field Opp_Rev__c is too big */
+
+if (
+or( Annual_Quantity__c=0,
+      and(
+            or(and( GPS_Price__c =0,  GPS_Sol_ASP__c=0, GPS_Solution_NRE__c =0),GPS_Status_Factor__c=0), 
+            or(and(Wireless_Price__c =0, Wireless_NRE__c =0), Wireless_Status_Factor__c=0)
+       )
+),0,Opp_Contribution__c / Opp_Revenue__c)
+
+/* Implementation that would be simple and correct */
+/* if (Opp_Revenue__c=0,0,Opp_Contribution__c / Opp_Revenue__c) */</description>
+    <externalId>false</externalId>
+    <formula>if (Opp_Total_Revenue__c=0,0,Opp_Total_Contribution__c / Opp_Total_Revenue__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Expected contribution margin as a percentage of the Opportunity revenues</inlineHelpText>
+    <label>Opp CM [%]</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

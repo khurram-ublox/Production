@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>CommonUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeaverMetadataAccess</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LeaverMetadataAccessTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LookupSObjectController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SoqlUtils</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>* Set created to Leaver report app.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Access to Leaver&apos;s report</label>
+    <pageAccesses>
+        <apexPage>UserDataReport</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <tabSettings>
+        <tab>Leaver_s_Report</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

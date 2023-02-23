@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4x_Report_Filter_Reference__c</fullName>
+    <description>used for filtering the corresponding Opportunity Products to a A4F Manual Forecast</description>
+    <externalId>false</externalId>
+    <formula>SF_Account_Number__c &amp;&quot;-&quot;&amp; Ordering_Code__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4x Report Filter Reference</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

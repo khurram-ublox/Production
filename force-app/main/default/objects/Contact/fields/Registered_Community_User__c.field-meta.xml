@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registered_Community_User__c</fullName>
+    <description>Formula field created specifically for Hubspot - Salesforce sync issue. By reading this field, HS can overcome issue with 10K records association limit.</description>
+    <externalId>false</externalId>
+    <formula>AccountId = &quot;0012p00002IRe8W&quot;  || AccountId = &quot;0012p000049N90A&quot;  || AccountId = &quot;0012p000048g9EH&quot;  || AccountId =  &quot;0012p000049NBcZ&quot;  || AccountId = &quot;0012p00004A2HzC&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Formula field: if Account = &quot;Registered Community Users&quot;, then value set to TRUE. Created for Hubspot - Salesforce sync issue.</inlineHelpText>
+    <label>Registered Community User</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_Pct_in_EUR__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Portion of COGS that is in EUR. Used for budget calculations.</inlineHelpText>
+    <label>COGS Pct in EUR</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Effort_Spent_FAE_check</fullName>
+    <active>true</active>
+    <description>Effort Spent field can be edited only by FAE.</description>
+    <errorConditionFormula>AND(
+  ISCHANGED(Effort_Spent_FAE__c),
+  $User.ProfileId&lt;&gt;&quot;00e20000000zSSg&quot;,
+  $User.ProfileId&lt;&gt;&quot;00e2p000001BMV8&quot;,
+
+  $User.ProfileId&lt;&gt;&quot;00e2p000001BMV8&quot;,
+  $User.ProfileId&lt;&gt;&quot;00e2p000001BMJg&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Effort_Spent_FAE__c</errorDisplayField>
+    <errorMessage>Effort Spent FAE field can be edited only by FAE.</errorMessage>
+</ValidationRule>

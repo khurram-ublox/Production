@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>uB_Office__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Account__r.uB_Office__c ,
+&quot;Americas&quot;,&quot;Americas&quot;,
+&quot;EMEA&quot;,&quot;EMEA&quot;,
+&quot;China&quot;, &quot;China&quot;,
+&quot;Hongkong&quot;, &quot;Hongkong&quot;,
+&quot;Taiwan&quot;, &quot;Taiwan&quot;,
+&quot;Korea&quot;, &quot;Korea&quot;,
+&quot;Japan&quot;, &quot;Japan&quot;,
+&quot;Rest of APAC&quot;, &quot;Rest of APAC&quot;,
+&quot;HQ&quot;,&quot;HQ&quot;,
+&quot;&quot;)</formula>
+    <inlineHelpText>uB Office of Account</inlineHelpText>
+    <label>uB Office</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

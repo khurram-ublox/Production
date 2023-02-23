@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sample_Usage__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Product status of the sample to request.
+Demonstrator: To demonstrate new technology in advance (e.g. DR u-blox M8)
+Prototype: For early product evaluation before ES
+ES: Engineering Sample (for region or customer)</inlineHelpText>
+    <label>Sample Usage</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Demonstrator</fullName>
+                <default>false</default>
+                <label>Demonstrator</label>
+            </value>
+            <value>
+                <fullName>Prototype (for customer)</fullName>
+                <default>false</default>
+                <label>Prototype (for customer)</label>
+            </value>
+            <value>
+                <fullName>Prototype (for internal use)</fullName>
+                <default>false</default>
+                <label>Prototype (for internal use)</label>
+            </value>
+            <value>
+                <fullName>ES (regional allocation)</fullName>
+                <default>false</default>
+                <label>ES (regional allocation)</label>
+            </value>
+            <value>
+                <fullName>ES (volume)</fullName>
+                <default>false</default>
+                <label>ES (volume)</label>
+            </value>
+            <value>
+                <fullName>Samples in production (IP, MP)</fullName>
+                <default>false</default>
+                <label>Samples in production (IP, MP)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

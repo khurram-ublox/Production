@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prev_Yr_Booking_CHF__c</fullName>
+    <externalId>false</externalId>
+    <formula>Prev_Yr_Booking__c  *  Total_Value_CHF__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>weighted Bookings Prev Yr
+=&gt; if Booking happened in previous year, the field is equal to Total Value CHF. Else it is zero.</inlineHelpText>
+    <label>Prev Yr Booking CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

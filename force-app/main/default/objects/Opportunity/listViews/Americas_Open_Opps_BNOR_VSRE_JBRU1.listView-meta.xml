@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Americas_Open_Opps_BNOR_VSRE_JBRU1</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Account_Channel_Manager__c</columns>
+    <columns>OPPORTUNITY.CREATED_DATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>New_Market__c</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Opp_Total_Revenue__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>OPPORTUNITY.LAST_UPDATE</columns>
+    <columns>Latest_Status_Modified__c</columns>
+    <columns>Latest_Status__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Opportunity</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>contains</operation>
+        <value>1,3,4,5,6,7,8</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>jbrad</value>
+    </filters>
+    <label>Trilogy Opps All</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+        <roleAndSubordinates>Partner_Trilogy</roleAndSubordinates>
+    </sharedTo>
+</ListView>

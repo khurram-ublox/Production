@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Participation__c</fullName>
+    <description>Response given on the registration form</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Response given on the registration form</inlineHelpText>
+    <label>Event Participation</label>
+    <length>50</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

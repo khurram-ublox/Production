@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_Total_Revenue__c</fullName>
+    <externalId>false</externalId>
+    <formula>Opp_Revenue_Without_Probability__c  * Probability</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sum of Revenues of all added Opp Products, weighted by Probability</inlineHelpText>
+    <label>Opp Total Revenue</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

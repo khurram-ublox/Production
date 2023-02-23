@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4x_COGS_NEXT_FY_Q3__c</fullName>
+    <externalId>false</externalId>
+    <formula>(Budget_COGS_3__c  +  IPR_value_next_FY__c )
+
+* 1
+
+*
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;,0.99,
+&quot;USD&quot;,0.98,
+&quot;GBP&quot;,1.234,
+&quot;JPY&quot;,0.00789,
+1)
+
+
+/*
+
+(Budget_COGS_3__c  +  IPR_value_next_FY__c )
+
+* 1
+
+*
+
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;,1.045,
+&quot;USD&quot;,0.935,
+&quot;GBP&quot;,1.234,
+&quot;JPY&quot;,0.00789,
+1)
+
+
+( Budget_COGS_3__c +  IPR_value_next_FY__c )
+
+*
+
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;,1.08,
+&quot;USD&quot;,0.92,
+&quot;JPY&quot;,0.0083, 
+1)
+*/
+
+/*
+IF(NOT(ISBLANK(TRIM(SUBSTITUTE(LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:4#&quot;,Next_Year_COGS_Budget__c)-1)),LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:3#&quot;,Next_Year_COGS_Budget__c)+2)),&quot;&quot;)))),VALUE(TRIM(SUBSTITUTE(LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:4#&quot;,Next_Year_COGS_Budget__c)-1)),LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:3#&quot;,Next_Year_COGS_Budget__c)+2)),&quot;&quot;)))*
+$User.USDtoCHF__c, a4x_COGS_NEXT_FY_Q2__c )
+*/
+
+
+/*
+IF(NOT(ISBLANK(TRIM(SUBSTITUTE(LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:4#&quot;,Next_Year_COGS_Budget__c)-1)),LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:3#&quot;,Next_Year_COGS_Budget__c)+2)),&quot;&quot;)))),VALUE(TRIM(SUBSTITUTE(LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:4#&quot;,Next_Year_COGS_Budget__c)-1)),LEFT(Next_Year_COGS_Budget__c,(FIND(&quot;:3#&quot;,Next_Year_COGS_Budget__c)+2)),&quot;&quot;))),Budget_COGS_2__c)*
+$User.USDtoCHF__c
+*/
+
+/*
+
+Budget_COGS_3__c
+*
+CURRENCYRATE(&quot;CHF&quot;)
+/
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, CURRENCYRATE(&quot;EUR&quot;),
+&quot;CHF&quot;, CURRENCYRATE(&quot;CHF&quot;),
+&quot;CNY&quot;, CURRENCYRATE(&quot;CNY&quot;),
+&quot;JPY&quot;, CURRENCYRATE(&quot;JPY&quot;),
+1
+)
+
+*/
+
+
+/* IF(
+(LEFT(Product__r.Valid_For_1__c,6) = &quot;Jul &quot; &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) || LEFT(Product__r.Valid_For_1__c,6) = &quot;Aug &quot;  &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) || LEFT(Product__r.Valid_For_1__c,6) = &quot;Sep &quot;  &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) )
+,
+Product__r.COGS_1__c 
+,
+IF(
+(LEFT(Product__r.Valid_For_2__c,6) = &quot;Jul &quot; &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) || LEFT(Product__r.Valid_For_2__c,6) = &quot;Aug &quot;  &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) || LEFT(Product__r.Valid_For_2__c,6) = &quot;Sep &quot;  &amp; TEXT(YEAR(TODAY()+1)) )
+,
+Product__r.COGS_2__c 
+,
+IF(
+(LEFT(Product__r.Valid_For_3__c,6) = &quot;Jul &quot; &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) || LEFT(Product__r.Valid_For_3__c,6) = &quot;Aug &quot;  &amp; RIGHT(TEXT(YEAR(TODAY())+1),2) || LEFT(Product__r.Valid_For_3__c,6) = &quot;Sep &quot;  &amp; RIGHT(TEXT(YEAR(TODAY())+1),2))
+,
+Product__r.COGS_3__c 
+,
+Product__r.COGS_4__c
+)
+)
+)
+*
+CURRENCYRATE(&quot;CHF&quot;)
+/
+CASE(CurrencyIsoCode,
+&quot;EUR&quot;, CURRENCYRATE(&quot;EUR&quot;),
+&quot;CHF&quot;, CURRENCYRATE(&quot;CHF&quot;),
+&quot;CNY&quot;, CURRENCYRATE(&quot;CNY&quot;),
+&quot;JPY&quot;, CURRENCYRATE(&quot;JPY&quot;),
+1
+)
+*/</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4x COGS NEXT FY Q3</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

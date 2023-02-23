@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>CamMem_Add_Date_Bounced</fullName>
+        <description>Add the current time</description>
+        <field>Date_Bounced__c</field>
+        <formula>NOW()</formula>
+        <name>CamMem: Add Date Bounced</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CamMem_Add_Date_Clicked</fullName>
+        <description>Add the current time</description>
+        <field>Date_Clicked__c</field>
+        <formula>NOW()</formula>
+        <name>CamMem: Add Date Clicked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CamMem_Add_Date_Opened</fullName>
+        <description>Add the current time</description>
+        <field>Date_Opened__c</field>
+        <formula>NOW()</formula>
+        <name>CamMem: Add Date Opened</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CamMem_Add_Date_Responded</fullName>
+        <description>Add the current time</description>
+        <field>Date_Responded__c</field>
+        <formula>NOW()</formula>
+        <name>CamMem: Add Date Responded</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CamMem_Add_Date_Sent</fullName>
+        <description>Add the current time</description>
+        <field>Date_Sent__c</field>
+        <formula>NOW()</formula>
+        <name>CamMem: Add Date Sent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CamMem_Add_Date_Unsubscribed</fullName>
+        <description>Add the current time</description>
+        <field>Date_Unsubscribed__c</field>
+        <formula>NOW()</formula>
+        <name>CamMem: Add Date Unsubscribed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>CamMem%3A Add Date Bounced</fullName>
+        <actions>
+            <name>CamMem_Add_Date_Bounced</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Bounced</value>
+        </criteriaItems>
+        <description>Add field Date Bounced when Status changes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CamMem%3A Add Date Clicked</fullName>
+        <actions>
+            <name>CamMem_Add_Date_Clicked</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Clicked</value>
+        </criteriaItems>
+        <description>Add field Date Clicked when Status changes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CamMem%3A Add Date Opened</fullName>
+        <actions>
+            <name>CamMem_Add_Date_Opened</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Opened</value>
+        </criteriaItems>
+        <description>Add field Date Opened when Status changes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CamMem%3A Add Date Responded</fullName>
+        <actions>
+            <name>CamMem_Add_Date_Responded</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Responded</value>
+        </criteriaItems>
+        <description>Add field Date Responded when Status changes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CamMem%3A Add Date Sent</fullName>
+        <actions>
+            <name>CamMem_Add_Date_Sent</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Sent</value>
+        </criteriaItems>
+        <description>Add field Date Sent when Status changes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>CamMem%3A Add Date Unsubscribed</fullName>
+        <actions>
+            <name>CamMem_Add_Date_Unsubscribed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Unsubscribed</value>
+        </criteriaItems>
+        <description>Add field Date Unsubscribed when Status changes</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

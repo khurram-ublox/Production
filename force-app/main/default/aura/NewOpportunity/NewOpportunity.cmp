@@ -1,0 +1,73 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global" controller="NewOpportunityCtrl">
+	<ltng:require styles="{!$Resource.ActionBoxCSS}"/>
+    
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="loading" type="Boolean" default="false"/>
+    <aura:attribute name="account" type="Account" />
+	<aura:attribute name="errorMessage" type="String" />
+    
+    <aura:attribute name="record" type="Object" description="The record object to be displayed"/>
+    <aura:attribute name="recordFields" type="Object" description="A simplified view record object to be displayed"/>
+    <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData"/>
+    
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.recordFields}"
+                      mode="EDIT"/>
+    
+    <lightning:recordEditForm objectApiName="Opportunity" onsubmit="{!c.handleSubmit}" onerror="{!c.handleError}" onsuccess="{!c.handleSuccess}">
+        <div>
+            <div class="slds-is-relative">
+                <aura:if isTrue="{! v.loading }">
+                    <lightning:spinner size="medium" variant="brand" />
+                </aura:if>
+                <!-- OTHER MODAL MARK-UP HERE -->
+                <div>
+                    <div class="modal-header slds-modal__header">
+                        <h2 class="title slds-text-heading--medium" >New Opportunity</h2>
+                    </div>
+                    <div class="custom-modal-body">
+                        <div aura:id="errorDiv" class="errorDiv slds-hide">{!v.errorMessage}</div>
+                        
+                        <lightning:inputField fieldName="Name" value="{!v.account.Name}" />
+                        <lightning:inputField fieldName="Opportunity_Account__c" value="{!v.recordId}" disabled="true" />
+                        <lightning:inputField fieldName="End_Customer_Account__c" value="{!v.recordId}" />
+                        
+                        <lightning:inputField fieldName="CurrencyIsoCode" value="{!v.account.CurrencyIsoCode}" />
+                        <lightning:inputField fieldName="Annual_Quantity__c" />
+                        <lightning:inputField fieldName="StageName" value="3 Calling On" />
+                        <lightning:inputField fieldName="Reason__c" />
+                        <lightning:inputField fieldName="Probability" value="10" />
+                        
+                        
+                        <lightning:inputField fieldName="Market_Classification__c" required ='true' value="{!v.account.Market_Classification__c}" />
+                        <!--4-July-22 commented to allign with new u-blox Market classidication strategy.
+                        <lightning:inputField fieldName="New_Application_Type__c" value="{!v.account.New_Application_Type__c}" />
+                        <lightning:inputField fieldName="New_Market__c" value="{!v.account.New_Market__c}" />
+                        -->
+                        
+                        <lightning:inputField fieldName="Focus__c" />
+                        <lightning:inputField fieldName="Blanket_Order_Expected__c" />
+                        
+                        <lightning:inputField fieldName="Decision_Date__c" />
+                        <lightning:inputField fieldName="Proto_Date__c" />
+                        <lightning:inputField fieldName="CloseDate" value="{!v.account.OppCloseDate__c}" />
+                        
+                        <lightning:inputField fieldName="Description" />
+                    </div>    
+                    <div class="modal-footer slds-modal__footer">
+                        <div class="forceChangeRecordTypeFooter">
+                            <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.handleCancel}" >Cancel</button>
+                            <lightning:button variant="brand" label="Submit" type="submit" class="slds-button slds-button--brand" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </lightning:recordEditForm>
+    
+</aura:component>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team__c</fullName>
+    <description>Team the current Case Owner belongs to, defined in User. Made originally to replace Team formula field in Case Snapshot</description>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(Owner:User.Id),Owner:Queue.QueueName,
+IF(ISPICKVAL(Owner:User.Team__c,&quot;FAE&quot;),TEXT(Owner:User.Team__c)&amp;&quot;, &quot;&amp;TEXT(Owner:User.uB_Office__c),TEXT(Owner:User.Team__c)))
+/*
+IF(ISBLANK(Owner:User.Id),Owner:Queue.QueueName,
+CASE(Owner:User.Alias,
+&quot;byou&quot;,&quot;AE POS&quot;,
+&quot;ffel&quot;,&quot;AE POS&quot;,
+&quot;ghun&quot;,&quot;AE POS&quot;,
+&quot;jfur&quot;,&quot;AE POS&quot;,
+&quot;mdur&quot;,&quot;AE POS&quot;,
+&quot;msul&quot;,&quot;AE POS&quot;,
+&quot;njaf&quot;,&quot;AE POS&quot;,
+&quot;phen&quot;,&quot;AE POS&quot;,
+&quot;vkar&quot;,&quot;AE POS&quot;,
+&quot;yzha&quot;,&quot;AE POS&quot;,
+&quot;acub&quot;,&quot;AE CEL&quot;,
+&quot;bric&quot;,&quot;AE CEL&quot;,
+&quot;clee&quot;,&quot;AE CEL&quot;,
+&quot;fdil&quot;,&quot;AE CEL&quot;,
+&quot;mace&quot;,&quot;AE CEL&quot;,
+&quot;mrod&quot;,&quot;AE CEL&quot;,
+&quot;msin&quot;,&quot;AE CEL&quot;,
+&quot;sfal&quot;,&quot;AE CEL&quot;,
+&quot;sgod&quot;,&quot;AE CEL&quot;,
+&quot;sses&quot;,&quot;AE CEL&quot;,
+&quot;cmag&quot;,&quot;AE SHO&quot;,
+&quot;fbro&quot;,&quot;AE SHO&quot;,
+&quot;mhan&quot;,&quot;AE SHO&quot;,
+&quot;mzes&quot;,&quot;AE SHO&quot;,
+&quot;sbia&quot;,&quot;AE SHO&quot;,
+&quot;shoe&quot;,&quot;AE SHO&quot;,
+&quot;tfri&quot;,&quot;AE SHO&quot;,
+&quot;aber&quot;,&quot;Quality&quot;,
+&quot;asam&quot;,&quot;Quality&quot;,
+&quot;cmor&quot;,&quot;Quality&quot;,
+&quot;eper&quot;,&quot;Quality&quot;,
+&quot;gdem&quot;,&quot;Quality&quot;,
+&quot;gloe&quot;,&quot;Quality&quot;,
+&quot;hayu&quot;,&quot;Quality&quot;,
+&quot;jand&quot;,&quot;Quality&quot;,
+&quot;jjek&quot;,&quot;Quality&quot;,
+&quot;jpri&quot;,&quot;Quality&quot;,
+&quot;kben&quot;,&quot;Quality&quot;,
+&quot;keoh&quot;,&quot;Quality&quot;,
+&quot;mcam&quot;,&quot;Quality&quot;,
+&quot;pdub&quot;,&quot;Quality&quot;,
+&quot;seln&quot;,&quot;Quality&quot;,
+&quot;ymor&quot;,&quot;Quality&quot;,
+IF(AND(Owner:User.Profile.Name&lt;&gt;&quot;FAE&quot;,Owner:User.Profile.Name&lt;&gt;&quot;Technical Manager&quot;),&quot;Other&quot;,Owner:User.Profile.Name&amp;&quot;, &quot;&amp;TEXT(Owner:User.uB_Office__c))
+))
+*/</formula>
+    <inlineHelpText>Team the current Case Owner belongs to, defined in User. Made originally to replace Team formula field in Case Snapshot</inlineHelpText>
+    <label>Team</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Highest_Escallation_Level__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ( not(isblank( Date_Escalated_by_TM__c)), 
+     HQ_Department__c, if(isblank( Date_Escalated_by_FAE__c), &quot;FAE&quot;, &quot;TM&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Highest Escallation Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

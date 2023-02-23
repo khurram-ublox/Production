@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Individual Email for Automotive Product Notification and ndees Follow-up required.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Individual Email Result: Automotive notification alert (new)</name>
+    <style>none</style>
+    <subject>Automotive Product Notification: Follow-up required</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

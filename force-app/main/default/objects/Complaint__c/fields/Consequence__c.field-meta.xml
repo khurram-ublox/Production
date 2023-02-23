@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consequence__c</fullName>
+    <externalId>false</externalId>
+    <label>Consequence</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer not amused</fullName>
+                <default>false</default>
+                <label>Customer not amused</label>
+            </value>
+            <value>
+                <fullName>Opportunity delayed</fullName>
+                <default>false</default>
+                <label>Opportunity delayed</label>
+            </value>
+            <value>
+                <fullName>Opportunity lost</fullName>
+                <default>false</default>
+                <label>Opportunity lost</label>
+            </value>
+            <value>
+                <fullName>Customer lost</fullName>
+                <default>false</default>
+                <label>Customer lost</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

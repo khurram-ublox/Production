@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <description>Win or loss reason. Required when Stage is 1 Lost, 5 Design-in, 6 Prototypes, 7 Pre-Production, and 8 Production.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Win or loss reason. Required when Stage is 1 Lost, 5 Design-in, 6 Prototypes, 7 Pre-Production, and 8 Production.</inlineHelpText>
+    <label>Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Auto Closure</fullName>
+                <default>false</default>
+                <label>Auto Closure</label>
+            </value>
+            <value>
+                <fullName>Availability</fullName>
+                <default>false</default>
+                <label>Availability</label>
+            </value>
+            <value>
+                <fullName>Duplicate Entry</fullName>
+                <default>false</default>
+                <label>Duplicate Entry</label>
+            </value>
+            <value>
+                <fullName>Features</fullName>
+                <default>false</default>
+                <label>Features</label>
+            </value>
+            <value>
+                <fullName>Follow-up</fullName>
+                <default>false</default>
+                <label>Follow-up</label>
+            </value>
+            <value>
+                <fullName>Incumbent</fullName>
+                <default>false</default>
+                <label>Incumbent</label>
+            </value>
+            <value>
+                <fullName>Micro Opportunity</fullName>
+                <default>false</default>
+                <label>Micro Opportunity</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Poor Opp Qualification</fullName>
+                <default>false</default>
+                <label>Poor Opp Qualification</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Project Stopped</fullName>
+                <default>false</default>
+                <label>Project Stopped</label>
+            </value>
+            <value>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <label>Relationship</label>
+            </value>
+            <value>
+                <fullName>Support</fullName>
+                <default>false</default>
+                <label>Support</label>
+            </value>
+            <value>
+                <fullName>T&amp;C</fullName>
+                <default>false</default>
+                <label>T&amp;C</label>
+            </value>
+            <value>
+                <fullName>No Follow-Up</fullName>
+                <default>false</default>
+                <label>No Follow-Up</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Availability</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <valueName>Duplicate Entry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Features</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Follow-up</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Incumbent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Micro Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <valueName>Poor Opp Qualification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <valueName>Project Stopped</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1 Lost</controllingFieldValue>
+            <controllingFieldValue>5 Design-in</controllingFieldValue>
+            <controllingFieldValue>6 Prototypes</controllingFieldValue>
+            <controllingFieldValue>7 Pre-Production</controllingFieldValue>
+            <controllingFieldValue>8 Production</controllingFieldValue>
+            <valueName>T&amp;C</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

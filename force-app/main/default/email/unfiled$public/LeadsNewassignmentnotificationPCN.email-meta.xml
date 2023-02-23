@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Internal notification to lead owner when customer subscribes for PCN (web form)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Leads:  inform owner of new web2lead record (PCN subscription)</name>
+    <style>none</style>
+    <subject>{!Lead.LeadSource} submitted:  {!Lead.Name} from {!Lead.Company}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reporting_Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case (Reporting_Area__c,
+&quot;HQ&quot;,&quot;UBX Corporate&quot;,
+&quot;Corporate&quot;,&quot;UBX Corporate&quot;,
+&quot;AU&quot;,&quot;APAC&quot;,
+&quot;IN&quot;,&quot;APAC&quot;,
+&quot;MY&quot;,&quot;APAC&quot;,
+&quot;NZ&quot;,&quot;APAC&quot;,
+&quot;PH&quot;,&quot;APAC&quot;,
+&quot;SG&quot;,&quot;APAC&quot;,
+&quot;TH&quot;,&quot;APAC&quot;,
+&quot;JP&quot;,&quot;APAC&quot;,
+&quot;CN&quot;,&quot;APAC&quot;,
+&quot;HK&quot;,&quot;APAC&quot;,
+&quot;TW&quot;,&quot;APAC&quot;,
+&quot;KR&quot;,&quot;APAC&quot;,
+&quot;Rest of APAC&quot;,&quot;APAC&quot;,
+
+&quot;AR&quot;,&quot;Americas&quot;,
+&quot;BR&quot;,&quot;Americas&quot;,
+&quot;CA&quot;,&quot;Americas&quot;,
+&quot;CL&quot;,&quot;Americas&quot;,
+&quot;MX&quot;,&quot;Americas&quot;,
+&quot;US&quot;,&quot;Americas&quot;,
+&quot;UY&quot;,&quot;Americas&quot;,
+&quot;Rest of Americas&quot;,&quot;Americas&quot;,
+
+&quot;EMEA&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>consolidation of uB Office to Regions</inlineHelpText>
+    <label>Reporting Region</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

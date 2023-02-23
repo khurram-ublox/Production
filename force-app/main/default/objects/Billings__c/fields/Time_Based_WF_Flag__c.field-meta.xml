@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Based_WF_Flag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used only to &quot;touch&quot; record to put it in the time-based WF queue.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used only to &quot;touch&quot; record to put it in the time-based WF queue.</inlineHelpText>
+    <label>Time-Based WF Flag</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

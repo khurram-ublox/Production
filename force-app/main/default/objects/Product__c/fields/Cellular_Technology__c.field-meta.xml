@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cellular_Technology__c</fullName>
+    <externalId>false</externalId>
+    <label>Cellular Technology</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GPRS</fullName>
+                <default>false</default>
+                <label>GPRS</label>
+            </value>
+            <value>
+                <fullName>EDGE</fullName>
+                <default>false</default>
+                <label>EDGE</label>
+            </value>
+            <value>
+                <fullName>HSDPA</fullName>
+                <default>false</default>
+                <label>HSDPA</label>
+            </value>
+            <value>
+                <fullName>HSUPA</fullName>
+                <default>false</default>
+                <label>HSUPA</label>
+            </value>
+            <value>
+                <fullName>HSPA+</fullName>
+                <default>false</default>
+                <label>HSPA+</label>
+            </value>
+            <value>
+                <fullName>CDMA 1xRTT</fullName>
+                <default>false</default>
+                <label>CDMA 1xRTT</label>
+            </value>
+            <value>
+                <fullName>CDMA EV-DO</fullName>
+                <default>false</default>
+                <label>CDMA EV-DO</label>
+            </value>
+            <value>
+                <fullName>LTE-only</fullName>
+                <default>false</default>
+                <label>LTE-only</label>
+            </value>
+            <value>
+                <fullName>LTE-multi</fullName>
+                <default>false</default>
+                <label>LTE-multi</label>
+            </value>
+            <value>
+                <fullName>CIoT</fullName>
+                <default>false</default>
+                <label>CIoT</label>
+            </value>
+            <value>
+                <fullName>RPMA</fullName>
+                <default>false</default>
+                <label>RPMA</label>
+            </value>
+            <value>
+                <fullName>Not applicable</fullName>
+                <default>false</default>
+                <label>Not applicable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

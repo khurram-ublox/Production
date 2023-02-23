@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_subscription_email_sent__c</fullName>
+    <description>Synced with hubspot. When time changes email will be triggered from hubspot.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Synced with hubspot. When time changes email will be triggered from hubspot.</inlineHelpText>
+    <label>Last subscription email sent</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

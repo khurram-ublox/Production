@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visiting_Address_changed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This flag is triggered by changes in the visiting (billing) address of the account, requiring a change in the related contacts. It is set by a workflow in the account record. An APEX Trigger/Class sets the Visiting Address changed flag in the related Contact records.</description>
+    <externalId>false</externalId>
+    <label>Visiting Address changed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,22 @@
+Hello
+
+This is to inform you that a Chip Account has been assigned to you.
+
+[Account Name]
+Company: {!Lead.Company}
+Account Name on Conversion {!Lead.Account_Name_On_Conversion__c}
+
+[Account SF link]
+https://u-blox.my.salesforce.com/{!Lead.AccountId__c}
+
+[Link to the opportunity] https://u-blox.my.salesforce.com/{!Lead.OpportunityId__c}
+
+[Project Description]
+{!Lead.Project_Description__c}
+
+[Product of Interest]
+{!Lead.Products_Of_Interest__c}
+
+Please complete the new  task in the Open Activity under Subject and select Stage 2 – Project Qualification.
+
+Thank you.

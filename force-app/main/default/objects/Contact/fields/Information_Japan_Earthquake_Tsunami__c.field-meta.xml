@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Information_Japan_Earthquake_Tsunami__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked Contacts are subscribed to receive information on possible impacts on the supply chain / deliveries from u-blox</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked Contacts are subscribed to receive information on possible impacts on the supply chain / deliveries from u-blox</inlineHelpText>
+    <label>Information Japan Earthquake / Tsunami</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

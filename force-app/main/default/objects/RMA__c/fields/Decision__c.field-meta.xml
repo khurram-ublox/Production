@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision__c</fullName>
+    <externalId>false</externalId>
+    <label>Decision</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Closed without replacement</fullName>
+                <default>false</default>
+                <label>Closed without replacement</label>
+            </value>
+            <value>
+                <fullName>Warranty replacement</fullName>
+                <default>false</default>
+                <label>Warranty replacement</label>
+            </value>
+            <value>
+                <fullName>Goodwill replacement</fullName>
+                <default>false</default>
+                <label>Goodwill replacement</label>
+            </value>
+            <value>
+                <fullName>Goodwill credit note</fullName>
+                <default>false</default>
+                <label>Goodwill credit note</label>
+            </value>
+            <value>
+                <fullName>Warranty credit note</fullName>
+                <default>false</default>
+                <label>Warranty credit note</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

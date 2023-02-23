@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssistNow_Token_To_Delete__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Token to be deactivated is copied to this field and sent to svc-pos-team-GLOBAL@u-blox.com</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Token to be deactivated is copied to this field and sent to svc-pos-team-GLOBAL@u-blox.com</inlineHelpText>
+    <label>AssistNow Token To Delete</label>
+    <length>22</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

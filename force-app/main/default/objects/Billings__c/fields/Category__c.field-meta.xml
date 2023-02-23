@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <description>A - Exception
+B - Allocation
+C - Existing supply contracts
+D - Standard PO/OC
+E - Addition to exception orders
+S - Special Supply/Build</description>
+    <externalId>false</externalId>
+    <inlineHelpText>(From Abacus)
+A - Exception,
+B - Allocation,
+C - Existing supply contracts,
+D - Standard PO/OC,
+E - Consignment
+S - Special Supply/Build</inlineHelpText>
+    <label>Category</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A</fullName>
+                <default>false</default>
+                <label>A - Exception</label>
+            </value>
+            <value>
+                <fullName>B</fullName>
+                <default>false</default>
+                <label>B - Allocation</label>
+            </value>
+            <value>
+                <fullName>C</fullName>
+                <default>false</default>
+                <label>C - Existing supply contracts</label>
+            </value>
+            <value>
+                <fullName>D</fullName>
+                <default>false</default>
+                <label>D - Standard PO/OC</label>
+            </value>
+            <value>
+                <fullName>E</fullName>
+                <default>false</default>
+                <label>E - Consignment</label>
+            </value>
+            <value>
+                <fullName>S</fullName>
+                <default>false</default>
+                <label>S - Special Supply/Build</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

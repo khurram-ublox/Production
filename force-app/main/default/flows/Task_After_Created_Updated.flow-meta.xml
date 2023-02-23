@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Create_a_new_Case</name>
+        <label>Create a new Case?</label>
+        <locationX>584</locationX>
+        <locationY>383</locationY>
+        <defaultConnector>
+            <targetReference>Stage_2_completed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_Creation_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chip Project</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Stage 2</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Case_Record</targetReference>
+            </connector>
+            <label>Case Creation Criteria</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Email_Notification_Turned_On</name>
+        <label>Is Email Notification Turned On?</label>
+        <locationX>584</locationX>
+        <locationY>1055</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Notifications_are_on</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Flow_Notification_Settings__c.Task__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Emails_and_Post_to_Chatter</targetReference>
+            </connector>
+            <label>Notifications are on</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Stage_2_completed</name>
+        <label>Stage 2 completed</label>
+        <locationX>584</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>Is_Email_Notification_Turned_On</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Stage_2_Task</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chip Project</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>Stage 2</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Sales_Admin__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.Sales_Admin__r.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Stage_4_New_Task</targetReference>
+            </connector>
+            <label>Stage 2 Task</label>
+        </rules>
+    </decisions>
+    <description>This Trigger is for After Task Creation and Notification Sub Flow runs through it.</description>
+    <formulas>
+        <name>taskReminderFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + 0.007</expression>
+    </formulas>
+    <interviewLabel>Task: After Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Task: After Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>New_Case_Record</name>
+        <label>New Case Record</label>
+        <locationX>452</locationX>
+        <locationY>503</locationY>
+        <connector>
+            <targetReference>Stage_2_completed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BusinessHoursId</field>
+            <value>
+                <stringValue>01m200000008Q1d</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>caseDescriptionFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>For_Chip_Project__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opportunity__c</field>
+            <value>
+                <elementReference>$Record__Prior.WhatId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Send_Notification_Mail__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>caseSubjectFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Technology__c</field>
+            <value>
+                <stringValue>GNSS</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Design Review</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Stage_4_New_Task</name>
+        <label>Stage 4 New Task</label>
+        <locationX>452</locationX>
+        <locationY>839</locationY>
+        <connector>
+            <targetReference>Is_Email_Notification_Turned_On</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>TaskDescriptionText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsReminderSet</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Account.Sales_Admin__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ReminderDateTime</field>
+            <value>
+                <elementReference>taskReminderFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Stage 4 - Order processing</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Task_Record</name>
+        <label>Update Task Record</label>
+        <locationX>455</locationX>
+        <locationY>1419</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>466</locationX>
+        <locationY>47</locationY>
+        <connector>
+            <targetReference>Create_a_new_Case</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Send_Emails_and_Post_to_Chatter</name>
+        <label>Send Emails and Post to Chatter</label>
+        <locationX>455</locationX>
+        <locationY>1200</locationY>
+        <connector>
+            <targetReference>Update_Task_Record</targetReference>
+        </connector>
+        <flowName>Task_Email_Alerts</flowName>
+        <inputAssignments>
+            <name>prior_taskRecord</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>taskRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record</assignToReference>
+            <name>taskRecord</name>
+        </outputAssignments>
+    </subflows>
+    <textTemplates>
+        <name>caseDescriptionFormula</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>1) To validate authenticity of the chip project, FAE must conduct on-site support for;
+2) Design review, analysis and testing
+3) Product performance validation and verification
+4) Update support activity and Case in SF
+5) Report if customer wanted to use u-blox chip to build clone modules.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>caseSubjectFormula</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Chip project Stage 3 - {!$Record.Account.Name}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>TaskDescriptionText</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>1) Check all price (SPR, RSP, TSP, Minimum Price, Quotation Price) QTY vs end customer’s PO price QTY.
+2) Check document quality (no fake or duplicate, ensure Company Stamp Signature are in different place for repeat orders).
+3) Check whether FAE support delivered (check Activity History).
+4) Check and confirm Distributor’s end customer’ PO with end customer directly, esp for SPR price.
+5) Check “Commitment Agreement” signed and is attached in SF Account page. (Action by Account Manager).
+6) Check: Customer - to send 3-month FCST to our sales and upload to SF. (Action by Account Manager).</text>
+    </textTemplates>
+    <variables>
+        <name>caseRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>createTask</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <name>new_case_records</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APAC_Open_RMA</fullName>
+    <columns>Account_Prio__c</columns>
+    <columns>NAME</columns>
+    <columns>RMA_Status__c</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Short_Description_Complaint__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Qty_received_from_customer__c</columns>
+    <columns>Days_Open__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Owner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RMA_Status__c</field>
+        <operation>lessThan</operation>
+        <value>6 Closed</value>
+    </filters>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>China,Hongkong,Taiwan,Korea,Rest of APAC,Japan,Australia</value>
+    </filters>
+    <label>APAC Open RMA</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RestofAPAC</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

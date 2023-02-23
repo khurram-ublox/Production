@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>* Grants edit access to fields &quot;Email invalid&quot; and &quot;Email Opt Out&quot;. Intended for Business Marketing who should be able to reactivate email.</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Email_address_probably_not_valid__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.HasOptedOutOfEmail</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Contact email reactivation</label>
+    <license>Salesforce</license>
+</PermissionSet>

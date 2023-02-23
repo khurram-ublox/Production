@@ -1,0 +1,106 @@
+<apex:page standardController="Case">
+   <apex:includeScript value="/support/console/45.0/integration.js"/>
+   <apex:includeScript value="../../soap/ajax/29.0/connection.js"/>
+   <apex:includeScript value="{!$Resource.uJS}"/>
+   <apex:stylesheet value="{!$Resource.uCSS}"/>
+
+    <script>  
+    sforce.connection.sessionId = "{!$Api.Session_ID}";
+    
+    
+    var id="{!Case.Id}";
+    var CaseFailureRate="{!Case.Failure_Rate__c}";
+    var CaseDetectionofFailure="{!Case.Detection_of_Failure__c}";
+    var CaseTraceabilityInfo="{!Case.Traceability_Info__c}";
+    var CaseCustomerRequest="{!Case.Customer_Request__c}";
+    var CaseConditionofSamples="{!Case.Condition_of_Samples__c}";
+    var CaseNumberofParts="{!Case.Number_of_Parts__c}";
+    var CaseOriginofFailure="{!Case.Origin_of_Failure_at_Customer__c}";
+    var CaseProduct="{!Case.Product__c}";
+    var CaseDescription="{!JSENCODE( Case.Description )}";
+    var CaseCustomerPONo="{!Case.Customer_PO_No__c}";
+    
+    if ((CaseFailureRate!="")&&(CaseDetectionofFailure!="")&&(CaseTraceabilityInfo!="")&&(CaseCustomerRequest!="")&&(CaseConditionofSamples!="")&&(CaseNumberofParts!="")&&(CaseOriginofFailure!="")&&(CaseProduct!="")&&(CaseDescription!="")) {
+        var q = window.confirm("This action will create a new RMA. Are you sure you want to do this?");
+        if (q == true) {
+            var r = new sforce.SObject("RMA__c");
+            
+            //Account_Name__c=Case.Account
+            r.Account_Name__c = "{!Case.AccountId}";
+            
+            //Customer_Complaint__c=Case.Description
+            r.Customer_Complaint__c = "{!JSENCODE( Case.Description )}";
+            
+            //RecordType="RMA Technical"
+            r.RecordTypeId = "01220000000Pg8A";
+            
+            //Account_Manager__c=Account.AccountOwner
+            r.Account_Manager__c="{!Case.Channel_Manager__c}";
+            
+            //Related_Case__c=Case.CaseID
+            r.Related_Case__c = "{!Case.Id}";
+            
+            //Contact__c=Case.Contact
+            r.Contact__c = "{!Case.ContactId}";
+            
+            //Opportunity_Name__c=Case.Opportunity__c
+            r.Opportunity_Name__c = "{!Case.Opportunity__c}";
+            
+            //Short_Description_Complaint__c=Case.Subject
+            r.Short_Description_Complaint__c = "{!JSENCODE( Case.Subject )}";
+            
+            //RMA_Status__c="1 New"
+            r.RMA_Status__c = "1 New";
+            
+            //RMA_Type__c="Authorized"
+            r.RMA_Type__c = "Authorized";
+            
+            //Product_Name__c=Case.Product__c
+            r.Product_Name__c = "{!Case.Product__c}";
+            
+            //Customer_PO_No__c=Case.Customer_PO_No__c
+            r.Customer_PO_No__c = "{!Case.Customer_PO_No__c}";
+            
+            //Owner__c=
+            //If Case.Case_Initiator_Source__c <> Null, use Case.Case_Initiator_Source__c,
+            //else use Case.CreatedBy
+            if ("{!Case.Case_Initiator_Source__c}" != "")
+            {
+                r.Owner__c = "{!Case.Case_Initiator_Source__c}";
+            }
+            else
+            {
+                r.Owner__c = "{!Case.CreatedById}";
+            }
+            
+            r.Failure_Rate__c="{!Case.Failure_Rate__c}";
+            r.Detection_of_Failure__c="{!Case.Detection_of_Failure__c}";
+            r.Traceability_Info__c="{!Case.Traceability_Info__c}";
+            r.Customer_Request__c="{!Case.Customer_Request__c}";
+            r.Condition_of_Samples__c="{!Case.Condition_of_Samples__c}";
+            r.Origin_of_failure_at_customer__c="{!Case.Origin_of_Failure_at_Customer__c}";
+            
+            var result = sforce.connection.create([r]);
+            if (result[0].success=='false') { 
+                throw new Error(result[0].errors.message); 
+                uJS.closeTab(id);
+            } 
+            var createdId = result[0].id;
+            
+            uJS.openAndRefreshTab(createdId,'subtab');
+            //window.parent.location.href=result[0].id+"/e?retURL=%2F"+result[0].id;
+        }
+        else {
+            uJS.closeTab(id);
+        }
+        
+    }
+    else {
+        window.alert("All the fields under RMA Information, Description and Product should be added.");
+        uJS.closeTab(id);
+    }
+
+    </script>
+
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

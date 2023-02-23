@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rigado_Activity__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Imported from Rigado Zendesk</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Imported from Rigado Zendesk</inlineHelpText>
+    <label>Rigado Activity</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

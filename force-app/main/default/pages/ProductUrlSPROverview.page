@@ -1,0 +1,15 @@
+<apex:page standardController="Product2">
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    <script>
+        // /00O57000007UUVx?pv0="{!Product2.ProductCode}"
+
+        uJS.openReport({
+            Id : "00O57000007UUVx",
+            v0 : "{!Product2.ProductCode}"
+        });
+    </script>
+    
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

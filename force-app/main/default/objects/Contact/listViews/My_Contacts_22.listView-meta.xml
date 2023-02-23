@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Contacts_22</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.RECORDTYPE</columns>
+    <columns>Product_News__c</columns>
+    <columns>Function__c</columns>
+    <columns>Financial_News__c</columns>
+    <columns>Role__c</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Role__c</field>
+        <operation>equals</operation>
+        <value>Portfolio manager,Investment banker,Sales/Broker,Trader,Auditor,Consultant</value>
+    </filters>
+    <label>My Contacts</label>
+    <sharedTo>
+        <group>Finance_Partners</group>
+    </sharedTo>
+</ListView>

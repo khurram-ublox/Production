@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmed__c</fullName>
+    <description>Confirmed quantity. Always filled by product owner (PM).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Confirmed quantity. Always filled by product owner (PM).</inlineHelpText>
+    <label>Confirmed Quantity</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

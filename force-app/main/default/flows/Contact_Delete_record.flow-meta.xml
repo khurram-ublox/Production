@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>To be used in Flow or Process to delete Contact record</description>
+    <interviewLabel>Contact: Delete record {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contact: Delete record</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Contact_Delete_record</name>
+        <label>Contact: Delete record</label>
+        <locationX>231</locationX>
+        <locationY>179</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>VAR_ContactID</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+    </recordDeletes>
+    <startElementReference>Contact_Delete_record</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <description>Variable for Contact ID to be used for Flow and Process</description>
+        <name>VAR_ContactID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

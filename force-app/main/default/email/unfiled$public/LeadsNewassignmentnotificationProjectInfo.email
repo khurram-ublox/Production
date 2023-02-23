@@ -1,0 +1,23 @@
+**** NEW LEAD ASSIGNMENT NOTIFICATION ***  
+
+The following lead has been created and will be further processed by sales administration:
+
+Lead Source: {!Lead.LeadSource}
+Lead submitted by: {!Lead.Submitter__c}
+Company: {!Lead.Company} 
+Lead Name: {!Lead.Name}  
+Phone: {!Lead.Phone}
+Email: {!Lead.Email}
+Address: {!Lead.Address}
+
+Description (Message from Contact Us webform): {!Lead.Description} 
+Project description: {!Lead.Project_Description__c}
+
+Request: {!Lead.Request__c}
+
+AssistNow Token requested: {!Lead.MGA__c}
+(If 1, on the converted Contact press AssistNow Request button to generate a new AssistNow Token. If 0, no additional action)
+
+The link has been sent by: {!Lead.uB_Contact__c}
+
+Click on the link to access the lead directly:  {!Lead.Link}

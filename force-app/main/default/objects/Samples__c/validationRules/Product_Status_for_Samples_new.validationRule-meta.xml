@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status_for_Samples_new</fullName>
+    <active>true</active>
+    <description>For Prototype RecordType, Products with the Status  &quot;Prototypes&quot; and &quot;In Development&quot; are mandatory.</description>
+    <errorConditionFormula>AND(
+  $RecordType.DeveloperName =&quot;Samples&quot;,
+  NOT(
+		OR(
+			ISPICKVAL(Product__r.Product_Status__c,&quot;Production Ready&quot;),
+			ISPICKVAL(Product__r.Product_Status__c,&quot;Initial Production&quot;),
+			ISPICKVAL(Product__r.Product_Status__c,&quot;Mass Production&quot;),
+			ISPICKVAL(Product__r.Product_Status__c,&quot;End of Life&quot;)
+		))
+)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>For Sample RecordType, Products with the Statuses  &quot;Production Ready&quot;, &quot;Initial Production&quot;, &quot;Mass Production&quot; and &quot;End of Life&quot; are allowed.</errorMessage>
+</ValidationRule>

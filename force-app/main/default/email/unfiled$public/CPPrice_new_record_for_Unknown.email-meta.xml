@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email when there is a new record for Competitor Product Price.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CPP: new record for Unknown</name>
+    <style>none</style>
+    <subject>Competitor Product Price: New entry for {!Competitor_Product_Price__c.Competitor_Product__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,139 @@
+.THIS {
+	font-family: 'u-blox';
+    display: table;
+    width: 100%;
+    table-layout:fixed;
+    height: 100vh;
+}
+.THIS .left {
+    padding:0;
+    display: table-cell;
+    height: 100%;
+    padding:20px 0 60px 0;
+}
+
+.THIS .left .wrap {
+    padding: 0 7%;
+}
+
+.THIS .left .form {
+    max-width: 500px;
+    margin: 40px auto 0 auto;
+}
+
+.THIS .right {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url("/resource/1648148494000/SignupImage") center no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white; 
+    font-weight: bold;
+    font-size: 17px;
+    display: table-cell;
+    position: fixed;
+    width: 50%;
+}
+.THIS .right .wrap {
+    padding: 11%;  
+}
+
+.THIS .right p {
+    font-size: 1.7em;
+    margin-bottom: 35px;   
+}
+
+.THIS .right ul {
+    list-style: none;
+	margin-rigth: 10%;    
+}
+
+.THIS .right ul li {
+  margin:0 0 22px 0;
+  padding-left: 45px;
+  background: url('../../resource/1648653066000/check_list_style') 0 3px no-repeat;   
+}
+
+
+
+.THIS .slds-input  {
+    height: 44px !important;
+    font-size: 16px !important;
+}
+.THIS .forceIcon  {
+    display: none;
+}
+.THIS .inputContainer  {
+    border: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+}
+
+.THIS .inputBox  {
+    border: 2px solid #9a9a9a !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 44px !important;
+    padding: 6px 12px !important;
+    font-size: 16px !important;
+}
+.THIS .inputBox:hover, .THIS .inputBox:focus  {
+    border: 2px solid #000 !important;
+}
+
+.THIS #sfdc_password_container:before {
+    content:"Password (8 or more characters)";
+    display:block;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.THIS #sfdc_username_container:before {
+    content:"E-mail address";
+    display:block;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: bold;
+}
+.THIS .salesforceIdentityForgotPassword2:before {
+    content:"E-mail address";
+    display:block;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-size: 14px;
+    font-weight: bold;
+}
+.THIS .slds-button {
+	font-size: 14px !important;
+    margin: 10px 0 30px 0 !important;        
+}
+.THIS .slds-text-body_regular {
+	font-size: 16px !important;
+    margin-top: -3px;
+}
+.THIS #recaptchaCheckbox {
+	margin-top: 10px;
+}
+
+.THIS .slds-form-element__label {
+    margin-bottom: 8px !important;
+}
+
+.THIS .error {
+    padding: 15px;
+    background: #ffbbba;
+    font-weight: bold;
+    margin-bottom: 20px !important;
+    color: #1a1a1a !important;
+    text-align: left !important;
+}
+
+@media (max-width: 992px) {
+    .THIS .left {
+      width: 100%;      
+    }
+	.THIS .right {
+        display: none;
+    }
+}

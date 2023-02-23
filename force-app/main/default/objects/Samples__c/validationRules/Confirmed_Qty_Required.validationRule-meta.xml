@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirmed_Qty_Required</fullName>
+    <active>true</active>
+    <description>Confirmed Quantity field is mandatory when the Request Status is in Confirmed or Shipped with Record Types Engineering Samples and Prototypes.</description>
+    <errorConditionFormula>AND((ISPICKVAL(Request_Status__c,&apos;Confirmed&apos;) || (ISPICKVAL(Request_Status__c,&apos;Shipped&apos;))), ISBLANK(Confirmed__c), (RecordType.DeveloperName = &apos;Engineering_Samples&apos; || RecordType.DeveloperName = &apos;Prototypes&apos;))</errorConditionFormula>
+    <errorDisplayField>Confirmed__c</errorDisplayField>
+    <errorMessage>The confirmed quantity field is mandatory, please enter a confirmed quantity.</errorMessage>
+</ValidationRule>

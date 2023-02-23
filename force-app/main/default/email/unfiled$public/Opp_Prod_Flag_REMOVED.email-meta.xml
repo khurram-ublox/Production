@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Update user that his request to remove the flag from the following Opp Product has been approved and the flag has been removed.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Opp Prod: Flag REMOVED</name>
+    <style>none</style>
+    <subject>Forecast Flag REMOVED: {!Opp_Product__c.Product__c} for {!Opp_Product__c.Opportunity_Account__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

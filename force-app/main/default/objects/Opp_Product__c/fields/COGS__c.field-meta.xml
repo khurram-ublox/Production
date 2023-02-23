@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS__c</fullName>
+    <description>COGS including IPR, updated with Workflow (Field Update) initiated by checkbox &quot;Update Contribution&quot; (triggered also by Apex Triggen when change in Product has been made)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>COGS including IPR, updated with Workflow (Field Update) initiated by checkbox &quot;Update Contribution&quot; (triggered also by Apex Triggen when change in Product has been made)</inlineHelpText>
+    <label>COGS</label>
+    <precision>14</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Currency</type>
+</CustomField>

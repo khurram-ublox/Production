@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssistNow_Temporary_Token__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Token to be generated automatically and populated here through the webform submission (with Apex Trigger)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Token to be generated automatically and populated here through the webform submission (with Apex Trigger)</inlineHelpText>
+    <label>AssistNow Temporary Token</label>
+    <length>22</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

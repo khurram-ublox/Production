@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivered_Quantity__c</fullName>
+    <description>Delivered quantity.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Delivered quantity. Always filled by Sales Admin. This should be equal to Confirmed Quantity when the Request Status is Delivered.</inlineHelpText>
+    <label>Delivered Quantity</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

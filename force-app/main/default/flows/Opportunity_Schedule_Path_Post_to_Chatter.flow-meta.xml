@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_to_CEL</name>
+        <label>Post to CEL</label>
+        <locationX>389</locationX>
+        <locationY>784</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>SBO_SHO</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>CELFocusGroup</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>CEL focus group</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>Group</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Post_to_POS</name>
+        <label>Post to POS</label>
+        <locationX>397</locationX>
+        <locationY>1291</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>POSFocusGroup</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>POS focus group</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>Group</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <name>Post_to_SHO</name>
+        <label>Post to SHO</label>
+        <locationX>395</locationX>
+        <locationY>1042</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <connector>
+            <targetReference>SBO_POS</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>SHOFocusGroup</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <stringValue>SHO focus group</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>Group</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>53.0</apiVersion>
+    <decisions>
+        <name>Is_Email_Notification_Turned_On</name>
+        <label>Is Email Notification Turned On</label>
+        <locationX>168</locationX>
+        <locationY>410</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Post_to_chatter</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Flow_Notification_Settings__c.Opportunity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SBO_CEL</targetReference>
+            </connector>
+            <label>Post to chatter</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SBO_CEL</name>
+        <label>SBO CEL</label>
+        <locationX>168</locationX>
+        <locationY>670</locationY>
+        <defaultConnector>
+            <targetReference>SBO_SHO</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CEL_Focus</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBO_CEL__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>NewRecord</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_CEL</targetReference>
+            </connector>
+            <label>CEL Focus</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SBO_POS</name>
+        <label>SBO POS</label>
+        <locationX>170</locationX>
+        <locationY>1173</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>POS_Focus</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBO_POS__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>NewRecord</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_POS</targetReference>
+            </connector>
+            <label>POS Focus</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>SBO_SHO</name>
+        <label>SBO SHO</label>
+        <locationX>169</locationX>
+        <locationY>923</locationY>
+        <defaultConnector>
+            <targetReference>SBO_POS</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SHO_Focus</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SBO_SHO__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>NewRecord</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Post_to_SHO</targetReference>
+            </connector>
+            <label>SHO Focus</label>
+        </rules>
+    </decisions>
+    <description>After trigger flow with schedule path to post to chatter group</description>
+    <formulas>
+        <name>NewRecord</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Opportunity: Schedule Path Post to Chatter {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: Schedule Path Post to Chatter</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>52</locationX>
+        <locationY>50</locationY>
+        <filterLogic>1 AND (2 OR 3 OR 4) AND 5</filterLogic>
+        <filters>
+            <field>Current_User_Internal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBO_CEL__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBO_SHO__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SBO_POS__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>01220000000CqRn</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>X1_Hour_After_Last_Modified</name>
+            <connector>
+                <targetReference>Is_Email_Notification_Turned_On</targetReference>
+            </connector>
+            <label>1 Hour After Last Modified</label>
+            <offsetNumber>2</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>LastModifiedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>CELFocusGroup</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>CEL focus opportunity {!$Record.Name} updated.
+Account: {!$Record.Account.Name}
+Stage: {!$Record.StageName}
+Latest Status: {!$Record.Latest_Status__c}, 
+Modified by: {!$Record.LastModifiedBy.Username}, 
+Link: https://u-blox.my.salesforce.com/{!$Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>POSFocusGroup</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>POS focus opportunity &quot;{!$Record.Name}&quot; updated.
+Account: {!$Record.Account.Name}
+Stage: {!$Record.StageName}
+Latest Status: {!$Record.Latest_Status__c}, 
+Modified by: {!$Record.LastModifiedBy.Username}
+Link: https://u-blox.my.salesforce.com/{!$Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SHOFocusGroup</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>SHO focus opportunity &quot;{!$Record.Name}&quot; updated.
+Account: {!$Record.Account.Name}
+Stage: {!$Record.StageName}
+Latest Status: {!$Record.Latest_Status__c}
+Modified by: {!$Record.LastModifiedBy.Username}
+Link: https://u-blox.my.salesforce.com/{!$Record.Id}</text>
+    </textTemplates>
+</Flow>

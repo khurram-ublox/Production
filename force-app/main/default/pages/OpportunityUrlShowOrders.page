@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity">
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    <script>
+        // /00O57000006jOwh?pv2="{!Opportunity.Product_1__c},{!Opportunity.Product_2__c},{!Opportunity.Product_3__c},{!Opportunity.Product_4__c},{!Opportunity.Product_5__c}"&pv3="{!Opportunity.AccountId}"&pv4="{!Opportunity.AccountId}"&pv5="{!Opportunity.AccountId}"
+        var accountId15 = "{!Opportunity.AccountId}";
+        accountId15 = accountId15.substr(0,15);
+        uJS.openReport({
+            Id : "00O57000006jOwh",
+            v2 : "{!Opportunity.Product_1__r.Name},{!Opportunity.Product_2__r.Name},{!Opportunity.Product_3__r.Name},{!Opportunity.Product_4__r.Name},{!Opportunity.Product_5__r.Name}",
+            v3 : accountId15,
+            v4 : accountId15,
+            v5 : accountId15
+        });
+    </script>
+    
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

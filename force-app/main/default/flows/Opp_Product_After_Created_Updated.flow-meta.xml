@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Set_Currency</name>
+        <label>Set Currency</label>
+        <locationX>64</locationX>
+        <locationY>1379</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.CurrencyIsoCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunituy.CurrencyIsoCode</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>a4x_Update_Dimension_Update_Key</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_COGS_01</name>
+        <label>Update COGS</label>
+        <locationX>795</locationX>
+        <locationY>540</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Budget_IPR_Amount__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Budget_IPR_Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Budget_IPR__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Budget_IPR</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.COGS__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>COGS_Field_Update</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.IPR_value_next_FY__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IPR_Next_FY</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Update_Contribution__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>check_if_opportunity_account_exists</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Dimension_Update_Key</name>
+        <label>Update Dimension Update Key</label>
+        <locationX>730</locationX>
+        <locationY>1531</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.a4x_Key_Dim_Update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>a4xKeyDimUpdateFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_Notifications</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>a4x_Update_Dimension_Update_Key</name>
+        <label>a4x Update Dimension Update Key</label>
+        <locationX>393</locationX>
+        <locationY>1423</locationY>
+        <defaultConnector>
+            <targetReference>Send_Email_Notifications</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_a4x_Key_Dim_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LastModifiedDate</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Dimension_Update_Key</targetReference>
+            </connector>
+            <label>Update a4x Key Dim Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>APAC_Account_with_IC_Product_Family</name>
+        <label>APAC Account with IC Product Family</label>
+        <locationX>795</locationX>
+        <locationY>771</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Product_Currency</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>APAC_AND_Family_IC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Account.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Americas</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Account.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.Account.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Corporate</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product__r.Family</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>IC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>New_Task_to_Opp</targetReference>
+            </connector>
+            <label>APAC AND Family=&apos;IC&apos;</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>check_if_opportunity_account_exists</name>
+        <label>check if opportunity account exists</label>
+        <locationX>372</locationX>
+        <locationY>696</locationY>
+        <defaultConnector>
+            <targetReference>Opp_Product_Currency</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_if_opportunity_account_exists_condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__r.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>APAC_Account_with_IC_Product_Family</targetReference>
+            </connector>
+            <label>check if opportunity account exists condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Updates COGS when Product has been updated (triggered by Apex Trigger updateCOGSOnOppProduct), or Product, Unit Price or Currency has been changed.</description>
+        <name>COGS_Fields_Update_Decision</name>
+        <label>COGS Fields Update Decision</label>
+        <locationX>373</locationX>
+        <locationY>427</locationY>
+        <defaultConnector>
+            <targetReference>check_if_opportunity_account_exists</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>COGS_Fields_Update</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Update_Contribution__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Product__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Unit_Price__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CurrencyIsoCode</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.IPR_Coverage__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Use_Restriction__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_COGS_01</targetReference>
+            </connector>
+            <label>COGS Fields Update</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opp_Product_Currency</name>
+        <label>Opp Product Currency</label>
+        <locationX>390</locationX>
+        <locationY>1125</locationY>
+        <defaultConnector>
+            <targetReference>a4x_Update_Dimension_Update_Key</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Currency_From_Opportunity</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Opportunity__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Opportunituy</targetReference>
+            </connector>
+            <label>Currency From Opportunity</label>
+        </rules>
+    </decisions>
+    <description>Flow trigger on Opp Product to execute on after record is created or updated.
+Updating fields
+Sending Email Alerts, Creating Tasks and Chatter Posts through subflow</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>a4xKeyDimUpdateFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(
+{!$Record.a4x_Budget_Filter_Formula__c},
+{!$Record.SF_Account_Number__c} &amp;&quot;-&quot;&amp; {!$Record.Ordering_Code__c},
+NULL
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Budget_IPR</name>
+        <dataType>Number</dataType>
+        <expression>{!Budget_IPR_Calculation} * 100</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>Budget_IPR_Amount</name>
+        <dataType>Currency</dataType>
+        <expression>IF( {!$Record.Product_Center__c} &lt;&gt; &quot;Cellular&quot; , 0,
+IF(ISBLANK({!$Record.Product__r.IPR_Cost__c}),0,
+CASE(
+CASE (text({!$Record.IPR_Coverage__c}),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD__c},
+0),
+&quot;1&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD_QC__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD_QC__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD_QC__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD_QC__c},
+0),
+&quot;2&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD__c},
+0),
+&quot;3&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c},
+0),0)))</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>Budget_IPR_Calculation</name>
+        <dataType>Number</dataType>
+        <expression>IF( {!$Record.Product_Center__c} &lt;&gt; &quot;Cellular&quot; , 0,
+IF(ISBLANK({!$Record.Product__r.IPR_Cost__c}),0,
+    CASE(
+        CASE (text({!$Record.IPR_Coverage__c}),
+        &quot;Full coverage&quot;, &quot;0&quot;,
+        &quot;Premium coverage&quot;, &quot;0&quot;,
+        &quot;All except Qualcomm&quot;, &quot;1&quot;,
+        &quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+        &quot;Prime coverage&quot;,&quot;2&quot;,
+        &quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+        &quot;NO&quot;),
+        &quot;0&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_Pct__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_Pct__c},
+        &quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_Pct__c},
+        &quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_Pct__c},
+        &quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_Pct__c},
+        0),
+        &quot;1&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_Pct_QC__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_Pct_QC__c},
+        &quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_Pct_QC__c},
+        &quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_Pct_QC__c},
+        &quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_Pct_QC__c},
+        0),
+        &quot;2&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct__c},
+        0),
+        &quot;3&quot;,
+        CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+        &quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c},
+        &quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c},
+        0)
+    ,0)
+))</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>COGS_Field_Update</name>
+        <dataType>Currency</dataType>
+        <expression>/* 1. COGS 1 in USD */
+{!$Record.Product__r.COGS_1__c} +
+/* 2. COGS in percent */
+IF(ISNULL({!$Record.Product__r.COGS_Pct__c}),0,{!$Record.Unit_Price__c}*{!$Record.Product__r.COGS_Pct__c}) +
+/* 3. IPR-related cost (only for CEL) */
+IF( {!$Record.Product_Center__c} &lt;&gt; &quot;Cellular&quot; , 0,
+IF(ISBLANK({!$Record.Product__r.IPR_Cost__c}),0,
+CASE(
+CASE (text({!$Record.IPR_Coverage__c}),
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;, &quot;1&quot;,
+&quot;Premium except Qualcomm&quot;, &quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.M2M_Pct__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Telematics_Pct__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Handset_Pct__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Laptop_Pct__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Other_Pct__c},
+0),
+&quot;1&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.M2M_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.M2M_Pct_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Telematics_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Telematics_Pct_QC__c},
+&quot;Handset&quot;, {!$Record.Product__r.IPR_Cost__r.Handset_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Handset_Pct_QC__c},
+&quot;Laptop&quot;, {!$Record.Product__r.IPR_Cost__r.Laptop_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Laptop_Pct_QC__c},
+&quot;Other&quot;, {!$Record.Product__r.IPR_Cost__r.Other_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Other_Pct_QC__c},
+0),
+&quot;2&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct__c},
+0),
+&quot;3&quot;,
+CASE (RIGHT (text({!$Record.Use_Restriction__c}), LEN(text({!$Record.Use_Restriction__c}))-FIND(&quot; &quot;,text({!$Record.Use_Restriction__c}))),
+&quot;M2M&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c},
+&quot;Telematics&quot;, {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c} * {!$Record.USD_Rate__c} + {!$Record.Unit_Price__c} * {!$Record.Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c},
+0),0)))</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>IPR_Next_FY</name>
+        <dataType>Currency</dataType>
+        <expression>IF(ISNULL({!$Record.Product__r.COGS_Pct__c}),0,{!$Record.Budget_Calculate_Price__c}*{!$Record.Product__r.COGS_Pct__c}) +
+{!Budget_IPR_Amount} +
+{!$Record.Budget_Calculate_Price__c} * {!Budget_IPR_Calculation}</expression>
+        <scale>3</scale>
+    </formulas>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>reminderDateFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW() + 0.007</expression>
+    </formulas>
+    <interviewLabel>Opp Product: After Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opp Product: After Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>New_Task_to_Opp</name>
+        <label>New Task to Opp</label>
+        <locationX>801</locationX>
+        <locationY>1039</locationY>
+        <connector>
+            <targetReference>Opp_Product_Currency</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Opp_Product_Currency</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>descriptionTemplate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsReminderSet</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Opportunity__r.Account.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ReminderDateTime</field>
+            <value>
+                <elementReference>reminderDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Stage 2 - Project qualification</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type</field>
+            <value>
+                <stringValue>Chip Project</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Opportunity__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Opportunituy</name>
+        <label>Get Opportunituy</label>
+        <locationX>63</locationX>
+        <locationY>1208</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Set_Currency</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>a4x_Update_Dimension_Update_Key</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Opportunity__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>updateOppProductRecord</name>
+        <label>updateOppProductRecord</label>
+        <locationX>419</locationX>
+        <locationY>1960</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>265</locationX>
+        <locationY>45</locationY>
+        <connector>
+            <targetReference>COGS_Fields_Update_Decision</targetReference>
+        </connector>
+        <object>Opp_Product__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Send_Email_Notifications</name>
+        <label>Send Email Notifications</label>
+        <locationX>421</locationX>
+        <locationY>1721</locationY>
+        <connector>
+            <targetReference>updateOppProductRecord</targetReference>
+        </connector>
+        <flowName>Opp_Product_Email_Alerts</flowName>
+        <inputAssignments>
+            <name>OppProd_Record</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Prior_OppProduct</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>RecordIsNew</name>
+            <value>
+                <elementReference>isNew</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <textTemplates>
+        <name>descriptionTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>1) Sales Visit
+2) Project Qualification
+a) Update SF and Partner Roles
+b) Co-ordinate with Regional Sales for inter territory project
+3) Quotation attached with SPR approval
+4) Endorsed Commitment Letter.</text>
+    </textTemplates>
+</Flow>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Issue__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Categorize the type of problem that caused the Issue.</inlineHelpText>
+    <label>Type of Issue</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Technical Problem</fullName>
+                <default>false</default>
+                <label>Technical Problem</label>
+            </value>
+            <value>
+                <fullName>Quality Problem</fullName>
+                <default>false</default>
+                <label>Quality Problem</label>
+            </value>
+            <value>
+                <fullName>Logistics Problem</fullName>
+                <default>false</default>
+                <label>Logistics Problem</label>
+            </value>
+            <value>
+                <fullName>Missing feature</fullName>
+                <default>false</default>
+                <label>Missing feature</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

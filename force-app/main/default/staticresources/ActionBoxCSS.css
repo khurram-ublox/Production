@@ -1,0 +1,27 @@
+.cuf-content {padding: 0 0rem !important;}
+.slds-p-around--medium {padding: 0rem !important;}       
+.slds-modal__content{height:unset !important; max-height:unset !important;overflow-y: hidden !important;}  
+.custom-modal-body {padding:1rem !important;overflow-y:auto !important;height: 400px !important;}
+.custom-modal-body-100 {padding:1rem !important;overflow-y:auto !important;height: 100px !important;}
+.custom-modal-body-60 {padding:1rem !important;overflow-y:auto !important;height: 60px !important;text-align:center;}
+
+@media (max-height: 860px){
+    .custom-modal-body {
+        height: 400px !important;
+    }
+}
+@media screen and (max-height: 720px) { 
+    .custom-modal-body {
+        height: 300px !important;
+    }
+}
+@media (max-height: 560px){
+    .custom-modal-body {
+        height: 200px !important;
+    }
+}
+@media (max-height: 460px){
+    .custom-modal-body {
+        height: 100px !important;
+    }
+}

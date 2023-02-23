@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <processMetadataValues>
+            <name>postTargetUserType</name>
+            <value>
+                <stringValue>REFERENCE</stringValue>
+            </value>
+        </processMetadataValues>
+        <processMetadataValues>
+            <name>textJson</name>
+            <value>
+                <stringValue>{&quot;mentions&quot;:[{&quot;id&quot;:&quot;00520000000zbAXAAY&quot;,&quot;name&quot;:&quot;Keisuke Hirashima&quot;}],&quot;message&quot;:&quot;@[00520000000zbAXAAY]&amp;nbsp;&lt;br&gt;Please be aware that the customer is starting to evaluate the u-blox products for the opportunity &amp;nbsp;{![Opportunity].Name}&amp;nbsp;&amp;nbsp;today. Let&apos;s make sure that the customer receives the support needed to design in our products!&quot;}</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>myRule_1_A1</name>
+        <label>Post to FAE</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <stringValue>@[00520000000zbAXAAY] 
+Please be aware that the customer is starting to evaluate the u-blox products for the opportunity  {!myVariable_current.Name}  today. Let&apos;s make sure that the customer receives the support needed to design in our products!</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>type</name>
+            <value>
+                <stringValue>USER</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>myVariable_current.Account.FAE__r.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>myVariable_waitStartTimeAssignment</name>
+        <label>myVariable_waitStartTimeAssignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>myVariable_waitStartTimeVariable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>myDecision</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>myDecision</name>
+        <label>Primary Decision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>Opportunity, Account Owner NOT Partner, Stage=4, Focus=1-3, Account Owner=khir (TEST)</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>AND(
+[Opportunity].RecordTypeId =&quot;01220000000CqRnAAK&quot;,
+ISCHANGED([Opportunity].StageName),
+ISPICKVAL([Opportunity].StageName, &quot;4 Evaluation&quot;),
+OR(
+ISPICKVAL([Opportunity].Focus__c, &quot;1 - Corporate&quot;),
+ISPICKVAL([Opportunity].Focus__c, &quot;2 - Region&quot;),
+ISPICKVAL([Opportunity].Focus__c, &quot;3 - Territory&quot;)),
+[Opportunity].OwnerId=&quot;00520000000zbAXAAY&quot;
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!myVariable_current.RecordTypeId} =&quot;01220000000CqRnAAK&quot;,
+ISCHANGED({!myVariable_current.StageName}),
+ISPICKVAL({!myVariable_current.StageName}, &quot;4 Evaluation&quot;),
+OR(
+ISPICKVAL({!myVariable_current.Focus__c}, &quot;1 - Corporate&quot;),
+ISPICKVAL({!myVariable_current.Focus__c}, &quot;2 - Region&quot;),
+ISPICKVAL({!myVariable_current.Focus__c}, &quot;3 - Territory&quot;)),
+{!myVariable_current.OwnerId}=&quot;00520000000zbAXAAY&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Opp_EMEA_Alert_Stage_4_to_FAE-6_Opportunity</interviewLabel>
+    <label>Opp EMEA: Alert Stage 4 to FAE</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Opportunity</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onAllChanges</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <startElementReference>myVariable_waitStartTimeAssignment</startElementReference>
+    <status>Obsolete</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_waitStartTimeVariable</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Flow.CurrentDateTime</elementReference>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,8 @@
+Status of the following Solution has been changed:
+
+Solution Number: {!Solution.SolutionNumber}
+Solution Title: {!Solution.SolutionName}
+Owner: {!Solution.Owner__c}
+Status: {!Solution.Status}
+
+Link to the Solution: {!Solution.Link}

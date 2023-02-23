@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the application where u-blox realize the largest part of the revenues. Used for statistical analysis.</inlineHelpText>
+    <label>Old Application Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ADAS</fullName>
+                <default>false</default>
+                <label>ADAS</label>
+            </value>
+            <value>
+                <fullName>Asset tracking</fullName>
+                <default>false</default>
+                <label>Asset tracking</label>
+            </value>
+            <value>
+                <fullName>ATM, POS, vending</fullName>
+                <default>false</default>
+                <label>ATM, POS, vending</label>
+            </value>
+            <value>
+                <fullName>Aviation &amp; UAV</fullName>
+                <default>false</default>
+                <label>Aviation &amp; UAV</label>
+            </value>
+            <value>
+                <fullName>Base station</fullName>
+                <default>false</default>
+                <label>Base station</label>
+            </value>
+            <value>
+                <fullName>Car connectivity</fullName>
+                <default>false</default>
+                <label>Car connectivity</label>
+            </value>
+            <value>
+                <fullName>Digital camera</fullName>
+                <default>false</default>
+                <label>Digital camera</label>
+            </value>
+            <value>
+                <fullName>Driving recorder</fullName>
+                <default>false</default>
+                <label>Driving recorder</label>
+            </value>
+            <value>
+                <fullName>Emergency call</fullName>
+                <default>false</default>
+                <label>Emergency call</label>
+            </value>
+            <value>
+                <fullName>Femtocell</fullName>
+                <default>false</default>
+                <label>Femtocell</label>
+            </value>
+            <value>
+                <fullName>GPS mouse</fullName>
+                <default>false</default>
+                <label>GPS mouse</label>
+            </value>
+            <value>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+                <label>Healthcare</label>
+            </value>
+            <value>
+                <fullName>Home entertainment</fullName>
+                <default>false</default>
+                <label>Home entertainment</label>
+            </value>
+            <value>
+                <fullName>In-car navigation</fullName>
+                <default>false</default>
+                <label>In-car navigation</label>
+            </value>
+            <value>
+                <fullName>Industrial terminal</fullName>
+                <default>false</default>
+                <label>Industrial terminal</label>
+            </value>
+            <value>
+                <fullName>Insurance box</fullName>
+                <default>false</default>
+                <label>Insurance box</label>
+            </value>
+            <value>
+                <fullName>Machine control</fullName>
+                <default>false</default>
+                <label>Machine control</label>
+            </value>
+            <value>
+                <fullName>Marine</fullName>
+                <default>false</default>
+                <label>Marine</label>
+            </value>
+            <value>
+                <fullName>Metering</fullName>
+                <default>false</default>
+                <label>Metering</label>
+            </value>
+            <value>
+                <fullName>Military &amp; government</fullName>
+                <default>false</default>
+                <label>Military &amp; government</label>
+            </value>
+            <value>
+                <fullName>Mobile gaming</fullName>
+                <default>false</default>
+                <label>Mobile gaming</label>
+            </value>
+            <value>
+                <fullName>Mobile hotspot and router</fullName>
+                <default>false</default>
+                <label>Mobile hotspot and router</label>
+            </value>
+            <value>
+                <fullName>Mobile phone</fullName>
+                <default>false</default>
+                <label>Mobile phone</label>
+            </value>
+            <value>
+                <fullName>Monitoring &amp; control</fullName>
+                <default>false</default>
+                <label>Monitoring &amp; control</label>
+            </value>
+            <value>
+                <fullName>Notebook, tablet</fullName>
+                <default>false</default>
+                <label>Notebook, tablet</label>
+            </value>
+            <value>
+                <fullName>PDA</fullName>
+                <default>false</default>
+                <label>PDA</label>
+            </value>
+            <value>
+                <fullName>People &amp; animal tracking</fullName>
+                <default>false</default>
+                <label>People &amp; animal tracking</label>
+            </value>
+            <value>
+                <fullName>PND</fullName>
+                <default>false</default>
+                <label>PND</label>
+            </value>
+            <value>
+                <fullName>Radar detector</fullName>
+                <default>false</default>
+                <label>Radar detector</label>
+            </value>
+            <value>
+                <fullName>Recreation &amp; sports</fullName>
+                <default>false</default>
+                <label>Recreation &amp; sports</label>
+            </value>
+            <value>
+                <fullName>Remote display</fullName>
+                <default>false</default>
+                <label>Remote display</label>
+            </value>
+            <value>
+                <fullName>Road pricing</fullName>
+                <default>false</default>
+                <label>Road pricing</label>
+            </value>
+            <value>
+                <fullName>Router and gateway</fullName>
+                <default>false</default>
+                <label>Router and gateway</label>
+            </value>
+            <value>
+                <fullName>Security</fullName>
+                <default>false</default>
+                <label>Security</label>
+            </value>
+            <value>
+                <fullName>Seismic survey</fullName>
+                <default>false</default>
+                <label>Seismic survey</label>
+            </value>
+            <value>
+                <fullName>Stolen vehicle recovery</fullName>
+                <default>false</default>
+                <label>Stolen vehicle recovery</label>
+            </value>
+            <value>
+                <fullName>Timing</fullName>
+                <default>false</default>
+                <label>Timing</label>
+            </value>
+            <value>
+                <fullName>Vehicle telematics</fullName>
+                <default>false</default>
+                <label>Vehicle telematics</label>
+            </value>
+            <value>
+                <fullName>Vehicle tracking</fullName>
+                <default>false</default>
+                <label>Vehicle tracking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment__c</fullName>
+    <externalId>false</externalId>
+    <label>Payment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cash in advance</fullName>
+                <default>false</default>
+                <label>Cash in advance</label>
+            </value>
+            <value>
+                <fullName>Cash on delivery</fullName>
+                <default>false</default>
+                <label>Cash on delivery</label>
+            </value>
+            <value>
+                <fullName>30 days end of month net</fullName>
+                <default>false</default>
+                <label>30 days end of month net</label>
+            </value>
+            <value>
+                <fullName>30 days net</fullName>
+                <default>false</default>
+                <label>30 days net</label>
+            </value>
+            <value>
+                <fullName>30 days upon approved credit</fullName>
+                <default>false</default>
+                <label>30 days upon approved credit</label>
+            </value>
+            <value>
+                <fullName>60 days net</fullName>
+                <default>false</default>
+                <label>60 days net</label>
+            </value>
+            <value>
+                <fullName>L/C irrevocable and confirmed</fullName>
+                <default>false</default>
+                <label>L/C irrevocable and confirmed</label>
+            </value>
+            <value>
+                <fullName>Pre-Payment</fullName>
+                <default>false</default>
+                <label>Pre-Payment</label>
+            </value>
+            <value>
+                <fullName>T/T in advance</fullName>
+                <default>false</default>
+                <label>T/T in advance</label>
+            </value>
+            <value>
+                <fullName>-</fullName>
+                <default>false</default>
+                <label>-</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

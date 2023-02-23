@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>a4a_Measure_Filter_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>NOT(Frame_Order__c) 
+&amp;&amp; 
+(Order_Status__c = &quot;Closed&quot; || (Order_Status__c = &quot;Open&quot; &amp;&amp; a4a_Date__c &gt;= TODAY()))
+&amp;&amp; 
+Total_Value_CHF__c &lt;&gt; 0
+&amp;&amp;
+a4a_Date__c &gt;= DATE(YEAR(TODAY())-2,01,01)
+
+/* added 11.11.2019 */
+&amp;&amp;
+a4a_Date__c &lt;= TODAY() + ($Setup.a4x__app4forecast__c.a4x__Forecast_Periods__c + 2) * 30
+
+
+/* temporarly added */
+&amp;&amp;
+NOT(a4a_Manual_Forecast__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>a4a Measure Filter Formula</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

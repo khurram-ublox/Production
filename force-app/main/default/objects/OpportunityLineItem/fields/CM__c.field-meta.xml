@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CM__c</fullName>
+    <externalId>false</externalId>
+    <formula>if (UnitPrice = 0, 0, 1 -  
+
+/* Cost in USD (COGS 1) */
+(PricebookEntry.Product2.COGS_1__c 
+
+/* Cost in percent of ASP */
++ UnitPrice *  PricebookEntry.Product2.COGS_Pct__c 
+
+/* Cost in USD */
++ CASE ( text( Use_Restriction__c ),
+&quot;2G M2M&quot;, PricebookEntry.Product2.IPR_USD_M2M__c,
+&quot;3G M2M&quot;, PricebookEntry.Product2.IPR_USD_M2M__c,
+&quot;4G M2M&quot;, PricebookEntry.Product2.IPR_USD_M2M__c,
+&quot;3G Telematics&quot;, PricebookEntry.Product2.IPR_USD_Telematics__c,
+&quot;4G Telematics&quot;, PricebookEntry.Product2.IPR_USD_Telematics__c,
+&quot;3G Laptop&quot;, PricebookEntry.Product2.IPR_USD_Laptop__c ,
+&quot;4G Laptop&quot;, PricebookEntry.Product2.IPR_USD_Laptop__c ,
+&quot;3G External Modem&quot;, PricebookEntry.Product2.IPR_USD_Ext_Modem__c,
+&quot;4G External Modem&quot;, PricebookEntry.Product2.IPR_USD_Ext_Modem__c,
+&quot;3G PC/USB Modem&quot;, PricebookEntry.Product2.IPR_USD_PCUSB__c,
+&quot;4G PC/USB Modem&quot;, PricebookEntry.Product2.IPR_USD_PCUSB__c,
+&quot;2G Handset&quot;, PricebookEntry.Product2.IPR_USD_Handset__c,
+&quot;3G Handset&quot;, PricebookEntry.Product2.IPR_USD_Handset__c,
+&quot;4G Handset&quot;, PricebookEntry.Product2.IPR_USD_Handset__c,
+&quot;2G Consumer&quot;, PricebookEntry.Product2.IPR_USD_Consumer__c,
+&quot;3G Other&quot;, PricebookEntry.Product2.IPR_USD_Other__c,
+&quot;4G Other&quot;, PricebookEntry.Product2.IPR_USD_Other__c,
+0)
+
+/* Subtract IPR Cost in percent of ASP*/
++ UnitPrice * CASE ( text(Use_Restriction__c),
+&quot;2G M2M&quot;, PricebookEntry.Product2.IPR_Pct_M2M__c,
+&quot;3G M2M&quot;, PricebookEntry.Product2.IPR_Pct_M2M__c,
+&quot;4G M2M&quot;, PricebookEntry.Product2.IPR_Pct_M2M__c,
+&quot;3G Telematics&quot;, PricebookEntry.Product2.IPR_Pct_Telematics__c,
+&quot;4G Telematics&quot;, PricebookEntry.Product2.IPR_Pct_Telematics__c,
+&quot;3G Laptop&quot;, PricebookEntry.Product2.IPR_Pct_Laptop__c ,
+&quot;4G Laptop&quot;, PricebookEntry.Product2.IPR_Pct_Laptop__c ,
+&quot;3G External Modem&quot;, PricebookEntry.Product2.IPR_Pct_Ext_Modem__c,
+&quot;4G External Modem&quot;, PricebookEntry.Product2.IPR_Pct_Ext_Modem__c,
+&quot;3G PC/USB Modem&quot;, PricebookEntry.Product2.IPR_Pct_PCUSB__c,
+&quot;4G PC/USB Modem&quot;, PricebookEntry.Product2.IPR_Pct_PCUSB__c,
+&quot;2G Handset&quot;, PricebookEntry.Product2.IPR_Pct_Handset__c,
+&quot;3G Handset&quot;, PricebookEntry.Product2.IPR_Pct_Handset__c,
+&quot;4G Handset&quot;, PricebookEntry.Product2.IPR_Pct_Handset__c,
+&quot;2G Consumer&quot;, PricebookEntry.Product2.IPR_Pct_Consumer__c,
+&quot;3G Other&quot;, PricebookEntry.Product2.IPR_Pct_Other__c,
+&quot;4G Other&quot;, PricebookEntry.Product2.IPR_Pct_Other__c,
+0)
+
+) / UnitPrice)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Contribution margin of quoted product. Takes into account IPR cost depending on use restriction, as well as COGS in percent (e.g. for royalties)</inlineHelpText>
+    <label>CM [%]</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <type>Percent</type>
+</CustomField>

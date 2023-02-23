@@ -1,0 +1,5 @@
+Please be aware that 3 weeks ago we shipped {!Billings__c.Product__c} to {!Billings__c.Account__c}. They paid {!Billings__c.Total_Value__c} for it: let’s see if they could evaluate our products and they are going to design us in or whether they need further support! Please also update the corresponding opportunity.
+
+The project owner account is {!Billings__c.Project_Owner_Account__c} and its account owner is {!Billings__c.Project_Owner_Account_Owner__c}.
+
+Link to the Order {!Billings__c.Name}: {!Billings__c.Link}

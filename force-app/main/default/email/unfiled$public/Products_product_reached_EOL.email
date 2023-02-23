@@ -1,0 +1,17 @@
+{!Product2.Type_No__c} changed the status to End-of-Life. Please ensure the follow-up:
+- Sales briefing
+- Distribute EOL notification
+- Remove product from web shop
+- Add remark ‘In End of Life’ to web site
+- Migrate opportunities to new type number if applicable
+
+Type number: {!Product2.Type_No__c}
+Product status: {!Product2.Product_Status__c}
+Product description: {!Product2.Product_Text_1__c} {!Product2.Product_Text_2__c}
+
+Make sure the following dates are filled:
+EOL/PCN Issue Date: {!Product2.EOL_PCN_Issue_Date__c}
+Last Time Buy Date: {!Product2.Last_Time_Buy_Date__c}
+Last Shipment Date: {!Product2.Last_Shipment_Date__c}
+
+Link to record: {!Product2.Link}

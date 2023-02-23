@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Records_for_Mass__c</fullName>
+    <defaultValue>2</defaultValue>
+    <description>Number of records that would be considered for Mass update from DataLoader. This is used in trigger .</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Minimum number of records that would be considered as the transaction is for Mass update</inlineHelpText>
+    <label>Min Records for Mass</label>
+    <precision>10</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

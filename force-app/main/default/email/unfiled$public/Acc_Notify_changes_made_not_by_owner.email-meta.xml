@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>To inform user that Account fields Account Name, Distributor, or Priority has been changed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Acc: Notify changes made not by owner</name>
+    <style>none</style>
+    <subject>Account alert: {!Account.Name} has been changed by {!Account.LastModifiedBy}.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

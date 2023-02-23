@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Coverage_Price_Adder__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Premium_Product_Price_Difference__c &gt; 0,&quot;(&quot; &amp; TEXT( floor( Premium_Product_Price_Difference__c ) ) + &quot;.&quot; + right( TEXT( ( 1 + Premium_Product_Price_Difference__c - floor( Premium_Product_Price_Difference__c ) ) * 100 ), 2 ) &amp; &quot; &quot; &amp; TEXT(CurrencyIsoCode) &amp;&quot; adder)&quot;,&quot;&quot;)</formula>
+    <label>IPR Coverage Price Adder</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

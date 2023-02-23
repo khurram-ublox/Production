@@ -1,0 +1,3 @@
+Please be aware that the expected Start of Production date for the opportunity "{!Opportunity.Name}" of {!Opportunity.Account} is TODAY: time to gear up to get the first production PO!
+
+Link: https://u-blox.my.salesforce.com/{!Opportunity.Id}

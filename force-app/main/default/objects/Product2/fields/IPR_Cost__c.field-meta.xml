@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IPR_Cost__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>IPR cost in detail, used to update IPR USD xxx and IPR Pct xxx fields. Populated when IPR Technology picklist field is changed (using Process and Workflow)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>IPR cost in detail, used to update IPR USD xxx and IPR Pct xxx fields. Populated when IPR Technology picklist field is changed</inlineHelpText>
+    <label>IPR Cost</label>
+    <referenceTo>IPR_Cost__c</referenceTo>
+    <relationshipLabel>Products</relationshipLabel>
+    <relationshipName>Products</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ISO_code_check</fullName>
+    <active>false</active>
+    <description>Check that the country is entered as a valid 2-letter ISO code</description>
+    <errorConditionFormula>and(len(BillingCountry) &lt;&gt; 2, len(BillingCountry)&gt;0)</errorConditionFormula>
+    <errorDisplayField>BillingCountry</errorDisplayField>
+    <errorMessage>Use 2-letter country code according to ISO 3166</errorMessage>
+</ValidationRule>

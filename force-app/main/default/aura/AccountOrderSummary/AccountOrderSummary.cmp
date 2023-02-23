@@ -1,0 +1,159 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" controller="SalesCloud_ProjectOwnerSummaryCtrl" access="global">
+    <aura:handler action="{!c.doInit}" value="{!this}" name="init" />
+    <aura:attribute name="projectOwner" type="Object" />  
+    
+<article class="slds-card">
+	<div class="slds-card__header slds-grid slds-border_bottom"> 
+		<header class="slds-media slds-media_center slds-has-flexi-truncate"> <!-- slds-border_bottom !-->
+			<div class="slds-media__figure">
+				<span class="slds-icon_container slds-icon-calculated_insights" title="Project Owner Financial Performance">       
+                    <lightning:icon iconName="utility:calculated_insights" alternativeText="Project Owner Financial Performance" title="Project Owner Financial Performance" size="small"/>
+                <br/><br/>
+                </span>            
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <a class="slds-card__header-link slds-truncate" title="Project Owner Financial Performance">
+                    	<span>Project Owner Financial Performance</span>
+                        <br/><br/>
+                    </a>
+                </h2>
+            </div>
+        </header>
+	</div>
+<div class="slds-card__body_inner"> <!-- slds-card__body !-->
+
+<!-- body  !-->
+    
+         <lightning:layout verticalAlign="stretch" multipleRows="true">           
+            <lightning:layoutItem class="datatable_textsize" flexibility="auto"> <!--  padding="around-small" !-->
+              <table class="slds-table slds-table_bordered" role="grid"> <!--slds-border_top  slds-table_col-bordered   slds-table_bordered !-->
+                <tbody>
+                	<tr> <!--  class="slds-m-top_none slds-table_striped"  !-->
+                    	<th class="slds-text-align_left" scope="col" style="width:3.25rem">                      
+                      		<div class="slds-truncate slds-p-bottom_small">Priority</div>
+                    	</th>
+                    	<td aria-label="Priority" scope="col">
+                      		<div class="slds-truncate slds-p-bottom_small">{!v.projectOwner.AMPrioChangeProposed}</div>
+                   		</td>
+                    </tr>
+                    
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                      <div class="slds-truncate slds-p-bottom_small">Open Orders Expected Contribution</div>                      
+                    </th>
+                    <td aria-label="Bookings Contribution" scope="col">
+                      <div class="slds-truncate slds-p-bottom_small">
+                          <lightning:formattedNumber 
+                            value="{!v.projectOwner.AMBookingsContributionChf}" 
+                            style="currency" 
+                            currencyCode="CHf" 
+                            currencyDisplayAs="symbol" /></div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                    	<div class="slds-truncate slds-p-bottom_small">Open Orders Revenue</div>
+                    </th>
+                    <td aria-label="Bookings Revenue" scope="col">
+                    	<div class="slds-truncate slds-p-bottom_small">
+                       		<lightning:formattedNumber 
+                            value="{!v.projectOwner.AMBookingsRevenueChf}" 
+                            style="currency" 
+                            currencyCode="CHf" 
+                            currencyDisplayAs="symbol" />
+                   		</div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                    	<div class="slds-truncate slds-p-bottom_small">Billings Contribution Tmt</div>
+                    </th>
+                    <td aria-label="Billings Contribution Tmt" scope="col">
+                    	<div class="slds-truncate slds-p-bottom_small">
+                        	<lightning:formattedNumber 
+                           value="{!v.projectOwner.AMBillingsContributionTmtChf}" 
+                           style="currency" 
+                           currencyCode="CHf" 
+                           currencyDisplayAs="symbol"/></div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                  	<th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                      <div class="slds-truncate slds-p-bottom_small">Billings Revenue Tmt</div>
+                    </th>
+                    <td aria-label="Billings Revenue Tmt" scope="col">
+                      	<div class="slds-truncate slds-p-bottom_small">
+                          <lightning:formattedNumber 
+                           value="{!v.projectOwner.AMBillingsRevenueTmtChf}" 
+                           style="currency" 
+                           currencyCode="CHf" 
+                           currencyDisplayAs="symbol" />
+                        </div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                      <div class="slds-truncate slds-p-bottom_small">Billings Contribution Ytd</div>
+                    </th>
+                    <td aria-label="Billings Contribution Ytd" scope="col">
+                      	<div class="slds-truncate slds-p-bottom_small">
+                          <lightning:formattedNumber 
+                           value="{!v.projectOwner.AMBillingsContributionYtdChf}" 
+                           style="currency" 
+                           currencyCode="CHf" 
+                           currencyDisplayAs="symbol" />
+                        </div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                      <div class="slds-truncate slds-p-bottom_small">Billings Revenue Ytd</div>
+                    </th>
+                    <td aria-label="Billings Revenue Ytd" scope="col">
+                      <div class="slds-truncate slds-p-bottom_small">
+                          <lightning:formattedNumber 
+                           value="{!v.projectOwner.AMBillingsRevenueYtdChf}" 
+                           style="currency" 
+                           currencyCode="CHf" 
+                           currencyDisplayAs="symbol" /></div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                      <div class="slds-truncate slds-p-bottom_small">Billings Contribution PrevYr</div>
+                    </th>
+                    <td aria-label="Billings Contribution PrevYr" scope="col">
+                      <div class="slds-truncate slds-p-bottom_small">
+                          <lightning:formattedNumber 
+                           value="{!v.projectOwner.AMBillingsContributionPrevYrChf}" 
+                           style="currency" 
+                           currencyCode="CHf" 
+                           currencyDisplayAs="symbol" /></div>
+                    </td>
+                  </tr>
+                  <tr class="slds-line-height_reset">
+                    <th class="slds-text-align_left" scope="col" style="width:3.25rem">
+                      <div class="slds-truncate slds-p-bottom_small">Billings Revenue PrevYr</div>
+                    </th>
+                    <td aria-label="Billings Revenue PrevYr" scope="col">
+                      <div class="slds-truncate slds-p-bottom_small">
+                          <lightning:formattedNumber 
+                           value="{!v.projectOwner.AMBillingsRevenuePrevYrChf}" 
+                           style="currency" 
+                           currencyCode="CHf" 
+                           currencyDisplayAs="symbol" /></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </lightning:layoutItem>
+        </lightning:layout>   
+<!-- body  !-->
+    
+       </div>
+</article> 
+    
+
+<!-- *** !-->        
+</aura:component>

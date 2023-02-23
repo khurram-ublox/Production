@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Partner user (Sales Rep) who handles account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Partner user (Sales Rep) who handles account.</inlineHelpText>
+    <label>Partner Owner User</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>User.Distributor_Name__c</field>
+            <operation>equals</operation>
+            <valueField>$User.Distributor_Name__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>User.IsActive</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>User.Profile.Name</field>
+            <operation>contains</operation>
+            <value>Portal - Partner</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Accounts6</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

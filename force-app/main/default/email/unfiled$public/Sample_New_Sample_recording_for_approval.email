@@ -1,0 +1,16 @@
+The following Sample recording requires your action:
+
+Company:        {!Samples__c.Account__c}
+SF Account Number: {!Samples__c.SF_Account_Number__c}
+Product:        {!Samples__c.Type_No__c}
+Quantity: {!Samples__c.Quantity__c}
+
+Created by: {!Samples__c.CreatedBy}
+Request Initiator (if different from the creator): {!Samples__c.Request_Initiator__c}
+
+Remark:    {!Samples__c.Remark__c}
+
+Your actions
+1. Go to: {!Samples__c.Link}
+2. Check the details (e.g. Account, Opportunity, Product, Quantity).
+3. Under "Approval History", click "Approve/Reject". (NOTE: After you have approved, the record will be locked so it can no longer be edited.)

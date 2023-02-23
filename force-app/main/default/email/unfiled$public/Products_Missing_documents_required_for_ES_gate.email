@@ -1,0 +1,10 @@
+Please correct the following document availability dates of {!Product2.Type_No__c}, that need to be earlier than or equal to ES Availability Date:
+
+PS Availability Date: {!Product2.PS_Availability_Date__c}
+DS Availability Date: {!Product2.DS_Availability_Date__c}
+Manual Availability Date: {!Product2.Manual_Availability_Date__c}
+
+ES Availability Date: {!Product2.ES_Availability_Date__c}
+
+
+Link to record: {!Product2.Link}

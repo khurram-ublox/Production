@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limit_Price_Level</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL(Price_Level__c, &quot;PPP (Project Price Plan)&quot;)) &amp;&amp;
+($User.ProfileId &lt;&gt; &quot;00e20000000ki5l&quot;) &amp;&amp;
+ISPICKVAL($User.uB_Office__c , &quot;Americas&quot;)
+/*
+NOT(ISPICKVAL(Price_Level__c, &quot;PPP (Project Price Plan)&quot;))
+*/</errorConditionFormula>
+    <errorDisplayField>Price_Level__c</errorDisplayField>
+    <errorMessage>Approval Process for the selected Price Level is not ready. Please use only PPP for now.</errorMessage>
+</ValidationRule>

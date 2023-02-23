@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NBIOT_Email_of_your_u_blox_contact__c</fullName>
+    <description>For NB-IoT form</description>
+    <externalId>false</externalId>
+    <inlineHelpText>For NB-IoT form</inlineHelpText>
+    <label>NBIOT Email of your u-blox contact</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

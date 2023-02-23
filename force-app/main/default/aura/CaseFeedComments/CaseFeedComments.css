@@ -1,0 +1,155 @@
+.THIS {
+    
+}
+.THIS .closeIcon svg {
+    fill: white;
+}
+.THIS .red {
+    color: red;
+}
+.THIS .section {
+    margin-top:15px;
+    margin-bottom:5px;
+}
+.THIS .clickable span {
+    cursor:pointer;
+}
+.THIS .disabled span {
+    cursor:default;
+}
+.THIS .case {
+    padding: 0 20px;
+}
+.THIS .post_comment {
+    background: #f3f2f2;
+    background: #fff;
+    border-bottom:1px solid #dddbda;
+    padding: 5px 0px 10px 0px;
+    margin: 0 0 5px 0;
+}
+.THIS .comment_body_partners textarea {
+    height:200px;
+}
+.THIS .message_partner textarea {
+    height:96px;
+}
+.THIS .slds-form-element__label:empty {
+    display:none;
+}
+.THIS .description {
+    padding: 0 0.75em;
+}
+.THIS .comments .comment {
+    border-top: 1px solid #dfdfdf;
+    padding: 12px 0.75em; 
+}
+.THIS .uploaded-file {
+    display:inline-block;
+    margin: 5px 0 0 10px;
+}
+.THIS .comments .my {
+	background: #e2fbcf;    
+}
+.THIS code ol.linenums {
+    margin: 10px 0;
+    border: 1px solid #dddbda;
+}
+.THIS .no_messages {
+    margin-top: 20px;
+	color: #777;
+}
+.THIS .comments .comment_facebook {
+    background: #f3f2f2;
+    border:1px solid #dddbda;
+    border-radius: .25rem;
+    padding: 6px 10px;
+    max-width:70%;
+    margin-bottom: 5px;
+    clear:both;
+}
+.THIS .comments .comment:first-child {
+    border-top: 0;
+}
+
+.THIS .comments .slds-tabs_default__nav {
+    display:none;
+}
+
+.THIS .slds-tabs_default__content {
+    padding: 0;
+}
+
+.THIS .user a {
+    font-weight: bold;
+}
+.THIS .date {
+    font-size: 0.9em;
+    color: #666;
+}
+.THIS .date em {
+    display:none;
+}
+.THIS .date span {
+    /*display:none;
+    padding-left: 5px;*/
+}
+.THIS .date .slds-icon {
+    width:12px;
+    height:12px;
+    margin-left: 6px;
+    margin-bottom: 2px;
+    opacity:0.65;
+    fill: #00a568;
+}
+.THIS .date .lock .slds-icon {
+    fill: #ff0000;
+}
+.THIS .date .slds-icon-utility-people .slds-icon {
+    fill: #010101;
+}
+
+
+.THIS .body {
+    margin-top: 5px;
+    overflow-wrap: break-word;
+}
+.THIS .slds-radio_button [type="radio"]:checked+.slds-radio_button__label {
+    background-color: #29987a;
+}
+.THIS .slds-radio_button [type="radio"]:checked+.slds-radio_button__label:hover {
+    background-color: #29987a;
+}
+.THIS .slds-radio_button [type="radio"]:checked+.slds-radio_button__label:focus {
+    background-color: #29987a;
+}
+
+.THIS .comments .body ol {list-style-type: decimal;padding: 0 2rem;}
+.THIS .comments .body ul {list-style-type: initial;padding: 0 2rem;}
+.THIS .comment .forceContentFileCard {width:6rem !important;margin-top:10px;}
+
+.THIS .slds-tabs_default__item.slds-active:after, 
+.THIS .slds-tabs_default__item.slds-is-active:after, 
+.THIS .slds-tabs--default__item.slds-active:after, 
+.THIS .slds-tabs--default__item.slds-is-active:after,
+.THIS .slds-tabs_default__item:hover:after,
+.THIS .slds-tabs--default__item:hover:after,
+.THIS .slds-tabs_default__item:focus:after, 
+.THIS .slds-tabs_default__item.slds-has-focus:after, 
+.THIS .slds-tabs--default__item:focus:after, 
+.THIS .slds-tabs--default__item.slds-has-focus:after {
+    background-color: #00b5ae;
+}
+/* remove the "or drop files" label from the right of the lightning:input type file */
+.THIS .slds-file-selector__dropzone .slds-file-selector__text{
+    display: none;
+}
+/* remove the "Upload Files" text from the button of the lightning:input type file */
+.THIS .slds-file-selector__dropzone .slds-file-selector__button{
+    font-size: 0;
+}
+/* insert the text "Upload File" into the button of the lightning:input type file */
+.THIS .slds-file-selector__dropzone .slds-file-selector__button:after{
+    content: 'Upload File';
+    font-size: .8125rem;
+    color: rgba(27, 82, 151, 1.0);
+}

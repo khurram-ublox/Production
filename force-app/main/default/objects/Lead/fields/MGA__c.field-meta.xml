@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MGA__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>AssistNow Token requested.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>AssistNow Token requested. If checked, an AssistNow Token needs to be generated on the converted Contact by AssistNow Request button.</inlineHelpText>
+    <label>AssistNow</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

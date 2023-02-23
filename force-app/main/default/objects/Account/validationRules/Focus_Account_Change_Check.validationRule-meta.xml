@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Focus_Account_Change_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+($User.Id &lt;&gt; Owner.Id),
+($User.Id &lt;&gt; Owner.ManagerId),
+($User.Id &lt;&gt; Owner.Manager.Manager.Id),
+($User.Id &lt;&gt; Owner.Manager.Manager.Manager.Id),
+($User.Id &lt;&gt; New_Channel_Manager__r.Id),
+($User.Id &lt;&gt; New_Channel_Manager__r.ManagerId),
+($User.Id &lt;&gt; New_Channel_Manager__r.Manager.Manager.Id),
+($User.Id &lt;&gt; New_Channel_Manager__r.Manager.Manager.Manager.Id),
+ISCHANGED(Focus_Account__c))</errorConditionFormula>
+    <errorDisplayField>Focus_Account__c</errorDisplayField>
+    <errorMessage>Focus Account can be changed only by the account owner or channel manager.</errorMessage>
+</ValidationRule>

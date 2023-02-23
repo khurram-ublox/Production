@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_EMEA_Complaints</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Account_Prio__c</columns>
+    <columns>Account__c</columns>
+    <columns>Type_Of_Complaint__c</columns>
+    <columns>Short_Description__c</columns>
+    <columns>Related_Issue__c</columns>
+    <columns>Affected_Product__c</columns>
+    <columns>Consequence__c</columns>
+    <columns>uB_Office__c</columns>
+    <columns>Affected_Process__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>EMEA</value>
+    </filters>
+    <label>All EMEA Complaints</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visible_In_Masterschedule__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Check if the product needs to be visible in Masterschedule dashboard and report</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the product needs to be visible in Masterschedule dashboard and report</inlineHelpText>
+    <label>Visible In Masterschedule</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

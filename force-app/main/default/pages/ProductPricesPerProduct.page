@@ -1,0 +1,15 @@
+<apex:page controller="ProductPricesPerProductController" cache="true">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!productPrices}" var="pprice">
+            <apex:column headerValue="Name" value="{!pprice.Product_Name__c}"/>
+            <apex:column headerValue="Ordering Number" value="{!pprice.Ordering_Number__c}"/>
+         
+            <apex:column headerValue="Price Sample Size 1+ (USD)" value="{!pprice.Price_USD_Sample_Size_1__c}"/>
+            <apex:column headerValue="Price Sample Size 10+ (USD)" value="{!pprice.Price_USD_Sample_Size_10__c }"/>    
+            <apex:column headerValue="Price Sample Size 50+ (USD)" value="{!pprice.Price_USD_Sample_Size_50__c}"/>   
+            <apex:column headerValue="Price Sample Size 100+ (USD)" value="{!pprice.Price_USD_Sample_Size_100__c }" /> 
+            <apex:column headerValue="Price Sample Size 100+ (USD)" value="{!pprice.Price_USD_Sample_Size_100__c }"/>   
+            <apex:column headerValue="Valid_From__c" value="{!pprice.Valid_From__c}"/>              
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

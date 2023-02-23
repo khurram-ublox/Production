@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_AE_SHO_Extension</fullName>
+    <booleanFilter>(1 AND 2) OR (3 AND 4 AND 5)</booleanFilter>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>Product__c</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Escalation_Time__c</columns>
+    <columns>Case_Initiator__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Bug_Reference__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>AE SHO,mhan,cmag,fbro,mzes,lber,mape,aheg,flun,dtho,brec,fkru,gima,gmav,tcha,ctur</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <filters>
+        <field>Technology__c</field>
+        <operation>equals</operation>
+        <value>Short Range</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>alel,llca,phen,dmar,glag,jbau,pber,trui,asod,lsch,sbha,sban,lmai,Support EMEA</value>
+    </filters>
+    <label>Team AE SHO - Extension</label>
+    <sharedTo>
+        <group>AE_SHO</group>
+    </sharedTo>
+</ListView>

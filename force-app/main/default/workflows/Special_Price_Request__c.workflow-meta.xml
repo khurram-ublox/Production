@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>SPR_Creation</fullName>
+        <description>SPR: Creation</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SPR_Creation_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>SPR_Request_approved</fullName>
+        <description>SPR: Request approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Email_PS_CEL__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_PS_POS__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_PS_SHO__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Head_of_Sales_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Assignee_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Leader_Assignee_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Leader_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Manager_Assignee_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SPR_Request_approved</template>
+    </alerts>
+    <alerts>
+        <fullName>SPR_Request_rejected</fullName>
+        <description>SPR: Request rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Head_of_Sales_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Assignee_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Regional_Head_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Leader_Assignee_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Leader_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Manager_Assignee_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Team_Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SPR_Request_rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>SPR_Request_update</fullName>
+        <description>SPR: Request update</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SPR_Request_update_notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>SPR_Add_Email_PS_CEL</fullName>
+        <field>Email_PS_CEL__c</field>
+        <formula>&quot;stefano.moioli@u-blox.com&quot;</formula>
+        <name>SPR: Add Email PS CEL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Add_Email_PS_POS</fullName>
+        <field>Email_PS_POS__c</field>
+        <formula>&quot;Peter.Fairhurst@u-blox.com&quot;</formula>
+        <name>SPR: Add Email PS POS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Add_Email_PS_SHO</fullName>
+        <field>Email_PS_SHO__c</field>
+        <formula>&quot;hakan.svegerud@u-blox.com&quot;</formula>
+        <name>SPR: Add Email PS SHO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Approved_By_CEO</fullName>
+        <field>Approved_By_CEO__c</field>
+        <literalValue>1</literalValue>
+        <name>SPR: Approved By CEO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Approved_By_Regional_Head_EMEA</fullName>
+        <field>Approved_By_Regional_Head__c</field>
+        <literalValue>1</literalValue>
+        <name>SPR: Approved By Regional Head EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Approved_By_Team_Leader</fullName>
+        <field>Approved_By_Team_Leader__c</field>
+        <literalValue>1</literalValue>
+        <name>SPR: Approved By Team Leader</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Approved_By_Team_Manager</fullName>
+        <field>Approved_By_Team_Manager__c</field>
+        <literalValue>1</literalValue>
+        <name>SPR: Approved By Team Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Approved_by_Head_of_Sales</fullName>
+        <field>Approved_By_Head_of_Sales__c</field>
+        <literalValue>1</literalValue>
+        <name>SPR: Approved by Head of Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Clear_Approved_By_Regional_Head</fullName>
+        <description>Clear checkbox Approved By Regional Head</description>
+        <field>Approved_By_Regional_Head__c</field>
+        <literalValue>0</literalValue>
+        <name>SPR: Clear Approved By Regional Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Clear_Status</fullName>
+        <description>Clear Status picklist</description>
+        <field>Status__c</field>
+        <name>SPR: Clear Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Approved_By_CEO</fullName>
+        <field>Date_Approved_By_CEO__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Approved By CEO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Approved_By_Head_of_Sales</fullName>
+        <field>Date_Approved_By_Head_of_Sales__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Approved By Head of Sales</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Approved_By_Regional_Head</fullName>
+        <field>Date_Approved_By_Regional_Head__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Approved By Regional Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Approved_By_Team_Leader</fullName>
+        <field>Date_Approved_By_Team_Leader__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Approved By Team Leader</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Approved_By_Team_Manager</fullName>
+        <field>Date_Approved_By_Team_Manager__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Approved By Team Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Rejected</fullName>
+        <field>Date_Rejected__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Date_Submitted</fullName>
+        <field>Date_Submitted__c</field>
+        <formula>NOW()</formula>
+        <name>SPR: Date Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Fill_Head_of_Sales_Email</fullName>
+        <field>Head_of_Sales_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>SPR: Fill Head of Sales Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Fill_Prices_Valid_Until</fullName>
+        <description>Changed from 4 months &quot;DATE(YEAR(TODAY()),MONTH(TODAY())+4,DAY(TODAY()))&quot; to 120 days</description>
+        <field>Prices_Valid_Until__c</field>
+        <formula>IF(ISBLANK(Prices_Valid_Until_Previous__c),
+TODAY()+120,
+Prices_Valid_Until_Previous__c)</formula>
+        <name>SPR: Fill Prices Valid Until</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Fill_Prices_Valid_Until_Previous</fullName>
+        <field>Prices_Valid_Until_Previous__c</field>
+        <formula>Prices_Valid_Until__c</formula>
+        <name>SPR: Fill Prices Valid Until Previous</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Fill_Regional_Head_Email</fullName>
+        <field>Regional_Head_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>SPR: Fill Regional Head Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Fill_Team_Leader_Email</fullName>
+        <field>Team_Leader_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>SPR: Fill Team Leader Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Fill_Team_Manager_Email</fullName>
+        <field>Team_Manager_Email__c</field>
+        <formula>$User.Email</formula>
+        <name>SPR: Fill Team Manager Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Populate_Total_Contribution_Initial</fullName>
+        <description>Made to store the initial value and compare on the final approval.</description>
+        <field>Total_Contribution_Initial__c</field>
+        <formula>Total_Contribution__c</formula>
+        <name>SPR: Populate Total Contribution Initial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Populate_Total_Quantity_Initial</fullName>
+        <description>Made to store the initial value and compare on the final approval.</description>
+        <field>Total_Quantity_Initial__c</field>
+        <formula>Total_Quantity__c</formula>
+        <name>SPR: Populate Total Quantity Initial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Populate_Total_Revenue_Initial</fullName>
+        <description>Made to store the initial value and compare on the final approval.</description>
+        <field>Total_Revenue_Initial__c</field>
+        <formula>Total_Revenue__c</formula>
+        <name>SPR: Populate Total Revenue Initial</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Remove_Email_PS_CEL</fullName>
+        <field>Email_PS_CEL__c</field>
+        <name>SPR: Remove Email PS CEL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Remove_Email_PS_POS</fullName>
+        <field>Email_PS_POS__c</field>
+        <name>SPR: Remove Email PS POS</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Remove_Email_PS_SHO</fullName>
+        <field>Email_PS_SHO__c</field>
+        <name>SPR: Remove Email PS SHO</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Status_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>SPR: Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Status_Not_Submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Not Submitted</literalValue>
+        <name>SPR: Status Not Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Status_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>SPR: Status Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Status_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>SPR: Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Update_Reg_Head_Assignee_Email</fullName>
+        <field>Regional_Head_Assignee_Email__c</field>
+        <formula>$User.Email_Manager__c</formula>
+        <name>SPR: Update Reg. Head (Assignee) Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Update_Team_Leader_Assignee_Emai</fullName>
+        <field>Team_Leader_Assignee_Email__c</field>
+        <formula>$User.Email_Manager__c</formula>
+        <name>SPR: Update Team Leader (Assignee) Emai</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SPR_Update_Team_Manager_Assignee_Emai</fullName>
+        <field>Team_Manager_Assignee_Email__c</field>
+        <formula>$User.Email_Manager__c</formula>
+        <name>SPR: Update Team Manager (Assignee) Emai</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>SPR%3A Add Email PS All</fullName>
+        <actions>
+            <name>SPR_Add_Email_PS_CEL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Add_Email_PS_POS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Add_Email_PS_SHO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>(CreatedDate&lt;&gt;LastModifiedDate) &amp;&amp; Total_Quantity__c=0 &amp;&amp; LEFT(TEXT(Price_Level__c),3)=&quot;PPP&quot;</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Add Email PS CEL</fullName>
+        <actions>
+            <name>SPR_Add_Email_PS_CEL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity_CEL__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Price_Level__c</field>
+            <operation>equals</operation>
+            <value>PPP (Project Price Plan)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Add Email PS POS</fullName>
+        <actions>
+            <name>SPR_Add_Email_PS_POS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity_POS__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Price_Level__c</field>
+            <operation>equals</operation>
+            <value>PPP (Project Price Plan)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Add Email PS SHO</fullName>
+        <actions>
+            <name>SPR_Add_Email_PS_SHO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity_SHO__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Price_Level__c</field>
+            <operation>equals</operation>
+            <value>PPP (Project Price Plan)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Approve MSP as CM</fullName>
+        <actions>
+            <name>SPR_Approved_By_Team_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Date_Approved_By_Team_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Automatically approve MSP in case the current user is the final approver.</description>
+        <formula>ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp; (
+(CreatedBy.Alias=&quot;tnak&quot; &amp;&amp; $User.Alias=&quot;mchi&quot;) ||
+(CreatedBy.Alias=&quot;ntha&quot; &amp;&amp; $User.Alias=&quot;ntha&quot;) ||
+(CreatedBy.Alias=&quot;psbi&quot; &amp;&amp; $User.Alias=&quot;psbi&quot;) ||
+(CreatedBy.Alias=&quot;sguo&quot; &amp;&amp; $User.Alias=&quot;sguo&quot;) ||
+(CreatedBy.Alias=&quot;shki&quot; &amp;&amp; $User.Alias=&quot;shki&quot;) ||
+(CreatedBy.Alias=&quot;tnak&quot; &amp;&amp; $User.Alias=&quot;tnak&quot;) ||
+(CreatedBy.Alias=&quot;tzho&quot; &amp;&amp; $User.Alias=&quot;tzho&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Approve MSP as Regional Head</fullName>
+        <actions>
+            <name>SPR_Approved_By_Regional_Head_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Date_Approved_By_Regional_Head</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Status_Approved</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Automatically approve MSP as Regional head.</description>
+        <formula>ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp; (
+(CreatedBy.Alias=&quot;atan&quot; &amp;&amp; $User.Alias=&quot;atan&quot;) ||
+(CreatedBy.Alias=&quot;egui&quot; &amp;&amp; $User.Alias=&quot;egui&quot;) ||
+(CreatedBy.Alias=&quot;sram&quot; &amp;&amp; $User.Alias=&quot;sram&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Clear Approval for MSP by Regional Head</fullName>
+        <actions>
+            <name>SPR_Clear_Approved_By_Regional_Head</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>SPR_Clear_Status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Clear Status and Approved By Regional Head checkbox if SPR (MSP) is created by Regional Head.</description>
+        <formula>ISCHANGED(Price_Level__c) &amp;&amp;
+NOT(ISPICKVAL(Price_Level__c,&quot;MSP (Minimum Sales Price)&quot;)) &amp;&amp; 
+/*ISPICKVAL(Price_Level__c, &quot;PPP (Project Price Plan)&quot;) &amp;&amp;*/
+ISPICKVAL(Status__c, &quot;Approved&quot;) &amp;&amp;
+NOT(Approved_By_Team_Leader__c) &amp;&amp;
+NOT(Approved_By_Team_Manager__c) &amp;&amp;
+Approved_By_Regional_Head__c &amp;&amp; 
+(
+(CreatedBy.Alias=&quot;atan&quot; &amp;&amp; $User.Alias=&quot;atan&quot;) ||
+(CreatedBy.Alias=&quot;egui&quot; &amp;&amp; $User.Alias=&quot;egui&quot;) ||
+(CreatedBy.Alias=&quot;sram&quot; &amp;&amp; $User.Alias=&quot;sram&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Fill Prices Valid Until Previous</fullName>
+        <actions>
+            <name>SPR_Fill_Prices_Valid_Until_Previous</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>NOT(ISBLANK(Name))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Remove Email PS CEL</fullName>
+        <actions>
+            <name>SPR_Remove_Email_PS_CEL</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity_CEL__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Price_Level__c</field>
+            <operation>equals</operation>
+            <value>PPP (Project Price Plan)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Remove Email PS POS</fullName>
+        <actions>
+            <name>SPR_Remove_Email_PS_POS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity_POS__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Price_Level__c</field>
+            <operation>equals</operation>
+            <value>PPP (Project Price Plan)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>SPR%3A Remove Email PS SHO</fullName>
+        <actions>
+            <name>SPR_Remove_Email_PS_SHO</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity_SHO__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Total_Quantity__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Special_Price_Request__c.Price_Level__c</field>
+            <operation>equals</operation>
+            <value>PPP (Project Price Plan)</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

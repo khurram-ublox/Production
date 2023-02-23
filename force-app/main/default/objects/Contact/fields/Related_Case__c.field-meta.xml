@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Case__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Case from that the Contact has been created</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Case from that the Contact has been created</inlineHelpText>
+    <label>Related Case</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Contacts</relationshipLabel>
+    <relationshipName>Contacts</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

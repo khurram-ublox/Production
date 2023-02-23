@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Opportunities2</fullName>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>Opp_Total_Revenue__c</columns>
+    <columns>Product_1__c</columns>
+    <columns>Product_2__c</columns>
+    <columns>Product_3__c</columns>
+    <columns>Product_4__c</columns>
+    <columns>Latest_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Area_opportunity_owner__c</field>
+        <operation>equals</operation>
+        <value>Americas</value>
+    </filters>
+    <filters>
+        <field>Focus__c</field>
+        <operation>equals</operation>
+        <value>1 - Corporate,2 - Region,3 - Territory</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>bcam</value>
+    </filters>
+    <label>Top Opportunities - bcam</label>
+    <sharedTo>
+        <group>Sales_Americas</group>
+    </sharedTo>
+</ListView>

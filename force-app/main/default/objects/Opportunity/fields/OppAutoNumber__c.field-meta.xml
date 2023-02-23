@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppAutoNumber__c</fullName>
+    <description>To be used for Quotation_Reference_Number__c</description>
+    <displayFormat>{YY}{000000}</displayFormat>
+    <externalId>false</externalId>
+    <label>OppAutoNumber</label>
+    <trackHistory>false</trackHistory>
+    <type>AutoNumber</type>
+</CustomField>

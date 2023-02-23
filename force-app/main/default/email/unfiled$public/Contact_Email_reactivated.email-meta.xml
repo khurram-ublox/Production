@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification on reactivation of email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contact: Email reactivated</name>
+    <style>none</style>
+    <subject>Salesforce Contact {!Contact.Name} email is now active</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

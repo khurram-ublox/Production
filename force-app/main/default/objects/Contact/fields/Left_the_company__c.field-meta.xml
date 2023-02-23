@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Left_the_company__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates if contact person is no longer at the designated account company
+and sales want to keep this contact in case of re-appearance at a different
+account.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Contact has left the company.
+If field is checked, the communication tools are automatically un-checked.</inlineHelpText>
+    <label>Left Company</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

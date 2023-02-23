@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UnitPrice</fullName>
+    <inlineHelpText>Unit price in SF Opportunity should be:
+
+1.	Standard Price List (during early stage of the Opportunity qualification) or 
+2.	Quotation price.
+
+Please do not enter customer target price!</inlineHelpText>
+</CustomField>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>User_Deactivation_alert_to_community_manager</fullName>
+        <description>User: Deactivation alert to community manager</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>lukas.dragosek@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Portal_Emails/Communities_DeactivationAlert_to_Admin</template>
+    </alerts>
+    <alerts>
+        <fullName>User_Deactivation_alert_to_user</fullName>
+        <description>User: Deactivation alert to user</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Portal_Emails/Communities_DeactivationAlert_to_User</template>
+    </alerts>
+    <alerts>
+        <fullName>User_welcome_mail_to_a_new_user</fullName>
+        <ccEmails>it-svc-spcs-team-GLOBAL@u-blox.com</ccEmails>
+        <description>User: welcome mail to a new user</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/User_welcome_mail_to_a_new_user</template>
+    </alerts>
+    <alerts>
+        <fullName>User_welcome_mail_to_a_new_user_Partner</fullName>
+        <ccEmails>it-svc-spcs-team-GLOBAL@u-blox.com</ccEmails>
+        <description>User: welcome mail to a new user (Partner)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email_Channel_Manager__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>info@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/User_welcome_mail_to_a_new_user_Partner</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>User_Change_Username_to_Email</fullName>
+        <description>This action is specifically created for the workflow rule changeUserName. This action will update the username whenever emai will be changed.</description>
+        <field>Username</field>
+        <formula>Email</formula>
+        <name>User: Change Username to Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>User_Update_Email_Manager</fullName>
+        <field>Email_Manager__c</field>
+        <formula>Manager.Email</formula>
+        <name>User: Update Email Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>User%3A Change Username when Email changes</fullName>
+        <actions>
+            <name>User_Change_Username_to_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>This rule specifically created for the community portal users. It will change the username of the user whenever user will change its email.</description>
+        <formula>AND(ISCHANGED(Email),ISPICKVAL(UserType,&apos;High Volume Portal&apos;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>User%3A Deactivation alert</fullName>
+        <actions>
+            <name>User_Deactivation_alert_to_community_manager</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>User_Deactivation_alert_to_user</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alerts to the user and community manager</description>
+        <formula>AND(
+  ProfileId=&quot;00e2p000001Prug&quot;,
+  ISCHANGED(IsActive),
+  NOT(IsActive),
+  Id=$User.Id
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>User%3A Update Manager Email</fullName>
+        <actions>
+            <name>User_Update_Email_Manager</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Update field Manager Email - MOVED TO PROCESS BUILDER!</description>
+        <formula>OR(ISBLANK(Email_Manager__c), 
+ISCHANGED(ManagerId))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>User%3A welcome mail to a new user</fullName>
+        <actions>
+            <name>User_welcome_mail_to_a_new_user</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.Email</field>
+            <operation>contains</operation>
+            <value>@u-blox.com</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.UserType</field>
+            <operation>equals</operation>
+            <value>Standard</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>User%3A welcome mail to a new user %28Partner%29</fullName>
+        <actions>
+            <name>User_welcome_mail_to_a_new_user_Partner</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>User.Email</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>User.ProfileId</field>
+            <operation>contains</operation>
+            <value>Distributor</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

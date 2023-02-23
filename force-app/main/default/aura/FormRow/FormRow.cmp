@@ -1,0 +1,69 @@
+<aura:component >
+    <aura:attribute name="field1" type="Object" />
+    <aura:attribute name="field1Type" type="String" />
+    <aura:attribute name="field1Label" type="String" />
+    <aura:attribute name="field1LookupType" type="String" />
+    <aura:attribute name="field2" type="Object" />
+    <aura:attribute name="field2Label" type="String" />
+    <aura:attribute name="field2Type" type="String" />
+    <aura:attribute name="field2LookupType" type="String" />
+
+    <aura:handler name="updateLookupIdEvent" event="c:UpdateLookupId" action="{!c.onUpdateLookup}"/>
+    <aura:handler name="clearLookupIdEvent" event="c:ClearLookupId" action="{!c.onClearLookup}"/>
+
+    <div class="slds-form-element__row">
+        <div class="slds-form-element slds-size--5-of-12">
+                <aura:renderIf isTrue="{!v.field1Type != 'lookup'}">
+                    <label class="slds-form-element__label slds-size--2-of-12 slds-text-align--right" for="{!v.field1}">{!v.field1Label}</label>
+                </aura:renderIf>
+            <div class="slds-form-element__control">
+                <aura:renderIf isTrue="{!v.field1Type == 'string' || v.field1Type == 'phone' || v.field1Type == 'email' || v.field1Type == 'number'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="{!v.field1Type}" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field1Type == 'textarea'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field1Type == 'checkbox'}">
+                    <c:SLDSCheckbox aura:id="checkbox" id="{!v.field1}" label="{!v.field1Label}" />
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field1Type == 'picklist'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field1Type == 'datetime'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field1Type == 'lookup'}">
+                    <c:LookupSObject label="{!v.field1Label}" pluralLabel="" sObjectAPIName="{!v.field1LookupType}" instanceId="{!v.field1}"
+                                     listIconSVGPath="/resource/SLDS0121/assets/icons/standard-sprite/svg/symbols.svg#account" listIconClass="slds-icon-standard-account" />
+                </aura:renderIf>
+            </div>
+        </div>
+        <div class="slds-form-element slds-size--6-of-12">
+            <aura:renderIf isTrue="{!v.field2Type != 'lookup'}">
+                <label class="slds-form-element__label slds-size--2-of-12 slds-text-align--right" for="{!v.field2}">{!v.field2Label}</label>
+            </aura:renderIf>
+            <div class="slds-form-element__control">
+                <aura:renderIf isTrue="{!v.field2Type == 'string' || v.field2Type == 'phone' || v.field2Type == 'email' || v.field2Type == 'number'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="{!v.field2Type}" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field2Type == 'textarea'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field2Type == 'checkbox'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field2Type == 'picklist'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field2Type == 'datetime'}">
+                    <input aura:id="field1" id="{!v.field1}" class="slds-input" type="text" placeholder="Placeholder Text" />
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.field2Type == 'lookup'}">
+                    <c:LookupSObject label="{!v.field2Label}" pluralLabel="" sObjectAPIName="{!v.field2LookupType}" instanceId="{!v.field2}"
+                                     listIconSVGPath="/resource/SLDS0121/assets/icons/standard-sprite/svg/symbols.svg#account" listIconClass="slds-icon-standard-account" />
+                </aura:renderIf>
+            </div>
+        </div>
+    </div>
+</aura:component>

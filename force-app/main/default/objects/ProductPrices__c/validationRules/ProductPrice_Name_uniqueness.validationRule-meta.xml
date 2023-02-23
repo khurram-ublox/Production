@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductPrice_Name_uniqueness</fullName>
+    <active>true</active>
+    <errorConditionFormula>Name = VLOOKUP($ObjectType.ProductPrices__c.Fields.Name, $ObjectType.ProductPrices__c.Fields.Name, Name) &amp;&amp; 
+Id != VLOOKUP($ObjectType.ProductPrices__c.Fields.Id, $ObjectType.ProductPrices__c.Fields.Name, Name)</errorConditionFormula>
+    <errorMessage>The Product Price Id has to be unique</errorMessage>
+</ValidationRule>

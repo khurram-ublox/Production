@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor__c</fullName>
+    <defaultValue>if((  $User.Distributor_Name__c  &lt;&gt; &quot;&quot;) &amp;&amp; ( $User.Distributor_Name__c &lt;&gt; &quot;Internal&quot;), $User.Distributor_Name__c, &quot;&quot;)</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Name of distributor who handles account. Add &quot;Direct&quot; if handled by u-blox.</inlineHelpText>
+    <label>Distributor</label>
+    <length>30</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

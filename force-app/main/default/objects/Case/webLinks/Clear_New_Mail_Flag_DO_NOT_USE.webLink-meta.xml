@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clear_New_Mail_Flag_DO_NOT_USE</fullName>
+    <availability>online</availability>
+    <description>Clear checkbox &quot;New Mail&quot; and change Status to &quot;Working&quot;</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clear New Mail Flag DO NOT USE</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+
+// See New Mail checkbox of the current Case
+var CaseId = &quot;{!Case.Id}&quot;;
+var NewMail = &quot;{!Case.New_Mail__c}&quot;;
+
+var c = new sforce.SObject(&quot;Case&quot;);
+c.Id = CaseId;
+
+if (NewMail == true)
+{
+    var r = window.confirm(&quot;There are apparently new mails you may not have read. This action will clear New Mail flag and change Status to Working. Are you sure you want to do this?&quot;);
+    if (r == true) 
+    {
+        c.New_Mail__c = false;
+        c.Status = &quot;Working&quot;;
+        sforce.connection.update([c]);
+        window.parent.location.href=&quot;/&quot;+CaseId;
+    }
+}
+else
+{
+    window.alert(&quot;There is no new mail.&quot;);
+}</url>
+</WebLink>

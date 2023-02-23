@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_COGS_CHF__c</fullName>
+    <description>Total COGS calculated with USDtoCHF of invoice month</description>
+    <externalId>false</externalId>
+    <formula>/* Step 1: Calculate with fixed cost per product */
+Quantity__c * if(isnull(Product__r.COGS_CHF__c),0,Product__r.COGS_CHF__c)
++ 
+/* Step 2: Add the IPR cost in CHF */
+Quantity__c *  USDtoCHF__c * 
+CASE (Use_Restriction__c,
+&quot;2G M2M&quot;, Product__r.IPR_USD_M2M__c,
+&quot;2G Ancillary Voice&quot;, Product__r.IPR_USD_M2M__c,
+&quot;3G M2M&quot;, Product__r.IPR_USD_M2M__c,
+&quot;4G M2M&quot;, Product__r.IPR_USD_M2M__c,
+&quot;3G Telematics&quot;, Product__r.IPR_USD_Telematics__c,
+&quot;4G Telematics&quot;, Product__r.IPR_USD_Telematics__c,
+&quot;3G Laptop&quot;, Product__r.IPR_USD_Laptop__c ,
+&quot;4G Laptop&quot;, Product__r.IPR_USD_Laptop__c ,
+&quot;2G Handset&quot;, Product__r.IPR_USD_Handset__c,
+&quot;3G Handset&quot;, Product__r.IPR_USD_Handset__c,
+&quot;4G Handset&quot;, Product__r.IPR_USD_Handset__c,
+&quot;2G Consumer&quot;, Product__r.IPR_USD_Consumer__c,
+&quot;3G Other&quot;, Product__r.IPR_USD_Other__c,
+&quot;4G Other&quot;, Product__r.IPR_USD_Other__c,
+0)
++
+/* Step 3: Add the cost as a percentage of Total Value CHF */
+if(isnull(Product__r.COGS_Pct__c),0,
+ u_blox_Total_Sales_CHF__c * Product__r.COGS_Pct__c)
++
+/* Step 4: Add the IPR cost as a percentage of Total Value CHF */
+u_blox_Total_Sales_CHF__c * 
+CASE (Use_Restriction__c,
+&quot;2G M2M&quot;, Product__r.IPR_Pct_M2M__c,
+&quot;2G Ancillary Voice&quot;, Product__r.IPR_Pct_M2M__c,
+&quot;3G M2M&quot;, Product__r.IPR_Pct_M2M__c,
+&quot;4G M2M&quot;, Product__r.IPR_Pct_M2M__c,
+&quot;3G Telematics&quot;, Product__r.IPR_Pct_Telematics__c,
+&quot;4G Telematics&quot;, Product__r.IPR_Pct_Telematics__c,
+&quot;3G Laptop&quot;, Product__r.IPR_Pct_Laptop__c ,
+&quot;4G Laptop&quot;, Product__r.IPR_Pct_Laptop__c ,
+&quot;2G Handset&quot;, Product__r.IPR_Pct_Handset__c,
+&quot;3G Handset&quot;, Product__r.IPR_Pct_Handset__c,
+&quot;4G Handset&quot;, Product__r.IPR_Pct_Handset__c,
+&quot;2G Consumer&quot;, Product__r.IPR_Pct_Consumer__c,
+&quot;3G Other&quot;, Product__r.IPR_Pct_Other__c,
+&quot;4G Other&quot;, Product__r.IPR_Pct_Other__c,
+0)</formula>
+    <inlineHelpText>Total COGS calculated with USDtoCHF of invoice month</inlineHelpText>
+    <label>Total COGS CHF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

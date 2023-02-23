@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssistNow_Temporary_Token_Valid_Until__c</fullName>
+    <description>Added when the token is generated (with the workflow rule)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Added when the token is generated (with the workflow rule)</inlineHelpText>
+    <label>AssistNow Temporary Token Valid Until</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

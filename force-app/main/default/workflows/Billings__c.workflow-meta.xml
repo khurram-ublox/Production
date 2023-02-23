@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Order_Account_changed</fullName>
+        <ccEmails>info@u-blox.com</ccEmails>
+        <description>Order: Account changed</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tatiuska.rojas@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_Account_changed</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_Contribution_to_review</fullName>
+        <description>Order: Contribution to review</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>apiuser@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>khurram.shahzad@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_Contribution_to_review</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_EVK_alert</fullName>
+        <description>Order: EVK alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_EVK_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_MFi_License_Required_Product_ordered</fullName>
+        <description>Order: MFi License Required Product ordered</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>_pelle.bergkvist@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>len.albertsson@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pelle.svensson@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>unfiled$public/Order_MFi_License_Required_Product_ordered</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_Wrong_product_for_Samsung_10</fullName>
+        <description>Order: Wrong product for Samsung 10</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>marlene.rosado@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tatiuska.rojas@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_Wrong_product_for_Samsung_10</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_alert_to_spie</fullName>
+        <description>Order: alert to :spie:</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>samuli.pietila@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_product_specific_alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_wrong_Delivery_Date_APAC</fullName>
+        <description>Order: wrong Delivery Date (APAC)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>marlene.rosado@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sabrina.benz@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>tatiuska.rojas@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_Delivery_Date_wrong</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_wrong_Delivery_Date_Americas</fullName>
+        <ccEmails>sadm-team-EMEA@u-blox.com</ccEmails>
+        <description>Order: wrong Delivery Date (Americas)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tatiuska.rojas@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_Delivery_Date_wrong</template>
+    </alerts>
+    <alerts>
+        <fullName>Order_wrong_Delivery_Date_EMEA</fullName>
+        <ccEmails>sadm-team-EMEA@u-blox.com</ccEmails>
+        <description>Order: wrong Delivery Date (EMEA)</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>tatiuska.rojas@u-blox.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Order_Delivery_Date_wrong</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Insertmissinginvoicedate</fullName>
+        <description>copies delivery date to invoice date</description>
+        <field>Invoice_Date__c</field>
+        <formula>Delivery_Date__c</formula>
+        <name>Insert missing invoice date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_Americas</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_Americas_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+
+/*no special contribution share defined =&gt; 100% if reporting region is the same */ 
+if ( Reporting_uB_Office__c = &quot;Americas&quot;, Total_Contribution_CHF__c,0), 
+
+/*special contribution share defined =&gt; use defined value */ 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_Americas__c )</formula>
+        <name>Order: Calculate Contribution Americas</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_Australia</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_Australia_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;),
+if ( Reporting_uB_Office__c = &quot;Australia&quot;, Total_Contribution_CHF__c,0),
+Total_Contribution_CHF__c * Contribution_Share__r.Share_Australia__c )</formula>
+        <name>Order: Calculate Contribution Australia</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_China</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_China_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+if ( Reporting_uB_Office__c = &quot;China&quot;, Total_Contribution_CHF__c,0), 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_China__c )</formula>
+        <name>Order: Calculate Contribution China</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_EMEA</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_EMEA_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+if ( Reporting_uB_Office__c = &quot;EMEA&quot;, Total_Contribution_CHF__c,0), 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_EMEA__c )</formula>
+        <name>Order: Calculate Contribution EMEA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_India</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_India_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;),
+if ( Reporting_uB_Office__c = &quot;India&quot;, Total_Contribution_CHF__c,0),
+Total_Contribution_CHF__c * Contribution_Share__r.Share_India__c )</formula>
+        <name>Order: Calculate Contribution India</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_Japan</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_Japan__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+if ( Reporting_uB_Office__c = &quot;Japan&quot;, Total_Contribution_CHF__c,0), 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_Japan__c )</formula>
+        <name>Order: Calculate Contribution Japan</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_Korea</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_Korea_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+if ( Reporting_uB_Office__c = &quot;Korea&quot;, Total_Contribution_CHF__c,0), 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_Korea__c )</formula>
+        <name>Order: Calculate Contribution Korea</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_RoA</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_RoA_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+if ( Reporting_uB_Office__c = &quot;Rest of APAC&quot;, Total_Contribution_CHF__c,0), 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_RoA__c )</formula>
+        <name>Order: Calculate Contribution RoA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Calculate_Contribution_Taiwan</fullName>
+        <description>Capture the contribution for the uB Office at the date of invoice.</description>
+        <field>Contribution_Taiwan_CHF__c</field>
+        <formula>if (or(isnull( Contribution_Share__c ),Contribution_Share__c=&quot;&quot;), 
+if ( Reporting_uB_Office__c = &quot;Taiwan&quot;, Total_Contribution_CHF__c,0), 
+Total_Contribution_CHF__c * Contribution_Share__r.Share_Taiwan__c )</formula>
+        <name>Order: Calculate Contribution Taiwan</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Reporting_Area_HQ_to_Corporate</fullName>
+        <description>Change HQ imported from Abacus to Corporate</description>
+        <field>Reporting_Area__c</field>
+        <formula>IF( Reporting_Area__c = &quot;HQ&quot;, &quot;Corporate&quot;, Reporting_Area__c)</formula>
+        <name>Order: Reporting Area HQ to Corporate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_Reporting_Region_HQ_to_Corporate</fullName>
+        <description>Change HQ imported from Abacus to UBX Corporate</description>
+        <field>Reporting_Region__c</field>
+        <formula>IF( Reporting_Region__c = &quot;HQ&quot;, &quot;UBX Corporate&quot;, Reporting_Region__c)</formula>
+        <name>Order: Reporting Region HQ to Corporate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_calculate_Total_COGS</fullName>
+        <description>Calculate Total COGS in CHF with information from Abacus and the object products.</description>
+        <field>Total_COGS_CHF__c</field>
+        <formula>/* Step 1: cost based on Abacus (plus an adder), or calculated with fixed cost per product */
+if( Product__r.Use_Abacus_Cost__c = true,
+Total_Cost_Abacus__c * (1+ Product__r.Logistics_Overhead__c ),
+Qty_Invoiced__c * if(isnull(Product__r.COGS_CHF__c),0,Product__r.COGS_CHF__c))
++
+/* Step 2: Add the IPR cost in CHF */
+Qty_Invoiced__c * $User.USDtoCHF__c *
+CASE(
+CASE (IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD__c,
+0),
+&quot;1&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD__c,
+0),
+&quot;3&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c,
+0),0
+)
++
+/* Step 3: Add the cost as a percentage of Total Value CHF */
+if(isnull(Product__r.COGS_Pct__c),0,
+Total_Value_CHF__c * Product__r.COGS_Pct__c)
++
+/* Step 4: Add the IPR cost as a percentage of Total Value CHF */
+Total_Value_CHF__c *
+CASE(
+CASE (IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct__c,
+0),
+&quot;1&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct__c,
+0),
+&quot;3&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c,
+0),0
+)</formula>
+        <name>Order: calculate Total COGS CHF</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_calculate_Total_IPR_Cost</fullName>
+        <description>Calculate and store the IPR cost</description>
+        <field>Total_IPR_Cost_CHF__c</field>
+        <formula>/* Step 1: Add the IPR cost in CHF */
+Qty_Invoiced__c * $User.USDtoCHF__c *
+CASE(
+CASE (IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD__c,
+0),
+&quot;1&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_USD_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_USD_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_USD_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_USD_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD__c,
+0),
+&quot;3&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_USD_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_USD_QC__c,
+0),0
+)
++
+/* Step 2: Add the IPR cost as a percentage of Total Value CHF */
+Total_Value_CHF__c *
+CASE(
+CASE (IPR_Coverage__c,
+&quot;Full coverage&quot;, &quot;0&quot;,
+&quot;Premium coverage&quot;, &quot;0&quot;,
+&quot;All except Qualcomm&quot;,&quot;1&quot;,
+&quot;Premium except Qualcomm&quot;,&quot;1&quot;,
+&quot;Prime coverage&quot;,&quot;2&quot;,
+&quot;Prime except Qualcomm&quot;,&quot;3&quot;,
+&quot;NO&quot;),
+&quot;0&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct__c,
+0),
+&quot;1&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Telematics_Pct_QC__c,
+&quot;Handset&quot;, Product__r.IPR_Cost__r.Handset_Pct_QC__c,
+&quot;Laptop&quot;, Product__r.IPR_Cost__r.Laptop_Pct_QC__c,
+&quot;Other&quot;, Product__r.IPR_Cost__r.Other_Pct_QC__c,
+0),
+&quot;2&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct__c,
+0),
+&quot;3&quot;,CASE (RIGHT (Use_Restriction__c, LEN(Use_Restriction__c)-FIND(&quot; &quot;,Use_Restriction__c)),
+&quot;M2M&quot;, Product__r.IPR_Cost__r.Prime_M2M_Pct_QC__c,
+&quot;Telematics&quot;, Product__r.IPR_Cost__r.Prime_Telematics_Pct_QC__c,
+0),0
+)</formula>
+        <name>Order: calculate Total IPR Cost</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_clear_flag_Calculate_Split</fullName>
+        <description>Clear the flag after calculation of contribution split.</description>
+        <field>Calculate_Contribution_Split__c</field>
+        <literalValue>0</literalValue>
+        <name>Order: clear flag &quot;Calculate Contr Split</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_clear_flag_Calculate_Total_COGS</fullName>
+        <description>Clear the checkbox after having re-run the calculation of the contribution</description>
+        <field>Calculate_Total_COGS_CHF__c</field>
+        <literalValue>0</literalValue>
+        <name>Order: clear flag &quot;Calculate Total COGS&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_set_field_SF_Account_Number</fullName>
+        <description>Set field SF Account</description>
+        <field>SF_Account_Number__c</field>
+        <formula>End_Customer_Account__r.SF_Account_Number__c</formula>
+        <name>Order: set field SF Account Number</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_set_flag_Calculate_Contribution</fullName>
+        <description>Last step of calculation of contribution: calculate the share per uB Office.</description>
+        <field>Calculate_Contribution_Split__c</field>
+        <literalValue>1</literalValue>
+        <name>Order: set flag &quot;Calculate Contribution&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Order_store_exchange_rate_USD_CHF</fullName>
+        <description>Capture the exchange rate at the date of invoice</description>
+        <field>USDtoCHF__c</field>
+        <formula>$User.USDtoCHF__c</formula>
+        <name>Order: store exchange rate USD/CHF</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>SFDC</fullName>
+        <field>Contribution_China_CHF__c</field>
+        <name>SFDC</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Order%3A Account changed</fullName>
+        <actions>
+            <name>Order_Account_changed</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Wrong_Account__c</field>
+            <operation>equals</operation>
+            <value>yes</value>
+        </criteriaItems>
+        <description>when an order is linked to another account, an inconsistency between Abacus and Salesforce occurs. A manual correction is required to correct this.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Contribution to review</fullName>
+        <actions>
+            <name>Order_Contribution_to_review</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Email alert if CM=100%</description>
+        <formula>AND(
+ISCHANGED(Invoice_Date__c),
+CM_Pct__c=100
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Delivery Date check</fullName>
+        <actions>
+            <name>Order_wrong_Delivery_Date_EMEA</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Order_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Delivery_Date__c</field>
+            <operation>lessThan</operation>
+            <value>LAST 3 MONTHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Order_Handling_Region__c</field>
+            <operation>notEqual</operation>
+            <value>Americas,APAC</value>
+        </criteriaItems>
+        <description>Send Email Alert for Orders with wrong Delivery Date (EMEA)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Delivery Date check %28APAC%29</fullName>
+        <actions>
+            <name>Order_wrong_Delivery_Date_APAC</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Order_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Delivery_Date__c</field>
+            <operation>lessThan</operation>
+            <value>LAST 3 MONTHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Order_Handling_Region__c</field>
+            <operation>equals</operation>
+            <value>APAC</value>
+        </criteriaItems>
+        <description>Send Email Alert for Orders with wrong Delivery Date (APAC)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Delivery Date check %28Americas%29</fullName>
+        <actions>
+            <name>Order_wrong_Delivery_Date_Americas</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Order_Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Delivery_Date__c</field>
+            <operation>lessThan</operation>
+            <value>LAST 3 MONTHS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Order_Handling_Region__c</field>
+            <operation>equals</operation>
+            <value>Americas</value>
+        </criteriaItems>
+        <description>Send Email Alert for Orders with wrong Delivery Date (Americas)</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A EVK shipped %28EMEA%29</fullName>
+        <active>false</active>
+        <formula>AND( /* Note: Add the following only to put Opportunities into the WF queue   Time_Based_WF_Flag__c=true, */   Reporting_Region__c = &quot;EMEA&quot;, OR(CONTAINS(Product__r.Name,&quot;EVAL&quot;),CONTAINS(Product__r.Name, &quot;EVK&quot;)),   NOT(OR(     ISNULL(Invoice_Date__c),     ISNULL(Qty_Invoiced__c),     Qty_Invoiced__c=0,     Total_Value_CHF__c=0,     ISBLANK(Invoice_Number__c)   )) )</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Order_EVK_alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Billings__c.Invoice_Date__c</offsetFromField>
+            <timeLength>21</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Order%3A Lookup contribution share and calculate split</fullName>
+        <actions>
+            <name>Order_Calculate_Contribution_Americas</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_China</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Japan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Korea</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_RoA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Taiwan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Update_CS__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When flag &quot;Update CS&quot; is set, look up the Contribution Share record and calculate the split</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A MFi License Required Product ordered</fullName>
+        <actions>
+            <name>Order_MFi_License_Required_Product_ordered</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Inform PS-SHO on the order for MFi products</description>
+        <formula>Product__r.MFi_License_Required__c  = true</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Reporting Area HQ to Corporate</fullName>
+        <actions>
+            <name>Order_Reporting_Area_HQ_to_Corporate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Reporting_Area__c</field>
+            <operation>contains</operation>
+            <value>HQ</value>
+        </criteriaItems>
+        <description>Change HQ imported from Abacus to Corporate.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Reporting Region HQ to Corporate</fullName>
+        <actions>
+            <name>Order_Reporting_Region_HQ_to_Corporate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Reporting_Region__c</field>
+            <operation>equals</operation>
+            <value>HQ</value>
+        </criteriaItems>
+        <description>Change HQ imported from Abacus to UBX Corporate.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Set Calculate Contribution Split</fullName>
+        <actions>
+            <name>Order_set_flag_Calculate_Contribution</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Added to calculate contribution split after Contribution Share has been assigned.</description>
+        <formula>ischanged( Contribution_Share__c )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Shop order follow-up %28Americas%29</fullName>
+        <actions>
+            <name>Online_shop_order_follow_up</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Create a Task to Account Owner</description>
+        <formula>AND(
+  Shop__c=1,
+  Account_uB_Office__c=&quot;Americas&quot;,
+  Product_ID__c  &lt;&gt; &quot;F001&quot;,
+  ISPICKVAL(Account__r.Owner.UserType,&quot;Standard&quot;)
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A Wrong product for Samsung 10</fullName>
+        <actions>
+            <name>Order_Wrong_product_for_Samsung_10</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Customer_No__c</field>
+            <operation>equals</operation>
+            <value>4311</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Product_ID__c</field>
+            <operation>equals</operation>
+            <value>LEA-M8T-0-10</value>
+        </criteriaItems>
+        <description>Send Email Alert if order is for Samsung with product LEA-M8T-0-10.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A calculate Total COGS and contribution split</fullName>
+        <actions>
+            <name>Order_Calculate_Contribution_Americas</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Australia</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_China</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_India</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Japan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Korea</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_RoA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Taiwan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_calculate_Total_COGS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_calculate_Total_IPR_Cost</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_clear_flag_Calculate_Total_COGS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_store_exchange_rate_USD_CHF</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>When the order is closed, or Total Value CHF changes, or Use Restriction changes, or flag for calculation is set, calculate the Total COGS CHF, look up the contribution split (APEX code triggered by change from Open to Closed) and split contribution</description>
+        <formula>/* Order status is closed */
+and( Order_Status__c = &quot;Closed&quot;,
+   or(
+   /* Total COGS has not yet been calculated (zero) */
+   Total_COGS_CHF__c &lt; 0.01,
+   isnull(Total_COGS_CHF__c),
+
+   /* flag for calculation is set*/
+    Calculate_Total_COGS_CHF__c  = true,
+
+   /* Use Restriction changed*/
+     ISCHANGED( Use_Restriction__c ),
+
+   /* Total Value CHF has changed, happens a few minutes after closure of order */
+   ischanged( Total_Value_CHF__c)
+   )
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A calculate contribution split per uB Office</fullName>
+        <actions>
+            <name>Order_Calculate_Contribution_Americas</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Australia</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_China</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_EMEA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_India</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Japan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Korea</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_RoA</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_Calculate_Contribution_Taiwan</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Order_clear_flag_Calculate_Total_COGS</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Billings__c.Order_Status__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Update_CS__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Calculate_Contribution_Split__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Calculate the contribution split per uB Office with the share stored in Contribution Share</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A check %09 UBX-M8130-KT-B302GA</fullName>
+        <actions>
+            <name>Order_alert_to_spie</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>UBX-M8130-KT-B302GA is only for Qianxun (001D000001f2c0c). None of Account fields (Account, End Customer, Project Owner) is this account, then the email alert is sent to PM.</description>
+        <formula>AND(
+  OR(
+    Account__r.Id&lt;&gt;&apos;001D000001f2c0c&apos;,
+    End_Customer_Account__r.Id&lt;&gt;&apos;001D000001f2c0c&apos;,
+    Project_Owner_Account__r.Id&lt;&gt;&apos;001D000001f2c0c&apos;
+  ),
+  Product__r.Id=&apos;01t57000009MXv0&apos; 
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A check LEA-M8T-0-01</fullName>
+        <actions>
+            <name>Order_alert_to_spie</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>LEA-M8T-0-01 and LEA-M8T-0-02 are only for Samsung. None of Account fields (Account, End Customer, Project Owner) is this account, then the email alert is sent to PM.</description>
+        <formula>AND(
+  NOT(OR(
+    CONTAINS(Account__r.Name, &apos;Samsung&apos;),
+    CONTAINS(End_Customer_Account__r.Name, &apos;Samsung&apos;),
+    CONTAINS(Project_Owner_Account__r.Name, &apos;Samsung&apos;)
+  )),
+  OR(
+    Product__r.Id=&apos;01tD0000004wLbJ&apos;, 
+    Product__r.Id=&apos;01t2p000009x580&apos;
+  )
+)</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A insert missing invoice date</fullName>
+        <actions>
+            <name>Insertmissinginvoicedate</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.Qty_Invoiced__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Invoice_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.Product_ID__c</field>
+            <operation>equals</operation>
+            <value>F001</value>
+        </criteriaItems>
+        <description>When order position has been invoiced (invoice quantity &gt; 0), but invoice date is not set, set the invoice date equal to the delivery date.
+Update done for Product &quot;Freight&quot; only.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Order%3A set SF Account No of End Customer</fullName>
+        <actions>
+            <name>Order_set_field_SF_Account_Number</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Billings__c.End_Customer_Account_ID__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Billings__c.SF_Account_Number__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>When SF account number is missing, populate it with number from the end customer account</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Online_shop_order_follow_up</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Set Status to Completed once the follow-up has been done to this Shop order.</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>true</notifyAssignee>
+        <offsetFromField>Billings__c.CreatedDate</offsetFromField>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Online shop order follow-up</subject>
+    </tasks>
+</Workflow>

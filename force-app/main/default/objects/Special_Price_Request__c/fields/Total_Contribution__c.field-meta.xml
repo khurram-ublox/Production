@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Contribution__c</fullName>
+    <externalId>false</externalId>
+    <formula>Total_Contribution_P1__c+Total_Contribution_P2__c+Total_Contribution_P3__c+Total_Contribution_P4__c+Total_Contribution_P5__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Sum of Total Contribution P1+P2+P3+P4+P5</inlineHelpText>
+    <label>Total Contribution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

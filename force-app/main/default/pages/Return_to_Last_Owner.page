@@ -1,0 +1,42 @@
+<apex:page standardController="Case" extensions="ReturnToLastOwnerCtrl" >
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="../../soap/ajax/50.0/connection.js"/>
+
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    <script type="text/javascript">
+        sforce.connection.sessionId = "{!$Api.Session_ID}";
+    	var CaseId = "{!Case.Id}";
+        
+    	getRemoteAccount(CaseId);
+     
+    
+    function getRemoteAccount(id) {         
+		if(uJS){
+        	uJS.setCommunityName("{!$Network.Name}");
+        }
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ReturnToLastOwnerCtrl.updatedCaseId}', 
+            id,
+            function(result, event){
+                if (event.status) {
+                     if(result==true){  
+                         uJS.closeAndRefreshTab(CaseId); // from ApexJS.js
+                     }else if(result==false){
+                         alert('Sorry, there was an error during escalation.'); 
+                         uJS.closeTab(CaseId); // from ApexJS.js
+                     }                                       
+                } else {
+                    alert(event.message);
+                    uJS.closeTab(CaseId); // from ApexJS.js
+                }
+                return false;
+            }, 
+            {escape: true}
+        );
+    }
+    </script>
+
+    <div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>
+</apex:page>

@@ -1,0 +1,59 @@
+<aura:component controller="SObjectService">
+    <aura:attribute name="case" type="Case" default="{sobjectType:'Case'}" />
+    <aura:attribute name="apiName" type="String" access="public"/>
+    <aura:attribute name="value" type="Object" access="public"/>
+    <aura:attribute name="type" type="String" access="public" />
+    <aura:attribute name="label" type="String" access="public" />
+    <aura:attribute name="lookupType" type="String" access="public" />
+    <aura:attribute name="lookupDescriptionFields" type="String" access="public" />
+    <aura:attribute name="required" type="Boolean" default="false" access="public" />
+    <aura:attribute name="hasError" type="Boolean" default="false" access="public" />
+    <aura:attribute name="maxLength" type="Integer" default="255" access="public" />
+    <aura:attribute name="readOnly" type="Boolean" default="false" />
+    <aura:attribute name="class" type="String" default="slds-form-element slds-size--5-of-12"/>
+    <aura:attribute name="options" type="List" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="change" value="{!v.value}" action="{!c.updateInnerComponents}" />
+    <aura:handler name="updateLookupIdEvent" event="c:UpdateLookupId" action="{!c.onUpdateLookup}"/>
+    <aura:handler name="clearLookupIdEvent" event="c:ClearLookupId" action="{!c.onClearLookup}"/>
+
+    <div class="{!v.class}">
+        <aura:if isTrue="{!v.type != 'lookup'}">
+            <label class="slds-form-element__label slds-size--3-of-12 slds-text-align--right" for="{!v.apiName}">{!v.label}</label>
+            <div class="{!(v.hasError ? 'slds-has-error' : '') + (v.required ? ' slds-is-required' : '') + ' slds-form-element__control slds-size--8-of-12'}">
+                <aura:renderIf isTrue="{!v.type == 'string' || v.type == 'phone' || v.type == 'email' || v.type == 'number'}">
+                    <input aura:id="field" id="{!v.apiName}" class="slds-input" type="{!v.type}" disabled="{!v.readOnly}" value="{!v.value}" maxlength="{!v.maxLength}" onkeyup="{!c.onKeyUp}"/>
+                    <span id="errorSample1" class="{!(v.hasError ? '' : 'slds-hide') + ' slds-form-element__help'}">This field is required</span>
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.type == 'textarea'}">
+                    <textarea id="{!v.apiName}" class="slds-textarea" value="{!v.value}" onkeyup="{!c.onKeyUp}"></textarea>
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.type == 'checkbox'}">
+                    <c:SLDSCheckbox aura:id="field" id="{!v.apiName}" label="{!v.apiNameLabel}" checked="{!v.value}"/>
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.type == 'picklist'}">
+                    <div class="slds-select_container">
+                        <select aura:id="field" id="{!v.apiName}" class="slds-select" onchange="{!c.onKeyUp}">
+                            <option value="">&nbsp;</option>
+                            <aura:iteration items="{!v.options}" var="option">
+                                <option value="{!option.value}" selected="{!option.value == v.value}">{!option.label}</option>
+                            </aura:iteration>
+                        </select>
+                    </div>
+                    <span id="errorSample1" class="{!(v.hasError ? '' : 'slds-hide') + ' slds-form-element__help'}">This field is required</span>
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.type == 'datetime'}">
+                    <input aura:id="field" id="{!v.apiName}" class="slds-input" type="date" onkeyup="{!c.onKeyUp}"/>
+                </aura:renderIf>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.type == 'lookup'}">
+            <c:LookupSObject aura:id="field" label="{!v.label}" pluralLabel="{!v.label}" sObjectAPIName="{!v.lookupType}" instanceId="{!v.apiName}"
+                             listIconSVGPath="/resource/SLDS0121/assets/icons/standard-sprite/svg/symbols.svg#account" 
+                             listIconClass="slds-icon-standard-account" descriptionFields="{!v.lookupDescriptionFields}"/>
+        </aura:if>
+    </div>
+
+
+</aura:component>

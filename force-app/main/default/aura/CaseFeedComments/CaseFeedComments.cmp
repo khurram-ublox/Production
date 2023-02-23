@@ -1,0 +1,540 @@
+<aura:component description="CaseFeedComments" access="global" controller="CaseFeedCommentsCtrl" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId,force:LightningQuickAction">
+    
+     <lightning:workspaceAPI aura:id="workspace" />
+         
+     <aura:attribute name="userId" type="Id" />
+     <aura:attribute name="userType" type="String" />
+     <aura:attribute name="partnerTabLabel" type="String" default="ublox---" />
+
+     
+     <aura:attribute name="feedCustomerId" default="" type="String" />
+     <aura:attribute name="feedInternalId" default="" type="String" />
+     <aura:attribute name="feedPartnerId" default="" type="String" />
+
+     <aura:attribute name="recordId" type="Id" />
+     <aura:attribute name="simpleRecord" type="Object"/>
+     <aura:attribute name="recordError" type="String"/>
+     
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+     <aura:attribute name="comments" type="List" />
+     <aura:attribute name="commentsCount" type="Object"/>
+     
+     <aura:attribute name="textarea" type="String"/>
+     <aura:attribute name="textarea_partner" type="String"/>
+     <aura:attribute name="toggleIcon" type="String"/>
+     <aura:attribute name="commentType" default="" type="String"/>
+     
+     <aura:attribute name="comment_id" type="String" Default="" />
+     <aura:attribute name="comment_commentType" type="String" />
+     <aura:attribute name="comment_delete_data" type="String" Default="" />
+
+     <aura:attribute name="fileDataJSON" type="String"/>
+     <aura:attribute name="fileName" type="String"/>
+
+     <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg', '.pdf']" />
+     <aura:attribute name="fileContentVersionId" type="String"/>
+     <aura:attribute name="fileContentDocumentId" type="String"/>
+     <aura:attribute name="isFileComponentDisabled" type="Boolean" Default="false"/>
+     
+     <aura:html tag="style">
+        .cuf-scroller-outside {
+            background-color: white !important;
+        }
+     </aura:html>
+     
+     <div class="spinnerHolder">
+         <lightning:spinner aura:id="spinner" alternativeText="Loading" size="medium" class="slds-hide" />
+     </div>
+     
+     <force:recordData aura:id="record"
+                       layoutType="FULL"
+                       recordId="{!v.recordId}"
+                       targetError="{!v.recordError}"
+                       targetFields ="{!v.simpleRecord}"
+                       mode="VIEW"/>
+
+     <div>
+
+        <div class="slds-section slds-is-close" aura:id="DescriptionSection">
+        <!--section header-->
+        <h3 class="slds-section__title" onclick="{!c.toggleSection}" data-auraId="DescriptionSection">
+            <button aria-controls="DescriptionId" class="slds-button slds-section__title-action">
+                <span>
+                    <lightning:icon iconName="utility:switch"
+                                    alternativeText="button icon"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"/>
+                </span>
+                <span class="slds-truncate" title="Case Description">Case Description</span>
+            </button>
+        </h3>
+        <!--section body DESCRIPTION -->
+        <div class="slds-section__content description" id="DescriptionId">
+            <div class="user"><a href="#" id="{!v.simpleRecord.CreatedBy.Id}" onclick="{!c.openTab}">{!v.simpleRecord.CreatedBy.Name}</a></div>
+            <div class="date">
+                <lightning:formattedDateTime aura:id="dt"
+                                             value="{!v.simpleRecord.CreatedDate}"
+                                             month="short"
+                                             day="numeric"
+                                             year="numeric"
+                                             hour="2-digit"
+                                             minute="2-digit"
+                                             hour12="false"
+                                             timeZone="{!$Locale.timezone}"/>
+            </div>
+            
+            <aura:if isTrue="{!v.simpleRecord.RecordType.Name eq 'Support Case'}">
+                <div class="body"><aura:unescapedHtml value="{!v.simpleRecord.Detailed_Description__c}"/></div>
+                
+                <aura:set attribute="else">
+                    <div class="body"><aura:unescapedHtml value="{!v.simpleRecord.Description}"/></div>
+                </aura:set>
+            </aura:if>
+
+        </div>
+    </div>
+
+         
+        <div class="slds-m-top_medium"></div>
+        <div class="slds-section slds-is-open" aura:id="CommentsSection">
+        <!--section header-->
+        <h3 class="slds-section__title" onclick="{!c.toggleSection}" data-auraId="CommentsSection">
+            <button aria-controls="CommentsId" class="slds-button slds-section__title-action">
+                <span>
+                    <lightning:icon iconName="utility:switch"
+                                    alternativeText="button icon"
+                                    size="x-small"
+                                    class="slds-section__title-action-icon slds-button__icon_left"/>
+                </span>
+                <span class="slds-truncate" title="Comments">Comments</span>
+            </button>
+        </h3>
+        <!--section body COMMENTS -->
+        <div class="slds-section__content" id="CommentsId">
+
+            
+         <lightning:tabset aura:id="toptabs" selectedTabId="t_all">
+             <lightning:tab onactive="{! c.handleActiveTab }" label="{!$Label.c.All}" id="t_all"></lightning:tab>
+             <aura:if isTrue="{!or(v.userType =='Standard',v.userType =='Standard')}">           
+             <lightning:tab onactive="{! c.handleActiveTab }" label="{!$Label.c.Internal_users}" id="t_internal"></lightning:tab>
+            </aura:if>  
+             <lightning:tab onactive="{! c.handleActiveTab }" label="{!$Label.c.partner_and_internal_users}" aura:id="tab_partner" id="t_partner"></lightning:tab>
+             <aura:if isTrue="{!or(v.simpleRecord.Origin=='u_blox_Portal',v.simpleRecord.Origin=='u-blox Portal')}">
+             	<lightning:tab onactive="{! c.handleActiveTab }" label="{!$Label.c.Customers}" id="t_customer"></lightning:tab>
+             </aura:if>
+         </lightning:tabset>
+
+        <div class="comments">
+            
+            <aura:if isTrue="{!not(empty(v.comments))}">
+                <div class="slds-m-bottom_x-small slds-m-top_x-small">
+                    <div aura:id="to_three" class="comment">
+                        <span>Last commented by 
+                            <strong>{!if(v.userId==v.comments[0].CreatedById,'Me ',v.comments[0].CreatedByName)} </strong>
+                            <aura:if isTrue="{!v.comments[0].UserType == 'Internal'}">
+                                Internal - (<aura:unescapedHtml value="{!v.comments[0].profileName}"/>)
+                                <aura:set attribute="else">
+                                    (<aura:unescapedHtml value="{!v.comments[0].UserType}"/>)                                    
+                                </aura:set>
+                            </aura:if>
+                        </span>
+                    </div>
+                </div>
+            </aura:if>
+           
+
+            <div class="post_comment" aura:id="post_comment">
+                <div class="slds-m-bottom_x-small slds-m-top_x-small">
+                    <div aura:id="to_three" class="">
+                        <strong>NOTE:</strong> Please be aware that messages in this tab are also visible to partners (since partner account migration). 
+                    </div>
+                </div>
+                
+                <div aura:id="text_input" class="text_input"><lightning:input label="" variant="label-hidden" name="myname" placeholder="Your comment..." onclick="{!c.showForm}" /></div>
+                <div aura:id="text_textarea" class="text_textarea  slds-hide">
+                    <div class="slds-m-bottom_x-small">
+                        <div aura:id="to_one" class="slds-hide">You are responding to the <b>customer</b>.</div>
+                        <div aura:id="to_two" class="slds-hide">You are writing an <b>internal message</b>.</div>
+                    </div>
+                    <lightning:inputRichText aura:id="message" value="{!v.textarea}" class="slds-m-bottom_x-small" placeholder="Your comment..." formats="['bold', 'italic', 'underline',
+                                                                                                                                                          'strike', 'list', 'clean', 'code']">
+                    </lightning:inputRichText>
+
+                    
+                    <div class="slds-float--left">
+                        <!-- <lightning:input aura:id="file-input" type="file"
+                             onchange="{!c.onFileUploaded}"
+                             name="file" multiple="false" class="slds-floatleft"></lightning:input> -->
+                        
+                        
+                        <lightning:fileUpload label="Supported files (.png, .jpg, .jpeg, .pdf)"
+                            name="fileUploader"
+                            multiple="false"
+                            accept="{!v.filetype}"
+                            disabled="{!v.isFileComponentDisabled}"
+                            recordId="{!v.recordId}"
+                            onuploadfinished="{!c.handleUploadFinished}" />
+                            <div class="slds-float--left uploaded-file" aura:id="fileToUpload">{!v.fileName} 
+                                <!-- <a href="#" class="slds-hide slds-p-left_xx-small"  onclick="{!c.removeFile}">(x remove)</a> -->
+                                <lightning:button aura:id="remove_file_link" class="slds-hide slds-p-left_xx-small" variant="base" label="(x delete)" title="Base action" onclick="{! c.removeFile }"/>
+                            </div>
+
+                    </div>
+                    <div class="slds-float--right">
+                        <lightning:button variant="brand" label="Send" title="Send" onclick="{!c.post}" aura:id="send_button" />
+                    </div>
+                    <div class="slds-clearfix"></div>
+                </div>
+            </div>
+            
+            <div class="post_comment" aura:id="post_comment_partner">
+                <div aura:id="text_textarea_plain" class="text_textarea">
+                    <div class="slds-m-bottom_x-small slds-m-top_x-small">
+                        <div aura:id="to_three" class="">
+                            <strong>NOTE:</strong> This tab uses Case Comment object. Messages added in Salesforce Classic using Case Comment are listed below.
+                            <aura:if isTrue="{!or(v.simpleRecord.Origin=='u_blox_Portal_deactivated',v.simpleRecord.Origin=='u-blox Portal_deactivated')}">
+                                <br></br><div class="red"><strong>Please be aware,</strong> comments posted to this tab are also visible to the customer. It's temporary until the partner login license upgrade.</div>
+                            </aura:if>
+                        </div>
+                    </div>
+
+					<lightning:textarea aura:id="message_partner" value="{!v.textarea_partner}" class="message_partner slds-m-bottom_xx-small" name="message_partner" placeholder="Your comment..."/>
+
+                    
+                    <div class="slds-float--left slds-m-top_xx-small">
+                        
+                    </div>
+                    
+                    <div class="slds-float--left">
+                        <lightning:input aura:id="file-input_p" type="file"
+                             onchange="{!c.onFileUploaded}"
+                             name="file" multiple="false" class="slds-float--left"></lightning:input>
+                        <div class="slds-float--left uploaded-file" aura:id="fileToUpload_p">{!v.fileName} <a href="#" class="slds-hide slds-p-left_xx-small" aura:id="remove_file_link_p" onclick="{!c.removeFile}">(x remove)</a></div>
+                    </div>
+                    <div class="slds-float--right">
+                        <lightning:button variant="brand" label="Send to Partner and Internal" title="Send" onclick="{!c.postCc}" />
+                    </div>
+                    <div class="slds-clearfix"></div>
+                </div>
+            </div>
+            
+            <div class="user"></div>
+            <div class="comments">
+                <lightning:tabset aura:id="tabs" selectedTabId="all">
+                    <lightning:tab label="Customer" id="customer">
+                        <aura:if isTrue="{!v.commentsCount.customer > 99}">
+                            <div class="slds-m-bottom_x-small slds-m-top_x-small">
+                                <b>Shown only first 100 messages.</b>
+                            </div>
+                        </aura:if>
+						<aura:iteration items="{!v.comments}" var="feed" indexVar="index">
+								<aura:if isTrue="{!feed.Type=='customer'}">
+									<div class="{! 'comment' + ' ' + if(v.userId==feed.CreatedById,'slds-text-align_rightslds-float--right','')}">
+                                        
+                                        <aura:if isTrue="{!v.userId==feed.CreatedById}">
+                                            <div class="slds-float--right">
+                                                <lightning:buttonMenu aura:id="menu" onselect="{! c.handleSelect }" alternativeText="Show menu" iconSize="small" menuAlignment="right">
+                                                <lightning:menuItem value="{! feed.Type + '_edit_' + index }" label="Edit" />
+                                                <lightning:menuItem value="{! feed.Type + '_delete_' + index }" label="Delete" />
+                                                </lightning:buttonMenu>
+                                            </div>
+                                        </aura:if>
+                                        
+										<div class="user" style="text-transform: capitalize;"><a href="#" id="{!feed.CreatedById}" onclick="{!c.openTab}">{!if(v.userId==feed.CreatedById,'Me  ',feed.CreatedByName)}</a><span>(<aura:unescapedHtml value="{!if(feed.UserType == 'Internal',feed.profileName,feed.UserType)}"/>)</span></div>
+                                        
+										<div class="date">
+                                            <em><lightning:relativeDateTime value="{!feed.CreatedDate}"/></em>
+                                            <span><lightning:formattedDateTime aura:id="dt"
+                                                                            value="{!feed.CreatedDate}"
+                                                                            month="short"
+                                                                            day="numeric"
+                                                                            year="numeric"
+                                                                            hour="2-digit"
+                                                                            minute="2-digit"
+                                                                            hour12="false"
+                                                                            timeZone="{!$Locale.timezone}"/></span>
+											<aura:if isTrue="{!feed.Type=='internal'}">
+												<lightning:icon class="lock" iconName="utility:lock" alternativeText="Internal message" />
+											</aura:if>
+                                            <aura:if isTrue="{!feed.Type=='customer'}">
+                                                <lightning:icon iconName="utility:groups" alternativeText="Customer message" />
+                                            </aura:if>
+                                            <aura:if isTrue="{!feed.Type=='partner'}">
+                                                <lightning:icon iconName="utility:people" alternativeText="Partner message" />
+                                            </aura:if>
+										</div>
+                                        
+                                        
+										<div class="body"><aura:unescapedHtml value="{!feed.Body}"/></div>
+                                        
+                                        <aura:if isTrue="{!feed.fileId}">
+
+                                            <div class="slds-hide"><a href="#" data-record="{!feed.fileId}" onclick="{!c.previewFilee}">{!feed.fileDesc}</a></div>
+                                            <lightning:fileCard fileId="{!feed.fileId}" description="{!feed.fileDesc}" hideDescription="true" />
+                                            
+                                        </aura:if>
+									</div>
+								</aura:if>
+							</aura:iteration>
+                        <div class="slds-clearfix"></div>
+                        
+                    </lightning:tab>
+                    
+                    <lightning:tab label="u-blox only" id="internal">
+                        <aura:if isTrue="{!v.commentsCount.internal > 99}">
+                            <div class="slds-m-bottom_x-small slds-m-top_x-small">
+                                <b>Shown only first 100 messages.</b>
+                            </div>
+                        </aura:if>
+                        
+                        <aura:iteration items="{!v.comments}" var="feed" indexVar="index">
+							<aura:if isTrue="{!feed.Type=='internal'}">
+								<div class="{! 'comment' + ' ' + if(v.userId==feed.CreatedById,'slds-text-align_rightslds-float--right','')}">
+                                    
+                                    <aura:if isTrue="{!v.userId==feed.CreatedById}">
+                                        <div class="slds-float--right">
+                                            <lightning:buttonMenu aura:id="menu" onselect="{! c.handleSelect }" alternativeText="Show menu" iconSize="small" menuAlignment="right">
+                                            <lightning:menuItem value="{! feed.Type + '_edit_' + index }" label="Edit" />
+                                            <lightning:menuItem value="{! feed.Type + '_delete_' + index }" label="Delete" />
+                                            </lightning:buttonMenu>
+                                        </div>
+                                    </aura:if>
+                                    
+									<div class="user" style="text-transform: capitalize;"><a href="#" id="{!feed.CreatedById}" onclick="{!c.openTab}">{!if(v.userId==feed.CreatedById,'Me ',feed.CreatedByName)}</a><span> (<aura:unescapedHtml value="{!if(feed.UserType == 'Internal',feed.profileName,feed.UserType)}"/>)</span></div>
+									<div class="date">
+                                        <em><lightning:relativeDateTime value="{!feed.CreatedDate}"/></em>
+                                        <span><lightning:formattedDateTime aura:id="dt"
+                                                                            value="{!feed.CreatedDate}"
+                                                                            month="short"
+                                                                            day="numeric"
+                                                                            year="numeric"
+                                                                            hour="2-digit"
+                                                                            minute="2-digit"
+                                                                            hour12="false"
+                                                                            timeZone="{!$Locale.timezone}"/></span>
+                                        <aura:if isTrue="{!feed.Type=='internal'}">
+                                            <lightning:icon class="lock" iconName="utility:lock" alternativeText="Internal message" />
+                                        </aura:if>
+                                        <aura:if isTrue="{!feed.Type=='customer'}">
+                                            <lightning:icon iconName="utility:groups" alternativeText="Customer message" />
+                                        </aura:if>
+                                        <aura:if isTrue="{!feed.Type=='partner'}">
+                                            <lightning:icon iconName="utility:people" alternativeText="Partner message" />
+                                        </aura:if>
+									</div>
+									
+									<div class="body"><aura:unescapedHtml value="{!feed.Body}"/></div>
+                                    
+                                    <aura:if isTrue="{!feed.fileId}">
+                                        <lightning:fileCard fileId="{!feed.fileId}" description="{!feed.fileDesc}" hideDescription="true" />
+                                    </aura:if>
+								</div>
+							</aura:if>
+                        </aura:iteration>
+                        <div class="slds-clearfix"></div>
+                    </lightning:tab>
+
+                    <lightning:tab label="All" id="all">
+                        <aura:if isTrue="{!empty(v.comments)}">
+                            <div class="no_messages">No messages yet added.</div>
+                        </aura:if>
+                        <aura:iteration items="{!v.comments}" var="feed" indexVar="index">
+                            <div class="{! 'comment' + ' ' + if(v.userId==feed.CreatedById,'slds-text-align_rightslds-float--right','')}">
+                                
+                                <aura:if isTrue="{!v.userId==feed.CreatedById}">
+                                    <div class="slds-float--right">
+                                        <lightning:buttonMenu aura:id="menu" onselect="{! c.handleSelect }" alternativeText="Show menu" iconSize="small" menuAlignment="right">
+                                            <lightning:menuItem value="{! feed.Type + '_edit_' + index }" label="Edit" />
+                                            <lightning:menuItem value="{! feed.Type + '_delete_' + index }" label="Delete" />
+                                        </lightning:buttonMenu>
+                                    </div>
+                                </aura:if>
+                                
+                                <div class="user" style="text-transform: capitalize;"><a href="#" id="{!feed.CreatedById}" onclick="{!c.openTab}">{!if(v.userId==feed.CreatedById,'Me ',feed.CreatedByName)}</a>
+                                    <span>
+                                        (<aura:unescapedHtml value="{!if(feed.UserType == 'Internal',feed.profileName,feed.UserType)}"/>)
+                                        <!--
+                                        <aura:if isTrue="{!feed.Type=='internal'}">
+                                                ({!feed.profileName})
+                                            <aura:set attribute="else">
+                                                ({!feed.UserType})
+                                            </aura:set>
+                                        </aura:if>-->
+                                    </span>
+                                </div>
+                                <div class="date">
+                                    <em><lightning:relativeDateTime value="{!feed.CreatedDate}"/></em>
+                                    <span><lightning:formattedDateTime aura:id="dt"
+                                                                        value="{!feed.CreatedDate}"
+                                                                        month="short"
+                                                                        day="numeric"
+                                                                        year="numeric"
+                                                                        hour="2-digit"
+                                                                        minute="2-digit"
+                                                                        hour12="false"
+                                                                        timeZone="{!$Locale.timezone}"/></span>
+                                    <aura:if isTrue="{!feed.Type=='internal'}">
+                                        <lightning:icon class="lock" iconName="utility:lock" alternativeText="Internal message" />
+                                    </aura:if>
+                                    <aura:if isTrue="{!feed.Type=='customer'}">
+                                        <lightning:icon iconName="utility:groups" alternativeText="Customer message" />
+                                    </aura:if>
+                                    <aura:if isTrue="{!feed.Type=='partner'}">
+                                        <lightning:icon iconName="utility:people" alternativeText="Partner message" />
+                                    </aura:if>
+                                </div>
+
+                                <div class="body"><aura:unescapedHtml value="{!feed.Body}"/></div>
+                                
+                                <aura:if isTrue="{!feed.fileId}">
+                                	<lightning:fileCard fileId="{!feed.fileId}" description="{!feed.fileDesc}" hideDescription="true" />
+                                </aura:if>
+                                
+                            </div>
+                        </aura:iteration>
+                        <div class="slds-clearfix"></div>
+                    </lightning:tab>
+                    
+                    
+                    <lightning:tab label="Partners" id="partner">
+                        <aura:iteration items="{!v.comments}" var="feed" indexVar="index">
+                            <aura:if isTrue="{!feed.Type=='partner'}">
+                                <div class="{! 'comment' + ' ' + if(v.userId==feed.CreatedById,'slds-text-align_rightslds-float--right','')}">
+                                    <aura:if isTrue="{!v.userId==feed.CreatedById}">
+                                        <div class="slds-float--right">
+                                            <lightning:buttonMenu aura:id="menu" onselect="{! c.handleSelect }" alternativeText="Show menu" iconSize="small" menuAlignment="right">
+                                            <lightning:menuItem value="{! feed.Type + '_edit_' + index }" label="Edit" />
+                                            <lightning:menuItem value="{! feed.Type + '_delete_' + index }" label="Delete" />
+                                            </lightning:buttonMenu>
+                                        </div>
+                                    </aura:if>
+                                    
+                                    <div class="user"><a href="#" id="{!feed.CreatedById}" onclick="{!c.openTab}">{!if(v.userId==feed.CreatedById,'Me',feed.CreatedByName)}</a>
+                                        <span>
+                                            (<aura:unescapedHtml value="{!if(feed.UserType == 'Internal',feed.profileName,feed.UserType)}"/>)
+                                        </span>
+                                    </div>
+                                    <div class="date">
+                                        <em><lightning:relativeDateTime value="{!feed.CreatedDate}"/></em>
+                                        <span><lightning:formattedDateTime aura:id="dt"
+                                                                            value="{!feed.CreatedDate}"
+                                                                            month="short"
+                                                                            day="numeric"
+                                                                            year="numeric"
+                                                                            hour="2-digit"
+                                                                            minute="2-digit"
+                                                                            hour12="false"
+                                                                            timeZone="{!$Locale.timezone}"/></span>
+                                        
+                                        <aura:if isTrue="{!feed.Type=='internal'}">
+                                            <lightning:icon class="lock" iconName="utility:lock" alternativeText="Internal message" />
+                                        </aura:if>
+                                        <aura:if isTrue="{!feed.Type=='customer'}">
+                                            <lightning:icon iconName="utility:groups" alternativeText="Customer message" />
+                                        </aura:if>
+                                        <aura:if isTrue="{!feed.Type=='partner'}">
+                                            <lightning:icon iconName="utility:people" alternativeText="Partner message" />
+                                        </aura:if>
+                                    </div>
+                                    
+                                    <div class="body"><aura:unescapedHtml value="{!feed.Body}"/></div>
+                                    
+                                    <aura:if isTrue="{!feed.fileId}">
+                                        <lightning:fileCard fileId="{!feed.fileId}" description="{!feed.fileDesc}" hideDescription="true" />
+                                    </aura:if>
+                                    
+                                </div>
+                            </aura:if>
+                        </aura:iteration>
+                        <div class="slds-clearfix"></div>
+                    </lightning:tab>
+                    
+                </lightning:tabset>
+            </div>
+        </div>            
+            
+            
+            
+        </div>
+    </div>
+
+
+         
+
+        
+        
+        <div aria-hidden="true" role="dialog" class="panel slds-modal slds-fade-in-hide" aura:id="modaldialog">
+            <div class="modal-container slds-modal__container">
+                <div class="modal-header slds-modal__header">
+                    <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" onclick="{!c.hidePopup}">
+                        <lightning:icon iconName="utility:close" alternativeText="Close" size="small" />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading--medium">Edit Message</h2>
+                </div>
+                <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                    <div>
+                        <p>
+                            <lightning:inputRichText aura:id="comment_body" value="" class="slds-m-bottom_x-small" placeholder="" formats="['bold', 'italic', 'underline',
+                                                                                                                                           'strike', 'list', 'link',
+                                                                                                                                           'clean','code']">
+                            </lightning:inputRichText>
+                            
+                            <lightning:inputRichText aura:id="comment_body_partners" value="" class="slds-m-bottom_x-small" placeholder="" formats="['bold', 'italic', 'underline',
+                                                                                                                                           'strike', 'list', 'link',
+                                                                                                                                           'clean','code']">
+                            </lightning:inputRichText>
+                            
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer slds-modal__footer">
+                    <div class="forceChangeRecordTypeFooter">
+                        <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.hidePopup}" >Cancel</button>
+                        
+                        <aura:if isTrue="{!!v.messageChanged}">
+                            <button type="button" class="slds-button slds-button--brand" onclick="{!c.update}">Save</button>
+                        </aura:if>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div aria-hidden="true" role="dialog" class="panel slds-modal slds-fade-in-hide" aura:id="modaldialogdelete">
+            <div class="modal-container slds-modal__container">
+                <div class="modal-header slds-modal__header">
+                    <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" onclick="{!c.hidePopup}">
+                        <lightning:icon iconName="utility:close" alternativeText="Close" size="small" />
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading--medium">Remove Message</h2>
+                </div>
+                <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                    <div>
+                        <p>
+                            Do you want to remove message {!v.comment_delete_data} ?
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer slds-modal__footer">
+                    <div class="forceChangeRecordTypeFooter">
+                        <button type="button" class="slds-button slds-button--neutral .slds-modal__close" onclick="{!c.hidePopup}" >Cancel</button>
+                        
+                        <aura:if isTrue="{!!v.messageChanged}">
+                            <button type="button" class="slds-button slds-button--brand" onclick="{!c.delete}">Delete</button>
+                        </aura:if>  
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+         
+         
+        <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop"></div>
+        
+        
+    </div>
+</aura:component>

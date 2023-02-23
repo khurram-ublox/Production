@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>KPI_Violation__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Account.Name = &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 1 &amp;&amp; ISPICKVAL(Status, &apos;New&apos;), &apos;First Response&apos;, 
+IF(Account.Name = &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 11 &amp;&amp; NOT(ISPICKVAL(Status, &apos;New&apos;)), &apos;Resolution Proposal&apos;, 
+IF(Account.Name &lt;&gt; &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 1 &amp;&amp; ISPICKVAL(Account.Priority__c, &apos;A&apos;) &amp;&amp; ISPICKVAL(Status, &apos;New&apos;), &apos;First Response&apos;, 
+IF(Account.Name &lt;&gt; &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 3 &amp;&amp; ISPICKVAL(Account.Priority__c, &apos;A&apos;) &amp;&amp; NOT(ISPICKVAL(Status, &apos;Closed&apos;) &amp;&amp; ISPICKVAL(Status, &apos;New&apos;)), &apos;Resolution Proposal&apos;, 
+IF(Account.Name &lt;&gt; &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 1 &amp;&amp; ISPICKVAL(Account.Priority__c, &apos;B&apos;) &amp;&amp; ISPICKVAL(Status, &apos;New&apos;), &apos;First Response&apos;, 
+IF(Account.Name &lt;&gt; &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 7 &amp;&amp; ISPICKVAL(Account.Priority__c, &apos;B&apos;) &amp;&amp; NOT(ISPICKVAL(Status, &apos;Closed&apos;) &amp;&amp; ISPICKVAL(Status, &apos;New&apos;)), &apos;Resolution Proposal&apos;, 
+IF(Account.Name &lt;&gt; &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 1 &amp;&amp; NOT(ISPICKVAL(Account.Priority__c, &apos;A&apos;)||ISPICKVAL(Account.Priority__c, &apos;B&apos;)) &amp;&amp; ISPICKVAL(Status, &apos;New&apos;), &apos;First Response&apos;, 
+IF(Account.Name &lt;&gt; &apos;Registered Community Users&apos; &amp;&amp; Days_Old__c &gt; 14 &amp;&amp; NOT(ISPICKVAL(Account.Priority__c, &apos;A&apos;)||ISPICKVAL(Account.Priority__c, &apos;B&apos;)) &amp;&amp; NOT(ISPICKVAL(Status, &apos;Closed&apos;) &amp;&amp; ISPICKVAL(Status, &apos;New&apos;)), &apos;Resolution Proposal&apos;, 
+
+
+&apos;&apos; 
+) 
+) 
+) 
+) 
+) 
+) 
+) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>KPI Violation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

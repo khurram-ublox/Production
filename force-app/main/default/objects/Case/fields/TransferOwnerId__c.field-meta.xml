@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TransferOwnerId__c</fullName>
+    <externalId>false</externalId>
+    <formula>/* If Type=Audit, assign to Queue &quot;Quality&quot; */
+IF(ISPICKVAL(Type,&quot;Audit&quot;),&quot;00G20000001Lsn7&quot;,
+  /* If created by the partner user and the current user is FAE Partner or Partner Base, assign to the Manager. */
+  IF(AND(Created_By_Partner__c,OR($Profile.Id=&quot;00e57000001YbiK&quot;,$Profile.Id=&quot;00e2p000001opLR&quot;,ISPICKVAL($User.UserType,&quot;Partner&quot;))),$User.ManagerId,
+    /* If created by the partner user and the current user is FAE in EMEA, assign to Quality or the corresponding AE. */
+    IF(AND(Created_By_Partner__c,$UserRole.Id=&quot;00E20000000uqdP&quot;,$Profile.Id=&quot;00e20000000zSSg&quot;),
+      CASE(TEXT(Technology__c),
+        &quot;Cellular&quot;,&quot;00G20000001Lsac&quot;,
+        &quot;Short Range&quot;,&quot;00GD0000003uWXg&quot;,
+        &quot;00G20000001LsZy&quot;
+      ),
+      /* The Case assignment is defined by the field in User object. */
+      CASE(TEXT(Technology__c),
+        &quot;Cellular&quot;,$User.CaseNextOwnerIDCEL__c,
+        &quot;Short Range&quot;,$User.CaseNextOwnerIDSHO__c,
+        $User.CaseNextOwnerIDPOS__c
+      )
+    )
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>TransferOwnerId</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

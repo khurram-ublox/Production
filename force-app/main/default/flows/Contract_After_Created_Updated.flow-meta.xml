@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Call</name>
+        <label>Call ContractObjectHelper Apex</label>
+        <locationX>574</locationX>
+        <locationY>1463</locationY>
+        <actionName>ContractObjectHelper</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_Email_Notifications</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contractRecords</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Contract_copy_Account_Name</name>
+        <label>Contract: copy Account Name</label>
+        <locationX>575</locationX>
+        <locationY>1206</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Contract_Search_Info__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Category_Design_Partner</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Sales_Admin_Email</name>
+        <label>Set Sales Admin Email</label>
+        <locationX>582</locationX>
+        <locationY>720</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Sales_Admin_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.Sales_Admin__r.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Contract_Name</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Contract_Name</name>
+        <label>Update Contract Name</label>
+        <locationX>575</locationX>
+        <locationY>951</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Name</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>contractName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateFlag</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Contract_copy_account_name_for_search</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Account_Sales_Admin_Email</name>
+        <label>Account Sales Admin Email</label>
+        <locationX>311</locationX>
+        <locationY>607</locationY>
+        <defaultConnector>
+            <targetReference>Check_Contract_Name</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Sales_Admin_Email_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Sales_Admin__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Sales_Admin_Email</targetReference>
+            </connector>
+            <label>Account Sales Admin Email Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Category_Design_Partner</name>
+        <label>Category Design Partner</label>
+        <locationX>312</locationX>
+        <locationY>1325</locationY>
+        <defaultConnector>
+            <targetReference>Send_Email_Notifications</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Design_Partner</name>
+            <conditionLogic>(1 OR 2 OR 3) AND (4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contract_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Design Partner Program Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Solution Partner Program Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Contract_Category__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Service Referral Commission Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Activated</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ended</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Call</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>If Design Partner</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Contract_Name</name>
+        <label>Check Contract Name</label>
+        <locationX>312</locationX>
+        <locationY>846</locationY>
+        <defaultConnector>
+            <targetReference>Contract_copy_account_name_for_search</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_Condition_if_its_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Name</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Contract_Name</targetReference>
+            </connector>
+            <label>Status Condition if its Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Contract_copy_account_name_for_search</name>
+        <label>Contract: copy account name for search</label>
+        <locationX>312</locationX>
+        <locationY>1078</locationY>
+        <defaultConnector>
+            <targetReference>Category_Design_Partner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Contract_copy_account_name_for_search_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Contract_copy_Account_Name</targetReference>
+            </connector>
+            <label>Contract: copy account name for search Condition</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>is_update_required</name>
+        <label>is update required</label>
+        <locationX>313</locationX>
+        <locationY>1811</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_if_any_record_needs_to_be_updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>updateFlag</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>updateContracts</targetReference>
+            </connector>
+            <label>check if any record needs to be updated</label>
+        </rules>
+    </decisions>
+    <description>Flow trigger on after record created or updated
+Send Email Alerts</description>
+    <formulas>
+        <description>It&apos;ll return the first 3 words of account.</description>
+        <name>AccountNameFirst3Words</name>
+        <dataType>String</dataType>
+        <expression>IF(FIND(&apos; &apos;,TRIM({!$Record.Account.Name}))==0|| FIND(&apos; &apos;,TRIM({!$Record.Account.Name}),FIND(&apos; &apos;,TRIM({!$Record.Account.Name}),1)+1)==0,
+ TRIM({!$Record.Account.Name}),
+ TRIM(LEFT(TRIM({!$Record.Account.Name})+&apos; &apos;, FIND(&apos; &apos;,TRIM({!$Record.Account.Name})+&apos; &apos;,
+                         FIND(&apos; &apos;,TRIM({!$Record.Account.Name})+&apos; &apos;,  
+                         FIND(&apos; &apos;,TRIM({!$Record.Account.Name})+&apos; &apos;,1)+1)+1))))</expression>
+    </formulas>
+    <formulas>
+        <name>contractName</name>
+        <dataType>String</dataType>
+        <expression>AccountNameFirst3Words &amp; &quot; - &quot; &amp; TEXT({!$Record.Contract_Category__c}) &amp; &quot; - &quot; &amp; TEXT(YEAR({!$Record.StartDate}))</expression>
+    </formulas>
+    <interviewLabel>Contract: After Create/Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Contract: After Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>updateContracts</name>
+        <label>updateContracts</label>
+        <locationX>323</locationX>
+        <locationY>2023</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>193</locationX>
+        <locationY>269</locationY>
+        <connector>
+            <targetReference>Account_Sales_Admin_Email</targetReference>
+        </connector>
+        <object>Contract</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Send_Email_Notifications</name>
+        <label>Send Email Notifications</label>
+        <locationX>321</locationX>
+        <locationY>1609</locationY>
+        <connector>
+            <targetReference>is_update_required</targetReference>
+        </connector>
+        <flowName>Contract_Email_Alerts</flowName>
+        <inputAssignments>
+            <name>currentRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>priorRecord</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <name>accountIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>updateFlag</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,12 @@
+This is to inform you that one of the following fields of Opportunity {!Opportunity.Name} (Account: {!Opportunity.Account}) has been changed by the distributor.
+
+Stage: {!Opportunity.StageName}
+Decision Date: {!Opportunity.Decision_Date__c}
+Proto Date: {!Opportunity.Proto_Date__c}
+Start Production: {!Opportunity.CloseDate}
+Product 1: {!Opportunity.Product_1__c}
+Product 2: {!Opportunity.Product_2__c}
+Product 3: {!Opportunity.Product_3__c}
+Latest Status: {!Opportunity.Latest_Status__c}
+
+Link to the Opportunity: {!Opportunity.Link}

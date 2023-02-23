@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Task_APAC_Stage_4_done</fullName>
+        <description>Task: APAC Stage 4 done</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Task_APAC_chip_project_Stage_4_done</template>
+    </alerts>
+    <alerts>
+        <fullName>Task_Send_Notification</fullName>
+        <description>Task Send Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Task_Send_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Task_Send_Notification_For_Partner_Portal</fullName>
+        <description>Task Send Notification For Partner Portal</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>do-not-reply@u-blox.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Task_Send_Notification_for_Partner_Portal</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Close_Task</fullName>
+        <description>Updates the task Status to Completed.</description>
+        <field>Status</field>
+        <literalValue>Completed</literalValue>
+        <name>Close Task</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Task_Set_Public</fullName>
+        <description>Set Public to true</description>
+        <field>IsVisibleInSelfService</field>
+        <literalValue>1</literalValue>
+        <name>Task: Set Public</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Task_Update_Comments</fullName>
+        <description>Add Contact from the Task</description>
+        <field>Description</field>
+        <formula>Description&amp;BR()&amp;BR()&amp;&quot;NOTE: The quotation is to be issued to&quot;&amp;BR()&amp;&quot;Contact Link:https://eu4.salesforce.com/&quot;&amp;WhoId</formula>
+        <name>Task: Update Comments</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Close Task</fullName>
+        <actions>
+            <name>Close_Task</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.Close_Task__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Used to close multiple tasks from a list view.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Task%3A APAC chip project Stage 4 done</fullName>
+        <actions>
+            <name>Task_APAC_Stage_4_done</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.Type</field>
+            <operation>equals</operation>
+            <value>Chip Project</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.Subject</field>
+            <operation>startsWith</operation>
+            <value>Stage 4</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Task.IsClosed</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Notify Account Owner</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Task%3A Set Public to new Task</fullName>
+        <actions>
+            <name>Task_Set_Public</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <description>Only when a new Task is created, Public is set to true (excl. tasks related to SPR) so the user can change afterwards if needed.</description>
+        <formula>AND(IsVisibleInSelfService=FALSE,LEFT(WhatId,3)&lt;&gt;&quot;a0J&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Task%3A Update Comments</fullName>
+        <actions>
+            <name>Task_Update_Comments</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Task.Type</field>
+            <operation>equals</operation>
+            <value>Quotation</value>
+        </criteriaItems>
+        <description>For Custom Button &quot;Request Quotation&quot; to add Contact from the Task</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

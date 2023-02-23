@@ -1,0 +1,48 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" 
+                access="global">
+
+    <aura:attribute name="quoteRecordId" type="Id" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="exisingRecord" type="Object" />
+  
+    <aura:attribute name="parentRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+    
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Name,Id,AccountId,OppAutoNumber__c"
+    targetFields="{!v.parentRecord}"
+    targetError="{!v.recordLoadError}" 
+    recordUpdated="{!c.handleRecordUpdated}"
+    />
+
+    <!-- Displays a toast notification -->
+    <lightning:notificationsLibrary aura:id="notifLib" />
+
+    <div class=" slds-box">
+    <div class="slds-heading slds-card__header slds-grid "> <!--slds-border_bottom  -->
+        	<h2 class="slds-card__header-title">
+                <span>Create Quote</span>
+            </h2>
+    </div>
+    <lightning:recordEditForm recordId="{!v.quoteRecordId}" objectApiName="Quote" onsuccess="{!c.handleSuccess}">
+                    <lightning:inputField aura:id="Name" fieldName="Name" defualt="quote"/>                
+                    <lightning:inputField aura:id="Account" fieldName="AccountId" defualt=""/>
+                    <lightning:inputField aura:id="FAE__c" fieldName="FAE__c" defualt=""/>
+                    <lightning:inputField aura:id="Opportunity" fieldName="OpportunityId" defualt=""/>
+                    <lightning:inputField aura:id="Special_Price_Request__c" fieldName="Special_Price_Request__c" defualt=""/>
+                    <lightning:inputField aura:id="Quotation_Account__c" fieldName="Quotation_Account__c" defualt=""/>
+                    <lightning:inputField aura:id="Automotive_RFQ_RFI__c" fieldName="Automotive_RFQ_RFI__c" defualt=""/>
+                    <lightning:inputField aura:id="Type_of_Quotation__c" fieldName="Type_of_Quotation__c" defualt=""/>
+
+                    <lightning:inputField aura:id="Delivery__c" fieldName="Delivery__c" defualt=""/>
+                    <lightning:inputField aura:id="Payment__c" fieldName="Payment__c" defualt=""/>
+                    <lightning:inputField aura:id="Remarks__c" fieldName="Remarks__c" defualt=""/>
+                    <lightning:inputField aura:id="Contact" fieldName="Contact" defualt=""/>
+                    <lightning:inputField aura:id="Phone" fieldName="Phone" defualt=""/>
+                    <lightning:inputField aura:id="Email" fieldName="Email" defualt=""/>
+                    <lightning:inputField aura:id="Fax" fieldName="Fax" defualt=""/>
+    <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Save" />
+	</lightning:recordEditForm>
+    </div> 
+</aura:component>

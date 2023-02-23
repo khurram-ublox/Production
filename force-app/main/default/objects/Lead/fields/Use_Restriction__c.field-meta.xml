@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Restriction__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>For wireless products, indicate in what application the product is used</inlineHelpText>
+    <label>Use Restriction</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2G M2M</fullName>
+                <default>false</default>
+                <label>2G M2M</label>
+            </value>
+            <value>
+                <fullName>2G Telematics</fullName>
+                <default>false</default>
+                <label>2G Telematics</label>
+            </value>
+            <value>
+                <fullName>2G Laptop</fullName>
+                <default>false</default>
+                <label>2G Laptop</label>
+            </value>
+            <value>
+                <fullName>2G Other</fullName>
+                <default>false</default>
+                <label>2G Other</label>
+            </value>
+            <value>
+                <fullName>3G M2M</fullName>
+                <default>false</default>
+                <label>3G M2M</label>
+            </value>
+            <value>
+                <fullName>3G Telematics</fullName>
+                <default>false</default>
+                <label>3G Telematics</label>
+            </value>
+            <value>
+                <fullName>3G Laptop</fullName>
+                <default>false</default>
+                <label>3G Laptop</label>
+            </value>
+            <value>
+                <fullName>3G Other</fullName>
+                <default>false</default>
+                <label>3G Other</label>
+            </value>
+            <value>
+                <fullName>4G M2M</fullName>
+                <default>false</default>
+                <label>4G M2M</label>
+            </value>
+            <value>
+                <fullName>4G Telematics</fullName>
+                <default>false</default>
+                <label>4G Telematics</label>
+            </value>
+            <value>
+                <fullName>4G Laptop</fullName>
+                <default>false</default>
+                <label>4G Laptop</label>
+            </value>
+            <value>
+                <fullName>4G Other</fullName>
+                <default>false</default>
+                <label>4G Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>End recipient. Technical contact at customer who is aware of the details and will receive the samples at the end.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>End recipient. Technical contact at customer who is aware of the details and will receive the samples at the end.</inlineHelpText>
+    <label>Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Samples (End recipient)</relationshipLabel>
+    <relationshipName>Samples</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

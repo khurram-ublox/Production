@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for product description and Logistics Overhead added</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Product: Logistics Overhead added</name>
+    <style>none</style>
+    <subject>Product: Logistics Overhead added</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

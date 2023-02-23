@@ -1,0 +1,7 @@
+Please be aware that the customer is starting to evaluate the u-blox products for this opportunity today. Let's make sure that the customer receives the support needed to design in our products!
+
+Opportunity Name: {!Opportunity.Name}
+Account Name: {!Opportunity.Account}
+Decision Date: {!Opportunity.Decision_Date__c}
+
+Link: {!Opportunity.Link}

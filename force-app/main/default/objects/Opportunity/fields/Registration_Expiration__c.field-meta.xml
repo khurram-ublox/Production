@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Expiration__c</fullName>
+    <description>Date of Registration expiration (6 mos from Approval).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Date of Registration expiration (6 mos from Approval).</inlineHelpText>
+    <label>Registration Expiration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

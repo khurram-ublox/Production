@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Url Redirector" class="gray">
+        <div class="slds-m-around_medium slds-grid slds-wrap slds-grid_vertical-align-end">
+            <lightning-input type="text" id="url" value="" variant="label-hidden" placeholder="Enter Salesforce URL or ID." class="slds-col slds-grow slds-order_1" onchange={handleUrlChange} onkeypress={handleEnter}></lightning-input>
+            <lightning-button variant="brand" label="Go" title="Go" onclick={handleSearch} class="slds-m-left_x-small slds-order_2"></lightning-button>
+            
+        </div>
+     </lightning-card>
+</template>

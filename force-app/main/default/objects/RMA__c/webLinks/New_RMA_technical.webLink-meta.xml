@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_RMA_technical</fullName>
+    <availability>online</availability>
+    <description>Creates a new &quot;RMA technical&quot; out of Case</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New RMA technical</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)}
+
+//RQ-001362
+
+//Button &quot;New Technical RMA&quot; in Layout Cases	
+//Assignment of field in object RMA, when created with Button in object Case
+//2017-04-06 :khir: added 5 additional fields in Case and RMA objects
+//2017-08-16: Fix of error, JSENCODE needed for Case.Description
+//2018-11-08: Field Customer_PO_No__c added
+
+
+var CaseFailureRate=&quot;{!Case.Failure_Rate__c}&quot;;
+var CaseDetectionofFailure=&quot;{!Case.Detection_of_Failure__c}&quot;;
+var CaseTraceabilityInfo=&quot;{!Case.Traceability_Info__c}&quot;;
+var CaseCustomerRequest=&quot;{!Case.Customer_Request__c}&quot;;
+var CaseConditionofSamples=&quot;{!Case.Condition_of_Samples__c}&quot;;
+var CaseNumberofParts=&quot;{!Case.Number_of_Parts__c}&quot;;
+var CaseOriginofFailure=&quot;{!Case.Origin_of_Failure_at_Customer__c}&quot;;
+var CaseProduct=&quot;{!Case.ProductId__c}&quot;;
+var CaseDescription=&quot;{!JSENCODE( Case.Description )}&quot;;
+var CaseCustomerPONo=&quot;{!Case.Customer_PO_No__c}&quot;;
+
+if ((CaseFailureRate!=&quot;&quot;)&amp;&amp;(CaseDetectionofFailure!=&quot;&quot;)&amp;&amp;(CaseTraceabilityInfo!=&quot;&quot;)&amp;&amp;(CaseCustomerRequest!=&quot;&quot;)&amp;&amp;(CaseConditionofSamples!=&quot;&quot;)&amp;&amp;(CaseNumberofParts!=&quot;&quot;)&amp;&amp;(CaseOriginofFailure!=&quot;&quot;)&amp;&amp;(CaseProduct!=&quot;&quot;)&amp;&amp;(CaseDescription!=&quot;&quot;)) {
+    var q = window.confirm(&quot;This action will create a new RMA even if you press Cancel afterwards. Are you sure you want to do this?&quot;);
+    if (q == true) {
+        var r = new sforce.SObject(&quot;RMA__c&quot;);
+
+//Account_Name__c=Case.Account
+        r.Account_Name__c = &quot;{!Case.AccountId}&quot;;
+
+//Customer_Complaint__c=Case.Description
+        r.Customer_Complaint__c = &quot;{!JSENCODE( Case.Description )}&quot;;
+
+//RecordType=&quot;RMA Technical&quot;
+        r.RecordTypeId = &quot;01220000000Pg8A&quot;;
+
+//Account_Manager__c=Account.AccountOwner
+        r.Account_Manager__c=&quot;{!Case.Channel_Manager__c}&quot;;
+
+//Related_Case__c=Case.CaseID
+        r.Related_Case__c = &quot;{!Case.Id}&quot;;
+
+//Contact__c=Case.Contact
+        r.Contact__c = &quot;{!Case.ContactId}&quot;;
+
+//Opportunity_Name__c=Case.Opportunity__c
+        r.Opportunity_Name__c = &quot;{!Case.OpportunityId__c}&quot;;
+
+//Short_Description_Complaint__c=Case.Subject
+        r.Short_Description_Complaint__c = &quot;{!JSENCODE( Case.Subject )}&quot;;
+
+//RMA_Status__c=&quot;1 New&quot;
+        r.RMA_Status__c = &quot;1 New&quot;;
+
+//RMA_Type__c=&quot;Authorized&quot;
+        r.RMA_Type__c = &quot;Authorized&quot;;
+
+//Product_Name__c=Case.Product__c
+        r.Product_Name__c = &quot;{!Case.ProductId__c}&quot;;
+
+//Customer_PO_No__c=Case.Customer_PO_No__c
+        r.Customer_PO_No__c = &quot;{!Case.Customer_PO_No__c}&quot;;
+
+//Owner__c=
+//If Case.Case_Initiator_Source__c &lt;&gt; Null, use Case.Case_Initiator_Source__c, 
+//else use Case.CreatedBy
+        if (&quot;{!Case.Case_Initiator_SourceId__c}&quot; != &quot;&quot;)
+	    {
+	        r.Owner__c = &quot;{!Case.Case_Initiator_SourceId__c}&quot;;
+	    } 
+        else
+	    {
+	        r.Owner__c = &quot;{!Case.CreatedById}&quot;;
+	    } 
+
+        r.Failure_Rate__c=&quot;{!Case.Failure_Rate__c}&quot;;
+        r.Detection_of_Failure__c=&quot;{!Case.Detection_of_Failure__c}&quot;;
+        r.Traceability_Info__c=&quot;{!Case.Traceability_Info__c}&quot;;
+        r.Customer_Request__c=&quot;{!Case.Customer_Request__c}&quot;;
+        r.Condition_of_Samples__c=&quot;{!Case.Condition_of_Samples__c}&quot;;
+        r.Origin_of_failure_at_customer__c=&quot;{!Case.Origin_of_Failure_at_Customer__c}&quot;;
+
+        var result = sforce.connection.create([r]);
+//alert(result[0].errors.message);
+//alert (&quot;(PLEASE IGNORE)&quot;+r);
+
+        window.parent.location.href=result[0].id+&quot;/e?retURL=%2F&quot;+result[0].id;
+    }
+
+}
+
+else {
+window.alert(&quot;All the fields under RMA Information, Description and Product should be added.&quot;);
+}</url>
+</WebLink>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_not_for_quote</fullName>
+    <active>false</active>
+    <description>To avoid products to be quoted</description>
+    <errorConditionFormula>Product2.Name=&quot;TOBY-L3904&quot;</errorConditionFormula>
+    <errorDisplayField>Product2Id</errorDisplayField>
+    <errorMessage>This product is not available for quotation.</errorMessage>
+</ValidationRule>

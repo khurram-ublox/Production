@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Solution_Release_notification</fullName>
+        <ccEmails>fae-team-GLOBAL@u-blox.com</ccEmails>
+        <description>Solution: Release notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>AE_POS</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Solution_released</template>
+    </alerts>
+    <alerts>
+        <fullName>Solution_Status_change_notification</fullName>
+        <description>Solution: Status change notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>AE_POS</recipient>
+            <type>group</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Solution_Status_changed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Solution_copy_date_field</fullName>
+        <description>Copy the current date to the field &quot;Status Change Date&quot;</description>
+        <field>Status_Change_Date__c</field>
+        <formula>today()</formula>
+        <name>Solution: copy date field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Solution%3A Change notification to AE-POS</fullName>
+        <actions>
+            <name>Solution_Status_change_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>When the status changes, notify AE-POS</description>
+        <formula>AND(
+ISCHANGED(Status),
+TEXT(Status)&lt;&gt;&quot;Released&quot;,
+CONTAINS(Search_Keyword__c, &quot;GNSS&quot;)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Solution%3A Release notification</fullName>
+        <actions>
+            <name>Solution_Release_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>AND(ISCHANGED(Status),TEXT(Status)=&quot;Released&quot;,CONTAINS(Search_Keyword__c, &quot;GNSS&quot;))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Solution%3A record date of status change</fullName>
+        <actions>
+            <name>Solution_copy_date_field</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>When the status changes, record the date</description>
+        <formula>ischanged (Status)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

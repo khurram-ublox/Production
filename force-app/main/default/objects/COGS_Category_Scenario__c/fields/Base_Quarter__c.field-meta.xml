@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Base_Quarter__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>This quarter defines the start of the whole scenario</description>
+    <externalId>false</externalId>
+    <label>Base Quarter</label>
+    <referenceTo>COGS_Quarter__c</referenceTo>
+    <relationshipLabel>COGS Category Scenarios</relationshipLabel>
+    <relationshipName>COGS_Category_Scenarios</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

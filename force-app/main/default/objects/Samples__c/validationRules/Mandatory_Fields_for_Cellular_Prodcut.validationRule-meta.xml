@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Fields_for_Cellular_Prodcut</fullName>
+    <active>true</active>
+    <description>In case the product is cellular then IPR Coverage and Use Restriction field is required.</description>
+    <errorConditionFormula>AND( 
+TEXT(Product__r.Product_Center__c) =&apos;Cellular&apos;, 
+OR( 
+ISBLANK(TEXT(IPR_coverage__c)),
+ISBLANK(TEXT(Use_Restriction__c ))
+), 
+AND(
+RecordType.DeveloperName != &apos;Sample_recording&apos;,
+RecordType.DeveloperName != &apos;Sample_request&apos;
+) 
+)</errorConditionFormula>
+    <errorMessage>IPR Coverage and Use Restriction fields are mandatory.</errorMessage>
+</ValidationRule>

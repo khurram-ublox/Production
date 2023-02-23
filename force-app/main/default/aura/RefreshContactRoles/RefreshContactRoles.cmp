@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId"  access="global" controller="RefreshContactRolesCtrl">	
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="quotId" type="String" />
+    <p>Refereshing... Contact Roles</p>
+</aura:component>

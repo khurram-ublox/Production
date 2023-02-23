@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status_for_Engineering_Samples</fullName>
+    <active>true</active>
+    <description>For Engineering Sample RecordType, only Products with Status &quot;Engineering Samples&quot; and &quot;In Development&quot; are allowed.</description>
+    <errorConditionFormula>AND(
+$RecordType.DeveloperName =&quot;Engineering_Samples&quot;,
+NOT(
+OR(
+ISPICKVAL(Product__r.Product_Status__c,&quot;In Development&quot;),
+ISPICKVAL(Product__r.Product_Status__c,&quot;Engineering Samples&quot;)
+))
+)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>For Engineering Sample RecordType, only Products with Status &quot;Engineering Samples&quot; and &quot;In Development&quot; are allowed.</errorMessage>
+</ValidationRule>

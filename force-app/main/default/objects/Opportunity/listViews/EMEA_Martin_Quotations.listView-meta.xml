@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Martin_Quotations</fullName>
+    <columns>Quotation_Account__c</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Annual_Quantity__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Quotation</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.LAST_NAME</field>
+        <operation>equals</operation>
+        <value>Pillat</value>
+    </filters>
+    <label>EMEA Martin Quotations</label>
+    <sharedTo></sharedTo>
+</ListView>

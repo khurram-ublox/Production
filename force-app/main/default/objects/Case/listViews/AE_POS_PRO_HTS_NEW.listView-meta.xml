@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AE_POS_PRO_HTS_NEW</fullName>
+    <booleanFilter>(1 AND 2 AND 3 AND 4 AND 6) OR (5 AND 3)</booleanFilter>
+    <columns>CASES.LAST_UPDATE_DATE_ONLY</columns>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Priority__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.TYPE</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Product__c</columns>
+    <columns>Effort_Spent__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Escalated_To_AE_Pos__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>8T,6T,6P,7P,8P,5T,FT,TM,9T,9Z,D9,9P,8F,9H,10T</value>
+    </filters>
+    <filters>
+        <field>CASES.CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>AE POS</value>
+    </filters>
+    <filters>
+        <field>CORE.USERS.ALIAS</field>
+        <operation>equals</operation>
+        <value>byou,ghun,dama,scap,rzuo,dbhu,carm,vema</value>
+    </filters>
+    <filters>
+        <field>Product__c</field>
+        <operation>notContain</operation>
+        <value>ATR</value>
+    </filters>
+    <label>AE POS - PRO-HTS</label>
+    <sharedTo>
+        <group>AE_POS</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,35 @@
+<apex:page standardController="Case" extensions="NewContractCtrl">
+    <script type="text/javascript" src="/js/functions.js"></script>
+    <script src="/soap/ajax/11.1/connection.js"></script>
+    <apex:includeScript value="/support/console/45.0/integration.js"/>
+    <apex:includeScript value="{!$Resource.uJS}"/>
+    <apex:stylesheet value="{!$Resource.uCSS}"/>
+    
+    <script type="text/javascript">
+    getRemoteAccount();
+    function getRemoteAccount() {         
+        var id="{!Case.id}";
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.NewContractCtrl.execute}', 
+            id,
+            function(result, event){
+                if (event.status) {
+                    if(result==true){  
+                        uJS.closeAndRefreshTab(id); // from ApexJS.js
+                    }else if(result==false){
+                        alert('Sorry, there was an error during escalation.'); 
+                        uJS.closeTab(id); // from ApexJS.js
+                    }                                       
+                } else {
+                    alert(event.message);
+                    uJS.closeTab(id); // from ApexJS.js
+                }
+                return false;
+            }, 
+            {escape: true}
+        );
+    }
+    </script>
+
+	<div class="loadingVF"><img src="{!$Resource.LoadingSVG}" />Please wait...</div>    
+</apex:page>

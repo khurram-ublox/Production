@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_Competitor__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to filter Accounts from the mailing list. Automatically ticked if you create a new Account with Name including Competitor Name (from Competitor object). Clear the check if it isn&apos;t.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to filter Accounts from the mailing list. Automatically ticked if you create a new Account with Name including Competitor Name (from Competitor object). Clear the check if it isn&apos;t.</inlineHelpText>
+    <label>Potential Competitor</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

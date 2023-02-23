@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CarlosDiascatalogcontacts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Service_Item_2__c</columns>
+    <columns>Service_Item_1__c</columns>
+    <columns>PCN_Modules_Services__c</columns>
+    <columns>PCN_Standard_Chips__c</columns>
+    <columns>CDK_Update__c</columns>
+    <columns>CONTACT.EMAIL_OPT_OUT</columns>
+    <columns>Left_the_company__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Channel_Manager__c</field>
+        <operation>contains</operation>
+        <value>Dias</value>
+    </filters>
+    <filters>
+        <field>Email_address_probably_not_valid__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>CarlosDias catalog &amp; cards contacts</label>
+    <sharedTo></sharedTo>
+</ListView>

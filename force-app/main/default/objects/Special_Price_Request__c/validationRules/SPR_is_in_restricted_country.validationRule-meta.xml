@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SPR_is_in_restricted_country</fullName>
+    <active>false</active>
+    <errorConditionFormula>Account__r.IsRestrictedCountry__c</errorConditionFormula>
+    <errorMessage>SPR can&apos;t be created as it is from one of the restricted countries!</errorMessage>
+</ValidationRule>

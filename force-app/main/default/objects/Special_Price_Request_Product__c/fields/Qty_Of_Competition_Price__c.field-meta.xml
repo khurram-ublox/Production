@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qty_Of_Competition_Price__c</fullName>
+    <description>Quantity which the Competition Price is applicable to</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Quantity which the Competition Price is applicable to</inlineHelpText>
+    <label>Qty Of Competition Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

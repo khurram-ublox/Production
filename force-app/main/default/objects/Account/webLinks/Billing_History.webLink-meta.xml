@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_History</fullName>
+    <availability>online</availability>
+    <description>Show billing history of the previous four years
+NOTE: Button for both Lightning and Classic</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>1024</height>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Billing History</masterLabel>
+    <openType>newWindow</openType>
+    <page>AccountUrlBillingHistory</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <width>1400</width>
+</WebLink>

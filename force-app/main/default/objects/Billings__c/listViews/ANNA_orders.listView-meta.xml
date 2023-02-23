@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ANNA_orders</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Qty_Ordered__c</columns>
+    <columns>Confirm_Date__c</columns>
+    <columns>Request_Date__c</columns>
+    <columns>Qty_Delivered__c</columns>
+    <columns>Order_Status__c</columns>
+    <columns>Account_Region__c</columns>
+    <columns>Account_Country__c</columns>
+    <columns>ProductId__c</columns>
+    <columns>End_Customer__c</columns>
+    <columns>Customer_Part_Number_formula__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product__c</field>
+        <operation>contains</operation>
+        <value>LILY-W1</value>
+    </filters>
+    <filters>
+        <field>Order_Status__c</field>
+        <operation>equals</operation>
+        <value>open</value>
+    </filters>
+    <label>LILY orders</label>
+    <sharedTo>
+        <group>Business_Marketing</group>
+        <group>PS_POS</group>
+    </sharedTo>
+</ListView>

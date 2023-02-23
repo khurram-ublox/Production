@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Thinsgstream_domains</fullName>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>Thingstream_Domain__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>Lead_Source_Webform__c</columns>
+    <columns>uB_Office__c</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>Email_address_probably_invalid__c</columns>
+    <columns>Products_Of_Interest__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Thingstream_Domain__c</field>
+        <operation>contains</operation>
+        <value>thingstream.io</value>
+    </filters>
+    <filters>
+        <field>LEAD.COMPANY</field>
+        <operation>notEqual</operation>
+        <value>CompanyName</value>
+    </filters>
+    <filters>
+        <field>FULL_NAME</field>
+        <operation>notContain</operation>
+        <value>[not provided]</value>
+    </filters>
+    <label>Thingstream domains</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

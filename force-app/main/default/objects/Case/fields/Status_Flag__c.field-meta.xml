@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Flag__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Status, 
+&quot;New&quot;, IMAGE(&quot;/img/func_icons/util/mailFrontEnv16.gif&quot;,&quot;New&quot;), 
+&quot;Working&quot;, IMAGE(&quot;/img/func_icons/util/pencil12.gif&quot;,&quot;Working&quot;), 
+&quot;New Input&quot;, IMAGE(&quot;/img/func_icons/util/mailCloseEnv16.gif&quot;,&quot;New Input&quot;),
+&quot;Waiting For Response&quot;, IMAGE(&quot;/img/staleValue.gif&quot;,&quot;Waiting For Response&quot;), 
+&quot;Closed&quot;, IMAGE(&quot;/img/func_icons/util/checkmark16.gif&quot;,&quot;Closed&quot;), 
+IMAGE(&quot;/s.gif&quot;, &quot;No Status Flag&quot;))</formula>
+    <label>Status Flag</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

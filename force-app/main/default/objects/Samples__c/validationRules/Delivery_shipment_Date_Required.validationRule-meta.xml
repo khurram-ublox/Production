@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_shipment_Date_Required</fullName>
+    <active>true</active>
+    <description>Delivery Date field is mandatory when the Request Status is in Confirmed or Shipped with Record Types Engineering Samples and Prototypes.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Request_Status__c, &apos;Shipped&apos;), ISBLANK(Delivery_Date__c), (RecordType.DeveloperName = &apos;Engineering_Samples&apos; || RecordType.DeveloperName = &apos;Prototypes&apos;))</errorConditionFormula>
+    <errorMessage>The Planned Shipment Date and Delivery Shipment Date fields are mandatory, please ensure that both are provided.</errorMessage>
+</ValidationRule>

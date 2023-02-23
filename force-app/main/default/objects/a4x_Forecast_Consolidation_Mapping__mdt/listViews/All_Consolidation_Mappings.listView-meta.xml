@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Consolidation_Mappings</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>Active__c</columns>
+    <columns>Order_End_Customer__c</columns>
+    <columns>Order_Project_Owner__c</columns>
+    <columns>Order_Account__c</columns>
+    <columns>Account_To_Consolidate__c</columns>
+    <columns>Country_To_Consolidate__c</columns>
+    <columns>Region_To_Consolidate__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Consolidation Mappings</label>
+</ListView>

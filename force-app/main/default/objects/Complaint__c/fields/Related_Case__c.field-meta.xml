@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Related_Case__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <inlineHelpText>If possible, select a case that is related to the complaint.</inlineHelpText>
+    <label>Related Case</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Complaints</relationshipLabel>
+    <relationshipName>Complaints</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

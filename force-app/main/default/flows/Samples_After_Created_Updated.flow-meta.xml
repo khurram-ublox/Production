@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <assignments>
+        <name>assignSupportEmailToUbOffice</name>
+        <label>assignSupportEmailToUbOffice</label>
+        <locationX>50</locationX>
+        <locationY>455</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.uB_Support_Email__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ubOfficeSupportEmailFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>flagUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Embargo_Countries</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Status_Confirmed</name>
+        <label>Status Confirmed</label>
+        <locationX>50</locationX>
+        <locationY>1127</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Request_Status__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Confirmed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>flagUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Notification_Alert_New</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Record_Update_Flag</name>
+        <label>Check Record Update Flag</label>
+        <locationX>182</locationX>
+        <locationY>1583</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_Record</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>flagUpdate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>flagUpdateEmail</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Sample_Records</targetReference>
+            </connector>
+            <label>Update Record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Embargo_Countries</name>
+        <label>Embargo Countries?</label>
+        <locationX>182</locationX>
+        <locationY>671</locationY>
+        <defaultConnector>
+            <targetReference>Is_Request_Status_Confirmed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>is_Embargo_Country</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>embargoCountryFormua</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>createTaskForEmbargoCountries_0</targetReference>
+            </connector>
+            <label>is Embargo Country</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Request_Status_Confirmed</name>
+        <label>Is Request Status Confirmed</label>
+        <locationX>182</locationX>
+        <locationY>1007</locationY>
+        <defaultConnector>
+            <targetReference>Notification_Alert_New</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_is_Confirmed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Americas</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>EMEA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Corporate</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Team_Leader__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.Manager.Alias</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>atan</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quantity__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>10.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Status_Confirmed</targetReference>
+            </connector>
+            <label>Status is Confirmed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ubOfficeEmailUpdate</name>
+        <label>ubOfficeEmailUpdate</label>
+        <locationX>182</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>Embargo_Countries</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Update_ubOffice_Email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.uB_Office__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.uB_Office__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.uB_Office__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assignSupportEmailToUbOffice</targetReference>
+            </connector>
+            <label>Update ubOffice Email ?</label>
+        </rules>
+    </decisions>
+    <description>After flow trigger on Samples to update fields
+Create Task
+Send Email Alerts</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>DueDateTaskforEmbargoCountries</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() +7</expression>
+    </formulas>
+    <formulas>
+        <name>embargoCountryFormua</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+ISNEW(),
+
+OR(
+
+{!$Record.Account__r.BillingCountry} = &apos;CU&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;BY&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;IR&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;KP&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;SD&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;SY&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;UA&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;AM&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;AZ&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;CF&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;CG&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;CI&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;ER&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;GN&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;IQ&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;LB&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;LR&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;LY&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;MM&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;SO&apos;,
+{!$Record.Account__r.BillingCountry} = &apos;ZW&apos;
+
+)
+
+)</expression>
+    </formulas>
+    <formulas>
+        <name>isNewRecord</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>ubOfficeSupportEmailFormula</name>
+        <dataType>String</dataType>
+        <expression>CASE( {!$Record.uB_Office__c}  ,
+&quot;Americas&quot;, &quot;support_us@u-blox.com&quot;,
+&quot;China&quot;, &quot;support_cn@u-blox.com&quot;,
+&quot;Hongkong&quot;, &quot;support_cn@u-blox.com&quot;,
+&quot;Taiwan&quot;, &quot;support_tw@u-blox.com&quot;,
+&quot;Korea&quot;, &quot;support_kr@u-blox.com&quot;,
+&quot;Japan&quot;, &quot;support_jp@u-blox.com&quot;,
+&quot;India&quot;, &quot;support_ap@u-blox.com&quot;,
+&quot;Australia&quot;, &quot;support_ap@u-blox.com&quot;,
+&quot;Rest of APAC&quot;, &quot;support_ap@u-blox.com&quot;,
+&quot;&quot;
+)</expression>
+    </formulas>
+    <interviewLabel>Samples: After Created/Updated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Samples: After Created/Updated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>createTaskForEmbargoCountries_0</name>
+        <label>createTaskForEmbargoCountries</label>
+        <locationX>50</locationX>
+        <locationY>791</locationY>
+        <connector>
+            <targetReference>Is_Request_Status_Confirmed</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>DueDateTaskforEmbargoCountries</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>C</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Sample: embargo country</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Sample_Records</name>
+        <label>Update Sample Records</label>
+        <locationX>50</locationX>
+        <locationY>1703</locationY>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>ubOfficeEmailUpdate</targetReference>
+        </connector>
+        <object>Samples__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>This is the process based on new design</description>
+        <name>Notification_Alert_New</name>
+        <label>Notification Alert New</label>
+        <locationX>182</locationX>
+        <locationY>1343</locationY>
+        <connector>
+            <targetReference>Send_Email_Notifications</targetReference>
+        </connector>
+        <flowName>Samples_Notifications_Alert</flowName>
+        <inputAssignments>
+            <name>IsNew</name>
+            <value>
+                <elementReference>isNewRecord</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Prev_Record</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Record_Sample</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <subflows>
+        <name>Send_Email_Notifications</name>
+        <label>Send Email Notifications</label>
+        <locationX>182</locationX>
+        <locationY>1463</locationY>
+        <connector>
+            <targetReference>Check_Record_Update_Flag</targetReference>
+        </connector>
+        <flowName>Samples_Email_Alerts</flowName>
+        <inputAssignments>
+            <name>IsNew</name>
+            <value>
+                <elementReference>isNewRecord</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Prior_Samples</name>
+            <value>
+                <elementReference>$Record__Prior</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>Samples_Record</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>flagUpdateEmail</assignToReference>
+            <name>flagUpdate</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>$Record</assignToReference>
+            <name>Samples_Record</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <name>flagUpdate</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>flagUpdateEmail</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SampleCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Samples__c</objectType>
+    </variables>
+</Flow>

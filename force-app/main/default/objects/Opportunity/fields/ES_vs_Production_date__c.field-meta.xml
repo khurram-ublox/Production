@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ES_vs_Production_date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(CloseDate -  Product_1__r.IP_Availability_Date__c &lt; 0, CloseDate -  Product_1__r.IP_Availability_Date__c , IF(CloseDate -  Product_2__r.IP_Availability_Date__c &lt; 0, CloseDate -  Product_2__r.IP_Availability_Date__c , IF(CloseDate -  Product_3__r.IP_Availability_Date__c &lt; 0, CloseDate -  Product_3__r.IP_Availability_Date__c , 0)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ES vs. Production date</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

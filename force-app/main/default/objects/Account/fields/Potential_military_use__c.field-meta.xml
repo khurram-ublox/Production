@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_military_use__c</fullName>
+    <description>To quote ECCN products, the end use / user must be selected</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the end use / user after checking the customer website</inlineHelpText>
+    <label>Potential military use / user</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No military use / user</fullName>
+                <default>false</default>
+                <label>No military use / user</label>
+            </value>
+            <value>
+                <fullName>EUS Required</fullName>
+                <default>false</default>
+                <label>EUS Required</label>
+            </value>
+            <value>
+                <fullName>Refused to sign EUS</fullName>
+                <default>false</default>
+                <label>Refused to sign EUS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_GD_POS_Orders</fullName>
+    <availability>online</availability>
+    <description>Show GD POS Orders related to this Account. Report Id: 00O2p000008YEEE</description>
+    <displayType>button</displayType>
+    <hasMenubar>true</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>true</hasToolbar>
+    <height>1024</height>
+    <isResizable>true</isResizable>
+    <linkType>page</linkType>
+    <masterLabel>Show GD POS Orders</masterLabel>
+    <openType>newWindow</openType>
+    <page>AccountUrlShowGDPOSOrders</page>
+    <position>fullScreen</position>
+    <protected>false</protected>
+    <showsLocation>true</showsLocation>
+    <showsStatus>true</showsStatus>
+    <width>1400</width>
+</WebLink>

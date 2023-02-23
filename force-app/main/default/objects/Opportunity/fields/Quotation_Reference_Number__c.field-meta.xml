@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotation_Reference_Number__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+  AND(RecordType.Id=&quot;01220000000CqRd&quot;,NOT(ISBLANK(OppAutoNumber__c))),
+  &quot;QR-&quot;&amp;OppAutoNumber__c,
+  NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Quotation Reference Number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

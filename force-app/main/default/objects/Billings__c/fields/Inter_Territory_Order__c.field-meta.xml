@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inter_Territory_Order__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(  or(Account_Area__c  &lt;&gt;   Reporting_Area__c,  Account_Region__c  &lt;&gt;  Reporting_Region__c),
+&quot;yes&quot;,
+&quot;no&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Yes if Account Area not equal to the Reporting Area</inlineHelpText>
+    <label>Inter-Territory Order</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

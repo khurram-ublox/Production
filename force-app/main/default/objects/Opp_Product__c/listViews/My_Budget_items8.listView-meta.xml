@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Budget_items8</fullName>
+    <columns>Demand_Forecast__c</columns>
+    <columns>NAME</columns>
+    <columns>Opportunity_Account__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Product__c</columns>
+    <columns>Unit_Price__c</columns>
+    <columns>Status__c</columns>
+    <columns>Opportunity_Stage__c</columns>
+    <columns>Budget_Price_next_FY__c</columns>
+    <columns>Type_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>uB_Office__c</field>
+        <operation>equals</operation>
+        <value>EMEA</value>
+    </filters>
+    <filters>
+        <field>Budget_Item__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Channel_Manager__c</field>
+        <operation>contains</operation>
+        <value>naveen,pasi,leo,federico</value>
+    </filters>
+    <label>My Budget items</label>
+</ListView>

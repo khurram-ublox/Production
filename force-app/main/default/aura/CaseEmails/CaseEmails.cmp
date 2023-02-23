@@ -1,0 +1,34 @@
+<aura:component controller="CaseService">
+    <aura:attribute name="originalCaseId" type="String" />
+    <aura:attribute name="caseEmails" type="EmailMessage" />
+    <aura:attribute name="caseEmailsWrapped" type="List" />
+    <aura:attribute name="selectedEmailsIds" type="List" default="[]" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.loadCaseEmails}" />
+    <aura:handler name="change" value="{!v.originalCaseId}" action="{!c.loadCaseEmails}" />
+
+    <div>
+        <table class="slds-table slds-table--bordered">
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Status</th>
+                    <th>Subject</th>
+                    <th>Email Address</th>
+                    <th>Message Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.caseEmailsWrapped}" var="email">
+                    <tr>
+                        <td class="slds-col slds-size--1-of-12"><input id="{!email.Id}" type="checkbox" checked="{!email.selected}" onchange="{!c.onSelect}"/></td>
+                        <td class="slds-col slds-size--2-of-12">{!email.Status}</td>
+                        <td class="slds-col slds-size--4-of-12">{!email.Subject}</td>
+                        <td class="slds-col slds-size--3-of-12">{!email.Incoming ? email.FromAddress : email.ToAddress}</td>
+                        <td class="slds-col slds-size--2-of-12"><ui:outputDate value="{!email.MessageDate}" /></td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

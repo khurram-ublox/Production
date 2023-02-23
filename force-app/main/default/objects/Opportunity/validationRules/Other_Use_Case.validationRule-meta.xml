@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Use_Case</fullName>
+    <active>true</active>
+    <description>Prevent to fill &apos;Other Use Case&apos; field when &apos;Use Case&apos; is not set to &apos;Other&apos;.</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Other_Use_Case__c)),
+    TEXT(Use_Case__c) &lt;&gt; &quot;Other&quot;
+)</errorConditionFormula>
+    <errorDisplayField>Other_Use_Case__c</errorDisplayField>
+    <errorMessage>Select &apos;Other&apos; in the &apos;Use Case&apos; field or empty this field.</errorMessage>
+</ValidationRule>

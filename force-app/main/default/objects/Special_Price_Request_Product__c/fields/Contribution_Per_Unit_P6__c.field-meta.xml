@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution_Per_Unit_P6__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Quantity_P6__c=0,0, 
+Unit_Price_P6__c * (1 - Distributor_Commission_P6__c )
+- Product_Cost_P6__c
+- Unit_Price_P6__c * IPR_Pct__c
+- IPR_USD__c / 
+IF(CONTAINS(TEXT(CurrencyIsoCode),&quot;CHF&quot;),CHFtoUSD__c,
+IF(CONTAINS(TEXT(CurrencyIsoCode),&quot;EUR&quot;),EURtoUSD__c,
+IF(CONTAINS(TEXT(CurrencyIsoCode),&quot;JPY&quot;),JPYtoUSD__c,
+1))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Unit Price * (1 - Distributor Commission) - Product Cost - IPR Costs (USD and Pct)</inlineHelpText>
+    <label>Contribution Per Unit P6</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution_Unweighted__c</fullName>
+    <description>Revenue Unweighted (not multiplied by Probability) - Annual Quantity * COGS</description>
+    <externalId>false</externalId>
+    <formula>if( AND(RecordTypeId = &quot;0122p00000043gT&quot;, Opportunity_Lifetime_Year__c &gt; 1 ),
+Revenue_Unweighted__c - Annual_Quantity__c * COGS__c * (Opportunity_Lifetime_Year__c - 1),
+Revenue_Unweighted__c - Annual_Quantity__c * COGS__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Revenue Unweighted (not multiplied by Probability) - Annual Quantity * COGS</inlineHelpText>
+    <label>Contribution Unweighted</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

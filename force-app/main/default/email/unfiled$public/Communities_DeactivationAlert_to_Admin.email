@@ -1,0 +1,10 @@
+Hi Admin, 
+
+{!Contact.Name}
+{!User.Name} has deactivated himself! 
+Please change his Profile to 'Community Deactivated User' to finish the deactivation process. 
+
+Name: {!User.Name} 
+Id: {!User.Id} 
+Email: {!User.Email}
+Url: {!User.Link}

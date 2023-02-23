@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Webform_check</fullName>
+    <active>false</active>
+    <description>Lead Source must be Webform if Lead Source Webform has velue.</description>
+    <errorConditionFormula>(ISPICKVAL(LeadSource, &quot;Webform&quot;) &amp;&amp;  ISBLANK(TEXT(Lead_Source_Webform__c))) ||
+(NOT(ISPICKVAL(LeadSource, &quot;Webform&quot;)) &amp;&amp; NOT(ISBLANK(TEXT(Lead_Source_Webform__c))))</errorConditionFormula>
+    <errorDisplayField>LeadSource</errorDisplayField>
+    <errorMessage>Lead Source should be Webform if Lead Form Wefrom has value.</errorMessage>
+</ValidationRule>

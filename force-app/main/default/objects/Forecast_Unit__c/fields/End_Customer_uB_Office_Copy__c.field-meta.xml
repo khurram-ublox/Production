@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_Customer_uB_Office_Copy__c</fullName>
+    <description>Used for Sharing Rules to grant access to End Customer Account Owner</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used for Sharing Rules to grant access to End Customer Account Owner</inlineHelpText>
+    <label>End Customer uB Office Copy</label>
+    <length>32</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

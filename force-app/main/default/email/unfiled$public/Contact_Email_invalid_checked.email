@@ -1,0 +1,10 @@
+The email sent to the following Contact has been hard-bounced and now marked as "Email invalid" in Salesforce:
+Contact Name: {!Contact.Full_Name__c}
+Email: {!Contact.Email}
+Link: {!Contact.Link}
+
+To reactivate this email address, please do the following:
+
+1) Review the email address in the Salesforce Contact.
+2) If the address is correct, tick "Reactivate Email Address"
+3) You will receive the email notification when it's been reactivated.

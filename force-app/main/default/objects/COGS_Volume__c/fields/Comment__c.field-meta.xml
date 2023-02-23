@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Comment__c</fullName>
+    <description>Field to enter notes/comments on a certain volume prediction</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field to enter notes/comments on a certain volume prediction</inlineHelpText>
+    <label>Comment</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>20</visibleLines>
+</CustomField>

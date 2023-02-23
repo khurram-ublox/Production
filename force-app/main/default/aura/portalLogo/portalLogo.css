@@ -1,0 +1,19 @@
+.THIS {
+	font-family: 'u-blox';
+}
+
+.THIS .ubxlogo_image {
+    height: 40px;
+}
+
+.THIS .ubxlogo_text_down {
+    font-size: 16px; 
+    font-weight: bold; 
+    padding-top: 20px;
+}
+
+.THIS .ubxpage_heading {
+    font-size: 24px; 
+    font-weight: bold; 
+    padding: 60px 0 24px;
+}

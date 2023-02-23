@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>bsits-team-thalwil@u-blox.com</contactEmail>
+    <description>API connection between Salesforce and Drupal. Used for creating leads in salesforce from u-blox website.</description>
+    <label>Drupal Connect</label>
+    <oauthConfig>
+        <callbackUrl>https://testsite.u-blox.com/en/salesforce/oauth_callback
+https://www.u-blox.com/en/salesforce/oauth_callback</callbackUrl>
+        <consumerKey>3MVG9WtWSKUDG.x5Y23yoJF1XRQX6i4v581TmgSfMt2lBr2NjRoAoZfhxAWOf0fETxQymNOPcUY8VOYHZbetm</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Status_2__c</fullName>
+    <externalId>false</externalId>
+    <formula>case ( Product_Status__c,
+&quot;Considered&quot;, &quot;0 Considered&quot;,
+&quot;In Definition&quot;, &quot;1 In Definition&quot;,
+&quot;In Development&quot;, &quot;2 In Development&quot;,
+&quot;Prototypes&quot;, &quot;3 Prototypes&quot;,
+&quot;Engineering Samples&quot;, &quot;4 Engineering Samples&quot;,
+&quot;Initial Production&quot;, &quot;5 Initial Production&quot;,
+&quot;Mass Production&quot;, &quot;6 Mass Production&quot;,
+&quot;End of Life&quot;, &quot;7 End of Life&quot;,
+&quot;Other&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Status 2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

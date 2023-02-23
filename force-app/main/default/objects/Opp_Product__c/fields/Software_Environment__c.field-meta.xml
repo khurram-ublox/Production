@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Environment__c</fullName>
+    <description>Old Help Text: Software environment for customer developed applications; select u-blox Firmware if customer does not plan to develop their own firmware.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select what software will run in the u-blox module (e.g. the software developed by u-blox “u-blox connectivity software”, or a customer developed application using OpenCPU)</inlineHelpText>
+    <label>Software Environment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>u-blox software</fullName>
+                <default>false</default>
+                <label>u-blox software</label>
+            </value>
+            <value>
+                <fullName>u-blox JavaScript</fullName>
+                <default>false</default>
+                <label>u-blox JavaScript</label>
+            </value>
+            <value>
+                <fullName>OpenCPU ARM mbed</fullName>
+                <default>false</default>
+                <label>OpenCPU ARM mbed</label>
+            </value>
+            <value>
+                <fullName>OpenCPU Espressif SDK</fullName>
+                <default>false</default>
+                <label>OpenCPU Espressif SDK</label>
+            </value>
+            <value>
+                <fullName>OpenCPU Nordic SDK</fullName>
+                <default>false</default>
+                <label>OpenCPU Nordic SDK</label>
+            </value>
+            <value>
+                <fullName>Wirepas software</fullName>
+                <default>false</default>
+                <label>Wirepas software</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

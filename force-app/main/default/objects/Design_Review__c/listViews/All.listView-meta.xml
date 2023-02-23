@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Design_Review_Status__c</columns>
+    <columns>Product_Name__c</columns>
+    <columns>Date_Review_Doc_sent_to_customer__c</columns>
+    <columns>OWNER.LAST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Design Reviews</label>
+    <language>en_US</language>
+</ListView>

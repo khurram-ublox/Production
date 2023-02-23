@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Role__c</fullName>
+    <externalId>false</externalId>
+    <label>Partner Role</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0 Partner Referral (commissions required)</fullName>
+                <default>false</default>
+                <label>0 Partner Referral (commissions required)</label>
+            </value>
+            <value>
+                <fullName>0 Partner Referral (no commissions)</fullName>
+                <default>false</default>
+                <label>0 Partner Referral (no commissions)</label>
+            </value>
+            <value>
+                <fullName>1 Opportunity owner</fullName>
+                <default>false</default>
+                <label>1 Opportunity owner</label>
+            </value>
+            <value>
+                <fullName>2 Ref. design / platform dev.</fullName>
+                <default>false</default>
+                <label>2 Ref. design / platform dev.</label>
+            </value>
+            <value>
+                <fullName>3 Design house</fullName>
+                <default>false</default>
+                <label>3 Design house</label>
+            </value>
+            <value>
+                <fullName>3 ODM (Design and Manufacturing)</fullName>
+                <default>false</default>
+                <label>3 ODM (Design and Manufacturing)</label>
+            </value>
+            <value>
+                <fullName>3 Local Module Maker</fullName>
+                <default>false</default>
+                <label>3 Local Module Maker</label>
+            </value>
+            <value>
+                <fullName>4 Consultant/Advisor</fullName>
+                <default>false</default>
+                <label>4 Consultant/Advisor</label>
+            </value>
+            <value>
+                <fullName>4 Certification partner</fullName>
+                <default>false</default>
+                <label>4 Certification partner</label>
+            </value>
+            <value>
+                <fullName>4 Technology partner</fullName>
+                <default>false</default>
+                <label>4 Technology partner</label>
+            </value>
+            <value>
+                <fullName>4 MNO / MVNO</fullName>
+                <default>false</default>
+                <label>4 MNO / MVNO</label>
+            </value>
+            <value>
+                <fullName>5 Former contract manufacturer</fullName>
+                <default>false</default>
+                <label>5 Former contract manufacturer</label>
+            </value>
+            <value>
+                <fullName>5 Actual contract manufacturer</fullName>
+                <default>false</default>
+                <label>5 Actual contract manufacturer</label>
+            </value>
+            <value>
+                <fullName>5 Potential contract manufacturer</fullName>
+                <default>false</default>
+                <label>5 Potential contract manufacturer</label>
+            </value>
+            <value>
+                <fullName>6 Sourcing / Negotiation entity</fullName>
+                <default>false</default>
+                <label>6 Sourcing / Negotiation entity</label>
+            </value>
+            <value>
+                <fullName>6 Purchasing entity</fullName>
+                <default>false</default>
+                <label>6 Purchasing entity</label>
+            </value>
+            <value>
+                <fullName>7 Distributor</fullName>
+                <default>false</default>
+                <label>7 Distributor</label>
+            </value>
+            <value>
+                <fullName>8 Sales representative</fullName>
+                <default>false</default>
+                <label>8 Sales representative</label>
+            </value>
+            <value>
+                <fullName>8 Agent</fullName>
+                <default>false</default>
+                <label>8 Agent</label>
+            </value>
+            <value>
+                <fullName>9 Customer of opp. owner</fullName>
+                <default>false</default>
+                <label>9 Customer of opp. owner</label>
+            </value>
+            <value>
+                <fullName>9 Car brand</fullName>
+                <default>false</default>
+                <label>9 Car brand</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

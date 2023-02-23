@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_formula__c</fullName>
+    <description>Defined automatically by the selected Application Type.</description>
+    <externalId>false</externalId>
+    <formula>CASE(text( Application_type__c ), 
+&quot;ADAS&quot;,&quot;Automotive&quot;,
+&quot;Asset tracking&quot;,&quot;Industrial&quot;,
+&quot;ATM, POS, vending&quot;,&quot;Industrial&quot;,
+&quot;Aviation &amp; UAV&quot;,&quot;Industrial&quot;,
+&quot;Car connectivity&quot;,&quot;Automotive&quot;,
+&quot;Digital camera&quot;,&quot;Consumer&quot;,
+&quot;Driving recorder&quot;,&quot;Automotive&quot;,
+&quot;Emergency call&quot;,&quot;Automotive&quot;,
+&quot;Femtocell&quot;,&quot;Industrial&quot;,
+&quot;GPS mouse&quot;,&quot;Consumer&quot;,
+&quot;Healthcare&quot;,&quot;Industrial&quot;,
+&quot;Home entertainment&quot;,&quot;Consumer&quot;,
+&quot;In-car navigation&quot;,&quot;Automotive&quot;,
+&quot;Industrial terminal&quot;,&quot;Industrial&quot;,
+&quot;Insurance box&quot;,&quot;Automotive&quot;,
+&quot;Machine control&quot;,&quot;Industrial&quot;,
+&quot;Marine&quot;,&quot;Industrial&quot;,
+&quot;Metering&quot;,&quot;Industrial&quot;,
+&quot;Military &amp; government&quot;,&quot;Industrial&quot;,
+&quot;Mobile gaming&quot;,&quot;Consumer&quot;,
+&quot;Mobile hotspot and router&quot;,&quot;Consumer&quot;,
+&quot;Mobile phone&quot;,&quot;Consumer&quot;,
+&quot;Monitoring &amp; control&quot;,&quot;Industrial&quot;,
+&quot;Notebook, tablet&quot;,&quot;Consumer&quot;,
+&quot;PDA&quot;,&quot;Consumer&quot;,
+&quot;People &amp; animal tracking&quot;,&quot;Consumer&quot;,
+&quot;PND&quot;,&quot;Consumer&quot;,
+&quot;Radar detector&quot;,&quot;Consumer&quot;,
+&quot;Recreation &amp; sports&quot;,&quot;Consumer&quot;,
+&quot;Remote display&quot;,&quot;Industrial&quot;,
+&quot;Road pricing&quot;,&quot;Automotive&quot;,
+&quot;Router and gateway&quot;,&quot;Industrial&quot;,
+&quot;Security&quot;,&quot;Industrial&quot;,
+&quot;Stolen vehicle recovery&quot;,&quot;Automotive&quot;,
+&quot;Base station&quot;,&quot;Industrial&quot;,
+&quot;Vehicle telematics&quot;,&quot;Automotive&quot;,
+&quot;Vehicle tracking&quot;,&quot;Industrial&quot;,
+&quot;Seismic survey&quot;,&quot;Industrial&quot;,
+&quot;Timing&quot;,&quot;Industrial&quot;,
+&quot;&quot;)</formula>
+    <inlineHelpText>Defined automatically by the selected Application Type.</inlineHelpText>
+    <label>Old Market</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

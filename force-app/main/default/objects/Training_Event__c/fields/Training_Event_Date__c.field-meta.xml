@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Event_Date__c</fullName>
+    <description>Earliest Training Topic Date as start Training Event Date</description>
+    <externalId>false</externalId>
+    <label>Training Event Date</label>
+    <summarizedField>Training_Topic__c.Date__c</summarizedField>
+    <summaryForeignKey>Training_Topic__c.Training_Event__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

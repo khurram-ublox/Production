@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_Set_Value_PM</fullName>
+    <active>true</active>
+    <description>A COGS value predicted by PM using the PCOGS tool</description>
+    <label>COGS Set Value PM</label>
+</RecordType>

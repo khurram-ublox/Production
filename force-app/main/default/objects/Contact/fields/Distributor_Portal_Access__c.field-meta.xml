@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_Portal_Access__c</fullName>
+    <externalId>false</externalId>
+    <formula>if( Account.Distributor_Portal__c = true, &quot;yes&quot;, &quot;no&quot;)</formula>
+    <inlineHelpText>From Account: yes if the contact has access to the distributor portal</inlineHelpText>
+    <label>Distributor Portal Access</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

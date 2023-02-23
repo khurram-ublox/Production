@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lifetime_Quantity__c</fullName>
+    <description>Estimated total quantity for this Opportunity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Estimated total quantity for this Opportunity</inlineHelpText>
+    <label>Lifetime Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

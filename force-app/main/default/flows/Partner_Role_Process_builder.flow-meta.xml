@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <processMetadataValues>
+            <name>index</name>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </processMetadataValues>
+        <name>myDecision</name>
+        <label>myDecision</label>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myRule_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formula_myRule_1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myRule_1_A1</targetReference>
+            </connector>
+            <label>embargo countries</label>
+        </rules>
+    </decisions>
+    <description>This process moved to flow Partner Role: After Create</description>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>TODAY() + 7</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_2_myRule_1_A1_1145091121</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 7</expression>
+    </formulas>
+    <formulas>
+        <processMetadataValues>
+            <name>originalFormula</name>
+            <value>
+                <stringValue>OR(
+[Partner_Role__c].Partner_Account__r.BillingCountry = &quot;CU&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;BY&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;IR&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;KP&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;SD&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;SY&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;UA&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;AM&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;AZ&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;CF&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;CG&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;CI&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;ER&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;GN&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;IQ&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;LB&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;LR&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;LY&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;MM&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;SO&quot;,
+[Partner_Role__c].Partner_Account__r.BillingCountry=&quot;ZW&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;CU&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;BY&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;IR&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;KP&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;SD&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;SY&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;UA&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;AM&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;AZ&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;CF&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;CG&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;CI&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;ER&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;GN&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;IQ&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;LB&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;LR&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;LY&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;MM&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;SO&quot;,
+[Partner_Role__c].Opportunity_Account__r.BillingCountry=&quot;ZW&quot;
+
+)
+</stringValue>
+            </value>
+        </processMetadataValues>
+        <name>formula_myRule_1</name>
+        <dataType>Boolean</dataType>
+        <expression>OR(
+{!myVariable_current.Partner_Account__r.BillingCountry} = &quot;CU&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;BY&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;IR&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;KP&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;SD&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;SY&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;UA&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;AM&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;AZ&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;CF&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;CG&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;CI&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;ER&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;GN&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;IQ&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;LB&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;LR&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;LY&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;MM&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;SO&quot;,
+{!myVariable_current.Partner_Account__r.BillingCountry}=&quot;ZW&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;CU&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;BY&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;IR&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;KP&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;SD&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;SY&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;UA&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;AM&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;AZ&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;CF&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;CG&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;CI&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;ER&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;GN&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;IQ&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;LB&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;LR&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;LY&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;MM&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;SO&quot;,
+{!myVariable_current.Opportunity_Account__r.BillingCountry}=&quot;ZW&quot;
+
+)</expression>
+    </formulas>
+    <interviewLabel>Partner_Role_Process_builder-2_InterviewLabel</interviewLabel>
+    <label>Partner Role: Process builder</label>
+    <processMetadataValues>
+        <name>ObjectType</name>
+        <value>
+            <stringValue>Partner_Role__c</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>ObjectVariable</name>
+        <value>
+            <elementReference>myVariable_current</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OldObjectVariable</name>
+        <value>
+            <elementReference>myVariable_old</elementReference>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>TriggerType</name>
+        <value>
+            <stringValue>onCreateOnly</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Workflow</processType>
+    <recordCreates>
+        <name>myRule_1_A1</name>
+        <label>New Partner in one of the embargo countries</label>
+        <locationX>100</locationX>
+        <locationY>200</locationY>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Date</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Due Date Only</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Formula</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>formula_2_myRule_1_A1_1145091121</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Description</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Description</field>
+            <value>
+                <stringValue>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Assigned To ID</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue>Group;User</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Reference</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>myVariable_current.Opportunity__r.Owner.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Priority</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Priority</field>
+            <value>
+                <stringValue>C</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Status</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>Picklist</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Status</field>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <processMetadataValues>
+                <name>dataType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>isRequired</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideLabel</name>
+                <value>
+                    <stringValue>Subject</stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>leftHandSideReferenceTo</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </processMetadataValues>
+            <processMetadataValues>
+                <name>rightHandSideType</name>
+                <value>
+                    <stringValue>String</stringValue>
+                </value>
+            </processMetadataValues>
+            <field>Subject</field>
+            <value>
+                <stringValue>New Partner in one of the embargo countries</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+    </recordCreates>
+    <startElementReference>myDecision</startElementReference>
+    <status>Draft</status>
+    <variables>
+        <name>myVariable_current</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Partner_Role__c</objectType>
+    </variables>
+    <variables>
+        <name>myVariable_old</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Partner_Role__c</objectType>
+    </variables>
+</Flow>

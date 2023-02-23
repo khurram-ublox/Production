@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Sub_Case_URL</fullName>
+    <availability>online</availability>
+    <description>Create Sub Case with Parent Case</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Sub Case URL</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/500/e?RecordType=012D0000000BarO&amp;cas3_lkid={!Contact.Id}&amp;cas3={!Case.Contact}&amp;cas5={!Case.Type}&amp;cas7={!Case.Status}&amp;cas8={!Case.Priority}&amp;def_account_id={!Case.AccountId}&amp;def_parent_id={!Case.Id}&amp;cas14={!Case.Subject}&amp;00N20000002CJxI={!Case.Technology__c}&amp;CF00N20000002BmO0={!Case.Product__c}&amp;CF00N20000002BmO0_lkid={!Case.ProductId__c}&amp;CF00ND0000002njCH={!Case.Opportunity__c}&amp;CF00ND0000002njCH=_lkid{!Case.OpportunityId__c}&amp;00N20000002Bm0y={!Case.Bug_Reference__c}&amp;retURL=/{!Case.Id}&amp;ent=Case</url>
+</WebLink>

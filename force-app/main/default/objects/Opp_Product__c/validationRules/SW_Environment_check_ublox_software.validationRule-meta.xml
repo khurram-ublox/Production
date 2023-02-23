@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SW_Environment_check_ublox_software</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Software_Environment__c, &quot;u-blox software&quot;) &amp;&amp;
+LEFT(Product__r.Name, 4) &lt;&gt; &quot;OBS4&quot; &amp;&amp;
+LEFT(Product__r.Name, 4) &lt;&gt; &quot;OLS4&quot; &amp;&amp;
+LEFT(Product__r.Name, 4) &lt;&gt; &quot;OWS4&quot; &amp;&amp;
+LEFT(Product__r.Name, 7) &lt;&gt; &quot;ANNA-B1&quot; &amp;&amp;
+LEFT(Product__r.Name, 7) &lt;&gt; &quot;ELIN-W1&quot; &amp;&amp;
+LEFT(Product__r.Name, 7) &lt;&gt; &quot;NINA-B1&quot; &amp;&amp;
+LEFT(Product__r.Name, 7) &lt;&gt; &quot;NINA-B2&quot; &amp;&amp;
+LEFT(Product__r.Name, 7) &lt;&gt; &quot;ODIN-W2&quot; &amp;&amp;
+LEFT(Product__r.Name, 8) &lt;&gt; &quot;NINA-B31&quot; &amp;&amp;
+LEFT(Product__r.Name, 8) &lt;&gt; &quot;NINA-W13&quot; &amp;&amp;
+LEFT(Product__r.Name, 8) &lt;&gt; &quot;NINA-W15&quot; &amp;&amp;
+LEFT(Product__r.Name, 8) &lt;&gt; &quot;NINA-B41&quot; &amp;&amp;
+LEFT(Product__r.Name, 8) &lt;&gt; &quot;ANNA-B41&quot; &amp;&amp;
+NOT($User.ProfileId=&quot;00e20000000ki5l&quot;) &amp;&amp;
+NOT($User.ProfileId=&quot;00eD00000016L3v&quot;)</errorConditionFormula>
+    <errorDisplayField>Software_Environment__c</errorDisplayField>
+    <errorMessage>&quot;u-blox software&quot;  is not available for the selected product.</errorMessage>
+</ValidationRule>

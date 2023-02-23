@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFPD_Contact__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>RFPD Area Sales Person</inlineHelpText>
+    <label>Contact</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>uB_Office__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>RFPD_Area_Sales_Contact</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Adrian Kurup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Alisha Low</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Amanda Mrizek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Andrea Falcone-Gritman</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Bob Molenda</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Byron Szulczewski</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Celeste Arnaz</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Chris Iannello</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Chris Lewis</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Chris McCormick</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Christine Chinchilla</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Christine Kisor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Christine Saik</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Claude Monast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Claudia Freda</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Danny Molezion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Da Shen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Dave Moshiri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Dave Ounsted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Dawn Ferguson-Vitellaro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>DeAnne Carrington</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Derrick Evans</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Dominik Norquist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Eileen Showalter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Elias Ghafari</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Garry Dwyer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Gray Wong</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Ila Bryne</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Iris Mariscal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Ivan Alessandri</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Janice Gilroy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>John Machala</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>John Shoemake</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Judy Hanley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Karen Dallo-Shea</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Kent Edel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Kirk Barton</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Kris Wilson</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Lisa Owens</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Maria Ghanbari</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Matt Meister</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Michael Canonico</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Mike Dimaria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Mike Normandeau</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Mike O&apos;Neill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Nadine O&apos;Hara</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Paul Douville</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Ray Zhang</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Razvan Rusu</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Ruben Zarrabi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Sal Robles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Scott Dickson</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Sean Seely</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Shelly De La Cruz</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Steve Markoe</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Steven Jaske</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Theresa Cleveland</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Thiago Fiorini</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Tim LeBar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Americas</controllingFieldValue>
+            <valueName>Tim Stepp</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

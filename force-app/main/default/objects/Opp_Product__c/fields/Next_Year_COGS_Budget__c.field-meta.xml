@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Next_Year_COGS_Budget__c</fullName>
+    <description>Next Year budget calculated using Trigger . It populates value either from Product COGS1,2,3,4 or from Next year COGS SET Value from Product&apos;s &quot;Predicted COGS Info&quot; field.
+Format will be - Q1:Q2:Q3:Q4</description>
+    <externalId>false</externalId>
+    <label>Next Year COGS Budget</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

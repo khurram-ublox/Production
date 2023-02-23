@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attributes>
+        <formula>$User.FirstName</formula>
+        <key>firstname</key>
+    </attributes>
+    <attributes>
+        <formula>$User.LastName</formula>
+        <key>lastname</key>
+    </attributes>
+    <contactEmail>khurram.shahzad@u-blox.com</contactEmail>
+    <description>Identity provider of u-blox registered community users to digikey for cart</description>
+    <label>u-blox cart</label>
+    <oauthConfig>
+        <callbackUrl>https://test-cart.u-blox.com/cart/purchases</callbackUrl>
+        <consumerKey>3MVG9WtWSKUDG.x5Y23yoJF1XRdCOXCxskTf9Q7VZxn1qtwx1nmXktCLLyNLE8S4YLlEIPel2dFpF8VC3cQgF</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isConsumerSecretOptional>true</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Basic</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <samlConfig>
+        <acsUrl>https://auth.digikey.com/sp/ACS.saml2</acsUrl>
+        <certificate>MIIDAjCCAeqgAwIBAgIGAXfP5immMA0GCSqGSIb3DQEBCwUAMEIxCzAJBgNVBAYTAlVTMR0wGwYDVQQKExREaWdpLUtleSBFbGVjdHJvbmljczEUMBIGA1UEAxMLRGlnaS1TZWMtQzEwHhcNMjEwMjIzMTcxODIzWhcNMjMwMjIzMTcxODIzWjBCMQswCQYDVQQGEwJVUzEdMBsGA1UEChMURGlnaS1LZXkgRWxlY3Ryb25pY3MxFDASBgNVBAMTC0RpZ2ktU2VjLUMxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqfv1NxFtE73g5kHiLEjAemDzeNZfF5zrMxo0pfUS8112WVN01Fdr7M80AlQpEZWo5ER2UO2HApkL6Zegvk6ymmFXXjiqdsENjCcOwjduQq+8x7OOp0guh/vuUWvgfi3qeGG2rU6VS0fjczX9FaEJh7G4gRrOsNWvvJa624OnF29ybjZBFxGo3o9TXGGMhui9mm2Mc9iEAjOr1ejHcj6mGzJjl7GQSTrVZj0pUTaV6PFQcxdZBS9krogjgvvDPAtGMU21jwvvML7IdYDzhs4anSCAD2x2bwkEF/typPZygNIqdxcXYHaC328VJFkOkD0giQxFY7bHpiYQ7TOvkcMgnQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQAmjtGDBRw8y7QmYIgZW4FCPwvudyUgVUn2dXllldTdjEWHAaOx353cj4YMrctdDe8IHL/5/mzUgtq/r+PueAYCPvKpvnx+HuwYzG9zrqLKq85QH0XdTGDUmsE/vyyeD4DWo+iG+yehf5D1ImnVz6/+rBvcdLUFEd6YLYIkhyDT9mRx98lTaN1dATFk0ziA6zKr/LFhQE1DEQsV4raPT6jDXiOoeNv97AZCxO3TTm0LwYMGwyCiZsFUy6ke//7r+PuXIHu01hfqdV46F/tjpwLyNpZItNPTky9TvK6t1fT+gfrHcv1wOqLHrQ3oO7qvc+3rQxs1AftcnQw4sCYlaMBQ</certificate>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>digikeyprod</entityUrl>
+        <issuer>https://u-blox.my.salesforce.com</issuer>
+        <samlNameIdFormat>EmailAddress</samlNameIdFormat>
+        <samlSigningAlgoType>SHA1</samlSigningAlgoType>
+        <samlSubjectType>Username</samlSubjectType>
+    </samlConfig>
+    <startUrl>https://test-cart.u-blox.com/cart/purchases</startUrl>
+</ConnectedApp>

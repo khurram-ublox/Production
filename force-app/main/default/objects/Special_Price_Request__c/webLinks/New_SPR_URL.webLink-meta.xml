@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_SPR_URL</fullName>
+    <availability>online</availability>
+    <description>Opens just edit page (no SPR Products created)</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New SPR (URL)</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0J/e?CF00N57000006PmZ3={!Opportunity.Name}&amp;CF00N57000006PmZ3_lkid={!Opportunity.Id}&amp;CF00N57000006PmYt={!Opportunity.Opportunity_Account__c}&amp;CF00N57000006PmYt_lkid={!Opportunity.Opportunity_AccountId__c}&amp;retURL=/{!Opportunity.Id}</url>
+</WebLink>

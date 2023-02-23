@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SF_Account_Numbers_Check__c</fullName>
+    <description>Orig (2015.06.24)
+IF(NOT(ISBLANK(Project_Owner_SF_Number__c)) &amp;&amp; Project_Owner_Account__c = End_Customer_Account__c,
+&quot;Project Owner SF Number needs to be checked.&quot;,
+IF(NOT(ISBLANK(SF_Account_Number__c)) &amp;&amp; (SF_Account_Number__c &lt;&gt; End_Customer_Account__r.SF_Account_Number__c) ,
+&quot;End Customer SF Number needs to be checked.&quot;,
+&quot;OK&quot;))</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Project_Owner_SF_Number__c)) &amp;&amp; (Project_Owner_SF_Number__c &lt;&gt; Project_Owner_Account__r.SF_Account_Number__c),
+&quot;Project Owner SF Number needs to be checked.&quot;,
+IF(NOT(ISBLANK(SF_Account_Number__c)) &amp;&amp; (SF_Account_Number__c &lt;&gt; End_Customer_Account__r.SF_Account_Number__c) ,
+&quot;End Customer SF Number needs to be checked.&quot;,
+&quot;OK&quot;))</formula>
+    <inlineHelpText>Shows if the End Customer SF Number and Project Owner SF Number (both from Abacus) are correct (compared with the SF Account Number of the existing Account)</inlineHelpText>
+    <label>SF Account Numbers Check</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

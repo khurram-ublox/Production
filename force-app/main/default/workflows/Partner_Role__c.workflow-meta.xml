@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <rules>
+        <fullName>Partner Role%3A embargo countries</fullName>
+        <actions>
+            <name>New_Partner_in_one_of_the_embargo_countries</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <description>Reminder that the created record is for embargo countries</description>
+        <formula>OR(
+Partner_Account__r.BillingCountry=&quot;CU&quot;,
+Partner_Account__r.BillingCountry=&quot;BY&quot;,
+Partner_Account__r.BillingCountry=&quot;IR&quot;,
+Partner_Account__r.BillingCountry=&quot;KP&quot;,
+Partner_Account__r.BillingCountry=&quot;SD&quot;,
+Partner_Account__r.BillingCountry=&quot;SY&quot;,
+Partner_Account__r.BillingCountry=&quot;UA&quot;,
+Partner_Account__r.BillingCountry=&quot;AM&quot;,
+Partner_Account__r.BillingCountry=&quot;AZ&quot;,
+Partner_Account__r.BillingCountry=&quot;CF&quot;,
+Partner_Account__r.BillingCountry=&quot;CG&quot;,
+Partner_Account__r.BillingCountry=&quot;CI&quot;,
+Partner_Account__r.BillingCountry=&quot;ER&quot;,
+Partner_Account__r.BillingCountry=&quot;GN&quot;,
+Partner_Account__r.BillingCountry=&quot;IQ&quot;,
+Partner_Account__r.BillingCountry=&quot;LB&quot;,
+Partner_Account__r.BillingCountry=&quot;LR&quot;,
+Partner_Account__r.BillingCountry=&quot;LY&quot;,
+Partner_Account__r.BillingCountry=&quot;MM&quot;,
+Partner_Account__r.BillingCountry=&quot;SO&quot;,
+Partner_Account__r.BillingCountry=&quot;ZW&quot;,
+Opportunity_Account__r.BillingCountry=&quot;CU&quot;,
+Opportunity_Account__r.BillingCountry=&quot;BY&quot;,
+Opportunity_Account__r.BillingCountry=&quot;IR&quot;,
+Opportunity_Account__r.BillingCountry=&quot;KP&quot;,
+Opportunity_Account__r.BillingCountry=&quot;SD&quot;,
+Opportunity_Account__r.BillingCountry=&quot;SY&quot;,
+Opportunity_Account__r.BillingCountry=&quot;UA&quot;,
+Opportunity_Account__r.BillingCountry=&quot;AM&quot;,
+Opportunity_Account__r.BillingCountry=&quot;AZ&quot;,
+Opportunity_Account__r.BillingCountry=&quot;CF&quot;,
+Opportunity_Account__r.BillingCountry=&quot;CG&quot;,
+Opportunity_Account__r.BillingCountry=&quot;CI&quot;,
+Opportunity_Account__r.BillingCountry=&quot;ER&quot;,
+Opportunity_Account__r.BillingCountry=&quot;GN&quot;,
+Opportunity_Account__r.BillingCountry=&quot;IQ&quot;,
+Opportunity_Account__r.BillingCountry=&quot;LB&quot;,
+Opportunity_Account__r.BillingCountry=&quot;LR&quot;,
+Opportunity_Account__r.BillingCountry=&quot;LY&quot;,
+Opportunity_Account__r.BillingCountry=&quot;MM&quot;,
+Opportunity_Account__r.BillingCountry=&quot;SO&quot;,
+Opportunity_Account__r.BillingCountry=&quot;ZW&quot;)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>New_Partner_in_one_of_the_embargo_countries</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>The created record is for one of the embargo countries. Please check the Export Control Guideline provided by Legal (see https://wiki.u-blox.com/bin/view/Generic/LegalHome ).</description>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>C</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>New Partner in one of the embargo countries</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template for Opp Reminder (English)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Opp: Opp Reminder to customer</name>
+    <style>none</style>
+    <subject>u-blox; {!Opportunity.Name} - project update</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

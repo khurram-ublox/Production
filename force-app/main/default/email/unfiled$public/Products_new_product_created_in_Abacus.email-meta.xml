@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Products: new product created in Abacus</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Products: new product created in Abacus</name>
+    <style>none</style>
+    <subject>Product alert: new product {!Product2.Name} created in Abacus</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

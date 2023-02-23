@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Show_OrdersVF</fullName>
+    <availability>online</availability>
+    <description>Show orders related to this account (VF syntax)</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Show Orders</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/one/one.app?source=aloha#/sObject/00O20000002KsTF?fv0=&quot;{!Account.SF_Account_Number__c}&quot;&amp;fv1=&quot;{!Account.SF_Account_Number__c}&quot;&amp;fv2=&quot;{!Account.SF_Account_Number__c}&quot;</url>
+</WebLink>

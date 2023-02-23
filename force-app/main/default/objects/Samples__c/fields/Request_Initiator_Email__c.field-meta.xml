@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Request_Initiator_Email__c</fullName>
+    <description>Email to which the Email Alerts should be sent, either Request Creator or Request Initiator.</description>
+    <externalId>false</externalId>
+    <label>Request Initiator Email</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

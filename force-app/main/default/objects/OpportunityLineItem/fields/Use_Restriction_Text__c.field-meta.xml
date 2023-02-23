@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Restriction_Text__c</fullName>
+    <description>Orig:
+If ( PricebookEntry.Product2.IPR__c &gt; 0,
+BR() &amp; &quot;Restriction: use for &apos;&quot; &amp; text(Use_Restriction__c) &amp; &quot;&apos; only.&quot;,
+&quot; &quot;)</description>
+    <externalId>false</externalId>
+    <formula>If ( OR(ISBLANK(TEXT(Use_Restriction__c)),TEXT(Use_Restriction__c)=&quot;-&quot;), &quot; &quot;, BR() &amp; &quot;Restriction: use for &apos;&quot; &amp; text(Use_Restriction__c) &amp; &quot;&apos; only.&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Text as it appears on quotations</inlineHelpText>
+    <label>Use Restriction Text</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

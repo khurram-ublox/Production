@@ -1,0 +1,41 @@
+<apex:page standardController="Opportunity" extensions="Opportunity_Product_Controller" >
+    
+    <div style = "margin-left:-10px;">
+        <apex:form >
+            <apex:pageBlock title="Opportunity Products">
+                <apex:pageBlockTable value="{!oppProdList}" var="prod">
+                    <apex:column headerValue="Opportunity Product Name">
+                        <apex:outputLink value="#" onclick="window.open('/{!prod.Id}','_blank');"> {!prod.name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Ordering Code">
+                        <apex:outputField value="{!prod.Ordering_Code__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Product Center">
+                        <apex:outputField value="{!prod.Product_Center__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Use Restriction">
+                        <apex:outputField value="{!prod.Use_Restriction__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Unit Price">
+                        <apex:outputField value="{!prod.Unit_Price__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Annual Quantity">
+                        <apex:outputField value="{!prod.Annual_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Revenue">
+                        <apex:outputField value="{!prod.Revenue__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Contribution">
+                        <apex:outputField value="{!prod.Contribution__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Status">
+                        <apex:outputField value="{!prod.Status__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Ranking">
+                        <apex:outputField value="{!prod.Ranking__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable> 
+            </apex:pageBlock>
+        </apex:form> 
+    </div>
+</apex:page>

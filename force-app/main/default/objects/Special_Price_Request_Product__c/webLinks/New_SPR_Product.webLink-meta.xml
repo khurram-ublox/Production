@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_SPR_Product</fullName>
+    <availability>online</availability>
+    <description>To fill the same Currency as the Master object (Special Proce Request)</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New SPR Product</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/a0I/e?CF00N57000006PmXd={!Special_Price_Request__c.Name}&amp;CF00N57000006PmXd_lkid={!Special_Price_Request__c.Id}&amp;CurrencyIsoCode={!Special_Price_Request__c.CurrencyIsoCode}&amp;retURL=/{!Special_Price_Request__c.Id}</url>
+</WebLink>

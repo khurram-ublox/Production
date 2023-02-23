@@ -1,0 +1,12 @@
+Your request to remove the flag from the following Opp Product has been approved and the flag has been removed.
+
+Account: {!Opp_Product__c.Opportunity_Account__c}
+Product: {!Opp_Product__c.Product__c}
+Annual Quantity: {!Opp_Product__c.Annual_Quantity__c}
+Opportunity Stage: {!Opp_Product__c.Opportunity_Stage__c}
+Start Production: {!Opp_Product__c.Start_Production__c}
+Opp Product Status: {!Opp_Product__c.Status__c}
+
+Opportunity Owner: {!Opp_Product__c.Opportunity_Owner__c}
+
+Link: {!Opp_Product__c.Link}

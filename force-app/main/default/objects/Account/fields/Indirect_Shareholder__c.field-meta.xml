@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indirect_Shareholder__c</fullName>
+    <externalId>false</externalId>
+    <label>Indirect Shareholder</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>non-voting</fullName>
+                <default>true</default>
+                <label>non-voting</label>
+            </value>
+            <value>
+                <fullName>voting</fullName>
+                <default>false</default>
+                <label>voting</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

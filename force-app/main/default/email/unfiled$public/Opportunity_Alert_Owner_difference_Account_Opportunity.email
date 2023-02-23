@@ -1,0 +1,8 @@
+The owner of the following opportunity is different from the Account Owner.
+
+Opportunity: {!Opportunity.Name}
+Owner: {!Opportunity.OwnerFullName}
+Link: {!Opportunity.Link}
+
+Account: {!Account.Name}
+Account Owner: {!Account.OwnerFullName}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Auto-response when new lead is submitted online (Service registration form).</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>blank</letterhead>
+    <name>Leads: Web-to-Lead email response (Service registration form) with Letterhead</name>
+    <style>formalLetter</style>
+    <subject>{!Organization.Name} Multi-GNSS AssistNow Service registration: thank you for registering</subject>
+    <textOnly>Dear {!Lead.Salutation} {!Lead.Name},
+
+Thank you for registering to access u-blox&apos; assisted GNSS service, AssistNow.
+You will receive an electronic token to access the service once your registration has been processed.
+
+
+Kind regards
+u-blox</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

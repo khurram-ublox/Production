@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_LEA_M8T_0_01</fullName>
+    <active>true</active>
+    <description>LEA-M8T-0-01 is only for Samsung</description>
+    <errorConditionFormula>AND(
+  NOT(CONTAINS(Special_Price_Request__r.Account__r.Name,&apos;Samsung&apos;)),
+  Product__r.Id=&apos;01tD0000004wLbJ&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>This is a customer-specific product. Please choose other products.</errorMessage>
+</ValidationRule>

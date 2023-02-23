@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Distributor_Commission_and_Resale_Price</fullName>
+    <active>true</active>
+    <description>There should be either Distributor Commission OR Distributor Resale Price</description>
+    <errorConditionFormula>OR(
+AND(NOT(ISBLANK(Distributor_Commission_P1__c)),NOT(ISBLANK(Distributor_Resale_Unit_Price_P1__c))),
+AND(NOT(ISBLANK(Distributor_Commission_P2__c)),NOT(ISBLANK(Distributor_Resale_Unit_Price_P2__c))),
+AND(NOT(ISBLANK(Distributor_Commission_P3__c)),NOT(ISBLANK(Distributor_Resale_Unit_Price_P3__c))),
+AND(NOT(ISBLANK(Distributor_Commission_P4__c)),NOT(ISBLANK(Distributor_Resale_Unit_Price_P4__c))),
+AND(NOT(ISBLANK(Distributor_Commission_P5__c)),NOT(ISBLANK(Distributor_Resale_Unit_Price_P5__c)))
+)</errorConditionFormula>
+    <errorMessage>There should be either Distributor Commission OR Distributor Resale Price</errorMessage>
+</ValidationRule>

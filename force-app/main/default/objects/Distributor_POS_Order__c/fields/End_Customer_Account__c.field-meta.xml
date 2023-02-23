@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_Customer_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>End Customer Account, to whom the distributor has sold the products</description>
+    <externalId>false</externalId>
+    <inlineHelpText>End Customer Account, to whom the distributor has sold the products</inlineHelpText>
+    <label>End Customer Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Distributor POS Orders (End Customer Account)</relationshipLabel>
+    <relationshipName>Distributor_POS_Orders1</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

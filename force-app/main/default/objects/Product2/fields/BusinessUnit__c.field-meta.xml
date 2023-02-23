@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BusinessUnit__c</fullName>
+    <externalId>false</externalId>
+    <label>Business Unit</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tashang</fullName>
+                <default>false</default>
+                <label>Tashang</label>
+            </value>
+            <value>
+                <fullName>u-blox</fullName>
+                <default>true</default>
+                <label>u-blox</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Alert when internal users opt out</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contact, mass mailing: internal distribution opt out</name>
+    <style>none</style>
+    <subject>Internal user opted out: {!Contact.Function__c}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

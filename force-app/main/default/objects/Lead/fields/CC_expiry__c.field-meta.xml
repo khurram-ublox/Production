@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CC_expiry__c</fullName>
+    <description>Credit expiration date. Made for M2M Seminar registration.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Visible only for Sales Admin. Used for CDMA M2M Seminar registration in US.</inlineHelpText>
+    <label>CC Expiry</label>
+    <length>8</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

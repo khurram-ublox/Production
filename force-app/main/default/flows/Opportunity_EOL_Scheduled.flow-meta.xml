@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Quotation_Email_for_EOL_products</name>
+        <label>Quotation Email for EOL products</label>
+        <locationX>280</locationX>
+        <locationY>346</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Hi ,&lt;/p&gt;&lt;p&gt; Below are the opp Products that reaches EOL.&lt;/p&gt;&lt;p&gt;https://u-blox.my.salesforce.com/00O2p00000904HF  &lt;/p&gt;&lt;p&gt;Thanks&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <stringValue>sami.azam@u-blox.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>khurram.shahzad@u-blox.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Auto update of Opp Products when product reaches EOL</stringValue>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>CheckQuarterlyCondition</name>
+        <label>CheckQuarterlyCondition</label>
+        <locationX>490</locationX>
+        <locationY>337</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckQuarterly_Condition</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CheckDateQuarterly</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Quotation_Email_for_EOL_products</targetReference>
+            </connector>
+            <label>CheckQuarterly Condition</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>CheckDateQuarterly</name>
+        <dataType>Boolean</dataType>
+        <expression>DAY(TODAY()) == 7 &amp;&amp; MOD(MONTH(TODAY()), 3) == 0</expression>
+    </formulas>
+    <interviewLabel>Opportunity: EOL Scheduled {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity: EOL Scheduled</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>373</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>CheckQuarterlyCondition</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-06-07</startDate>
+            <startTime>12:30:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>test</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Hi , Below are the opp Products that reaches EOL. https://u-blox.my.salesforce.com/00O2p00000904HF  Thanks</stringValue>
+        </value>
+    </variables>
+</Flow>

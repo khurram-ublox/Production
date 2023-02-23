@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COGS_Stand_alone</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+    <columns>Type_No__c</columns>
+    <columns>COGS_Pct__c</columns>
+    <columns>COGS_1__c</columns>
+    <columns>COGS_2__c</columns>
+    <columns>COGS_3__c</columns>
+    <columns>COGS_4__c</columns>
+    <columns>Valid_For_1__c</columns>
+    <columns>Valid_For_2__c</columns>
+    <columns>Valid_For_3__c</columns>
+    <columns>Valid_For_4__c</columns>
+    <columns>COGS_Category__c</columns>
+    <columns>Use_Abacus_Cost__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.ACTIVE</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>NINA</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>ODIN</value>
+    </filters>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>ANNA</value>
+    </filters>
+    <label>COGS Stand-alone</label>
+    <sharedTo>
+        <group>Marketing</group>
+        <group>MasterAccess</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_check</fullName>
+    <active>false</active>
+    <description>Check whether the own location and the region I am creating the account for are the same</description>
+    <errorConditionFormula>NOT ( OR (TEXT( $User.uB_Office__c ) = TEXT( uB_Office__c),   $User.Alias  = &quot;troj&quot; , $User.Alias = &quot;kfow&quot; , $User.Alias = &quot;fwen&quot; , $User.Alias = &quot;setz&quot; ) )</errorConditionFormula>
+    <errorDisplayField>uB_Office__c</errorDisplayField>
+    <errorMessage>Please check with Sales Admins to determine the correctness of ub Office.</errorMessage>
+</ValidationRule>

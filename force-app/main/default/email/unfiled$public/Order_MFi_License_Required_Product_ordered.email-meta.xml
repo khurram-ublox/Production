@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Inform user that order is placed, MFi License Required</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Order: MFi License Required Product ordered</name>
+    <style>none</style>
+    <subject>Order: MFi License Required Product {!Billings__c.Product__c} ordered</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

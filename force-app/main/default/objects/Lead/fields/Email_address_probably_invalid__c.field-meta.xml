@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_address_probably_invalid__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field will be activated if the e-mail address was rejected during a campaign.
+Please check the e-mail address and possibly contact the customer, then clear
+the checkbox.</description>
+    <externalId>false</externalId>
+    <label>Email invalid</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

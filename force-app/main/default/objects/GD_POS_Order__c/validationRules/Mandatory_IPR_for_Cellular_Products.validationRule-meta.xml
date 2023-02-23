@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_IPR_for_Cellular_Products</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Product_Center__c = &apos;Cellular&apos;,
+OR(
+ISPICKVAL(IPR_Coverage__c,&apos;&apos;),
+ISPICKVAL(Use_Restriction__c,&apos;&apos;)
+)
+)</errorConditionFormula>
+    <errorDisplayField>Use_Restriction__c</errorDisplayField>
+    <errorMessage>IPR Coverage and Use Restriction are mandatory fields.</errorMessage>
+</ValidationRule>

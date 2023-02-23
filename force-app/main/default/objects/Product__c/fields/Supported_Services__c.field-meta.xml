@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supported_Services__c</fullName>
+    <description>Added for Product Services Support Portal https://wiki.u-blox.com/bin/view/Generic/SvcCSPUIRequirements</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The list of Services Supported by this product</inlineHelpText>
+    <label>Supported Services</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CEL-SEC-LENC</fullName>
+                <default>false</default>
+                <label>CEL-SEC-LENC</label>
+            </value>
+            <value>
+                <fullName>CEL-SEC-E2EE</fullName>
+                <default>false</default>
+                <label>CEL-SEC-E2EE</label>
+            </value>
+            <value>
+                <fullName>CEL-SEC-PSKP</fullName>
+                <default>false</default>
+                <label>CEL-SEC-PSKP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

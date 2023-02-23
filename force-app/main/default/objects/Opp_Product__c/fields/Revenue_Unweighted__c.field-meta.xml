@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Unweighted__c</fullName>
+    <description>Annual Quantity * Unit Price</description>
+    <externalId>false</externalId>
+    <formula>if( AND(RecordTypeId = &quot;0122p00000043gT&quot;, Opportunity_Lifetime_Year__c &gt; 1 ),
+Annual_Quantity__c * Unit_Price__c * (Opportunity_Lifetime_Year__c - 1),
+Annual_Quantity__c * Unit_Price__c
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Annual Quantity * Unit Price</inlineHelpText>
+    <label>Revenue Unweighted</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UBX_M8130_KT_B302GA_for_Qianxun</fullName>
+    <active>true</active>
+    <description>UBX-M8130-KT-B302GA is only for Qianxun (001D000001f2c0c)</description>
+    <errorConditionFormula>AND(
+  Account__r.Id&lt;&gt;&apos;001D000001f2c0c&apos;,
+  Product__r.Id=&apos;01t57000009MXv0&apos;
+)</errorConditionFormula>
+    <errorDisplayField>Product__c</errorDisplayField>
+    <errorMessage>This is a customer-specific product. Please choose other products.</errorMessage>
+</ValidationRule>

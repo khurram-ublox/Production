@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MFi_accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_CITY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Distributor__c</columns>
+    <columns>Distributor_Name__c</columns>
+    <columns>Priority__c</columns>
+    <columns>New_Application_Type__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>SF_Account_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MFi_Licensee__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>MFi accounts</label>
+    <sharedTo>
+        <group>All_u_blox_Internal_Users</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send warning if order is for Samsung with product LEA-M8T-0-10</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Order: Wrong product for Samsung 10</name>
+    <style>none</style>
+    <subject>[Samsung] Wrong product entered in Abacus</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

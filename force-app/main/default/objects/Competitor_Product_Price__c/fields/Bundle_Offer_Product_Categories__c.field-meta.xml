@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bundle_Offer_Product_Categories__c</fullName>
+    <description>Select product categories of the products that are bundle-offered at this Unit Price</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select product categories of the products that are bundle-offered at this Unit Price</inlineHelpText>
+    <label>Bundle Offer Product Categories</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cellular</fullName>
+                <default>false</default>
+                <label>Cellular</label>
+            </value>
+            <value>
+                <fullName>Position &amp; Time</fullName>
+                <default>false</default>
+                <label>Position &amp; Time</label>
+            </value>
+            <value>
+                <fullName>Short Range</fullName>
+                <default>false</default>
+                <label>Short Range</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

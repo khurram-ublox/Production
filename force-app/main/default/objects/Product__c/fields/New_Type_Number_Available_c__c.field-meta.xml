@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Type_Number_Available_c__c</fullName>
+    <description>Made to exclude Products from the list for sanity check (with EOL/PCN Issue Date and Status MP)</description>
+    <externalId>false</externalId>
+    <formula>Name = Successor_Product__r.Name</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>New Type Number Available</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Market_Success__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Confidence level in projected volume, regardless if the socket is won by u-blox or by a competitor.</inlineHelpText>
+    <label>DO NOT USE Market Success</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>100% Order Visible</fullName>
+                <default>false</default>
+                <label>100% Order Visible</label>
+            </value>
+            <value>
+                <fullName>70% Postitive Outlook</fullName>
+                <default>false</default>
+                <label>70% Postitive Outlook</label>
+            </value>
+            <value>
+                <fullName>10% Uncertain</fullName>
+                <default>true</default>
+                <label>10% Uncertain</label>
+            </value>
+            <value>
+                <fullName>1% Unlikely</fullName>
+                <default>false</default>
+                <label>1% Unlikely</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

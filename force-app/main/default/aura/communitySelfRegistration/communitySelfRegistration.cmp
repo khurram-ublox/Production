@@ -1,0 +1,105 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="communitySelfRegistrationCtrl">
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+	<!--<aura:handler name="render" value="{!this}" action="{!c.onRender}" />-->    
+    <aura:attribute name="recaptchaResponse" type="String" />
+	<aura:attribute name="recaptchaResult" type="String" />    
+    <aura:attribute name="firstName" type="string" default=""/>
+    <aura:attribute name="lastName" type="string" default=""/>
+    <aura:attribute name="email" type="string" default=""/>
+    <aura:attribute name="accountInfo" type="string" default=""/>
+    <aura:attribute name="projectInfo" type="string" default=""/>
+    <aura:attribute name="userSource" type="string" default=""/>
+    <aura:attribute name="terms" type="boolean" default="false"/>
+    <aura:attribute name="marketingConcent" type="boolean" default="false"/>
+    <aura:attribute name="errorMessage" type="string" default=""/>
+    <aura:attribute name="showError" type="Boolean" default="false" />
+    <aura:attribute name="requireNDAInfo" type="Boolean" default="false" />
+    <aura:attribute name="loaded" type="Boolean" default="true" />
+    <aura:attribute name="location" type="string" default=""/>
+    
+    
+    <!-- Error Message -->
+    <aura:renderIf isTrue="{!v.showError}">
+        <div id="errormsg" style="padding:15px;background:#ffbbba;font-weight:bold;margin-bottom: 20px;color:#1a1a1a;">
+            {!v.errorMessage}
+        </div>
+    </aura:renderIf>
+    
+    <div class="slds-grid slds-wrap">            
+        <!-- Back Button 
+        <a href="https://uat-u-blox.cs88.force.com/s/login"><div class="backbtn">&#10229; Back</div></a>-->
+                    
+        <!-- Main Form -->
+        <label class="slds-form-element__label" style="padding-top: 0;">First name</label>                
+        <ui:inputText aura:id="fieldfnameid" placeholder="Enter first name" required="true" class="slds-input" value="{!v.firstName}" />
+        <label class="slds-form-element__label">Last name</label>                
+        <ui:inputText aura:id="fieldlnameid" placeholder="Enter last name" required="true" class="slds-input" value="{!v.lastName}" />
+        <label class="slds-form-element__label">E-mail</label>
+        <ui:inputEmail aura:id="fieldlemailid" placeholder="E-mail address" required="true" class="slds-input" value="{!v.email}" />
+        
+        <!-- u-center NDA fields -->
+        <aura:renderIf isTrue="{!v.requireNDAInfo}">
+            <label class="slds-form-element__label">Account/Company information</label>
+            <ui:inputText placeholder="Enter account/company information" class="slds-input" value="{!v.accountInfo}" />
+            <label class="slds-form-element__label">Project information</label>
+            <ui:inputText placeholder="Enter project information" class="slds-input" value="{!v.projectInfo}" />
+        </aura:renderIf>        
+        
+        <!-- Communication -->
+        <div class="slds-grid slds-gutters_x-small" style="padding-top:24px!important;">
+            <div class="slds-col" style="padding-top:8px!important;">                                        
+                <label class="container">
+                    <ui:inputCheckbox aura:id="consentVariable" value="{!v.terms}"/>
+                    <span class="checkmark" ></span>
+                </label>
+            </div>
+            <div class="slds-col" style="padding-top:10px!important;">
+                <div class="slds-text-body_regular terms-text"> 
+                    I hereby accept the general <a href="https://www.u-blox.com/en/terms-conditions" target="_blank">Terms &amp; Conditions</a>.
+                </div>
+            </div>
+        </div>
+        <div class="slds-grid slds-gutters_x-small" style="padding-top:16px!important; ">
+            <div class="slds-col" style="padding-top:8px!important;">
+                <label class="container">
+                    <ui:inputCheckbox aura:id="MarketingCommunicationOptOut" value="{!v.marketingConcent}"/>
+                    <span class="checkmark" ></span>
+                </label>                    
+            </div>
+            <div class="slds-col" style="padding-top:10px!important;">
+                <div class="slds-text-body_regular terms-text">I consent to u-blox retaining my personal data for the purposes of receiving personalized marketing materials, offers, invitations to webinars and other similar events. To learn more, read our 
+                    <a href="https://www.u-blox.com/en/info/u-blox-privacy-policy" target="_blank">Privacy Policy</a>.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Captcha -->        
+        <div style="padding-top:12px!important;padding-bottom:24px!important;">                
+        	<div id="recaptchaCheckbox"></div>          
+        </div>
+                
+        <!-- Create Account Button -->
+        <ui:button class="slds-button slds-button_neutral" aura:id="btnVerify" press="{!c.verify}" >Create account</ui:button>                                  
+        
+        <!-- Already have an Account -->
+        <div class="slds-text-body_regular terms-text" style="padding:0 0 24px 0;">
+            Already registered? <a href="/s/login">Sign in</a>
+        </div>
+        
+       <!-- <div class="slds-text-body_regular terms-text" style="font-size:10px;!important; padding-top:24px; padding-left:65px;">
+            By continuing you accept our <a href="https://www.u-blox.com/en/terms-conditions-u-blox-website" >Terms of Use</a> and 
+            <a href="https://www.u-blox.com/en/info/u-blox-privacy-policy" >Privacy Policy</a>.
+        </div> -->
+    </div>
+    
+    <div class="loader">
+        <aura:if isTrue="{!v.loaded}">
+            <aura:set attribute="else">
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999999;">
+                    <lightning:spinner alternativeText="Loading ..." variant="brand" />
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>   
+    
+</aura:component>

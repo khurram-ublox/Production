@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSEL_card_catalogue_pcn_direct</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>CONTACT.ADDRESS2_COUNTRY</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Service_Item_2__c</columns>
+    <columns>Service_Item_1__c</columns>
+    <columns>Email_address_probably_not_valid__c</columns>
+    <columns>PCN_Modules_Services__c</columns>
+    <columns>PCN_Standard_Chips__c</columns>
+    <columns>Service_Item_3__c</columns>
+    <columns>Press_Releases__c</columns>
+    <columns>CONTACT.EMAIL_OPT_OUT</columns>
+    <columns>Left_the_company__c</columns>
+    <columns>CONTACT.EMAIL</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Channel_Manager__c</field>
+        <operation>contains</operation>
+        <value>david sel</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>,Contact.Standard</value>
+    </filters>
+    <label>DSEL card, catalogue, pcn direct</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>RegionEMEA</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_edit_allowed</fullName>
+    <active>true</active>
+    <description>To restrict users (FAE, TM), who have edit access, not to be able to save as the edit access is granted only because access to inactive record is needed.</description>
+    <errorConditionFormula>Edit_Not_Allowed__c</errorConditionFormula>
+    <errorMessage>Please press Cancel. It is not possible to save this record.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account__c</field>
+        <field>Opportunity__c</field>
+        <field>Total_Contribution__c</field>
+        <field>Total_Quantity__c</field>
+        <field>Total_Revenue__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>SPR_Approved_By_Regional_Head_EMEA</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Date_Approved_By_Regional_Head</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Fill_Prices_Valid_Until</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_approved</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Approved</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <label>(MSP 2) Approval by Regional Head</label>
+        <name>MSP_2_Approval_by_Regional_Head</name>
+        <rejectionActions>
+            <action>
+                <name>SPR_Date_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+            <action>
+                <name>SPR_Request_rejected</name>
+                <type>Alert</type>
+            </action>
+            <action>
+                <name>SPR_Status_Rejected</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>MSP Process 2: Team Manager &gt; Regional Head
+Request initiator:  Americas &amp; EMEA Team Managers (bshe, mmur, jare, mhae), APAC Country Managers</description>
+    <emailTemplate>unfiled$public/SPR_Request_update_notification</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp;
+OR(ISPICKVAL($User.uB_Office__c, &quot;EMEA&quot;),ISPICKVAL($User.uB_Office__c, &quot;Americas&quot;)) &amp;&amp;
+(
+$User.Hierarchy_Level__c =4
+)
+
+/*
+Backup
+----------------------
+ISPICKVAL(Price_Level__c, &quot;MSP (Minimum Sales Price)&quot;) &amp;&amp;
+OR(ISPICKVAL($User.uB_Office__c, &quot;EMEA&quot;),ISPICKVAL($User.uB_Office__c, &quot;Americas&quot;)) &amp;&amp;
+(
+/\* EMEA Team Manager *\/
+/\*commented pala
+$User.Alias=&quot;pala&quot; || *\/
+$User.Alias=&quot;pwei&quot; ||
+$User.Alias=&quot;raba&quot; ||
+$User.Alias=&quot;lubo&quot; ||
+$User.Alias=&quot;dgra&quot; ||
+$User.Alias=&quot;fduh&quot; ||
+
+/\* Americas direct report to Region Head *\/
+$User.Alias=&quot;apro&quot; ||
+$User.Alias=&quot;bdal&quot; ||
+$User.Alias=&quot;btri&quot; ||
+$User.Alias=&quot;jbru&quot; ||
+$User.Alias=&quot;mbro&quot; ||
+$User.Alias=&quot;ralh&quot; ||
+$User.Alias=&quot;rwal&quot;
+)
+*/</formula>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>SPR_Date_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Contribution_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Populate_Total_Revenue_Initial</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Remove_Email_PS_CEL</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Remove_Email_PS_POS</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Remove_Email_PS_SHO</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>SPR_Status_Pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>MSP 2: Team Manager to Regional Head</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>6</processOrder>
+    <recallActions>
+        <action>
+            <name>SPR_Status_Not_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

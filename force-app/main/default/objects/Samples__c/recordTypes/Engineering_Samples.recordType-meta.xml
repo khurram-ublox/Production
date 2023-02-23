@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engineering_Samples</fullName>
+    <active>true</active>
+    <description>Choose this one in order to record and track samples under Status:  Engineering Samples (ES)</description>
+    <label>Engineering Sample</label>
+    <picklistValues>
+        <picklist>Free_of_Charge__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>IPR_coverage__c</picklist>
+        <values>
+            <fullName>Premium coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Premium except Qualcomm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime coverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prime except Qualcomm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Request_Status__c</picklist>
+        <values>
+            <fullName>AE review pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clarification required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>PM review pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipped</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sample_Usage__c</picklist>
+        <values>
+            <fullName>Demonstrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES %28regional allocation%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ES %28volume%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prototype %28for customer%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prototype %28for internal use%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samples in production %28IP%2C MP%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Sample Record</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sample Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Use_Restriction__c</picklist>
+        <values>
+            <fullName>2G Consumer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3G Telematics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Handset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Laptop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G M2M</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4G Telematics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
